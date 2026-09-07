@@ -11,7 +11,7 @@
       },
       {
         "type": "text",
-        "text": "英文正文可以直接口述；公式用于板书，中文提示不读出。时间包括书写与停顿，是试讲前的目标。中文学习仍可逐点完整进行，演讲材料按重要性取舍。"
+        "text": "英文正文使用短句和常用词，可直接口述；必要数学术语保留，并在首次出现时解释。公式用于板书，中文提示不读出。时间包括书写与停顿，是试讲前的目标，需按实际语速校准。"
       },
       {
         "type": "heading",
@@ -87,7 +87,7 @@
       },
       {
         "type": "text",
-        "text": "Good morning. Today I will focus on the definitions and proofs that lead to determinants of arbitrary order. We will first establish the required facts about permutations, then define the determinant and prove that transposing it does not change its value."
+        "text": "Good morning. Today we will study determinants. We will focus on definitions, theorems, and proofs. First, we will study permutations. Then we will define the determinant of order n. Finally, we will prove that a matrix and its transpose have the same determinant."
       },
       {
         "type": "math",
@@ -96,11 +96,11 @@
       },
       {
         "type": "text",
-        "text": "A determinant of order two is defined by this expression. It appears naturally when we solve two linear equations in two unknowns. If the coefficient determinant is nonzero, each unknown is the ratio of a column replacement determinant to the coefficient determinant. This motivates the general theory; the general solution rule will be proved later in the textbook."
+        "text": "This formula defines the determinant of order two. We use it to solve a system of two linear equations in two unknowns. Let A be the coefficient matrix. Suppose its determinant is not zero. To find each unknown, replace its column in A with the right-hand side of the system. Take the determinant of this new matrix. Then divide it by the determinant of A. This is Cramer's rule for two unknowns. The textbook proves the rule for n unknowns later."
       },
       {
         "type": "text",
-        "text": "To define higher order determinants, we must specify both the products that occur and their signs. Permutations provide the language for doing this."
+        "text": "For a determinant of higher order, we need to answer two questions. Which products do we use? Which products get a plus sign, and which get a minus sign? To answer these questions, we first need permutations."
       }
     ]
   },
@@ -116,7 +116,7 @@
       },
       {
         "type": "text",
-        "text": "A permutation of order n is an ordered arrangement of one through n, each occurring exactly once. There are n choices for the first position, n minus one for the second, and so on. Hence there are n factorial permutations. The increasing arrangement is called the natural order."
+        "text": "Take the numbers from one to n. Put them in an order. Use each number exactly once. This is a permutation of order n. There are n choices for the first place. There are n minus one choices for the second place. We continue in this way. So there are n factorial permutations. The order one, two, up to n is called the natural order."
       },
       {
         "type": "math",
@@ -130,7 +130,7 @@
       },
       {
         "type": "text",
-        "text": "An inversion is a pair of entries for which the earlier entry is larger than the later one. These entries need not be adjacent. The inversion number is the total number of such pairs, denoted by tau of the permutation."
+        "text": "Look at two entries in a permutation. If the larger entry comes first, the pair is an inversion. The two entries do not have to be next to each other. Count all such pairs. The total is the inversion number. We use the letter tau for this number."
       },
       {
         "type": "math",
@@ -148,7 +148,7 @@
       },
       {
         "type": "text",
-        "text": "For the permutation two, four, three, one, the inversions are two and one, four and three, four and one, and three and one. Thus the inversion number is four. We can count them without repetition by counting the smaller entries to the right of each entry."
+        "text": "Look at two, four, three, one. The inversions are two and one, four and three, four and one, and three and one. There are four inversions. Here is an easy way to count them. For each entry, count the smaller entries to its right. Then add these numbers. This counts each inversion once."
       },
       {
         "type": "math",
@@ -157,7 +157,7 @@
       },
       {
         "type": "text",
-        "text": "A permutation is even when its inversion number is even, and odd when its inversion number is odd. This is its parity. Our example is even. The natural order has inversion number zero, so it is also even. These definitions extend to arrangements of any n distinct natural numbers by the same comparisons."
+        "text": "If the inversion number is even, we call the permutation even. If the inversion number is odd, we call the permutation odd. The word parity means being even or odd. Our example has four inversions, so it is even. The natural order has no inversions. Zero is even, so the natural order is even too. We can use the same definitions for any n distinct natural numbers. We only need to compare which number is larger."
       },
       {
         "type": "math",
@@ -174,7 +174,7 @@
     "blocks": [
       {
         "type": "text",
-        "text": "A transposition exchanges two entries and leaves every other entry fixed. For example, exchanging the entries one and two takes two, four, three, one to one, four, three, two. The exchanged entries need not be adjacent."
+        "text": "A transposition means swapping two entries. All other entries stay in place. For example, swap one and two in two, four, three, one. We get one, four, three, two. The two entries do not have to be next to each other."
       },
       {
         "type": "math",
@@ -183,7 +183,7 @@
       },
       {
         "type": "text",
-        "text": "Repeating the same transposition restores the original permutation. Thus a fixed transposition pairs all permutations, when n is at least two. No permutation is paired with itself, since its entries are distinct. The key fact is that each transposition reverses parity."
+        "text": "If we swap the same two entries again, we get the original permutation back. Suppose n is at least two. Fix two positions and swap the entries in them. This puts all permutations into pairs. The two permutations in each pair are different, because all entries are distinct. We will now prove an important fact. One swap changes an even permutation to an odd one, and an odd permutation to an even one."
       },
       {
         "type": "cue",
@@ -193,7 +193,7 @@
   },
   {
     "id": "theorem-one",
-    "title": "A transposition reverses parity",
+    "title": "A swap changes parity",
     "zh": "定理1及完整证明",
     "time": "09–16 min · §2 / p.35–36",
     "blocks": [
@@ -204,11 +204,11 @@
       },
       {
         "type": "heading",
-        "text": "Adjacent entries"
+        "text": "Two entries next to each other"
       },
       {
         "type": "text",
-        "text": "First suppose that the exchanged entries j and k are adjacent. Every other entry lies either before both or after both. Exchanging j and k therefore leaves its inversion relation with each of them unchanged. Pairs involving neither entry are also unchanged."
+        "text": "First, suppose j and k are next to each other. Every other entry is either before both of them or after both of them. After the swap, this is still true. So its inversion pairs with j and k do not change. Pairs that contain neither j nor k do not change either."
       },
       {
         "type": "math",
@@ -217,7 +217,7 @@
       },
       {
         "type": "text",
-        "text": "Only the pair j, k changes its inversion status. If j is greater than k, one inversion disappears. If j is less than k, one inversion is created. The inversion number changes by minus one or plus one, so its parity reverses."
+        "text": "Only the pair j, k changes. If j is greater than k, we lose one inversion. If j is less than k, we gain one inversion. So the inversion number changes by one. An even number becomes odd, and an odd number becomes even."
       },
       {
         "type": "math",
@@ -226,11 +226,11 @@
       },
       {
         "type": "heading",
-        "text": "Arbitrary entries"
+        "text": "Any two entries"
       },
       {
         "type": "text",
-        "text": "Now suppose there are s entries between j and k. We realize their exchange using adjacent transpositions. First move k to the left across the s intermediate entries and then across j. This takes s plus one exchanges."
+        "text": "Now suppose there are s entries between j and k. We can swap j and k in two steps. In each step, we only swap entries that are next to each other. First, move k to the left. Move it past the s entries in between, and then past j. This takes s plus one swaps."
       },
       {
         "type": "math",
@@ -239,7 +239,7 @@
       },
       {
         "type": "text",
-        "text": "Next move j to the right across the s intermediate entries. This takes s further exchanges. The intermediate entries return to their original positions, while j and k have been exchanged."
+        "text": "Next, move j to the right, past the s entries in between. This takes s more swaps. Now all the entries in between are back in their original positions. Only j and k have changed places."
       },
       {
         "type": "math",
@@ -253,7 +253,7 @@
       },
       {
         "type": "text",
-        "text": "Each adjacent exchange reverses parity. There are two s plus one of them, an odd number, so the final parity is opposite to the original parity. This proves the theorem. Notice that a general transposition need not change the inversion number by exactly one; it must reverse its parity."
+        "text": "The total is two s plus one swaps. This number is odd. Each swap changes even to odd, or odd to even. So an odd number of swaps changes the parity. This proves the theorem. For two entries that are not next to each other, the inversion number may change by more than one. But its parity always changes."
       },
       {
         "type": "cue",
@@ -274,11 +274,11 @@
       },
       {
         "type": "text",
-        "text": "For n at least two, odd and even permutations occur equally often. To prove this, let s be the number of odd permutations and t the number of even permutations. Exchange the first two entries of every odd permutation. Theorem One tells us that every result is even."
+        "text": "Suppose n is at least two. There are as many odd permutations as even permutations. Let us prove this. Let s be the number of odd permutations. Let t be the number of even permutations. Take each odd permutation and swap its first two entries. By Theorem One, the new permutation is even."
       },
       {
         "type": "text",
-        "text": "Different inputs give different outputs: if two outputs were equal, exchanging their first two entries again would make the inputs equal. Thus we have s distinct even permutations, and s is at most t. The same argument starting with even permutations gives t at most s."
+        "text": "Different odd permutations give different even permutations. Why? If two results were the same, we could swap the first two entries again. We would get the same original permutation. So we get s different even permutations. This means s is at most t. Now start with the even permutations and do the same thing. We get t at most s. Therefore, s equals t."
       },
       {
         "type": "math",
@@ -292,7 +292,7 @@
       },
       {
         "type": "text",
-        "text": "Since the total number is n factorial, each class has n factorial over two elements. The restriction n at least two is necessary: for n equal to one, the only permutation is even."
+        "text": "There are n factorial permutations in total. Half are odd, and half are even. So each number is n factorial divided by two. We need n to be at least two. When n is one, there is only one permutation, and it is even."
       }
     ]
   },
@@ -304,7 +304,7 @@
     "blocks": [
       {
         "type": "text",
-        "text": "Theorem Two states that every permutation can be transformed into natural order by transpositions, and conversely. The number of transpositions has the same parity as the original permutation. We prove existence first, and then the parity statement."
+        "text": "Theorem Two says that we can put any permutation into natural order by swapping entries. We can also go back from natural order to that permutation. The number of swaps is even for an even permutation. It is odd for an odd permutation. First, we prove that we can put the entries in order. Then we prove the statement about the number of swaps."
       },
       {
         "type": "math",
@@ -313,15 +313,15 @@
       },
       {
         "type": "heading",
-        "text": "Existence by induction"
+        "text": "Putting the entries in order"
       },
       {
         "type": "text",
-        "text": "For n equal to one, the permutation is already in natural order, so zero exchanges suffice. Assume that every permutation of order n minus one can be sorted. Consider a permutation of order n."
+        "text": "We use induction on n. When n is one, the permutation is already in natural order. We need no swaps. Now assume we can sort every permutation of order n minus one. Let us consider a permutation of order n."
       },
       {
         "type": "text",
-        "text": "If the last entry is n, its first n minus one entries form a permutation of one through n minus one. By the induction hypothesis, we sort those entries while leaving the final n fixed."
+        "text": "First, suppose the last entry is n. The first n minus one entries are the numbers from one to n minus one. By our assumption, we can put these entries in order. We leave the last entry, n, in place."
       },
       {
         "type": "math",
@@ -330,7 +330,7 @@
       },
       {
         "type": "text",
-        "text": "If the last entry is not n, exchange it with the entry n. The result ends in n, and we have reduced the problem to the previous case. This completes the induction. Each exchange is its own inverse, so reversing the sequence gives the converse transformation."
+        "text": "If the last entry is not n, swap it with n. Now n is in the last place. We can use the previous case to sort the other entries. This completes the induction. To go back, do the same swaps in reverse order. This takes us from natural order to the original permutation."
       },
       {
         "type": "math",
@@ -339,11 +339,11 @@
       },
       {
         "type": "heading",
-        "text": "Parity of the number of exchanges"
+        "text": "Is the number of swaps even or odd?"
       },
       {
         "type": "text",
-        "text": "The natural order is even. Starting from it, each exchange reverses parity. After m exchanges, the result is even if m is even, and odd if m is odd. Hence m and the inversion number of the resulting permutation have the same parity. Reversing the sequence preserves its length, which proves the statement in both directions."
+        "text": "The natural order is even. Start from it and make m swaps. Each swap changes the parity. If m is even, the final permutation is even. If m is odd, the final permutation is odd. So m and the final inversion number are both even or both odd. Going back uses the same number of swaps. This proves the statement in both directions."
       },
       {
         "type": "math",
@@ -352,7 +352,7 @@
       },
       {
         "type": "text",
-        "text": "Different sequences may have different lengths, but their parity is fixed. We will use exactly this parity information to assign signs to determinant terms."
+        "text": "We may sort the same permutation in different ways. The number of swaps may change. But these numbers are always all even or all odd. We will use this fact to choose the signs in a determinant."
       }
     ]
   },
@@ -368,7 +368,7 @@
       },
       {
         "type": "text",
-        "text": "From now on, all entries belong to a fixed number field P. Consider n squared entries arranged in n rows and n columns. A determinant is a signed sum of products, each choosing exactly one entry from every row and every column."
+        "text": "From now on, all entries are in a fixed field P, a subfield of the complex numbers. We have n rows and n columns. To make one product, choose one entry from each row and each column. Multiply the chosen entries. We then give each product a plus or minus sign and add all the terms. This gives the determinant."
       },
       {
         "type": "math",
@@ -377,7 +377,7 @@
       },
       {
         "type": "text",
-        "text": "Write the factors in increasing row order. Then a typical product has the following form, where the column indices form a permutation of one through n."
+        "text": "Write the factors in row order: row one first, row two next, and so on. The product has this form. The column numbers j one, j two, up to j n must form a permutation of one to n."
       },
       {
         "type": "math",
@@ -386,7 +386,7 @@
       },
       {
         "type": "text",
-        "text": "Definition Four assigns a positive sign to an even column permutation and a negative sign to an odd one. The determinant is the sum over all these permutations."
+        "text": "Here is Definition Four. If the column permutation is even, use a plus sign. If it is odd, use a minus sign. Do this for every column permutation, and add the terms."
       },
       {
         "type": "math",
@@ -395,11 +395,11 @@
       },
       {
         "type": "text",
-        "text": "Read this as: sum over all permutations j one through j n, of minus one to the inversion number, times the selected product. There are n factorial indexed terms. Some terms may vanish or cancel. Since P is closed under these arithmetic operations, the determinant value also belongs to P."
+        "text": "Let us read the formula in parts. We sum over all column permutations. For each one, take minus one to the power of its inversion number. Then multiply by the chosen entries. There are n factorial terms before we combine them. Some may be zero. Some may cancel each other. Addition, subtraction, and multiplication keep us in P. So the determinant is also in P."
       },
       {
         "type": "text",
-        "text": "For order two, the column permutations are one two and two one, with inversion numbers zero and one. This reproduces the familiar formula. For order three, the six permutations give the six signed terms."
+        "text": "For order two, the column permutations are one, two and two, one. Their inversion numbers are zero and one. So we get the formula we already know. For order three, there are six permutations. They give the six terms shown here."
       },
       {
         "type": "math",
@@ -413,13 +413,13 @@
       },
       {
         "type": "text",
-        "text": "The essential rule is: first fix the row order, then determine the sign from the column permutation. We will shortly remove the need to put the factors in that particular order."
+        "text": "Remember the rule. First, write the factors in row order. Then use the column permutation to find the sign. Soon we will see how to find the sign when the factors are in any order."
       }
     ]
   },
   {
     "id": "triangular",
-    "title": "Evaluating structured determinants",
+    "title": "Some useful determinants",
     "zh": "新增 例题与三角行列式证明",
     "time": "31–36 min · §3 / p.37–38",
     "blocks": [
@@ -434,7 +434,7 @@
       },
       {
         "type": "text",
-        "text": "In this example, only one indexed product can be nonzero. Its column permutation is four three two one, which has six inversions. The sign is therefore positive, and the determinant is twenty-four."
+        "text": "In this example, every row has only one nonzero entry. Only one product can be nonzero. Its column order is four, three, two, one. This has six inversions, so we use a plus sign. The product is one times two times three times four. The determinant is twenty-four."
       },
       {
         "type": "heading",
@@ -447,11 +447,11 @@
       },
       {
         "type": "text",
-        "text": "An upper triangular determinant has zero entries below its main diagonal. We can evaluate it directly from the definition. For a product to be nonzero, its entry from the last row must be a n n, so j n must equal n."
+        "text": "For an upper triangular matrix, all entries below the main diagonal are zero. Let us use the definition to find its determinant. Consider a product that is not zero. In the last row, we must choose a sub n n. Every other entry in that row is zero. So j sub n equals n."
       },
       {
         "type": "text",
-        "text": "In the next row, only columns n minus one and n can contribute. But column n is already used, so j n minus one must equal n minus one. Repeating this argument upwards forces every j i to equal i."
+        "text": "Now look at row n minus one. Only the last two columns can have nonzero entries. We have already used column n. We cannot use it again. So we must choose column n minus one. Continue upwards, one row at a time. In every row, we must choose the diagonal entry."
       },
       {
         "type": "math",
@@ -460,11 +460,11 @@
       },
       {
         "type": "text",
-        "text": "Thus every term except the diagonal product is zero. The diagonal term has the natural column order, whose sign is positive. This proves the formula, even when a diagonal entry is zero: the surviving candidate product is then also zero."
+        "text": "So all other terms are zero. Only the diagonal product can remain. Its column order is one, two, up to n. This is even, so its sign is plus. This proves the formula. If a diagonal entry is zero, the diagonal product is zero too. The formula still holds."
       },
       {
         "type": "text",
-        "text": "The main diagonal runs from the top left to the bottom right. A diagonal determinant has all off-diagonal entries zero. It is a special case of the triangular result, so its value is the product of its diagonal entries. In particular, when they are all one, the value is one."
+        "text": "The main diagonal goes from the top left to the bottom right. In a diagonal matrix, every entry outside this diagonal is zero. A diagonal matrix is also upper triangular. So its determinant is the product of its diagonal entries. For the identity matrix, these entries are all one. Its determinant is therefore one."
       },
       {
         "type": "math",
@@ -481,7 +481,7 @@
     "blocks": [
       {
         "type": "text",
-        "text": "Multiplication is commutative, so the factors of a determinant term may be written in any order. Suppose we write a product as follows, where both the row indices and the column indices are permutations."
+        "text": "We can change the order of factors without changing their product. Now write a determinant product in any order, as shown here. The row indices form a permutation. The column indices also form a permutation."
       },
       {
         "type": "math",
@@ -490,7 +490,7 @@
       },
       {
         "type": "text",
-        "text": "Its assigned sign is minus one raised to the sum of the two inversion numbers. Here sign means the plus or minus coefficient in the determinant expansion, not the numerical sign of the product of its entries."
+        "text": "To find the sign, count the inversions in the row indices. Then count them in the column indices. Add the two numbers. If the sum is even, use plus. If it is odd, use minus. Here we mean the sign placed before the product in the determinant formula. We do not mean whether the product itself is a positive or negative number."
       },
       {
         "type": "math",
@@ -503,7 +503,7 @@
       },
       {
         "type": "text",
-        "text": "Reorder the factors by transpositions until their row indices are in natural order. This is possible by Theorem Two. Let the corresponding reordered column sequence be j prime one through j prime n. The product is now in the standard form used in the determinant definition."
+        "text": "Let us prove this rule. Swap factors until the row indices are in natural order. We can do this by Theorem Two. Call the new column indices j prime one, up to j prime n. Now the product is in the row order used in the definition."
       },
       {
         "type": "math",
@@ -512,7 +512,7 @@
       },
       {
         "type": "text",
-        "text": "At each exchange of two factors, the row sequence undergoes one transposition, and the column sequence undergoes the same positional transposition. By Theorem One, both inversion numbers reverse parity. Their sum therefore keeps the same parity."
+        "text": "When we swap two factors, we swap two row indices and two column indices at the same time. By Theorem One, each inversion number changes from even to odd or from odd to even. Both change parity. So their sum stays even or stays odd."
       },
       {
         "type": "math",
@@ -521,7 +521,7 @@
       },
       {
         "type": "text",
-        "text": "After all the exchanges, the row sequence has inversion number zero. The proposed sign is therefore equal to minus one to the inversion number of the reordered column sequence. That is precisely the sign specified by the definition. This proves the formula."
+        "text": "At the end, the row indices are in natural order. Their inversion number is zero. So our sign formula now uses only the inversion number of the new column order. This is exactly the sign in the definition. The sum kept the same parity at every step. So the formula gives the correct sign in the original order too. This proves the rule."
       },
       {
         "type": "math",
@@ -543,7 +543,7 @@
       },
       {
         "type": "text",
-        "text": "For this product, the row sequence is two three one four and the column sequence is one two four three. Their inversion numbers are two and one, so the assigned sign is negative. In increasing row order, the column sequence is four one two three, with three inversions. It gives the same sign."
+        "text": "In this example, the row indices are two, three, one, four. They have two inversions. The column indices are one, two, four, three. They have one inversion. The sum is three, so we use a minus sign. To check, put the factors in row order. The column order becomes four, one, two, three. This has three inversions and gives the same minus sign."
       },
       {
         "type": "math",
@@ -554,7 +554,7 @@
   },
   {
     "id": "transpose",
-    "title": "Transposition leaves the determinant unchanged",
+    "title": "A matrix and its transpose have the same determinant",
     "zh": "新增 按列定义与性质1证明",
     "time": "43–49 min · §3 / p.39–40",
     "blocks": [
@@ -564,7 +564,7 @@
       },
       {
         "type": "text",
-        "text": "The general sign formula treats row indices and column indices symmetrically. We may therefore put the column indices, rather than the row indices, in natural order. Their inversion number is then zero, leaving only the inversion number of the row permutation."
+        "text": "In the sign formula, we add the row inversion number and the column inversion number. We can put the factors in column order instead of row order. Then the column inversion number is zero. Only the row inversion number determines the sign."
       },
       {
         "type": "math",
@@ -573,7 +573,7 @@
       },
       {
         "type": "text",
-        "text": "This is an alternative expression for the same determinant. We still select exactly one entry from each row and column, but now list the factors in increasing column order."
+        "text": "This formula gives the same determinant. We still choose one entry from each row and each column. We only change how we write the factors. Here, column one comes first, then column two, and so on."
       },
       {
         "type": "heading",
@@ -581,7 +581,7 @@
       },
       {
         "type": "text",
-        "text": "The transpose is obtained by interchanging rows and columns: the entry in position i, j moves to position j, i. Property One states that this operation does not change the determinant. For convenient notation, let A denote the array of entries and B its transpose."
+        "text": "To transpose a matrix, change its rows into columns. The entry in row i, column j moves to row j, column i. Property One says that this does not change the determinant. Let A be the original matrix. Let B be its transpose."
       },
       {
         "type": "math",
@@ -590,7 +590,7 @@
       },
       {
         "type": "text",
-        "text": "To prove this using the textbook argument, expand B in column order. Replace each b sub i k by a sub k i. The resulting sum is exactly the row-ordered definition of the determinant of A."
+        "text": "Let us prove this. Write the determinant of B in column order. Since B is the transpose of A, b sub i k equals a sub k i. Replace each entry of B in the sum with the matching entry of A. Now we have exactly the definition of the determinant of A in row order."
       },
       {
         "type": "math",
@@ -599,7 +599,7 @@
       },
       {
         "type": "text",
-        "text": "This proves the property. Notice that transposing exchanges the roles of all rows and columns; it is different from swapping two entries of a permutation."
+        "text": "So A and its transpose have the same determinant. This proves Property One. Here, we change all rows into columns. This is a different operation from swapping two entries in a permutation."
       },
       {
         "type": "heading",
@@ -607,7 +607,7 @@
       },
       {
         "type": "text",
-        "text": "A lower triangular array has zeros above the main diagonal. Its transpose is upper triangular with exactly the same diagonal entries. By transposition invariance and the result already proved, its determinant is also the product of those entries."
+        "text": "In a lower triangular matrix, all entries above the main diagonal are zero. Its transpose is upper triangular. The diagonal entries stay the same. We know the determinant does not change under transpose. We also know the formula for an upper triangular matrix. So the lower triangular determinant is the product of its diagonal entries too."
       },
       {
         "type": "math",
@@ -616,7 +616,7 @@
       },
       {
         "type": "text",
-        "text": "More generally, a determinant property about rows has a corresponding property about columns, obtained by transposition. This symmetry will be used repeatedly in the next section."
+        "text": "We can use transpose to turn a result about rows into a result about columns. We will use this idea again in the next section."
       }
     ]
   },
@@ -628,7 +628,7 @@
     "blocks": [
       {
         "type": "text",
-        "text": "Let me summarize the main chain of reasoning. Inversions define the parity of a permutation, and a transposition reverses that parity. These facts give a consistent sign rule for determinant terms. The determinant is the signed sum of products selecting one entry from every row and column. For triangular arrays, the definition reduces to the diagonal product. Finally, the sign formula is symmetric in row and column indices, which leads to the column-ordered expression and proves invariance under transposition. Next time, we can use this foundation to study the remaining determinant properties. Thank you."
+        "text": "Let us review. First, we used inversions to define even and odd permutations. We proved that one swap changes the parity. Next, we used permutations to define the determinant. Each product uses one entry from each row and each column. The permutation tells us which sign to use. For a triangular matrix, the determinant is the product of the diagonal entries. We then found the sign when the factors are in any order. Finally, we proved that a matrix and its transpose have the same determinant. Next time, we will study more properties of determinants. Thank you."
       }
     ]
   },
@@ -712,7 +712,7 @@
       },
       {
         "type": "text",
-        "text": "“m is congruent to tau modulo two”; more naturally, “m and the inversion number have the same parity.”"
+        "text": "“m is congruent to tau modulo two”; in simple words, “m and the inversion number are both even or both odd.”"
       },
       {
         "type": "math",
