@@ -558,21 +558,16 @@
     "blocks": [
       {
         "type": "text",
-        "text": "We now continue with the determinant properties. Let R i denote row i. Write D of R one through R n for the determinant with these rows. All rows not mentioned stay fixed. The same properties hold for columns, by transposing."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "R_i=(a_{i1},\\ldots,a_{in}),\\qquad D(R_1,\\ldots,R_n)=\\det A"
+        "text": "We now continue with the determinant properties. We state them for rows. By Property One, they also hold for columns."
       },
       {
         "type": "statement",
-        "text": "Property 2. Multiplying one row by a scalar multiplies the determinant by that scalar."
+        "text": "Property 2. Multiplying one row by a number k multiplies the determinant by k."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "D(R_1,\\ldots,cR_i,\\ldots,R_n)=cD(R_1,\\ldots,R_i,\\ldots,R_n)"
+        "latex": "\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\ka_{i1}&ka_{i2}&\\cdots&ka_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}=k\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}"
       },
       {
         "type": "heading",
@@ -580,30 +575,34 @@
       },
       {
         "type": "text",
-        "text": "Fix row i. Every product in the determinant contains exactly one entry from this row. Group the terms according to that entry and factor it out. This gives the following expression."
+        "text": "Fix row i. Each term contains exactly one entry from this row. Group the terms by this entry and factor it out."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "D=\\sum_{j=1}^{n}a_{ij}C_j"
+        "latex": "\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}=a_{i1}A_{i1}+a_{i2}A_{i2}+\\cdots+a_{in}A_{in}"
       },
       {
         "type": "text",
-        "text": "Here C j is the sum of the remaining signed products in that group. It contains no entry from row i. So changing row i leaves all these coefficients fixed."
+        "text": "Here A sub i j is the sum left after factoring out a sub i j from its group. It contains no entry from row i. So these coefficients stay the same when row i changes."
+      },
+      {
+        "type": "text",
+        "text": "Using this expression, we get"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{aligned}D(R_1,\\ldots,cR_i,\\ldots,R_n)&=\\sum_{j=1}^{n}(ca_{ij})C_j\\\\&=c\\sum_{j=1}^{n}a_{ij}C_j=cD.\\end{aligned}"
+        "latex": "\\begin{aligned}\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\ka_{i1}&ka_{i2}&\\cdots&ka_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}&=ka_{i1}A_{i1}+ka_{i2}A_{i2}+\\cdots+ka_{in}A_{in}\\\\&=k(a_{i1}A_{i1}+a_{i2}A_{i2}+\\cdots+a_{in}A_{in})\\\\&=k\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}.\\end{aligned}"
       },
       {
         "type": "statement",
-        "text": "Corollary. If a row is zero, the determinant is zero."
+        "text": "Corollary. If all entries in one row are zero, the determinant is zero."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "R_i=0\\quad\\Longrightarrow\\quad D=0"
+        "latex": "a_{i1}=a_{i2}=\\cdots=a_{in}=0\\quad\\Longrightarrow\\quad D=0"
       },
       {
         "type": "heading",
@@ -611,7 +610,7 @@
       },
       {
         "type": "text",
-        "text": "Set c equal to zero in Property Two."
+        "text": "Set k equal to zero in Property Two."
       }
     ]
   },
@@ -627,17 +626,12 @@
       },
       {
         "type": "statement",
-        "text": "Property 3. If one row is a sum of two rows, the determinant is the sum of the two corresponding determinants. All other rows are unchanged."
+        "text": "Property 3. If each entry in one row is a sum of two numbers, the determinant splits into two determinants. All other rows stay the same."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "B=(b_1,\\ldots,b_n),\\qquad C=(c_1,\\ldots,c_n)"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\begin{aligned}D(\\ldots,B+C,\\ldots)&=D(\\ldots,B,\\ldots)\\\\&\\quad+D(\\ldots,C,\\ldots).\\end{aligned}"
+        "latex": "\\begin{aligned}\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\b_1+c_1&b_2+c_2&\\cdots&b_n+c_n\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}&=\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\b_1&b_2&\\cdots&b_n\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}\\\\&\\quad+\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\c_1&c_2&\\cdots&c_n\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}.\\end{aligned}"
       },
       {
         "type": "heading",
@@ -645,16 +639,16 @@
       },
       {
         "type": "text",
-        "text": "Use the same grouping by row i. The coefficients C j do not depend on that row. Distribute each coefficient over the sum."
+        "text": "Let this be row i. Use the same coefficients A sub i j, which do not depend on this row. Expand and separate the two sums."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{aligned}D(\\ldots,B+C,\\ldots)&=\\sum_{j=1}^{n}(b_j+c_j)C_j\\\\&=\\sum_{j=1}^{n}b_jC_j+\\sum_{j=1}^{n}c_jC_j\\\\&=D(\\ldots,B,\\ldots)+D(\\ldots,C,\\ldots).\\end{aligned}"
+        "latex": "\\begin{aligned}\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\b_1+c_1&b_2+c_2&\\cdots&b_n+c_n\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}&=(b_1+c_1)A_{i1}+(b_2+c_2)A_{i2}+\\cdots+(b_n+c_n)A_{in}\\\\&=(b_1A_{i1}+b_2A_{i2}+\\cdots+b_nA_{in})\\\\&\\quad+(c_1A_{i1}+c_2A_{i2}+\\cdots+c_nA_{in})\\\\&=\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\b_1&b_2&\\cdots&b_n\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}\\\\&\\quad+\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\c_1&c_2&\\cdots&c_n\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}.\\end{aligned}"
       },
       {
         "type": "text",
-        "text": "This proves the property. Repeating it gives the same rule for a sum of more than two rows."
+        "text": "This proves Property Three."
       }
     ]
   },
@@ -666,7 +660,7 @@
     "blocks": [
       {
         "type": "text",
-        "text": "Property Four concerns equal rows."
+        "text": "We now state Property Four."
       },
       {
         "type": "statement",
@@ -675,7 +669,7 @@
       {
         "type": "math",
         "text": "",
-        "latex": "R_i=R_k,\\quad i\\ne k\\quad\\Longrightarrow\\quad D=0"
+        "latex": "a_{ij}=a_{kj}\\quad(j=1,2,\\ldots,n),\\qquad i\\ne k\\quad\\Longrightarrow\\quad D=0"
       },
       {
         "type": "heading",
@@ -683,39 +677,48 @@
       },
       {
         "type": "text",
-        "text": "Pair each column permutation with the one obtained by exchanging its entries in positions i and k."
+        "text": "Suppose rows i and k are equal. By the definition, the determinant is"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\pi=j_1\\cdots j_i\\cdots j_k\\cdots j_n,\\qquad\\pi^{\\prime}=j_1\\cdots j_k\\cdots j_i\\cdots j_n"
+        "latex": "\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{k1}&a_{k2}&\\cdots&a_{kn}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}=\\sum_{j_1\\cdots j_n}(-1)^{\\tau(j_1\\cdots j_i\\cdots j_k\\cdots j_n)}a_{1j_1}\\cdots a_{ij_i}\\cdots a_{kj_k}\\cdots a_{nj_n}"
       },
       {
         "type": "text",
-        "text": "The corresponding products differ only in the factors from rows i and k. These rows are equal, so the products are equal."
+        "text": "We show that all terms cancel in pairs. For each term, the following term also occurs:"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "a_{ij}=a_{kj}\\quad(1\\le j\\le n)"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "a_{i j_i}a_{k j_k}=a_{i j_k}a_{k j_i}"
+        "latex": "\\begin{aligned}&(-1)^{\\tau(j_1\\cdots j_i\\cdots j_k\\cdots j_n)}a_{1j_1}\\cdots a_{ij_i}\\cdots a_{kj_k}\\cdots a_{nj_n},\\\\&(-1)^{\\tau(j_1\\cdots j_k\\cdots j_i\\cdots j_n)}a_{1j_1}\\cdots a_{ij_k}\\cdots a_{kj_i}\\cdots a_{nj_n}.\\end{aligned}"
       },
       {
         "type": "text",
-        "text": "The two column permutations differ by one transposition. Their signs are opposite."
+        "text": "Since the two rows are equal, we have"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "(-1)^{\\tau(\\pi^{\\prime})}=-(-1)^{\\tau(\\pi)}"
+        "latex": "a_{ij_i}=a_{kj_i},\\qquad a_{ij_k}=a_{kj_k}"
       },
       {
         "type": "text",
-        "text": "No permutation is paired with itself, since its entries are distinct. Applying the exchange twice returns the original permutation. Thus every term belongs to one pair of equal products with opposite signs. All pairs cancel, so the determinant is zero."
+        "text": "So the products are equal. The two column permutations differ by one transposition:"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "j_1\\cdots j_i\\cdots j_k\\cdots j_n,\\qquad j_1\\cdots j_k\\cdots j_i\\cdots j_n"
+      },
+      {
+        "type": "text",
+        "text": "Their signs are opposite, so these two terms cancel. Every term has a distinct partner, and exchanging again returns the original term. Thus all terms cancel in pairs."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=0"
       }
     ]
   },
@@ -727,7 +730,7 @@
     "blocks": [
       {
         "type": "text",
-        "text": "We now obtain Property Five."
+        "text": "Next, we obtain Property Five."
       },
       {
         "type": "statement",
@@ -736,7 +739,7 @@
       {
         "type": "math",
         "text": "",
-        "latex": "R_k=cR_i,\\quad i\\ne k\\quad\\Longrightarrow\\quad D=0"
+        "latex": "\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\ka_{i1}&ka_{i2}&\\cdots&ka_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}=0"
       },
       {
         "type": "heading",
@@ -744,12 +747,12 @@
       },
       {
         "type": "text",
-        "text": "Factor c out of row k by Property Two. The remaining determinant has two equal rows, so it is zero by Property Four."
+        "text": "By Property Two, take the common factor k out of one row. The two rows are then equal, so Property Four gives zero."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{aligned}D(\\ldots,R_i,\\ldots,cR_i,\\ldots)&=cD(\\ldots,R_i,\\ldots,R_i,\\ldots)\\\\&=c\\cdot0=0.\\end{aligned}"
+        "latex": "\\begin{aligned}\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\ka_{i1}&ka_{i2}&\\cdots&ka_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}&=k\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}\\\\&=0.\\end{aligned}"
       }
     ]
   },
@@ -770,12 +773,7 @@
       {
         "type": "math",
         "text": "",
-        "latex": "R_i\\longmapsto R_i+cR_k,\\qquad i\\ne k"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "D(\\ldots,R_i+cR_k,\\ldots,R_k,\\ldots)=D(\\ldots,R_i,\\ldots,R_k,\\ldots)"
+        "latex": "\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}+ca_{k1}&a_{i2}+ca_{k2}&\\cdots&a_{in}+ca_{kn}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{k1}&a_{k2}&\\cdots&a_{kn}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}=\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{k1}&a_{k2}&\\cdots&a_{kn}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}"
       },
       {
         "type": "heading",
@@ -783,12 +781,12 @@
       },
       {
         "type": "text",
-        "text": "Split the changed row by Property Three. The first determinant is the original one. The second has two proportional rows, so it is zero by Property Five."
+        "text": "By Property Three, split row i into two parts. The second determinant has two proportional rows, so it is zero by Property Five."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{aligned}&D(\\ldots,R_i+cR_k,\\ldots,R_k,\\ldots)\\\\&\\quad=D(\\ldots,R_i,\\ldots,R_k,\\ldots)\\\\&\\qquad+D(\\ldots,cR_k,\\ldots,R_k,\\ldots)\\\\&\\quad=D(\\ldots,R_i,\\ldots,R_k,\\ldots).\\end{aligned}"
+        "latex": "\\begin{aligned}\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}+ca_{k1}&a_{i2}+ca_{k2}&\\cdots&a_{in}+ca_{kn}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{k1}&a_{k2}&\\cdots&a_{kn}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}&=\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{k1}&a_{k2}&\\cdots&a_{kn}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}\\\\&\\quad+\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\ca_{k1}&ca_{k2}&\\cdots&ca_{kn}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{k1}&a_{k2}&\\cdots&a_{kn}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}\\\\&=\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{k1}&a_{k2}&\\cdots&a_{kn}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}.\\end{aligned}"
       },
       {
         "type": "text",
