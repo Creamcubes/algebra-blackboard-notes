@@ -230,7 +230,7 @@
       },
       {
         "type": "text",
-        "text": "Now suppose there are s entries between j and k. We can swap j and k in two steps. In each step, we only swap entries that are next to each other. First, move k to the left. Move it past the s entries in between, and then past j. This takes s plus one swaps."
+        "text": "Now suppose there are s entries between j and k. We can swap j and k by a series of adjacent swaps, as shown here. This takes two s plus one swaps in total."
       },
       {
         "type": "math",
@@ -239,7 +239,7 @@
       },
       {
         "type": "text",
-        "text": "Next, move j to the right, past the s entries in between. This takes s more swaps. Now all the entries in between are back in their original positions. Only j and k have changed places."
+        "text": "After these swaps, only j and k have changed places. All other entries are back in their original positions."
       },
       {
         "type": "math",
@@ -253,11 +253,11 @@
       },
       {
         "type": "text",
-        "text": "The total is two s plus one swaps. This number is odd. Each swap changes even to odd, or odd to even. So an odd number of swaps changes the parity. This proves the theorem. For two entries that are not next to each other, the inversion number may change by more than one. But its parity always changes."
+        "text": "As we proved above, each adjacent swap changes the parity. Two s plus one is odd. So after these swaps, the parity changes. This completes the proof."
       },
       {
         "type": "cue",
-        "text": "两个阶段分别写清楚，数的是相邻对换次数。不要省掉“中间各数回到原位置”的说明。"
+        "text": "指向板书中的两阶段交换过程，简述总共需要2s+1次相邻对换；指出其他元素回到原位置，再用奇数次奇偶性改变结束证明。"
       }
     ]
   },
