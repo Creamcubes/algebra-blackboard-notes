@@ -1,126 +1,58 @@
 [
   {
     "id": "plan",
-    "title": "Lecture plan",
-    "zh": "范围与时间安排",
-    "time": "50分钟 · 第二章 §1简述、§2与§3重点内容",
+    "title": "Lecture order",
+    "zh": "50分钟安排",
+    "time": "备课安排，不口述",
     "blocks": [
       {
         "type": "text",
-        "text": "本次演讲围绕定义、定理、性质与证明展开。§1只保留行列式与解线性方程组的联系；§2保留全部定义和定理证明；新增§3至转置性质及下三角行列式结论，止于§4之前。"
+        "text": "正文只保留定义、定理、推论及证明。先说引入句，再写加粗陈述及其下方公式，随后讲证明。定义本身不作证明；不重复解释已经写出的定义。"
       },
       {
         "type": "text",
-        "text": "每个定义、定理、推论或重要结论先给出加粗英文陈述，可直接用于板书；其后是简单英文说明与完整证明。加粗陈述同时保留在纯板书模式中。中文提示不读出。时间包括书写与停顿，新增陈述的书写时间需通过试讲校准。"
-      },
-      {
-        "type": "heading",
-        "text": "50 minute running order"
+        "text": "建议时间：二阶定义1分钟；排列与奇偶性5分钟；对换定义2分钟；定理1证明8分钟；推论4分钟；定理2证明7分钟；n阶定义4分钟；三角结论5分钟；一般项符号8分钟；按列公式及转置6分钟。合计50分钟，含板书。"
       },
       {
         "type": "text",
-        "text": "00–02  Motivation and the second order determinant"
-      },
-      {
-        "type": "text",
-        "text": "02–07  Permutations, inversions and parity"
-      },
-      {
-        "type": "text",
-        "text": "07–09  Transpositions"
-      },
-      {
-        "type": "text",
-        "text": "09–16  Theorem 1 and its full proof"
-      },
-      {
-        "type": "text",
-        "text": "16–19  Equal numbers of odd and even permutations"
-      },
-      {
-        "type": "text",
-        "text": "19–25  Theorem 2 and its full proof"
-      },
-      {
-        "type": "text",
-        "text": "25–31  Definition of the determinant of order n"
-      },
-      {
-        "type": "text",
-        "text": "31–36  Examples and the triangular determinant argument"
-      },
-      {
-        "type": "text",
-        "text": "36–43  The sign of a term in arbitrary order and its proof"
-      },
-      {
-        "type": "text",
-        "text": "43–49  Transposition invariance and its proof"
-      },
-      {
-        "type": "text",
-        "text": "49–50  Summary"
-      },
-      {
-        "type": "heading",
-        "text": "Scope and preparation"
-      },
-      {
-        "type": "text",
-        "text": "教材：北大《高等代数》第五版，第二章第33—40页，至§4之前。删去电路背景、二元解公式的详细消元与代回、三元解的逐列展开、阶乘的大数计算，以及重复的逆序练习。保留一例逆序计算，简述反对角线例题，完整讲上三角行列式的推导。"
-      },
-      {
-        "type": "text",
-        "text": "新增的一般项符号证明是核心衔接：交换两个因子，同时交换行指标与列指标，两者逆序数之和的奇偶性保持不变。理解这一步，才能自然得到按列展开的定义与转置性质。"
+        "text": "这是板书讲授的目标时间，并非已实测时长。口述大幅缩短，时间主要用于写陈述、记号和推导。若实际试讲不足50分钟，应根据实测差额增加下一部分教材内容，不靠重复解释延长时间。"
       }
     ]
   },
   {
-    "id": "motivation",
-    "title": "From linear systems to determinants",
-    "zh": "引入与二阶行列式",
-    "time": "00–02 min · §1 / p.33–34",
+    "id": "order-two",
+    "title": "Determinant of order two",
+    "zh": "二阶行列式定义",
+    "time": "00–01 min",
     "blocks": [
       {
-        "type": "cue",
-        "text": "写二阶行列式定义。解方程公式只简述，不再写消元和代回过程。"
-      },
-      {
         "type": "text",
-        "text": "Good morning. Today we will study determinants. We will focus on definitions, theorems, and proofs. First, we will study permutations. Then we will define the determinant of order n. Finally, we will prove that a matrix and its transpose have the same determinant."
+        "text": "We begin with the determinant of order two."
       },
       {
         "type": "statement",
-        "text": "Definition (determinant of order two). The determinant of a two-by-two matrix is the product of its main-diagonal entries minus the product of its other two entries."
+        "text": "Definition. The determinant of a two-by-two array is defined by the following formula."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "d=\\begin{vmatrix}a_{11}&a_{12}\\\\a_{21}&a_{22}\\end{vmatrix}=a_{11}a_{22}-a_{12}a_{21}"
-      },
-      {
-        "type": "text",
-        "text": "This formula defines the determinant of order two. We use it to solve a system of two linear equations in two unknowns. Let A be the coefficient matrix. Suppose its determinant is not zero. To find each unknown, replace its column in A with the right-hand side of the system. Take the determinant of this new matrix. Then divide it by the determinant of A. This is Cramer's rule for two unknowns. The textbook proves the rule for n unknowns later."
-      },
-      {
-        "type": "text",
-        "text": "For a determinant of higher order, we need to answer two questions. Which products do we use? Which products get a plus sign, and which get a minus sign? To answer these questions, we first need permutations."
+        "latex": "\\begin{vmatrix}a_{11}&a_{12}\\\\a_{21}&a_{22}\\end{vmatrix}=a_{11}a_{22}-a_{12}a_{21}"
       }
     ]
   },
   {
     "id": "definitions",
     "title": "Permutations and parity",
-    "zh": "定义1—3 排列、逆序与奇偶性",
-    "time": "02–07 min · §2 / p.35",
+    "zh": "定义1—3",
+    "time": "01–06 min",
     "blocks": [
       {
-        "type": "statement",
-        "text": "Definition 1 (permutation). A permutation of order n is an arrangement of the numbers 1 to n in which each number appears exactly once. The arrangement 1, 2, ..., n is called the natural order."
+        "type": "text",
+        "text": "Next, we define permutations, inversions, and parity."
       },
       {
-        "type": "text",
-        "text": "Let us begin with the definition of a permutation. Take the numbers from one to n. Put them in an order. Use each number exactly once. This is a permutation of order n. There are n choices for the first place. There are n minus one choices for the second place. We continue in this way. So there are n factorial permutations. The order one, two, up to n is called the natural order."
+        "type": "statement",
+        "text": "Definition 1. A permutation of order n is an arrangement of 1 to n, with each number used exactly once. The arrangement 1, 2, ..., n is the natural order."
       },
       {
         "type": "math",
@@ -128,378 +60,307 @@
         "latex": "j_1j_2\\cdots j_n,\\qquad\\{j_1,\\ldots,j_n\\}=\\{1,\\ldots,n\\}"
       },
       {
+        "type": "statement",
+        "text": "Definition 2. An inversion is a pair in which the larger entry comes first. The inversion number is the number of these pairs."
+      },
+      {
         "type": "math",
         "text": "",
-        "latex": "\\#\\text{permutations}=n(n-1)\\cdots1=n!,\\qquad 12\\cdots n:\\ \\text{natural order}"
+        "latex": "\\tau(j_1\\cdots j_n)=\\#\\{(p,q):1\\le p<q\\le n,\\ j_p>j_q\\}"
       },
       {
         "type": "statement",
-        "text": "Definition 2 (inversion and inversion number). An inversion is a pair of entries in which the larger entry comes before the smaller one. The inversion number is the total number of such pairs."
+        "text": "Definition 3. A permutation is even or odd according as its inversion number is even or odd."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\\tau(j_1\\cdots j_n)\\equiv0\\pmod2&:\\quad\\text{even},\\\\\\tau(j_1\\cdots j_n)\\equiv1\\pmod2&:\\quad\\text{odd}.\\end{aligned}"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\tau(12\\cdots n)=0"
       },
       {
         "type": "text",
-        "text": "Look at two entries in a permutation. If the larger entry comes first, the pair is an inversion. The two entries do not have to be next to each other. Count all such pairs. The total is the inversion number. We use the letter tau for this number."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "p<q,\\quad j_p>j_q\\qquad\\text{an inversion}"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\tau(j_1\\cdots j_n)=\\#\\{(p,q):p<q,\\ j_p>j_q\\}"
-      },
-      {
-        "type": "cue",
-        "text": "只完整计算2431这一例，指明(2,1)并不相邻。"
-      },
-      {
-        "type": "text",
-        "text": "Look at two, four, three, one. The inversions are two and one, four and three, four and one, and three and one. There are four inversions. Here is an easy way to count them. For each entry, count the smaller entries to its right. Then add these numbers. This counts each inversion once."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "2431:\\quad(2,1),(4,3),(4,1),(3,1),\\qquad\\tau(2431)=4"
-      },
-      {
-        "type": "statement",
-        "text": "Definition 3 (even and odd permutations). A permutation is even if its inversion number is even, and odd if its inversion number is odd."
-      },
-      {
-        "type": "text",
-        "text": "If the inversion number is even, we call the permutation even. If the inversion number is odd, we call the permutation odd. The word parity means being even or odd. Our example has four inversions, so it is even. The natural order has no inversions. Zero is even, so the natural order is even too. We can use the same definitions for any n distinct natural numbers. We only need to compare which number is larger."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\begin{aligned}\\tau\\text{ even}&\\Longrightarrow\\text{even permutation},\\\\\\tau\\text{ odd}&\\Longrightarrow\\text{odd permutation},\\\\\\tau(12\\cdots n)&=0.\\end{aligned}"
+        "text": "The natural order is therefore even. We use the same definitions for any n distinct natural numbers."
       }
     ]
   },
   {
     "id": "transpositions",
     "title": "Transpositions",
-    "zh": "对换的定义",
-    "time": "07–09 min · §2 / p.35",
+    "zh": "对换定义",
+    "time": "06–08 min",
     "blocks": [
       {
-        "type": "statement",
-        "text": "Definition (transposition). A transposition exchanges two entries of a permutation and leaves all other entries fixed. It is adjacent if the two entries are next to each other."
+        "type": "text",
+        "text": "We now define a transposition."
       },
       {
-        "type": "text",
-        "text": "Next, let us define a transposition. A transposition means swapping two entries. All other entries stay in place. For example, swap one and two in two, four, three, one. We get one, four, three, two. The two entries do not have to be next to each other. If they are next to each other, we call this an adjacent transposition."
+        "type": "statement",
+        "text": "Definition. A transposition exchanges two entries and fixes all other entries. It is adjacent when the two entries are next to each other."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "2431\\longleftrightarrow1432"
+        "latex": "\\cdots j\\,i_1\\cdots i_s\\,k\\cdots\\ \\longleftrightarrow\\ \\cdots k\\,i_1\\cdots i_s\\,j\\cdots"
       },
       {
-        "type": "text",
-        "text": "If we swap the same two entries again, we get the original permutation back. Suppose n is at least two. Fix two positions and swap the entries in them. This puts all permutations into pairs. The two permutations in each pair are different, because all entries are distinct. We can now ask how a transposition changes the parity."
-      },
-      {
-        "type": "cue",
-        "text": "保留“对换做两次恢复原状”，随后推论使用它证明配对是一一对应。"
+        "type": "math",
+        "text": "",
+        "latex": "s=0:\\qquad\\cdots j\\,k\\cdots\\ \\longleftrightarrow\\ \\cdots k\\,j\\cdots"
       }
     ]
   },
   {
     "id": "theorem-one",
     "title": "A transposition changes parity",
-    "zh": "定理1及完整证明",
-    "time": "09–16 min · §2 / p.35–36",
+    "zh": "定理1及证明",
+    "time": "08–16 min",
     "blocks": [
       {
+        "type": "text",
+        "text": "The first theorem describes how a transposition changes parity."
+      },
+      {
         "type": "statement",
-        "text": "Theorem 1. A transposition changes the parity of a permutation: an even permutation becomes odd, and an odd permutation becomes even."
-      },
-      {
-        "type": "text",
-        "text": "We now come to Theorem One. A transposition changes the parity of a permutation. An even permutation becomes odd, and an odd permutation becomes even. Let us prove this in two cases."
+        "text": "Theorem 1. A transposition changes an even permutation into an odd permutation, and an odd permutation into an even permutation."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\text{Theorem 1. A transposition reverses parity.}"
+        "latex": "\\pi\\xrightarrow{\\text{one transposition}}\\pi^{\\prime}\\quad\\Longrightarrow\\quad\\tau(\\pi^{\\prime})\\equiv\\tau(\\pi)+1\\pmod2"
       },
       {
         "type": "heading",
-        "text": "Two entries next to each other"
+        "text": "Proof"
       },
       {
         "type": "text",
-        "text": "First, suppose j and k are next to each other. Every other entry is either before both of them or after both of them. After the transposition, this is still true. So its inversion pairs with j and k do not change. Pairs that contain neither j nor k do not change either."
+        "text": "First, suppose j and k are adjacent. Every other entry is before both or after both. Its inversion pairs with j and k stay the same. Pairs containing neither entry also stay the same. Only the pair j, k changes."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\cdots j\\,k\\cdots\\ \\longrightarrow\\ \\cdots k\\,j\\cdots"
+        "latex": "\\cdots j\\,k\\cdots\\longrightarrow\\cdots k\\,j\\cdots,\\qquad\\Delta\\tau=\\begin{cases}-1,&j>k,\\\\1,&j<k.\\end{cases}"
       },
       {
         "type": "text",
-        "text": "Only the pair j, k changes. If j is greater than k, we lose one inversion. If j is less than k, we gain one inversion. So the inversion number changes by one. An even number becomes odd, and an odd number becomes even."
+        "text": "So an adjacent transposition changes the parity."
+      },
+      {
+        "type": "text",
+        "text": "Now suppose s entries lie between j and k. The following adjacent transpositions exchange j and k and leave all other entries in place."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\Delta\\tau=\\begin{cases}-1,&j>k,\\\\+1,&j<k.\\end{cases}"
-      },
-      {
-        "type": "heading",
-        "text": "Any two entries"
-      },
-      {
-        "type": "text",
-        "text": "Now suppose there are s entries between j and k. We can swap j and k by a series of adjacent transpositions, as shown here. This takes two s plus one transpositions in total."
+        "latex": "\\begin{aligned}\\cdots j\\,i_1\\cdots i_s\\,k\\cdots&\\xrightarrow{s+1}\\cdots k\\,j\\,i_1\\cdots i_s\\cdots\\\\&\\xrightarrow{s}\\cdots k\\,i_1\\cdots i_s\\,j\\cdots.\\end{aligned}"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\cdots j\\,i_1\\cdots i_s\\,k\\cdots\\ \\xrightarrow{s+1}\\ \\cdots k\\,j\\,i_1\\cdots i_s\\cdots"
+        "latex": "(s+1)+s=2s+1"
       },
       {
         "type": "text",
-        "text": "After these transpositions, only j and k have changed places. All other entries are back in their original positions."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\cdots k\\,j\\,i_1\\cdots i_s\\cdots\\ \\xrightarrow{s}\\ \\cdots k\\,i_1\\cdots i_s\\,j\\cdots"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "(s+1)+s=2s+1\\qquad\\text{odd}"
-      },
-      {
-        "type": "text",
-        "text": "As we proved above, each adjacent transposition changes the parity. Two s plus one is odd. So after these transpositions, the parity changes. This completes the proof."
-      },
-      {
-        "type": "cue",
-        "text": "指向板书中的两阶段交换过程，简述总共需要2s+1次相邻对换；指出其他元素回到原位置，再用奇数次奇偶性改变结束证明。"
+        "text": "Each adjacent transposition changes parity. The number of transpositions is odd, so the final parity changes. This completes the proof."
       }
     ]
   },
   {
     "id": "corollary",
-    "title": "Counting odd and even permutations",
+    "title": "Equal numbers of even and odd permutations",
     "zh": "推论及证明",
-    "time": "16–19 min · §2 / p.36",
+    "time": "16–20 min",
     "blocks": [
       {
+        "type": "text",
+        "text": "Next, we introduce a corollary of Theorem One."
+      },
+      {
         "type": "statement",
-        "text": "Corollary. For n at least 2, the numbers of even and odd permutations of order n are equal. Each is n factorial divided by 2."
-      },
-      {
-        "type": "text",
-        "text": "Next, let us introduce a corollary of Theorem One. Suppose n is at least two. Then the number of odd permutations equals the number of even permutations. Each number is n factorial divided by two."
+        "text": "Corollary. For n at least 2, there are equally many even and odd permutations of order n. Each number is n factorial divided by 2."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "n\\ge2:\\qquad\\#\\text{odd permutations}=\\#\\text{even permutations}=\\frac{n!}{2}"
-      },
-      {
-        "type": "text",
-        "text": "Now let us prove this corollary. Let s be the number of odd permutations. Let t be the number of even permutations. Take each odd permutation and swap its first two entries. This is a transposition. By Theorem One, the new permutation is even."
-      },
-      {
-        "type": "text",
-        "text": "Different odd permutations give different even permutations. Why? If two results were the same, we could swap the first two entries again. We would get the same original permutation. So we get s different even permutations. This means s is at most t. Now start with the even permutations and do the same thing. We get t at most s. Therefore, s equals t."
+        "latex": "E_n=\\{\\text{even permutations}\\},\\qquad O_n=\\{\\text{odd permutations}\\}"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "s\\le t,\\qquad t\\le s\\quad\\Longrightarrow\\quad s=t"
+        "latex": "|E_n|=|O_n|=\\frac{n!}{2}\\qquad(n\\ge2)"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Let f exchange the first two entries. By Theorem One, f takes every even permutation to an odd permutation. Applying f twice gives the original permutation."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "s+t=n!\\quad\\Longrightarrow\\quad s=t=\\frac{n!}{2}"
+        "latex": "f:E_n\\longrightarrow O_n,\\qquad f(f(\\pi))=\\pi"
       },
       {
         "type": "text",
-        "text": "There are n factorial permutations in total. Half are odd, and half are even. So each number is n factorial divided by two. We need n to be at least two. When n is one, there is only one permutation, and it is even."
+        "text": "Different even permutations give different results, since we can recover each input by applying f again. Every odd permutation is reached: applying f to it gives an even permutation, which f takes back to it. Thus f is a bijection."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "|E_n|=|O_n|"
+      },
+      {
+        "type": "text",
+        "text": "There are n choices for the first entry, n minus one for the second, and so on. The total number of permutations is n factorial. Therefore each set has half this number."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "|E_n|+|O_n|=n(n-1)\\cdots1=n!\\quad\\Longrightarrow\\quad|E_n|=|O_n|=\\frac{n!}{2}"
       }
     ]
   },
   {
     "id": "theorem-two",
     "title": "Sorting by transpositions",
-    "zh": "定理2及完整证明",
-    "time": "19–25 min · §2 / p.36",
+    "zh": "定理2及证明",
+    "time": "20–27 min",
     "blocks": [
       {
+        "type": "text",
+        "text": "We now state Theorem Two."
+      },
+      {
         "type": "statement",
-        "text": "Theorem 2. Every permutation can be changed into natural order by a finite sequence of transpositions, and conversely. Every such sequence has an even number of transpositions for an even permutation and an odd number for an odd permutation."
-      },
-      {
-        "type": "text",
-        "text": "Next, we come to Theorem Two. It says that we can put any permutation into natural order by a series of transpositions. We can also go back from natural order to that permutation. The number of transpositions is even for an even permutation. It is odd for an odd permutation. First, we prove that we can put the entries in order. Then we prove the statement about the number of transpositions."
+        "text": "Theorem 2. Every permutation can be changed into natural order by finitely many transpositions, and conversely. The number of transpositions is even for an even permutation and odd for an odd permutation."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "j_1\\cdots j_n\\longleftrightarrow12\\cdots n,\\qquad m\\equiv\\tau(j_1\\cdots j_n)\\pmod2"
+        "latex": "\\pi=j_1\\cdots j_n\\xrightarrow{m\\text{ transpositions}}12\\cdots n,\\qquad m\\equiv\\tau(\\pi)\\pmod2"
       },
       {
         "type": "heading",
-        "text": "Putting the entries in order"
+        "text": "Proof: existence"
       },
       {
         "type": "text",
-        "text": "We use induction on n. When n is one, the permutation is already in natural order. We need no transpositions. Now assume we can sort every permutation of order n minus one. Let us consider a permutation of order n."
+        "text": "We use induction on n. For n equal to one, no transposition is needed. Assume every permutation of order n minus one can be sorted."
       },
       {
         "type": "text",
-        "text": "First, suppose the last entry is n. The first n minus one entries are the numbers from one to n minus one. By our assumption, we can put these entries in order. We leave the last entry, n, in place."
+        "text": "If the last entry is n, sort the first n minus one entries by the induction hypothesis. Leave n fixed."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "j_n=n:\\qquad j_1\\cdots j_{n-1}n\\longrightarrow12\\cdots(n-1)n"
+        "latex": "j_1\\cdots j_{n-1}n\\longrightarrow12\\cdots(n-1)n"
       },
       {
         "type": "text",
-        "text": "If the last entry is not n, swap it with n. Now n is in the last place. We can use the previous case to sort the other entries. This completes the induction. To go back, do the same transpositions in reverse order. This takes us from natural order to the original permutation."
+        "text": "If the last entry is not n, swap it with n. Then use the previous case. This completes the induction. Reversing the transpositions gives the reverse transformation."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "j_n\\ne n:\\qquad j_1\\cdots j_n\\longrightarrow j'_1\\cdots j'_{n-1}n\\longrightarrow12\\cdots n"
+        "latex": "j_1\\cdots j_n\\longrightarrow j_1^{\\prime}\\cdots j_{n-1}^{\\prime}n\\longrightarrow12\\cdots n"
       },
       {
         "type": "heading",
-        "text": "Is the number of transpositions even or odd?"
+        "text": "Proof: parity"
       },
       {
         "type": "text",
-        "text": "The natural order is even. Start from it and make m transpositions. Each transposition changes the parity. If m is even, the final permutation is even. If m is odd, the final permutation is odd. So m and the final inversion number are both even or both odd. Going back uses the same number of transpositions. This proves the statement in both directions."
+        "text": "Each transposition changes parity. After m transpositions, we reach the natural order, whose inversion number is zero. Hence the original inversion number plus m is even."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "(-1)^m=(-1)^{\\tau(j_1\\cdots j_n)}"
+        "latex": "0\\equiv\\tau(\\pi)+m\\pmod2\\quad\\Longrightarrow\\quad m\\equiv\\tau(\\pi)\\pmod2"
       },
       {
         "type": "text",
-        "text": "We may sort the same permutation in different ways. The number of transpositions may change. But these numbers are always all even or all odd. We will use this fact to choose the signs in a determinant."
+        "text": "The reverse sequence has the same length. This proves both directions."
       }
     ]
   },
   {
-    "id": "definition-four",
-    "title": "The determinant of order n",
-    "zh": "新增 定义4与符号规则",
-    "time": "25–31 min · §3 / p.36–37",
+    "id": "determinant",
+    "title": "Determinant of order n",
+    "zh": "定义4",
+    "time": "27–31 min",
     "blocks": [
       {
-        "type": "cue",
-        "text": "新增内容。从这里起所有元素属于固定数域P。先写一般方阵，再写求和定义，口述说明下标。"
+        "type": "text",
+        "text": "We can now define the determinant of order n."
       },
       {
         "type": "statement",
-        "text": "Definition 4 (determinant of order n). Choose exactly one entry from each row and each column, and write their product in increasing row order. Give it a plus sign if the column permutation is even and a minus sign if it is odd. The determinant is the sum of these signed products over all column permutations."
-      },
-      {
-        "type": "text",
-        "text": "We now have the facts about permutations that we need. Let us use them to define the determinant of order n. From now on, all entries are in a fixed field P, a subfield of the complex numbers. We have n rows and n columns. To make one product, choose one entry from each row and each column. Multiply the chosen entries. We then give each product a plus or minus sign and add all the terms. This gives the determinant."
+        "text": "Definition 4. For entries in a number field P, the determinant is the sum of products choosing one entry from each row and each column. In increasing row order, a product has a plus sign for an even column permutation and a minus sign for an odd one."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "D=\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\a_{21}&a_{22}&\\cdots&a_{2n}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}"
-      },
-      {
-        "type": "text",
-        "text": "Write the factors in row order: row one first, row two next, and so on. The product has this form. The column numbers j one, j two, up to j n must form a permutation of one to n."
+        "latex": "A=(a_{ij})_{n\\times n},\\qquad a_{ij}\\in P"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "a_{1j_1}a_{2j_2}\\cdots a_{nj_n},\\qquad j_1j_2\\cdots j_n\\text{ a permutation}"
-      },
-      {
-        "type": "text",
-        "text": "Here is Definition Four. If the column permutation is even, use a plus sign. If it is odd, use a minus sign. Do this for every column permutation, and add the terms."
+        "latex": "D=\\det A=\\begin{vmatrix}a_{11}&\\cdots&a_{1n}\\\\\\vdots&\\ddots&\\vdots\\\\a_{n1}&\\cdots&a_{nn}\\end{vmatrix}"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\boxed{D=\\sum_{j_1\\cdots j_n}(-1)^{\\tau(j_1\\cdots j_n)}a_{1j_1}a_{2j_2}\\cdots a_{nj_n}}"
+        "latex": "\\boxed{D=\\sum_{j_1\\cdots j_n}(-1)^{\\tau(j_1\\cdots j_n)}a_{1j_1}\\cdots a_{nj_n}}"
       },
       {
         "type": "text",
-        "text": "Let us read the formula in parts. We sum over all column permutations. For each one, take minus one to the power of its inversion number. Then multiply by the chosen entries. There are n factorial terms before we combine them. Some may be zero. Some may cancel each other. Addition, subtraction, and multiplication keep us in P. So the determinant is also in P."
-      },
-      {
-        "type": "text",
-        "text": "For order two, the column permutations are one, two and two, one. Their inversion numbers are zero and one. So we get the formula we already know. For order three, there are six permutations. They give the six terms shown here."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "D_2=a_{11}a_{22}-a_{12}a_{21}"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\begin{aligned}D_3={}&a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}\\\\&-a_{11}a_{23}a_{32}-a_{12}a_{21}a_{33}-a_{13}a_{22}a_{31}.\\end{aligned}"
-      },
-      {
-        "type": "text",
-        "text": "Remember the rule. First, write the factors in row order. Then use the column permutation to find the sign. Soon we will see how to find the sign when the factors are in any order."
+        "text": "The sum runs over all permutations of 1 to n. The first index is the row index; the second is the column index."
       }
     ]
   },
   {
     "id": "triangular",
-    "title": "Some useful determinants",
-    "zh": "新增 例题与三角行列式证明",
-    "time": "31–36 min · §3 / p.37–38",
+    "title": "Triangular determinants",
+    "zh": "三角行列式结论及证明",
+    "time": "31–36 min",
     "blocks": [
       {
-        "type": "heading",
-        "text": "A short example"
+        "type": "text",
+        "text": "We next state the triangular determinant result."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. The main diagonal consists of the entries a sub i i. An array is upper triangular if all entries below its main diagonal are zero. It is diagonal if all entries off the main diagonal are zero."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{vmatrix}0&0&0&1\\\\0&0&2&0\\\\0&3&0&0\\\\4&0&0&0\\end{vmatrix}=(-1)^{\\tau(4321)}(1\\cdot2\\cdot3\\cdot4)=24"
+        "latex": "\\begin{aligned}\\text{upper triangular:}\\quad&a_{ij}=0\\quad(i>j),\\\\\\text{diagonal:}\\quad&a_{ij}=0\\quad(i\\ne j).\\end{aligned}"
       },
       {
-        "type": "text",
-        "text": "Let us use this definition in a few examples. In this example, every row has only one nonzero entry. Only one product can be nonzero. Its column order is four, three, two, one. This has six inversions, so we use a plus sign. The product is one times two times three times four. The determinant is twenty-four."
-      },
-      {
-        "type": "heading",
-        "text": "Upper triangular determinants"
+        "type": "statement",
+        "text": "Result. An upper triangular determinant equals the product of its diagonal entries."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\0&a_{22}&\\cdots&a_{2n}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&a_{nn}\\end{vmatrix}=a_{11}a_{22}\\cdots a_{nn}"
+        "latex": "D=a_{11}a_{22}\\cdots a_{nn}"
       },
       {
-        "type": "statement",
-        "text": "Definition (upper triangular matrix). A square matrix is upper triangular if every entry below its main diagonal is zero."
-      },
-      {
-        "type": "statement",
-        "text": "Result (upper triangular determinant). The determinant of an upper triangular matrix equals the product of its diagonal entries."
+        "type": "heading",
+        "text": "Proof"
       },
       {
         "type": "text",
-        "text": "For an upper triangular matrix, all entries below the main diagonal are zero. Let us use the definition to find its determinant. Consider a product that is not zero. In the last row, we must choose a sub n n. Every other entry in that row is zero. So j sub n equals n."
-      },
-      {
-        "type": "text",
-        "text": "Now look at row n minus one. Only the last two columns can have nonzero entries. We have already used column n. We cannot use it again. So we must choose column n minus one. Continue upwards, one row at a time. In every row, we must choose the diagonal entry."
+        "text": "Consider a term that is not zero. Its last-row entry must be a sub n n. Column n is now used. In row n minus one, we must therefore choose column n minus one. Continuing upwards forces every column index to equal its row index."
       },
       {
         "type": "math",
@@ -508,54 +369,16 @@
       },
       {
         "type": "text",
-        "text": "So all other terms are zero. Only the diagonal product can remain. Its column order is one, two, up to n. This is even, so its sign is plus. This proves the formula. If a diagonal entry is zero, the diagonal product is zero too. The formula still holds."
+        "text": "All other terms are zero. The diagonal term has the natural column order, so its sign is plus. If a diagonal entry is zero, this term is zero too. The formula still holds."
       },
       {
         "type": "statement",
-        "text": "Definition (main diagonal and diagonal matrix). The main diagonal consists of the entries whose row and column indices are equal. A diagonal matrix is a square matrix whose entries outside this diagonal are all zero."
-      },
-      {
-        "type": "statement",
-        "text": "Corollary (diagonal determinant). The determinant of a diagonal matrix equals the product of its diagonal entries. In particular, the identity matrix has determinant 1."
-      },
-      {
-        "type": "text",
-        "text": "The main diagonal goes from the top left to the bottom right. In a diagonal matrix, every entry outside this diagonal is zero. A diagonal matrix is also upper triangular. So its determinant is the product of its diagonal entries. For the identity matrix, these entries are all one. Its determinant is therefore one."
+        "text": "Corollary. A diagonal determinant is the product of its diagonal entries. If all diagonal entries are 1, its value is 1."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{vmatrix}d_1&0&\\cdots&0\\\\0&d_2&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&d_n\\end{vmatrix}=d_1\\cdots d_n,\\qquad \\det I_n=1"
-      }
-    ]
-  },
-  {
-    "id": "general-sign",
-    "title": "The sign of a term in any order",
-    "zh": "新增 一般项符号及完整证明",
-    "time": "36–43 min · §3 / p.39",
-    "blocks": [
-      {
-        "type": "statement",
-        "text": "Result (sign of a determinant term). Write a product that contains exactly one entry from each row and each column in any order. Its coefficient in the determinant formula is plus 1 if the sum of the row and column inversion numbers is even, and minus 1 if that sum is odd."
-      },
-      {
-        "type": "text",
-        "text": "Next, let us find the sign when the factors are written in any order. We can change the order of factors without changing their product. Now write a determinant product in any order, as shown here. The row indices form a permutation. The column indices also form a permutation."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "a_{i_1j_1}a_{i_2j_2}\\cdots a_{i_nj_n}"
-      },
-      {
-        "type": "text",
-        "text": "To find the sign, count the inversions in the row indices. Then count them in the column indices. Add the two numbers. If the sum is even, use plus. If it is odd, use minus. Here we mean the sign placed before the product in the determinant formula. We do not mean whether the product itself is a positive or negative number."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\boxed{\\text{assigned sign}=(-1)^{\\tau(i_1\\cdots i_n)+\\tau(j_1\\cdots j_n)}}"
+        "latex": "\\det\\operatorname{diag}(d_1,\\ldots,d_n)=d_1\\cdots d_n,\\qquad\\det I_n=1"
       },
       {
         "type": "heading",
@@ -563,106 +386,127 @@
       },
       {
         "type": "text",
-        "text": "Let us prove this rule. Swap factors until the row indices are in natural order. We can do this by Theorem Two. Call the new column indices j prime one, up to j prime n. Now the product is in the row order used in the definition."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "a_{i_1j_1}\\cdots a_{i_nj_n}\\longrightarrow a_{1j'_1}\\cdots a_{nj'_n}"
-      },
-      {
-        "type": "text",
-        "text": "When we swap two factors, we swap two row indices and two column indices at the same time. This gives one transposition in each sequence. By Theorem One, each inversion number changes from even to odd or from odd to even. Both change parity. So their sum stays even or stays odd."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\tau(i_1\\cdots i_n)+\\tau(j_1\\cdots j_n)\\pmod2\\quad\\text{is unchanged}"
-      },
+        "text": "A diagonal array is upper triangular. Apply the result just proved."
+      }
+    ]
+  },
+  {
+    "id": "general-sign",
+    "title": "Sign of a term in any order",
+    "zh": "一般项符号及证明",
+    "time": "36–44 min",
+    "blocks": [
       {
         "type": "text",
-        "text": "At the end, the row indices are in natural order. Their inversion number is zero. So our sign formula now uses only the inversion number of the new column order. This is exactly the sign in the definition. The sum kept the same parity at every step. So the formula gives the correct sign in the original order too. This proves the rule."
+        "text": "Next, we state the sign rule for factors written in any order."
+      },
+      {
+        "type": "statement",
+        "text": "Result. For a product choosing one entry from each row and each column, its coefficient in the determinant is minus one to the sum of the row and column inversion numbers."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{aligned}(-1)^{\\tau(i_1\\cdots i_n)+\\tau(j_1\\cdots j_n)}&=(-1)^{\\tau(12\\cdots n)+\\tau(j'_1\\cdots j'_n)}\\\\&=(-1)^{\\tau(j'_1\\cdots j'_n)}.\\end{aligned}"
+        "latex": "a_{i_1j_1}\\cdots a_{i_nj_n},\\qquad i_1\\cdots i_n,\\ j_1\\cdots j_n\\text{ are permutations}"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\boxed{\\text{coefficient}=(-1)^{\\tau(i_1\\cdots i_n)+\\tau(j_1\\cdots j_n)}}"
       },
       {
         "type": "heading",
-        "text": "A sign check"
-      },
-      {
-        "type": "cue",
-        "text": "保留教材这一例，它直接检验新公式；不新增额外计算练习。"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "a_{21}a_{32}a_{14}a_{43}:\\quad\\tau(2314)=2,\\quad\\tau(1243)=1,\\quad(-1)^{2+1}=-1"
+        "text": "Proof"
       },
       {
         "type": "text",
-        "text": "In this example, the row indices are two, three, one, four. They have two inversions. The column indices are one, two, four, three. They have one inversion. The sum is three, so we use a minus sign. To check, put the factors in row order. The column order becomes four, one, two, three. This has three inversions and gives the same minus sign."
+        "text": "Swap factors until the row indices are in natural order. Theorem Two shows that this is possible. Changing the factor order does not change the product."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "a_{14}a_{21}a_{32}a_{43}:\\qquad\\tau(4123)=3,\\qquad(-1)^3=-1"
+        "latex": "a_{i_1j_1}\\cdots a_{i_nj_n}=a_{1j_1^{\\prime}}\\cdots a_{nj_n^{\\prime}}"
+      },
+      {
+        "type": "text",
+        "text": "Each exchange of two factors gives one transposition of the row indices and one of the column indices. By Theorem One, both inversion numbers change parity. Their sum keeps the same parity."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\tau(i_1\\cdots i_n)+\\tau(j_1\\cdots j_n)\\equiv\\tau(12\\cdots n)+\\tau(j_1^{\\prime}\\cdots j_n^{\\prime})\\pmod2"
+      },
+      {
+        "type": "text",
+        "text": "The final row inversion number is zero. The sign is therefore the sign of the final column permutation, exactly as in the definition."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(-1)^{\\tau(i_1\\cdots i_n)+\\tau(j_1\\cdots j_n)}=(-1)^{\\tau(j_1^{\\prime}\\cdots j_n^{\\prime})}"
+      },
+      {
+        "type": "text",
+        "text": "This proves the rule."
       }
     ]
   },
   {
     "id": "transpose",
-    "title": "A matrix and its transpose have the same determinant",
-    "zh": "新增 按列定义与性质1证明",
-    "time": "43–49 min · §3 / p.39–40",
+    "title": "Column order and transpose",
+    "zh": "按列公式、转置性质及证明",
+    "time": "44–50 min",
     "blocks": [
       {
-        "type": "heading",
-        "text": "Writing the definition in column order"
+        "type": "text",
+        "text": "This sign rule gives the formula in column order."
       },
       {
         "type": "statement",
-        "text": "Result (column-order formula). The determinant can also be written with the factors in increasing column order. In this form, the sign of each term is determined by the parity of its row permutation."
-      },
-      {
-        "type": "text",
-        "text": "We can now use this sign rule to write the determinant in column order. In the sign formula, we add the row inversion number and the column inversion number. We can put the factors in column order instead of row order. Then the column inversion number is zero. Only the row inversion number determines the sign."
+        "text": "Result. In increasing column order, the sign of each term is determined by the row permutation."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "D=\\sum_{i_1\\cdots i_n}(-1)^{\\tau(i_1\\cdots i_n)}a_{i_1 1}a_{i_2 2}\\cdots a_{i_n n}"
-      },
-      {
-        "type": "text",
-        "text": "This formula gives the same determinant. We still choose one entry from each row and each column. We only change how we write the factors. Here, column one comes first, then column two, and so on."
+        "latex": "D=\\sum_{i_1\\cdots i_n}(-1)^{\\tau(i_1\\cdots i_n)}a_{i_1 1}\\cdots a_{i_n n}"
       },
       {
         "type": "heading",
-        "text": "Property 1 and proof"
-      },
-      {
-        "type": "statement",
-        "text": "Definition (transpose). The transpose of a matrix is obtained by turning its rows into columns. The entry in row i, column j becomes the entry in row j, column i."
-      },
-      {
-        "type": "statement",
-        "text": "Property 1. A square matrix and its transpose have the same determinant."
+        "text": "Proof"
       },
       {
         "type": "text",
-        "text": "To transpose a matrix, change its rows into columns. The entry in row i, column j moves to row j, column i. Property One says that this does not change the determinant. Let A be the original matrix. Let B be its transpose."
+        "text": "Write each product in increasing column order. This lists the same products once each. The column inversion number is zero, so the general sign rule gives this formula."
+      },
+      {
+        "type": "text",
+        "text": "We now define the transpose and state Property One."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. Transposing an array exchanges its rows and columns."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "B=A^{\\mathsf T},\\qquad b_{ij}=a_{ji},\\qquad\\boxed{\\det(A^{\\mathsf T})=\\det A}"
+        "latex": "B=A^{\\mathsf T},\\qquad b_{ij}=a_{ji}"
+      },
+      {
+        "type": "statement",
+        "text": "Property 1. Transposing an array does not change its determinant."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\boxed{\\det(A^{\\mathsf T})=\\det A}"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
       },
       {
         "type": "text",
-        "text": "Let us prove this. Write the determinant of B in column order. Since B is the transpose of A, b sub i k equals a sub k i. Replace each entry of B in the sum with the matching entry of A. Now we have exactly the definition of the determinant of A in row order."
+        "text": "Write the determinant of B in column order. Replace each entry of B by the corresponding entry of A. The result is the row-order definition of the determinant of A."
       },
       {
         "type": "math",
@@ -670,196 +514,30 @@
         "latex": "\\begin{aligned}\\det B&=\\sum_{i_1\\cdots i_n}(-1)^{\\tau(i_1\\cdots i_n)}b_{i_1 1}\\cdots b_{i_n n}\\\\&=\\sum_{i_1\\cdots i_n}(-1)^{\\tau(i_1\\cdots i_n)}a_{1i_1}\\cdots a_{ni_n}\\\\&=\\det A.\\end{aligned}"
       },
       {
-        "type": "text",
-        "text": "So A and its transpose have the same determinant. This proves Property One. Here, we change all rows into columns. This is a different operation from swapping two entries in a permutation."
+        "type": "statement",
+        "text": "Definition. An array is lower triangular if all entries above its main diagonal are zero."
       },
       {
-        "type": "heading",
-        "text": "The lower triangular case"
+        "type": "math",
+        "text": "",
+        "latex": "a_{ij}=0\\qquad(i<j)"
       },
       {
         "type": "statement",
-        "text": "Definition (lower triangular matrix). A square matrix is lower triangular if every entry above its main diagonal is zero."
-      },
-      {
-        "type": "statement",
-        "text": "Corollary (lower triangular determinant). The determinant of a lower triangular matrix equals the product of its diagonal entries."
-      },
-      {
-        "type": "text",
-        "text": "In a lower triangular matrix, all entries above the main diagonal are zero. Its transpose is upper triangular. The diagonal entries stay the same. We know the determinant does not change under transpose. We also know the formula for an upper triangular matrix. So the lower triangular determinant is the product of its diagonal entries too."
+        "text": "Corollary. A lower triangular determinant equals the product of its diagonal entries."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{vmatrix}a_{11}&0&\\cdots&0\\\\a_{21}&a_{22}&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}=a_{11}a_{22}\\cdots a_{nn}"
-      },
-      {
-        "type": "text",
-        "text": "We can use transpose to turn a result about rows into a result about columns. We will use this idea again in the next section."
-      }
-    ]
-  },
-  {
-    "id": "summary",
-    "title": "Summary",
-    "zh": "结尾回顾",
-    "time": "49–50 min",
-    "blocks": [
-      {
-        "type": "text",
-        "text": "Let us review. First, we used inversions to define even and odd permutations. We proved that one transposition changes the parity. Next, we used permutations to define the determinant. Each product uses one entry from each row and each column. The permutation tells us which sign to use. For a triangular matrix, the determinant is the product of the diagonal entries. We then found the sign when the factors are in any order. Finally, we proved that a matrix and its transpose have the same determinant. Next time, we will study more properties of determinants. Thank you."
-      }
-    ]
-  },
-  {
-    "id": "reading-guide",
-    "title": "Formula reading guide",
-    "zh": "英文公式读法",
-    "time": "备课参考 · 不额外占用课堂时间",
-    "blocks": [
-      {
-        "type": "text",
-        "text": "下面读法覆盖原有与新增内容。长公式先说明结构，再指向各部分，不必逐项机械朗读。"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "a_{ij},\\ a_{1j_1}"
-      },
-      {
-        "type": "text",
-        "text": "“a sub i j”; “a sub one, j one.” 指向板书，区分行指标1与列指标j₁。"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\tau(j_1\\cdots j_n)"
-      },
-      {
-        "type": "text",
-        "text": "“tau of the permutation j one through j n.”"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "n!,\\quad\\frac{n!}{2}"
-      },
-      {
-        "type": "text",
-        "text": "“n factorial”; “n factorial divided by two.”"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "(-1)^{\\tau(j_1\\cdots j_n)}"
-      },
-      {
-        "type": "text",
-        "text": "“minus one raised to the inversion number of the column permutation.”"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\sum_{j_1\\cdots j_n}"
-      },
-      {
-        "type": "text",
-        "text": "“sum over all permutations j one through j n.”"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "a_{1j_1}\\cdots a_{nj_n}"
-      },
-      {
-        "type": "text",
-        "text": "“the product of a sub one j one through a sub n j n.”"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "(-1)^{\\tau(i_1\\cdots i_n)+\\tau(j_1\\cdots j_n)}"
-      },
-      {
-        "type": "text",
-        "text": "“minus one raised to the sum of the inversion numbers of the row and column permutations.”"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "m\\equiv\\tau\\pmod2"
-      },
-      {
-        "type": "text",
-        "text": "“m is congruent to tau modulo two”; in simple words, “m and the inversion number are both even or both odd.”"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "A^{\\mathsf T},\\quad\\det(A^{\\mathsf T})=\\det A"
-      },
-      {
-        "type": "text",
-        "text": "“A transpose”; “the determinant of A transpose equals the determinant of A.”"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "b_{ij}=a_{ji}"
-      },
-      {
-        "type": "text",
-        "text": "“b sub i j equals a sub j i.”"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "j_{n-1}=n-1"
-      },
-      {
-        "type": "text",
-        "text": "“j sub n minus one equals n minus one.” 第一个n−1整体是下标。"
+        "latex": "\\det A=a_{11}\\cdots a_{nn}"
       },
       {
         "type": "heading",
-        "text": "Terms for the added section"
+        "text": "Proof"
       },
       {
         "type": "text",
-        "text": "upper triangular determinant：上三角行列式；lower triangular determinant：下三角行列式；main diagonal：主对角线；transpose：转置；row index / column index：行指标／列指标；assigned sign：展开项前的正负号；commutativity of multiplication：乘法交换律。"
-      },
-      {
-        "type": "text",
-        "text": "transposition：对换（正式术语）；adjacent transposition：相邻对换；swap two entries：交换两个元素（描述动作）。陈述定理、引用结论和计算次数时使用 transposition；说明具体操作时可用动词 swap。"
-      }
-    ]
-  },
-  {
-    "id": "rehearsal",
-    "title": "Rehearsal notes",
-    "zh": "试讲重点与内容边界",
-    "time": "备课参考",
-    "blocks": [
-      {
-        "type": "text",
-        "text": "新增内容建议先重点理解两份证明：上三角行列式为何只剩对角项；一般项符号为何由两个逆序数之和决定。转置不变性则直接接在后者之后。遇到不熟悉的环节，可回到对话逐点学习。"
-      },
-      {
-        "type": "text",
-        "text": "试讲时检查9、25、36、43分钟四个节点。正文约为半小时以内的口述量，剩余时间留给公式书写和指示；你的实际语速和板书速度决定最终时间。50分钟是目标，不是已经实测的结果。"
-      },
-      {
-        "type": "text",
-        "text": "若超时，先减少例题解释和重复读公式，不压缩核心证明。可简述反对角线例题及一般项的数值检查，将完整板书时间留给定义4、符号不变性和转置证明。若仍超时，下次可将转置性质作为下一讲开头。"
-      },
-      {
-        "type": "heading",
-        "text": "Textbook boundary"
-      },
-      {
-        "type": "text",
-        "text": "本稿至第40页§4之前结束。包含§2的定义1—3、定理1及推论、定理2；§3的定义4、重要例题结论及推导、一般项符号证明、按列表达式、性质1与证明以及下三角推论。§4中的其余性质暂未纳入。"
+        "text": "Its transpose is upper triangular and has the same diagonal entries. Apply Property One and the upper triangular formula. This completes the proof."
       }
     ]
   }
