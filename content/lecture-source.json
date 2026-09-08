@@ -116,7 +116,7 @@
       },
       {
         "type": "text",
-        "text": "Take the numbers from one to n. Put them in an order. Use each number exactly once. This is a permutation of order n. There are n choices for the first place. There are n minus one choices for the second place. We continue in this way. So there are n factorial permutations. The order one, two, up to n is called the natural order."
+        "text": "Let us begin with the definition of a permutation. Take the numbers from one to n. Put them in an order. Use each number exactly once. This is a permutation of order n. There are n choices for the first place. There are n minus one choices for the second place. We continue in this way. So there are n factorial permutations. The order one, two, up to n is called the natural order."
       },
       {
         "type": "math",
@@ -174,7 +174,7 @@
     "blocks": [
       {
         "type": "text",
-        "text": "A transposition means swapping two entries. All other entries stay in place. For example, swap one and two in two, four, three, one. We get one, four, three, two. The two entries do not have to be next to each other."
+        "text": "Next, let us define a transposition. A transposition means swapping two entries. All other entries stay in place. For example, swap one and two in two, four, three, one. We get one, four, three, two. The two entries do not have to be next to each other. If they are next to each other, we call this an adjacent transposition."
       },
       {
         "type": "math",
@@ -183,7 +183,7 @@
       },
       {
         "type": "text",
-        "text": "If we swap the same two entries again, we get the original permutation back. Suppose n is at least two. Fix two positions and swap the entries in them. This puts all permutations into pairs. The two permutations in each pair are different, because all entries are distinct. We will now prove an important fact. One swap changes an even permutation to an odd one, and an odd permutation to an even one."
+        "text": "If we swap the same two entries again, we get the original permutation back. Suppose n is at least two. Fix two positions and swap the entries in them. This puts all permutations into pairs. The two permutations in each pair are different, because all entries are distinct. We can now ask how a transposition changes the parity."
       },
       {
         "type": "cue",
@@ -193,10 +193,14 @@
   },
   {
     "id": "theorem-one",
-    "title": "A swap changes parity",
+    "title": "A transposition changes parity",
     "zh": "定理1及完整证明",
     "time": "09–16 min · §2 / p.35–36",
     "blocks": [
+      {
+        "type": "text",
+        "text": "We now come to Theorem One. A transposition changes the parity of a permutation. An even permutation becomes odd, and an odd permutation becomes even. Let us prove this in two cases."
+      },
       {
         "type": "math",
         "text": "",
@@ -208,7 +212,7 @@
       },
       {
         "type": "text",
-        "text": "First, suppose j and k are next to each other. Every other entry is either before both of them or after both of them. After the swap, this is still true. So its inversion pairs with j and k do not change. Pairs that contain neither j nor k do not change either."
+        "text": "First, suppose j and k are next to each other. Every other entry is either before both of them or after both of them. After the transposition, this is still true. So its inversion pairs with j and k do not change. Pairs that contain neither j nor k do not change either."
       },
       {
         "type": "math",
@@ -230,7 +234,7 @@
       },
       {
         "type": "text",
-        "text": "Now suppose there are s entries between j and k. We can swap j and k by a series of adjacent swaps, as shown here. This takes two s plus one swaps in total."
+        "text": "Now suppose there are s entries between j and k. We can swap j and k by a series of adjacent transpositions, as shown here. This takes two s plus one transpositions in total."
       },
       {
         "type": "math",
@@ -239,7 +243,7 @@
       },
       {
         "type": "text",
-        "text": "After these swaps, only j and k have changed places. All other entries are back in their original positions."
+        "text": "After these transpositions, only j and k have changed places. All other entries are back in their original positions."
       },
       {
         "type": "math",
@@ -253,7 +257,7 @@
       },
       {
         "type": "text",
-        "text": "As we proved above, each adjacent swap changes the parity. Two s plus one is odd. So after these swaps, the parity changes. This completes the proof."
+        "text": "As we proved above, each adjacent transposition changes the parity. Two s plus one is odd. So after these transpositions, the parity changes. This completes the proof."
       },
       {
         "type": "cue",
@@ -268,13 +272,17 @@
     "time": "16–19 min · §2 / p.36",
     "blocks": [
       {
+        "type": "text",
+        "text": "Next, let us introduce a corollary of Theorem One. Suppose n is at least two. Then the number of odd permutations equals the number of even permutations. Each number is n factorial divided by two."
+      },
+      {
         "type": "math",
         "text": "",
         "latex": "n\\ge2:\\qquad\\#\\text{odd permutations}=\\#\\text{even permutations}=\\frac{n!}{2}"
       },
       {
         "type": "text",
-        "text": "Suppose n is at least two. There are as many odd permutations as even permutations. Let us prove this. Let s be the number of odd permutations. Let t be the number of even permutations. Take each odd permutation and swap its first two entries. By Theorem One, the new permutation is even."
+        "text": "Now let us prove this corollary. Let s be the number of odd permutations. Let t be the number of even permutations. Take each odd permutation and swap its first two entries. This is a transposition. By Theorem One, the new permutation is even."
       },
       {
         "type": "text",
@@ -304,7 +312,7 @@
     "blocks": [
       {
         "type": "text",
-        "text": "Theorem Two says that we can put any permutation into natural order by swapping entries. We can also go back from natural order to that permutation. The number of swaps is even for an even permutation. It is odd for an odd permutation. First, we prove that we can put the entries in order. Then we prove the statement about the number of swaps."
+        "text": "Next, we come to Theorem Two. It says that we can put any permutation into natural order by a series of transpositions. We can also go back from natural order to that permutation. The number of transpositions is even for an even permutation. It is odd for an odd permutation. First, we prove that we can put the entries in order. Then we prove the statement about the number of transpositions."
       },
       {
         "type": "math",
@@ -317,7 +325,7 @@
       },
       {
         "type": "text",
-        "text": "We use induction on n. When n is one, the permutation is already in natural order. We need no swaps. Now assume we can sort every permutation of order n minus one. Let us consider a permutation of order n."
+        "text": "We use induction on n. When n is one, the permutation is already in natural order. We need no transpositions. Now assume we can sort every permutation of order n minus one. Let us consider a permutation of order n."
       },
       {
         "type": "text",
@@ -330,7 +338,7 @@
       },
       {
         "type": "text",
-        "text": "If the last entry is not n, swap it with n. Now n is in the last place. We can use the previous case to sort the other entries. This completes the induction. To go back, do the same swaps in reverse order. This takes us from natural order to the original permutation."
+        "text": "If the last entry is not n, swap it with n. Now n is in the last place. We can use the previous case to sort the other entries. This completes the induction. To go back, do the same transpositions in reverse order. This takes us from natural order to the original permutation."
       },
       {
         "type": "math",
@@ -339,11 +347,11 @@
       },
       {
         "type": "heading",
-        "text": "Is the number of swaps even or odd?"
+        "text": "Is the number of transpositions even or odd?"
       },
       {
         "type": "text",
-        "text": "The natural order is even. Start from it and make m swaps. Each swap changes the parity. If m is even, the final permutation is even. If m is odd, the final permutation is odd. So m and the final inversion number are both even or both odd. Going back uses the same number of swaps. This proves the statement in both directions."
+        "text": "The natural order is even. Start from it and make m transpositions. Each transposition changes the parity. If m is even, the final permutation is even. If m is odd, the final permutation is odd. So m and the final inversion number are both even or both odd. Going back uses the same number of transpositions. This proves the statement in both directions."
       },
       {
         "type": "math",
@@ -352,7 +360,7 @@
       },
       {
         "type": "text",
-        "text": "We may sort the same permutation in different ways. The number of swaps may change. But these numbers are always all even or all odd. We will use this fact to choose the signs in a determinant."
+        "text": "We may sort the same permutation in different ways. The number of transpositions may change. But these numbers are always all even or all odd. We will use this fact to choose the signs in a determinant."
       }
     ]
   },
@@ -368,7 +376,7 @@
       },
       {
         "type": "text",
-        "text": "From now on, all entries are in a fixed field P, a subfield of the complex numbers. We have n rows and n columns. To make one product, choose one entry from each row and each column. Multiply the chosen entries. We then give each product a plus or minus sign and add all the terms. This gives the determinant."
+        "text": "We now have the facts about permutations that we need. Let us use them to define the determinant of order n. From now on, all entries are in a fixed field P, a subfield of the complex numbers. We have n rows and n columns. To make one product, choose one entry from each row and each column. Multiply the chosen entries. We then give each product a plus or minus sign and add all the terms. This gives the determinant."
       },
       {
         "type": "math",
@@ -434,7 +442,7 @@
       },
       {
         "type": "text",
-        "text": "In this example, every row has only one nonzero entry. Only one product can be nonzero. Its column order is four, three, two, one. This has six inversions, so we use a plus sign. The product is one times two times three times four. The determinant is twenty-four."
+        "text": "Let us use this definition in a few examples. In this example, every row has only one nonzero entry. Only one product can be nonzero. Its column order is four, three, two, one. This has six inversions, so we use a plus sign. The product is one times two times three times four. The determinant is twenty-four."
       },
       {
         "type": "heading",
@@ -481,7 +489,7 @@
     "blocks": [
       {
         "type": "text",
-        "text": "We can change the order of factors without changing their product. Now write a determinant product in any order, as shown here. The row indices form a permutation. The column indices also form a permutation."
+        "text": "Next, let us find the sign when the factors are written in any order. We can change the order of factors without changing their product. Now write a determinant product in any order, as shown here. The row indices form a permutation. The column indices also form a permutation."
       },
       {
         "type": "math",
@@ -512,7 +520,7 @@
       },
       {
         "type": "text",
-        "text": "When we swap two factors, we swap two row indices and two column indices at the same time. By Theorem One, each inversion number changes from even to odd or from odd to even. Both change parity. So their sum stays even or stays odd."
+        "text": "When we swap two factors, we swap two row indices and two column indices at the same time. This gives one transposition in each sequence. By Theorem One, each inversion number changes from even to odd or from odd to even. Both change parity. So their sum stays even or stays odd."
       },
       {
         "type": "math",
@@ -564,7 +572,7 @@
       },
       {
         "type": "text",
-        "text": "In the sign formula, we add the row inversion number and the column inversion number. We can put the factors in column order instead of row order. Then the column inversion number is zero. Only the row inversion number determines the sign."
+        "text": "We can now use this sign rule to write the determinant in column order. In the sign formula, we add the row inversion number and the column inversion number. We can put the factors in column order instead of row order. Then the column inversion number is zero. Only the row inversion number determines the sign."
       },
       {
         "type": "math",
@@ -628,7 +636,7 @@
     "blocks": [
       {
         "type": "text",
-        "text": "Let us review. First, we used inversions to define even and odd permutations. We proved that one swap changes the parity. Next, we used permutations to define the determinant. Each product uses one entry from each row and each column. The permutation tells us which sign to use. For a triangular matrix, the determinant is the product of the diagonal entries. We then found the sign when the factors are in any order. Finally, we proved that a matrix and its transpose have the same determinant. Next time, we will study more properties of determinants. Thank you."
+        "text": "Let us review. First, we used inversions to define even and odd permutations. We proved that one transposition changes the parity. Next, we used permutations to define the determinant. Each product uses one entry from each row and each column. The permutation tells us which sign to use. For a triangular matrix, the determinant is the product of the diagonal entries. We then found the sign when the factors are in any order. Finally, we proved that a matrix and its transpose have the same determinant. Next time, we will study more properties of determinants. Thank you."
       }
     ]
   },
@@ -748,6 +756,10 @@
       {
         "type": "text",
         "text": "upper triangular determinant：上三角行列式；lower triangular determinant：下三角行列式；main diagonal：主对角线；transpose：转置；row index / column index：行指标／列指标；assigned sign：展开项前的正负号；commutativity of multiplication：乘法交换律。"
+      },
+      {
+        "type": "text",
+        "text": "transposition：对换（正式术语）；adjacent transposition：相邻对换；swap two entries：交换两个元素（描述动作）。陈述定理、引用结论和计算次数时使用 transposition；说明具体操作时可用动词 swap。"
       }
     ]
   },
