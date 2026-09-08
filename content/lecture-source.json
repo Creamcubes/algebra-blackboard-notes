@@ -252,6 +252,10 @@
         "latex": "\\pi=j_1\\cdots j_n\\xrightarrow{m\\text{ transpositions}}12\\cdots n,\\qquad m\\equiv\\tau(\\pi)\\pmod2"
       },
       {
+        "type": "text",
+        "text": "m is congruent to tau of pi modulo two."
+      },
+      {
         "type": "heading",
         "text": "Proof: existence"
       },
