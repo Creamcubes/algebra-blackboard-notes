@@ -11,7 +11,7 @@
       },
       {
         "type": "text",
-        "text": "英文正文使用短句和常用词，可直接口述；必要数学术语保留，并在首次出现时解释。公式用于板书，中文提示不读出。时间包括书写与停顿，是试讲前的目标，需按实际语速校准。"
+        "text": "每个定义、定理、推论或重要结论先给出加粗英文陈述，可直接用于板书；其后是简单英文说明与完整证明。加粗陈述同时保留在纯板书模式中。中文提示不读出。时间包括书写与停顿，新增陈述的书写时间需通过试讲校准。"
       },
       {
         "type": "heading",
@@ -90,6 +90,10 @@
         "text": "Good morning. Today we will study determinants. We will focus on definitions, theorems, and proofs. First, we will study permutations. Then we will define the determinant of order n. Finally, we will prove that a matrix and its transpose have the same determinant."
       },
       {
+        "type": "statement",
+        "text": "Definition (determinant of order two). The determinant of a two-by-two matrix is the product of its main-diagonal entries minus the product of its other two entries."
+      },
+      {
         "type": "math",
         "text": "",
         "latex": "d=\\begin{vmatrix}a_{11}&a_{12}\\\\a_{21}&a_{22}\\end{vmatrix}=a_{11}a_{22}-a_{12}a_{21}"
@@ -111,8 +115,8 @@
     "time": "02–07 min · §2 / p.35",
     "blocks": [
       {
-        "type": "heading",
-        "text": "Definitions 1 to 3"
+        "type": "statement",
+        "text": "Definition 1 (permutation). A permutation of order n is an arrangement of the numbers 1 to n in which each number appears exactly once. The arrangement 1, 2, ..., n is called the natural order."
       },
       {
         "type": "text",
@@ -127,6 +131,10 @@
         "type": "math",
         "text": "",
         "latex": "\\#\\text{permutations}=n(n-1)\\cdots1=n!,\\qquad 12\\cdots n:\\ \\text{natural order}"
+      },
+      {
+        "type": "statement",
+        "text": "Definition 2 (inversion and inversion number). An inversion is a pair of entries in which the larger entry comes before the smaller one. The inversion number is the total number of such pairs."
       },
       {
         "type": "text",
@@ -156,6 +164,10 @@
         "latex": "2431:\\quad(2,1),(4,3),(4,1),(3,1),\\qquad\\tau(2431)=4"
       },
       {
+        "type": "statement",
+        "text": "Definition 3 (even and odd permutations). A permutation is even if its inversion number is even, and odd if its inversion number is odd."
+      },
+      {
         "type": "text",
         "text": "If the inversion number is even, we call the permutation even. If the inversion number is odd, we call the permutation odd. The word parity means being even or odd. Our example has four inversions, so it is even. The natural order has no inversions. Zero is even, so the natural order is even too. We can use the same definitions for any n distinct natural numbers. We only need to compare which number is larger."
       },
@@ -172,6 +184,10 @@
     "zh": "对换的定义",
     "time": "07–09 min · §2 / p.35",
     "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition (transposition). A transposition exchanges two entries of a permutation and leaves all other entries fixed. It is adjacent if the two entries are next to each other."
+      },
       {
         "type": "text",
         "text": "Next, let us define a transposition. A transposition means swapping two entries. All other entries stay in place. For example, swap one and two in two, four, three, one. We get one, four, three, two. The two entries do not have to be next to each other. If they are next to each other, we call this an adjacent transposition."
@@ -197,6 +213,10 @@
     "zh": "定理1及完整证明",
     "time": "09–16 min · §2 / p.35–36",
     "blocks": [
+      {
+        "type": "statement",
+        "text": "Theorem 1. A transposition changes the parity of a permutation: an even permutation becomes odd, and an odd permutation becomes even."
+      },
       {
         "type": "text",
         "text": "We now come to Theorem One. A transposition changes the parity of a permutation. An even permutation becomes odd, and an odd permutation becomes even. Let us prove this in two cases."
@@ -272,6 +292,10 @@
     "time": "16–19 min · §2 / p.36",
     "blocks": [
       {
+        "type": "statement",
+        "text": "Corollary. For n at least 2, the numbers of even and odd permutations of order n are equal. Each is n factorial divided by 2."
+      },
+      {
         "type": "text",
         "text": "Next, let us introduce a corollary of Theorem One. Suppose n is at least two. Then the number of odd permutations equals the number of even permutations. Each number is n factorial divided by two."
       },
@@ -310,6 +334,10 @@
     "zh": "定理2及完整证明",
     "time": "19–25 min · §2 / p.36",
     "blocks": [
+      {
+        "type": "statement",
+        "text": "Theorem 2. Every permutation can be changed into natural order by a finite sequence of transpositions, and conversely. Every such sequence has an even number of transpositions for an even permutation and an odd number for an odd permutation."
+      },
       {
         "type": "text",
         "text": "Next, we come to Theorem Two. It says that we can put any permutation into natural order by a series of transpositions. We can also go back from natural order to that permutation. The number of transpositions is even for an even permutation. It is odd for an odd permutation. First, we prove that we can put the entries in order. Then we prove the statement about the number of transpositions."
@@ -373,6 +401,10 @@
       {
         "type": "cue",
         "text": "新增内容。从这里起所有元素属于固定数域P。先写一般方阵，再写求和定义，口述说明下标。"
+      },
+      {
+        "type": "statement",
+        "text": "Definition 4 (determinant of order n). Choose exactly one entry from each row and each column, and write their product in increasing row order. Give it a plus sign if the column permutation is even and a minus sign if it is odd. The determinant is the sum of these signed products over all column permutations."
       },
       {
         "type": "text",
@@ -454,6 +486,14 @@
         "latex": "\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\0&a_{22}&\\cdots&a_{2n}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&a_{nn}\\end{vmatrix}=a_{11}a_{22}\\cdots a_{nn}"
       },
       {
+        "type": "statement",
+        "text": "Definition (upper triangular matrix). A square matrix is upper triangular if every entry below its main diagonal is zero."
+      },
+      {
+        "type": "statement",
+        "text": "Result (upper triangular determinant). The determinant of an upper triangular matrix equals the product of its diagonal entries."
+      },
+      {
         "type": "text",
         "text": "For an upper triangular matrix, all entries below the main diagonal are zero. Let us use the definition to find its determinant. Consider a product that is not zero. In the last row, we must choose a sub n n. Every other entry in that row is zero. So j sub n equals n."
       },
@@ -469,6 +509,14 @@
       {
         "type": "text",
         "text": "So all other terms are zero. Only the diagonal product can remain. Its column order is one, two, up to n. This is even, so its sign is plus. This proves the formula. If a diagonal entry is zero, the diagonal product is zero too. The formula still holds."
+      },
+      {
+        "type": "statement",
+        "text": "Definition (main diagonal and diagonal matrix). The main diagonal consists of the entries whose row and column indices are equal. A diagonal matrix is a square matrix whose entries outside this diagonal are all zero."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary (diagonal determinant). The determinant of a diagonal matrix equals the product of its diagonal entries. In particular, the identity matrix has determinant 1."
       },
       {
         "type": "text",
@@ -487,6 +535,10 @@
     "zh": "新增 一般项符号及完整证明",
     "time": "36–43 min · §3 / p.39",
     "blocks": [
+      {
+        "type": "statement",
+        "text": "Result (sign of a determinant term). Write a product that contains exactly one entry from each row and each column in any order. Its coefficient in the determinant formula is plus 1 if the sum of the row and column inversion numbers is even, and minus 1 if that sum is odd."
+      },
       {
         "type": "text",
         "text": "Next, let us find the sign when the factors are written in any order. We can change the order of factors without changing their product. Now write a determinant product in any order, as shown here. The row indices form a permutation. The column indices also form a permutation."
@@ -571,6 +623,10 @@
         "text": "Writing the definition in column order"
       },
       {
+        "type": "statement",
+        "text": "Result (column-order formula). The determinant can also be written with the factors in increasing column order. In this form, the sign of each term is determined by the parity of its row permutation."
+      },
+      {
         "type": "text",
         "text": "We can now use this sign rule to write the determinant in column order. In the sign formula, we add the row inversion number and the column inversion number. We can put the factors in column order instead of row order. Then the column inversion number is zero. Only the row inversion number determines the sign."
       },
@@ -586,6 +642,14 @@
       {
         "type": "heading",
         "text": "Property 1 and proof"
+      },
+      {
+        "type": "statement",
+        "text": "Definition (transpose). The transpose of a matrix is obtained by turning its rows into columns. The entry in row i, column j becomes the entry in row j, column i."
+      },
+      {
+        "type": "statement",
+        "text": "Property 1. A square matrix and its transpose have the same determinant."
       },
       {
         "type": "text",
@@ -612,6 +676,14 @@
       {
         "type": "heading",
         "text": "The lower triangular case"
+      },
+      {
+        "type": "statement",
+        "text": "Definition (lower triangular matrix). A square matrix is lower triangular if every entry above its main diagonal is zero."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary (lower triangular determinant). The determinant of a lower triangular matrix equals the product of its diagonal entries."
       },
       {
         "type": "text",
