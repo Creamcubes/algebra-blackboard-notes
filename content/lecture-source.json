@@ -7,15 +7,15 @@
     "blocks": [
       {
         "type": "text",
-        "text": "正文只保留定义、定理、推论及证明。先说引入句，再写加粗陈述及其下方公式，随后讲证明。定义本身不作证明；不重复解释已经写出的定义。"
+        "text": "正文范围：第二章§1–§3，以及§4性质2–6和相关证明，至教材第43页性质7之前。保持“陈述 → 数学记号 → 证明”；不加入数值例题或重复解释。"
       },
       {
         "type": "text",
-        "text": "建议时间：二阶定义1分钟；排列与奇偶性5分钟；对换定义2分钟；定理1证明8分钟；推论4分钟；定理2证明7分钟；n阶定义4分钟；三角结论5分钟；一般项符号8分钟；按列公式及转置6分钟。合计50分钟，含板书。"
+        "text": "前半部分目标35分钟；新增性质2–6目标15分钟。所有时间均包含口述和板书，合计50分钟。每节标题下给出目标时间。实际时长仍需试讲校准。"
       },
       {
         "type": "text",
-        "text": "这是板书讲授的目标时间，并非已实测时长。口述大幅缩短，时间主要用于写陈述、记号和推导。若实际试讲不足50分钟，应根据实测差额增加下一部分教材内容，不靠重复解释延长时间。"
+        "text": "新增部分沿用教材证明顺序。性质2、3先把行列式中的项按固定一行分组；性质4通过项的配对相消证明；性质5、6依次由前面的性质推出。"
       }
     ]
   },
@@ -44,7 +44,7 @@
     "id": "definitions",
     "title": "Permutations and parity",
     "zh": "定义1—3",
-    "time": "01–06 min",
+    "time": "01–05 min",
     "blocks": [
       {
         "type": "text",
@@ -92,7 +92,7 @@
     "id": "transpositions",
     "title": "Transpositions",
     "zh": "对换定义",
-    "time": "06–08 min",
+    "time": "05–06 min",
     "blocks": [
       {
         "type": "text",
@@ -118,7 +118,7 @@
     "id": "theorem-one",
     "title": "A transposition changes parity",
     "zh": "定理1及证明",
-    "time": "08–16 min",
+    "time": "06–11 min",
     "blocks": [
       {
         "type": "text",
@@ -174,7 +174,7 @@
     "id": "corollary",
     "title": "Equal numbers of even and odd permutations",
     "zh": "推论及证明",
-    "time": "16–20 min",
+    "time": "11–14 min",
     "blocks": [
       {
         "type": "text",
@@ -187,12 +187,12 @@
       {
         "type": "math",
         "text": "",
-        "latex": "E_n=\\{\\text{even permutations}\\},\\qquad O_n=\\{\\text{odd permutations}\\}"
+        "latex": "s=\\#\\{\\text{odd permutations}\\},\\qquad t=\\#\\{\\text{even permutations}\\}"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "|E_n|=|O_n|=\\frac{n!}{2}\\qquad(n\\ge2)"
+        "latex": "s=t=\\frac{n!}{2}\\qquad(n\\ge2)"
       },
       {
         "type": "heading",
@@ -200,30 +200,35 @@
       },
       {
         "type": "text",
-        "text": "Let f exchange the first two entries. By Theorem One, f takes every even permutation to an odd permutation. Applying f twice gives the original permutation."
+        "text": "Let s be the number of odd permutations and t the number of even permutations. Swap the first two entries in each odd permutation. By Theorem One, each result is even. The results are distinct, since swapping again recovers the original permutation. Therefore, there are at least s even permutations."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "f:E_n\\longrightarrow O_n,\\qquad f(f(\\pi))=\\pi"
+        "latex": "t\\ge s"
       },
       {
         "type": "text",
-        "text": "Different even permutations give different results, since we can recover each input by applying f again. Every odd permutation is reached: applying f to it gives an even permutation, which f takes back to it. Thus f is a bijection."
+        "text": "Now start with the even permutations and do the same thing. We obtain t distinct odd permutations. Therefore, there are at least t odd permutations."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "|E_n|=|O_n|"
+        "latex": "s\\ge t"
       },
       {
         "type": "text",
-        "text": "There are n choices for the first entry, n minus one for the second, and so on. The total number of permutations is n factorial. Therefore each set has half this number."
+        "text": "The two inequalities give s equals t. There are n factorial permutations in total, so each number is n factorial divided by two."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "|E_n|+|O_n|=n(n-1)\\cdots1=n!\\quad\\Longrightarrow\\quad|E_n|=|O_n|=\\frac{n!}{2}"
+        "latex": "s\\le t,\\quad t\\le s\\quad\\Longrightarrow\\quad s=t"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "s+t=n!\\quad\\Longrightarrow\\quad s=t=\\frac{n!}{2}"
       }
     ]
   },
@@ -231,7 +236,7 @@
     "id": "theorem-two",
     "title": "Sorting by transpositions",
     "zh": "定理2及证明",
-    "time": "20–27 min",
+    "time": "14–19 min",
     "blocks": [
       {
         "type": "text",
@@ -295,7 +300,7 @@
     "id": "determinant",
     "title": "Determinant of order n",
     "zh": "定义4",
-    "time": "27–31 min",
+    "time": "19–22 min",
     "blocks": [
       {
         "type": "text",
@@ -330,7 +335,7 @@
     "id": "triangular",
     "title": "Triangular determinants",
     "zh": "三角行列式结论及证明",
-    "time": "31–36 min",
+    "time": "22–25 min",
     "blocks": [
       {
         "type": "text",
@@ -394,7 +399,7 @@
     "id": "general-sign",
     "title": "Sign of a term in any order",
     "zh": "一般项符号及证明",
-    "time": "36–44 min",
+    "time": "25–30 min",
     "blocks": [
       {
         "type": "text",
@@ -455,7 +460,7 @@
     "id": "transpose",
     "title": "Column order and transpose",
     "zh": "按列公式、转置性质及证明",
-    "time": "44–50 min",
+    "time": "30–35 min",
     "blocks": [
       {
         "type": "text",
@@ -538,6 +543,252 @@
       {
         "type": "text",
         "text": "Its transpose is upper triangular and has the same diagonal entries. Apply Property One and the upper triangular formula. This completes the proof."
+      }
+    ]
+  },
+  {
+    "id": "property-two",
+    "title": "Scaling one row",
+    "zh": "新增 性质2及零行推论",
+    "time": "35–38 min · §4 / p.40–41",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now continue with the determinant properties. Let R i denote row i. Write D of R one through R n for the determinant with these rows. All rows not mentioned stay fixed. The same properties hold for columns, by transposing."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R_i=(a_{i1},\\ldots,a_{in}),\\qquad D(R_1,\\ldots,R_n)=\\det A"
+      },
+      {
+        "type": "statement",
+        "text": "Property 2. Multiplying one row by a scalar multiplies the determinant by that scalar."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D(R_1,\\ldots,cR_i,\\ldots,R_n)=cD(R_1,\\ldots,R_i,\\ldots,R_n)"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Fix row i. Every product in the determinant contains exactly one entry from this row. Group the terms according to that entry and factor it out. This gives the following expression."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=\\sum_{j=1}^{n}a_{ij}C_j"
+      },
+      {
+        "type": "text",
+        "text": "Here C j is the sum of the remaining signed products in that group. It contains no entry from row i. So changing row i leaves all these coefficients fixed."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}D(R_1,\\ldots,cR_i,\\ldots,R_n)&=\\sum_{j=1}^{n}(ca_{ij})C_j\\\\&=c\\sum_{j=1}^{n}a_{ij}C_j=cD.\\end{aligned}"
+      },
+      {
+        "type": "statement",
+        "text": "Corollary. If a row is zero, the determinant is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R_i=0\\quad\\Longrightarrow\\quad D=0"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Set c equal to zero in Property Two."
+      }
+    ]
+  },
+  {
+    "id": "property-three",
+    "title": "Splitting one row",
+    "zh": "新增 性质3及证明",
+    "time": "38–41 min · §4 / p.41",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, we state Property Three."
+      },
+      {
+        "type": "statement",
+        "text": "Property 3. If one row is a sum of two rows, the determinant is the sum of the two corresponding determinants. All other rows are unchanged."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "B=(b_1,\\ldots,b_n),\\qquad C=(c_1,\\ldots,c_n)"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}D(\\ldots,B+C,\\ldots)&=D(\\ldots,B,\\ldots)\\\\&\\quad+D(\\ldots,C,\\ldots).\\end{aligned}"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Use the same grouping by row i. The coefficients C j do not depend on that row. Distribute each coefficient over the sum."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}D(\\ldots,B+C,\\ldots)&=\\sum_{j=1}^{n}(b_j+c_j)C_j\\\\&=\\sum_{j=1}^{n}b_jC_j+\\sum_{j=1}^{n}c_jC_j\\\\&=D(\\ldots,B,\\ldots)+D(\\ldots,C,\\ldots).\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "This proves the property. Repeating it gives the same rule for a sum of more than two rows."
+      }
+    ]
+  },
+  {
+    "id": "property-four",
+    "title": "Two equal rows",
+    "zh": "新增 性质4及证明",
+    "time": "41–45 min · §4 / p.41–42",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Property Four concerns equal rows."
+      },
+      {
+        "type": "statement",
+        "text": "Property 4. If two rows are equal, the determinant is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R_i=R_k,\\quad i\\ne k\\quad\\Longrightarrow\\quad D=0"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Pair each column permutation with the one obtained by exchanging its entries in positions i and k."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\pi=j_1\\cdots j_i\\cdots j_k\\cdots j_n,\\qquad\\pi^{\\prime}=j_1\\cdots j_k\\cdots j_i\\cdots j_n"
+      },
+      {
+        "type": "text",
+        "text": "The corresponding products differ only in the factors from rows i and k. These rows are equal, so the products are equal."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_{ij}=a_{kj}\\quad(1\\le j\\le n)"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_{i j_i}a_{k j_k}=a_{i j_k}a_{k j_i}"
+      },
+      {
+        "type": "text",
+        "text": "The two column permutations differ by one transposition. Their signs are opposite."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(-1)^{\\tau(\\pi^{\\prime})}=-(-1)^{\\tau(\\pi)}"
+      },
+      {
+        "type": "text",
+        "text": "No permutation is paired with itself, since its entries are distinct. Applying the exchange twice returns the original permutation. Thus every term belongs to one pair of equal products with opposite signs. All pairs cancel, so the determinant is zero."
+      }
+    ]
+  },
+  {
+    "id": "property-five",
+    "title": "Two proportional rows",
+    "zh": "新增 性质5及证明",
+    "time": "45–47 min · §4 / p.42",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now obtain Property Five."
+      },
+      {
+        "type": "statement",
+        "text": "Property 5. If two rows are proportional, the determinant is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R_k=cR_i,\\quad i\\ne k\\quad\\Longrightarrow\\quad D=0"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Factor c out of row k by Property Two. The remaining determinant has two equal rows, so it is zero by Property Four."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}D(\\ldots,R_i,\\ldots,cR_i,\\ldots)&=cD(\\ldots,R_i,\\ldots,R_i,\\ldots)\\\\&=c\\cdot0=0.\\end{aligned}"
+      }
+    ]
+  },
+  {
+    "id": "property-six",
+    "title": "Adding a multiple of another row",
+    "zh": "新增 性质6及证明",
+    "time": "47–50 min · §4 / p.42–43",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Finally, we state Property Six."
+      },
+      {
+        "type": "statement",
+        "text": "Property 6. Adding a multiple of one row to another row does not change the determinant."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R_i\\longmapsto R_i+cR_k,\\qquad i\\ne k"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D(\\ldots,R_i+cR_k,\\ldots,R_k,\\ldots)=D(\\ldots,R_i,\\ldots,R_k,\\ldots)"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Split the changed row by Property Three. The first determinant is the original one. The second has two proportional rows, so it is zero by Property Five."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}&D(\\ldots,R_i+cR_k,\\ldots,R_k,\\ldots)\\\\&\\quad=D(\\ldots,R_i,\\ldots,R_k,\\ldots)\\\\&\\qquad+D(\\ldots,cR_k,\\ldots,R_k,\\ldots)\\\\&\\quad=D(\\ldots,R_i,\\ldots,R_k,\\ldots).\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "This completes the proof."
       }
     ]
   }
