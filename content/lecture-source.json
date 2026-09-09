@@ -7,11 +7,11 @@
     "blocks": [
       {
         "type": "text",
-        "text": "正文范围：第二章§1–§3，以及§4性质2–7和相关证明，至教材第44页性质7证明结束。保持“陈述 → 数学记号 → 证明”，包含简短板书口述；不加入数值例题。"
+        "text": "正文范围：第二章§1–§3，以及§4性质2–7和紧随其后的例1、例2，至教材第45页§5之前。保持原书顺序、完整板书及简短口述。"
       },
       {
         "type": "text",
-        "text": "原定50分钟安排保留；性质7另补充约4–5分钟（含完整板书），作为试讲后可选的延伸。全部讲完可能需要约54–55分钟，实际用时仍需试讲校准。"
+        "text": "目标仍为50分钟。用户试讲反馈现有内容不足，因此新增例1约5–6分钟、例2约3–4分钟（均含板书）。此前各节时间仅为备课估计，不代表实测；用实际试讲总时长调整选讲范围。"
       },
       {
         "type": "text",
@@ -1120,6 +1120,186 @@
       {
         "type": "text",
         "text": "The rows are now exchanged. So the original determinant is minus the exchanged determinant. This proves Property Seven. By transposing, the same result holds for two columns."
+      }
+    ]
+  },
+  {
+    "id": "example-constant-entries",
+    "title": "Example 1: Two types of entries",
+    "zh": "例1 对角元为a、其余为b",
+    "time": "补充约5–6 min · §4 / p.44",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now apply these properties to two examples. Let us begin with Example One."
+      },
+      {
+        "type": "statement",
+        "text": "Example 1. Calculate the determinant of order n whose diagonal entries are a and whose other entries are b."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "d=\\begin{vmatrix}a&b&b&\\cdots&b\\\\b&a&b&\\cdots&b\\\\b&b&a&\\cdots&b\\\\\\vdots&\\vdots&\\vdots&\\ddots&\\vdots\\\\b&b&b&\\cdots&a\\end{vmatrix}"
+      },
+      {
+        "type": "cue",
+        "text": "板书：写出完整行列式。省略号表示同样的规律延续，不必逐个读 dot。"
+      },
+      {
+        "type": "text",
+        "text": "We denote this determinant by lowercase d. Each row contains one a and n minus one entries equal to b."
+      },
+      {
+        "type": "heading",
+        "text": "Solution"
+      },
+      {
+        "type": "text",
+        "text": "First, add columns two through n to column one, one at a time. By Property Six for columns, the determinant does not change. Every entry in the first column becomes a plus n minus one times b."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "d=\\begin{vmatrix}a+(n-1)b&b&b&\\cdots&b\\\\a+(n-1)b&a&b&\\cdots&b\\\\a+(n-1)b&b&a&\\cdots&b\\\\\\vdots&\\vdots&\\vdots&\\ddots&\\vdots\\\\a+(n-1)b&b&b&\\cdots&a\\end{vmatrix}"
+      },
+      {
+        "type": "cue",
+        "text": "columns two through n：第二列到第n列。a+(n−1)b 读 a plus the quantity n minus one times b。只改变第一列。"
+      },
+      {
+        "type": "text",
+        "text": "Next, factor a plus n minus one times b out of the first column, by Property Two."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "d=[a+(n-1)b]\\begin{vmatrix}1&b&b&\\cdots&b\\\\1&a&b&\\cdots&b\\\\1&b&a&\\cdots&b\\\\\\vdots&\\vdots&\\vdots&\\ddots&\\vdots\\\\1&b&b&\\cdots&a\\end{vmatrix}"
+      },
+      {
+        "type": "cue",
+        "text": "提出公因子，不是除以公因子；即使 a+(n−1)b=0，这个等式也成立。"
+      },
+      {
+        "type": "text",
+        "text": "Now subtract the first row from each of rows two through n. The remaining determinant becomes upper triangular."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "d=[a+(n-1)b]\\begin{vmatrix}1&b&b&\\cdots&b\\\\0&a-b&0&\\cdots&0\\\\0&0&a-b&\\cdots&0\\\\\\vdots&\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&0&\\cdots&a-b\\end{vmatrix}"
+      },
+      {
+        "type": "cue",
+        "text": "subtract the first row from …：从……减去第一行。竖线内仍是行列式；外面的方括号只把公因子括在一起。"
+      },
+      {
+        "type": "text",
+        "text": "Its diagonal entries are one, followed by n minus one copies of a minus b. Multiply these diagonal entries to get the result."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\boxed{d=[a+(n-1)b](a-b)^{n-1}}"
+      },
+      {
+        "type": "cue",
+        "text": "结果读法：d equals the quantity a plus n minus one times b, multiplied by the quantity a minus b raised to the power n minus one。"
+      },
+      {
+        "type": "text",
+        "text": "This completes the calculation."
+      }
+    ]
+  },
+  {
+    "id": "example-skew-symmetric",
+    "title": "Example 2: An odd-order skew-symmetric determinant",
+    "zh": "例2 奇数阶反对称行列式",
+    "time": "补充约3–4 min · §4 / p.44–45",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, we consider Example Two. We first define a skew-symmetric determinant."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. A determinant is skew-symmetric if each entry is the negative of the entry in the transposed position."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_{ij}=-a_{ji},\\qquad i,j=1,2,\\ldots,n"
+      },
+      {
+        "type": "text",
+        "text": "We read this as: a sub i j equals minus a sub j i, for i and j from one to n."
+      },
+      {
+        "type": "statement",
+        "text": "Example 2. Prove that a skew-symmetric determinant of odd order is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "n\\text{ odd}\\quad\\Longrightarrow\\quad d=0"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "First, take i equal to j. Each diagonal entry is its own negative, so it is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_{ii}=-a_{ii}\\quad\\Longrightarrow\\quad a_{ii}=0\\qquad(i=1,2,\\ldots,n)"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "d=\\begin{vmatrix}0&a_{12}&a_{13}&\\cdots&a_{1n}\\\\-a_{12}&0&a_{23}&\\cdots&a_{2n}\\\\-a_{13}&-a_{23}&0&\\cdots&a_{3n}\\\\\\vdots&\\vdots&\\vdots&\\ddots&\\vdots\\\\-a_{1n}&-a_{2n}&-a_{3n}&\\cdots&0\\end{vmatrix}"
+      },
+      {
+        "type": "cue",
+        "text": "板书：先写全零主对角线，再写上方元素及下方相反数。skew-symmetric 读 /skjuː sɪˈmetrɪk/。"
+      },
+      {
+        "type": "text",
+        "text": "By Property One, transposing the determinant does not change its value. This gives"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{vmatrix}0&a_{12}&a_{13}&\\cdots&a_{1n}\\\\-a_{12}&0&a_{23}&\\cdots&a_{2n}\\\\-a_{13}&-a_{23}&0&\\cdots&a_{3n}\\\\\\vdots&\\vdots&\\vdots&\\ddots&\\vdots\\\\-a_{1n}&-a_{2n}&-a_{3n}&\\cdots&0\\end{vmatrix}=\\begin{vmatrix}0&-a_{12}&-a_{13}&\\cdots&-a_{1n}\\\\a_{12}&0&-a_{23}&\\cdots&-a_{2n}\\\\a_{13}&a_{23}&0&\\cdots&-a_{3n}\\\\\\vdots&\\vdots&\\vdots&\\ddots&\\vdots\\\\a_{1n}&a_{2n}&a_{3n}&\\cdots&0\\end{vmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "Now factor minus one out of every row of the transposed determinant. By Property Two, the total factor is minus one to the power n. The remaining determinant is the original one."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{vmatrix}0&-a_{12}&-a_{13}&\\cdots&-a_{1n}\\\\a_{12}&0&-a_{23}&\\cdots&-a_{2n}\\\\a_{13}&a_{23}&0&\\cdots&-a_{3n}\\\\\\vdots&\\vdots&\\vdots&\\ddots&\\vdots\\\\a_{1n}&a_{2n}&a_{3n}&\\cdots&0\\end{vmatrix}=(-1)^n\\begin{vmatrix}0&a_{12}&a_{13}&\\cdots&a_{1n}\\\\-a_{12}&0&a_{23}&\\cdots&a_{2n}\\\\-a_{13}&-a_{23}&0&\\cdots&a_{3n}\\\\\\vdots&\\vdots&\\vdots&\\ddots&\\vdots\\\\-a_{1n}&-a_{2n}&-a_{3n}&\\cdots&0\\end{vmatrix}"
+      },
+      {
+        "type": "cue",
+        "text": "factor minus one out of every row：每一行都提出−1，总共有n个因子。(-1)ⁿ 读 minus one to the power n。"
+      },
+      {
+        "type": "text",
+        "text": "Therefore, d equals minus one to the power n times d. Since n is odd, d equals minus d. Hence d is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "d=(-1)^n d=-d\\quad\\Longrightarrow\\quad 2d=0\\quad\\Longrightarrow\\quad d=0"
+      },
+      {
+        "type": "text",
+        "text": "This completes the proof."
       }
     ]
   }
