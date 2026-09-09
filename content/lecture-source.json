@@ -37,6 +37,14 @@
         "type": "math",
         "text": "",
         "latex": "\\begin{vmatrix}a_{11}&a_{12}\\\\a_{21}&a_{22}\\end{vmatrix}=a_{11}a_{22}-a_{12}a_{21}"
+      },
+      {
+        "type": "cue",
+        "text": "板书：写二阶行列式及展开式。sub 表示下标；这里竖线表示行列式。"
+      },
+      {
+        "type": "text",
+        "text": "Let me write the formula on the board. The vertical bars denote a determinant. We read the right-hand side as: a sub one one times a sub two two, minus a sub one two times a sub two one."
       }
     ]
   },
@@ -60,6 +68,14 @@
         "latex": "j_1j_2\\cdots j_n,\\qquad\\{j_1,\\ldots,j_n\\}=\\{1,\\ldots,n\\}"
       },
       {
+        "type": "cue",
+        "text": "指向排列：这里连写表示顺序，不是相乘。"
+      },
+      {
+        "type": "text",
+        "text": "We write a permutation as j sub one, j sub two, through j sub n. The braces show that these entries are exactly the numbers from one to n."
+      },
+      {
         "type": "statement",
         "text": "Definition 2. An inversion is a pair in which the larger entry comes first. The inversion number is the number of these pairs."
       },
@@ -69,6 +85,14 @@
         "latex": "\\tau(j_1\\cdots j_n)=\\#\\{(p,q):1\\le p<q\\le n,\\ j_p>j_q\\}"
       },
       {
+        "type": "cue",
+        "text": "读法：tau 读 /taʊ/；# 表示个数；括号后的冒号表示满足后面的条件。"
+      },
+      {
+        "type": "text",
+        "text": "We denote the inversion number by tau. Here, the hash symbol means the number of elements in the set. We count pairs of positions p and q, where p is less than q and j sub p is greater than j sub q."
+      },
+      {
         "type": "statement",
         "text": "Definition 3. A permutation is even or odd according as its inversion number is even or odd."
       },
@@ -76,6 +100,14 @@
         "type": "math",
         "text": "",
         "latex": "\\begin{aligned}\\tau(j_1\\cdots j_n)\\equiv0\\pmod2&:\\quad\\text{even},\\\\\\tau(j_1\\cdots j_n)\\equiv1\\pmod2&:\\quad\\text{odd}.\\end{aligned}"
+      },
+      {
+        "type": "cue",
+        "text": "≡ 读 is congruent to；mod 2 读 modulo two。"
+      },
+      {
+        "type": "text",
+        "text": "We write this using congruence modulo two. A remainder of zero means even; a remainder of one means odd."
       },
       {
         "type": "math",
@@ -108,6 +140,14 @@
         "latex": "\\cdots j\\,i_1\\cdots i_s\\,k\\cdots\\ \\longleftrightarrow\\ \\cdots k\\,i_1\\cdots i_s\\,j\\cdots"
       },
       {
+        "type": "cue",
+        "text": "板书：写出对换前后；箭头说明交换，不必逐字读省略号。"
+      },
+      {
+        "type": "text",
+        "text": "Here, s is the number of entries between j and k. The arrow shows that we exchange j and k. All the entries in between keep their positions."
+      },
+      {
         "type": "math",
         "text": "",
         "latex": "s=0:\\qquad\\cdots j\\,k\\cdots\\ \\longleftrightarrow\\ \\cdots k\\,j\\cdots"
@@ -134,6 +174,14 @@
         "latex": "\\pi\\xrightarrow{\\text{one transposition}}\\pi^{\\prime}\\quad\\Longrightarrow\\quad\\tau(\\pi^{\\prime})\\equiv\\tau(\\pi)+1\\pmod2"
       },
       {
+        "type": "cue",
+        "text": "π 读 pi /paɪ/；π′ 读 pi prime。先指原排列，再指新排列。"
+      },
+      {
+        "type": "text",
+        "text": "Let pi denote the original permutation, and pi prime the new one. In this notation, tau of pi prime is congruent to tau of pi plus one, modulo two."
+      },
+      {
         "type": "heading",
         "text": "Proof"
       },
@@ -147,6 +195,14 @@
         "latex": "\\cdots j\\,k\\cdots\\longrightarrow\\cdots k\\,j\\cdots,\\qquad\\Delta\\tau=\\begin{cases}-1,&j>k,\\\\1,&j<k.\\end{cases}"
       },
       {
+        "type": "cue",
+        "text": "Δτ 读 delta tau；分段公式按两个 if 句读。"
+      },
+      {
+        "type": "text",
+        "text": "Delta tau means the new inversion number minus the old one. It is minus one if j is greater than k, and plus one if j is less than k."
+      },
+      {
         "type": "text",
         "text": "So an adjacent transposition changes the parity."
       },
@@ -158,6 +214,14 @@
         "type": "math",
         "text": "",
         "latex": "\\begin{aligned}\\cdots j\\,i_1\\cdots i_s\\,k\\cdots&\\xrightarrow{s+1}\\cdots k\\,j\\,i_1\\cdots i_s\\cdots\\\\&\\xrightarrow{s}\\cdots k\\,i_1\\cdots i_s\\,j\\cdots.\\end{aligned}"
+      },
+      {
+        "type": "cue",
+        "text": "板书：保留原书的两步变换；指箭头上的次数。"
+      },
+      {
+        "type": "text",
+        "text": "The numbers above the arrows count adjacent transpositions: s plus one first, then s more."
       },
       {
         "type": "math",
@@ -190,9 +254,25 @@
         "latex": "s=\\#\\{\\text{odd permutations}\\},\\qquad t=\\#\\{\\text{even permutations}\\}"
       },
       {
+        "type": "cue",
+        "text": "denotes 表示“表示、记作”；# 的读法已在定义2说明。"
+      },
+      {
+        "type": "text",
+        "text": "Here, s denotes the number of odd permutations, and t denotes the number of even permutations."
+      },
+      {
         "type": "math",
         "text": "",
         "latex": "s=t=\\frac{n!}{2}\\qquad(n\\ge2)"
+      },
+      {
+        "type": "cue",
+        "text": "n! 读 n factorial；≥ 读 is greater than or equal to。"
+      },
+      {
+        "type": "text",
+        "text": "We read this as: s equals t equals n factorial divided by two, for n greater than or equal to two."
       },
       {
         "type": "heading",
@@ -252,6 +332,14 @@
         "latex": "\\pi=j_1\\cdots j_n\\xrightarrow{m\\text{ transpositions}}12\\cdots n,\\qquad m\\equiv\\tau(\\pi)\\pmod2"
       },
       {
+        "type": "cue",
+        "text": "接下来已有的英文句子读同余式；m 与逆序数奇偶性相同。"
+      },
+      {
+        "type": "text",
+        "text": "On the board, m denotes the number of transpositions. The arrow takes the permutation to natural order."
+      },
+      {
         "type": "text",
         "text": "m is congruent to tau of pi modulo two."
       },
@@ -280,6 +368,14 @@
         "type": "math",
         "text": "",
         "latex": "j_1\\cdots j_n\\longrightarrow j_1^{\\prime}\\cdots j_{n-1}^{\\prime}n\\longrightarrow12\\cdots n"
+      },
+      {
+        "type": "cue",
+        "text": "j′ 读 j prime；带下标时如 j sub one prime。"
+      },
+      {
+        "type": "text",
+        "text": "The primes mark the entries after the transposition. They do not mean derivatives here."
       },
       {
         "type": "heading",
@@ -320,14 +416,38 @@
         "latex": "A=(a_{ij})_{n\\times n},\\qquad a_{ij}\\in P"
       },
       {
+        "type": "cue",
+        "text": "板书：A 是矩阵，aᵢⱼ 是元素；n×n 读 n by n；aᵢⱼ∈P 读 a sub i j belongs to P。"
+      },
+      {
+        "type": "text",
+        "text": "Let A be an n by n matrix. We write a sub i j for the entry in row i and column j. Here, P is the number field from which we choose the entries. We read the membership symbol as belongs to."
+      },
+      {
         "type": "math",
         "text": "",
         "latex": "D=\\det A=\\begin{vmatrix}a_{11}&\\cdots&a_{1n}\\\\\\vdots&\\ddots&\\vdots\\\\a_{n1}&\\cdots&a_{nn}\\end{vmatrix}"
       },
       {
+        "type": "cue",
+        "text": "板书：指 D、det A 和竖线行列式，说明三者是同一个数。"
+      },
+      {
+        "type": "text",
+        "text": "We denote its determinant by D, or det A. We read det A as the determinant of A."
+      },
+      {
         "type": "math",
         "text": "",
         "latex": "\\boxed{D=\\sum_{j_1\\cdots j_n}(-1)^{\\tau(j_1\\cdots j_n)}a_{1j_1}\\cdots a_{nj_n}}"
+      },
+      {
+        "type": "cue",
+        "text": "完整读法：D equals the sum over all permutations j sub one through j sub n, of minus one raised to tau of that permutation, times a sub one, j sub one, through a sub n, j sub n。乘积中每个 a 有行、列两个指标。"
+      },
+      {
+        "type": "text",
+        "text": "Let me write the defining sum. D equals the sum over all column permutations. Each term is minus one raised to the inversion number of the column permutation, times the product of the selected entries."
       },
       {
         "type": "text",
@@ -355,6 +475,14 @@
         "latex": "\\begin{aligned}\\text{upper triangular:}\\quad&a_{ij}=0\\quad(i>j),\\\\\\text{diagonal:}\\quad&a_{ij}=0\\quad(i\\ne j).\\end{aligned}"
       },
       {
+        "type": "cue",
+        "text": "> 读 is greater than；≠ 读 is not equal to。"
+      },
+      {
+        "type": "text",
+        "text": "In symbols, a sub i j equals zero when i is greater than j. For a diagonal matrix, it equals zero whenever i is not equal to j."
+      },
+      {
         "type": "statement",
         "text": "Result. An upper triangular determinant equals the product of its diagonal entries."
       },
@@ -362,6 +490,14 @@
         "type": "math",
         "text": "",
         "latex": "D=a_{11}a_{22}\\cdots a_{nn}"
+      },
+      {
+        "type": "cue",
+        "text": "板书：指对角元素的乘积，不用逐项展开所有因子。"
+      },
+      {
+        "type": "text",
+        "text": "The right-hand side is a sub one one times a sub two two, and so on, times a sub n n."
       },
       {
         "type": "heading",
@@ -388,6 +524,14 @@
         "type": "math",
         "text": "",
         "latex": "\\det\\operatorname{diag}(d_1,\\ldots,d_n)=d_1\\cdots d_n,\\qquad\\det I_n=1"
+      },
+      {
+        "type": "cue",
+        "text": "diag(d₁,…,dₙ) 可直接读 the diagonal matrix with entries d sub one through d sub n；Iₙ 读 I sub n。"
+      },
+      {
+        "type": "text",
+        "text": "Here, diag means the diagonal matrix with entries d sub one through d sub n. I sub n denotes the identity matrix of order n."
       },
       {
         "type": "heading",
@@ -419,9 +563,25 @@
         "latex": "a_{i_1j_1}\\cdots a_{i_nj_n},\\qquad i_1\\cdots i_n,\\ j_1\\cdots j_n\\text{ are permutations}"
       },
       {
+        "type": "cue",
+        "text": "aᵢ₁ⱼ₁ 可读 a sub i sub one, j sub one；口述用 row … and column … 更清楚。"
+      },
+      {
+        "type": "text",
+        "text": "In each factor, the first index gives the row and the second gives the column. For example, the first factor is the entry in row i sub one and column j sub one."
+      },
+      {
         "type": "math",
         "text": "",
         "latex": "\\boxed{\\text{coefficient}=(-1)^{\\tau(i_1\\cdots i_n)+\\tau(j_1\\cdots j_n)}}"
+      },
+      {
+        "type": "cue",
+        "text": "指指数中的两个 τ：分别对应行指标排列和列指标排列。"
+      },
+      {
+        "type": "text",
+        "text": "We read the sign as: minus one raised to the sum of the two inversion numbers."
       },
       {
         "type": "heading",
@@ -480,6 +640,14 @@
         "latex": "D=\\sum_{i_1\\cdots i_n}(-1)^{\\tau(i_1\\cdots i_n)}a_{i_1 1}\\cdots a_{i_n n}"
       },
       {
+        "type": "cue",
+        "text": "板书：指 aᵢ₁₁ 到 aᵢₙₙ，列指标依次为1到n。"
+      },
+      {
+        "type": "text",
+        "text": "Here, the columns are in natural order, and the sum runs over all row permutations."
+      },
+      {
         "type": "heading",
         "text": "Proof"
       },
@@ -501,6 +669,14 @@
         "latex": "B=A^{\\mathsf T},\\qquad b_{ij}=a_{ji}"
       },
       {
+        "type": "cue",
+        "text": "Aᵀ 读 A transpose；bᵢⱼ=aⱼᵢ 读 b sub i j equals a sub j i。"
+      },
+      {
+        "type": "text",
+        "text": "We denote the transpose of A by A transpose. Its entry in row i and column j is a sub j i."
+      },
+      {
         "type": "statement",
         "text": "Property 1. Transposing an array does not change its determinant."
       },
@@ -508,6 +684,14 @@
         "type": "math",
         "text": "",
         "latex": "\\boxed{\\det(A^{\\mathsf T})=\\det A}"
+      },
+      {
+        "type": "cue",
+        "text": "指转置前后的两个行列式。"
+      },
+      {
+        "type": "text",
+        "text": "This says: the determinant of A transpose equals the determinant of A."
       },
       {
         "type": "heading",
@@ -570,6 +754,14 @@
         "latex": "\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\ka_{i1}&ka_{i2}&\\cdots&ka_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}=k\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}"
       },
       {
+        "type": "cue",
+        "text": "板书：写完整行列式，指出改变的第i行；不引入整行简写。"
+      },
+      {
+        "type": "text",
+        "text": "On the left, every entry in row i is multiplied by k. On the right, k is outside the determinant."
+      },
+      {
         "type": "heading",
         "text": "Proof"
       },
@@ -581,6 +773,14 @@
         "type": "math",
         "text": "",
         "latex": "\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}=a_{i1}A_{i1}+a_{i2}A_{i2}+\\cdots+a_{in}A_{in}"
+      },
+      {
+        "type": "cue",
+        "text": "区分小写 aᵢⱼ 与大写 Aᵢⱼ。后面紧接原稿对系数含义的说明。"
+      },
+      {
+        "type": "text",
+        "text": "We write the coefficients with a capital A. The first term is lowercase a sub i one times capital A sub i one."
       },
       {
         "type": "text",
@@ -634,6 +834,14 @@
         "latex": "\\begin{aligned}\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\b_1+c_1&b_2+c_2&\\cdots&b_n+c_n\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}&=\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\b_1&b_2&\\cdots&b_n\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}\\\\&\\quad+\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\c_1&c_2&\\cdots&c_n\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}.\\end{aligned}"
       },
       {
+        "type": "cue",
+        "text": "板书：其余各行照写；分别指左边的一行和右边对应的两行。"
+      },
+      {
+        "type": "text",
+        "text": "Let me write the three determinants. In the changed row, the entries are b sub j plus c sub j. On the right, we separate the b entries and the c entries."
+      },
+      {
         "type": "heading",
         "text": "Proof"
       },
@@ -672,6 +880,14 @@
         "latex": "a_{ij}=a_{kj}\\quad(j=1,2,\\ldots,n),\\qquad i\\ne k\\quad\\Longrightarrow\\quad D=0"
       },
       {
+        "type": "cue",
+        "text": "板书：这是两行对应元素相等，i、k 是两个不同的行号。"
+      },
+      {
+        "type": "text",
+        "text": "In symbols, a sub i j equals a sub k j for every j from one to n. Here, i is not equal to k."
+      },
+      {
         "type": "heading",
         "text": "Proof"
       },
@@ -692,6 +908,14 @@
         "type": "math",
         "text": "",
         "latex": "\\begin{aligned}&(-1)^{\\tau(j_1\\cdots j_i\\cdots j_k\\cdots j_n)}a_{1j_1}\\cdots a_{ij_i}\\cdots a_{kj_k}\\cdots a_{nj_n},\\\\&(-1)^{\\tau(j_1\\cdots j_k\\cdots j_i\\cdots j_n)}a_{1j_1}\\cdots a_{ij_k}\\cdots a_{kj_i}\\cdots a_{nj_n}.\\end{aligned}"
+      },
+      {
+        "type": "cue",
+        "text": "aᵢⱼᵢ 可以说 the entry in row i and column j sub i；aₖⱼₖ 同理。"
+      },
+      {
+        "type": "text",
+        "text": "Compare the factors from rows i and k. In the second term, their column indices are exchanged."
       },
       {
         "type": "text",
@@ -742,6 +966,14 @@
         "latex": "\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\ka_{i1}&ka_{i2}&\\cdots&ka_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}=0"
       },
       {
+        "type": "cue",
+        "text": "指 aᵢ₁,…,aᵢₙ 与 kaᵢ₁,…,kaᵢₙ 两行。"
+      },
+      {
+        "type": "text",
+        "text": "In this determinant, each entry in one row is k times the corresponding entry in the other row."
+      },
+      {
         "type": "heading",
         "text": "Proof"
       },
@@ -774,6 +1006,14 @@
         "type": "math",
         "text": "",
         "latex": "\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}+ca_{k1}&a_{i2}+ca_{k2}&\\cdots&a_{in}+ca_{kn}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{k1}&a_{k2}&\\cdots&a_{kn}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}=\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{k1}&a_{k2}&\\cdots&a_{kn}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}"
+      },
+      {
+        "type": "cue",
+        "text": "板书：指第i行的和，再指保持不变的第k行；i 与 k 不同。"
+      },
+      {
+        "type": "text",
+        "text": "On the left, the new entry in row i and column j is a sub i j plus c times a sub k j. Row k stays the same. The determinant on the right is the original one."
       },
       {
         "type": "heading",
