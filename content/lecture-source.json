@@ -1,29 +1,8 @@
 [
   {
-    "id": "plan",
-    "title": "Lecture order",
-    "zh": "50分钟安排",
-    "time": "备课安排，不口述",
-    "blocks": [
-      {
-        "type": "text",
-        "text": "正文范围：第二章§1–§3，以及§4性质2–7和紧随其后的例1、例2，至教材第45页§5之前。保持原书顺序、完整板书及简短口述。"
-      },
-      {
-        "type": "text",
-        "text": "目标仍为50分钟。用户试讲反馈现有内容不足，因此新增例1约5–6分钟、例2约3–4分钟（均含板书）。此前各节时间仅为备课估计，不代表实测；用实际试讲总时长调整选讲范围。"
-      },
-      {
-        "type": "text",
-        "text": "新增部分沿用教材证明顺序。性质2、3先把行列式中的项按固定一行分组；性质4通过项的配对相消证明；性质5、6依次由前面的性质推出。"
-      }
-    ]
-  },
-  {
     "id": "order-two",
     "title": "Determinant of order two",
     "zh": "二阶行列式定义",
-    "time": "00–01 min",
     "blocks": [
       {
         "type": "text",
@@ -46,13 +25,44 @@
         "type": "text",
         "text": "Let me write the formula on the board. The vertical bars denote a determinant. We read the right-hand side as: a sub one one times a sub two two, minus a sub one two times a sub two one."
       }
+    ],
+    "chapter": 2,
+    "source": "§1 · p.33"
+  },
+  {
+    "id": "order-three",
+    "title": "Determinant of order three",
+    "zh": "三阶行列式定义",
+    "chapter": 2,
+    "source": "§1 · p.34",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, we define the determinant of order three."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. The determinant of a three-by-three array is the following sum of six signed products."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\\begin{vmatrix}a_{11}&a_{12}&a_{13}\\\\a_{21}&a_{22}&a_{23}\\\\a_{31}&a_{32}&a_{33}\\end{vmatrix}&=a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}\\\\&\\quad-a_{11}a_{23}a_{32}-a_{12}a_{21}a_{33}-a_{13}a_{22}a_{31}.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "Each product uses one entry from each row and each column. The first three products have plus signs. The last three have minus signs. We will define the general sign rule after studying permutations."
+      },
+      {
+        "type": "cue",
+        "text": "板书：写六项；每项是相乘，项之间是 plus 或 minus。three-by-three 读 three by three。§1中的二元、三元解公式统一由后面的克拉默法则证明。"
+      }
     ]
   },
   {
     "id": "definitions",
     "title": "Permutations and parity",
     "zh": "定义1—3",
-    "time": "01–05 min",
     "blocks": [
       {
         "type": "text",
@@ -117,14 +127,32 @@
       {
         "type": "text",
         "text": "The natural order is therefore even. We use the same definitions for any n distinct natural numbers."
+      },
+      {
+        "type": "statement",
+        "text": "Counting formula. There are n factorial permutations of order n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "n!=n(n-1)\\cdots2\\cdot1"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "There are n choices for the first position. There are n minus one choices for the second. Continue until one choice remains. Multiplying the numbers of choices gives n factorial."
       }
-    ]
+    ],
+    "chapter": 2,
+    "source": "§2 · p.35"
   },
   {
     "id": "transpositions",
     "title": "Transpositions",
     "zh": "对换定义",
-    "time": "05–06 min",
     "blocks": [
       {
         "type": "text",
@@ -152,13 +180,14 @@
         "text": "",
         "latex": "s=0:\\qquad\\cdots j\\,k\\cdots\\ \\longleftrightarrow\\ \\cdots k\\,j\\cdots"
       }
-    ]
+    ],
+    "chapter": 2,
+    "source": "§2 · p.35"
   },
   {
     "id": "theorem-one",
     "title": "A transposition changes parity",
     "zh": "定理1及证明",
-    "time": "06–11 min",
     "blocks": [
       {
         "type": "text",
@@ -232,13 +261,14 @@
         "type": "text",
         "text": "Each adjacent transposition changes parity. The number of transpositions is odd, so the final parity changes. This completes the proof."
       }
-    ]
+    ],
+    "chapter": 2,
+    "source": "§2 · pp.35–36"
   },
   {
     "id": "corollary",
     "title": "Equal numbers of even and odd permutations",
     "zh": "推论及证明",
-    "time": "11–14 min",
     "blocks": [
       {
         "type": "text",
@@ -310,13 +340,14 @@
         "text": "",
         "latex": "s+t=n!\\quad\\Longrightarrow\\quad s=t=\\frac{n!}{2}"
       }
-    ]
+    ],
+    "chapter": 2,
+    "source": "§2 · p.36"
   },
   {
     "id": "theorem-two",
     "title": "Sorting by transpositions",
     "zh": "定理2及证明",
-    "time": "14–19 min",
     "blocks": [
       {
         "type": "text",
@@ -394,13 +425,14 @@
         "type": "text",
         "text": "The reverse sequence has the same length. This proves both directions."
       }
-    ]
+    ],
+    "chapter": 2,
+    "source": "§2 · pp.36–37"
   },
   {
     "id": "determinant",
     "title": "Determinant of order n",
     "zh": "定义4",
-    "time": "19–22 min",
     "blocks": [
       {
         "type": "text",
@@ -453,13 +485,14 @@
         "type": "text",
         "text": "The sum runs over all permutations of 1 to n. The first index is the row index; the second is the column index."
       }
-    ]
+    ],
+    "chapter": 2,
+    "source": "§3 · pp.37–38"
   },
   {
     "id": "triangular",
     "title": "Triangular determinants",
     "zh": "三角行列式结论及证明",
-    "time": "22–25 min",
     "blocks": [
       {
         "type": "text",
@@ -541,13 +574,14 @@
         "type": "text",
         "text": "A diagonal array is upper triangular. Apply the result just proved."
       }
-    ]
+    ],
+    "chapter": 2,
+    "source": "§3 · pp.38–39"
   },
   {
     "id": "general-sign",
     "title": "Sign of a term in any order",
     "zh": "一般项符号及证明",
-    "time": "25–30 min",
     "blocks": [
       {
         "type": "text",
@@ -618,13 +652,14 @@
         "type": "text",
         "text": "This proves the rule."
       }
-    ]
+    ],
+    "chapter": 2,
+    "source": "§3 · pp.39–40"
   },
   {
     "id": "transpose",
     "title": "Column order and transpose",
     "zh": "按列公式、转置性质及证明",
-    "time": "30–35 min",
     "blocks": [
       {
         "type": "text",
@@ -732,13 +767,14 @@
         "type": "text",
         "text": "Its transpose is upper triangular and has the same diagonal entries. Apply Property One and the upper triangular formula. This completes the proof."
       }
-    ]
+    ],
+    "chapter": 2,
+    "source": "§4 · pp.40–41"
   },
   {
     "id": "property-two",
     "title": "Scaling one row",
-    "zh": "新增 性质2及零行推论",
-    "time": "35–38 min · §4 / p.40–41",
+    "zh": "性质2及零行推论",
     "blocks": [
       {
         "type": "text",
@@ -812,13 +848,14 @@
         "type": "text",
         "text": "Set k equal to zero in Property Two."
       }
-    ]
+    ],
+    "chapter": 2,
+    "source": "§4 · p.41"
   },
   {
     "id": "property-three",
     "title": "Splitting one row",
-    "zh": "新增 性质3及证明",
-    "time": "38–41 min · §4 / p.41",
+    "zh": "性质3及证明",
     "blocks": [
       {
         "type": "text",
@@ -858,13 +895,14 @@
         "type": "text",
         "text": "This proves Property Three."
       }
-    ]
+    ],
+    "chapter": 2,
+    "source": "§4 · pp.41–42"
   },
   {
     "id": "property-four",
     "title": "Two equal rows",
-    "zh": "新增 性质4及证明",
-    "time": "41–45 min · §4 / p.41–42",
+    "zh": "性质4及证明",
     "blocks": [
       {
         "type": "text",
@@ -944,13 +982,14 @@
         "text": "",
         "latex": "D=0"
       }
-    ]
+    ],
+    "chapter": 2,
+    "source": "§4 · p.42"
   },
   {
     "id": "property-five",
     "title": "Two proportional rows",
-    "zh": "新增 性质5及证明",
-    "time": "45–47 min · §4 / p.42",
+    "zh": "性质5及证明",
     "blocks": [
       {
         "type": "text",
@@ -986,17 +1025,18 @@
         "text": "",
         "latex": "\\begin{aligned}\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\ka_{i1}&ka_{i2}&\\cdots&ka_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}&=k\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{in}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{vmatrix}\\\\&=0.\\end{aligned}"
       }
-    ]
+    ],
+    "chapter": 2,
+    "source": "§4 · p.42"
   },
   {
     "id": "property-six",
     "title": "Adding a multiple of another row",
-    "zh": "新增 性质6及证明",
-    "time": "47–50 min · §4 / p.42–43",
+    "zh": "性质6及证明",
     "blocks": [
       {
         "type": "text",
-        "text": "Finally, we state Property Six."
+        "text": "Next, we state Property Six."
       },
       {
         "type": "statement",
@@ -1032,13 +1072,14 @@
         "type": "text",
         "text": "This completes the proof."
       }
-    ]
+    ],
+    "chapter": 2,
+    "source": "§4 · pp.42–43"
   },
   {
     "id": "property-seven",
     "title": "Exchanging two rows",
-    "zh": "新增 性质7及证明",
-    "time": "补充约4–5 min · §4 / p.43–44",
+    "zh": "性质7及证明",
     "blocks": [
       {
         "type": "text",
@@ -1121,13 +1162,14 @@
         "type": "text",
         "text": "The rows are now exchanged. So the original determinant is minus the exchanged determinant. This proves Property Seven. By transposing, the same result holds for two columns."
       }
-    ]
+    ],
+    "chapter": 2,
+    "source": "§4 · pp.43–44"
   },
   {
     "id": "example-constant-entries",
     "title": "Example 1: Two types of entries",
     "zh": "例1 对角元为a、其余为b",
-    "time": "补充约5–6 min · §4 / p.44",
     "blocks": [
       {
         "type": "text",
@@ -1210,13 +1252,14 @@
         "type": "text",
         "text": "This completes the calculation."
       }
-    ]
+    ],
+    "chapter": 2,
+    "source": "§4 · p.44"
   },
   {
     "id": "example-skew-symmetric",
     "title": "Example 2: An odd-order skew-symmetric determinant",
     "zh": "例2 奇数阶反对称行列式",
-    "time": "补充约3–4 min · §4 / p.44–45",
     "blocks": [
       {
         "type": "text",
@@ -1300,6 +1343,2367 @@
       {
         "type": "text",
         "text": "This completes the proof."
+      }
+    ],
+    "chapter": 2,
+    "source": "§4 · pp.44–45"
+  },
+  {
+    "id": "matrices",
+    "title": "Matrices and elementary operations",
+    "zh": "定义5—6 · 矩阵与初等变换",
+    "chapter": 2,
+    "source": "§5 · pp.45–46,48–49",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now introduce matrices and elementary operations."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 5. An s-by-n matrix over P is a rectangular array of s n entries from P, arranged in s rows and n columns. A square matrix has the same number of rows and columns."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=\\begin{pmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\a_{21}&a_{22}&\\cdots&a_{2n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{s1}&a_{s2}&\\cdots&a_{sn}\\end{pmatrix},\\qquad a_{ij}\\in P"
+      },
+      {
+        "type": "text",
+        "text": "We read s by n as the size of the matrix. The entry a sub i j is in row i and column j. Parentheses denote the matrix. For a square matrix, vertical bars denote its determinant, which is a number."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "s=n:\\quad A\\text{ is square},\\qquad |A|=\\begin{vmatrix}a_{11}&\\cdots&a_{1n}\\\\\\vdots&&\\vdots\\\\a_{n1}&\\cdots&a_{nn}\\end{vmatrix}"
+      },
+      {
+        "type": "statement",
+        "text": "Definition 6. The elementary row operations are: multiply a row by a nonzero scalar; add a scalar multiple of one row to another; exchange two rows. The corresponding operations on columns are elementary column operations."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}a_{ij}&\\longmapsto k a_{ij}&& (k\\ne0;\\ j=1,\\ldots,n),\\\\a_{ij}&\\longmapsto a_{ij}+c a_{\\ell j}&& (i\\ne\\ell;\\ j=1,\\ldots,n),\\\\(a_{ij},a_{\\ell j})&\\longmapsto(a_{\\ell j},a_{ij})&& (i\\ne\\ell;\\ j=1,\\ldots,n).\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "Here, the arrow means that we replace each indicated entry. In the second operation, row ell stays fixed. All other rows stay fixed as well. For column operations, we make the same changes down a column."
+      },
+      {
+        "type": "cue",
+        "text": "scalar 是数域P中的数；ℓ 读 ell。必须强调第一类变换的 k 非零。矩阵变换用箭头，不把两个不同矩阵写成相等。"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A\\longrightarrow B"
+      },
+      {
+        "type": "text",
+        "text": "We use this arrow to say that elementary operations change A into B. It does not mean that A and B are equal."
+      }
+    ]
+  },
+  {
+    "id": "echelon",
+    "title": "Row echelon form",
+    "zh": "阶梯形与行列式计算",
+    "chapter": 2,
+    "source": "§5 · pp.47–48",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition. A matrix is in row echelon form if its zero rows are at the bottom, and the first nonzero entry of each nonzero row is to the right of the first nonzero entry of the row above it."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}0&b_{12}&b_{13}&b_{14}&b_{15}\\\\0&0&0&b_{24}&b_{25}\\\\0&0&0&0&0\\end{pmatrix},\\qquad b_{12}\\ne0,\\quad b_{24}\\ne0"
+      },
+      {
+        "type": "text",
+        "text": "The first nonzero entry in a row is called a leading entry. In this pattern, the leading entries are in columns two and four. Every entry below a leading entry is zero."
+      },
+      {
+        "type": "statement",
+        "text": "Result. Every matrix can be changed into row echelon form by elementary row operations."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "If the matrix is zero, it is already in echelon form. Otherwise, find the first column with a nonzero entry. Exchange rows to put a nonzero entry at the top. Suppose this is the first column, and write the new top-left entry as a prime sub one one."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}a'_{11}&a'_{12}&\\cdots&a'_{1n}\\\\a'_{21}&a'_{22}&\\cdots&a'_{2n}\\\\\\vdots&\\vdots&&\\vdots\\\\a'_{s1}&a'_{s2}&\\cdots&a'_{sn}\\end{pmatrix}\\longrightarrow\\begin{pmatrix}a'_{11}&a'_{12}&\\cdots&a'_{1n}\\\\0&a'_{22}-\\frac{a'_{21}}{a'_{11}}a'_{12}&\\cdots&a'_{2n}-\\frac{a'_{21}}{a'_{11}}a'_{1n}\\\\\\vdots&\\vdots&&\\vdots\\\\0&a'_{s2}-\\frac{a'_{s1}}{a'_{11}}a'_{12}&\\cdots&a'_{sn}-\\frac{a'_{s1}}{a'_{11}}a'_{1n}\\end{pmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "For each lower row i, subtract a prime sub i one divided by a prime sub one one times the first row. This clears the first column below the leading entry. Now repeat on the remaining rows and columns to the right. Skip any column that is zero in the remaining rows. Each step fixes one more leading entry, so the process stops in echelon form."
+      },
+      {
+        "type": "cue",
+        "text": "a′ᵢⱼ 读 a prime sub i j；这里撇号表示换行后的元素。边指第一列边说明消元系数；无需逐项读整个矩阵。"
+      },
+      {
+        "type": "statement",
+        "text": "Determinant calculation. A square echelon matrix is upper triangular. Its determinant is the product of its diagonal entries. The original determinant is recovered by tracking row scalings and row exchanges."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A\\longrightarrow J,\\qquad |A|=k|J|=k j_{11}j_{22}\\cdots j_{nn},\\qquad k\\ne0"
+      },
+      {
+        "type": "heading",
+        "text": "Justification"
+      },
+      {
+        "type": "text",
+        "text": "A row addition leaves the determinant unchanged. A row exchange changes its sign. Scaling a row multiplies the determinant by the scale factor. All scale factors used in elementary operations are nonzero. Collecting these factors gives k. The triangular determinant formula then gives the displayed result."
+      }
+    ]
+  },
+  {
+    "id": "minors-cofactors",
+    "title": "Minors and cofactors",
+    "zh": "定义7—8 · 余子式与代数余子式",
+    "chapter": 2,
+    "source": "§6 · pp.49–51",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, we define minors and cofactors. These describe expansion along a row or column."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 7. The minor M sub i j of an entry a sub i j is the determinant obtained by deleting row i and column j, keeping the remaining rows and columns in their original order."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "M_{ij}=\\begin{vmatrix}a_{11}&\\cdots&a_{1,j-1}&a_{1,j+1}&\\cdots&a_{1n}\\\\\\vdots&&\\vdots&\\vdots&&\\vdots\\\\a_{i-1,1}&\\cdots&a_{i-1,j-1}&a_{i-1,j+1}&\\cdots&a_{i-1,n}\\\\a_{i+1,1}&\\cdots&a_{i+1,j-1}&a_{i+1,j+1}&\\cdots&a_{i+1,n}\\\\\\vdots&&\\vdots&\\vdots&&\\vdots\\\\a_{n1}&\\cdots&a_{n,j-1}&a_{n,j+1}&\\cdots&a_{nn}\\end{vmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "We denote this minor by capital M sub i j. It has order n minus one. At an edge, the rows or columns before or after the deleted position may be absent."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 8. The cofactor of a sub i j is its minor multiplied by minus one to the power i plus j."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A_{ij}=(-1)^{i+j}M_{ij}"
+      },
+      {
+        "type": "text",
+        "text": "Capital A sub i j denotes the cofactor. Lowercase a sub i j denotes the original entry. The sign is positive when i plus j is even, and negative when it is odd."
+      },
+      {
+        "type": "cue",
+        "text": "minor 余子式；cofactor 代数余子式。读法：capital A sub i j equals minus one to the power i plus j, times capital M sub i j。"
+      },
+      {
+        "type": "statement",
+        "text": "Result. Grouping the determinant terms by their entry in row i gives coefficients equal to these cofactors."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=a_{i1}A_{i1}+a_{i2}A_{i2}+\\cdots+a_{in}A_{in}"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Each determinant term contains exactly one entry from row i. Group the terms according to this entry. Its coefficient depends only on the other rows. To find the coefficient of a sub i j, replace row i by zeros, except for a one in column j. Call the resulting determinant E. Then E is exactly that coefficient."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "E=\\begin{vmatrix}a_{11}&\\cdots&a_{1j}&\\cdots&a_{1n}\\\\\\vdots&&\\vdots&&\\vdots\\\\0&\\cdots&1&\\cdots&0\\\\\\vdots&&\\vdots&&\\vdots\\\\a_{n1}&\\cdots&a_{nj}&\\cdots&a_{nn}\\end{vmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "Move row i to the bottom using n minus i adjacent row exchanges. Then move column j to the last position using n minus j adjacent column exchanges. Keep the order of all the other rows and columns."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "E=(-1)^{(n-i)+(n-j)}\\begin{vmatrix}a_{11}&\\cdots&a_{1,j-1}&a_{1,j+1}&\\cdots&a_{1n}&a_{1j}\\\\\\vdots&&\\vdots&\\vdots&&\\vdots&\\vdots\\\\a_{i-1,1}&\\cdots&a_{i-1,j-1}&a_{i-1,j+1}&\\cdots&a_{i-1,n}&a_{i-1,j}\\\\a_{i+1,1}&\\cdots&a_{i+1,j-1}&a_{i+1,j+1}&\\cdots&a_{i+1,n}&a_{i+1,j}\\\\\\vdots&&\\vdots&\\vdots&&\\vdots&\\vdots\\\\a_{n1}&\\cdots&a_{n,j-1}&a_{n,j+1}&\\cdots&a_{nn}&a_{nj}\\\\0&\\cdots&0&0&\\cdots&0&1\\end{vmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "In the defining sum, the last row must contribute its last entry, one. Appending the last column index n creates no inversion. The remaining sum is exactly M sub i j."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "E=(-1)^{2n-i-j}M_{ij}=(-1)^{i+j}M_{ij}=A_{ij}"
+      },
+      {
+        "type": "text",
+        "text": "The two exponents differ by an even number, so the signs agree. This identifies the coefficient and proves the formula."
+      }
+    ]
+  },
+  {
+    "id": "cofactor-expansion",
+    "title": "Expansion along a row or column",
+    "zh": "定理3 · 展开与交叉乘积和",
+    "chapter": 2,
+    "source": "§6 · pp.51–52",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We can now state the full expansion theorem."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 3. The sum of the entries in a row times their own cofactors equals the determinant. Using the cofactors of a different row gives zero. The corresponding statements hold for columns."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\\sum_{s=1}^n a_{ks}A_{is}&=\\begin{cases}D,&k=i,\\\\0,&k\\ne i,\\end{cases}\\\\\\sum_{s=1}^n a_{s\\ell}A_{sj}&=\\begin{cases}D,&\\ell=j,\\\\0,&\\ell\\ne j.\\end{cases}\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "In the first formula, the entries come from row k and the cofactors from row i. Read the sum as: the sum from s equals one to n of a sub k s times capital A sub i s. The second formula uses columns ell and j."
+      },
+      {
+        "type": "cue",
+        "text": "分段读 equals D if k equals i, and zero otherwise。大写A是代数余子式，不是元素；先说明指标属于哪一行或列。"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The case k equals i is the expansion formula just proved. Now let k be different from i. Replace row i by row k. Its cofactors stay the same, because their minors delete row i."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_{k1}A_{i1}+\\cdots+a_{kn}A_{in}=\\begin{vmatrix}a_{11}&\\cdots&a_{1n}\\\\\\vdots&&\\vdots\\\\a_{k1}&\\cdots&a_{kn}\\\\\\vdots&&\\vdots\\\\a_{k1}&\\cdots&a_{kn}\\\\\\vdots&&\\vdots\\\\a_{n1}&\\cdots&a_{nn}\\end{vmatrix}=0"
+      },
+      {
+        "type": "text",
+        "text": "The two displayed copies occupy rows i and k. The determinant is zero because these rows are equal. Transpose the determinant to obtain the column formulas. This completes the proof."
+      }
+    ]
+  },
+  {
+    "id": "vandermonde",
+    "title": "The Vandermonde determinant",
+    "zh": "范德蒙德行列式及证明",
+    "chapter": 2,
+    "source": "§6 · pp.52–53",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Result (Example 2). The Vandermonde determinant equals the product of all differences a sub i minus a sub j with j less than i."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{vmatrix}1&1&\\cdots&1\\\\a_1&a_2&\\cdots&a_n\\\\a_1^2&a_2^2&\\cdots&a_n^2\\\\\\vdots&\\vdots&&\\vdots\\\\a_1^{n-1}&a_2^{n-1}&\\cdots&a_n^{n-1}\\end{vmatrix}=\\prod_{1\\le j<i\\le n}(a_i-a_j)"
+      },
+      {
+        "type": "text",
+        "text": "The large product symbol means multiply all the indicated factors. We read the right-hand side as: the product of a sub i minus a sub j, over all pairs with one less than or equal to j, less than i, less than or equal to n."
+      },
+      {
+        "type": "cue",
+        "text": "Vandermonde 可读 van-der-MOND；∏ 读 the product。各列由同一个数的零次到n−1次幂组成。"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "We use induction on n. For n equal to two, the determinant is a sub two minus a sub one. Suppose the formula holds for order n minus one. Starting at the bottom, subtract a sub one times the preceding row from each row."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=\\begin{vmatrix}1&1&\\cdots&1\\\\0&a_2-a_1&\\cdots&a_n-a_1\\\\0&a_2^2-a_1a_2&\\cdots&a_n^2-a_1a_n\\\\\\vdots&\\vdots&&\\vdots\\\\0&a_2^{n-1}-a_1a_2^{n-2}&\\cdots&a_n^{n-1}-a_1a_n^{n-2}\\end{vmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "Working upwards makes sure that the preceding row still has its original entries. Expand along the first column. Factor a sub j minus a sub one out of each remaining column j."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=(a_2-a_1)\\cdots(a_n-a_1)\\begin{vmatrix}1&\\cdots&1\\\\a_2&\\cdots&a_n\\\\\\vdots&&\\vdots\\\\a_2^{n-2}&\\cdots&a_n^{n-2}\\end{vmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "The remaining determinant has order n minus one. By induction, it supplies all differences involving only a sub two through a sub n. The factors outside supply all differences involving a sub one. Together they give the required product."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary. A Vandermonde determinant is zero if and only if at least two of the numbers are equal."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=0\\quad\\Longleftrightarrow\\quad a_i=a_j\\text{ for some }i\\ne j"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "A product of numbers in P is zero exactly when one factor is zero. Here, a factor is zero exactly when two of the numbers are equal."
+      }
+    ]
+  },
+  {
+    "id": "block-triangular",
+    "title": "A determinant with a zero corner",
+    "zh": "零角块行列式及证明",
+    "chapter": 2,
+    "source": "§6 · pp.54–55",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Result (Example 3). If the upper-right rectangular part of a determinant is zero, the determinant is the product of the two square determinants on the diagonal."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{vmatrix}a_{11}&\\cdots&a_{1k}&0&\\cdots&0\\\\\\vdots&&\\vdots&\\vdots&&\\vdots\\\\a_{k1}&\\cdots&a_{kk}&0&\\cdots&0\\\\c_{11}&\\cdots&c_{1k}&b_{11}&\\cdots&b_{1r}\\\\\\vdots&&\\vdots&\\vdots&&\\vdots\\\\c_{r1}&\\cdots&c_{rk}&b_{r1}&\\cdots&b_{rr}\\end{vmatrix}=\\begin{vmatrix}a_{11}&\\cdots&a_{1k}\\\\\\vdots&&\\vdots\\\\a_{k1}&\\cdots&a_{kk}\\end{vmatrix}\\begin{vmatrix}b_{11}&\\cdots&b_{1r}\\\\\\vdots&&\\vdots\\\\b_{r1}&\\cdots&b_{rr}\\end{vmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "The square parts have orders k and r. The entries below the first square can be arbitrary."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "We use induction on k. If k is one, expansion along the first row gives a sub one one times the second determinant. Suppose the result holds when the first square has order k minus one. Expand along the first row. Only its first k entries can contribute."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=\\sum_{j=1}^{k}(-1)^{1+j}a_{1j}\\begin{vmatrix}a_{21}&\\cdots&a_{2,j-1}&a_{2,j+1}&\\cdots&a_{2k}&0&\\cdots&0\\\\\\vdots&&\\vdots&\\vdots&&\\vdots&\\vdots&&\\vdots\\\\a_{k1}&\\cdots&a_{k,j-1}&a_{k,j+1}&\\cdots&a_{kk}&0&\\cdots&0\\\\c_{11}&\\cdots&c_{1,j-1}&c_{1,j+1}&\\cdots&c_{1k}&b_{11}&\\cdots&b_{1r}\\\\\\vdots&&\\vdots&\\vdots&&\\vdots&\\vdots&&\\vdots\\\\c_{r1}&\\cdots&c_{r,j-1}&c_{r,j+1}&\\cdots&c_{rk}&b_{r1}&\\cdots&b_{rr}\\end{vmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "Every minor still has a zero upper-right part. Apply the induction hypothesis to each minor and take out the common determinant formed by the b entries."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=\\left[\\sum_{j=1}^{k}(-1)^{1+j}a_{1j}\\begin{vmatrix}a_{21}&\\cdots&a_{2,j-1}&a_{2,j+1}&\\cdots&a_{2k}\\\\\\vdots&&\\vdots&\\vdots&&\\vdots\\\\a_{k1}&\\cdots&a_{k,j-1}&a_{k,j+1}&\\cdots&a_{kk}\\end{vmatrix}\\right]\\begin{vmatrix}b_{11}&\\cdots&b_{1r}\\\\\\vdots&&\\vdots\\\\b_{r1}&\\cdots&b_{rr}\\end{vmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "The bracket is the first-row expansion of the determinant formed by the a entries. This proves the result."
+      },
+      {
+        "type": "cue",
+        "text": "板书保留各元素；括号内是小行列式的按第一行展开，不能把求和遗漏。"
+      }
+    ]
+  },
+  {
+    "id": "cramer",
+    "title": "Cramer’s rule",
+    "zh": "定理4 · 克拉默法则",
+    "chapter": 2,
+    "source": "§7 · pp.55–57",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now use determinants to solve a square linear system."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 4 (Cramer’s rule). A system of n linear equations in n unknowns has a unique solution if its coefficient determinant d is nonzero. Its j-th unknown equals d sub j divided by d, where d sub j replaces column j by the constant terms."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}a_{11}x_1+\\cdots+a_{1n}x_n=b_1,\\\\a_{21}x_1+\\cdots+a_{2n}x_n=b_2,\\\\\\vdots\\\\a_{n1}x_1+\\cdots+a_{nn}x_n=b_n,\\end{cases}\\qquad d=\\begin{vmatrix}a_{11}&\\cdots&a_{1n}\\\\\\vdots&&\\vdots\\\\a_{n1}&\\cdots&a_{nn}\\end{vmatrix}\\ne0"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "d_j=\\begin{vmatrix}a_{11}&\\cdots&a_{1,j-1}&b_1&a_{1,j+1}&\\cdots&a_{1n}\\\\\\vdots&&\\vdots&\\vdots&\\vdots&&\\vdots\\\\a_{n1}&\\cdots&a_{n,j-1}&b_n&a_{n,j+1}&\\cdots&a_{nn}\\end{vmatrix},\\qquad x_j=\\frac{d_j}{d}\\quad(j=1,\\ldots,n)"
+      },
+      {
+        "type": "text",
+        "text": "Read the solution as: x sub j equals d sub j divided by d. In d sub j, only column j is replaced. We prove existence first, then uniqueness."
+      },
+      {
+        "type": "cue",
+        "text": "Cramer’s rule 克拉默法则；coefficient determinant 系数行列式。用手指替换列。下面Aᵢⱼ始终是原系数行列式的代数余子式。"
+      },
+      {
+        "type": "heading",
+        "text": "Proof: existence"
+      },
+      {
+        "type": "text",
+        "text": "Write the i-th equation as a sum. Expand d sub j along its replaced column. Its cofactors are unchanged, so we obtain the following formula."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^{n}a_{ij}x_j=b_i,\\qquad d_j=\\sum_{s=1}^{n}b_sA_{sj}"
+      },
+      {
+        "type": "text",
+        "text": "Substitute d sub j divided by d. Exchange the order of the two finite sums. Then apply Theorem Three."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\\sum_{j=1}^{n}a_{ij}\\frac{d_j}{d}&=\\frac1d\\sum_{j=1}^{n}a_{ij}\\sum_{s=1}^{n}b_sA_{sj}\\\\&=\\frac1d\\sum_{s=1}^{n}\\left(\\sum_{j=1}^{n}a_{ij}A_{sj}\\right)b_s\\\\&=\\frac1d\\,d b_i=b_i.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "The inner sum is d when s equals i, and zero otherwise. Thus every equation is satisfied. A solution exists."
+      },
+      {
+        "type": "heading",
+        "text": "Proof: uniqueness"
+      },
+      {
+        "type": "text",
+        "text": "Let c sub one through c sub n be any solution. Multiply equation i by the cofactor capital A sub i k, and add all equations."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^{n}a_{ij}c_j=b_i\\quad(i=1,\\ldots,n),\\qquad\\sum_{i=1}^{n}A_{ik}\\sum_{j=1}^{n}a_{ij}c_j=\\sum_{i=1}^{n}b_iA_{ik}=d_k"
+      },
+      {
+        "type": "text",
+        "text": "On the left, exchange the sums. The column version of Theorem Three leaves only the term with j equal to k."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^{n}\\left(\\sum_{i=1}^{n}a_{ij}A_{ik}\\right)c_j=d c_k=d_k\\quad\\Longrightarrow\\quad c_k=\\frac{d_k}{d}"
+      },
+      {
+        "type": "text",
+        "text": "This holds for every k. Every solution must equal the one already found, so it is unique."
+      }
+    ]
+  },
+  {
+    "id": "homogeneous-square",
+    "title": "Homogeneous square systems",
+    "zh": "定理5 · 齐次方程组",
+    "chapter": 2,
+    "source": "§7 · p.58",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition. A linear system is homogeneous if all its constant terms are zero. The solution with all entries zero is the zero, or trivial, solution. Any other solution is a nonzero, or nontrivial, solution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}a_{11}x_1+\\cdots+a_{1n}x_n=0,\\\\\\vdots\\\\a_{n1}x_1+\\cdots+a_{nn}x_n=0.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "Nonzero means that at least one component is nonzero. It does not mean that every component is nonzero."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 5. A homogeneous system of n equations in n unknowns has only the zero solution if its coefficient determinant is nonzero. Therefore, a nonzero solution requires the coefficient determinant to be zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "d\\ne0\\ \\Longrightarrow\\ (x_1,\\ldots,x_n)=(0,\\ldots,0)"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "In Cramer’s rule, every replaced column is zero. Hence every d sub j is zero. Dividing by the nonzero determinant gives the unique zero solution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "d_j=0\\quad(j=1,\\ldots,n),\\qquad x_j=\\frac{d_j}{d}=0"
+      },
+      {
+        "type": "cue",
+        "text": "homogeneous 齐次；trivial solution 零解。此处只证明必要条件；第三章再证明逆命题。"
+      }
+    ]
+  },
+  {
+    "id": "complementary-minors",
+    "title": "Complementary minors and their signs",
+    "zh": "定义9—10 · 子式及其代数余子式",
+    "chapter": 2,
+    "source": "§8* · pp.59–61",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now extend expansion from one row to several rows."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 9. A minor of order k is formed by choosing k rows and k columns in their original order. For k less than n, deleting these rows and columns gives its complementary minor of order n minus k."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "i_1<\\cdots<i_k,\\quad j_1<\\cdots<j_k,\\qquad M=\\begin{vmatrix}a_{i_1j_1}&\\cdots&a_{i_1j_k}\\\\\\vdots&&\\vdots\\\\a_{i_kj_1}&\\cdots&a_{i_kj_k}\\end{vmatrix},\\qquad M'=\\text{complementary minor}"
+      },
+      {
+        "type": "statement",
+        "text": "Definition 10. The cofactor of this minor is its complementary minor multiplied by minus one to the sum of all selected row and column indices."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=(-1)^{i_1+\\cdots+i_k+j_1+\\cdots+j_k}M'"
+      },
+      {
+        "type": "text",
+        "text": "We read M prime as the complementary minor. Here, capital A is the cofactor of the whole minor M. It is a number. The indices in the exponent are the positions in the original determinant."
+      },
+      {
+        "type": "statement",
+        "text": "Lemma. Every term in the expanded product M A is a term of the original determinant, with the same sign."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "First suppose M is the upper-left minor of order k. Its cofactor is M prime, because twice the sum from one to k is even. Choose one term from each minor."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_{1\\alpha_1}\\cdots a_{k\\alpha_k}\\,a_{k+1,\\beta_{k+1}}\\cdots a_{n\\beta_n},\\qquad\\{\\alpha_1,\\ldots,\\alpha_k\\}=\\{1,\\ldots,k\\},\\quad\\{\\beta_{k+1},\\ldots,\\beta_n\\}=\\{k+1,\\ldots,n\\}"
+      },
+      {
+        "type": "text",
+        "text": "Every beta index is larger than every alpha index. There are no inversions between the two parts. The total inversion number is the sum of the two internal inversion numbers. Thus the product has exactly the sign of the corresponding determinant term."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\tau(\\alpha_1\\cdots\\alpha_k\\beta_{k+1}\\cdots\\beta_n)=\\tau(\\alpha_1\\cdots\\alpha_k)+\\tau((\\beta_{k+1}-k)\\cdots(\\beta_n-k))"
+      },
+      {
+        "type": "cue",
+        "text": "α alpha，β beta。后半段减k只是把其数值改成1到n−k，大小关系不变。"
+      },
+      {
+        "type": "text",
+        "text": "For a general minor, move its selected rows to the first k positions, in order. Then do the same with its columns. The numbers of adjacent exchanges are the following."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(i_1-1)+\\cdots+(i_k-k),\\qquad(j_1-1)+\\cdots+(j_k-k)"
+      },
+      {
+        "type": "text",
+        "text": "Let D one denote the new determinant. The total sign is minus one to the sum of the selected indices, since twice the sum from one to k is even."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D_1=(-1)^{i_1+\\cdots+i_k+j_1+\\cdots+j_k}D"
+      },
+      {
+        "type": "text",
+        "text": "In D one, the product M M prime has the correct term signs by the first case. Returning to D multiplies all signs by the displayed factor. That factor turns M M prime into M A. The lemma follows."
+      }
+    ]
+  },
+  {
+    "id": "laplace",
+    "title": "Laplace expansion",
+    "zh": "定理6 · 拉普拉斯定理",
+    "chapter": 2,
+    "source": "§8* · p.61",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Theorem 6 (Laplace expansion). Fix k rows of an n-order determinant, where one is at most k and k is less than n. The determinant is the sum of every minor using these rows times its cofactor. The same statement holds for k fixed columns."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=M_1A_1+M_2A_2+\\cdots+M_tA_t,\\qquad t=\\binom nk=\\frac{n!}{k!(n-k)!}"
+      },
+      {
+        "type": "text",
+        "text": "The subscript labels a choice of k columns. There are n choose k such choices. Each M sub ell uses the fixed rows and one of these column choices. Capital A sub ell is its cofactor."
+      },
+      {
+        "type": "cue",
+        "text": "binomial coefficient 二项式系数，读 n choose k；t 表示选取方式的个数。"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "By the lemma, every term on the right occurs in D with the correct sign. Two different choices of columns cannot give the same term: the entries in the fixed rows use different sets of columns. It remains to count the terms."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "t\\,k!(n-k)!=\\frac{n!}{k!(n-k)!}\\,k!(n-k)!=n!"
+      },
+      {
+        "type": "text",
+        "text": "Each minor contributes k factorial terms. Each cofactor contributes n minus k factorial terms. The total is n factorial, exactly the number of terms in D. Thus every term is counted once. Transposition gives expansion along fixed columns."
+      }
+    ]
+  },
+  {
+    "id": "determinant-product",
+    "title": "Multiplication of determinants",
+    "zh": "定理7 · 行列式乘法法则",
+    "chapter": 2,
+    "source": "§8* · pp.62–64",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Theorem 7. The product of two n-order determinants equals the determinant whose entry in row i and column j is the sum of the products of row i of the first array and column j of the second array."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D_1=\\begin{vmatrix}a_{11}&\\cdots&a_{1n}\\\\\\vdots&&\\vdots\\\\a_{n1}&\\cdots&a_{nn}\\end{vmatrix},\\quad D_2=\\begin{vmatrix}b_{11}&\\cdots&b_{1n}\\\\\\vdots&&\\vdots\\\\b_{n1}&\\cdots&b_{nn}\\end{vmatrix},\\quad D_1D_2=\\begin{vmatrix}c_{11}&\\cdots&c_{1n}\\\\\\vdots&&\\vdots\\\\c_{n1}&\\cdots&c_{nn}\\end{vmatrix}=C"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\\cdots+a_{in}b_{nj}"
+      },
+      {
+        "type": "text",
+        "text": "We multiply corresponding entries from row i and column j, and add. Capital C denotes the resulting determinant."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Form the following determinant of order two n. Its upper-right part is zero, and the lower-left part has minus one on the diagonal and zeros elsewhere."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=\\begin{vmatrix}a_{11}&\\cdots&a_{1n}&0&\\cdots&0\\\\\\vdots&&\\vdots&\\vdots&&\\vdots\\\\a_{n1}&\\cdots&a_{nn}&0&\\cdots&0\\\\-1&\\cdots&0&b_{11}&\\cdots&b_{1n}\\\\\\vdots&\\ddots&\\vdots&\\vdots&&\\vdots\\\\0&\\cdots&-1&b_{n1}&\\cdots&b_{nn}\\end{vmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "Expand along the first n rows by Laplace’s theorem. Only the first n columns give a possibly nonzero minor. Its cofactor has positive sign. Hence D equals D one times D two."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=D_1D_2"
+      },
+      {
+        "type": "text",
+        "text": "Now add a sub i one times row n plus one, through a sub i n times row two n, to row i. Do this for each i from one to n. These are row additions, so the determinant is unchanged. The first n entries in each top row become zero. Its last n entries become the corresponding c entries."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=\\begin{vmatrix}0&\\cdots&0&c_{11}&\\cdots&c_{1n}\\\\\\vdots&&\\vdots&\\vdots&&\\vdots\\\\0&\\cdots&0&c_{n1}&\\cdots&c_{nn}\\\\-1&\\cdots&0&b_{11}&\\cdots&b_{1n}\\\\\\vdots&\\ddots&\\vdots&\\vdots&&\\vdots\\\\0&\\cdots&-1&b_{n1}&\\cdots&b_{nn}\\end{vmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "Expand again along the first n rows. Only the last n columns can contribute. Their cofactor contains the diagonal determinant with n entries equal to minus one."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}D&=C\\,(-1)^{(1+\\cdots+n)+(n+1+\\cdots+2n)}\\begin{vmatrix}-1&\\cdots&0\\\\\\vdots&\\ddots&\\vdots\\\\0&\\cdots&-1\\end{vmatrix}\\\\&=C\\,(-1)^{n(2n+1)}(-1)^n=C.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "The total exponent is two n times n plus one, which is even. Therefore, D one times D two equals C. This completes the proof."
+      }
+    ]
+  },
+  {
+    "id": "linear-systems",
+    "title": "Linear systems and elementary transformations",
+    "zh": "方程组与定义1 · 初等变换",
+    "chapter": 3,
+    "source": "§1 · pp.70–72",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now study general linear systems. The numbers of equations and unknowns need not be equal."
+      },
+      {
+        "type": "statement",
+        "text": "Definitions. A solution of a linear system is an ordered list of values that satisfies every equation. The solution set contains all solutions. Two systems are equivalent if they have the same solution set."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}a_{11}x_1+a_{12}x_2+\\cdots+a_{1n}x_n=b_1,\\\\a_{21}x_1+a_{22}x_2+\\cdots+a_{2n}x_n=b_2,\\\\\\vdots\\\\a_{s1}x_1+a_{s2}x_2+\\cdots+a_{sn}x_n=b_s.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "Here, s is the number of equations and n is the number of unknowns. A solution is a list of n values, in the order of the unknowns. The coefficient a sub i j belongs to equation i and unknown j. All coefficients, constants, and solution entries are taken in P."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 1. Elementary transformations of a linear system are: multiply an equation by a nonzero number; add a multiple of one equation to another; exchange two equations."
+      },
+      {
+        "type": "statement",
+        "text": "Result. Every elementary transformation preserves the solution set."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Consider adding k times the second equation to the first. A solution of the original system satisfies both equations below."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^n a_{1j}c_j=b_1,\\qquad\\sum_{j=1}^n a_{2j}c_j=b_2"
+      },
+      {
+        "type": "text",
+        "text": "Multiply the second equality by k and add it to the first. This gives the new first equation. All other equations stay the same."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^n(a_{1j}+k a_{2j})c_j=b_1+k b_2"
+      },
+      {
+        "type": "text",
+        "text": "Conversely, subtract k times the unchanged second equation to recover the original first equation. Thus the two systems have the same solutions. Multiplication by a nonzero number is reversed by division by that number. Exchanging equations is reversed by exchanging them again. These operations also preserve all solutions."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. The augmented matrix contains the coefficients and one additional column of constant terms."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\overline A=\\begin{pmatrix}a_{11}&\\cdots&a_{1n}&b_1\\\\\\vdots&&\\vdots&\\vdots\\\\a_{s1}&\\cdots&a_{sn}&b_s\\end{pmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "We denote the augmented matrix by A bar. Elementary transformations of equations are exactly elementary row operations on this matrix."
+      },
+      {
+        "type": "cue",
+        "text": "augmented matrix 增广矩阵；A bar 读A上方横线。最后一列也必须参与每次行变换。"
+      }
+    ]
+  },
+  {
+    "id": "elimination",
+    "title": "Elimination and free unknowns",
+    "zh": "消元法 · 一般解与自由未知量",
+    "chapter": 3,
+    "source": "§1 · pp.72–75",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Elimination result. Reduce the augmented matrix by row operations. A row with all coefficients zero and a nonzero constant means no solution. Otherwise, if there are r leading entries, the system has a unique solution when r equals n and infinitely many solutions when r is less than n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(0,\\ldots,0\\mid d),\\quad d\\ne0\\quad\\Longrightarrow\\quad0=d\\text{ is impossible}"
+      },
+      {
+        "type": "text",
+        "text": "The vertical separator only separates coefficients from the constant term. It is not a determinant symbol. We now prove the remaining cases."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Apply the row reduction from Chapter Two. Each row operation preserves solutions. We can relabel the unknowns so the leading unknowns are x sub one through x sub r. Remove equations that say zero equals zero. If there is no contradiction, the remaining system has this form."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}c_{11}x_1+c_{12}x_2+\\cdots+c_{1r}x_r+c_{1,r+1}x_{r+1}+\\cdots+c_{1n}x_n=d_1,\\\\c_{22}x_2+\\cdots+c_{2r}x_r+c_{2,r+1}x_{r+1}+\\cdots+c_{2n}x_n=d_2,\\\\\\vdots\\\\c_{rr}x_r+c_{r,r+1}x_{r+1}+\\cdots+c_{rn}x_n=d_r,\\end{cases}\\quad c_{ii}\\ne0"
+      },
+      {
+        "type": "text",
+        "text": "If r equals n, start with the last equation and solve upwards. Each diagonal coefficient is nonzero, so each step gives exactly one value. This is back substitution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "x_n=\\frac{d_n}{c_{nn}},\\qquad x_i=\\frac{d_i-c_{i,i+1}x_{i+1}-\\cdots-c_{in}x_n}{c_{ii}}\\quad(i=n-1,\\ldots,1)"
+      },
+      {
+        "type": "text",
+        "text": "If r is less than n, first choose arbitrary values for x sub r plus one through x sub n. Move their terms to the right. Back substitution then determines the other values uniquely."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "c_{ii}x_i+\\cdots+c_{ir}x_r=d_i-c_{i,r+1}x_{r+1}-\\cdots-c_{in}x_n\\quad(i=1,\\ldots,r)"
+      },
+      {
+        "type": "statement",
+        "text": "Definitions. Unknowns that can be assigned arbitrary values are free unknowns. Formulas expressing all solutions in terms of them form a general solution."
+      },
+      {
+        "type": "text",
+        "text": "There are n minus r free unknowns. Different choices give different solutions. Since P contains infinitely many numbers, there are infinitely many solutions. If r is zero and there is no contradiction, every unknown is free."
+      },
+      {
+        "type": "cue",
+        "text": "free unknowns 也常说 free variables；back substitution 回代。i=n−1,…,1 是倒序，读 from n minus one down to one。"
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 1. A homogeneous system with fewer equations than unknowns has a nonzero solution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "s<n\\quad\\Longrightarrow\\quad\\text{a nonzero solution exists}"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "A homogeneous system always has the zero solution. After elimination, the number r of leading entries cannot exceed s. Thus r is less than n, so at least one unknown is free. Give one free unknown the value one. The resulting solution is nonzero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "r\\le s<n"
+      }
+    ]
+  },
+  {
+    "id": "vectors",
+    "title": "Vectors and vector operations",
+    "zh": "定义2—7 · 向量及运算",
+    "chapter": 3,
+    "source": "§2 · pp.76–77",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, we introduce vectors to describe relations among equations."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 2. An n-dimensional vector over P is an ordered list of n numbers in P. These numbers are its components."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha=(a_1,a_2,\\ldots,a_n),\\qquad a_i\\in P"
+      },
+      {
+        "type": "text",
+        "text": "We denote a vector by a Greek letter, such as alpha. We read its components as a sub one, a sub two, through a sub n. Their order matters."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 3. Two vectors are equal if all corresponding components are equal."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha=(a_1,\\ldots,a_n),\\quad\\beta=(b_1,\\ldots,b_n),\\qquad\\alpha=\\beta\\ \\Longleftrightarrow\\ a_i=b_i\\quad(i=1,\\ldots,n)"
+      },
+      {
+        "type": "statement",
+        "text": "Definition 4. The sum of two vectors is formed by adding their corresponding components."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha+\\beta=(a_1+b_1,\\ldots,a_n+b_n)"
+      },
+      {
+        "type": "statement",
+        "text": "Definition 5. The zero vector has every component zero. The negative of a vector has the negative of each component."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "0=(0,\\ldots,0),\\qquad-\\alpha=(-a_1,\\ldots,-a_n)"
+      },
+      {
+        "type": "statement",
+        "text": "Definition 6. Vector subtraction means addition of the negative vector."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha-\\beta=\\alpha+(-\\beta)=(a_1-b_1,\\ldots,a_n-b_n)"
+      },
+      {
+        "type": "statement",
+        "text": "Definition 7. Scalar multiplication multiplies every component of a vector by the same number from P."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k\\alpha=(ka_1,\\ldots,ka_n),\\qquad k\\in P"
+      },
+      {
+        "type": "text",
+        "text": "We read k alpha as k times alpha. The number k is the scalar. All these operations are performed component by component."
+      },
+      {
+        "type": "cue",
+        "text": "α alpha，β beta，γ gamma。零向量在原书中也记0，由上下文区别数0。"
+      }
+    ]
+  },
+  {
+    "id": "vector-laws",
+    "title": "Vector laws and n-dimensional vector space",
+    "zh": "运算规律与定义8",
+    "chapter": 3,
+    "source": "§2 · pp.77–78",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Vector laws. Addition is commutative and associative, zero is an additive identity, and every vector has an additive inverse. Scalar multiplication satisfies the two distributive laws, associativity of scalar factors, and multiplication by one."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\\alpha+\\beta&=\\beta+\\alpha,&\\alpha+(\\beta+\\gamma)&=(\\alpha+\\beta)+\\gamma,\\\\\\alpha+0&=\\alpha,&\\alpha+(-\\alpha)&=0,\\\\k(\\alpha+\\beta)&=k\\alpha+k\\beta,&(k+\\ell)\\alpha&=k\\alpha+\\ell\\alpha,\\\\k(\\ell\\alpha)&=(k\\ell)\\alpha,&1\\alpha&=\\alpha.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "These are the eight basic rules. The first two allow us to change the order and grouping of addition. The next two describe zero and negatives. The last four describe scalar multiplication."
+      },
+      {
+        "type": "heading",
+        "text": "Verification"
+      },
+      {
+        "type": "text",
+        "text": "Equality of vectors is equality of all components. In each component, the first two identities say that addition of numbers is commutative and associative. The next two say a plus zero equals a, and a plus minus a equals zero. For the last four, the component identities are these."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}k(a_i+b_i)&=ka_i+kb_i,\\\\(k+\\ell)a_i&=ka_i+\\ell a_i,\\\\k(\\ell a_i)&=(k\\ell)a_i,\\\\1a_i&=a_i.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "These hold in the number field P. Therefore, the vector identities hold."
+      },
+      {
+        "type": "statement",
+        "text": "Consequences. Zero times a vector is zero; minus one times a vector is its negative; any scalar times the zero vector is zero. A nonzero scalar times a nonzero vector is nonzero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "0\\alpha=0,\\qquad(-1)\\alpha=-\\alpha,\\qquad k0=0,\\qquad k\\ne0,\\ \\alpha\\ne0\\ \\Longrightarrow\\ k\\alpha\\ne0"
+      },
+      {
+        "type": "heading",
+        "text": "Verification"
+      },
+      {
+        "type": "text",
+        "text": "The first three formulas follow directly from their components. For the last, choose a nonzero component of alpha. Multiplying it by nonzero k gives a nonzero component of k alpha."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 8. The n-dimensional vector space over P consists of all n-component vectors over P, together with the addition and scalar multiplication just defined."
+      },
+      {
+        "type": "text",
+        "text": "A vector can be written as a row or as a column. The component order is the same; only its layout changes."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(a_1,\\ldots,a_n),\\qquad\\begin{pmatrix}a_1\\\\\\vdots\\\\a_n\\end{pmatrix}"
+      },
+      {
+        "type": "cue",
+        "text": "commutative 交换的；associative 结合的；distributive 分配的。讲解时指相应等式，不必重复朗读所有下标。"
+      }
+    ]
+  },
+  {
+    "id": "linear-combinations",
+    "title": "Linear combinations and equivalent systems of vectors",
+    "zh": "定义9—10 · 线性组合与等价",
+    "chapter": 3,
+    "source": "§3 · pp.78–79",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition 9. A vector is a linear combination of a given system of vectors if it is a sum of scalar multiples of those vectors."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha=k_1\\beta_1+k_2\\beta_2+\\cdots+k_s\\beta_s,\\qquad k_1,\\ldots,k_s\\in P"
+      },
+      {
+        "type": "text",
+        "text": "We also say alpha can be expressed linearly in beta sub one through beta sub s. The numbers k sub one through k sub s are the coefficients."
+      },
+      {
+        "type": "statement",
+        "text": "Unit vectors. The n unit vectors each have a single component equal to one, in the indicated position, and zeros elsewhere. Every n-component vector is their linear combination."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\varepsilon_1=(1,0,\\ldots,0),\\quad\\varepsilon_2=(0,1,\\ldots,0),\\quad\\ldots,\\quad\\varepsilon_n=(0,0,\\ldots,1),\\qquad\\alpha=a_1\\varepsilon_1+\\cdots+a_n\\varepsilon_n"
+      },
+      {
+        "type": "text",
+        "text": "We read epsilon sub i as the unit vector with one in position i. The equality follows by comparing components. The zero vector is a linear combination of any nonempty system: take every coefficient zero."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 10. One system of vectors can be expressed linearly in another if each of its vectors can be so expressed. Two systems are equivalent if each can be expressed linearly in the other."
+      },
+      {
+        "type": "statement",
+        "text": "Result. Linear expression is transitive. Equivalence of vector systems is reflexive, symmetric, and transitive."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Suppose each alpha is expressed in the betas, and each beta in the gammas. Substitute the second set of formulas into the first and collect the coefficients of each gamma."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_i=\\sum_{j=1}^s k_{ij}\\beta_j,\\qquad\\beta_j=\\sum_{m=1}^p\\ell_{jm}\\gamma_m,\\qquad\\alpha_i=\\sum_{m=1}^p\\left(\\sum_{j=1}^s k_{ij}\\ell_{jm}\\right)\\gamma_m"
+      },
+      {
+        "type": "text",
+        "text": "This proves transitivity of linear expression. Every system expresses itself by using coefficients one and zero. This gives reflexivity. Symmetry is part of the definition of equivalence. Applying transitivity in both directions proves transitivity of equivalence."
+      },
+      {
+        "type": "cue",
+        "text": "equivalent 等价；reflexive 自反；symmetric 对称；transitive 传递。这里“向量组等价”不等于向量逐个相等。"
+      }
+    ]
+  },
+  {
+    "id": "linear-dependence",
+    "title": "Linear dependence and independence",
+    "zh": "定义11、11′、12及等价证明",
+    "chapter": 3,
+    "source": "§3 · pp.79–80",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition 11. A system of at least two vectors is linearly dependent if one vector is a linear combination of the others."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_s=k_1\\alpha_1+\\cdots+k_{s-1}\\alpha_{s-1}\\quad\\text{after relabelling if needed}"
+      },
+      {
+        "type": "statement",
+        "text": "Definition 11 prime. A system of one or more vectors is linearly dependent if a linear combination with coefficients not all zero equals the zero vector."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k_1\\alpha_1+\\cdots+k_s\\alpha_s=0,\\qquad(k_1,\\ldots,k_s)\\ne(0,\\ldots,0)"
+      },
+      {
+        "type": "text",
+        "text": "Not all zero means that at least one coefficient is nonzero. We now show that these definitions agree for two or more vectors."
+      },
+      {
+        "type": "heading",
+        "text": "Proof of equivalence"
+      },
+      {
+        "type": "text",
+        "text": "If one vector is expressed in the others, move it to the left. Its coefficient is minus one, so the coefficients are not all zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_s=\\sum_{i=1}^{s-1}k_i\\alpha_i\\quad\\Longrightarrow\\quad\\sum_{i=1}^{s-1}k_i\\alpha_i-\\alpha_s=0"
+      },
+      {
+        "type": "text",
+        "text": "Conversely, take a relation with coefficients not all zero. Relabel so that k sub s is nonzero. Divide by it and solve for alpha sub s."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_s=-\\frac{k_1}{k_s}\\alpha_1-\\cdots-\\frac{k_{s-1}}{k_s}\\alpha_{s-1}"
+      },
+      {
+        "type": "text",
+        "text": "Thus one vector is a linear combination of the others. The definitions agree."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 12. A system is linearly independent if the zero vector can be obtained as a linear combination only when every coefficient is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k_1\\alpha_1+\\cdots+k_s\\alpha_s=0\\quad\\Longrightarrow\\quad k_1=\\cdots=k_s=0"
+      },
+      {
+        "type": "text",
+        "text": "This is the negation of linear dependence. We read the arrow as implies. The distinction is whether a nonzero list of coefficients can give the zero vector."
+      },
+      {
+        "type": "cue",
+        "text": "linearly dependent 线性相关；linearly independent 线性无关。不要把“向量和等于零”直接当作相关，必须检查系数不全为零。"
+      }
+    ]
+  },
+  {
+    "id": "dependence-consequences",
+    "title": "Basic consequences of independence",
+    "zh": "部分组、添加分量与方程组判别",
+    "chapter": 3,
+    "source": "§3 · pp.80–82",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Result 1. A system containing a dependent subsystem is dependent. Equivalently, every nonempty subsystem of an independent system is independent."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k_1\\alpha_1+\\cdots+k_s\\alpha_s=0\\quad\\Longrightarrow\\quad k_1\\alpha_1+\\cdots+k_s\\alpha_s+0\\alpha_{s+1}+\\cdots+0\\alpha_r=0"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Start with a dependence relation in the subsystem. Give coefficient zero to each added vector. The coefficients are still not all zero, so the full system is dependent. The second statement is the contrapositive."
+      },
+      {
+        "type": "statement",
+        "text": "Result 2. A single vector is dependent exactly when it is zero. The unit vectors are linearly independent."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "If k alpha is zero and k is nonzero, divide by k to get alpha equal to zero. Conversely, one times the zero vector is zero. For the unit vectors, compare the components below."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k_1\\varepsilon_1+\\cdots+k_n\\varepsilon_n=(k_1,\\ldots,k_n)=(0,\\ldots,0)\\quad\\Longrightarrow\\quad k_1=\\cdots=k_n=0"
+      },
+      {
+        "type": "statement",
+        "text": "Result 3. Independence of a system of vectors is equivalent to its associated homogeneous system having only the zero solution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_i=(a_{i1},\\ldots,a_{in})\\quad(i=1,\\ldots,s),\\qquad x_1\\alpha_1+\\cdots+x_s\\alpha_s=0"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}a_{11}x_1+a_{21}x_2+\\cdots+a_{s1}x_s=0,\\\\a_{12}x_1+a_{22}x_2+\\cdots+a_{s2}x_s=0,\\\\\\vdots\\\\a_{1n}x_1+a_{2n}x_2+\\cdots+a_{sn}x_s=0.\\end{cases}"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "A vector equality holds exactly when every component equality holds. These component equalities are the displayed equations. A nonzero solution is exactly a dependence relation."
+      },
+      {
+        "type": "statement",
+        "text": "Result 4. Adding components to each vector of an independent system preserves independence."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\beta_i=(a_{i1},\\ldots,a_{in},a_{i,n+1})\\quad(i=1,\\ldots,s)"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "A zero linear combination of the new vectors gives a zero linear combination of the old vectors when we read the first n components. The old vectors are independent, so every coefficient is zero. Repeating this argument allows any number of added components."
+      },
+      {
+        "type": "cue",
+        "text": "associated homogeneous system 中未知量是线性组合系数；原向量按列进入系数矩阵，不要把i、j位置颠倒。"
+      }
+    ]
+  },
+  {
+    "id": "comparison-theorem",
+    "title": "Comparing two systems of vectors",
+    "zh": "定理2及三个推论",
+    "chapter": 3,
+    "source": "§3 · p.82",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Theorem 2. If r vectors can be expressed linearly in s vectors and r is greater than s, then the r vectors are linearly dependent."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_i=\\sum_{j=1}^{s}t_{ji}\\beta_j\\quad(i=1,\\ldots,r),\\qquad r>s"
+      },
+      {
+        "type": "text",
+        "text": "The coefficient t sub j i multiplies beta sub j in the expression for alpha sub i. We will find a nonzero relation among the alphas."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Form a linear combination with unknown coefficients x sub one through x sub r. Substitute the expressions and collect each beta."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{i=1}^{r}x_i\\alpha_i=\\sum_{j=1}^{s}\\left(\\sum_{i=1}^{r}t_{ji}x_i\\right)\\beta_j"
+      },
+      {
+        "type": "text",
+        "text": "It is enough to make every coefficient in parentheses zero. These conditions form s homogeneous equations in r unknowns."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}t_{11}x_1+t_{12}x_2+\\cdots+t_{1r}x_r=0,\\\\t_{21}x_1+t_{22}x_2+\\cdots+t_{2r}x_r=0,\\\\\\vdots\\\\t_{s1}x_1+t_{s2}x_2+\\cdots+t_{sr}x_r=0.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "Since r is greater than s, Theorem One gives a nonzero solution. For that choice of coefficients, the combination of the alphas is zero. Thus they are dependent."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary 1. If r independent vectors can be expressed linearly in s vectors, then r is at most s."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "r\\le s"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "If r were greater than s, the theorem would make them dependent, a contradiction."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary 2. Any n plus one vectors with n components are linearly dependent."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "n+1>n"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Every n-component vector is a combination of the n unit vectors. Apply the theorem."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary 3. Two equivalent independent systems contain the same number of vectors."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "r\\le s,\\quad s\\le r\\quad\\Longrightarrow\\quad r=s"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Apply Corollary One in each direction. The two inequalities give equality."
+      }
+    ]
+  },
+  {
+    "id": "vector-rank",
+    "title": "Maximal independent subsystems and rank",
+    "zh": "定义13—14 · 定理3",
+    "chapter": 3,
+    "source": "§3 · pp.83–84",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition 13. A maximal linearly independent subsystem is an independent subsystem that becomes dependent whenever any other vector from the original system is added."
+      },
+      {
+        "type": "text",
+        "text": "Maximal means that we cannot add another vector while keeping independence. A system containing a nonzero vector has such a subsystem: start with a nonzero vector and keep adding vectors whenever independence is preserved. The finite process must stop."
+      },
+      {
+        "type": "statement",
+        "text": "Result. Every maximal independent subsystem is equivalent to the full system."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Write a maximal independent subsystem as alpha sub one through alpha sub s. These vectors are already in the full system. For any remaining vector alpha sub j, adding it gives a dependence relation."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k_1\\alpha_1+\\cdots+k_s\\alpha_s+\\ell\\alpha_j=0,\\qquad j>s"
+      },
+      {
+        "type": "text",
+        "text": "The coefficient ell cannot be zero. Otherwise, the independent subsystem would have a nonzero relation. Divide by ell to express alpha sub j in that subsystem."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\ell\\ne0,\\qquad\\alpha_j=-\\frac{k_1}{\\ell}\\alpha_1-\\cdots-\\frac{k_s}{\\ell}\\alpha_s"
+      },
+      {
+        "type": "text",
+        "text": "Hence the full system can be expressed in the subsystem, and the subsystem in the full system. They are equivalent."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 3. All maximal independent subsystems of a given vector system contain the same number of vectors."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Each is equivalent to the full system, so any two are equivalent to each other. They are independent. Corollary Three of Theorem Two gives equal numbers of vectors."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 14. The rank of a vector system is the number of vectors in a maximal independent subsystem. A system consisting entirely of zero vectors has rank zero."
+      },
+      {
+        "type": "statement",
+        "text": "Consequences. A system is independent exactly when its rank equals its number of vectors. Equivalent systems have the same rank."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "An independent system is its own maximal independent subsystem. Conversely, if a maximal independent subsystem has as many vectors as the full system, it is the full system. For equivalent systems, their maximal independent subsystems are equivalent and independent, so their sizes agree. Systems of rank zero satisfy these statements directly."
+      },
+      {
+        "type": "cue",
+        "text": "rank 读 /ræŋk/，表示秩；maximal independent subsystem 极大线性无关组。按照原书约定，全零向量组的秩定为0。"
+      }
+    ]
+  },
+  {
+    "id": "equations-linear-combinations",
+    "title": "Linear combinations of equations",
+    "zh": "方程的线性组合与同解",
+    "chapter": 3,
+    "source": "§3 · p.84",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Result. Every solution of a system satisfies every linear combination of its equations. Systems whose augmented row vectors are equivalent have the same solutions."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_i=(a_{i1},\\ldots,a_{in},d_i),\\qquad\\beta=(b_1,\\ldots,b_n,d)=\\ell_1\\alpha_1+\\cdots+\\ell_s\\alpha_s"
+      },
+      {
+        "type": "text",
+        "text": "The vector beta represents the equation with coefficients b sub one through b sub n and constant d. The equality says that this entire equation, including the constant, is a linear combination of the original equations."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^n a_{ij}c_j=d_i\\quad(i=1,\\ldots,s)\\quad\\Longrightarrow\\quad\\sum_{j=1}^n b_jc_j=\\sum_{i=1}^s\\ell_i\\sum_{j=1}^n a_{ij}c_j=\\sum_{i=1}^s\\ell_i d_i=d"
+      },
+      {
+        "type": "text",
+        "text": "Multiply each original equation by its coefficient ell sub i and add. This proves that every original solution satisfies the new equation. For equivalent augmented row systems, apply this argument in both directions. Their solution sets are equal."
+      }
+    ]
+  },
+  {
+    "id": "matrix-rank",
+    "title": "Row rank, column rank, and rank by minors",
+    "zh": "定义15—17 · 矩阵的秩",
+    "chapter": 3,
+    "source": "§4 · pp.84–86",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition 15. The row rank of a matrix is the rank of its row vectors. Its column rank is the rank of its column vectors."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=\\begin{pmatrix}a_{11}&\\cdots&a_{1n}\\\\\\vdots&&\\vdots\\\\a_{s1}&\\cdots&a_{sn}\\end{pmatrix},\\qquad(a_{i1},\\ldots,a_{in}),\\qquad\\begin{pmatrix}a_{1j}\\\\\\vdots\\\\a_{sj}\\end{pmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "Each row has n components. Each column has s components. These give two vector systems."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 16. A minor of order k of a rectangular matrix is a determinant formed by selecting k rows and k columns, in their original order."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{vmatrix}a_{i_1j_1}&\\cdots&a_{i_1j_k}\\\\\\vdots&&\\vdots\\\\a_{i_kj_1}&\\cdots&a_{i_kj_k}\\end{vmatrix},\\qquad k\\le\\min(s,n)"
+      },
+      {
+        "type": "text",
+        "text": "Min of s and n means the smaller of the two numbers. A minor is square even when the original matrix is rectangular."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 17. The rank of a nonzero matrix is the largest order of a nonzero minor. The zero matrix has rank zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\operatorname{rank}(A)=r\\quad\\Longleftrightarrow\\quad\\begin{cases}\\text{some minor of order }r\\text{ is nonzero},\\\\\\text{every minor of larger order is zero}\\end{cases}\\quad(r>0)"
+      },
+      {
+        "type": "text",
+        "text": "We read rank of A equals r. To check the second condition, it is enough to check order r plus one, if that order exists."
+      },
+      {
+        "type": "statement",
+        "text": "Result. If every minor of order r plus one is zero, all minors of larger order are zero."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Expand any minor of order r plus two along one row. Every cofactor contains a minor of order r plus one, so the expansion is zero. Repeat for order r plus three, and continue. This proves the result."
+      },
+      {
+        "type": "cue",
+        "text": "rank(A) 是一个非负整数；不是行数，也不是非零元素数量。"
+      }
+    ]
+  },
+  {
+    "id": "rank-equality",
+    "title": "Equality of row rank and column rank",
+    "zh": "定理4 · 行秩等于列秩",
+    "chapter": 3,
+    "source": "§4 · pp.86–88",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Theorem 4. The rank of a matrix equals its column rank and its row rank."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\operatorname{rank}(A)=\\operatorname{column\\ rank}(A)=\\operatorname{row\\ rank}(A)"
+      },
+      {
+        "type": "text",
+        "text": "We follow the textbook proof using a nonzero minor. The zero matrix is immediate, so assume its rank r is positive."
+      },
+      {
+        "type": "heading",
+        "text": "Proof: independent columns"
+      },
+      {
+        "type": "text",
+        "text": "Reorder the columns so that a nonzero minor of order r lies in the first r columns. This does not change the column vectors as a system, or the largest order of a nonzero minor. Suppose the selected rows are i sub one through i sub r."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "d=\\begin{vmatrix}a_{i_1,1}&\\cdots&a_{i_1,r}\\\\\\vdots&&\\vdots\\\\a_{i_r,1}&\\cdots&a_{i_r,r}\\end{vmatrix}\\ne0"
+      },
+      {
+        "type": "text",
+        "text": "Cramer’s rule says the following homogeneous system has only the zero solution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}a_{i_1,1}x_1+\\cdots+a_{i_1,r}x_r=0,\\\\\\vdots\\\\a_{i_r,1}x_1+\\cdots+a_{i_r,r}x_r=0.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "Thus the r columns restricted to these rows are independent. Adding their remaining components preserves independence. Therefore, the first r full columns of A are independent."
+      },
+      {
+        "type": "heading",
+        "text": "Proof: all other columns are combinations"
+      },
+      {
+        "type": "text",
+        "text": "Take another column j. Again by Cramer’s rule, choose ell sub one through ell sub r so the first r selected components satisfy the following equations."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}a_{i_1,1}\\ell_1+\\cdots+a_{i_1,r}\\ell_r=a_{i_1,j},\\\\\\vdots\\\\a_{i_r,1}\\ell_1+\\cdots+a_{i_r,r}\\ell_r=a_{i_r,j}.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "For each row i, let b sub i one be the difference between its entry in column j and this linear combination. It is already zero on the selected rows."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "b_{i1}=a_{ij}-\\ell_1a_{i1}-\\cdots-\\ell_r a_{ir},\\qquad b_{i_1,1}=\\cdots=b_{i_r,1}=0"
+      },
+      {
+        "type": "text",
+        "text": "For any other row i, form the minor with this row, the selected rows, column j, and the first r columns. It has order r plus one, so it is zero. Move row i and column j to the first positions; its value is still zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{vmatrix}a_{ij}&a_{i1}&\\cdots&a_{ir}\\\\a_{i_1,j}&a_{i_1,1}&\\cdots&a_{i_1,r}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i_r,j}&a_{i_r,1}&\\cdots&a_{i_r,r}\\end{vmatrix}=0"
+      },
+      {
+        "type": "text",
+        "text": "Subtract ell sub one times the second column, through ell sub r times the last column, from the first column. Now expand along that column."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{vmatrix}b_{i1}&a_{i1}&\\cdots&a_{ir}\\\\0&a_{i_1,1}&\\cdots&a_{i_1,r}\\\\\\vdots&\\vdots&&\\vdots\\\\0&a_{i_r,1}&\\cdots&a_{i_r,r}\\end{vmatrix}=b_{i1}d=0"
+      },
+      {
+        "type": "text",
+        "text": "Since d is nonzero, b sub i one is zero. Thus the same linear combination holds in every component. Every column is expressed in the first r independent columns. They form a maximal independent subsystem, so the column rank is r. If r already equals the number of columns, this last step is unnecessary."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}a_{1j}\\\\\\vdots\\\\a_{sj}\\end{pmatrix}=\\ell_1\\begin{pmatrix}a_{11}\\\\\\vdots\\\\a_{s1}\\end{pmatrix}+\\cdots+\\ell_r\\begin{pmatrix}a_{1r}\\\\\\vdots\\\\a_{sr}\\end{pmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "Apply the same argument to the transpose. Corresponding minors have equal determinants, so the rank is unchanged, and its columns are the rows of A. Therefore, the row rank also equals r."
+      },
+      {
+        "type": "cue",
+        "text": "原书证明核心：先在非零子式的选定行上求系数，再用r+1阶子式为零把关系扩展到其余所有行。不能只证明局部关系就宣布整列相关。"
+      }
+    ]
+  },
+  {
+    "id": "rank-corollaries",
+    "title": "Computing rank and choosing independent columns",
+    "zh": "定理4的推论1—4",
+    "chapter": 3,
+    "source": "§4 · pp.88–89",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Corollary 1. Elementary row and column operations preserve the rank, row rank, and column rank of a matrix."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "After a column operation, the new columns are combinations of the old columns. The inverse operation expresses the old columns in the new ones. The column systems are equivalent, so their ranks agree. The rank equality theorem gives equality of all three ranks. Use rows for a row operation."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary 2. The rank equals the number of nonzero rows in a row echelon form."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "b_{1,i_1}\\ne0,\\ldots,b_{r,i_r}\\ne0,\\quad i_1<\\cdots<i_r,\\qquad\\begin{vmatrix}b_{1,i_1}&b_{1,i_2}&\\cdots&b_{1,i_r}\\\\0&b_{2,i_2}&\\cdots&b_{2,i_r}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&b_{r,i_r}\\end{vmatrix}=b_{1,i_1}\\cdots b_{r,i_r}\\ne0"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Choose the leading columns and the r nonzero rows. The displayed minor is upper triangular with nonzero diagonal entries. Every larger minor contains a zero row, so it is zero. Hence the echelon matrix has rank r. Row operations preserve rank, so the original matrix has rank r too."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary 3. The columns of the original matrix at the leading-column positions of a row echelon form are a maximal independent subsystem of the original columns."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Take just these columns from the original and echelon matrices. The same row operations connect the two smaller matrices, so their ranks agree. The echelon columns have rank r by the displayed nonzero minor. Thus the selected original columns are independent. Their number is the rank of the full matrix, so they are maximal."
+      },
+      {
+        "type": "cue",
+        "text": "选的是原矩阵中对应位置的列，不是把变换后的列当作原向量。leading-column positions 主元列的位置。"
+      },
+      {
+        "type": "statement",
+        "text": "Corollary 4. The rows or columns of a square matrix are dependent exactly when its determinant is zero, and independent exactly when its determinant is nonzero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "|A|=0\\ \\Longleftrightarrow\\ \\operatorname{rank}(A)<n,\\qquad |A|\\ne0\\ \\Longleftrightarrow\\ \\operatorname{rank}(A)=n"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "A square matrix has just one minor of order n: its determinant. It has rank n exactly when that determinant is nonzero. The rank equality theorem and the definition of vector independence give the conclusion."
+      }
+    ]
+  },
+  {
+    "id": "square-system-converses",
+    "title": "Square systems: both directions",
+    "zh": "定理5—6 · 克拉默法则的逆命题",
+    "chapter": 3,
+    "source": "§4 · pp.89–90",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Theorem 5. A homogeneous system of n equations in n unknowns has a nonzero solution if and only if its coefficient determinant is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^n a_{ij}x_j=0\\quad(i=1,\\ldots,n),\\qquad\\text{nonzero solution}\\ \\Longleftrightarrow\\ |A|=0"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "A nonzero solution is a dependence relation among the columns of A. By the preceding corollary, the columns are dependent exactly when the determinant is zero. This proves both directions."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 6 (Cramer’s rule and its converse). A system of n equations in n unknowns has a unique solution if and only if its coefficient determinant is nonzero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^n a_{ij}x_j=b_i\\quad(i=1,\\ldots,n),\\qquad\\text{unique solution}\\ \\Longleftrightarrow\\ |A|\\ne0"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The nonzero-determinant direction is Cramer’s rule. Conversely, suppose c is the unique solution. If the associated homogeneous system had a nonzero solution d, adding the components would give another solution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^n a_{ij}(c_j+d_j)=\\sum_{j=1}^n a_{ij}c_j+\\sum_{j=1}^n a_{ij}d_j=b_i+0=b_i"
+      },
+      {
+        "type": "text",
+        "text": "Since d is nonzero, this solution differs from c. That contradicts uniqueness. Thus the homogeneous system has only the zero solution. Theorem Five gives a nonzero determinant."
+      }
+    ]
+  },
+  {
+    "id": "consistency",
+    "title": "The consistency criterion",
+    "zh": "定理7 · 有解判别定理",
+    "chapter": 3,
+    "source": "§5 · pp.92–93",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now give a criterion for any number of equations and unknowns."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 7. A linear system has a solution if and only if its coefficient matrix and augmented matrix have the same rank."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=\\begin{pmatrix}a_{11}&\\cdots&a_{1n}\\\\\\vdots&&\\vdots\\\\a_{s1}&\\cdots&a_{sn}\\end{pmatrix},\\quad\\overline A=\\begin{pmatrix}a_{11}&\\cdots&a_{1n}&b_1\\\\\\vdots&&\\vdots&\\vdots\\\\a_{s1}&\\cdots&a_{sn}&b_s\\end{pmatrix},\\qquad\\operatorname{rank}(A)=\\operatorname{rank}(\\overline A)"
+      },
+      {
+        "type": "text",
+        "text": "A bar is the augmented matrix. A system with a solution is called consistent. Write the columns of A as alpha sub one through alpha sub n, and the constant column as beta."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_j=\\begin{pmatrix}a_{1j}\\\\\\vdots\\\\a_{sj}\\end{pmatrix},\\quad\\beta=\\begin{pmatrix}b_1\\\\\\vdots\\\\b_s\\end{pmatrix},\\qquad x_1\\alpha_1+\\cdots+x_n\\alpha_n=\\beta"
+      },
+      {
+        "type": "heading",
+        "text": "Proof: necessity"
+      },
+      {
+        "type": "text",
+        "text": "If a solution exists, beta is a combination of the columns of A. Adding beta therefore gives an equivalent column system. Equivalent systems have the same rank. Thus A and A bar have the same rank."
+      },
+      {
+        "type": "heading",
+        "text": "Proof: sufficiency"
+      },
+      {
+        "type": "text",
+        "text": "Suppose both ranks equal r. Choose r independent columns of A. They are also columns of A bar. Since its rank is r, these columns form a maximal independent subsystem there too. Therefore, beta is their linear combination. It is also a combination of all columns of A, so the system has a solution. If r is zero, all entries of A bar are zero and every list of values is a solution."
+      },
+      {
+        "type": "cue",
+        "text": "necessity 必要性；sufficiency 充分性。rank of A bar 读增广矩阵的秩。consistent 表示有解，不表示唯一解。"
+      },
+      {
+        "type": "statement",
+        "text": "Elimination form of the criterion. An inconsistent system has augmented rank exactly one greater than coefficient rank."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\operatorname{rank}(\\overline A)=\\operatorname{rank}(A)+1\\quad\\Longleftrightarrow\\quad\\text{no solution}"
+      },
+      {
+        "type": "heading",
+        "text": "Justification"
+      },
+      {
+        "type": "text",
+        "text": "Adding one column can increase rank by at most one and cannot reduce it. By the theorem, unequal ranks mean no solution. In echelon form, the extra leading entry is in the constant column and gives an equation zero equals a nonzero number."
+      }
+    ]
+  },
+  {
+    "id": "general-solution-rank",
+    "title": "A general solution from a nonzero minor",
+    "zh": "用非零子式选自由未知量",
+    "chapter": 3,
+    "source": "§5 · p.94",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Result. For a consistent system of rank r in n unknowns, a nonzero minor of order r selects r equations and r unknowns. The remaining n minus r unknowns can be chosen freely. The system has a unique solution exactly when r equals n."
+      },
+      {
+        "type": "text",
+        "text": "Reorder equations and relabel unknowns so the nonzero minor is in the upper-left corner. The first r augmented rows form a maximal independent subsystem. All other equations are their combinations, so they may be removed without changing solutions."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=\\begin{vmatrix}a_{11}&\\cdots&a_{1r}\\\\\\vdots&&\\vdots\\\\a_{r1}&\\cdots&a_{rr}\\end{vmatrix}\\ne0"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Move the last n minus r unknowns to the right in the remaining equations."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}a_{11}x_1+\\cdots+a_{1r}x_r=b_1-a_{1,r+1}x_{r+1}-\\cdots-a_{1n}x_n,\\\\\\vdots\\\\a_{r1}x_1+\\cdots+a_{rr}x_r=b_r-a_{r,r+1}x_{r+1}-\\cdots-a_{rn}x_n.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "For each choice of the last unknowns, Cramer’s rule gives a unique choice of the first r. The resulting expressions are linear in the free unknowns, with constant terms."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}x_1=d'_1+c'_{1,r+1}x_{r+1}+\\cdots+c'_{1n}x_n,\\\\\\vdots\\\\x_r=d'_r+c'_{r,r+1}x_{r+1}+\\cdots+c'_{rn}x_n.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "The primed letters denote the fixed coefficients obtained by solving. If r equals n, there are no free unknowns and the solution is unique. If r is less than n, varying a free unknown gives different solutions. If r is zero, consistency makes every equation zero equals zero, so all n unknowns are free."
+      },
+      {
+        "type": "cue",
+        "text": "prime 不是求导；这里只标记求解后得到的新系数。任意选取自由未知量后，其余未知量唯一确定，是下一节基础解系证明的关键。"
+      }
+    ]
+  },
+  {
+    "id": "homogeneous-closure",
+    "title": "Sums and scalar multiples of solutions",
+    "zh": "齐次解的两条性质",
+    "chapter": 3,
+    "source": "§6 · p.95",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Property 1. The sum of two solutions of a homogeneous linear system is another solution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^n a_{ij}k_j=0,\\quad\\sum_{j=1}^n a_{ij}\\ell_j=0\\quad(i=1,\\ldots,s)"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Substitute the componentwise sum into each equation. Distribute and use the two original solution equalities."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^n a_{ij}(k_j+\\ell_j)=\\sum_{j=1}^n a_{ij}k_j+\\sum_{j=1}^n a_{ij}\\ell_j=0+0=0"
+      },
+      {
+        "type": "statement",
+        "text": "Property 2. Any scalar multiple of a solution of a homogeneous system is another solution."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Substitute c times the solution into each equation and take c outside the sum."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^n a_{ij}(c k_j)=c\\sum_{j=1}^n a_{ij}k_j=c\\cdot0=0"
+      },
+      {
+        "type": "text",
+        "text": "Applying these two properties repeatedly shows that every linear combination of homogeneous solutions is a solution."
+      }
+    ]
+  },
+  {
+    "id": "fundamental-solutions",
+    "title": "A fundamental system of solutions",
+    "zh": "定义18 · 定理8及完整证明",
+    "chapter": 3,
+    "source": "§6 · pp.95–97",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition 18. A fundamental system of solutions of a homogeneous system is a linearly independent system of solutions in which every solution can be expressed as a linear combination."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\eta_1,\\ldots,\\eta_t\\text{ independent solutions},\\qquad\\eta=k_1\\eta_1+\\cdots+k_t\\eta_t\\text{ for every solution }\\eta"
+      },
+      {
+        "type": "text",
+        "text": "We read eta sub one through eta sub t. Each eta is itself a complete solution vector. Both independence and the ability to express every solution are required."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 8. If a homogeneous system in n unknowns has nonzero solutions and coefficient rank r, it has a fundamental system of solutions containing exactly n minus r vectors."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "t=n-r\\qquad(r<n)"
+      },
+      {
+        "type": "heading",
+        "text": "Proof: construction"
+      },
+      {
+        "type": "text",
+        "text": "Choose and reorder a nonzero minor of order r as in the preceding section. The homogeneous system is equivalent to these r equations."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}a_{11}x_1+\\cdots+a_{1r}x_r=-a_{1,r+1}x_{r+1}-\\cdots-a_{1n}x_n,\\\\\\vdots\\\\a_{r1}x_1+\\cdots+a_{rr}x_r=-a_{r,r+1}x_{r+1}-\\cdots-a_{rn}x_n.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "Every choice of the free unknowns gives exactly one solution. Choose their values to be the unit vectors, one at a time. This gives the following n minus r solutions."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\\eta_1&=(c_{11},\\ldots,c_{1r},1,0,\\ldots,0),\\\\\\eta_2&=(c_{21},\\ldots,c_{2r},0,1,\\ldots,0),\\\\&\\ \\vdots\\\\\\eta_{n-r}&=(c_{n-r,1},\\ldots,c_{n-r,r},0,0,\\ldots,1).\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "The first r components are determined by the equations. The last n minus r components are the chosen free values."
+      },
+      {
+        "type": "heading",
+        "text": "Proof: independence"
+      },
+      {
+        "type": "text",
+        "text": "Suppose a linear combination of these solutions is zero. Compare only the last n minus r components."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k_1\\eta_1+\\cdots+k_{n-r}\\eta_{n-r}=0\\quad\\Longrightarrow\\quad(k_1,\\ldots,k_{n-r})=(0,\\ldots,0)"
+      },
+      {
+        "type": "text",
+        "text": "Every coefficient is zero. Hence these solutions are independent."
+      },
+      {
+        "type": "heading",
+        "text": "Proof: expressing every solution"
+      },
+      {
+        "type": "text",
+        "text": "Take any solution eta with components c sub one through c sub n. Use its free components as coefficients in the following combination."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\eta=(c_1,\\ldots,c_r,c_{r+1},\\ldots,c_n),\\qquad\\zeta=c_{r+1}\\eta_1+\\cdots+c_n\\eta_{n-r}"
+      },
+      {
+        "type": "text",
+        "text": "Zeta is also a solution, by the two homogeneous-solution properties. Eta and zeta have exactly the same free components. These determine a solution uniquely, so eta equals zeta."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\eta=c_{r+1}\\eta_1+\\cdots+c_n\\eta_{n-r}"
+      },
+      {
+        "type": "heading",
+        "text": "Proof: the number is fixed"
+      },
+      {
+        "type": "text",
+        "text": "Any other fundamental system is independent and expresses all the same solutions. The two fundamental systems are therefore equivalent. By the comparison corollary, they contain the same number of vectors, namely n minus r. If r is zero, all vectors are solutions and the n unit vectors give the construction directly."
+      },
+      {
+        "type": "cue",
+        "text": "η eta；ζ zeta。原书只在有非零解时讨论基础解系；r=n时只有零解，无需引入空基础解系。这里无需提前使用维数定理。"
+      },
+      {
+        "type": "statement",
+        "text": "Consequence. Any independent system of vectors equivalent to a fundamental system of solutions is also a fundamental system of solutions."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Its vectors are combinations of homogeneous solutions, hence are solutions. Every solution is a combination of the old fundamental system, and therefore of the new system by transitivity. Independence is assumed, so both defining conditions hold."
+      }
+    ]
+  },
+  {
+    "id": "nonhomogeneous-structure",
+    "title": "The structure of all solutions",
+    "zh": "导出组 · 定理9及推论",
+    "chapter": 3,
+    "source": "§6 · pp.97–98",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition. The associated homogeneous system is obtained by replacing all constant terms of a linear system by zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^n a_{ij}x_j=b_i\\quad\\longrightarrow\\quad\\sum_{j=1}^n a_{ij}x_j=0\\qquad(i=1,\\ldots,s)"
+      },
+      {
+        "type": "text",
+        "text": "This is the system called the derived system in the textbook. We will use the phrase associated homogeneous system."
+      },
+      {
+        "type": "statement",
+        "text": "Property 1. The difference of two solutions of the original system is a solution of the associated homogeneous system."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^n a_{ij}(k_j-\\ell_j)=\\sum_{j=1}^n a_{ij}k_j-\\sum_{j=1}^n a_{ij}\\ell_j=b_i-b_i=0"
+      },
+      {
+        "type": "text",
+        "text": "Subtract the equation satisfied by the second solution from the equation satisfied by the first. The constants cancel."
+      },
+      {
+        "type": "statement",
+        "text": "Property 2. Adding a homogeneous solution to a solution of the original system gives another solution of the original system."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^n a_{ij}(k_j+\\ell_j)=b_i+0=b_i"
+      },
+      {
+        "type": "text",
+        "text": "The original solution contributes b sub i. The homogeneous solution contributes zero. Their sum still satisfies each equation."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 9. Fix one particular solution gamma zero of a consistent system. Every solution is gamma zero plus a solution eta of its associated homogeneous system, and every such sum is a solution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\gamma=\\gamma_0+\\eta"
+      },
+      {
+        "type": "text",
+        "text": "Gamma sub zero is one fixed solution. Eta ranges over all homogeneous solutions. The subscript zero labels the chosen particular solution; it does not say that the solution vector is zero."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\gamma=\\gamma_0+(\\gamma-\\gamma_0)"
+      },
+      {
+        "type": "text",
+        "text": "By Property One, the difference in parentheses is a homogeneous solution. This gives the required form for every solution. Conversely, Property Two proves that every sum of this form is a solution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\gamma=\\gamma_0+k_1\\eta_1+\\cdots+k_{n-r}\\eta_{n-r},\\qquad k_1,\\ldots,k_{n-r}\\in P"
+      },
+      {
+        "type": "text",
+        "text": "If the homogeneous system has nonzero solutions, express eta using a fundamental system. This gives the displayed general solution. If it has only the zero solution, gamma zero is the only solution."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary. A consistent system has a unique solution if and only if its associated homogeneous system has only the zero solution."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "If two distinct solutions existed, their difference would be a nonzero homogeneous solution. Conversely, a nonzero homogeneous solution could be added to the particular solution to give a different solution. These two observations prove the equivalence."
+      },
+      {
+        "type": "cue",
+        "text": "particular solution 特解；general solution 一般解。读法：gamma equals gamma sub zero plus k sub one times eta sub one, and so on, plus k sub n minus r times eta sub n minus r。"
+      }
+    ]
+  },
+  {
+    "id": "polynomial-common-factor",
+    "title": "A lemma on common polynomial factors",
+    "zh": "§7引理 · 公因式与多项式恒等式",
+    "chapter": 3,
+    "source": "§7* · pp.99–100",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "In the final section, we apply linear systems to polynomial equations. First, we need a lemma about common factors."
+      },
+      {
+        "type": "statement",
+        "text": "Lemma. Let f and g be nonzero polynomials written with positive degree bounds n and m, with their leading displayed coefficients not both zero. They have a nonconstant common factor if and only if there are nonzero polynomials u and v of degrees less than m and n, respectively, such that u f equals v g."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f(x)=a_0x^n+\\cdots+a_n,\\quad g(x)=b_0x^m+\\cdots+b_m,\\quad (a_0,b_0)\\ne(0,0),\\qquad u(x)f(x)=v(x)g(x),\\quad\\deg u<m,\\ \\deg v<n"
+      },
+      {
+        "type": "text",
+        "text": "We read deg u less than m as: the degree of u is less than m. The degree bounds refer to the displayed forms; one leading coefficient may be zero. P bracket x means the polynomials in x with coefficients in P."
+      },
+      {
+        "type": "heading",
+        "text": "Proof: necessity"
+      },
+      {
+        "type": "text",
+        "text": "Suppose d is a nonconstant common factor. Write f as d times f one, and g as d times g one. Set u equal to g one and v equal to f one. Their degrees satisfy the required bounds, and their products agree."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f=df_1,\\quad g=dg_1,\\qquad u=g_1,\\quad v=f_1,\\qquad uf=df_1g_1=vg"
+      },
+      {
+        "type": "heading",
+        "text": "Proof: sufficiency"
+      },
+      {
+        "type": "text",
+        "text": "Suppose the identity holds. Exchange f and g if needed so that a sub zero is nonzero and f has degree n. Let d be the greatest common divisor of f and v. Divide out this common divisor."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "d=\\gcd(f,v),\\quad f=df_1,\\quad v=dv_1,\\quad\\gcd(f_1,v_1)=1,\\qquad uf_1=v_1g"
+      },
+      {
+        "type": "text",
+        "text": "Since d divides v and the degree of v is less than n, f one has positive degree. The last identity shows f one divides v one times g. Since f one and v one are relatively prime, the polynomial divisibility result from Chapter One gives that f one divides g. It also divides f. Thus it is a nonconstant common factor."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\deg d\\le\\deg v<n,\\quad\\deg f_1>0,\\qquad f_1\\mid v_1g,\\quad\\gcd(f_1,v_1)=1\\quad\\Longrightarrow\\quad f_1\\mid g"
+      },
+      {
+        "type": "cue",
+        "text": "gcd 读 greatest common divisor；f₁∣g 读 f sub one divides g。这里竖线表示整除，不是行列式。原书使用第一章“互素因子整除乘积”的结论。"
+      }
+    ]
+  },
+  {
+    "id": "resultant",
+    "title": "The resultant",
+    "zh": "结式定义 · 定理10及证明",
+    "chapter": 3,
+    "source": "§7* · pp.100–101",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition. The resultant R of f and g is the determinant of the following coefficient array: m shifted rows of coefficients of f, followed by n shifted rows of coefficients of g. Its order is m plus n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R(f,g)=\\begin{vmatrix}a_0&a_1&\\cdots&a_n&0&\\cdots&0\\\\0&a_0&a_1&\\cdots&a_n&\\cdots&0\\\\\\vdots&&\\ddots&&&\\ddots&\\vdots\\\\0&\\cdots&0&a_0&a_1&\\cdots&a_n\\\\b_0&b_1&\\cdots&b_m&0&\\cdots&0\\\\0&b_0&b_1&\\cdots&b_m&\\cdots&0\\\\\\vdots&&\\ddots&&&\\ddots&\\vdots\\\\0&\\cdots&0&b_0&b_1&\\cdots&b_m\\end{vmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "We read R of f comma g, or the resultant of f and g. Each row shifts one place to the right. All positions outside the displayed coefficient list are zero. The top group has m rows, and the bottom group has n rows."
+      },
+      {
+        "type": "cue",
+        "text": "resultant 结式；m+n 是总阶数，上面示意式的省略号表示按该尺寸继续移位。f的系数每行n+1个，g的系数每行m+1个。"
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 10. For positive degree bounds n and m, the resultant is zero if and only if f and g have a nonconstant common factor, or their leading displayed coefficients a zero and b zero are both zero. The polynomials themselves are allowed to be zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R(f,g)=0\\quad\\Longleftrightarrow\\quad\\bigl(f,g\\text{ have a nonconstant common factor}\\bigr)\\ \\text{or}\\ (a_0=b_0=0)"
+      },
+      {
+        "type": "heading",
+        "text": "Proof: the linear system behind the determinant"
+      },
+      {
+        "type": "text",
+        "text": "Write u and v with the degree bounds from the lemma. Equating coefficients in u f equals v g gives m plus n homogeneous equations in m plus n unknown coefficients."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "u=u_0x^{m-1}+\\cdots+u_{m-1},\\qquad v=v_0x^{n-1}+\\cdots+v_{n-1}"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}a_0u_0=b_0v_0,\\\\a_1u_0+a_0u_1=b_1v_0+b_0v_1,\\\\\\vdots\\\\\\displaystyle\\sum_{p+q=\\ell}a_pu_q=\\displaystyle\\sum_{p+q=\\ell}b_pv_q\\quad(\\ell=0,\\ldots,m+n-1),\\\\\\vdots\\\\a_nu_{m-1}=b_mv_{n-1}.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "In the sum, include only indices within the coefficient ranges. If a displayed coefficient such as u sub one is outside its range, it is absent. The coefficient matrix transposed, with its last n rows multiplied by minus one, is exactly the resultant array. Therefore, its determinant is zero exactly when the resultant is zero. By the homogeneous square-system theorem, this is equivalent to a nonzero solution for the coefficients of u and v."
+      },
+      {
+        "type": "heading",
+        "text": "Proof: both directions"
+      },
+      {
+        "type": "text",
+        "text": "If both leading coefficients are zero, the first column of the resultant is zero. If either polynomial is zero, an entire group of rows is zero. In either case the resultant is zero. If both polynomials are nonzero and share a nonconstant factor, the lemma supplies nonzero u and v. Their coefficients give a nonzero solution of the homogeneous system, so the resultant is zero."
+      },
+      {
+        "type": "text",
+        "text": "Conversely, suppose the resultant is zero. If both leading coefficients are zero, the second condition already holds. If one polynomial is zero and the other has positive degree, the other is a nonconstant common divisor. If the other is a nonzero constant, both leading displayed coefficients are zero. If both are zero, any polynomial of positive degree divides them."
+      },
+      {
+        "type": "text",
+        "text": "It remains to consider two nonzero polynomials with leading coefficients not both zero. The homogeneous system has a nonzero solution, so u and v are not both zero and satisfy u f equals v g. Since f and g are nonzero, this identity forces u and v both to be nonzero. Apply the lemma to obtain a nonconstant common factor. This completes the proof."
+      }
+    ]
+  },
+  {
+    "id": "bivariate-elimination",
+    "title": "Eliminating one variable",
+    "zh": "定理11 · 二元高次方程组",
+    "chapter": 3,
+    "source": "§7* · pp.101–103",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Finally, use the resultant to eliminate one variable from two polynomial equations over the complex numbers."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}f(x,y)=0,\\\\g(x,y)=0,\\end{cases}\\qquad\\begin{aligned}f(x,y)&=a_0(y)x^n+a_1(y)x^{n-1}+\\cdots+a_n(y),\\\\g(x,y)&=b_0(y)x^m+b_1(y)x^{m-1}+\\cdots+b_m(y).\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "Regard both as polynomials in x. Their coefficients are polynomials in y. Form the same resultant array from these coefficients. We denote its determinant by R sub x of f comma g. The subscript tells us that x is being eliminated. The result is a polynomial in y."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R_x(f,g)\\in\\mathbb C[y]"
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 11. If x zero, y zero solves both equations, then y zero is a root of the resultant in y. Conversely, if y zero is a root of the resultant, either both leading coefficients vanish at y zero, or there exists an x zero giving a common solution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f(x_0,y_0)=g(x_0,y_0)=0\\ \\Longrightarrow\\ R_x(f,g)(y_0)=0"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R_x(f,g)(y_0)=0\\ \\Longrightarrow\\ \\begin{cases}a_0(y_0)=b_0(y_0)=0,\\quad\\text{or}\\\\\\text{there exists }x_0\\in\\mathbb C\\text{ with }f(x_0,y_0)=g(x_0,y_0)=0.\\end{cases}"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Fix y equal to y zero. Evaluation commutes with the additions and multiplications in a determinant, so the evaluated resultant is the resultant of the two specialized polynomials in x. If they have common root x zero, then x minus x zero is a common factor. Theorem Ten makes the resultant zero."
+      },
+      {
+        "type": "text",
+        "text": "Conversely, if the resultant is zero, Theorem Ten gives either both leading coefficients zero or a nonconstant common factor. Over the complex numbers, a nonconstant polynomial has a root. A root of that common factor gives the required x zero. This proves the theorem."
+      },
+      {
+        "type": "statement",
+        "text": "Elimination procedure. When the resultant is not the zero polynomial, find its roots, substitute each into both original equations, and retain their common solutions. If the resultant is identically zero, the finite-root procedure does not apply."
+      },
+      {
+        "type": "text",
+        "text": "A resultant root is a candidate, not automatically a solution of the original pair. Substitution checks both equations, including cases where leading coefficients vanish."
+      },
+      {
+        "type": "cue",
+        "text": "bivariate 二元；eliminate x 消去x；identically zero 恒等于零。ℂ[y] 读 polynomials in y over the complex numbers。星号节同样纳入正文，章后习题不纳入。"
       }
     ]
   }
