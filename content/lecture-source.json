@@ -4477,5 +4477,626 @@
         "text": "这里行向量Bᵢ、Cᵢ和列向量Aᵢ、Dᵢ均沿用原书；先展示完整矩阵再引入，切勿混淆A（矩阵）和Aᵢ（第i列）。"
       }
     ]
+  },
+  {
+    "id": "inverse-definition",
+    "title": "The inverse of a matrix",
+    "zh": "定义7—8：可逆矩阵与逆的唯一性",
+    "chapter": 4,
+    "source": "§4 · pp.118–119",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now study matrix inverses. Throughout this section, A is a square matrix of order n, and E is the identity matrix of order n."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 7. A matrix A is invertible if there is a matrix B of the same order such that AB = BA = E."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "AB=BA=E_n."
+      },
+      {
+        "type": "text",
+        "text": "We require both products to be the identity. First, let us show that such a matrix B is unique."
+      },
+      {
+        "type": "statement",
+        "text": "If a matrix has an inverse, that inverse is unique."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "AB_1=B_1A=E,\\qquad AB_2=B_2A=E\\quad\\Longrightarrow\\quad B_1=B_2."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "B_1=B_1E=B_1(AB_2)=(B_1A)B_2=EB_2=B_2."
+      },
+      {
+        "type": "text",
+        "text": "Start with B sub one. Replace E by A B sub two. Use associativity to group B sub one with A. Their product is E. We are left with B sub two. This proves uniqueness."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 8. The matrix B satisfying AB = BA = E is called the inverse of A, denoted by A⁻¹."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "B=A^{-1},\\qquad AA^{-1}=A^{-1}A=E."
+      },
+      {
+        "type": "text",
+        "text": "Read A to the minus one as “A inverse.” It denotes a matrix, not the reciprocal of each entry."
+      },
+      {
+        "type": "cue",
+        "text": "先写可逆定义的两个等式，再证明唯一性，最后引入A⁻¹。唯一性证明只用结合律，不交换矩阵的先后次序。"
+      }
+    ]
+  },
+  {
+    "id": "adjugate-matrix",
+    "title": "The adjugate matrix",
+    "zh": "定义9：伴随矩阵及基本恒等式",
+    "chapter": 4,
+    "source": "§4 · p.119",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, we define the adjugate matrix. This will give us a formula for the inverse."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 9. The adjugate of A is the transpose of the matrix of its cofactors. It is denoted by A*."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=\\begin{pmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\a_{21}&a_{22}&\\cdots&a_{2n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{pmatrix},\\quad A^*=\\begin{pmatrix}A_{11}&A_{21}&\\cdots&A_{n1}\\\\A_{12}&A_{22}&\\cdots&A_{n2}\\\\\\vdots&\\vdots&&\\vdots\\\\A_{1n}&A_{2n}&\\cdots&A_{nn}\\end{pmatrix}."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A_{ij}=(-1)^{i+j}M_{ij}."
+      },
+      {
+        "type": "text",
+        "text": "Capital A sub i j is the cofactor of the entry small a sub i j. M sub i j is its minor. Notice the positions: capital A sub i j goes into row j and column i of A star. Read A star as “the adjugate of A.”"
+      },
+      {
+        "type": "statement",
+        "text": "If d is the determinant of A, then AA* = A*A = dE."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "AA^*=A^*A=\\begin{pmatrix}d&0&\\cdots&0\\\\0&d&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&d\\end{pmatrix}=dE,\\qquad d=|A|."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "In A A star, the entry in row i and column j is the following sum. If i equals j, it is the expansion of the determinant along row i. If i is different from j, the sum is zero by the cofactor identity from Chapter Two."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(AA^*)_{ij}=\\sum_{k=1}^{n}a_{ik}A_{jk}=\\begin{cases}d,&i=j,\\\\0,&i\\ne j.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "For A star A, use the same identity for columns."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(A^*A)_{ij}=\\sum_{k=1}^{n}A_{ki}a_{kj}=\\begin{cases}d,&i=j,\\\\0,&i\\ne j.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "Thus both products have d on the diagonal and zero elsewhere. This proves the identity, even when d is zero."
+      },
+      {
+        "type": "cue",
+        "text": "星号沿用原书表示伴随矩阵，不表示共轭转置。先指明余子式的转置位置，再写两种乘积的元素；cases读“d if i equals j, and zero otherwise”。"
+      }
+    ]
+  },
+  {
+    "id": "invertibility-criterion",
+    "title": "When is a matrix invertible?",
+    "zh": "定理3：可逆条件与求逆公式",
+    "chapter": 4,
+    "source": "§4 · p.119",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We can now state the main criterion for invertibility."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 3. A square matrix is invertible if and only if it is nonsingular. When d = |A| is nonzero, its inverse is A* divided by d."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A\\text{ invertible}\\quad\\Longleftrightarrow\\quad |A|\\ne0,\\qquad A^{-1}=\\frac1d A^*,\\quad d=|A|\\ne0."
+      },
+      {
+        "type": "text",
+        "text": "Read the formula as “A inverse equals one over d times A star.” We divide every entry of the adjugate by the determinant."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "First, suppose d is nonzero. From the adjugate identity, we get both of the required products."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A\\left(\\frac1d A^*\\right)=\\frac1d(AA^*)=E,\\qquad\\left(\\frac1d A^*\\right)A=\\frac1d(A^*A)=E."
+      },
+      {
+        "type": "text",
+        "text": "Thus A is invertible, and the displayed matrix is its inverse. Conversely, suppose A is invertible. Take determinants in A A inverse equals E."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "AA^{-1}=E\\quad\\Longrightarrow\\quad |A|\\,|A^{-1}|=|E|=1."
+      },
+      {
+        "type": "text",
+        "text": "Since this product is one, the determinant of A cannot be zero. Hence A is nonsingular. This proves both directions."
+      }
+    ]
+  },
+  {
+    "id": "one-sided-inverse",
+    "title": "A one-sided inverse is enough for square matrices",
+    "zh": "方阵的单侧逆与逆矩阵的行列式",
+    "chapter": 4,
+    "source": "§4 · pp.119–120",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "The definition uses two equalities. For square matrices of the same order, one of them is enough, as a consequence of Theorem Three."
+      },
+      {
+        "type": "statement",
+        "text": "If A and B are square matrices of the same order and AB = E, then both are invertible and B = A⁻¹."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "AB=E\\quad\\Longrightarrow\\quad B=A^{-1},\\quad A=B^{-1},\\quad BA=E."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Take determinants. Their product is one, so neither determinant is zero. By Theorem Three, both matrices are invertible. Multiply A B equals E on the left by A inverse."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "|A|\\,|B|=1,\\qquad B=(A^{-1}A)B=A^{-1}(AB)=A^{-1}E=A^{-1}."
+      },
+      {
+        "type": "text",
+        "text": "It follows that B A equals E as well. The condition that both matrices are square is essential here."
+      },
+      {
+        "type": "statement",
+        "text": "The determinant of an inverse is the reciprocal of the original determinant."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "|A^{-1}|=\\frac1{|A|}=d^{-1}\\qquad(d=|A|\\ne0)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "We already know that the determinant of A times the determinant of A inverse is one. Divide by the nonzero number d. Read the result as “the determinant of A inverse equals one over the determinant of A.”"
+      }
+    ]
+  },
+  {
+    "id": "inverse-laws",
+    "title": "Inverses of transposes and products",
+    "zh": "推论：转置与乘积的逆",
+    "chapter": 4,
+    "source": "§4 · p.120",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, let us state two rules for inverses."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary. If A and B are invertible matrices of the same order, then Aᵀ and AB are invertible, and the following formulas hold."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(A^{\\mathrm T})^{-1}=(A^{-1})^{\\mathrm T},\\qquad(AB)^{-1}=B^{-1}A^{-1}."
+      },
+      {
+        "type": "text",
+        "text": "Read the first formula as “the inverse of A transpose equals the transpose of A inverse.” Read the second as “the inverse of A B equals B inverse times A inverse.” Notice the reversed order in the second formula."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The determinants of A transpose and A B are nonzero, by the determinant rules. So both are invertible. To identify the first inverse, transpose both equalities in A A inverse equals A inverse A equals E."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(A^{-1})^{\\mathrm T}A^{\\mathrm T}=A^{\\mathrm T}(A^{-1})^{\\mathrm T}=E^{\\mathrm T}=E."
+      },
+      {
+        "type": "text",
+        "text": "Thus the transpose of A inverse is the inverse of A transpose. For the product formula, check both products directly."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(AB)(B^{-1}A^{-1})=A(BB^{-1})A^{-1}=AEA^{-1}=E."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(B^{-1}A^{-1})(AB)=B^{-1}(A^{-1}A)B=B^{-1}EB=E."
+      },
+      {
+        "type": "text",
+        "text": "These equalities use associativity. The inverse factors cancel in the middle because their order is reversed. By the definition of the inverse, the second formula follows."
+      }
+    ]
+  },
+  {
+    "id": "inverse-linear-system",
+    "title": "Solving a linear system with an inverse",
+    "zh": "用逆矩阵推导克拉默法则",
+    "chapter": 4,
+    "source": "§4 · p.120",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We can now give the textbook's matrix proof of the solution formula for a nonsingular linear system."
+      },
+      {
+        "type": "statement",
+        "text": "If A is nonsingular, the system AX = B has the unique solution X = A⁻¹B. Its entries are given by Cramer's rule."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=\\begin{pmatrix}a_{11}&\\cdots&a_{1n}\\\\\\vdots&&\\vdots\\\\a_{n1}&\\cdots&a_{nn}\\end{pmatrix},\\quad X=\\begin{pmatrix}x_1\\\\\\vdots\\\\x_n\\end{pmatrix},\\quad B=\\begin{pmatrix}b_1\\\\\\vdots\\\\b_n\\end{pmatrix},\\qquad AX=B."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "X=A^{-1}B=\\frac1{|A|}A^*B."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "First, substitute A inverse B into the system. This proves existence."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A(A^{-1}B)=(AA^{-1})B=EB=B."
+      },
+      {
+        "type": "text",
+        "text": "Next, let C be any solution column. Then A C equals B. Multiply on the left by A inverse. This proves uniqueness."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "AC=B\\quad\\Longrightarrow\\quad C=(A^{-1}A)C=A^{-1}B."
+      },
+      {
+        "type": "text",
+        "text": "To recover Cramer's rule, look at row j of the adjugate times B. Let D sub j be the determinant obtained by replacing column j of A with B."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "x_j=\\frac{A_{1j}b_1+A_{2j}b_2+\\cdots+A_{nj}b_n}{|A|}=\\frac{D_j}{|A|}."
+      },
+      {
+        "type": "text",
+        "text": "Expanding D sub j along column j gives the numerator. Its cofactors are unchanged because deleting the replaced column leaves the same minors. This gives Cramer's formula."
+      },
+      {
+        "type": "cue",
+        "text": "B在这里是常数项列向量，C是任意解列向量，不是上一小节的方阵。A⁻¹B读“A inverse times B”。"
+      }
+    ]
+  },
+  {
+    "id": "invertible-rank",
+    "title": "Invertible multiplication preserves rank",
+    "zh": "定理4：可逆乘法不改变秩",
+    "chapter": 4,
+    "source": "§4 · p.121",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We finish this section with a rank theorem."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 4. Let A be s by n. If P is an invertible s by s matrix and Q is an invertible n by n matrix, then multiplying A by P on the left or by Q on the right does not change its rank."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\operatorname{rank}(A)=\\operatorname{rank}(PA)=\\operatorname{rank}(AQ)."
+      },
+      {
+        "type": "text",
+        "text": "Here capital P denotes a matrix. In this statement it does not denote the number field. We will prove each equality using two opposite inequalities."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Put B equals P A. By Theorem Two, the rank of B is at most the rank of A. Since P is invertible, we can also write A as P inverse B."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "B=PA\\quad\\Longrightarrow\\quad\\operatorname{rank}(B)\\le\\operatorname{rank}(A)."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=P^{-1}B\\quad\\Longrightarrow\\quad\\operatorname{rank}(A)\\le\\operatorname{rank}(B)."
+      },
+      {
+        "type": "text",
+        "text": "Combining the inequalities gives equality. For multiplication on the right, write C equals A Q and A equals C Q inverse. Apply Theorem Two again."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "C=AQ,\\quad A=CQ^{-1}\\quad\\Longrightarrow\\quad\\operatorname{rank}(C)\\le\\operatorname{rank}(A)\\le\\operatorname{rank}(C)."
+      },
+      {
+        "type": "text",
+        "text": "Therefore the ranks of A and A Q are also equal. This completes the proof."
+      }
+    ]
+  },
+  {
+    "id": "block-multiplication",
+    "title": "Block matrices and multiplication",
+    "zh": "矩阵分块与分块乘法公式",
+    "chapter": 4,
+    "source": "§5 · pp.121–123",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now turn to block matrices. We divide a matrix into smaller rectangular matrices by cutting between rows and between columns. These smaller matrices are called blocks."
+      },
+      {
+        "type": "statement",
+        "text": "Block multiplication follows the usual row-by-column rule, provided the column partition of A matches the row partition of B."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=\\begin{pmatrix}A_{11}&\\cdots&A_{1l}\\\\\\vdots&&\\vdots\\\\A_{t1}&\\cdots&A_{tl}\\end{pmatrix},\\qquad B=\\begin{pmatrix}B_{11}&\\cdots&B_{1r}\\\\\\vdots&&\\vdots\\\\B_{l1}&\\cdots&B_{lr}\\end{pmatrix}."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A_{pk}:s_p\\times n_k,\\qquad B_{kq}:n_k\\times m_q,\\qquad C=AB=\\begin{pmatrix}C_{11}&\\cdots&C_{1r}\\\\\\vdots&&\\vdots\\\\C_{t1}&\\cdots&C_{tr}\\end{pmatrix}."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "C_{pq}=A_{p1}B_{1q}+A_{p2}B_{2q}+\\cdots+A_{pl}B_{lq}=\\sum_{k=1}^{l}A_{pk}B_{kq}."
+      },
+      {
+        "type": "text",
+        "text": "Capital A sub p k is a whole block, of size s sub p by n sub k. It is not a single entry. The matching block B sub k q has n sub k rows. Thus each product has size s sub p by m sub q. Read the formula as “C sub p q equals the sum from k equals one to ell of A sub p k times B sub k q.”"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "In the ordinary multiplication formula, each entry of A B is a sum over all columns of A. Split this sum into the l consecutive groups specified by the partition. Group k is exactly the corresponding entry of the block product A sub p k times B sub k q. Adding all groups gives the displayed formula. This holds for every entry of every block."
+      },
+      {
+        "type": "text",
+        "text": "For two block rows and two block columns, write the rule in full."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}A_{11}&A_{12}\\\\A_{21}&A_{22}\\end{pmatrix}\\begin{pmatrix}B_{11}&B_{12}\\\\B_{21}&B_{22}\\end{pmatrix}=\\begin{pmatrix}A_{11}B_{11}+A_{12}B_{21}&A_{11}B_{12}+A_{12}B_{22}\\\\A_{21}B_{11}+A_{22}B_{21}&A_{21}B_{12}+A_{22}B_{22}\\end{pmatrix}."
+      },
+      {
+        "type": "cue",
+        "text": "小写l读ell；sₚ、nₖ、m_q分别是分块尺寸。关键是每一道分割线都对应，只有总列数等于总行数还不够。保持每个块乘积的先后次序。"
+      }
+    ]
+  },
+  {
+    "id": "block-triangular-inverse",
+    "title": "Inverse of a block triangular matrix",
+    "zh": "分块三角矩阵的求逆推导",
+    "chapter": 4,
+    "source": "§5 · pp.123–124",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, we use block multiplication to find an inverse. This is the block inverse formula derived in the textbook."
+      },
+      {
+        "type": "statement",
+        "text": "If A and B are invertible square matrices of orders k and r, and C is r by k, then the following block triangular matrix D is invertible, with the displayed inverse."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=\\begin{pmatrix}A&O\\\\C&B\\end{pmatrix},\\qquad D^{-1}=\\begin{pmatrix}A^{-1}&O\\\\-B^{-1}CA^{-1}&B^{-1}\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "The upper right O is the k by r zero matrix. Read the lower left block of the inverse as “minus B inverse times C times A inverse.”"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "First, the block triangular determinant formula gives the determinant of D. Since both diagonal blocks are invertible, this determinant is nonzero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "|D|=|A|\\,|B|\\ne0."
+      },
+      {
+        "type": "text",
+        "text": "Therefore D has an inverse. Write its four unknown blocks as X sub one one, X sub one two, X sub two one, and X sub two two. Multiply D by this inverse."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}A&O\\\\C&B\\end{pmatrix}\\begin{pmatrix}X_{11}&X_{12}\\\\X_{21}&X_{22}\\end{pmatrix}=\\begin{pmatrix}E_k&O\\\\O&E_r\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Compare the four blocks on both sides. We get four matrix equations."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}AX_{11}=E_k,\\\\AX_{12}=O,\\\\CX_{11}+BX_{21}=O,\\\\CX_{12}+BX_{22}=E_r.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "The first two equations give X sub one one equals A inverse, and X sub one two equals zero. Substitute the zero block into the fourth equation. It gives X sub two two equals B inverse."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "X_{11}=A^{-1},\\qquad X_{12}=O,\\qquad X_{22}=B^{-1}."
+      },
+      {
+        "type": "text",
+        "text": "Finally, use the third equation. Move C X sub one one to the other side, substitute A inverse, and multiply on the left by B inverse."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "BX_{21}=-CX_{11}=-CA^{-1},\\qquad X_{21}=-B^{-1}CA^{-1}."
+      },
+      {
+        "type": "text",
+        "text": "These are exactly the four blocks in the stated formula. The order of the three factors in the lower left block must be kept."
+      }
+    ]
+  },
+  {
+    "id": "block-diagonal-matrices",
+    "title": "Diagonal and block diagonal matrices",
+    "zh": "对角矩阵、准对角矩阵及运算",
+    "chapter": 4,
+    "source": "§5 · pp.124–125",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We finish with diagonal and block diagonal matrices."
+      },
+      {
+        "type": "statement",
+        "text": "A diagonal matrix has zero entries outside the main diagonal. A block diagonal matrix has square blocks on the main diagonal and zero blocks elsewhere."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}a_1&0&\\cdots&0\\\\0&a_2&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&a_l\\end{pmatrix},\\qquad A=\\begin{pmatrix}A_1&O&\\cdots&O\\\\O&A_2&\\cdots&O\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\O&O&\\cdots&A_l\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Each small a sub i is a number. Each capital A sub i is a square matrix of order n sub i. The orders of different diagonal blocks may differ. A diagonal matrix is the special case in which every block has order one."
+      },
+      {
+        "type": "statement",
+        "text": "Two block diagonal matrices with matching block sizes can be added and multiplied block by block. If each diagonal block is invertible, the inverse is obtained by inverting each diagonal block."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "B=\\begin{pmatrix}B_1&O&\\cdots&O\\\\O&B_2&\\cdots&O\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\O&O&\\cdots&B_l\\end{pmatrix},\\qquad A_i,B_i\\text{ both }n_i\\times n_i."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A+B=\\begin{pmatrix}A_1+B_1&O&\\cdots&O\\\\O&A_2+B_2&\\cdots&O\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\O&O&\\cdots&A_l+B_l\\end{pmatrix}."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "AB=\\begin{pmatrix}A_1B_1&O&\\cdots&O\\\\O&A_2B_2&\\cdots&O\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\O&O&\\cdots&A_lB_l\\end{pmatrix}."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A^{-1}=\\begin{pmatrix}A_1^{-1}&O&\\cdots&O\\\\O&A_2^{-1}&\\cdots&O\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\O&O&\\cdots&A_l^{-1}\\end{pmatrix}\\qquad\\text{if all }A_i\\text{ are invertible}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Addition follows by adding corresponding entries. For multiplication, a diagonal block has only one possibly nonzero term, A sub i times B sub i. Every off-diagonal block is zero. Finally, multiply A by the proposed inverse in either order. Every diagonal block becomes the identity of order n sub i, and every off-diagonal block remains zero. The result is the identity matrix of order n sub one plus n sub two, and so on, plus n sub ell. This proves the inverse formula."
+      },
+      {
+        "type": "cue",
+        "text": "原书的“准对角矩阵”通常读作“block diagonal matrix”。指着对角上的各块说明尺寸；不要把准对角矩阵说成只有数值对角元非零。"
+      }
+    ]
   }
 ]
