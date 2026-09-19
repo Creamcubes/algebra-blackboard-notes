@@ -3706,5 +3706,776 @@
         "text": "bivariate 二元；eliminate x 消去x；identically zero 恒等于零。ℂ[y] 读 polynomials in y over the complex numbers。星号节同样纳入正文，章后习题不纳入。"
       }
     ]
+  },
+  {
+    "id": "matrix-equality",
+    "title": "Matrix notation and equality",
+    "zh": "矩阵的记号与相等",
+    "chapter": 4,
+    "source": "§1 · pp.109–110",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now begin the chapter on matrices. First, let us state the notation and the rule for equality."
+      },
+      {
+        "type": "statement",
+        "text": "A matrix with s rows and n columns is an s by n matrix. Two matrices are equal if they have the same size and all corresponding entries are equal."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=(a_{ij})_{s\\times n}=\\begin{pmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\a_{21}&a_{22}&\\cdots&a_{2n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{s1}&a_{s2}&\\cdots&a_{sn}\\end{pmatrix}"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=B\\quad\\Longleftrightarrow\\quad a_{ij}=b_{ij}\\quad(1\\le i\\le s,\\ 1\\le j\\le n),\\qquad A,B\\text{ of size }s\\times n."
+      },
+      {
+        "type": "text",
+        "text": "We denote the matrix by capital A. The entry a sub i j is in row i and column j. Read s times n as “s by n.” To prove two matrices equal, we will compare their sizes and their entries."
+      },
+      {
+        "type": "statement",
+        "text": "A row vector is a one by n matrix. A column vector is an n by one matrix."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(a_1,a_2,\\ldots,a_n),\\qquad\\begin{pmatrix}a_1\\\\a_2\\\\\\vdots\\\\a_n\\end{pmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "Read the entries as “a sub one, a sub two, through a sub n.” From now on, all entries belong to the number field P."
+      },
+      {
+        "type": "cue",
+        "text": "先写矩阵及尺寸，再说明相等的两个条件。矩阵用圆括号；竖线表示方阵的行列式。P读作“the number field P”。"
+      }
+    ]
+  },
+  {
+    "id": "matrix-addition",
+    "title": "Addition and subtraction",
+    "zh": "定义1：加法、零矩阵与负矩阵",
+    "chapter": 4,
+    "source": "§2 · pp.110–111",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "First, let us define matrix addition."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 1. The sum of two matrices of the same size is obtained by adding corresponding entries."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A+B=(a_{ij}+b_{ij})_{s\\times n}=\\begin{pmatrix}a_{11}+b_{11}&\\cdots&a_{1n}+b_{1n}\\\\\\vdots&&\\vdots\\\\a_{s1}+b_{s1}&\\cdots&a_{sn}+b_{sn}\\end{pmatrix}"
+      },
+      {
+        "type": "text",
+        "text": "The entry in row i and column j is a sub i j plus b sub i j. The two matrices must have the same number of rows and columns."
+      },
+      {
+        "type": "statement",
+        "text": "Matrix addition is associative and commutative."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A+(B+C)=(A+B)+C,\\qquad A+B=B+A."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Compare the entries in row i and column j. These equalities follow from addition in P."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_{ij}+(b_{ij}+c_{ij})=(a_{ij}+b_{ij})+c_{ij},\\qquad a_{ij}+b_{ij}=b_{ij}+a_{ij}."
+      },
+      {
+        "type": "statement",
+        "text": "The zero matrix has all entries zero. The negative of A has entries −aᵢⱼ. Subtraction is defined by adding the negative matrix."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "O_{s\\times n}=(0)_{s\\times n},\\quad -A=(-a_{ij})_{s\\times n},\\quad A-B=A+(-B)."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A+O=A,\\qquad A+(-A)=O."
+      },
+      {
+        "type": "text",
+        "text": "We denote the zero matrix by capital O. Read minus A as “the negative of A.” The last two identities hold because each entry satisfies a plus zero equals a, and a plus negative a equals zero."
+      }
+    ]
+  },
+  {
+    "id": "rank-of-sum",
+    "title": "Rank of a sum",
+    "zh": "矩阵和的秩",
+    "chapter": 4,
+    "source": "§2 · p.111",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We next state a consequence of matrix addition."
+      },
+      {
+        "type": "statement",
+        "text": "For matrices A and B of the same size, the rank of A plus B is at most the sum of their ranks."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\operatorname{rank}(A+B)\\le\\operatorname{rank}(A)+\\operatorname{rank}(B)."
+      },
+      {
+        "type": "text",
+        "text": "Read this as “the rank of A plus B is less than or equal to the rank of A plus the rank of B.”"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Let alpha sub i and beta sub i be row i of A and B. Row i of A plus B is their sum."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_i=(a_{i1},\\ldots,a_{in}),\\quad\\beta_i=(b_{i1},\\ldots,b_{in}),\\quad\\text{row }i\\text{ of }A+B=\\alpha_i+\\beta_i."
+      },
+      {
+        "type": "text",
+        "text": "Choose a maximal linearly independent set of rows from A, and one from B. Let their sizes be r and t. Every row of A plus B is a linear combination of these r plus t vectors. Its row rank is therefore at most r plus t. This proves the inequality."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "r=\\operatorname{rank}(A),\\quad t=\\operatorname{rank}(B),\\qquad\\operatorname{rank}(A+B)\\le r+t."
+      },
+      {
+        "type": "cue",
+        "text": "原书仅指出由向量组的秩得出。这里展开这一推理；alpha、beta只是明确写出的行向量，不替代定义中的矩阵板书。"
+      }
+    ]
+  },
+  {
+    "id": "matrix-multiplication",
+    "title": "Matrix multiplication",
+    "zh": "定义2：矩阵乘法",
+    "chapter": 4,
+    "source": "§2 · p.112",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, let us define matrix multiplication."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 2. If A is s by n and B is n by m, their product AB is the s by m matrix whose entry cᵢⱼ is the sum of the products of corresponding entries in row i of A and column j of B."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=(a_{ik})_{s\\times n},\\quad B=(b_{kj})_{n\\times m},\\quad C=AB=(c_{ij})_{s\\times m}."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\\cdots+a_{in}b_{nj}=\\sum_{k=1}^{n}a_{ik}b_{kj}."
+      },
+      {
+        "type": "text",
+        "text": "The number of columns of A must equal the number of rows of B. The product has s rows and m columns. To find c sub i j, take row i of A and column j of B. Multiply corresponding entries, then add the products."
+      },
+      {
+        "type": "text",
+        "text": "Read the sum as “the sum from k equals one to n of a sub i k times b sub k j.” In the expanded form, say “a sub i one times b sub one j, plus a sub i two times b sub two j, and so on, up to a sub i n times b sub n j.”"
+      },
+      {
+        "type": "cue",
+        "text": "板书先标尺寸，再写元素公式；用手指明A的第i行和B的第j列。乘法不是对应元素直接相乘。"
+      }
+    ]
+  },
+  {
+    "id": "matrix-associativity",
+    "title": "Associativity of multiplication",
+    "zh": "矩阵乘法结合律及证明",
+    "chapter": 4,
+    "source": "§2 · pp.113–114",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Now let us prove the associative law."
+      },
+      {
+        "type": "statement",
+        "text": "Matrix multiplication is associative whenever the products are defined."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=(a_{ij})_{s\\times n},\\quad B=(b_{jk})_{n\\times m},\\quad C=(c_{kl})_{m\\times r},\\qquad(AB)C=A(BC)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Following the textbook, denote AB by V and BC by W. Write their entries first."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "V=AB=(v_{ik})_{s\\times m},\\quad v_{ik}=\\sum_{j=1}^{n}a_{ij}b_{jk};\\qquad W=BC=(w_{jl})_{n\\times r},\\quad w_{jl}=\\sum_{k=1}^{m}b_{jk}c_{kl}."
+      },
+      {
+        "type": "text",
+        "text": "Both products in the statement are s by r. In row i and column l, the entry of V C is the following sum."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{k=1}^{m}v_{ik}c_{kl}=\\sum_{k=1}^{m}\\left(\\sum_{j=1}^{n}a_{ij}b_{jk}\\right)c_{kl}=\\sum_{k=1}^{m}\\sum_{j=1}^{n}a_{ij}b_{jk}c_{kl}."
+      },
+      {
+        "type": "text",
+        "text": "In the same position, the entry of A W is as follows."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^{n}a_{ij}w_{jl}=\\sum_{j=1}^{n}a_{ij}\\left(\\sum_{k=1}^{m}b_{jk}c_{kl}\\right)=\\sum_{j=1}^{n}\\sum_{k=1}^{m}a_{ij}b_{jk}c_{kl}."
+      },
+      {
+        "type": "text",
+        "text": "These finite double sums contain exactly the same terms. Only the order of summation changes. Thus every pair of corresponding entries is equal. This proves the result."
+      },
+      {
+        "type": "cue",
+        "text": "l是小写字母ell。双重求和读“the sum over k from one to m, and over j from one to n”。两边乘积尺寸相同也是矩阵相等的条件。"
+      }
+    ]
+  },
+  {
+    "id": "multiplication-order",
+    "title": "Order matters in multiplication",
+    "zh": "乘法不交换与消去律失效",
+    "chapter": 4,
+    "source": "§2 · p.114",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "The associative law holds, but we must keep the order of the factors."
+      },
+      {
+        "type": "statement",
+        "text": "Matrix multiplication is not commutative in general. A product of two nonzero matrices can be zero. Cancellation does not hold in general."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=\\begin{pmatrix}1&1\\\\-1&-1\\end{pmatrix},\\qquad B=\\begin{pmatrix}1&-1\\\\-1&1\\end{pmatrix}."
+      },
+      {
+        "type": "heading",
+        "text": "Verification"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "AB=\\begin{pmatrix}1-1&-1+1\\\\-1+1&1-1\\end{pmatrix}=\\begin{pmatrix}0&0\\\\0&0\\end{pmatrix},\\qquad BA=\\begin{pmatrix}1+1&1+1\\\\-1-1&-1-1\\end{pmatrix}=\\begin{pmatrix}2&2\\\\-2&-2\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Here A B is zero, but B A is not zero. Thus they are different. Also, both A and B are nonzero. Finally, A B equals A O, but B is not O. So we cannot cancel A."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "AB=AO,\\qquad A\\ne O,\\qquad B\\ne O."
+      },
+      {
+        "type": "text",
+        "text": "There is also a size issue. Even when A B is defined, B A may not be defined. When both are defined, they may have different sizes."
+      },
+      {
+        "type": "cue",
+        "text": "保留原书这个反例，因为它直接证明三条重要结论；不加入一般计算练习。"
+      }
+    ]
+  },
+  {
+    "id": "identity-distributivity",
+    "title": "Identity and distributive laws",
+    "zh": "定义3：单位矩阵与分配律",
+    "chapter": 4,
+    "source": "§2 · p.114",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now introduce the identity matrix."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 3. The identity matrix Eₙ has ones on the main diagonal and zeros elsewhere."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "E_n=\\begin{pmatrix}1&0&\\cdots&0\\\\0&1&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&1\\end{pmatrix},\\qquad A_{s\\times n}E_n=A_{s\\times n},\\quad E_sA_{s\\times n}=A_{s\\times n}."
+      },
+      {
+        "type": "text",
+        "text": "We denote this matrix by E sub n. In A E sub n, column j of E has just one nonzero entry. It selects a sub i j from row i of A. The same argument applies to E sub s times A. Thus both products equal A."
+      },
+      {
+        "type": "statement",
+        "text": "Matrix multiplication satisfies both distributive laws, whenever the sizes match."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A(B+C)=AB+AC,\\qquad(B+C)A=BA+CA."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "For the first identity, compare the entries in row i and column j. Let n be the number of columns of A."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{k=1}^{n}a_{ik}(b_{kj}+c_{kj})=\\sum_{k=1}^{n}a_{ik}b_{kj}+\\sum_{k=1}^{n}a_{ik}c_{kj}."
+      },
+      {
+        "type": "text",
+        "text": "For the second identity, let n be the number of columns of B and C. Again, compare the entries."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{k=1}^{n}(b_{ik}+c_{ik})a_{kj}=\\sum_{k=1}^{n}b_{ik}a_{kj}+\\sum_{k=1}^{n}c_{ik}a_{kj}."
+      },
+      {
+        "type": "text",
+        "text": "These are the distributive laws for numbers. They prove both matrix identities. We need both laws because we cannot change the order of matrix factors."
+      }
+    ]
+  },
+  {
+    "id": "matrix-powers",
+    "title": "Powers of a square matrix",
+    "zh": "方阵的幂与运算法则",
+    "chapter": 4,
+    "source": "§2 · pp.114–115",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, we define positive integer powers of a square matrix."
+      },
+      {
+        "type": "statement",
+        "text": "For a square matrix A, define A¹ = A and Aᵏ⁺¹ = AᵏA. Thus Aᵏ is the product of k copies of A."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A^1=A,\\qquad A^{k+1}=A^kA\\quad(k\\ge1)."
+      },
+      {
+        "type": "text",
+        "text": "Read A to the power k, or simply A to the k. This definition requires A to be square, so that repeated multiplication is possible."
+      },
+      {
+        "type": "statement",
+        "text": "For positive integers k and l, powers of the same matrix satisfy the following laws."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A^kA^l=A^{k+l},\\qquad(A^k)^l=A^{kl}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "In the first product, there are k copies of A followed by l copies. By associativity, we can remove the brackets. There are k plus l copies in total. In the second product, there are l groups, each containing k copies of A. There are k l copies in total. Associativity gives the second identity."
+      },
+      {
+        "type": "text",
+        "text": "These laws concern powers of the same matrix. For different matrices A and B, the k-th power of A B need not equal A to the k times B to the k, because changing the order of factors is not allowed."
+      }
+    ]
+  },
+  {
+    "id": "scalar-multiplication",
+    "title": "Scalar multiplication",
+    "zh": "定义4：数量乘法及运算律",
+    "chapter": 4,
+    "source": "§2 · p.115",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We next define multiplication by a scalar. Here a scalar means a number in P."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 4. The scalar multiple kA is obtained by multiplying every entry of A by k."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "kA=(ka_{ij})_{s\\times n}=\\begin{pmatrix}ka_{11}&\\cdots&ka_{1n}\\\\\\vdots&&\\vdots\\\\ka_{s1}&\\cdots&ka_{sn}\\end{pmatrix},\\qquad k\\in P."
+      },
+      {
+        "type": "statement",
+        "text": "Scalar multiplication satisfies the following laws, for compatible matrices and scalars k and l."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(k+l)A=kA+lA,\\quad k(A+B)=kA+kB,\\quad k(lA)=(kl)A,\\quad1A=A."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k(AB)=(kA)B=A(kB)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The first four laws follow entry by entry from the corresponding laws for numbers. For example, k times the sum of a sub i j and b sub i j equals k a sub i j plus k b sub i j. Let us prove the last law as in the textbook. Let A be s by n and B be n by m. Compare their entries in position i, t."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k\\sum_{j=1}^{n}a_{ij}b_{jt},\\qquad\\sum_{j=1}^{n}(ka_{ij})b_{jt}=k\\sum_{j=1}^{n}a_{ij}b_{jt},\\qquad\\sum_{j=1}^{n}a_{ij}(kb_{jt})=k\\sum_{j=1}^{n}a_{ij}b_{jt}."
+      },
+      {
+        "type": "text",
+        "text": "All three entries are equal. This proves the identity."
+      },
+      {
+        "type": "statement",
+        "text": "A scalar matrix is a matrix kE. It commutes with every square matrix of the same order."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "kE_n=\\begin{pmatrix}k&0&\\cdots&0\\\\0&k&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&k\\end{pmatrix},\\quad(kE_n)A=A(kE_n)=kA."
+      },
+      {
+        "type": "text",
+        "text": "This follows from the last scalar multiplication law and the identity matrix rule. The scalar matrix rules below follow in the same way."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "kE+lE=(k+l)E,\\qquad(kE)(lE)=(kl)E."
+      }
+    ]
+  },
+  {
+    "id": "matrix-transpose",
+    "title": "Transpose and its laws",
+    "zh": "定义5：转置及乘积转置的证明",
+    "chapter": 4,
+    "source": "§2 · p.116",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, we define the transpose of a matrix."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 5. The transpose Aᵀ is obtained by interchanging the rows and columns of A. An s by n matrix becomes an n by s matrix."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=\\begin{pmatrix}a_{11}&\\cdots&a_{1n}\\\\a_{21}&\\cdots&a_{2n}\\\\\\vdots&&\\vdots\\\\a_{s1}&\\cdots&a_{sn}\\end{pmatrix},\\qquad A^{\\mathrm T}=\\begin{pmatrix}a_{11}&a_{21}&\\cdots&a_{s1}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{1n}&a_{2n}&\\cdots&a_{sn}\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Read A superscript T as “A transpose.” Row i of A becomes column i of A transpose. The superscript T is a transpose symbol, not a numerical power."
+      },
+      {
+        "type": "statement",
+        "text": "Transposition satisfies the following four identities. In the transpose of a product, the order of the factors is reversed."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(A^{\\mathrm T})^{\\mathrm T}=A,\\quad(A+B)^{\\mathrm T}=A^{\\mathrm T}+B^{\\mathrm T},\\quad(AB)^{\\mathrm T}=B^{\\mathrm T}A^{\\mathrm T},\\quad(kA)^{\\mathrm T}=kA^{\\mathrm T}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Transposing twice restores every entry. Addition and scalar multiplication act on each entry, so they also commute with transposition. We now prove the product formula. Let A be s by n and B be n by m. Both sides are m by s. First, the entry in position i, j of A B is the following sum."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(AB)_{ij}=\\sum_{k=1}^{n}a_{ik}b_{kj},\\qquad\\bigl((AB)^{\\mathrm T}\\bigr)_{ij}=(AB)_{ji}=\\sum_{k=1}^{n}a_{jk}b_{ki}."
+      },
+      {
+        "type": "text",
+        "text": "Here the subscript i j on a matrix expression means its entry in row i and column j. After transposing, we use the original entry in row j and column i. Now compare this with B transpose times A transpose."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(B^{\\mathrm T})_{ik}=b_{ki},\\quad(A^{\\mathrm T})_{kj}=a_{jk},\\qquad(B^{\\mathrm T}A^{\\mathrm T})_{ij}=\\sum_{k=1}^{n}b_{ki}a_{jk}=\\sum_{k=1}^{n}a_{jk}b_{ki}."
+      },
+      {
+        "type": "text",
+        "text": "The entries agree. This proves the formula. In the last step we exchanged two numbers inside each term. We did not exchange the matrix factors."
+      }
+    ]
+  },
+  {
+    "id": "matrix-product-determinant",
+    "title": "Determinants of matrix products",
+    "zh": "定理1及推论1：乘积的行列式",
+    "chapter": 4,
+    "source": "§3 · p.117",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now study the determinant and rank of a product."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 1. For two n by n matrices A and B over P, the determinant of AB equals the product of their determinants."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "|AB|=|A|\\,|B|."
+      },
+      {
+        "type": "text",
+        "text": "The vertical bars mean the determinant. Read this as “the determinant of A B equals the determinant of A times the determinant of B.”"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The entry in row i and column j of A B is the sum from k equals one to n of a sub i k times b sub k j. The multiplication rule proved in Chapter Two, Section Eight, applies to exactly this determinant. It gives the stated equality."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "|AB|=\\det\\left(\\sum_{k=1}^{n}a_{ik}b_{kj}\\right)_{n\\times n}=|A|\\,|B|."
+      },
+      {
+        "type": "cue",
+        "text": "原书直接引用第二章§8的乘法规则；该完整证明已保留在前文“determinant-product”，此处按原书不重复展开。"
+      },
+      {
+        "type": "statement",
+        "text": "Corollary 1. The determinant of a product of any finite number of square matrices of the same order equals the product of their determinants."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "|A_1A_2\\cdots A_m|=|A_1|\\,|A_2|\\cdots|A_m|."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Use induction on m. The case m equals two is Theorem One. Assume the formula holds for m minus one factors. Apply Theorem One to the first m minus one factors and the last factor. Then use the induction hypothesis."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "|(A_1\\cdots A_{m-1})A_m|=|A_1\\cdots A_{m-1}|\\,|A_m|=|A_1|\\cdots|A_{m-1}|\\,|A_m|."
+      }
+    ]
+  },
+  {
+    "id": "singular-matrices",
+    "title": "Singular and nonsingular matrices",
+    "zh": "定义6及推论2：退化与非退化矩阵",
+    "chapter": 4,
+    "source": "§3 · p.117",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We next introduce two terms for square matrices."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 6. A square matrix A is nonsingular if its determinant is nonzero. It is singular if its determinant is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A\\text{ nonsingular}\\ \\Longleftrightarrow\\ |A|\\ne0\\ \\Longleftrightarrow\\ \\operatorname{rank}(A)=n,\\qquad A\\text{ singular}\\ \\Longleftrightarrow\\ |A|=0."
+      },
+      {
+        "type": "text",
+        "text": "Here A has order n. Nonsingular means non-degenerate; singular means degenerate. The rank criterion follows from the relation between rank and nonzero minors in Chapter Three."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary 2. For square matrices A and B of the same order, AB is singular if and only if at least one of A and B is singular."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "|AB|=0\\quad\\Longleftrightarrow\\quad |A|\\,|B|=0\\quad\\Longleftrightarrow\\quad |A|=0\\ \\text{or}\\ |B|=0."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "By Theorem One, the determinant of A B is the product of two numbers, the determinants of A and B. A product of two numbers in P is zero if and only if at least one factor is zero. This proves both directions."
+      },
+      {
+        "type": "cue",
+        "text": "“if and only if”表示充要条件。此处对数域中的两个数使用零乘积性质，不能直接对两个矩阵使用这一性质。"
+      }
+    ]
+  },
+  {
+    "id": "matrix-product-rank",
+    "title": "Rank of a matrix product",
+    "zh": "定理2及推论：矩阵乘积的秩",
+    "chapter": 4,
+    "source": "§3 · pp.117–118",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Finally, let us prove the rank inequality for a product."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 2. If A is n by m and B is m by s, then the rank of AB is at most the rank of each factor."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\operatorname{rank}(AB)\\le\\min\\{\\operatorname{rank}(A),\\operatorname{rank}(B)\\}."
+      },
+      {
+        "type": "text",
+        "text": "Read min as “the minimum of.” We will prove two inequalities, one for each factor."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=\\begin{pmatrix}a_{11}&\\cdots&a_{1m}\\\\\\vdots&&\\vdots\\\\a_{n1}&\\cdots&a_{nm}\\end{pmatrix},\\qquad B=\\begin{pmatrix}b_{11}&\\cdots&b_{1s}\\\\\\vdots&&\\vdots\\\\b_{m1}&\\cdots&b_{ms}\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "As in the textbook, let B sub one through B sub m be the rows of B. Let C sub one through C sub n be the rows of A B. These capital letters now denote row vectors. From the multiplication rule, we obtain the following expression for row i."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "B_k=(b_{k1},\\ldots,b_{ks}),\\qquad C_i=a_{i1}B_1+a_{i2}B_2+\\cdots+a_{im}B_m\\quad(1\\le i\\le n)."
+      },
+      {
+        "type": "text",
+        "text": "To check this equality, compare component j. On both sides, it is the sum from k equals one to m of a sub i k times b sub k j."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(C_i)_j=\\sum_{k=1}^{m}a_{ik}b_{kj}."
+      },
+      {
+        "type": "text",
+        "text": "Thus every row of A B is a linear combination of the rows of B. Choose a maximal independent set of rows of B. These rows also express every row of A B. Hence A B cannot have more independent rows than B."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\operatorname{rank}(AB)\\le\\operatorname{rank}(B)."
+      },
+      {
+        "type": "text",
+        "text": "Now use columns. Let A sub one through A sub m be the columns of A. Let D sub one through D sub s be the columns of A B."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A_k=\\begin{pmatrix}a_{1k}\\\\\\vdots\\\\a_{nk}\\end{pmatrix},\\qquad D_i=b_{1i}A_1+b_{2i}A_2+\\cdots+b_{mi}A_m\\quad(1\\le i\\le s)."
+      },
+      {
+        "type": "text",
+        "text": "Each column of A B is a linear combination of the columns of A. The same rank argument gives the other inequality."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\operatorname{rank}(AB)\\le\\operatorname{rank}(A)."
+      },
+      {
+        "type": "text",
+        "text": "Combining the two inequalities proves the theorem."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary. The rank of a product of several compatible matrices is at most the rank of any factor."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=A_1A_2\\cdots A_t\\quad\\Longrightarrow\\quad\\operatorname{rank}(A)\\le\\min_{1\\le j\\le t}\\operatorname{rank}(A_j)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Apply Theorem Two repeatedly. The rank of the full product is at most the rank of the product of the first t minus one factors, and at most the rank of the last factor. By induction, it is at most the rank of every factor."
+      },
+      {
+        "type": "cue",
+        "text": "这里行向量Bᵢ、Cᵢ和列向量Aᵢ、Dᵢ均沿用原书；先展示完整矩阵再引入，切勿混淆A（矩阵）和Aᵢ（第i列）。"
+      }
+    ]
   }
 ]
