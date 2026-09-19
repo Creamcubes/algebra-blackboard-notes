@@ -7001,5 +7001,556 @@
         "text": "读第一行可说“C transpose A C is a diagonal matrix with r ones and n minus r zeros”。第二行的负一组说“r minus p entries equal to minus one”，避免连续两个minus造成歧义。复数部分始终使用转置，不加入复共轭。"
       }
     ]
+  },
+  {
+    "id": "positive-definite-definition",
+    "title": "Positive definite quadratic forms",
+    "zh": "定义4：正定二次型",
+    "chapter": 5,
+    "source": "§4 · p.152",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now study positive definite quadratic forms. We will first define positivity, then give tests using inertia and determinants."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 4. A real quadratic form is positive definite if its value is positive at every nonzero real vector."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(c_1,\\ldots,c_n)\\ne(0,\\ldots,0)\\quad\\Longrightarrow\\quad f(c_1,\\ldots,c_n)>0."
+      },
+      {
+        "type": "text",
+        "text": "Nonzero means that the entries are not all zero. It does not mean that every entry must be nonzero. At the zero vector, every quadratic form has value zero."
+      },
+      {
+        "type": "statement",
+        "text": "Property. A diagonal real quadratic form is positive definite if and only if all its coefficients are positive."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f=d_1x_1^2+\\cdots+d_nx_n^2\\text{ is positive definite}\\quad\\Longleftrightarrow\\quad d_i>0\\ (1\\le i\\le n)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "If every coefficient is positive, each term is nonnegative. At a nonzero vector, at least one square is positive, so the sum is positive. Conversely, set x sub i equal to one and all other variables equal to zero. The value is d sub i. Positive definiteness therefore requires d sub i to be positive for every i."
+      },
+      {
+        "type": "cue",
+        "text": "positive definite读“positive definite”；>0读“is positive”或“is greater than zero”。强调“不全为零”，不能说“all entries are nonzero”。"
+      }
+    ]
+  },
+  {
+    "id": "positive-definite-invariance",
+    "title": "Preserving positive definiteness",
+    "zh": "非退化实替换保持正定性",
+    "chapter": 5,
+    "source": "§4 · pp.152–153",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, we check what happens under a change of variables."
+      },
+      {
+        "type": "statement",
+        "text": "Property. A nondegenerate real linear substitution preserves positive definiteness in both directions."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "X=CY,\\quad |C|\\ne0,\\qquad g(Y)=f(CY),\\qquad f\\text{ positive definite}\\ \\Longleftrightarrow\\ g\\text{ positive definite}."
+      },
+      {
+        "type": "text",
+        "text": "The notation g of Y means the new quadratic form in the entries of Y. The original form is f."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Suppose f is positive definite. Take any real values k sub one through k sub n that are not all zero. Let the corresponding original values be c sub one through c sub n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}c_1\\\\\\vdots\\\\c_n\\end{pmatrix}=C\\begin{pmatrix}k_1\\\\\\vdots\\\\k_n\\end{pmatrix},\\qquad\\begin{pmatrix}k_1\\\\\\vdots\\\\k_n\\end{pmatrix}=C^{-1}\\begin{pmatrix}c_1\\\\\\vdots\\\\c_n\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "If all the c entries were zero, the second equation would make all the k entries zero. That is impossible. Hence the c entries are not all zero, and"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "g(k_1,\\ldots,k_n)=f(c_1,\\ldots,c_n)>0."
+      },
+      {
+        "type": "text",
+        "text": "Thus g is positive definite. For the reverse direction, use the inverse substitution Y equals C inverse X and apply the same argument."
+      },
+      {
+        "type": "cue",
+        "text": "先写两列数值之间的关系，再解释为什么非零不会变成零。此处小写cᵢ是原变量的取值，大写C是替换矩阵。"
+      }
+    ]
+  },
+  {
+    "id": "positive-inertia-matrix",
+    "title": "Inertia and positive definite matrices",
+    "zh": "定理6、定义5及行列式推论",
+    "chapter": 5,
+    "source": "§4 · pp.153–154",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "The preceding result gives a test in terms of inertia."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 6. A real quadratic form in n variables is positive definite if and only if its positive index of inertia equals n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f\\text{ positive definite}\\quad\\Longleftrightarrow\\quad p=n."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Reduce f to a standard form by a nondegenerate real substitution. Positivity is preserved. The diagonal form is positive definite exactly when every coefficient is positive. This means there are n positive square terms, so the positive index of inertia is n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f=d_1y_1^2+\\cdots+d_ny_n^2,\\qquad d_1>0,\\ldots,d_n>0;\\qquad\\text{canonical form: }y_1^2+\\cdots+y_n^2."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 5. A real symmetric matrix A is positive definite if the quadratic form X transpose A X is positive definite."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A^{\\mathsf T}=A,\\qquad X^{\\mathsf T}AX>0\\quad\\text{for every real }X\\ne0."
+      },
+      {
+        "type": "statement",
+        "text": "Consequence. A real symmetric matrix is positive definite if and only if it is congruent over the real numbers to the identity matrix."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A\\text{ positive definite}\\quad\\Longleftrightarrow\\quad A=C^{\\mathsf T}EC=C^{\\mathsf T}C\\text{ for some real invertible }C."
+      },
+      {
+        "type": "text",
+        "text": "The canonical form has matrix E, the identity matrix. Thus the consequence follows from Theorem Six and the substitution formula. Congruence can be reversed, which lets us write A in the displayed form."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary. The determinant of a positive definite matrix is positive."
+      },
+      {
+        "type": "heading",
+        "text": "Proof of the corollary"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=C^{\\mathsf T}C,\\quad |C|\\ne0\\quad\\Longrightarrow\\quad |A|=|C^{\\mathsf T}|\\,|C|=|C|^2>0."
+      },
+      {
+        "type": "text",
+        "text": "C is real and invertible, so its determinant is a nonzero real number. Its square is positive."
+      },
+      {
+        "type": "cue",
+        "text": "X≠0表示列向量非零。|C|²读“the square of the determinant of C”；不要读成绝对值。正定矩阵在本教材中要求实对称，不能只检查行列式大于零。"
+      }
+    ]
+  },
+  {
+    "id": "positive-leading-minors",
+    "title": "The leading principal minor criterion",
+    "zh": "定义6与定理7：必要性",
+    "chapter": 5,
+    "source": "§4 · p.154",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now give a test directly in terms of the entries of A."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 6. The leading principal minor of order i is the determinant of the submatrix in the first i rows and first i columns."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "H_i=\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1i}\\\\a_{21}&a_{22}&\\cdots&a_{2i}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{i1}&a_{i2}&\\cdots&a_{ii}\\end{vmatrix},\\qquad i=1,\\ldots,n."
+      },
+      {
+        "type": "text",
+        "text": "We denote this determinant by H sub i. In particular, H sub one is a sub one one, and H sub n is the determinant of A."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 7. A real quadratic form with symmetric matrix A is positive definite if and only if every leading principal minor of A is positive."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f=X^{\\mathsf T}AX\\text{ positive definite}\\quad\\Longleftrightarrow\\quad H_1>0,\\ H_2>0,\\ldots,H_n>0."
+      },
+      {
+        "type": "heading",
+        "text": "Proof: necessity"
+      },
+      {
+        "type": "text",
+        "text": "Suppose f is positive definite. For each k, retain only the first k variables and set all remaining variables to zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f_k(x_1,\\ldots,x_k)=\\sum_{i=1}^{k}\\sum_{j=1}^{k}a_{ij}x_ix_j."
+      },
+      {
+        "type": "text",
+        "text": "At any nonzero choice of the first k variables, the full vector with zeros added is still nonzero. Therefore"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f_k(c_1,\\ldots,c_k)=f(c_1,\\ldots,c_k,0,\\ldots,0)>0."
+      },
+      {
+        "type": "text",
+        "text": "So f sub k is positive definite. Its matrix is the upper left k by k submatrix of A. The preceding corollary gives"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "H_k=\\begin{vmatrix}a_{11}&\\cdots&a_{1k}\\\\\\vdots&&\\vdots\\\\a_{k1}&\\cdots&a_{kk}\\end{vmatrix}>0,\\qquad k=1,\\ldots,n."
+      },
+      {
+        "type": "text",
+        "text": "This proves necessity."
+      },
+      {
+        "type": "cue",
+        "text": "leading principal minor：顺序主子式。指向左上角子矩阵，说明行指标和列指标都是1到k。Hᵢ本身是行列式的值，不是子矩阵。"
+      }
+    ]
+  },
+  {
+    "id": "positive-leading-minors-sufficiency",
+    "title": "Sufficiency of the minor criterion",
+    "zh": "定理7续证：完整分块归纳",
+    "chapter": 5,
+    "source": "§4 · pp.154–155",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now prove the converse in Theorem Seven."
+      },
+      {
+        "type": "heading",
+        "text": "Proof: sufficiency"
+      },
+      {
+        "type": "text",
+        "text": "Assume all leading principal minors are positive. We use induction on n. For n equals one, the condition is a sub one one greater than zero, so the form is positive definite."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "n=1:\\qquad f=a_{11}x_1^2,\\quad a_{11}>0."
+      },
+      {
+        "type": "text",
+        "text": "Assume the result for order n minus one. Partition A as in the book. Here A sub one is the upper left submatrix, and alpha is the last column above the diagonal entry."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A_1=\\begin{pmatrix}a_{11}&\\cdots&a_{1,n-1}\\\\\\vdots&&\\vdots\\\\a_{n-1,1}&\\cdots&a_{n-1,n-1}\\end{pmatrix},\\quad\\alpha=\\begin{pmatrix}a_{1n}\\\\\\vdots\\\\a_{n-1,n}\\end{pmatrix},\\quad A=\\begin{pmatrix}A_1&\\alpha\\\\\\alpha^{\\mathsf T}&a_{nn}\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "All leading principal minors of A sub one are positive. By induction, A sub one is positive definite. Hence there is a real invertible G such that G transpose A sub one G is the identity. Extend this change to A."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "G^{\\mathsf T}A_1G=E_{n-1},\\qquad C_1=\\begin{pmatrix}G&O\\\\O&1\\end{pmatrix}."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "C_1^{\\mathsf T}AC_1=\\begin{pmatrix}G^{\\mathsf T}&O\\\\O&1\\end{pmatrix}\\begin{pmatrix}A_1&\\alpha\\\\\\alpha^{\\mathsf T}&a_{nn}\\end{pmatrix}\\begin{pmatrix}G&O\\\\O&1\\end{pmatrix}=\\begin{pmatrix}E_{n-1}&G^{\\mathsf T}\\alpha\\\\\\alpha^{\\mathsf T}G&a_{nn}\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Next, choose C sub two to clear the upper right block. Its transpose clears the lower left block at the same time."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "C_2=\\begin{pmatrix}E_{n-1}&-G^{\\mathsf T}\\alpha\\\\O&1\\end{pmatrix}."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}C_2^{\\mathsf T}C_1^{\\mathsf T}AC_1C_2&=\\begin{pmatrix}E_{n-1}&O\\\\-\\alpha^{\\mathsf T}G&1\\end{pmatrix}\\begin{pmatrix}E_{n-1}&G^{\\mathsf T}\\alpha\\\\\\alpha^{\\mathsf T}G&a_{nn}\\end{pmatrix}\\begin{pmatrix}E_{n-1}&-G^{\\mathsf T}\\alpha\\\\O&1\\end{pmatrix}\\\\&=\\begin{pmatrix}E_{n-1}&O\\\\O&a_{nn}-\\alpha^{\\mathsf T}GG^{\\mathsf T}\\alpha\\end{pmatrix}.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "Let C be the product C sub one C sub two. Denote the last scalar entry by a. Both factors are invertible, so C is invertible."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "C=C_1C_2,\\qquad a=a_{nn}-\\alpha^{\\mathsf T}GG^{\\mathsf T}\\alpha,\\qquad C^{\\mathsf T}AC=\\begin{pmatrix}E_{n-1}&O\\\\O&a\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Take determinants. The determinant of A is positive by the last leading-minor condition. This forces a to be positive."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "|C|^2|A|=a,\\qquad |A|=H_n>0,\\quad |C|\\ne0\\quad\\Longrightarrow\\quad a>0."
+      },
+      {
+        "type": "text",
+        "text": "The final diagonal matrix is congruent to the identity. We can see this by writing the factorization using the positive square root of a."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}E_{n-1}&O\\\\O&a\\end{pmatrix}=\\begin{pmatrix}E_{n-1}&O\\\\O&\\sqrt a\\end{pmatrix}E_n\\begin{pmatrix}E_{n-1}&O\\\\O&\\sqrt a\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Thus A is congruent to the identity and is positive definite. This completes the induction and the proof of Theorem Seven."
+      },
+      {
+        "type": "cue",
+        "text": "此处α是列向量，与前节配方法中的行向量α区别；写出尺寸(n−1)×1。αᵀGGᵀα是一个数，读“alpha transpose times G times G transpose times alpha”。C₁、C₂按实际次序相乘，不能倒置。"
+      }
+    ]
+  },
+  {
+    "id": "other-definiteness-types",
+    "title": "Other types of definiteness",
+    "zh": "定义7及负定判别",
+    "chapter": 5,
+    "source": "§4 · p.156",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "There are four related definitions for real quadratic forms."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 7. A real quadratic form is negative definite if it is negative at every nonzero real vector. It is positive semidefinite if it is nonnegative at every real vector, and negative semidefinite if it is nonpositive at every real vector. It is indefinite if it is neither positive semidefinite nor negative semidefinite."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\\text{negative definite: }&f(X)<0\\quad(X\\ne0),\\\\\\text{positive semidefinite: }&f(X)\\ge0\\quad\\text{for all }X,\\\\\\text{negative semidefinite: }&f(X)\\le0\\quad\\text{for all }X,\\\\\\text{indefinite: }&f(U)>0\\text{ and }f(V)<0\\text{ for some real }U,V.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "Here f of X means f evaluated at the entries of the column vector X. Nonnegative includes zero. An indefinite form takes both positive and negative values. The zero form is both positive semidefinite and negative semidefinite."
+      },
+      {
+        "type": "statement",
+        "text": "Consequence. A real symmetric matrix A defines a negative definite form if and only if its leading principal minors alternate in sign: the odd-order minors are negative and the even-order minors are positive."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "H_1<0,\\ H_2>0,\\ H_3<0,\\ldots,\\qquad (-1)^iH_i>0\\quad(1\\le i\\le n)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The form f is negative definite exactly when minus f is positive definite. The matrix of minus f is minus A. Its leading principal minor of order i is minus one to the power i times H sub i. Apply Theorem Seven to minus A."
+      },
+      {
+        "type": "cue",
+        "text": "positive semidefinite：半正定；negative semidefinite：半负定；indefinite：不定。(-1)ⁱHᵢ读“minus one to the power i times H sub i”。不定不等于“不是正定”。"
+      }
+    ]
+  },
+  {
+    "id": "semidefinite-equivalences",
+    "title": "Tests for positive semidefiniteness",
+    "zh": "定理8：半正定的五个等价条件",
+    "chapter": 5,
+    "source": "§4 · p.156",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We finish with tests for positive semidefiniteness. A principal minor uses the same set of row indices and column indices. The indices need not be the first consecutive ones."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 8. Let f equal X transpose A X, with A real symmetric of order n. The following five conditions are equivalent."
+      },
+      {
+        "type": "statement",
+        "text": "1. The form f is positive semidefinite. 2. Its positive index of inertia equals its rank. 3. A is congruent over the real numbers to a diagonal matrix with nonnegative diagonal entries. 4. A equals C transpose C for some real matrix C. 5. Every principal minor of A is nonnegative."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}(1)\\ &X^{\\mathsf T}AX\\ge0\\quad\\text{for every real }X;\\\\(2)\\ &p=r;\\\\(3)\\ &C^{\\mathsf T}AC=\\operatorname{diag}(d_1,\\ldots,d_n),\\quad |C|\\ne0,\\quad d_i\\ge0;\\\\(4)\\ &A=C^{\\mathsf T}C;\\\\(5)\\ &\\det A[I,I]\\ge0\\quad\\text{for every nonempty index set }I.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "Here p is the positive index of inertia and r is the rank. A bracket I comma I means the submatrix using the rows and columns listed in I. The matrix C in condition three must be invertible. The matrix C in condition four need not be invertible. These are separate existence statements and need not use the same matrix."
+      },
+      {
+        "type": "cue",
+        "text": "教材将定理8的证明留作练习。以下两节中的证明是为讲稿补充的，并非原书已有的逐行证明。此处保留正文定理，不加入章后习题。A[I,I]读“the principal submatrix of A on the index set I”。"
+      },
+      {
+        "type": "heading",
+        "text": "Supplementary proof: conditions 1 through 4"
+      },
+      {
+        "type": "text",
+        "text": "By the real canonical form, nonnegativity is equivalent to having no negative square terms. This means p equals r. It is also equivalent to a diagonal form with all coefficients nonnegative. This proves the equivalence of the first three conditions."
+      },
+      {
+        "type": "text",
+        "text": "To obtain condition four from condition three, use a different letter T for the invertible substitution matrix. Take the nonnegative square roots of the diagonal entries."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "T^{\\mathsf T}AT=D=\\operatorname{diag}(d_1,\\ldots,d_n),\\quad S=\\operatorname{diag}(\\sqrt{d_1},\\ldots,\\sqrt{d_n}),\\quad D=S^{\\mathsf T}S."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=(T^{-1})^{\\mathsf T}S^{\\mathsf T}ST^{-1}=(ST^{-1})^{\\mathsf T}(ST^{-1})."
+      },
+      {
+        "type": "text",
+        "text": "So choose C equals S times T inverse. Conversely, if A equals C transpose C, its quadratic form is a sum of real squares."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "X^{\\mathsf T}AX=(CX)^{\\mathsf T}(CX)=u_1^2+\\cdots+u_n^2\\ge0,\\qquad CX=\\begin{pmatrix}u_1\\\\\\vdots\\\\u_n\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "We have constructed a square C of order n. A rectangular real C with n columns also gives a nonnegative sum of squares. This proves condition four implies condition one."
+      }
+    ]
+  },
+  {
+    "id": "semidefinite-principal-minors",
+    "title": "Why all principal minors are needed",
+    "zh": "定理8续证：主子式与反例",
+    "chapter": 5,
+    "source": "§4 · p.156 · 补充证明",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now prove the part of Theorem Eight concerning all principal minors."
+      },
+      {
+        "type": "heading",
+        "text": "Supplementary proof: condition 1 implies condition 5"
+      },
+      {
+        "type": "text",
+        "text": "Restrict a positive semidefinite form to any selected coordinates, setting the other coordinates to zero. The resulting form is still positive semidefinite. Its symmetric matrix is the corresponding principal submatrix. Its canonical diagonal entries are ones and zeros. Its determinant is therefore nonnegative, since a congruence changes a determinant by a nonzero square. Thus every principal minor is nonnegative."
+      },
+      {
+        "type": "heading",
+        "text": "Supplementary proof: condition 5 implies condition 1"
+      },
+      {
+        "type": "text",
+        "text": "We use induction on the order n. The case n equals one is immediate. Assume all principal minors of A are nonnegative. In particular, every diagonal entry is nonnegative. If they are all zero, the two by two principal minors force all other entries to be zero as well."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_{ii}=a_{jj}=0\\quad\\Longrightarrow\\quad\\begin{vmatrix}0&a_{ij}\\\\a_{ij}&0\\end{vmatrix}=-a_{ij}^2\\ge0\\quad\\Longrightarrow\\quad a_{ij}=0."
+      },
+      {
+        "type": "text",
+        "text": "In this case A is zero and the form is positive semidefinite. Otherwise, exchange the same rows and columns to place a positive diagonal entry first. This only relabels the principal minors. Write the resulting matrix as follows."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=\\begin{pmatrix}a&\\beta\\\\\\beta^{\\mathsf T}&B\\end{pmatrix},\\quad a>0,\\qquad D=B-a^{-1}\\beta^{\\mathsf T}\\beta."
+      },
+      {
+        "type": "text",
+        "text": "Here beta is a row vector, B has order n minus one, and D is symmetric. Select any nonempty set J of indices in B. Write B sub J for that principal submatrix, and beta sub J for the matching entries of beta. Block elimination gives"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{vmatrix}a&\\beta_J\\\\\\beta_J^{\\mathsf T}&B_J\\end{vmatrix}=a\\det(B_J-a^{-1}\\beta_J^{\\mathsf T}\\beta_J)=a\\det D_J."
+      },
+      {
+        "type": "text",
+        "text": "The determinant on the left is a principal minor of A, so it is nonnegative. Since a is positive, every principal minor of D is nonnegative. By induction, D is positive semidefinite."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}x_1&Z^{\\mathsf T}\\end{pmatrix}A\\begin{pmatrix}x_1\\\\Z\\end{pmatrix}=a\\left(x_1+a^{-1}\\beta Z\\right)^2+Z^{\\mathsf T}DZ\\ge0."
+      },
+      {
+        "type": "text",
+        "text": "Here Z contains the last n minus one variables. Both terms on the right are nonnegative. Hence A defines a positive semidefinite form. This completes the proof of Theorem Eight."
+      },
+      {
+        "type": "statement",
+        "text": "Warning. Nonnegative leading principal minors alone do not imply positive semidefiniteness."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f(x_1,x_2)=-x_2^2,\\qquad A=\\begin{pmatrix}0&0\\\\0&-1\\end{pmatrix},\\qquad H_1=0,\\quad H_2=0."
+      },
+      {
+        "type": "text",
+        "text": "Both leading principal minors are zero, but f at zero comma one equals minus one. The other principal minor of order one is minus one. This is why condition five requires all principal minors."
+      },
+      {
+        "type": "cue",
+        "text": "此补充证明只用归纳、分块消元与配方。β读“beta”；βZ是一个数；Dⱼ是D的对应主子矩阵。最后反例来自正文，必须区分“所有主子式”与“顺序主子式”。"
+      }
+    ]
   }
 ]
