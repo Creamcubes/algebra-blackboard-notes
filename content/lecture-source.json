@@ -7552,5 +7552,603 @@
         "text": "此补充证明只用归纳、分块消元与配方。β读“beta”；βZ是一个数；Dⱼ是D的对应主子矩阵。最后反例来自正文，必须区分“所有主子式”与“顺序主子式”。"
       }
     ]
+  },
+  {
+    "id": "sets-membership-subsets",
+    "title": "Sets, elements, and subsets",
+    "zh": "集合、元素、空集与子集",
+    "chapter": 6,
+    "source": "§1 · pp.160–161",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now begin linear spaces. We first introduce the set and mapping notation used in this chapter."
+      },
+      {
+        "type": "statement",
+        "text": "Definitions. A set is a collection of objects, called its elements. The empty set has no elements. Two sets are equal if they have exactly the same elements. A set M is a subset of N if every element of M belongs to N."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a\\in M,\\quad a\\notin M,\\quad M=\\{a\\mid a\\text{ has the stated property}\\},\\quad\\varnothing\\text{ is the empty set}."
+      },
+      {
+        "type": "text",
+        "text": "We read a belongs to M, or a is an element of M. The crossed symbol means does not belong to. In braces, the vertical bar means such that. The symbol for the empty set is read the empty set."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "M=N\\ \\Longleftrightarrow\\ (a\\in M\\ \\Longleftrightarrow\\ a\\in N),\\qquad M\\subset N\\ \\Longleftrightarrow\\ (a\\in M\\ \\Longrightarrow\\ a\\in N)."
+      },
+      {
+        "type": "text",
+        "text": "Each condition applies to every a. We read M subset N as M is a subset of N. In this book, this symbol allows equality. A proper subset is a subset that is not equal to the whole set."
+      },
+      {
+        "type": "statement",
+        "text": "Properties. Every set is a subset of itself. The empty set is a subset of every set. Two sets are equal if each is a subset of the other."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "M\\subset M,\\qquad\\varnothing\\subset M,\\qquad M=N\\ \\Longleftrightarrow\\ (M\\subset N\\text{ and }N\\subset M)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Every element of M belongs to M, giving the first property. The empty set has no element that could fail to belong to M, giving the second. Finally, the two inclusions say that M and N have exactly the same elements, which is the definition of equality."
+      },
+      {
+        "type": "cue",
+        "text": "保留教材⊂的用法：允许M=N；不要按其他教材的“真子集”习惯误读。∈描述元素属于集合，⊂描述集合包含关系。双向箭头读“if and only if”。"
+      }
+    ]
+  },
+  {
+    "id": "set-intersection-union",
+    "title": "Intersection and union",
+    "zh": "集合的交与并",
+    "chapter": 6,
+    "source": "§1 · p.161",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, we define two operations on sets."
+      },
+      {
+        "type": "statement",
+        "text": "Definitions. The intersection of M and N consists of the elements belonging to both sets. Their union consists of the elements belonging to at least one of the two sets."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "M\\cap N=\\{a\\mid a\\in M\\text{ and }a\\in N\\},\\qquad M\\cup N=\\{a\\mid a\\in M\\text{ or }a\\in N\\}."
+      },
+      {
+        "type": "text",
+        "text": "We read M intersection N and M union N. Here or includes the case where an element belongs to both sets."
+      },
+      {
+        "type": "statement",
+        "text": "Properties. The intersection is a subset of each set. The union contains each set."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "M\\cap N\\subset M,\\quad M\\cap N\\subset N,\\qquad M\\subset M\\cup N,\\quad N\\subset M\\cup N."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "An element of the intersection belongs to both M and N, so the first two inclusions follow. Every element of M belongs to at least one of the two sets, so it belongs to the union. The same argument applies to N."
+      },
+      {
+        "type": "cue",
+        "text": "∩读“intersection”，∪读“union”。这里只需按成员条件证明四个包含关系，不加入额外集合运算法则。"
+      }
+    ]
+  },
+  {
+    "id": "mapping-definition",
+    "title": "Mappings and their values",
+    "zh": "映射、像、原像与相等",
+    "chapter": 6,
+    "source": "§1 · pp.161–162",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now define mappings."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. A mapping from M to M prime assigns exactly one element of M prime to each element of M. If sigma sends a to a prime, then a prime is the image of a, and a is a preimage of a prime. A mapping from a set to itself is also called a transformation."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma:M\\longrightarrow M',\\qquad\\sigma(a)=a',\\quad a\\in M,\\ a'\\in M'."
+      },
+      {
+        "type": "text",
+        "text": "We read sigma from M to M prime, and sigma of a equals a prime. A prime is the name of an element here, not a derivative. Each input has exactly one output. Different inputs may still have the same output."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. Two mappings with the same source and target sets are equal if they have the same value at every element of the source set."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma,\\tau:M\\longrightarrow M',\\qquad \\sigma=\\tau\\ \\Longleftrightarrow\\ \\sigma(a)=\\tau(a)\\text{ for every }a\\in M."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. The identity mapping on M sends every element of M to itself. We denote it by one sub M."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "1_M:M\\longrightarrow M,\\qquad1_M(a)=a\\quad(a\\in M)."
+      },
+      {
+        "type": "text",
+        "text": "The subscript tells us which set is used. This is a mapping, although its notation uses the number one."
+      },
+      {
+        "type": "cue",
+        "text": "σ读“sigma”，τ读“tau”，M′读“M prime”，a′读“a prime”。image：像；preimage：原像。一个输出可以有多个原像，也可以没有原像。"
+      }
+    ]
+  },
+  {
+    "id": "mapping-composition",
+    "title": "Composition of mappings",
+    "zh": "映射乘法、单位律与结合律",
+    "chapter": 6,
+    "source": "§1 · pp.162–163",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Mappings can be applied one after another. The book calls this their product."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. If sigma maps M to M prime and tau maps M prime to M double prime, their product tau sigma first applies sigma and then tau."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma:M\\to M',\\quad\\tau:M'\\to M'',\\qquad(\\tau\\sigma)(a)=\\tau(\\sigma(a)),\\quad a\\in M."
+      },
+      {
+        "type": "text",
+        "text": "We read tau sigma of a equals tau of sigma of a. The mapping on the right is applied first. This product is composition, not multiplication of two output values."
+      },
+      {
+        "type": "statement",
+        "text": "Properties. Composing with the appropriate identity mapping leaves a mapping unchanged. Composition of mappings is associative."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "1_{M'}\\sigma=\\sigma1_M=\\sigma."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\psi:M''\\to M''',\\qquad(\\psi\\tau)\\sigma=\\psi(\\tau\\sigma)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "For the identity equations, evaluate at any a in M."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(1_{M'}\\sigma)(a)=1_{M'}(\\sigma(a))=\\sigma(a),\\qquad(\\sigma1_M)(a)=\\sigma(1_M(a))=\\sigma(a)."
+      },
+      {
+        "type": "text",
+        "text": "For associativity, both sides have source M and target M triple prime. Again compare their values at any a in M."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}((\\psi\\tau)\\sigma)(a)&=(\\psi\\tau)(\\sigma(a))=\\psi(\\tau(\\sigma(a))),\\\\(\\psi(\\tau\\sigma))(a)&=\\psi((\\tau\\sigma)(a))=\\psi(\\tau(\\sigma(a))).\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "The values agree for every a, so the two mappings are equal."
+      },
+      {
+        "type": "cue",
+        "text": "ψ读“psi”，M″读“M double prime”，M‴读“M triple prime”。先写集合间的方向，再写复合；τσ从右往左作用，不能按书写顺序先做τ。"
+      }
+    ]
+  },
+  {
+    "id": "mapping-injective-surjective",
+    "title": "Injective and surjective mappings",
+    "zh": "像集、满射、单射与双射",
+    "chapter": 6,
+    "source": "§1 · p.163",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now describe whether a mapping reaches every target and whether different inputs stay distinct."
+      },
+      {
+        "type": "statement",
+        "text": "Definitions. The image set sigma of M consists of all outputs of sigma. The mapping is surjective if this image set equals the target set. It is injective if different inputs have different outputs. It is bijective if it is both injective and surjective."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma(M)=\\{\\sigma(a)\\mid a\\in M\\}\\subset M',\\qquad\\sigma\\text{ surjective}\\ \\Longleftrightarrow\\ \\sigma(M)=M'."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma\\text{ injective}\\ \\Longleftrightarrow\\ \\bigl(a_1\\ne a_2\\ \\Longrightarrow\\ \\sigma(a_1)\\ne\\sigma(a_2)\\bigr)."
+      },
+      {
+        "type": "text",
+        "text": "Surjective is also called onto. Injective is also called one-to-one. Bijective is also called a one-to-one correspondence. Equivalently, for an injective mapping, equal outputs force equal inputs."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma(a_1)=\\sigma(a_2)\\quad\\Longrightarrow\\quad a_1=a_2."
+      },
+      {
+        "type": "statement",
+        "text": "Property. Two finite sets admit a bijection if and only if they have the same number of elements."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "A bijection pairs each source element with one different target element and reaches every target. Thus the counts are equal. Conversely, if the finite counts agree, list the elements of both sets and match entries in the same position."
+      },
+      {
+        "type": "text",
+        "text": "For infinite sets, a set may admit a bijection with a proper subset. The book gives the integers and the even integers: send n to two n. Different integers give different outputs, and every even integer occurs."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma(n)=2n\\qquad(n\\text{ an integer})."
+      },
+      {
+        "type": "cue",
+        "text": "surjective / onto：满射；injective / one-to-one：单射；bijective：双射。σ(M)是像集，通常只是目标集M′的子集。此处是教材正式定义，不将双射概念提前用于旧讲稿的排列计数证明。"
+      }
+    ]
+  },
+  {
+    "id": "inverse-mappings",
+    "title": "Inverse mappings",
+    "zh": "逆映射与双射的复合",
+    "chapter": 6,
+    "source": "§1 · p.163",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "A bijection can be reversed."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. For a bijection sigma from M to M prime, the inverse mapping sends each element of M prime to its unique preimage in M."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma^{-1}:M'\\to M,\\qquad\\sigma^{-1}(a')=a\\quad\\text{when }\\sigma(a)=a'."
+      },
+      {
+        "type": "text",
+        "text": "We read sigma inverse of a prime equals a. Surjectivity gives a preimage for every target. Injectivity makes that preimage unique, so the inverse is well defined."
+      },
+      {
+        "type": "statement",
+        "text": "Property. The inverse mapping is a bijection and satisfies the two inverse identities."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma^{-1}\\sigma=1_M,\\qquad\\sigma\\sigma^{-1}=1_{M'}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Applying sigma and then its inverse returns the original input. Applying the inverse and then sigma returns the original target. These give the two displayed identities. If two inverse images agree, applying sigma shows that their inputs agree, so the inverse is injective. Every a in M is the inverse image of sigma of a, so the inverse is surjective."
+      },
+      {
+        "type": "statement",
+        "text": "Property. The composition of two bijections is a bijection."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma:M\\to M',\\quad\\tau:M'\\to M''\\text{ bijective}\\quad\\Longrightarrow\\quad\\tau\\sigma:M\\to M''\\text{ bijective}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "If two outputs of tau sigma agree, injectivity of tau first gives equal outputs of sigma. Injectivity of sigma then gives equal inputs."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\tau(\\sigma(a_1))=\\tau(\\sigma(a_2))\\ \\Longrightarrow\\ \\sigma(a_1)=\\sigma(a_2)\\ \\Longrightarrow\\ a_1=a_2."
+      },
+      {
+        "type": "text",
+        "text": "For any b in M double prime, surjectivity of tau gives an a prime in M prime with tau of a prime equal to b. Surjectivity of sigma gives an a in M with sigma of a equal to a prime. Hence tau sigma sends a to b. This proves surjectivity and completes the proof."
+      },
+      {
+        "type": "cue",
+        "text": "教材将最后一条证明留给读者，这里补足简短证明。σ⁻¹是逆映射，不是数的倒数；两个单位映射的下标分别为M和M′。"
+      }
+    ]
+  },
+  {
+    "id": "linear-space-axioms",
+    "title": "The definition of a linear space",
+    "zh": "定义1：线性空间的八条公理",
+    "chapter": 6,
+    "source": "§2 · pp.163–165",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now define a linear space. The objects may be tuples, matrices, polynomials, or functions. What matters is how addition and scalar multiplication behave."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 1. A linear space over a number field P is a nonempty set V with addition and scalar multiplication. Each sum of two elements of V and each scalar multiple by an element of P is a uniquely defined element of V. The two operations satisfy the following eight rules."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha,\\beta\\in V\\ \\Longrightarrow\\ \\alpha+\\beta\\in V,\\qquad k\\in P,\\ \\alpha\\in V\\ \\Longrightarrow\\ k\\alpha\\in V."
+      },
+      {
+        "type": "text",
+        "text": "Elements of V are called vectors. Elements of P are called scalars. We use alpha, beta, and gamma for vectors, and k and l for scalars. The first four rules concern addition."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}(1)\\quad&\\alpha+\\beta=\\beta+\\alpha;\\\\(2)\\quad&(\\alpha+\\beta)+\\gamma=\\alpha+(\\beta+\\gamma);\\\\(3)\\quad&\\text{there is }0\\in V\\text{ such that }0+\\alpha=\\alpha\\text{ for every }\\alpha\\in V;\\\\(4)\\quad&\\text{for each }\\alpha\\in V\\text{ there is }\\beta\\in V\\text{ such that }\\alpha+\\beta=0.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "The first rule is commutativity. The second is associativity. The third gives a zero vector. The fourth gives an additive inverse for each vector. The next two rules concern scalar multiplication."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(5)\\quad1\\alpha=\\alpha;\\qquad(6)\\quad k(l\\alpha)=(kl)\\alpha."
+      },
+      {
+        "type": "text",
+        "text": "Scalar one leaves the vector unchanged. Two successive scalar multiplications agree with multiplication by the product of the scalars. The last two rules are the distributive laws."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(7)\\quad(k+l)\\alpha=k\\alpha+l\\alpha;\\qquad(8)\\quad k(\\alpha+\\beta)=k\\alpha+k\\beta."
+      },
+      {
+        "type": "text",
+        "text": "The first distributes over a sum of scalars. The second distributes over a sum of vectors. These rules must hold for every choice of the stated vectors and scalars. The zero vector belongs to V; the scalar zero belongs to P."
+      },
+      {
+        "type": "text",
+        "text": "A linear space is also called a vector space. We will use the following familiar spaces later. Their operations are the usual addition and scalar multiplication."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "P^n=\\{(a_1,\\ldots,a_n)\\mid a_i\\in P\\},\\qquad P^{m\\times n}=\\{m\\times n\\text{ matrices over }P\\}."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "P[x]=\\{\\text{polynomials in }x\\text{ over }P\\},\\qquad P[x]_n=\\{0\\}\\cup\\{f(x)\\in P[x]\\mid\\deg f<n\\}."
+      },
+      {
+        "type": "text",
+        "text": "We read P to the n, P to the m by n, P of x, and P of x sub n. In the last space, the degree is strictly less than n, and the zero polynomial is included. The field P is itself a linear space over P."
+      },
+      {
+        "type": "cue",
+        "text": "α、β、γ读“alpha, beta, gamma”；k(lα)读“k times l times alpha”，需指明先做括号内数乘。八条公理须完整板书。P[x]的方括号表示多项式空间，不是代入函数值；deg读“degree”。"
+      }
+    ]
+  },
+  {
+    "id": "linear-space-zero-inverse",
+    "title": "Uniqueness of zero and additive inverses",
+    "zh": "零元素、负元素的唯一性与减法",
+    "chapter": 6,
+    "source": "§2 · p.165",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now derive simple properties directly from the eight rules."
+      },
+      {
+        "type": "statement",
+        "text": "Property 1. The zero vector of a linear space is unique."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Suppose zero sub one and zero sub two are both zero vectors. Evaluate their sum in two ways. Each acts as an additive identity."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "0_1+0_2=0_2,\\qquad0_1+0_2=0_2+0_1=0_1,\\qquad0_1=0_1+0_2=0_2."
+      },
+      {
+        "type": "text",
+        "text": "Thus the two zero vectors are equal."
+      },
+      {
+        "type": "statement",
+        "text": "Property 2. Each vector has a unique additive inverse."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha+\\beta=0,\\qquad\\alpha+\\gamma=0\\quad\\Longrightarrow\\quad\\beta=\\gamma."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Suppose beta and gamma are both additive inverses of alpha. Use the zero-vector rule, associativity, and commutativity."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\beta=\\beta+0=\\beta+(\\alpha+\\gamma)=(\\beta+\\alpha)+\\gamma=0+\\gamma=\\gamma."
+      },
+      {
+        "type": "text",
+        "text": "This proves uniqueness. We denote the additive inverse of alpha by minus alpha."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. Subtraction of vectors is addition of the additive inverse."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha-\\beta=\\alpha+(-\\beta)."
+      },
+      {
+        "type": "cue",
+        "text": "additive inverse：加法逆元，教材称负元素。−α读“minus alpha”。证明只用公理，不能先假定减法具有通常性质。"
+      }
+    ]
+  },
+  {
+    "id": "linear-space-zero-products",
+    "title": "Zero products and scalar multiplication",
+    "zh": "零乘积性质及证明",
+    "chapter": 6,
+    "source": "§2 · pp.165–166",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Finally, we prove the basic identities involving zero and scalar multiplication."
+      },
+      {
+        "type": "statement",
+        "text": "Property 3. Scalar zero times any vector is the zero vector. Any scalar times the zero vector is the zero vector. Scalar minus one times a vector is its additive inverse."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "0\\alpha=0,\\qquad k0=0,\\qquad(-1)\\alpha=-\\alpha."
+      },
+      {
+        "type": "text",
+        "text": "In the first equation, the zero on the left is a scalar. In the second, the zero being multiplied is a vector. The result in each case is the zero vector."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "First, use scalar distributivity and the rule for scalar one."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha+0\\alpha=1\\alpha+0\\alpha=(1+0)\\alpha=1\\alpha=\\alpha."
+      },
+      {
+        "type": "text",
+        "text": "Add minus alpha to both sides. This gives zero alpha equals the zero vector. Next, to prove the rule for minus one, write"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha+(-1)\\alpha=1\\alpha+(-1)\\alpha=(1-1)\\alpha=0\\alpha=0."
+      },
+      {
+        "type": "text",
+        "text": "So minus one times alpha is the additive inverse of alpha. By uniqueness, it equals minus alpha. For k times the zero vector, distribute over zero plus zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k0=k(0+0)=k0+k0."
+      },
+      {
+        "type": "text",
+        "text": "Add the additive inverse of k zero to both sides. We obtain k zero equals zero."
+      },
+      {
+        "type": "statement",
+        "text": "Property 4. If a scalar multiple k alpha is zero, then k is zero or alpha is the zero vector."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k\\alpha=0\\quad\\Longrightarrow\\quad k=0\\text{ or }\\alpha=0."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "If k is zero, there is nothing to prove. Suppose k is nonzero. It has an inverse in P. On one hand, multiplying the assumed equation by k inverse gives zero. On the other hand, the scalar multiplication rule gives alpha."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k^{-1}(k\\alpha)=k^{-1}0=0,\\qquad k^{-1}(k\\alpha)=(k^{-1}k)\\alpha=1\\alpha=\\alpha."
+      },
+      {
+        "type": "text",
+        "text": "Therefore alpha is the zero vector."
+      },
+      {
+        "type": "cue",
+        "text": "k⁻¹读“k inverse”或“one over k”；它是数域中的倒数。每次消去都是两边加同一个向量的负元素，不提前使用待证结论。k0=0是教材留给读者的一步，这里已补全。"
+      }
+    ]
   }
 ]
