@@ -6557,5 +6557,449 @@
         "text": "P(1,i)读“P of one comma i”，并说明它是对换矩阵；与数域P区别。用完交换后，A表示当前矩阵，不能把新的a₁₂与原位置混淆。"
       }
     ]
+  },
+  {
+    "id": "quadratic-rank-invariance",
+    "title": "Rank and the number of square terms",
+    "zh": "二次型的秩与非零平方项个数",
+    "chapter": 5,
+    "source": "§3 · pp.148–149",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We have proved that every quadratic form has a standard form. We now ask which parts of that form are uniquely determined."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. The rank of a quadratic form is the rank of its symmetric matrix."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f=X^{\\mathsf T}AX,\\qquad A^{\\mathsf T}=A,\\qquad r=\\operatorname{rank}A."
+      },
+      {
+        "type": "text",
+        "text": "We denote the rank by r. Here rank A means the rank of the matrix A."
+      },
+      {
+        "type": "statement",
+        "text": "Property. A nondegenerate linear substitution preserves the rank of a quadratic form. In every standard form, the number of square terms with nonzero coefficients equals this rank."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "B=C^{\\mathsf T}AC,\\quad |C|\\ne0\\quad\\Longrightarrow\\quad\\operatorname{rank}B=\\operatorname{rank}A=r."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Both C and C transpose are invertible. Multiplication by an invertible matrix does not change rank. This gives the equality on the board."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\operatorname{rank}(C^{\\mathsf T}AC)=\\operatorname{rank}(AC)=\\operatorname{rank}A."
+      },
+      {
+        "type": "text",
+        "text": "The matrix of a standard form is diagonal. Its rank is the number of its nonzero diagonal entries. Those entries are exactly the coefficients of the square terms. So their number is always r."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f=d_1y_1^2+\\cdots+d_ry_r^2,\\qquad d_i\\ne0\\ (1\\le i\\le r)."
+      },
+      {
+        "type": "text",
+        "text": "We have placed the nonzero coefficients first. The remaining n minus r variables have coefficient zero. The values of the nonzero coefficients need not be unique: rescaling a variable changes its coefficient. We next choose a normalized form over the complex and real numbers."
+      },
+      {
+        "type": "cue",
+        "text": "rank A读“rank of A”；r读“r”。“nonzero square terms”指系数非零，不是指变量当前取值非零。r=0时二次型为零，没有非零平方项。"
+      }
+    ]
+  },
+  {
+    "id": "complex-quadratic-canonical",
+    "title": "Canonical form over the complex numbers",
+    "zh": "定理3：复二次型的规范形及唯一性",
+    "chapter": 5,
+    "source": "§3 · p.149",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "First consider a quadratic form over the complex numbers."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. The canonical form of a complex quadratic form of rank r is the sum of r squares, each with coefficient one, followed by n minus r zero coefficients."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "z_1^2+z_2^2+\\cdots+z_r^2."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 3. Every complex quadratic form can be changed to its canonical form by a nondegenerate complex linear substitution. This canonical form is unique."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "By Theorem One, we can first obtain a standard form. Place the nonzero coefficients first."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f=d_1y_1^2+\\cdots+d_ry_r^2,\\qquad d_i\\ne0\\quad(1\\le i\\le r)."
+      },
+      {
+        "type": "text",
+        "text": "Every nonzero complex number has a nonzero square root. For each d sub i, choose one square root. Use the following substitution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}y_1=\\dfrac{1}{\\sqrt{d_1}}z_1,\\\\\\vdots\\\\y_r=\\dfrac{1}{\\sqrt{d_r}}z_r,\\\\y_{r+1}=z_{r+1},\\\\\\vdots\\\\y_n=z_n.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "We read the first equation as: y sub one equals one over a square root of d sub one, times z sub one. All diagonal factors are nonzero, so the substitution is nondegenerate. Each nonzero coefficient becomes one."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "d_i y_i^2=d_i\\left(\\frac{z_i}{\\sqrt{d_i}}\\right)^2=z_i^2,\\qquad f=z_1^2+\\cdots+z_r^2."
+      },
+      {
+        "type": "text",
+        "text": "The rank r does not change under a nondegenerate substitution. It determines the number of ones and zeros. Therefore the canonical form is unique. The substitution itself need not be unique."
+      },
+      {
+        "type": "statement",
+        "text": "Consequence. Two complex symmetric matrices of the same order are congruent if and only if they have the same rank."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A^{\\mathsf T}=A,\\quad B^{\\mathsf T}=B,\\qquad A\\text{ and }B\\text{ congruent}\\ \\Longleftrightarrow\\ \\operatorname{rank}A=\\operatorname{rank}B."
+      },
+      {
+        "type": "heading",
+        "text": "Proof of the consequence"
+      },
+      {
+        "type": "text",
+        "text": "Congruence preserves rank, so equal rank is necessary. Conversely, if the ranks agree, the two matrices reduce to the same diagonal matrix, with r ones and all other entries zero. By symmetry and transitivity of congruence, the original matrices are congruent."
+      },
+      {
+        "type": "cue",
+        "text": "标准形用“standard form”，规范形用“canonical form”。复数的√dᵢ表示所选的一个平方根，不说“positive square root”。这里是普通转置，不是共轭转置。r=0时规范形为0；r=n时没有尾部零变量。"
+      }
+    ]
+  },
+  {
+    "id": "real-quadratic-canonical",
+    "title": "Canonical form over the real numbers",
+    "zh": "实二次型规范形的定义与存在性",
+    "chapter": 5,
+    "source": "§3 · pp.149–150",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Now consider the real case. We can rescale a nonzero coefficient to one or minus one, according to its sign."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. A canonical form of a real quadratic form is a sum of p positive squares and r minus p negative squares, with all remaining coefficients zero. Here r is the rank."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "z_1^2+\\cdots+z_p^2-z_{p+1}^2-\\cdots-z_r^2,\\qquad 0\\le p\\le r\\le n."
+      },
+      {
+        "type": "text",
+        "text": "The letter p counts the positive squares. The number of negative squares is r minus p. If either group is empty, we omit it."
+      },
+      {
+        "type": "statement",
+        "text": "Existence. Every real quadratic form can be changed to a canonical form by a nondegenerate real linear substitution."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "First reduce the form to a standard form. Reorder the variables so that positive coefficients come first, negative coefficients next, and zero coefficients last. Write the magnitudes of all nonzero coefficients as positive numbers d sub i."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f=d_1y_1^2+\\cdots+d_py_p^2-d_{p+1}y_{p+1}^2-\\cdots-d_ry_r^2,\\qquad d_i>0\\ (1\\le i\\le r)."
+      },
+      {
+        "type": "text",
+        "text": "Every d sub i now has a positive real square root. Make the following diagonal substitution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}y_1=\\dfrac{1}{\\sqrt{d_1}}z_1,\\\\\\vdots\\\\y_r=\\dfrac{1}{\\sqrt{d_r}}z_r,\\\\y_{r+1}=z_{r+1},\\\\\\vdots\\\\y_n=z_n.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "Each diagonal factor is nonzero. A positive coefficient becomes one. A negative coefficient becomes minus one."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "d_i\\left(\\frac{z_i}{\\sqrt{d_i}}\\right)^2=z_i^2,\\qquad -d_i\\left(\\frac{z_i}{\\sqrt{d_i}}\\right)^2=-z_i^2."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f=z_1^2+\\cdots+z_p^2-z_{p+1}^2-\\cdots-z_r^2."
+      },
+      {
+        "type": "text",
+        "text": "This proves existence. Rank already determines r. To prove uniqueness, we still need to show that p is fixed."
+      },
+      {
+        "type": "cue",
+        "text": "p读“p”，与数域的大写P区别。dᵢ在本页全部为正数，负号另外写。读规范形时可说“the sum of the first p squares, minus the sum of the next r minus p squares”。"
+      }
+    ]
+  },
+  {
+    "id": "law-of-inertia-proof",
+    "title": "The law of inertia",
+    "zh": "定理4：惯性定理及完整反证法",
+    "chapter": 5,
+    "source": "§3 · pp.150–151",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now prove that the number of positive squares cannot change."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 4. Every real quadratic form can be changed to a canonical form by a nondegenerate real linear substitution, and this canonical form is unique. This is the law of inertia."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f=y_1^2+\\cdots+y_p^2-y_{p+1}^2-\\cdots-y_r^2,\\qquad r\\text{ and }p\\text{ are uniquely determined}. "
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Existence was proved above. The rank fixes r. Suppose two nondegenerate substitutions give canonical forms with p and q positive squares. We must prove p equals q."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}X=BY:\\quad f&=y_1^2+\\cdots+y_p^2-y_{p+1}^2-\\cdots-y_r^2,\\\\X=CZ:\\quad f&=z_1^2+\\cdots+z_q^2-z_{q+1}^2-\\cdots-z_r^2,\\end{aligned}\\qquad |B|\\ne0,\\ |C|\\ne0."
+      },
+      {
+        "type": "text",
+        "text": "Both expressions give the same original quadratic form. Since B Y equals C Z, the new variables are related as follows."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "Z=C^{-1}BY,\\qquad C^{-1}B=G=\\begin{pmatrix}g_{11}&g_{12}&\\cdots&g_{1n}\\\\g_{21}&g_{22}&\\cdots&g_{2n}\\\\\\vdots&\\vdots&&\\vdots\\\\g_{n1}&g_{n2}&\\cdots&g_{nn}\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Here capital G is the matrix that expresses Z in terms of Y. We read C inverse B as C inverse times B. In coordinates, this relation is"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}z_1=g_{11}y_1+g_{12}y_2+\\cdots+g_{1n}y_n,\\\\z_2=g_{21}y_1+g_{22}y_2+\\cdots+g_{2n}y_n,\\\\\\qquad\\vdots\\\\z_n=g_{n1}y_1+g_{n2}y_2+\\cdots+g_{nn}y_n.\\end{cases}"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "y_1^2+\\cdots+y_p^2-y_{p+1}^2-\\cdots-y_r^2=z_1^2+\\cdots+z_q^2-z_{q+1}^2-\\cdots-z_r^2."
+      },
+      {
+        "type": "text",
+        "text": "Assume, for a contradiction, that p is greater than q. We will choose Y so that the left side is positive but the right side is nonpositive. Set the first q coordinates of Z to zero. Also set y sub p plus one through y sub n to zero. This gives the homogeneous system"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}g_{11}y_1+g_{12}y_2+\\cdots+g_{1n}y_n=0,\\\\\\qquad\\vdots\\\\g_{q1}y_1+g_{q2}y_2+\\cdots+g_{qn}y_n=0,\\\\y_{p+1}=0,\\\\\\vdots\\\\y_n=0.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "There are n unknowns. Count the equations: q from the first group, and n minus p from the second group."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "q+(n-p)=n-(p-q)<n."
+      },
+      {
+        "type": "text",
+        "text": "A homogeneous system with fewer equations than unknowns has a nonzero solution. Let k sub one through k sub n be such a solution. The last equations force the following values."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(k_1,\\ldots,k_n)\\ne(0,\\ldots,0),\\qquad k_{p+1}=\\cdots=k_n=0."
+      },
+      {
+        "type": "text",
+        "text": "At least one of the first p entries is therefore nonzero. Substitute these values into the left side of the identity. Its value is strictly positive."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k_1^2+\\cdots+k_p^2>0."
+      },
+      {
+        "type": "text",
+        "text": "For the right side, compute Z from these same values using Z equals G Y. The first q equations make z sub one through z sub q zero. The value on the right is therefore nonpositive."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "z_1=\\cdots=z_q=0,\\qquad -z_{q+1}^2-\\cdots-z_r^2\\le0."
+      },
+      {
+        "type": "text",
+        "text": "The same identity cannot have a positive value on the left and a nonpositive value on the right. This is a contradiction. Hence p is at most q. Interchanging the two canonical forms gives q at most p. Therefore p equals q. Together with the fixed rank r, this proves uniqueness."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "p\\le q,\\qquad q\\le p\\quad\\Longrightarrow\\quad p=q."
+      },
+      {
+        "type": "cue",
+        "text": "q+(n−p)<n读“q plus n minus p is less than n”。≤0读“is less than or equal to zero”或“is nonpositive”。强调两边使用同一组Y及其对应Z，不能分别任取。q=0时第一组方程为空；p=n时第二组为空，计数与论证仍成立。"
+      }
+    ]
+  },
+  {
+    "id": "inertia-indices-signature",
+    "title": "Inertia indices and signature",
+    "zh": "定义3：惯性指数与符号差",
+    "chapter": 5,
+    "source": "§3 · p.151",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "The law of inertia lets us give names to the numbers that remain fixed."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 3. For a real quadratic form of rank r, the number p of positive squares in its canonical form is its positive index of inertia. The number r minus p of negative squares is its negative index of inertia. Their difference, two p minus r, is its signature."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f=z_1^2+\\cdots+z_p^2-z_{p+1}^2-\\cdots-z_r^2."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\\text{positive index of inertia}&=p,\\\\\\text{negative index of inertia}&=r-p,\\\\\\text{signature}&=p-(r-p)=2p-r.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "We read the last expression as: two p minus r. Here signature means the difference of the two indices, as in the book."
+      },
+      {
+        "type": "statement",
+        "text": "Property. In any real standard form, the number of positive coefficients is the positive index of inertia, and the number of negative coefficients is the negative index of inertia."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "To pass from a real standard form to a canonical form, we divide each variable by the positive square root of the magnitude of its coefficient. This changes the magnitudes to one but keeps every sign. Thus the two counts agree with the counts in the canonical form. The law of inertia makes them independent of the chosen standard form."
+      },
+      {
+        "type": "cue",
+        "text": "positive index of inertia：正惯性指数；negative index of inertia：负惯性指数；signature：符号差。负惯性指数r−p本身是非负整数，不是一个负数。这里不另引入p、q表示正负指数，以免与上一证明中q的含义混淆。"
+      }
+    ]
+  },
+  {
+    "id": "symmetric-matrix-canonical-classification",
+    "title": "Canonical forms of symmetric matrices",
+    "zh": "定理5：复、实对称矩阵的规范形",
+    "chapter": 5,
+    "source": "§3 · pp.151–152",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Finally, we express these results in matrix language."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 5, part one. Every complex symmetric matrix A is congruent to a diagonal matrix with r ones and n minus r zeros, where r is the rank of A."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "C^{\\mathsf T}AC=\\operatorname{diag}(\\underbrace{1,\\ldots,1}_{r},\\underbrace{0,\\ldots,0}_{n-r}),\\qquad |C|\\ne0,\\quad r=\\operatorname{rank}A."
+      },
+      {
+        "type": "text",
+        "text": "The notation diag means the diagonal matrix with the listed entries. Every entry off the main diagonal is zero. Here C has complex entries."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 5, part two. Every real symmetric matrix A is congruent over the real numbers to a diagonal matrix with p ones, r minus p minus ones, and n minus r zeros. The counts p and r minus p are uniquely determined."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "C^{\\mathsf T}AC=\\operatorname{diag}(\\underbrace{1,\\ldots,1}_{p},\\underbrace{-1,\\ldots,-1}_{r-p},\\underbrace{0,\\ldots,0}_{n-r}),\\qquad |C|\\ne0."
+      },
+      {
+        "type": "text",
+        "text": "In this second formula, C is real. There are r minus p entries equal to minus one. The underbraces show how many entries belong to each group. A group with count zero is omitted."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Associate A with the quadratic form X transpose A X. In the complex case, apply Theorem Three. In the real case, apply Theorem Four. Under X equals C Y, the new matrix is C transpose A C. The square coefficients in the canonical form give exactly the displayed diagonal entries. Their uniqueness follows from the uniqueness of the canonical form."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. The positive and negative indices of inertia of a real symmetric matrix A are the corresponding indices of its quadratic form X transpose A X. The signature of A is their difference, two p minus r."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\text{positive index}=p,\\qquad\\text{negative index}=r-p,\\qquad\\text{signature}=2p-r."
+      },
+      {
+        "type": "cue",
+        "text": "读第一行可说“C transpose A C is a diagonal matrix with r ones and n minus r zeros”。第二行的负一组说“r minus p entries equal to minus one”，避免连续两个minus造成歧义。复数部分始终使用转置，不加入复共轭。"
+      }
+    ]
   }
 ]
