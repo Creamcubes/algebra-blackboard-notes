@@ -5933,5 +5933,629 @@
         "text": "alpha读“alpha”，beta读“beta”；αA₁⁻¹β是1×1的数。先写A的分块和尺寸，再依次写两次左乘，最后合并为B。此处A₁不是A的第一行，而是左上角子矩阵。"
       }
     ]
+  },
+  {
+    "id": "quadratic-form-definition",
+    "title": "Quadratic forms",
+    "zh": "二次型的定义与系数记号",
+    "chapter": 5,
+    "source": "§1 · p.138",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now begin quadratic forms. We will write them using matrices, then remove the mixed terms by a change of variables."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. A quadratic form in n variables over a number field P is a homogeneous polynomial of degree two with coefficients in P. The zero polynomial is included."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f(x_1,\\ldots,x_n)=\\sum_{i=1}^{n}a_{ii}x_i^2+2\\sum_{1\\le i<j\\le n}a_{ij}x_ix_j,\\qquad a_{ij}\\in P."
+      },
+      {
+        "type": "text",
+        "text": "Here P is the field of coefficients. Each term has total degree two. A square term is x sub i squared. A mixed term is x sub i times x sub j, with different indices. We write its coefficient as two a sub i j."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}f(x_1,\\ldots,x_n)={}&a_{11}x_1^2+2a_{12}x_1x_2+\\cdots+2a_{1n}x_1x_n\\\\&+a_{22}x_2^2+2a_{23}x_2x_3+\\cdots+2a_{2n}x_2x_n\\\\&+\\cdots+a_{nn}x_n^2.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "This is the expanded form used in the book. There are no constant or linear terms. The factor two will let us use a symmetric matrix."
+      },
+      {
+        "type": "cue",
+        "text": "先写加粗定义，再写展开式；紧凑求和式可辅助解释。f(x₁,…,xₙ)读“f of x sub one through x sub n”；第二个求和读“the sum over all i and j with one less than or equal to i, i less than j, and j less than or equal to n”。P读“capital P”。"
+      }
+    ]
+  },
+  {
+    "id": "linear-substitution-definition",
+    "title": "Linear substitutions",
+    "zh": "定义1：线性替换与非退化替换",
+    "chapter": 5,
+    "source": "§1 · pp.138–140",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, we define the changes of variables that we will use."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 1. A linear substitution expresses x one through x n as linear combinations of y one through y n, with coefficients in P. It is nondegenerate if its coefficient determinant is nonzero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}x_1=c_{11}y_1+c_{12}y_2+\\cdots+c_{1n}y_n,\\\\x_2=c_{21}y_1+c_{22}y_2+\\cdots+c_{2n}y_n,\\\\\\qquad\\vdots\\\\x_n=c_{n1}y_1+c_{n2}y_2+\\cdots+c_{nn}y_n,\\end{cases}\\qquad c_{ij}\\in P."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "C=\\begin{pmatrix}c_{11}&\\cdots&c_{1n}\\\\\\vdots&&\\vdots\\\\c_{n1}&\\cdots&c_{nn}\\end{pmatrix},\\quad X=\\begin{pmatrix}x_1\\\\\\vdots\\\\x_n\\end{pmatrix},\\quad Y=\\begin{pmatrix}y_1\\\\\\vdots\\\\y_n\\end{pmatrix},\\qquad X=CY,\\quad |C|\\ne0."
+      },
+      {
+        "type": "text",
+        "text": "Capital X and capital Y are column vectors of variables. Capital C is the coefficient matrix. We read X equals C Y as: capital X equals capital C times capital Y. Nondegenerate means that C is invertible."
+      },
+      {
+        "type": "statement",
+        "text": "Property. A linear substitution takes a quadratic form to a quadratic form. A nondegenerate substitution can be reversed."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "X=CY\\quad\\Longleftrightarrow\\quad Y=C^{-1}X\\qquad(|C|\\ne0)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Each old variable is a linear combination of the new variables. Each product of two old variables becomes a sum of products of two new variables. So the result is still a quadratic form, possibly zero. If C is invertible, multiplication by C inverse gives the displayed reverse substitution."
+      },
+      {
+        "type": "cue",
+        "text": "注意方向：X是原变量列，Y是新变量列，板书写X=CY。|C|≠0读“the determinant of C is nonzero”；C⁻¹读“C inverse”。"
+      }
+    ]
+  },
+  {
+    "id": "quadratic-symmetric-matrix",
+    "title": "The matrix of a quadratic form",
+    "zh": "对称矩阵表示及唯一性",
+    "chapter": 5,
+    "source": "§1 · pp.139–140",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Now let us write a quadratic form using a matrix."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. A matrix A is symmetric if A transpose equals A. The matrix of a quadratic form is the symmetric matrix whose diagonal entries are the square coefficients and whose off-diagonal entries are half the mixed-term coefficients."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_{ji}=a_{ij}\\ (i<j),\\qquad A=(a_{ij})_{n\\times n},\\qquad A^{\\mathsf T}=A."
+      },
+      {
+        "type": "statement",
+        "text": "Property. Every quadratic form has a unique symmetric matrix A such that f equals X transpose A X. Conversely, every symmetric matrix defines a quadratic form by this formula."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f(x_1,\\ldots,x_n)=X^{\\mathsf T}AX=\\sum_{i=1}^{n}\\sum_{j=1}^{n}a_{ij}x_ix_j."
+      },
+      {
+        "type": "text",
+        "text": "We read this as: f of x sub one through x sub n equals X transpose times A times X. The superscript T means transpose, not a power. The product is a one by one matrix, which we identify with its entry."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}X^{\\mathsf T}AX&=(x_1,\\ldots,x_n)\\begin{pmatrix}a_{11}&\\cdots&a_{1n}\\\\\\vdots&&\\vdots\\\\a_{n1}&\\cdots&a_{nn}\\end{pmatrix}\\begin{pmatrix}x_1\\\\\\vdots\\\\x_n\\end{pmatrix}\\\\&=(x_1,\\ldots,x_n)\\begin{pmatrix}a_{11}x_1+\\cdots+a_{1n}x_n\\\\\\vdots\\\\a_{n1}x_1+\\cdots+a_{nn}x_n\\end{pmatrix}\\\\&=\\sum_{i=1}^{n}\\sum_{j=1}^{n}a_{ij}x_ix_j.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "For different i and j, the two terms combine because A is symmetric."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_{ij}x_ix_j+a_{ji}x_jx_i=2a_{ij}x_ix_j\\quad(i<j)."
+      },
+      {
+        "type": "text",
+        "text": "Thus the product gives exactly the original quadratic form. Conversely, the product from any symmetric A has this form. For uniqueness, compare coefficients. The coefficient of x sub i squared determines a sub i i. Half the coefficient of x sub i times x sub j determines a sub i j. Therefore the symmetric matrix is uniquely determined."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "X^{\\mathsf T}AX=X^{\\mathsf T}BX\\text{ as polynomials},\\quad A^{\\mathsf T}=A,\\ B^{\\mathsf T}=B\\quad\\Longrightarrow\\quad A=B."
+      },
+      {
+        "type": "cue",
+        "text": "先指对角元，再指关于主对角线成对的两个位置。唯一性要求A、B都对称，等式是多项式恒等式，不是某一组X的取值相等。"
+      }
+    ]
+  },
+  {
+    "id": "matrix-congruence",
+    "title": "Congruence of matrices",
+    "zh": "替换公式与定义2：矩阵合同",
+    "chapter": 5,
+    "source": "§1 · pp.140–141",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now find the matrix after a change of variables."
+      },
+      {
+        "type": "statement",
+        "text": "Property. Under the substitution X equals C Y, a quadratic form with symmetric matrix A has symmetric matrix C transpose A C in the new variables."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f=X^{\\mathsf T}AX,\\quad X=CY\\quad\\Longrightarrow\\quad f=Y^{\\mathsf T}BY,\\qquad B=C^{\\mathsf T}AC."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "X^{\\mathsf T}AX=(CY)^{\\mathsf T}A(CY)=Y^{\\mathsf T}C^{\\mathsf T}ACY=Y^{\\mathsf T}(C^{\\mathsf T}AC)Y."
+      },
+      {
+        "type": "text",
+        "text": "We substitute C Y for X. Transposing a product reverses its order. We must also check that the middle matrix is symmetric."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(C^{\\mathsf T}AC)^{\\mathsf T}=C^{\\mathsf T}A^{\\mathsf T}C=C^{\\mathsf T}AC."
+      },
+      {
+        "type": "text",
+        "text": "The uniqueness of the symmetric matrix now gives B equals C transpose A C."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 2. Two n by n matrices A and B over P are congruent if there is an invertible n by n matrix C over P such that B equals C transpose A C. This change is called a congruence transformation."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "B=C^{\\mathsf T}AC,\\qquad |C|\\ne0."
+      },
+      {
+        "type": "text",
+        "text": "Here A is the original matrix and B is the new matrix. Congruent here describes matrices. It does not mean congruent modulo a number."
+      },
+      {
+        "type": "statement",
+        "text": "Property. Congruence is reflexive, symmetric, and transitive."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "First, every matrix is congruent to itself. Choose the identity matrix E."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=E^{\\mathsf T}AE."
+      },
+      {
+        "type": "text",
+        "text": "Second, we can reverse a congruence. Multiply by the inverse matrices on the two sides."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "B=C^{\\mathsf T}AC\\quad\\Longrightarrow\\quad A=(C^{-1})^{\\mathsf T}BC^{-1}."
+      },
+      {
+        "type": "text",
+        "text": "Third, two successive congruences give one congruence. The two substitution matrices are multiplied in the following order."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A_1=C_1^{\\mathsf T}AC_1,\\quad A_2=C_2^{\\mathsf T}A_1C_2\\quad\\Longrightarrow\\quad A_2=(C_1C_2)^{\\mathsf T}A(C_1C_2)."
+      },
+      {
+        "type": "text",
+        "text": "The inverse of an invertible matrix is invertible, and the product of two invertible matrices is invertible. This proves all three properties."
+      },
+      {
+        "type": "cue",
+        "text": "B=CᵀAC读“B equals C transpose times A times C”；(C⁻¹)ᵀ读“the transpose of C inverse”。板书依次写自反、对称、传递的等式；不要把左侧Cᵀ误写成C⁻¹。"
+      }
+    ]
+  },
+  {
+    "id": "quadratic-standard-form-proof",
+    "title": "Reduction to square terms",
+    "zh": "定理1：配方法与归纳证明",
+    "chapter": 5,
+    "source": "§2 · pp.141–143",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, we show that all mixed terms can be removed."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 1. Every quadratic form over a number field P can be changed into a sum of square terms by a nondegenerate linear substitution over P."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "X=CY,\\quad |C|\\ne0,\\qquad f=d_1y_1^2+d_2y_2^2+\\cdots+d_ny_n^2,\\quad d_i\\in P."
+      },
+      {
+        "type": "text",
+        "text": "The coefficients d sub i may be positive, negative, or zero when P is real. The theorem only says that mixed terms disappear. It does not say that the form is a sum of positive squares."
+      },
+      {
+        "type": "heading",
+        "text": "Proof: induction and Case 1"
+      },
+      {
+        "type": "text",
+        "text": "We use induction on the number of variables. For one variable, the form is already a single square term. Assume the result holds for n minus one variables. Write the form with a symmetric coefficient matrix."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "n=1:\\quad f=a_{11}x_1^2;\\qquad f=\\sum_{i=1}^{n}\\sum_{j=1}^{n}a_{ij}x_ix_j,\\quad a_{ij}=a_{ji}."
+      },
+      {
+        "type": "text",
+        "text": "First suppose some diagonal coefficient is nonzero. We may exchange variables so that a sub one one is nonzero. Separate all terms containing x sub one, then complete the square."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}f&=a_{11}x_1^2+2\\sum_{j=2}^{n}a_{1j}x_1x_j+\\sum_{i=2}^{n}\\sum_{j=2}^{n}a_{ij}x_ix_j\\\\&=a_{11}\\left(x_1+\\sum_{j=2}^{n}a_{11}^{-1}a_{1j}x_j\\right)^2-a_{11}^{-1}\\left(\\sum_{j=2}^{n}a_{1j}x_j\\right)^2+\\sum_{i=2}^{n}\\sum_{j=2}^{n}a_{ij}x_ix_j\\\\&=a_{11}\\left(x_1+\\sum_{j=2}^{n}a_{11}^{-1}a_{1j}x_j\\right)^2+\\sum_{i=2}^{n}\\sum_{j=2}^{n}b_{ij}x_ix_j.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "We add a square and subtract its extra part. The remaining terms contain only x sub two through x sub n. We denote their coefficients by b sub i j."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{i=2}^{n}\\sum_{j=2}^{n}b_{ij}x_ix_j=-a_{11}^{-1}\\left(\\sum_{j=2}^{n}a_{1j}x_j\\right)^2+\\sum_{i=2}^{n}\\sum_{j=2}^{n}a_{ij}x_ix_j."
+      },
+      {
+        "type": "text",
+        "text": "Now choose y sub one to be the expression inside the first square. Keep the other variables unchanged. On the right, I write the inverse substitution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}y_1=x_1+\\displaystyle\\sum_{j=2}^{n}a_{11}^{-1}a_{1j}x_j,\\\\y_2=x_2,\\\\\\vdots\\\\y_n=x_n,\\end{cases}\\qquad\\begin{cases}x_1=y_1-\\displaystyle\\sum_{j=2}^{n}a_{11}^{-1}a_{1j}y_j,\\\\x_2=y_2,\\\\\\vdots\\\\x_n=y_n.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "This substitution is nondegenerate: its coefficient matrix is triangular with every diagonal entry equal to one. The form becomes"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f=a_{11}y_1^2+\\sum_{i=2}^{n}\\sum_{j=2}^{n}b_{ij}y_iy_j."
+      },
+      {
+        "type": "text",
+        "text": "Apply the induction assumption to the last n minus one variables. Following the book, write the new variables z in terms of y. Keep z sub one equal to y sub one."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}z_1=y_1,\\\\z_2=c_{22}y_2+c_{23}y_3+\\cdots+c_{2n}y_n,\\\\\\vdots\\\\z_n=c_{n2}y_2+c_{n3}y_3+\\cdots+c_{nn}y_n,\\end{cases}\\qquad \\begin{vmatrix}c_{22}&\\cdots&c_{2n}\\\\\\vdots&&\\vdots\\\\c_{n2}&\\cdots&c_{nn}\\end{vmatrix}\\ne0."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f=a_{11}z_1^2+d_2z_2^2+\\cdots+d_nz_n^2."
+      },
+      {
+        "type": "text",
+        "text": "The last substitution is invertible, so it can also be written with y in terms of z. The two substitutions together are nondegenerate. This proves the first case."
+      },
+      {
+        "type": "cue",
+        "text": "a₁₁⁻¹是数a₁₁的倒数，可读“one over a sub one one”。配方中括号平方读“the square of the expression in parentheses”。先完成配方，再写新旧变量关系，不要跳过减去的平方项。"
+      }
+    ]
+  },
+  {
+    "id": "quadratic-standard-form-other-cases",
+    "title": "The remaining cases of Theorem 1",
+    "zh": "定理1续证：无平方项与零首行",
+    "chapter": 5,
+    "source": "§2 · p.143",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We continue the proof of Theorem One with the remaining cases."
+      },
+      {
+        "type": "heading",
+        "text": "Proof, continued: Case 2"
+      },
+      {
+        "type": "text",
+        "text": "Suppose all diagonal coefficients are zero, but some entry in the first row is nonzero. By exchanging variables other than the first, we may assume a sub one two is nonzero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_{ii}=0\\ (1\\le i\\le n),\\quad a_{12}\\ne0;\\qquad\\begin{cases}x_1=z_1+z_2,\\\\x_2=z_1-z_2,\\\\x_3=z_3,\\\\\\vdots\\\\x_n=z_n.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "This substitution is nondegenerate. Its first two by two block has determinant minus two, and all other variables stay unchanged."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{vmatrix}1&1\\\\1&-1\\end{vmatrix}=-2\\ne0,\\qquad 2a_{12}x_1x_2=2a_{12}(z_1+z_2)(z_1-z_2)=2a_{12}z_1^2-2a_{12}z_2^2."
+      },
+      {
+        "type": "text",
+        "text": "The coefficient of z sub one squared is now two a sub one two, which is nonzero. No other term contributes to this square: each other mixed term contains a variable with index at least three. We can therefore apply Case One to the new form."
+      },
+      {
+        "type": "heading",
+        "text": "Proof, continued: Case 3"
+      },
+      {
+        "type": "text",
+        "text": "Finally, suppose the entire first row of coefficients is zero. Symmetry makes the first column zero as well."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_{11}=a_{12}=\\cdots=a_{1n}=0\\quad\\Longrightarrow\\quad a_{21}=a_{31}=\\cdots=a_{n1}=0."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f=\\sum_{i=2}^{n}\\sum_{j=2}^{n}a_{ij}x_ix_j."
+      },
+      {
+        "type": "text",
+        "text": "The form does not depend on x sub one. Apply induction to the other n minus one variables, and leave the first variable unchanged. The full substitution remains nondegenerate. These cases cover every quadratic form, so the proof is complete."
+      },
+      {
+        "type": "cue",
+        "text": "第二种情形要说明为何其他项不产生z₁²；第三种情形是首行全零，不要求整个矩阵为零。不要把“没有平方项”直接当作“零二次型”。"
+      }
+    ]
+  },
+  {
+    "id": "quadratic-standard-matrix-theorem",
+    "title": "Standard form and diagonal matrices",
+    "zh": "定理2与标准形的定义",
+    "chapter": 5,
+    "source": "§2 · pp.143–144",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We can now state the same result in matrix language."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 2. Over a number field P, every symmetric matrix is congruent to a diagonal matrix."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A^{\\mathsf T}=A\\quad\\Longrightarrow\\quad C^{\\mathsf T}AC=\\begin{pmatrix}d_1&0&\\cdots&0\\\\0&d_2&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&d_n\\end{pmatrix},\\qquad |C|\\ne0."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Start with the quadratic form X transpose A X. Theorem One gives a nondegenerate substitution X equals C Y that removes all mixed terms. The matrix of the resulting form is diagonal. It is also C transpose A C by the substitution formula. This proves the theorem."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "Y^{\\mathsf T}\\begin{pmatrix}d_1&0&\\cdots&0\\\\0&d_2&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&d_n\\end{pmatrix}Y=d_1y_1^2+d_2y_2^2+\\cdots+d_ny_n^2."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. A standard form of a quadratic form is a sum of square terms obtained from it by a nondegenerate linear substitution."
+      },
+      {
+        "type": "text",
+        "text": "We say a standard form because this definition does not assert uniqueness. The coefficients are still in P. We will discuss uniqueness in the next section."
+      },
+      {
+        "type": "cue",
+        "text": "CᵀAC读“C transpose times A times C”。用手指向对角元d₁到dₙ，说明它们就是各平方项的系数。standard form读“standard form”；本节不引入特征值或正交变换。"
+      }
+    ]
+  },
+  {
+    "id": "quadratic-matrix-completing-square",
+    "title": "Completing the square with matrices",
+    "zh": "配方法的矩阵证明：非零首项",
+    "chapter": 5,
+    "source": "§2 · pp.145–146",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "The book also writes the completing-square proof in matrix form. This tells us how to construct C."
+      },
+      {
+        "type": "statement",
+        "text": "Construction. If A is symmetric and its first diagonal entry is nonzero, a congruence transformation separates that entry from a symmetric matrix of order n minus one."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=\\begin{pmatrix}a_{11}&\\alpha\\\\\\alpha^{\\mathsf T}&A_1\\end{pmatrix},\\quad \\alpha=(a_{12},\\ldots,a_{1n}),\\quad A_1=\\begin{pmatrix}a_{22}&\\cdots&a_{2n}\\\\\\vdots&&\\vdots\\\\a_{n2}&\\cdots&a_{nn}\\end{pmatrix},\\quad a_{11}\\ne0."
+      },
+      {
+        "type": "text",
+        "text": "Here alpha is a row with n minus one entries. A sub one is the bottom right submatrix. Choose C sub one to be the matrix of the substitution used in the first case."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "C_1=\\begin{pmatrix}1&-a_{11}^{-1}a_{12}&\\cdots&-a_{11}^{-1}a_{1n}\\\\0&1&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&1\\end{pmatrix}=\\begin{pmatrix}1&-a_{11}^{-1}\\alpha\\\\O&E_{n-1}\\end{pmatrix}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "C sub one has determinant one. We multiply on the left by its transpose and on the right by C sub one. The first multiplication clears the bottom left block. The second clears the top right block."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}C_1^{\\mathsf T}AC_1&=\\begin{pmatrix}1&O\\\\-a_{11}^{-1}\\alpha^{\\mathsf T}&E_{n-1}\\end{pmatrix}\\begin{pmatrix}a_{11}&\\alpha\\\\\\alpha^{\\mathsf T}&A_1\\end{pmatrix}\\begin{pmatrix}1&-a_{11}^{-1}\\alpha\\\\O&E_{n-1}\\end{pmatrix}\\\\&=\\begin{pmatrix}a_{11}&\\alpha\\\\O&A_1-a_{11}^{-1}\\alpha^{\\mathsf T}\\alpha\\end{pmatrix}\\begin{pmatrix}1&-a_{11}^{-1}\\alpha\\\\O&E_{n-1}\\end{pmatrix}\\\\&=\\begin{pmatrix}a_{11}&O\\\\O&A_1-a_{11}^{-1}\\alpha^{\\mathsf T}\\alpha\\end{pmatrix}.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "The bottom right block is symmetric and has order n minus one. By induction, choose an invertible G that makes this block diagonal. Denote that diagonal matrix by D."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "G^{\\mathsf T}(A_1-a_{11}^{-1}\\alpha^{\\mathsf T}\\alpha)G=D,\\qquad C_2=\\begin{pmatrix}1&O\\\\O&G\\end{pmatrix}."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "C_2^{\\mathsf T}C_1^{\\mathsf T}AC_1C_2=\\begin{pmatrix}1&O\\\\O&G^{\\mathsf T}\\end{pmatrix}\\begin{pmatrix}a_{11}&O\\\\O&A_1-a_{11}^{-1}\\alpha^{\\mathsf T}\\alpha\\end{pmatrix}\\begin{pmatrix}1&O\\\\O&G\\end{pmatrix}=\\begin{pmatrix}a_{11}&O\\\\O&D\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "The required matrix is C equals C sub one times C sub two. It is invertible. Notice that the transpose appears in reverse order on the left."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "C=C_1C_2,\\qquad C^{\\mathsf T}=C_2^{\\mathsf T}C_1^{\\mathsf T}."
+      },
+      {
+        "type": "cue",
+        "text": "αᵀα读“alpha transpose times alpha”，它是(n−1)×(n−1)矩阵，不是ααᵀ。O表示相应尺寸的零块；Eₙ₋₁读“the identity matrix of order n minus one”。按三行乘法板书，不直接跳到最终对角块。"
+      }
+    ]
+  },
+  {
+    "id": "quadratic-matrix-remaining-cases",
+    "title": "The other matrix cases",
+    "zh": "配方法的矩阵证明：其余情形",
+    "chapter": 5,
+    "source": "§2 · pp.146–147",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We finish the matrix construction by handling the cases where the first diagonal entry is zero."
+      },
+      {
+        "type": "heading",
+        "text": "Case 2: another diagonal entry is nonzero"
+      },
+      {
+        "type": "text",
+        "text": "If a sub i i is nonzero, exchange row one with row i, and also column one with column i. Let P of one comma i denote the elementary matrix that exchanges those two positions."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_{11}=0,\\ a_{ii}\\ne0,\\qquad C_1=P(1,i),\\quad P(1,i)^{\\mathsf T}=P(1,i),\\qquad C_1^{\\mathsf T}AC_1=P(1,i)AP(1,i)."
+      },
+      {
+        "type": "text",
+        "text": "The top left entry is now the original a sub i i. We can apply the preceding construction. The same exchange is needed on both sides to preserve symmetry."
+      },
+      {
+        "type": "heading",
+        "text": "Case 3: all diagonal entries are zero"
+      },
+      {
+        "type": "text",
+        "text": "Suppose some entry a sub one j is nonzero. Exchange positions two and j on both sides to move it to position one two. If j is already two, no exchange is needed. Use A for the matrix after this exchange."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A\\longmapsto P(2,j)^{\\mathsf T}AP(2,j)\\quad(j\\ne2),\\qquad a_{12}\\ne0."
+      },
+      {
+        "type": "text",
+        "text": "Now use the same sum and difference substitution as in the polynomial proof."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "C_1=\\begin{pmatrix}1&1&0&\\cdots&0\\\\1&-1&0&\\cdots&0\\\\0&0&1&\\cdots&0\\\\\\vdots&\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&0&\\cdots&1\\end{pmatrix},\\qquad |C_1|=-2\\ne0."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}1&1\\\\1&-1\\end{pmatrix}\\begin{pmatrix}0&a_{12}\\\\a_{12}&0\\end{pmatrix}\\begin{pmatrix}1&1\\\\1&-1\\end{pmatrix}=\\begin{pmatrix}2a_{12}&0\\\\0&-2a_{12}\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "This is the upper left two by two block of C sub one transpose A C sub one. Its first diagonal entry is nonzero, so we are back in the first case."
+      },
+      {
+        "type": "heading",
+        "text": "Case 4: the first row is zero"
+      },
+      {
+        "type": "text",
+        "text": "Symmetry also makes the first column zero. Apply induction to the bottom right submatrix and keep the first coordinate unchanged."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=\\begin{pmatrix}0&O\\\\O&A_1\\end{pmatrix},\\quad G^{\\mathsf T}A_1G=D,\\quad |G|\\ne0,\\qquad C=\\begin{pmatrix}1&O\\\\O&G\\end{pmatrix}."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "C^{\\mathsf T}AC=\\begin{pmatrix}0&O\\\\O&D\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Here D is diagonal. Every step is an invertible congruence transformation. Multiply the successive substitution matrices in their order of use to obtain the full matrix C. This completes the matrix construction."
+      },
+      {
+        "type": "cue",
+        "text": "P(1,i)读“P of one comma i”，并说明它是对换矩阵；与数域P区别。用完交换后，A表示当前矩阵，不能把新的a₁₂与原位置混淆。"
+      }
+    ]
   }
 ]
