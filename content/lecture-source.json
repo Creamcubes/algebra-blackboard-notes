@@ -5566,5 +5566,372 @@
         "text": "行变换法横向拼接(A E)；列变换法纵向拼接。不要在横向拼接的矩阵中任意使用列变换，否则右半部不再保证是逆矩阵。"
       }
     ]
+  },
+  {
+    "id": "block-row-operations",
+    "title": "Elementary operations on blocks",
+    "zh": "分块初等变换及乘法公式",
+    "chapter": 4,
+    "source": "§7 · pp.129–130",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now combine block multiplication with elementary operations. Let A and B form the first block row, and C and D the second. The two block rows have m and n rows, respectively."
+      },
+      {
+        "type": "statement",
+        "text": "Compatible block matrices can exchange block rows, multiply a block row on the left by a matrix, or add a matrix multiple of one block row to another. Each operation is represented by block multiplication."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}O&E_n\\\\E_m&O\\end{pmatrix}\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix}=\\begin{pmatrix}C&D\\\\A&B\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "This matrix exchanges the two block rows. Its first block row has n rows and selects the original second block row. Its second block row has m rows and selects the original first block row. Thus m and n need not be equal."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}P&O\\\\O&E_n\\end{pmatrix}\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix}=\\begin{pmatrix}PA&PB\\\\C&D\\end{pmatrix},\\qquad P:m\\times m."
+      },
+      {
+        "type": "text",
+        "text": "This multiplies the first block row on the left by P. To make the operation reversible, P must be invertible. The identity itself holds for any P of the stated size."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}E_m&O\\\\P&E_n\\end{pmatrix}\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix}=\\begin{pmatrix}A&B\\\\C+PA&D+PB\\end{pmatrix},\\qquad P:n\\times m."
+      },
+      {
+        "type": "heading",
+        "text": "Verification"
+      },
+      {
+        "type": "text",
+        "text": "Apply the block row-by-column rule to each product. In the last formula, the lower left block is P A plus C. The lower right block is P B plus D. This adds P times the first block row to the second block row. The inverse operation uses negative P."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}E_m&O\\\\-P&E_n\\end{pmatrix}\\begin{pmatrix}E_m&O\\\\P&E_n\\end{pmatrix}=\\begin{pmatrix}E_m&O\\\\O&E_n\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Right multiplication gives the corresponding operations on block columns. Keep the multiplier on the right of each block. For example, if the two block columns have m and n columns, then the following formula holds."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix}\\begin{pmatrix}E_m&P\\\\O&E_n\\end{pmatrix}=\\begin{pmatrix}A&AP+B\\\\C&CP+D\\end{pmatrix},\\qquad P:m\\times n."
+      },
+      {
+        "type": "cue",
+        "text": "每条公式中的P尺寸按该条公式确定。block row读“块行”；左乘产生PA，右乘产生AP，不能互换。块行交换矩阵上下两块的行数可能不同。"
+      }
+    ]
+  },
+  {
+    "id": "block-elimination",
+    "title": "Eliminating an off-diagonal block",
+    "zh": "分块消元与例1的求逆证明",
+    "chapter": 4,
+    "source": "§7 · p.130",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We next choose the multiplier so that an entire block becomes zero."
+      },
+      {
+        "type": "statement",
+        "text": "If A is invertible, adding −CA⁻¹ times the first block row to the second eliminates C."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}E_m&O\\\\-CA^{-1}&E_n\\end{pmatrix}\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix}=\\begin{pmatrix}A&B\\\\O&D-CA^{-1}B\\end{pmatrix}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Here A has order m, D has order n, B is m by n, and C is n by m. The new lower left block is C minus C A inverse A, which is zero. The new lower right block is D minus C A inverse B. Read it as “D minus C times A inverse times B.”"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "C-CA^{-1}A=O,\\qquad D+(-CA^{-1})B=D-CA^{-1}B."
+      },
+      {
+        "type": "text",
+        "text": "Let us apply this to the block triangular matrix in Example One."
+      },
+      {
+        "type": "statement",
+        "text": "Example 1. If A and D are invertible, then T has the following inverse."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "T=\\begin{pmatrix}A&O\\\\C&D\\end{pmatrix},\\qquad T^{-1}=\\begin{pmatrix}A^{-1}&O\\\\-D^{-1}CA^{-1}&D^{-1}\\end{pmatrix}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The same elimination turns T into a block diagonal matrix."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}E_m&O\\\\-CA^{-1}&E_n\\end{pmatrix}T=\\begin{pmatrix}A&O\\\\O&D\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Multiply on the left by the inverse of this block diagonal matrix. The total left multiplier takes T to E, so it is T inverse."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "T^{-1}=\\begin{pmatrix}A^{-1}&O\\\\O&D^{-1}\\end{pmatrix}\\begin{pmatrix}E_m&O\\\\-CA^{-1}&E_n\\end{pmatrix}=\\begin{pmatrix}A^{-1}&O\\\\-D^{-1}CA^{-1}&D^{-1}\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "This recovers the earlier formula by a different argument: first eliminate the lower left block, then invert the two diagonal blocks."
+      },
+      {
+        "type": "cue",
+        "text": "先写消元矩阵，再写它与T的乘积，最后在左侧乘对角块的逆。两个左乘因子的先后次序不可颠倒。"
+      }
+    ]
+  },
+  {
+    "id": "general-block-inverse",
+    "title": "Inverse of a general two-by-two block matrix",
+    "zh": "例2：一般二乘二分块矩阵求逆",
+    "chapter": 4,
+    "source": "§7 · pp.130–131",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now consider Example Two, where all four blocks may be nonzero."
+      },
+      {
+        "type": "statement",
+        "text": "Example 2. Suppose T₁ and its square block D are invertible. Then A − BD⁻¹C is invertible, and T₁ has the inverse shown below."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "T_1=\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix},\\qquad A:m\\times m,\\quad D:n\\times n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "T_1^{-1}=\\begin{pmatrix}(A-BD^{-1}C)^{-1}&-(A-BD^{-1}C)^{-1}BD^{-1}\\\\-D^{-1}C(A-BD^{-1}C)^{-1}&D^{-1}C(A-BD^{-1}C)^{-1}BD^{-1}+D^{-1}\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Read T sub one inverse. The repeated expression A minus B D inverse C is a matrix of order m. We keep this expression written out, as in the textbook."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "First, eliminate the upper right block. Subtract B D inverse times the second block row from the first."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}E_m&-BD^{-1}\\\\O&E_n\\end{pmatrix}T_1=\\begin{pmatrix}A-BD^{-1}C&O\\\\C&D\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "The left multiplier is invertible: replace its negative block by the positive block to obtain its inverse. Since T sub one is invertible, the product is invertible. Its determinant is the product of the determinants of its two diagonal blocks."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "|A-BD^{-1}C|\\,|D|\\ne0\\quad\\Longrightarrow\\quad |A-BD^{-1}C|\\ne0."
+      },
+      {
+        "type": "text",
+        "text": "Thus A minus B D inverse C is invertible. Apply Example One to the block triangular matrix. Then multiply its inverse on the right by the elimination matrix."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "T_1^{-1}=\\begin{pmatrix}(A-BD^{-1}C)^{-1}&O\\\\-D^{-1}C(A-BD^{-1}C)^{-1}&D^{-1}\\end{pmatrix}\\begin{pmatrix}E_m&-BD^{-1}\\\\O&E_n\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Block multiplication gives the four blocks in the stated formula. The upper right block has one minus sign. The product in the lower right block has two minus signs, so it is positive. This completes the proof."
+      },
+      {
+        "type": "cue",
+        "text": "长公式可横向滚动。口述时先指认重复出现的(A−BD⁻¹C)⁻¹，读“the inverse of A minus B times D inverse times C”，再逐块说明。这里是整个括号的逆，不是仅C的逆。"
+      }
+    ]
+  },
+  {
+    "id": "block-determinant-product-proof",
+    "title": "A block proof of the determinant product rule",
+    "zh": "例3：行列式乘法公式的分块证明",
+    "chapter": 4,
+    "source": "§7 · p.131",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Example Three gives another proof of the determinant product rule. We will use block multiplication and determinant-preserving row additions."
+      },
+      {
+        "type": "statement",
+        "text": "Example 3. For square matrices A and B of the same order n, the determinant of AB equals the product of their determinants."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "|AB|=|A|\\,|B|."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Form the following product. The upper left block becomes A minus A, which is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}E_n&A\\\\O&E_n\\end{pmatrix}\\begin{pmatrix}A&O\\\\-E_n&B\\end{pmatrix}=\\begin{pmatrix}O&AB\\\\-E_n&B\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "We must not use the determinant product rule to take the determinant of this product, because that is what we are proving. Instead, express the left multiplier as a sequence of row additions. As in the textbook, let E sub i j be zero except for the entry a sub i j at position i, j. Define P sub i j by the following block matrix."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "E_{ij}=(e_{uv}),\\qquad e_{uv}=\\begin{cases}a_{ij},&(u,v)=(i,j),\\\\0,&\\text{otherwise},\\end{cases}\\qquad P_{ij}=\\begin{pmatrix}E_n&E_{ij}\\\\O&E_n\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Left multiplication by P sub i j adds a sub i j times row n plus j to row i. If that coefficient is zero, it does nothing. Each operation preserves the determinant. The lower n rows never change, so performing these operations for all i and j gives the full left multiplier."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "P_{11}P_{12}\\cdots P_{1n}P_{21}\\cdots P_{nn}=\\begin{pmatrix}E_n&A\\\\O&E_n\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Therefore the determinant of the product on the first line equals the determinant of the original block triangular matrix."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\left|\\begin{matrix}O&AB\\\\-E_n&B\\end{matrix}\\right|=\\left|\\begin{matrix}A&O\\\\-E_n&B\\end{matrix}\\right|=|A|\\,|B|."
+      },
+      {
+        "type": "text",
+        "text": "Now exchange column one with column n plus one, column two with column n plus two, and so on. There are n column exchanges. The resulting matrix is block triangular."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\left|\\begin{matrix}O&AB\\\\-E_n&B\\end{matrix}\\right|=(-1)^n\\left|\\begin{matrix}AB&O\\\\B&-E_n\\end{matrix}\\right|=(-1)^n|AB|\\,|-E_n|=|AB|."
+      },
+      {
+        "type": "text",
+        "text": "The determinant of negative E sub n is negative one to the power n. The two sign factors cancel. Comparing the two evaluations gives the desired identity."
+      },
+      {
+        "type": "cue",
+        "text": "本页Eᵢⱼ特指仅(i,j)位置为aᵢⱼ的矩阵，沿用原书，不是该位置为1的常见矩阵单位。证明不能循环调用|UV|=|U||V|；第一步靠逐次加行，最后用此前已证明的块三角行列式公式。"
+      }
+    ]
+  },
+  {
+    "id": "triangularization-block-induction",
+    "title": "Triangularization by block induction",
+    "zh": "例4：下三角乘子与归纳证明",
+    "chapter": 4,
+    "source": "§7 · pp.131–132",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "The last example uses induction and block elimination. First, let us state the assumption precisely."
+      },
+      {
+        "type": "statement",
+        "text": "Example 4. Let A have order n. Suppose the determinant of its upper left k by k submatrix is nonzero for every k from one through n. Then there is a lower triangular matrix B such that BA is upper triangular."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{vmatrix}a_{11}&\\cdots&a_{1k}\\\\\\vdots&&\\vdots\\\\a_{k1}&\\cdots&a_{kk}\\end{vmatrix}\\ne0\\quad(1\\le k\\le n),\\qquad B\\text{ lower triangular},\\quad BA\\text{ upper triangular}."
+      },
+      {
+        "type": "text",
+        "text": "Upper triangular means all entries below the main diagonal are zero. Lower triangular means all entries above it are zero. These upper left determinants are called leading principal minors."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "For n equals one, choose B equal to the one by one identity matrix. Now assume the statement holds for order n minus one. Partition A as follows."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=\\begin{pmatrix}A_1&\\beta\\\\\\alpha&a_{nn}\\end{pmatrix},\\qquad A_1=\\begin{pmatrix}a_{11}&\\cdots&a_{1,n-1}\\\\\\vdots&&\\vdots\\\\a_{n-1,1}&\\cdots&a_{n-1,n-1}\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Here alpha is a row vector, and beta is a column vector, each with n minus one entries. A sub one satisfies the same assumption. It is invertible, and by induction there is a lower triangular B sub one such that B sub one A sub one is upper triangular."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}E&O\\\\-\\alpha A_1^{-1}&1\\end{pmatrix}\\begin{pmatrix}A_1&\\beta\\\\\\alpha&a_{nn}\\end{pmatrix}=\\begin{pmatrix}A_1&\\beta\\\\O&-\\alpha A_1^{-1}\\beta+a_{nn}\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "In this formula E has order n minus one. The first multiplication clears the bottom left block. Now multiply the first block row by B sub one."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}B_1&O\\\\O&1\\end{pmatrix}\\begin{pmatrix}A_1&\\beta\\\\O&-\\alpha A_1^{-1}\\beta+a_{nn}\\end{pmatrix}=\\begin{pmatrix}B_1A_1&B_1\\beta\\\\O&-\\alpha A_1^{-1}\\beta+a_{nn}\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "This matrix is upper triangular. Combine the two left multipliers to obtain B."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "B=\\begin{pmatrix}B_1&O\\\\O&1\\end{pmatrix}\\begin{pmatrix}E&O\\\\-\\alpha A_1^{-1}&1\\end{pmatrix}=\\begin{pmatrix}B_1&O\\\\-\\alpha A_1^{-1}&1\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Since B sub one is lower triangular, B is also lower triangular. Its product with A is the upper triangular matrix just displayed. This completes the induction."
+      },
+      {
+        "type": "cue",
+        "text": "alpha读“alpha”，beta读“beta”；αA₁⁻¹β是1×1的数。先写A的分块和尺寸，再依次写两次左乘，最后合并为B。此处A₁不是A的第一行，而是左上角子矩阵。"
+      }
+    ]
   }
 ]
