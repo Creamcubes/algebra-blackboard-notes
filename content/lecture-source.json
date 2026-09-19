@@ -5098,5 +5098,473 @@
         "text": "原书的“准对角矩阵”通常读作“block diagonal matrix”。指着对角上的各块说明尺寸；不要把准对角矩阵说成只有数值对角元非零。"
       }
     ]
+  },
+  {
+    "id": "elementary-matrix-types",
+    "title": "The three types of elementary matrices",
+    "zh": "定义10：三类初等矩阵",
+    "chapter": 4,
+    "source": "§6 · pp.125–126",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now connect elementary operations with matrix multiplication. First, let us define an elementary matrix."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 10. An elementary matrix is obtained from an identity matrix by one elementary row or column operation."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "E_n\\ \\xrightarrow{\\text{one elementary operation}}\\ P."
+      },
+      {
+        "type": "text",
+        "text": "There are three types. We use the textbook's notation. Here i and j are distinct indices, c is a nonzero scalar, and k is any scalar. The order of each matrix is determined by the identity matrix we start with."
+      },
+      {
+        "type": "statement",
+        "text": "Exchanging rows i and j of E gives P(i,j). Multiplying row i by c gives P(i(c)). Adding k times row j to row i gives P(i,j(k))."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "P(i,j)=\\begin{pmatrix}\\ddots&&&&\\\\&0&\\cdots&1&\\\\&\\vdots&\\ddots&\\vdots&\\\\&1&\\cdots&0&\\\\&&&&\\ddots\\end{pmatrix},\\qquad P(i(c))=\\begin{pmatrix}1&&&&\\\\&\\ddots&&&\\\\&&c&&\\\\&&&\\ddots&\\\\&&&&1\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "In the first matrix, the entries at positions i, i and j, j become zero. The entries at i, j and j, i become one. All other entries stay as in E. In the second matrix, only the diagonal entry at i, i changes, from one to c."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "P(i,j(k))=\\begin{pmatrix}\\ddots&&&&\\\\&1&\\cdots&k&\\\\&&\\ddots&\\vdots&\\\\&&&1&\\\\&&&&\\ddots\\end{pmatrix}\\quad(i<j)."
+      },
+      {
+        "type": "text",
+        "text": "In the third matrix, the entry at i, j is k. All other entries stay as in E. The displayed form assumes i is less than j. If i is greater than j, the k is below the diagonal. Blank positions in these displays are zero."
+      },
+      {
+        "type": "text",
+        "text": "Read P of i, j for the exchange matrix. For the other two, it is clearer to say “the matrix that scales row i by c,” and “the matrix that adds k times row j to row i.” The parentheses describe an operation; i(c) is not a product."
+      },
+      {
+        "type": "text",
+        "text": "Column operations on E give the same three types of matrices. In particular, adding k times column i to column j also gives P of i, j of k."
+      },
+      {
+        "type": "cue",
+        "text": "先在板书写E，再只改动相应位置；标出第i、j行列。P(i,j(k))中的k在(i,j)位置。记号P是矩阵名称，不是此处的数域名称。"
+      }
+    ]
+  },
+  {
+    "id": "elementary-multiplication-lemma",
+    "title": "Elementary operations as multiplication",
+    "zh": "引理：左乘行变换，右乘列变换",
+    "chapter": 4,
+    "source": "§6 · pp.126–127",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, let us state the basic lemma."
+      },
+      {
+        "type": "statement",
+        "text": "An elementary row operation on an s by n matrix A is the same as multiplying A on the left by the corresponding s by s elementary matrix. An elementary column operation is the same as multiplying on the right by the corresponding n by n elementary matrix."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\text{row operation: }A\\longmapsto PA,\\quad P:s\\times s;\\qquad\\text{column operation: }A\\longmapsto AQ,\\quad Q:n\\times n."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Following the textbook, let A sub one through A sub s denote the rows of A. Let B be any s by s matrix. Block multiplication gives the following expression."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A_i=(a_{i1},\\ldots,a_{in}),\\quad B=(b_{ij})_{s\\times s},\\qquad BA=\\begin{pmatrix}b_{11}A_1+b_{12}A_2+\\cdots+b_{1s}A_s\\\\b_{21}A_1+b_{22}A_2+\\cdots+b_{2s}A_s\\\\\\vdots\\\\b_{s1}A_1+b_{s2}A_2+\\cdots+b_{ss}A_s\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "First, set B equal to P of i, j. Row i selects A sub j, and row j selects A sub i. All other rows stay the same. Next, use the scaling matrix. Only row i is multiplied by c. Finally, use the row addition matrix. Only row i changes, to A sub i plus k A sub j."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "P(i,j)A=\\begin{pmatrix}\\vdots\\\\A_j\\\\\\vdots\\\\A_i\\\\\\vdots\\end{pmatrix},\\quad P(i(c))A=\\begin{pmatrix}A_1\\\\\\vdots\\\\cA_i\\\\\\vdots\\\\A_s\\end{pmatrix},\\quad P(i,j(k))A=\\begin{pmatrix}\\vdots\\\\A_i+kA_j\\\\\\vdots\\\\A_j\\\\\\vdots\\end{pmatrix}\\quad(i<j)."
+      },
+      {
+        "type": "text",
+        "text": "These are exactly the three row operations. For columns, let C sub one through C sub n be the columns of A. In A Q, column j is the linear combination of these columns with coefficients from column j of Q. This gives the corresponding column operations."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "AP(i,j):\\ C_i\\leftrightarrow C_j,\\qquad AP(i(c)):\\ C_i\\longmapsto cC_i,\\qquad AP(i,j(k)):\\ C_j\\longmapsto C_j+kC_i."
+      },
+      {
+        "type": "text",
+        "text": "Notice the last formula. On the left, P of i, j of k changes row i. On the right, it changes column j. The position of k in the elementary matrix explains this difference. This proves the lemma."
+      },
+      {
+        "type": "cue",
+        "text": "行向量的竖排板书沿用原书，明确标出被替换的行。最后列变换公式最容易说反：右乘P(i,j(k))把第i列的k倍加到第j列。"
+      }
+    ]
+  },
+  {
+    "id": "elementary-inverses-equivalence",
+    "title": "Inverses and matrix equivalence",
+    "zh": "初等矩阵的逆与定义11：矩阵等价",
+    "chapter": 4,
+    "source": "§6 · p.127",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Each elementary operation can be undone. This gives the inverses of the three elementary matrices."
+      },
+      {
+        "type": "statement",
+        "text": "Every elementary matrix is invertible, and its inverse is also elementary."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "P(i,j)^{-1}=P(i,j),\\qquad P(i(c))^{-1}=P(i(c^{-1})),\\qquad P(i,j(k))^{-1}=P(i,j(-k))."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Exchange the same two rows again to undo an exchange. Multiply by one over c to undo multiplication by c. Add negative k times row j to row i to undo addition of k times row j. In each case, applying the two operations to E restores E. By the lemma, the corresponding matrix products, in either order, equal E. These are therefore the inverse matrices."
+      },
+      {
+        "type": "text",
+        "text": "Read c to the minus one as “one over c.” This is defined because c is nonzero. Next, we define matrix equivalence."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 11. Matrices A and B are equivalent if B can be obtained from A by a finite sequence of elementary row and column operations."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A\\ \\xrightarrow{\\text{elementary row and column operations}}\\ B."
+      },
+      {
+        "type": "statement",
+        "text": "Matrix equivalence is reflexive, symmetric, and transitive."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "A is equivalent to itself by doing nothing. This is reflexivity. Every operation can be undone, so a sequence from A to B can be reversed to go from B to A. This is symmetry. A sequence from A to B followed by a sequence from B to C gives a sequence from A to C. This is transitivity."
+      },
+      {
+        "type": "cue",
+        "text": "等价允许行和列两类初等变换；不要把它说成只允许行变换。三个英文术语各解释一句即可。"
+      }
+    ]
+  },
+  {
+    "id": "matrix-standard-form",
+    "title": "The standard form of a matrix",
+    "zh": "定理5：矩阵标准形及构造证明",
+    "chapter": 4,
+    "source": "§6 · pp.127–128",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now show how far elementary operations can simplify a matrix."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 5. Every s by n matrix A is equivalent to a matrix with r ones at the start of the main diagonal and zeros elsewhere, where r is the rank of A. This is the standard form of A."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A\\longrightarrow\\begin{pmatrix}E_r&O\\\\O&O\\end{pmatrix}_{s\\times n},\\qquad r=\\operatorname{rank}(A),\\quad0\\le r\\le\\min(s,n)."
+      },
+      {
+        "type": "text",
+        "text": "If r is zero, the standard form is the zero matrix. If a block has zero rows or columns, we simply omit it. The standard form has the same size as A."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "If A is zero, it is already in standard form. Otherwise, move a nonzero entry to the upper left corner by row and column exchanges. Call the entries of this current matrix a sub i j. Thus a sub one one is nonzero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=\\begin{pmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\a_{21}&a_{22}&\\cdots&a_{2n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{s1}&a_{s2}&\\cdots&a_{sn}\\end{pmatrix},\\qquad a_{11}\\ne0."
+      },
+      {
+        "type": "text",
+        "text": "From row i, subtract a sub i one over a sub one one times the first row. This makes every entry below the first entry in column one equal to zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A\\longrightarrow\\begin{pmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\0&a_{22}-\\dfrac{a_{21}a_{12}}{a_{11}}&\\cdots&a_{2n}-\\dfrac{a_{21}a_{1n}}{a_{11}}\\\\\\vdots&\\vdots&&\\vdots\\\\0&a_{s2}-\\dfrac{a_{s1}a_{12}}{a_{11}}&\\cdots&a_{sn}-\\dfrac{a_{s1}a_{1n}}{a_{11}}\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "From column j, subtract a sub one j over a sub one one times the current first column. Since the current first column is zero below its first entry, this clears the rest of the first row without changing the lower right part. Then multiply the first row by one over a sub one one."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\longrightarrow\\begin{pmatrix}a_{11}&0&\\cdots&0\\\\0&&&\\\\\\vdots&&A_1&\\\\0&&&\\end{pmatrix}\\longrightarrow\\begin{pmatrix}1&0&\\cdots&0\\\\0&&&\\\\\\vdots&&A_1&\\\\0&&&\\end{pmatrix},\\qquad A_1:(s-1)\\times(n-1)."
+      },
+      {
+        "type": "text",
+        "text": "Repeat the process inside A sub one. Operations confined to this smaller block preserve the first diagonal one and the surrounding zeros. Continue until the remaining block is zero or has no rows or columns. We reach the stated form. Its rank is the number of diagonal ones. Elementary operations preserve rank, so this number equals the rank of the original A. This proves the theorem."
+      },
+      {
+        "type": "cue",
+        "text": "A₁在这里表示右下角子矩阵，不是上一引理中的第一行。强调“current first column”，因为消行之后它已变为(a₁₁,0,…,0)ᵀ。"
+      }
+    ]
+  },
+  {
+    "id": "elementary-factorization",
+    "title": "Invertible matrices as products of elementary matrices",
+    "zh": "定理6：可逆矩阵的初等矩阵分解",
+    "chapter": 4,
+    "source": "§6 · p.128",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "The standard form gives a useful description of every invertible matrix."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 6. A square matrix A is invertible if and only if it is a product of elementary matrices."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A\\text{ invertible}\\quad\\Longleftrightarrow\\quad A=Q_1Q_2\\cdots Q_m,\\qquad Q_1,\\ldots,Q_m\\text{ elementary}."
+      },
+      {
+        "type": "text",
+        "text": "The subscripts label different factors. Read the product as “Q sub one times Q sub two, and so on, times Q sub m.”"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "First, every elementary matrix is invertible. A product of invertible matrices is invertible, so the displayed product is invertible. Conversely, let A be invertible of order n. Its rank is n. By Theorem Five, its standard form is E. The lemma expresses the operations taking A to E as multiplication by elementary matrices on the left and right."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "P_l\\cdots P_1\\,A\\,R_1\\cdots R_t=E."
+      },
+      {
+        "type": "text",
+        "text": "Here P sub one acts first on the left. R sub one acts first on the right. Multiply by the inverse products to solve for A. Keep the order shown on the board."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=P_1^{-1}\\cdots P_l^{-1}\\,E\\,R_t^{-1}\\cdots R_1^{-1}."
+      },
+      {
+        "type": "text",
+        "text": "Each inverse in this expression is elementary. After omitting E, A is a product of elementary matrices, as required. This proves both directions."
+      },
+      {
+        "type": "cue",
+        "text": "原书通过等价式直接得出定理；此处展开两边乘逆矩阵的顺序。若某侧没有变换，该侧的乘积就是E。"
+      }
+    ]
+  },
+  {
+    "id": "equivalence-invertible-factors",
+    "title": "Equivalence and invertible factors",
+    "zh": "推论1：等价矩阵的乘法表示",
+    "chapter": 4,
+    "source": "§6 · p.128",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, let us state the first corollary."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary 1. Two s by n matrices A and B are equivalent if and only if there are an invertible s by s matrix P and an invertible n by n matrix Q such that A = PBQ."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A\\text{ equivalent to }B\\quad\\Longleftrightarrow\\quad A=PBQ,\\qquad P:s\\times s,\\quad Q:n\\times n,\\quad P,Q\\text{ invertible}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Suppose A and B are equivalent. Since operations can be reversed, we can obtain A from B. By the lemma, each row operation is left multiplication by an elementary matrix, and each column operation is right multiplication by an elementary matrix. Group all left factors into P and all right factors into Q. Associativity allows this grouping, and both products are invertible. Hence A equals P B Q."
+      },
+      {
+        "type": "text",
+        "text": "Conversely, suppose A equals P B Q with P and Q invertible. By Theorem Six, both P and Q are products of elementary matrices. Multiplying B by these factors performs a sequence of elementary row and column operations. Thus B can be transformed into A, so A and B are equivalent."
+      },
+      {
+        "type": "cue",
+        "text": "此处P、Q的阶数可以不同；必须分别匹配B的行数、列数。不要把A=PBQ当作只适用于方阵的相似关系。"
+      }
+    ]
+  },
+  {
+    "id": "row-reduction-identity",
+    "title": "Reducing an invertible matrix to the identity",
+    "zh": "推论2：仅用行变换化为单位矩阵",
+    "chapter": 4,
+    "source": "§6 · p.128",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "The next corollary is stronger than reduction using both rows and columns."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary 2. Every invertible matrix can be reduced to the identity matrix using only elementary row operations."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A\\ \\xrightarrow{\\text{elementary row operations only}}\\ E."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "By Theorem Six, write A as a product of elementary matrices. Multiply on the left by their inverses in the following order."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=Q_1Q_2\\cdots Q_m,\\qquad Q_m^{-1}\\cdots Q_2^{-1}Q_1^{-1}A=E."
+      },
+      {
+        "type": "text",
+        "text": "Q sub one inverse acts first and removes the first factor. Then Q sub two inverse acts, and so on. Every inverse is elementary, and every left multiplication is a row operation. Thus row operations alone reduce A to E."
+      },
+      {
+        "type": "text",
+        "text": "The column version also holds. Multiply the same factorization on the right by the inverse factors, starting with Q sub m inverse."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A Q_m^{-1}\\cdots Q_2^{-1}Q_1^{-1}=E."
+      },
+      {
+        "type": "text",
+        "text": "Each right multiplication is a column operation. Thus an invertible matrix can also be reduced to E using only column operations."
+      },
+      {
+        "type": "cue",
+        "text": "左边连乘写在纸上的顺序与执行顺序相反：最靠近A的Q₁⁻¹先执行。右乘时最靠近A的Q_m⁻¹先执行。"
+      }
+    ]
+  },
+  {
+    "id": "inverse-by-row-operations",
+    "title": "Finding an inverse by elementary operations",
+    "zh": "用增广矩阵求逆及其证明",
+    "chapter": 4,
+    "source": "§6 · pp.128–129",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now obtain a practical method for finding the inverse."
+      },
+      {
+        "type": "statement",
+        "text": "If elementary row operations transform an invertible matrix A into E, then applying exactly the same operations to E transforms it into A⁻¹."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(A\\ \\ E)\\ \\xrightarrow{\\text{elementary row operations}}\\ (E\\ \\ A^{-1})."
+      },
+      {
+        "type": "text",
+        "text": "Place A and E side by side. This gives an n by two n matrix. Read the display as “the augmented matrix A, E is transformed into E, A inverse.” Apply each row operation across both halves."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Let P sub one through P sub m be the elementary matrices for the row operations, in the order in which we perform them. Then their product, with the last operation on the left, takes A to E."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "P_m\\cdots P_1A=E\\quad\\Longrightarrow\\quad P_m\\cdots P_1=A^{-1}."
+      },
+      {
+        "type": "text",
+        "text": "Therefore the same product takes E to A inverse. Block multiplication combines the two calculations into one."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "P_m\\cdots P_1(A\\ \\ E)=(P_m\\cdots P_1A\\ \\ P_m\\cdots P_1E)=(E\\ \\ A^{-1})."
+      },
+      {
+        "type": "text",
+        "text": "This proves the method. During the calculation, the left and right halves are the current transformed matrices. We must apply every new row operation to both current halves. Once the left half is E, the right half is the inverse."
+      },
+      {
+        "type": "statement",
+        "text": "For the column-operation version, place A above E and apply the same column operations to both blocks."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}A\\\\E\\end{pmatrix}\\ \\xrightarrow{\\text{elementary column operations}}\\ \\begin{pmatrix}E\\\\A^{-1}\\end{pmatrix}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "If the column operations give a product Q such that A Q equals E, then Q equals A inverse. Right multiplication of both vertical blocks by Q therefore gives E above A inverse. This proves the column version."
+      },
+      {
+        "type": "cue",
+        "text": "行变换法横向拼接(A E)；列变换法纵向拼接。不要在横向拼接的矩阵中任意使用列变换，否则右半部不再保证是逆矩阵。"
+      }
+    ]
   }
 ]
