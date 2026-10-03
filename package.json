@@ -6,8 +6,8 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "vinext dev",
-    "build": "node render-math.mjs && vinext build",
+    "dev": "node render-measure.mjs && vinext dev",
+    "build": "node render-math.mjs && node render-measure.mjs && vinext build",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
     "format": "oxfmt"
