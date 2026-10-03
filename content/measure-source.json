@@ -1,0 +1,1820 @@
+[
+  {
+    "id": "length",
+    "lecture": 1,
+    "title": "从区间长度到测度",
+    "term": "Length and measure",
+    "source": {
+      "file": "1.srt",
+      "start": "00:00:04",
+      "end": "00:02:27"
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "text": "课程从一个熟悉的问题开始：区间的长度是右端点减去左端点。能否把“长度”推广到更一般的集合，例如 (0,1) 中的有理数集合或无理数集合？本讲先研究这种推广应该满足什么条件，再说明为什么定义域不能是所有实数子集。"
+      },
+      {
+        "type": "statement",
+        "text": "我们希望构造一个非负集合函数 λ，把区间长度推广为集合的测度（measure），允许取值为正无穷。"
+      },
+      {
+        "type": "math",
+        "text": "\\lambda:\\mathcal P(\\mathbb R)\\longrightarrow [0,+\\infty],\\qquad \\lambda((a,b])=b-a\\quad(a<b)."
+      },
+      {
+        "type": "text",
+        "text": "这里 ℝ 是实数集，𝒫(ℝ) 是它的幂集（power set），即所有实数子集组成的集合。λ 的输入是一个集合，输出是一个非负数或 +∞。允许 +∞ 是为了容纳无界区间。课上也希望不同端点开闭方式的区间有相同长度。"
+      },
+      {
+        "type": "note",
+        "text": "本节中的函数只是希望构造的对象，尚未证明它存在。有理数与无理数的测度在这里是动机问题，四讲字幕尚未完成 Lebesgue 测度的具体应用。"
+      }
+    ]
+  },
+  {
+    "id": "requirements",
+    "lecture": 1,
+    "title": "长度推广应满足的条件",
+    "term": "Translation invariance; σ-additivity",
+    "source": {
+      "file": "1.srt",
+      "start": "00:02:27",
+      "end": "00:06:53"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "希望 λ 同时满足：定义在所有实数子集上；与区间长度一致；平移不变；对两两不交的可数集合族具有可数可加性。"
+      },
+      {
+        "type": "math",
+        "text": "A+x:=\\{y+x:y\\in A\\},\\qquad \\lambda(A+x)=\\lambda(A)\\quad(x\\in\\mathbb R)."
+      },
+      {
+        "type": "text",
+        "text": "平移（translation）只改变集合的位置，不改变长度。A+x 中的 x 是固定的平移量，y 遍历 A。平移不变性（translation invariance）要求两者的测度相同。"
+      },
+      {
+        "type": "math",
+        "text": "A_j\\cap A_k=\\varnothing\\ (j\\ne k)\\quad\\Longrightarrow\\quad \\lambda\\!\\left(\\bigsqcup_{j=1}^{\\infty}A_j\\right)=\\sum_{j=1}^{\\infty}\\lambda(A_j)."
+      },
+      {
+        "type": "text",
+        "text": "符号 ⨆ 表示不交并（disjoint union）；“两两不交”表示任意两个不同下标的集合交集为空。可数可加性（σ-additivity / countable additivity）处理的是可数多个集合，不只是有限多个。右边是非负项级数，所以有确定的值，可能为 +∞。"
+      },
+      {
+        "type": "statement",
+        "text": "在选择公理成立的前提下，不存在同时满足以上四个要求的集合函数。"
+      },
+      {
+        "type": "text",
+        "text": "证明采用反证法：先假设这样的 λ 存在，随后构造一个集合，利用平移不变性与可数可加性得到矛盾。选择公理（axiom of choice）用于从许多等价类中各选一个代表元。"
+      }
+    ]
+  },
+  {
+    "id": "representatives",
+    "lecture": 1,
+    "title": "等价关系与代表元集合",
+    "term": "Equivalence relation; representative",
+    "source": {
+      "file": "1.srt",
+      "start": "00:06:53",
+      "end": "00:11:46"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "定义 x∼y 当且仅当 x−y 是有理数。这是 ℝ 上的一个等价关系，每个等价类是 x+ℚ。"
+      },
+      {
+        "type": "math",
+        "text": "x\\sim y\\iff x-y\\in\\mathbb Q,\\qquad [x]=x+\\mathbb Q=\\{y\\in\\mathbb R:y-x\\in\\mathbb Q\\}."
+      },
+      {
+        "type": "supplement",
+        "text": "补充说明：0∈ℚ 保证自反性；有理数的相反数仍有理保证对称性；两个有理数之和仍有理保证传递性。这分别对应 x∼x、x∼y⇒y∼x、x∼y 且 y∼z⇒x∼z。"
+      },
+      {
+        "type": "text",
+        "text": "每个等价类可数，因为它是 ℚ 的平移。但等价类的总数不可数，否则 ℝ 就是可数个可数集的并，从而可数，与 ℝ 不可数矛盾。课上用一个大写希腊字母表示等价类的集合；为了避免与测度 λ 混淆，以下直接说“所有等价类”。"
+      },
+      {
+        "type": "statement",
+        "text": "利用选择公理，从每个等价类中选出恰好一个属于 (0,1) 的代表元，把所有代表元组成集合 Ω。"
+      },
+      {
+        "type": "math",
+        "text": "\\Omega\\subset(0,1),\\qquad \\#(\\Omega\\cap[x])=1\\quad(x\\in\\mathbb R)."
+      },
+      {
+        "type": "supplement",
+        "text": "补充说明：每个 x+ℚ 都与 (0,1) 相交。由有理数的稠密性，可选 q∈ℚ∩(−x,1−x)，于是 x+q∈(0,1)。这解释了为什么能把所有代表元选在同一个有界区间中。"
+      },
+      {
+        "type": "note",
+        "text": "字幕在 00:07:40 把 rational 识别为 irrational；依照关系定义应为“有理数”。本讲 Ω 是代表元集合；从第二讲开始，Ω 改为一般全集，两处含义要区分。"
+      }
+    ]
+  },
+  {
+    "id": "rational-translates",
+    "lecture": 1,
+    "title": "不同有理平移两两不交",
+    "term": "Disjoint rational translates",
+    "source": {
+      "file": "1.srt",
+      "start": "00:11:46",
+      "end": "00:17:31"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "若 p,q∈ℚ 且 p≠q，则 (Ω+p)∩(Ω+q)=∅。"
+      },
+      {
+        "type": "heading",
+        "text": "证明"
+      },
+      {
+        "type": "text",
+        "text": "假设交集中有 x，则存在 α,β∈Ω，使 x=α+p=β+q。因此 α−β=q−p∈ℚ，也就是 α∼β。Ω 在同一个等价类中只选了一个代表元，故 α=β，进而 p=q。因此不同有理数对应的平移集合不相交。"
+      },
+      {
+        "type": "math",
+        "text": "x=\\alpha+p=\\beta+q\\quad\\Longrightarrow\\quad \\alpha-\\beta=q-p\\in\\mathbb Q\\quad\\Longrightarrow\\quad\\alpha=\\beta\\quad\\Longrightarrow\\quad p=q."
+      },
+      {
+        "type": "text",
+        "text": "只取大小在 −1 与 1 之间的有理平移，记它们的不交并为 U。这个指标集合可数，因此后面可以使用可数可加性。"
+      },
+      {
+        "type": "math",
+        "text": "U:=\\bigsqcup_{q\\in\\mathbb Q\\cap(-1,1)}(\\Omega+q)\\subset(-1,2)."
+      },
+      {
+        "type": "text",
+        "text": "包含关系来自 Ω⊂(0,1)：若 α∈Ω 且 −1<q<1，则 −1<α+q<2。这给 U 的测度提供有限上界。"
+      }
+    ]
+  },
+  {
+    "id": "monotonicity",
+    "lecture": 1,
+    "title": "空集测度与单调性",
+    "term": "Empty set; monotonicity",
+    "source": {
+      "file": "1.srt",
+      "start": "00:17:31",
+      "end": "00:21:56"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "在假设的 λ 下，λ(∅)=0；若 E⊂F，则 λ(E)≤λ(F)。"
+      },
+      {
+        "type": "heading",
+        "text": "证明：空集"
+      },
+      {
+        "type": "text",
+        "text": "把有限长度的区间 (−1,1) 写成它自身与可数个空集的不交并，使用可数可加性。左边等于 2，右边除 2 外的项非负，所以每个空集项都只能为零。"
+      },
+      {
+        "type": "math",
+        "text": "2=\\lambda((-1,1))=2+\\sum_{j=1}^{\\infty}\\lambda(\\varnothing)\\quad\\Longrightarrow\\quad \\lambda(\\varnothing)=0."
+      },
+      {
+        "type": "heading",
+        "text": "证明：单调性"
+      },
+      {
+        "type": "text",
+        "text": "因为 E⊂F，可以分解 F=E⨆(F∖E)。定义域是所有子集，所以这些集合都可以使用 λ。有限可加性由可数可加性补入空集得到。"
+      },
+      {
+        "type": "math",
+        "text": "\\lambda(F)=\\lambda(E)+\\lambda(F\\setminus E)\\ge\\lambda(E)."
+      },
+      {
+        "type": "text",
+        "text": "这里仅使用非负性，不进行 ∞−∞ 运算。于是由 U⊂(−1,2)，得到 λ(U)≤3。"
+      }
+    ]
+  },
+  {
+    "id": "contradiction",
+    "lecture": 1,
+    "title": "有界覆盖产生矛盾",
+    "term": "A non-measurable set",
+    "source": {
+      "file": "1.srt",
+      "start": "00:21:56",
+      "end": "00:29:24"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "在上述假设下，U 的测度既必须为零，又必须至少为 1，从而产生矛盾。"
+      },
+      {
+        "type": "heading",
+        "text": "证明：先得到零测度"
+      },
+      {
+        "type": "math",
+        "text": "\\lambda(U)=\\sum_{q\\in\\mathbb Q\\cap(-1,1)}\\lambda(\\Omega+q)=\\sum_{q\\in\\mathbb Q\\cap(-1,1)}\\lambda(\\Omega)\\le 3."
+      },
+      {
+        "type": "text",
+        "text": "第一步使用不交集合族的可数可加性，第二步使用平移不变性。无限多个相同的非负数之和若有限，这个数只能是零。因此 λ(Ω)=0，λ(U)=0。"
+      },
+      {
+        "type": "heading",
+        "text": "证明：覆盖单位区间"
+      },
+      {
+        "type": "text",
+        "text": "对任意 x∈(0,1)，设 α∈Ω 是它所在等价类的代表元。取 q=x−α，则 q∈ℚ 且 −1<q<1，所以 x=α+q∈Ω+q⊂U。由此 (0,1)⊂U。"
+      },
+      {
+        "type": "math",
+        "text": "1=\\lambda((0,1))\\le\\lambda(U)=0."
+      },
+      {
+        "type": "text",
+        "text": "这与 1>0 矛盾，证明所希望的 λ 不存在。矛盾使用了：代表元选择、可数有理平移、平移不变、可数可加，以及区间长度的有限正值。"
+      },
+      {
+        "type": "note",
+        "text": "字幕在 00:26—00:27 的口述中混用了 α−x 与 x−α 的符号。这里统一取 q=x−α，使 x=α+q 正确成立；两种差都是有理数，取值范围也相同。"
+      }
+    ]
+  },
+  {
+    "id": "restricted-domain",
+    "lecture": 1,
+    "title": "为什么要限制可测集合",
+    "term": "Measurable and non-measurable sets",
+    "source": {
+      "file": "1.srt",
+      "start": "00:29:24",
+      "end": "00:31:43"
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "text": "区间长度、平移不变和可数可加都符合长度的直觉。课程保留这些性质，放弃“对所有子集都定义测度”的要求：只在适当的集合族上定义它。"
+      },
+      {
+        "type": "statement",
+        "text": "下一步的目标是从区间上的长度函数出发，逐步延拓到更大的集合族；无法纳入相应测度定义域的集合称为不可测集合（non-measurable sets）。"
+      },
+      {
+        "type": "text",
+        "text": "第一讲解释了为什么“挑选定义域”是测度论的一部分。第二讲将引入半代数、代数、σ-代数，它们分别规定集合族对哪些集合运算封闭。这里没有声称存在一个对所有可能测度都通用的“最大定义域”。"
+      }
+    ]
+  },
+  {
+    "id": "semialgebra",
+    "lecture": 2,
+    "title": "半代数的定义",
+    "term": "Semi-algebra",
+    "source": {
+      "file": "lec2字幕.srt",
+      "start": "00:00:06",
+      "end": "00:03:58"
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "text": "从本讲起，Ω 表示一般全集，𝒫(Ω) 表示它的所有子集。集合族 𝒮⊂𝒫(Ω) 的元素本身是集合：A∈𝒮 与 A⊂Ω 是不同层次的关系。Aᶜ 始终表示相对于 Ω 的补集。"
+      },
+      {
+        "type": "statement",
+        "text": "集合族 𝒮 称为半代数（semi-algebra），若它包含 Ω，对有限交封闭，并且每个元素的补集可写成有限个 𝒮 中元素的不交并。"
+      },
+      {
+        "type": "math",
+        "text": "\\Omega\\in\\mathcal S;\\qquad A,B\\in\\mathcal S\\Rightarrow A\\cap B\\in\\mathcal S;\\qquad A\\in\\mathcal S\\Rightarrow A^c=\\bigsqcup_{j=1}^{n}E_j,\\ E_j\\in\\mathcal S."
+      },
+      {
+        "type": "text",
+        "text": "这里的有限交封闭（closed under finite intersections）由两集合的交开始，重复即可得到任意有限个交。补集不必本身属于 𝒮，只需要能分成有限个属于 𝒮 的互不相交部分。"
+      },
+      {
+        "type": "supplement",
+        "text": "补充说明：取 A=Ω，补集 ∅ 可按课上约定写成正整数项的有限不交并。这个并的每一项都只能是空集，因此 ∅∈𝒮。本课的半代数要求 Ω∈𝒮，不把它与不要求包含全集的半环混用。"
+      }
+    ]
+  },
+  {
+    "id": "interval-examples",
+    "lecture": 2,
+    "title": "区间与矩形的半代数",
+    "term": "Intervals and rectangles",
+    "source": {
+      "file": "lec2字幕.srt",
+      "start": "00:03:58",
+      "end": "00:09:12"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "在 Ω=ℝ 中，由 ∅、ℝ、半开区间 (a,b]、半无限区间 (−∞,b] 和 (a,+∞) 组成的集合族是半代数。"
+      },
+      {
+        "type": "math",
+        "text": "\\mathcal S=\\{\\varnothing,\\mathbb R\\}\\cup\\{(a,b]:a<b\\}\\cup\\{(-\\infty,b]:b\\in\\mathbb R\\}\\cup\\{(a,+\\infty):a\\in\\mathbb R\\}."
+      },
+      {
+        "type": "heading",
+        "text": "验证"
+      },
+      {
+        "type": "text",
+        "text": "全集已包含。两个区间的交或者为空，或者仍是同一形式的区间；半无限区间与普通区间的交也一样。补集满足下列分解，所有右边集合都在 𝒮 中，而且分解是不交的。"
+      },
+      {
+        "type": "math",
+        "text": "\\begin{aligned}(a,b]^c&=(-\\infty,a]\\sqcup(b,+\\infty),\\\\(-\\infty,b]^c&=(b,+\\infty),\\\\(a,+\\infty)^c&=(-\\infty,a],\\\\\\varnothing^c&=\\mathbb R,\\qquad\\mathbb R^c=\\varnothing.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "在 ℝ² 中，相应对象是两个区间的笛卡尔积（Cartesian product），也就是矩形；在 ℝᵈ 中则是有限个区间的乘积。允许空集、半无限区间和整个坐标轴，才能包含全集并处理补集。"
+      },
+      {
+        "type": "math",
+        "text": "I_1\\times I_2,\\qquad (I_1\\times I_2)\\cap(J_1\\times J_2)=(I_1\\cap J_1)\\times(I_2\\cap J_2)."
+      },
+      {
+        "type": "supplement",
+        "text": "补充说明：矩形补集可写成 (I₁ᶜ×ℝ)⨆(I₁×I₂ᶜ)，再将一维补集分解为有限个不交区间。它们的乘积仍属于上述矩形族。高维逐坐标做同样的分割。本段补全课上留给听众的验证，没有加入新例题。"
+      }
+    ]
+  },
+  {
+    "id": "algebra",
+    "lecture": 2,
+    "title": "代数：补集本身留在集合族内",
+    "term": "Algebra of sets",
+    "source": {
+      "file": "lec2字幕.srt",
+      "start": "00:09:12",
+      "end": "00:12:12"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "集合族 𝒜⊂𝒫(Ω) 称为代数（algebra），若 Ω∈𝒜，且它对有限交和补集封闭。"
+      },
+      {
+        "type": "math",
+        "text": "A,B\\in\\mathcal A\\Rightarrow A\\cap B\\in\\mathcal A,\\qquad A\\in\\mathcal A\\Rightarrow A^c\\in\\mathcal A."
+      },
+      {
+        "type": "text",
+        "text": "相比半代数，这里要求补集直接属于集合族，而不只是由族中若干集合拼成。因此每个代数都是半代数：补集可以视为只有一个部分的不交并。"
+      },
+      {
+        "type": "supplement",
+        "text": "补充说明：∅=Ωᶜ∈𝒜；由 De Morgan 公式，代数也对有限并封闭，对差集封闭。这些运算是后面分割集合的基础。"
+      },
+      {
+        "type": "math",
+        "text": "A\\cup B=(A^c\\cap B^c)^c\\in\\mathcal A,\\qquad A\\setminus B=A\\cap B^c\\in\\mathcal A."
+      }
+    ]
+  },
+  {
+    "id": "sigma-algebra",
+    "lecture": 2,
+    "title": "σ-代数与可数运算",
+    "term": "σ-algebra",
+    "source": {
+      "file": "lec2字幕.srt",
+      "start": "00:12:12",
+      "end": "00:14:17"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "集合族 ℱ⊂𝒫(Ω) 称为 σ-代数（σ-algebra），若 Ω∈ℱ，且它对可数交与补集封闭。"
+      },
+      {
+        "type": "math",
+        "text": "A_j\\in\\mathcal F\\ (j\\ge1)\\Rightarrow\\bigcap_{j=1}^{\\infty}A_j\\in\\mathcal F,\\qquad A\\in\\mathcal F\\Rightarrow A^c\\in\\mathcal F."
+      },
+      {
+        "type": "text",
+        "text": "由 De Morgan 公式，这等价于对可数并和补集封闭。用 Ω 补足可数序列，可以从可数交封闭推出有限交封闭。"
+      },
+      {
+        "type": "math",
+        "text": "\\bigcup_{j=1}^{\\infty}A_j=\\left(\\bigcap_{j=1}^{\\infty}A_j^c\\right)^c,\\qquad \\sigma\\text{-代数}\\Rightarrow\\text{代数}\\Rightarrow\\text{半代数}."
+      },
+      {
+        "type": "text",
+        "text": "σ-代数比代数的要求强，因为它允许无限但可数的运算。这与测度的可数可加性相配合。定义并没有要求对任意不可数并封闭。"
+      },
+      {
+        "type": "note",
+        "text": "00:12:31—00:13:39 的字幕里多次出现 semi-algebra，但这里讲的是 σ-algebra；根据可数交条件统一更正。"
+      }
+    ]
+  },
+  {
+    "id": "intersections",
+    "lecture": 2,
+    "title": "任意代数族的交仍是代数",
+    "term": "Intersection of classes",
+    "source": {
+      "file": "lec2字幕.srt",
+      "start": "00:14:17",
+      "end": "00:21:02"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "同一全集上的任意非空代数族的交仍是代数；同一全集上的任意非空 σ-代数族的交仍是 σ-代数。指标集不必可数。"
+      },
+      {
+        "type": "math",
+        "text": "\\mathcal A=\\bigcap_{\\alpha\\in I}\\mathcal A_\\alpha."
+      },
+      {
+        "type": "heading",
+        "text": "证明"
+      },
+      {
+        "type": "text",
+        "text": "每个 𝒜α 都含 Ω，因此 Ω 属于交。若 A,B 属于交，它们就属于每个 𝒜α；在每个代数内 A∩B 仍属于它，所以 A∩B 属于交。同理 Aᶜ 属于每个 𝒜α，于是属于交。这验证了代数的三个条件。"
+      },
+      {
+        "type": "text",
+        "text": "对于 σ-代数，把有限交的论证换为可数交：若每个 Aⱼ 都属于总交，则对每个固定 α，所有 Aⱼ 都属于 𝒜α，其可数交也属于 𝒜α。因此可数交属于总交。全集与补集的论证不变。"
+      },
+      {
+        "type": "text",
+        "text": "注意有两种交：外层是在许多“集合族”之间取交；内层是在 Ω 的子集之间取交。外层的指标集 I 可以不可数，不影响内层的可数封闭性质。"
+      }
+    ]
+  },
+  {
+    "id": "generated",
+    "lecture": 2,
+    "title": "由集合族生成的代数与σ-代数",
+    "term": "Generated algebra; generated σ-algebra",
+    "source": {
+      "file": "lec2字幕.srt",
+      "start": "00:21:02",
+      "end": "00:29:49"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "给定任意集合族 𝒞⊂𝒫(Ω)，存在包含 𝒞 的最小代数 𝒜(𝒞)，也存在包含 𝒞 的最小 σ-代数 ℱ(𝒞)，后者也常记为 σ(𝒞)。"
+      },
+      {
+        "type": "math",
+        "text": "\\mathcal A(\\mathcal C)=\\bigcap_{\\substack{\\mathcal B\\supset\\mathcal C\\\\\\mathcal B\\text{ is an algebra}}}\\mathcal B,\\qquad \\mathcal F(\\mathcal C)=\\sigma(\\mathcal C)=\\bigcap_{\\substack{\\mathcal B\\supset\\mathcal C\\\\\\mathcal B\\text{ is a }\\sigma\\text{-algebra}}}\\mathcal B."
+      },
+      {
+        "type": "heading",
+        "text": "存在性与最小性"
+      },
+      {
+        "type": "text",
+        "text": "𝒫(Ω) 本身是代数也是 σ-代数，并包含 𝒞，所以参与取交的族非空。由上一节，交仍是相应类型的集合族。每个参与取交的族都包含 𝒞，因此交也包含 𝒞。任何包含 𝒞 的代数都参与了这个交，所以交包含于它；这正是“最小”的含义。σ-代数同理。"
+      },
+      {
+        "type": "text",
+        "text": "“生成”（generated）表示从给定的集合族出发，把封闭条件所要求的集合都纳入。定义不要求 𝒞 已经满足任何封闭性质。"
+      },
+      {
+        "type": "text",
+        "text": "若从半代数出发，生成代数的元素有有限不交分解；下一节将证明这一点。但不能把生成的 σ-代数简单理解为“半代数元素的一次可数并”。课程强调：后面的延拓证明必须使用一般论证，不能假定每个元素都有那样的显式表示。"
+      }
+    ]
+  },
+  {
+    "id": "finite-decomposition",
+    "lecture": 2,
+    "title": "生成代数的有限不交表示",
+    "term": "Finite disjoint decomposition",
+    "source": {
+      "file": "lec2字幕.srt",
+      "start": "00:29:49",
+      "end": "00:43:04"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "若 𝒮 是半代数，则 𝒜(𝒮) 恰由有限个 𝒮 中集合的不交并组成。"
+      },
+      {
+        "type": "math",
+        "text": "\\mathcal A(\\mathcal S)=\\mathcal B:=\\left\\{\\bigsqcup_{j=1}^{n}E_j:E_j\\in\\mathcal S,\\ n<\\infty\\right\\}."
+      },
+      {
+        "type": "heading",
+        "text": "证明：一个方向与全集"
+      },
+      {
+        "type": "text",
+        "text": "代数对有限并封闭，所以任意这样的有限不交并都属于 𝒜(𝒮)，即 ℬ⊂𝒜(𝒮)。反向只需证明 ℬ 是包含 𝒮 的代数，利用最小性便得 𝒜(𝒮)⊂ℬ。每个 E∈𝒮 都是只有一项的并，故 𝒮⊂ℬ。特别地 Ω∈ℬ。"
+      },
+      {
+        "type": "heading",
+        "text": "证明：交封闭"
+      },
+      {
+        "type": "math",
+        "text": "A=\\bigsqcup_{j=1}^{n}E_j,\\quad B=\\bigsqcup_{k=1}^{m}F_k\\quad\\Longrightarrow\\quad A\\cap B=\\bigsqcup_{j=1}^{n}\\bigsqcup_{k=1}^{m}(E_j\\cap F_k)."
+      },
+      {
+        "type": "text",
+        "text": "每个 Eⱼ∩Fₖ 属于 𝒮，因为半代数对交封闭。不同的下标对对应的交两两不交：若 j 不同，就落在两个不交的 E 中；若 k 不同，就落在两个不交的 F 中。因此 A∩B∈ℬ。下一节验证补集。"
+      }
+    ]
+  },
+  {
+    "id": "complement-decomposition",
+    "lecture": 2,
+    "title": "有限不交表示的补集",
+    "term": "Complement decomposition",
+    "source": {
+      "file": "lec2字幕.srt",
+      "start": "00:43:04",
+      "end": "00:49:18"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "上述 ℬ 对补集封闭，因而确实是代数；有限不交表示定理成立。"
+      },
+      {
+        "type": "heading",
+        "text": "证明"
+      },
+      {
+        "type": "text",
+        "text": "设 A=⨆ᵢ₌₁ⁿEᵢ。半代数条件允许把每个 Eᵢᶜ 写成有限不交并，记为 Eᵢᶜ=⨆ₖ₌₁ˡⁱFᵢₖ，其中 Fᵢₖ∈𝒮。先用 De Morgan 公式，再把有限交对有限并分配。"
+      },
+      {
+        "type": "math",
+        "text": "\\begin{aligned}A^c&=\\bigcap_{i=1}^{n}E_i^c=\\bigcap_{i=1}^{n}\\left(\\bigsqcup_{k_i=1}^{l_i}F_{i k_i}\\right)\\\\&=\\bigsqcup_{k_1=1}^{l_1}\\cdots\\bigsqcup_{k_n=1}^{l_n}\\left(F_{1k_1}\\cap\\cdots\\cap F_{nk_n}\\right).\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "每个交属于 𝒮。两个不同下标组至少在某个位置 i 上不同；该位置的 Fᵢₖ 两两不交，故这两个多重交不相交。项数有限，所以 Aᶜ∈ℬ。"
+      },
+      {
+        "type": "text",
+        "text": "至此 ℬ 包含 Ω、对交与补集封闭，是包含 𝒮 的代数。由最小性与前一节的反向包含，ℬ=𝒜(𝒮)。这个表示定理会直接给出延拓函数的候选公式。"
+      }
+    ]
+  },
+  {
+    "id": "additivity",
+    "lecture": 2,
+    "title": "有限可加集合函数",
+    "term": "Additive set function",
+    "source": {
+      "file": "lec2字幕.srt",
+      "start": "00:49:18",
+      "end": "00:54:39"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "设 ∅∈𝒞⊂𝒫(Ω)，μ:𝒞→[0,+∞]。若 μ(∅)=0，且任意有限个两两不交的 Eⱼ∈𝒞 在其并 E 也属于 𝒞 时满足 μ(E)=Σⱼμ(Eⱼ)，则称 μ 为可加的（additive）。"
+      },
+      {
+        "type": "math",
+        "text": "E=\\bigsqcup_{j=1}^{n}E_j\\in\\mathcal C,\\ E_j\\in\\mathcal C\\quad\\Longrightarrow\\quad \\mu(E)=\\sum_{j=1}^{n}\\mu(E_j)."
+      },
+      {
+        "type": "text",
+        "text": "必须保留“E 也属于 𝒞”这个条件。一般集合族未必对有限并封闭；若并不在定义域内，μ(E) 没有意义。代数是自然的定义域，但本定义也用于半代数。"
+      },
+      {
+        "type": "statement",
+        "text": "若仅假定上述有限分解等式，且存在 A∈𝒞 满足 μ(A)<∞，则 μ(∅)=0 自动成立。"
+      },
+      {
+        "type": "heading",
+        "text": "证明"
+      },
+      {
+        "type": "math",
+        "text": "A=A\\sqcup\\varnothing\\quad\\Longrightarrow\\quad\\mu(A)=\\mu(A)+\\mu(\\varnothing)\\quad\\Longrightarrow\\quad\\mu(\\varnothing)=0."
+      },
+      {
+        "type": "text",
+        "text": "最后一步使用 μ(A) 有限。如果所有值都是 +∞，不能由 ∞=∞+μ(∅) 消去 ∞，因此定义仍单独列出空集取零。"
+      }
+    ]
+  },
+  {
+    "id": "difference",
+    "lecture": 2,
+    "title": "单调性与差集公式",
+    "term": "Monotonicity; set difference",
+    "source": {
+      "file": "lec2字幕.srt",
+      "start": "00:54:39",
+      "end": "00:58:46"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "设 μ 可加，E⊂F，且 E、F、F∖E 均属于定义域。则 μ(E)≤μ(F)；若 μ(E)<∞，还可写 μ(F∖E)=μ(F)−μ(E)。"
+      },
+      {
+        "type": "math",
+        "text": "F=E\\sqcup(F\\setminus E),\\qquad \\mu(F)=\\mu(E)+\\mu(F\\setminus E)."
+      },
+      {
+        "type": "heading",
+        "text": "证明"
+      },
+      {
+        "type": "text",
+        "text": "两部分不交，可加性给出等式。若 μ(E)=+∞，由非负性得 μ(F)=+∞，单调性成立。若 μ(E) 有限，则可以移项得到差集公式；当 μ(F)=+∞ 时，∞ 减去有限数仍为 ∞。这也给出单调性。"
+      },
+      {
+        "type": "text",
+        "text": "在代数上，差集总在定义域内；一般集合族上必须额外确认这一点。后面的从上连续性证明也必须先找到有限测度的集合，才能合法做减法。"
+      }
+    ]
+  },
+  {
+    "id": "discrete",
+    "lecture": 2,
+    "title": "课程例子：离散测度",
+    "term": "Discrete measure; indicator function",
+    "source": {
+      "file": "lec2字幕.srt",
+      "start": "00:58:46",
+      "end": "01:00:46"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "设 xⱼ∈Ω，pⱼ≥0（有限实数）。把点 xⱼ 上的权重 pⱼ 相加，定义离散集合函数 μ(A)=Σⱼpⱼ1_A(xⱼ)。它是可加的。"
+      },
+      {
+        "type": "math",
+        "text": "\\mu(A)=\\sum_{j\\ge1}p_j\\mathbf1_A(x_j)=\\sum_{\\{j:x_j\\in A\\}}p_j,\\qquad \\mathbf1_A(x)=\\begin{cases}1,&x\\in A,\\\\0,&x\\notin A.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "1_A 是指示函数（indicator function）：点在集合内就计入权重，在集合外就不计入。xⱼ 不必互不相同；若点重复，相关权重都会计入。"
+      },
+      {
+        "type": "supplement",
+        "text": "补充说明：对两两不交的 A₁,…,Aₙ，每个点至多属于其中一个集合，因此 1_{⨆Aₖ}(xⱼ)=Σₖ1_{Aₖ}(xⱼ)。乘 pⱼ 并对 j 求和，有限求和与非负项级数交换后得到可加性；空集的各项全为零。这补全课上要求自行检查的验证。"
+      }
+    ]
+  },
+  {
+    "id": "countable-additivity",
+    "lecture": 2,
+    "title": "可数可加性",
+    "term": "σ-additivity",
+    "source": {
+      "file": "lec2字幕.srt",
+      "start": "01:00:46",
+      "end": "01:03:22"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "设 ∅∈𝒞，μ:𝒞→[0,+∞]。若 μ(∅)=0，且任意可数个两两不交的 Aⱼ∈𝒞，在 E=⨆ⱼAⱼ 也属于 𝒞 时满足 μ(E)=Σⱼμ(Aⱼ)，则称 μ 为可数可加的（σ-additive）。"
+      },
+      {
+        "type": "math",
+        "text": "E=\\bigsqcup_{j=1}^{\\infty}A_j\\in\\mathcal C\\quad\\Longrightarrow\\quad \\mu(E)=\\sum_{j=1}^{\\infty}\\mu(A_j)."
+      },
+      {
+        "type": "text",
+        "text": "右边的值由非负部分和的极限定义，允许 +∞，不会发生正负项抵消的问题。补入空集可知，可数可加必然推出有限可加。"
+      },
+      {
+        "type": "text",
+        "text": "即使 𝒞 是半代数或代数，也可以讨论可数可加性；此时等式只适用于并仍在 𝒞 中的序列。集合族的可数封闭性与集合函数的可数可加性是两个不同要求。"
+      }
+    ]
+  },
+  {
+    "id": "counterexample",
+    "lecture": 2,
+    "title": "有限可加不推出可数可加",
+    "term": "An additive but not σ-additive function",
+    "source": {
+      "file": "lec2字幕.srt",
+      "start": "01:03:22",
+      "end": "01:08:47"
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "text": "课程取 Ω=(0,1)，考虑 ∅ 及 (a,b]（0≤a<b<1）。对空集赋值零，对这些区间作如下规定。"
+      },
+      {
+        "type": "math",
+        "text": "\\mu((a,b])=\\begin{cases}+\\infty,&a=0,\\\\b-a,&a>0.\\end{cases}\\qquad\\mu(\\varnothing)=0."
+      },
+      {
+        "type": "statement",
+        "text": "这个集合函数在上述集合族上有限可加，但不具有可数可加性。"
+      },
+      {
+        "type": "heading",
+        "text": "有限可加的原因"
+      },
+      {
+        "type": "text",
+        "text": "若 (a,b] 分成有限个不交的同类区间，当 a>0 时每段都按长度计，长度之和仍为 b−a。当 a=0 时，有限分解中必有一段左端点为零，否则有限个正左端点有正的最小值，无法覆盖靠近零的点。因此右边有一项 +∞，与左边一致。"
+      },
+      {
+        "type": "heading",
+        "text": "可数可加失败"
+      },
+      {
+        "type": "text",
+        "text": "取严格递减的正数序列 xⱼ↓0，且 x₁=1/2。各段 (xⱼ₊₁,xⱼ] 两两不交，其并为 (0,1/2]。每段左端点都为正，所以每段 μ 都等于长度。"
+      },
+      {
+        "type": "math",
+        "text": "(0,\\tfrac12]=\\bigsqcup_{j=1}^{\\infty}(x_{j+1},x_j],\\qquad \\sum_{j=1}^{\\infty}\\mu((x_{j+1},x_j])=\\lim_{n\\to\\infty}(x_1-x_{n+1})=\\tfrac12."
+      },
+      {
+        "type": "text",
+        "text": "但 μ((0,1/2])=+∞，故不满足可数可加等式。有限段必有触及零的区间，无限段却可以只让端点趋于零；这正是有限与可数分解的区别。"
+      }
+    ]
+  },
+  {
+    "id": "continuity",
+    "lecture": 3,
+    "title": "从下连续与从上连续",
+    "term": "Continuity from below / above",
+    "source": {
+      "file": "lec3字幕版.srt",
+      "start": "00:00:05",
+      "end": "00:05:18"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "若 Eₙ⊂Eₙ₊₁ 且 ⋃ₙEₙ=E，记 Eₙ↑E。集合函数 μ 在 E 从下连续，指任意定义域内这样的序列都满足 μ(Eₙ)→μ(E)。"
+      },
+      {
+        "type": "math",
+        "text": "E_n\\uparrow E\\quad\\Longleftrightarrow\\quad E_n\\subset E_{n+1},\\ \\bigcup_{n=1}^{\\infty}E_n=E;\\qquad \\mu(E_n)\\longrightarrow\\mu(E)."
+      },
+      {
+        "type": "statement",
+        "text": "若 Eₙ⊃Eₙ₊₁ 且 ⋂ₙEₙ=E，记 Eₙ↓E。μ 在 E 从上连续，指任意这样的序列，在存在 n₀ 使 μ(Eₙ₀)<∞ 时，满足 μ(Eₙ)→μ(E)。"
+      },
+      {
+        "type": "math",
+        "text": "E_n\\downarrow E\\quad\\Longleftrightarrow\\quad E_n\\supset E_{n+1},\\ \\bigcap_{n=1}^{\\infty}E_n=E;\\qquad \\mu(E_{n_0})<\\infty\\ \\Longrightarrow\\ \\mu(E_n)\\longrightarrow\\mu(E)."
+      },
+      {
+        "type": "text",
+        "text": "Eₙ 和 E 都必须属于定义域。↑、↓ 表示集合的包含关系与并、交极限，不是点列的数值极限。对可加函数，由单调性可知，从下的数值序列递增，从上的数值序列递减。从上连续的有限条件是定义的一部分。"
+      }
+    ]
+  },
+  {
+    "id": "finite-upper",
+    "lecture": 3,
+    "title": "为什么从上连续需要有限条件",
+    "term": "The finiteness condition",
+    "source": {
+      "file": "lec3字幕版.srt",
+      "start": "00:05:18",
+      "end": "00:07:17"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "不能在从上连续的定义中删除“某一项测度有限”的条件。"
+      },
+      {
+        "type": "text",
+        "text": "课程使用半无限区间 Eₙ=(n,+∞) 说明问题。它们递减，且没有任何实数属于全部 Eₙ，所以交为空。若按长度计，每个 Eₙ 的测度都是 +∞。"
+      },
+      {
+        "type": "math",
+        "text": "E_n=(n,+\\infty)\\downarrow\\varnothing,\\qquad \\lambda(E_n)=+\\infty\\quad\\text{for every }n,\\qquad\\lambda(\\varnothing)=0."
+      },
+      {
+        "type": "text",
+        "text": "于是 μ(Eₙ) 不可能趋于零。这不会违反带有限条件的从上连续性，因为该序列根本不满足有限条件。若递减序列某项有限，其后各项由单调性都有限，才能使用差集公式。"
+      },
+      {
+        "type": "note",
+        "text": "字幕没有显示半无限区间在 n 处的端点开闭板书；这里选用 (n,+∞)，换成 [n,+∞) 对本例结论没有影响。"
+      }
+    ]
+  },
+  {
+    "id": "continuity-lemma",
+    "lecture": 3,
+    "title": "可数可加性与连续性的关系",
+    "term": "Continuity criterion",
+    "source": {
+      "file": "lec3字幕版.srt",
+      "start": "00:07:17",
+      "end": "00:10:33"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "设 𝒜 是代数，μ:𝒜→[0,+∞] 有限可加。则：①若 μ 可数可加，它在每个 E∈𝒜 从下、从上连续；②若 μ 在每个 E∈𝒜 从下连续，它可数可加；③若 μ(Ω)<∞ 且 μ 在 ∅ 从上连续，它可数可加。"
+      },
+      {
+        "type": "text",
+        "text": "从上连续始终按照上一节带有限条件的定义理解。第三条里的“μ 有限”按课上证明取 μ(Ω)<∞，于是所有集合的测度都有限。"
+      },
+      {
+        "type": "text",
+        "text": "后面三节依次证明这三条。所有证明都依赖“定义域是代数”：差集、有限并必须留在定义域中，才能代入 μ。不要在尚未证明可数可加时，直接对无限并使用可加等式。"
+      }
+    ]
+  },
+  {
+    "id": "below-proof",
+    "lecture": 3,
+    "title": "可数可加推出从下连续",
+    "term": "Disjoint increments",
+    "source": {
+      "file": "lec3字幕版.srt",
+      "start": "00:10:33",
+      "end": "00:16:02"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "在上述条件下，可数可加性推出从下连续性。"
+      },
+      {
+        "type": "heading",
+        "text": "证明"
+      },
+      {
+        "type": "text",
+        "text": "取 Eₙ↑E。将递增集合变成不交的新增部分：F₁=E₁，Fₙ=Eₙ∖Eₙ₋₁（n≥2）。由于 𝒜 是代数，所有 Fₙ∈𝒜；它们两两不交，且前 n 个并为 Eₙ，全部并为 E。"
+      },
+      {
+        "type": "math",
+        "text": "E_n=\\bigsqcup_{k=1}^{n}F_k,\\qquad E=\\bigsqcup_{k=1}^{\\infty}F_k."
+      },
+      {
+        "type": "text",
+        "text": "对全部 Fₖ 使用可数可加，对前 n 项使用有限可加，得到："
+      },
+      {
+        "type": "math",
+        "text": "\\mu(E)=\\sum_{k=1}^{\\infty}\\mu(F_k)=\\lim_{n\\to\\infty}\\sum_{k=1}^{n}\\mu(F_k)=\\lim_{n\\to\\infty}\\mu(E_n)."
+      },
+      {
+        "type": "text",
+        "text": "非负级数的值就是部分和的极限，所以即使 μ(E)=+∞ 也成立。E 任意，故 μ 在所有定义域内集合从下连续。"
+      }
+    ]
+  },
+  {
+    "id": "above-proof",
+    "lecture": 3,
+    "title": "可数可加推出从上连续",
+    "term": "Taking differences inside a finite set",
+    "source": {
+      "file": "lec3字幕版.srt",
+      "start": "00:16:02",
+      "end": "00:24:16"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "可数可加性也推出带有限条件的从上连续性。"
+      },
+      {
+        "type": "heading",
+        "text": "证明"
+      },
+      {
+        "type": "text",
+        "text": "取 Eₙ↓E，选择 n₀ 使 μ(Eₙ₀)<∞。从这个有限集合内取补差，定义 Gₖ=Eₙ₀∖Eₙ₀₊ₖ。Gₖ∈𝒜，且 Gₖ↑Eₙ₀∖E。由已证从下连续性，μ(Gₖ)↑μ(Eₙ₀∖E)。"
+      },
+      {
+        "type": "math",
+        "text": "\\begin{aligned}\\mu(E_{n_0})-\\mu(E)&=\\mu(E_{n_0}\\setminus E)\\\\&=\\lim_{k\\to\\infty}\\mu(E_{n_0}\\setminus E_{n_0+k})\\\\&=\\lim_{k\\to\\infty}\\bigl[\\mu(E_{n_0})-\\mu(E_{n_0+k})\\bigr].\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "E 及 Eₙ₀₊ₖ 都包含于有限测度的 Eₙ₀，所以所有减法合法。消去有限常数 μ(Eₙ₀)，得 μ(Eₙ₀₊ₖ)→μ(E)。有限个初始项不影响极限，故 μ(Eₙ)→μ(E)。"
+      },
+      {
+        "type": "text",
+        "text": "不是在整个 Ω 中取补集，因为 Ω 可能测度无穷；选 Eₙ₀ 正是为了避免 ∞−∞。"
+      }
+    ]
+  },
+  {
+    "id": "below-converse",
+    "lecture": 3,
+    "title": "从下连续推出可数可加",
+    "term": "Partial unions",
+    "source": {
+      "file": "lec3字幕版.srt",
+      "start": "00:24:16",
+      "end": "00:30:13"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "有限可加性加上从下连续性，推出可数可加性。"
+      },
+      {
+        "type": "heading",
+        "text": "证明"
+      },
+      {
+        "type": "text",
+        "text": "设 E=⨆ₖ≥₁Eₖ，且 E、Eₖ∈𝒜。令 Fₙ=⨆ₖ₌₁ⁿEₖ。有限并在代数内，且 Fₙ↑E。有限可加性给 μ(Fₙ)=Σₖ₌₁ⁿμ(Eₖ)。"
+      },
+      {
+        "type": "math",
+        "text": "\\mu(E)=\\lim_{n\\to\\infty}\\mu(F_n)=\\lim_{n\\to\\infty}\\sum_{k=1}^{n}\\mu(E_k)=\\sum_{k=1}^{\\infty}\\mu(E_k)."
+      },
+      {
+        "type": "text",
+        "text": "课程先指出，不用连续性也能由 Fₙ⊂E 得到 Σₖμ(Eₖ)≤μ(E)。真正需要连续性的是保证部分并的测度极限等于 μ(E)，从而获得等式。"
+      }
+    ]
+  },
+  {
+    "id": "empty-converse",
+    "lecture": 3,
+    "title": "有限情形下只需空集处连续",
+    "term": "Continuity at the empty set",
+    "source": {
+      "file": "lec3字幕版.srt",
+      "start": "00:30:13",
+      "end": "00:35:08"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "若 μ 有限可加、μ(Ω)<∞，且在 ∅ 从上连续，则 μ 可数可加。"
+      },
+      {
+        "type": "heading",
+        "text": "证明"
+      },
+      {
+        "type": "text",
+        "text": "设 E=⨆ₖ≥₁Eₖ∈𝒜。取尾部 Fₙ=⋃ₖ≥ₙEₖ。不能因为这是可数并就直接说它在代数内；应该使用下面的有限差表示。"
+      },
+      {
+        "type": "math",
+        "text": "F_n=E\\setminus\\bigcup_{k=1}^{n-1}E_k\\in\\mathcal A,\\qquad F_n\\downarrow\\varnothing."
+      },
+      {
+        "type": "text",
+        "text": "因 Eₖ 不交，每个点至多属于一个 Eₖ，所以不可能永远留在尾部。又 μ(F₁)≤μ(Ω)<∞，空集处的从上连续性给 μ(Fₙ)→0。"
+      },
+      {
+        "type": "math",
+        "text": "\\mu(E)=\\sum_{k=1}^{n}\\mu(E_k)+\\mu(F_{n+1})\\quad\\Longrightarrow\\quad \\mu(E)=\\sum_{k=1}^{\\infty}\\mu(E_k)."
+      },
+      {
+        "type": "text",
+        "text": "等式先由有限可加得到，再让 n→∞。这里有限性使从上连续条件确实适用于尾部。"
+      }
+    ]
+  },
+  {
+    "id": "infinite-counterexample",
+    "lecture": 3,
+    "title": "有限性假设不能省略",
+    "term": "Why finiteness matters",
+    "source": {
+      "file": "lec3字幕版.srt",
+      "start": "00:35:08",
+      "end": "00:40:29"
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "text": "课程再次考虑第二讲的区间函数：左端点为零的区间取 +∞，正左端点的区间取长度。把它按有限不交分解延拓到这些区间的有限并上。"
+      },
+      {
+        "type": "statement",
+        "text": "这个函数仍不具有可数可加性，但满足定义中带有限条件的空集处从上连续性。因此不能删除上一条判别法里的有限性假设。"
+      },
+      {
+        "type": "text",
+        "text": "设 Eₙ↓∅，各 Eₙ 是有限个半开区间的不交并。若每个 Eₙ 最左边区间都从零开始，则每项 μ(Eₙ)=+∞，根本不满足从上连续性要求检查的有限条件。"
+      },
+      {
+        "type": "text",
+        "text": "若某个 Eₙ₀ 的测度有限，则它的所有非空区间左端点都大于零。从 n₀ 开始，每个 Eₙ⊂Eₙ₀ 都按通常长度计量。这时长度趋于零，但课程把这一事实的详细证明留待后续对长度测度的构造。"
+      },
+      {
+        "type": "note",
+        "text": "本讲没有给出上述长度连续性的完整证明，讲义保留老师的待证标记，不用未提供的后续内容补成“本讲已证”。字幕写 Ω=(0,1) 且 b<1；因此有限区间并族未包含整个 Ω。若要把该例严格用于“代数上的判别法”，可把右端点 1 处相应区间改为 (a,1) 并纳入 Ω；这是端点补全，不改变 (0,1/2] 的反例。"
+      }
+    ]
+  },
+  {
+    "id": "extension-statement",
+    "lecture": 3,
+    "title": "半代数到生成代数的延拓",
+    "term": "Extension from a semi-algebra",
+    "source": {
+      "file": "lec3字幕版.srt",
+      "start": "00:40:29",
+      "end": "00:48:58"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "设 𝒮 是半代数，μ:𝒮→[0,+∞] 有限可加。则存在唯一的有限可加函数 ν:𝒜(𝒮)→[0,+∞]，使 ν 在 𝒮 上等于 μ。"
+      },
+      {
+        "type": "math",
+        "text": "A=\\bigsqcup_{j=1}^{n}E_j,\\ E_j\\in\\mathcal S\\quad\\Longrightarrow\\quad \\nu(A):=\\sum_{j=1}^{n}\\mu(E_j)."
+      },
+      {
+        "type": "text",
+        "text": "第二讲已证明每个 A∈𝒜(𝒮) 都有这样的表示。如果要求 ν 可加且延拓 μ，这个公式就被强制确定了。不过同一 A 的分解可能不唯一，因此首先必须证明不同分解给出相同数值，也就是良定义（well-defined）。"
+      },
+      {
+        "type": "text",
+        "text": "此处 μ 是原函数，ν 是延拓后的函数；字幕多次将 mu、nu 误识别为同一个词，以下按定义域区分。良定义、可加性、延拓性质和唯一性将依次验证。"
+      }
+    ]
+  },
+  {
+    "id": "well-defined",
+    "lecture": 3,
+    "title": "交叉细分保证良定义",
+    "term": "Common refinement",
+    "source": {
+      "file": "lec3字幕版.srt",
+      "start": "00:48:58",
+      "end": "00:53:10"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "ν 的候选公式与 A 的有限不交分解方式无关。"
+      },
+      {
+        "type": "heading",
+        "text": "证明"
+      },
+      {
+        "type": "text",
+        "text": "设 A=⨆ⱼ₌₁ⁿEⱼ=⨆ₖ₌₁ᵐFₖ，两种分解均由半代数元素组成。用交 Eⱼ∩Fₖ 同时细分两者。每个交属于 𝒮，每行和每列都是不交分解。"
+      },
+      {
+        "type": "math",
+        "text": "E_j=\\bigsqcup_{k=1}^{m}(E_j\\cap F_k),\\qquad F_k=\\bigsqcup_{j=1}^{n}(E_j\\cap F_k)."
+      },
+      {
+        "type": "text",
+        "text": "由于被分解的 Eⱼ、Fₖ 本身也在半代数内，可以使用 μ 在半代数上的有限可加性。"
+      },
+      {
+        "type": "math",
+        "text": "\\sum_{j=1}^{n}\\mu(E_j)=\\sum_{j=1}^{n}\\sum_{k=1}^{m}\\mu(E_j\\cap F_k)=\\sum_{k=1}^{m}\\sum_{j=1}^{n}\\mu(E_j\\cap F_k)=\\sum_{k=1}^{m}\\mu(F_k)."
+      },
+      {
+        "type": "text",
+        "text": "非负的有限求和即使含 +∞ 也可交换次序，不需要做减法。因此两种分解给出相同值，ν 良定义。"
+      }
+    ]
+  },
+  {
+    "id": "extension-properties",
+    "lecture": 3,
+    "title": "可加性、延拓性质与唯一性",
+    "term": "Additivity and uniqueness",
+    "source": {
+      "file": "lec3字幕版.srt",
+      "start": "00:53:10",
+      "end": "01:00:54"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "定义出的 ν 有限可加，在 𝒮 上等于 μ，而且是唯一满足这两点的延拓。"
+      },
+      {
+        "type": "heading",
+        "text": "可加性"
+      },
+      {
+        "type": "text",
+        "text": "设 A、B∈𝒜(𝒮) 且 A∩B=∅，分别把它们分成 Eⱼ 与 Fₖ。因 A、B 不交，两个分解拼起来仍是半代数元素的不交分解。直接用 ν 的定义得："
+      },
+      {
+        "type": "math",
+        "text": "\\nu(A\\sqcup B)=\\sum_j\\mu(E_j)+\\sum_k\\mu(F_k)=\\nu(A)+\\nu(B)."
+      },
+      {
+        "type": "text",
+        "text": "迭代得到有限可加；空集用单项分解得 ν(∅)=μ(∅)=0。"
+      },
+      {
+        "type": "heading",
+        "text": "延拓性质"
+      },
+      {
+        "type": "text",
+        "text": "若 A∈𝒮，用只有一项的表示 A=A，得到 ν(A)=μ(A)。"
+      },
+      {
+        "type": "heading",
+        "text": "唯一性"
+      },
+      {
+        "type": "text",
+        "text": "若 ν₁、ν₂ 都是有限可加且在 𝒮 上等于 μ，对任意 A=⨆ⱼEⱼ∈𝒜(𝒮)，两者由有限可加性都必须等于 Σⱼμ(Eⱼ)。所以在整个生成代数上相等。"
+      },
+      {
+        "type": "math",
+        "text": "\\nu_1(A)=\\sum_j\\nu_1(E_j)=\\sum_j\\mu(E_j)=\\sum_j\\nu_2(E_j)=\\nu_2(A)."
+      }
+    ]
+  },
+  {
+    "id": "preserve-sigma",
+    "lecture": 3,
+    "title": "延拓保留可数可加性",
+    "term": "Preserving σ-additivity",
+    "source": {
+      "file": "lec3字幕版.srt",
+      "start": "01:00:54",
+      "end": "01:12:07"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "若原函数 μ 在半代数 𝒮 上可数可加，则刚构造的延拓 ν 在 𝒜(𝒮) 上也可数可加。"
+      },
+      {
+        "type": "heading",
+        "text": "证明"
+      },
+      {
+        "type": "text",
+        "text": "设 A=⨆ₖ≥₁Aₖ，A、Aₖ∈𝒜(𝒮)。用有限不交表示写 A=⨆ⱼ₌₁ⁿEⱼ，Aₖ=⨆ₗ₌₁ᵐᵏEₖₗ。全部 E 属于 𝒮。"
+      },
+      {
+        "type": "math",
+        "text": "E_j=\\bigsqcup_{k=1}^{\\infty}\\bigsqcup_{l=1}^{m_k}(E_j\\cap E_{kl})."
+      },
+      {
+        "type": "text",
+        "text": "右边是可数不交族，交仍在半代数；左边 Eⱼ 也在半代数，所以可以使用原函数 μ 的可数可加性。"
+      },
+      {
+        "type": "math",
+        "text": "\\nu(A)=\\sum_{j=1}^{n}\\mu(E_j)=\\sum_{j=1}^{n}\\sum_{k=1}^{\\infty}\\sum_{l=1}^{m_k}\\mu(E_j\\cap E_{kl})."
+      },
+      {
+        "type": "text",
+        "text": "对每个固定 k,l，Eₖₗ⊂A，因此 Eₖₗ=⨆ⱼ₌₁ⁿ(Eₖₗ∩Eⱼ)。有限可加性给 Σⱼμ(Eⱼ∩Eₖₗ)=μ(Eₖₗ)。交换非负求和顺序再合并即可。"
+      },
+      {
+        "type": "math",
+        "text": "\\nu(A)=\\sum_{k=1}^{\\infty}\\sum_{l=1}^{m_k}\\sum_{j=1}^{n}\\mu(E_j\\cap E_{kl})=\\sum_{k=1}^{\\infty}\\sum_{l=1}^{m_k}\\mu(E_{kl})=\\sum_{k=1}^{\\infty}\\nu(A_k)."
+      },
+      {
+        "type": "text",
+        "text": "这完成第一步延拓。仍需保留 A 属于代数的前提；本定理没有断言该代数对任意可数并封闭。"
+      }
+    ]
+  },
+  {
+    "id": "caratheodory-route",
+    "lecture": 4,
+    "title": "从代数到σ-代数：证明路线",
+    "term": "Carathéodory extension theorem",
+    "source": {
+      "file": "lec4字幕版.srt",
+      "start": "00:00:06",
+      "end": "00:05:24"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "设 𝒜 是代数，ν:𝒜→[0,+∞] 可数可加且 ν(∅)=0。存在定义在 σ(𝒜) 上的测度延拓；若 Ω 能由 𝒜 中有限 ν 值的集合可数覆盖，该延拓在 σ(𝒜) 上唯一。"
+      },
+      {
+        "type": "text",
+        "text": "测度（measure）是定义在 σ-代数上、空集取零的非负可数可加集合函数。这里原来的 ν 只定义在代数上，但可数可加条件已成立（当并仍属于代数时）。"
+      },
+      {
+        "type": "text",
+        "text": "课程通过四步证明：在所有子集上构造外测度 π*；选出能正确分割外测度的可测集合族 ℳ；证明 ℳ 是包含 𝒜 的 σ-代数，π* 在其上可数可加并等于原来的 ν；最后在 σ-有限条件下用单调类证明 σ(𝒜) 上的唯一性。"
+      },
+      {
+        "type": "math",
+        "text": "\\mathcal S\\subset\\mathcal A(\\mathcal S)\\subset\\sigma(\\mathcal S)=\\sigma(\\mathcal A(\\mathcal S))\\subset\\mathcal M."
+      },
+      {
+        "type": "supplement",
+        "text": "补充说明：σ(𝒮)=σ(𝒜(𝒮))，因为任何包含 𝒮 的 σ-代数也是代数，必须包含 𝒜(𝒮)；反向包含由 𝒮⊂𝒜(𝒮) 得到。"
+      }
+    ]
+  },
+  {
+    "id": "outer-definition",
+    "lecture": 4,
+    "title": "用可数覆盖定义外测度",
+    "term": "Covering; infimum; outer measure",
+    "source": {
+      "file": "lec4字幕版.srt",
+      "start": "00:05:24",
+      "end": "00:10:27"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "对任意 A⊂Ω，定义 π*(A) 为所有代数元素可数覆盖的 ν 值总和的下确界。"
+      },
+      {
+        "type": "math",
+        "text": "\\pi^*(A):=\\inf\\left\\{\\sum_{i=1}^{\\infty}\\nu(E_i):E_i\\in\\mathcal A,\\ A\\subset\\bigcup_{i=1}^{\\infty}E_i\\right\\}."
+      },
+      {
+        "type": "text",
+        "text": "覆盖（covering）只要求把 A 包含在并内，不要求覆盖集合互不相交，也不要求它们恰好等于 A。取 E₁=Ω，其余为空集，就有一个覆盖，所以候选族总非空。下确界（infimum）可以为 +∞，也不一定由某个覆盖达到。"
+      },
+      {
+        "type": "statement",
+        "text": "外测度（outer measure）是定义在所有子集上的非负函数：空集取零，具有单调性和可数次可加性。"
+      },
+      {
+        "type": "math",
+        "text": "\\pi^*(\\varnothing)=0,\\quad E\\subset F\\Rightarrow\\pi^*(E)\\le\\pi^*(F),\\quad E\\subset\\bigcup_{i=1}^{\\infty}E_i\\Rightarrow\\pi^*(E)\\le\\sum_{i=1}^{\\infty}\\pi^*(E_i)."
+      },
+      {
+        "type": "text",
+        "text": "次可加（subadditive）只要求“≤”，不要求不交时等号成立。所以 π* 能定义在所有子集上，不与第一讲的矛盾冲突。字幕中 p star、mu star 指此处的 π*；以下统一记号。"
+      }
+    ]
+  },
+  {
+    "id": "outer-basic",
+    "lecture": 4,
+    "title": "外测度：空集与单调性",
+    "term": "Zero and monotonicity",
+    "source": {
+      "file": "lec4字幕版.srt",
+      "start": "00:10:27",
+      "end": "00:15:51"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "覆盖下确界构造满足 π*(∅)=0，并且 E⊂F⇒π*(E)≤π*(F)。"
+      },
+      {
+        "type": "heading",
+        "text": "证明：空集"
+      },
+      {
+        "type": "text",
+        "text": "用全为空集的覆盖，其费用是零，因此 π*(∅)≤0。任何覆盖的费用都是非负数，故其下确界非负。合起来 π*(∅)=0。"
+      },
+      {
+        "type": "heading",
+        "text": "证明：单调性"
+      },
+      {
+        "type": "text",
+        "text": "若 E⊂F，任何 F 的覆盖也是 E 的覆盖。因此 E 可用的覆盖至少与 F 一样多；在更大的候选族上取下确界，结果只会更小或相等。"
+      },
+      {
+        "type": "math",
+        "text": "\\{\\text{coverings of }F\\}\\subset\\{\\text{coverings of }E\\}\\quad\\Longrightarrow\\quad\\pi^*(E)\\le\\pi^*(F)."
+      },
+      {
+        "type": "text",
+        "text": "这里不要求 E、F 属于原代数，因为 π* 本来就定义在所有子集上。覆盖所用的集合仍必须来自原代数。"
+      }
+    ]
+  },
+  {
+    "id": "outer-subadditive",
+    "lecture": 4,
+    "title": "外测度：可数次可加性",
+    "term": "An ε-approximation of coverings",
+    "source": {
+      "file": "lec4字幕版.srt",
+      "start": "00:15:51",
+      "end": "00:22:07"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "若 E⊂⋃ᵢEᵢ，则 π*(E)≤Σᵢπ*(Eᵢ)。"
+      },
+      {
+        "type": "heading",
+        "text": "证明"
+      },
+      {
+        "type": "text",
+        "text": "若右边为 +∞，不等式自动成立。否则每个 π*(Eᵢ) 有限。固定 ε>0，由下确界定义，为每个 Eᵢ 选一个代数覆盖 Hᵢₖ，使费用比下确界至多多 ε/2ⁱ。"
+      },
+      {
+        "type": "math",
+        "text": "E_i\\subset\\bigcup_{k=1}^{\\infty}H_{ik},\\quad H_{ik}\\in\\mathcal A,\\qquad \\sum_{k=1}^{\\infty}\\nu(H_{ik})\\le\\pi^*(E_i)+\\frac{\\varepsilon}{2^i}."
+      },
+      {
+        "type": "text",
+        "text": "所有下标对 (i,k) 仍构成可数集；这些 Hᵢₖ 合起来覆盖 ⋃ᵢEᵢ，因而覆盖 E。用 π* 的定义和上面的费用估计："
+      },
+      {
+        "type": "math",
+        "text": "\\pi^*(E)\\le\\sum_{i,k\\ge1}\\nu(H_{ik})\\le\\sum_{i=1}^{\\infty}\\left(\\pi^*(E_i)+\\frac{\\varepsilon}{2^i}\\right)=\\sum_{i=1}^{\\infty}\\pi^*(E_i)+\\varepsilon."
+      },
+      {
+        "type": "text",
+        "text": "对任意 ε>0 都成立，令 ε↓0 即得结论。ε/2ⁱ 的作用是让无穷多个近似误差仍有可控的总和；字幕对这项的读法不稳定，按照后面的误差求和统一为 ε/2ⁱ。"
+      }
+    ]
+  },
+  {
+    "id": "measurability",
+    "lecture": 4,
+    "title": "可测性：正确分割每个测试集",
+    "term": "Carathéodory measurability",
+    "source": {
+      "file": "lec4字幕版.srt",
+      "start": "00:22:07",
+      "end": "00:26:09"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "集合 A⊂Ω 称为 π*-可测，若对每个 E⊂Ω 都有 π*(E)=π*(E∩A)+π*(E∩Aᶜ)。所有这样的 A 构成集合族 ℳ。"
+      },
+      {
+        "type": "math",
+        "text": "\\mathcal M:=\\{A\\subset\\Omega:\\ \\forall E\\subset\\Omega,\\ \\pi^*(E)=\\pi^*(E\\cap A)+\\pi^*(E\\setminus A)\\}."
+      },
+      {
+        "type": "text",
+        "text": "A 是被检验的集合，E 是任意测试集（test set），不要求 E 可测，也不要求它属于代数。“正确分割”表示用 A 切开 E 时，外测度恰好相加。"
+      },
+      {
+        "type": "math",
+        "text": "E=(E\\cap A)\\sqcup(E\\setminus A)\\quad\\Longrightarrow\\quad\\pi^*(E)\\le\\pi^*(E\\cap A)+\\pi^*(E\\setminus A)."
+      },
+      {
+        "type": "text",
+        "text": "这个“≤”对任何 A 都成立，因为 π* 次可加。所以验证可测性只需要证明反向“≥”。这不是因为“不交就可加”；对外测度，那条等式仍待证明。"
+      },
+      {
+        "type": "text",
+        "text": "以下将证明：原代数元素都在 ℳ 中，ℳ 是 σ-代数，且 π* 限制到 ℳ 上才是测度。"
+      }
+    ]
+  },
+  {
+    "id": "algebra-measurable",
+    "lecture": 4,
+    "title": "原代数中的集合都可测",
+    "term": "Splitting a covering",
+    "source": {
+      "file": "lec4字幕版.srt",
+      "start": "00:26:09",
+      "end": "00:32:53"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "𝒜⊂ℳ：原代数中的每个集合都满足 π*-可测性判据。"
+      },
+      {
+        "type": "heading",
+        "text": "证明"
+      },
+      {
+        "type": "text",
+        "text": "固定 A∈𝒜 和任意测试集 E。若 π*(E)=+∞，所需反向不等式自动成立；结合总成立的正向不等式即为等式。若 π*(E)<∞，给定 ε>0，选代数覆盖 Eᵢ，使 Σᵢν(Eᵢ)≤π*(E)+ε。"
+      },
+      {
+        "type": "text",
+        "text": "代数对交和补集封闭，所以 Eᵢ∩A 与 Eᵢ∩Aᶜ 都属于代数；它们分别覆盖 E∩A 和 E∩Aᶜ。每个 Eᵢ 被 A 分成不交的两部分，原 ν 有限可加。"
+      },
+      {
+        "type": "math",
+        "text": "\\begin{aligned}\\pi^*(E\\cap A)+\\pi^*(E\\cap A^c)&\\le\\sum_i\\nu(E_i\\cap A)+\\sum_i\\nu(E_i\\cap A^c)\\\\&=\\sum_i\\nu(E_i)\\le\\pi^*(E)+\\varepsilon.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "令 ε↓0，得到反向不等式，故 A 可测。此步只使用 ν 的有限可加性；ν 的可数可加性稍后用于保证 π* 在代数上等于 ν。"
+      }
+    ]
+  },
+  {
+    "id": "measurable-algebra",
+    "lecture": 4,
+    "title": "可测集合对补集与有限并封闭",
+    "term": "Finite unions of measurable sets",
+    "source": {
+      "file": "lec4字幕版.srt",
+      "start": "00:32:53",
+      "end": "00:46:31"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "ℳ 包含 Ω，对补集及有限并封闭，因而是代数。"
+      },
+      {
+        "type": "heading",
+        "text": "全集与补集"
+      },
+      {
+        "type": "text",
+        "text": "Ω 可测，因为 E∩Ω=E，E∩Ωᶜ=∅，判据变成 π*(E)=π*(E)+0。可测性判据对 A 与 Aᶜ 对称，所以 A∈ℳ⇒Aᶜ∈ℳ。"
+      },
+      {
+        "type": "heading",
+        "text": "有限并"
+      },
+      {
+        "type": "text",
+        "text": "设 A,B∈ℳ，固定任意 E。先用 A 分割 E，再用 B 分割 E∖A。"
+      },
+      {
+        "type": "math",
+        "text": "\\pi^*(E)=\\pi^*(E\\cap A)+\\pi^*((E\\setminus A)\\cap B)+\\pi^*(E\\setminus(A\\cup B))."
+      },
+      {
+        "type": "text",
+        "text": "前两部分的不交并恰为 E∩(A∪B)。由次可加性，前两项的和至少为这个并的外测度。"
+      },
+      {
+        "type": "math",
+        "text": "\\pi^*(E\\cap(A\\cup B))\\le\\pi^*(E\\cap A)+\\pi^*((E\\setminus A)\\cap B)."
+      },
+      {
+        "type": "text",
+        "text": "代回得 π*(E)≥π*(E∩(A∪B))+π*(E∖(A∪B))，就是 A∪B 可测所需的反向不等式。故 ℳ 对有限并封闭；结合补集，用 De Morgan 公式还得到有限交与差集封闭。"
+      }
+    ]
+  },
+  {
+    "id": "measurable-sigma",
+    "lecture": 4,
+    "title": "可数并封闭：先将集合不交化",
+    "term": "Disjointification; σ-algebra",
+    "source": {
+      "file": "lec4字幕版.srt",
+      "start": "00:46:31",
+      "end": "01:00:51"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "ℳ 对可数并封闭，所以 ℳ 是包含 𝒜 的 σ-代数，并且包含 σ(𝒜)。"
+      },
+      {
+        "type": "heading",
+        "text": "证明：不交化"
+      },
+      {
+        "type": "text",
+        "text": "设 Aⱼ∈ℳ，A=⋃ⱼAⱼ。令 F₁=A₁，Fⱼ=Aⱼ∖⋃ₖ<ⱼAₖ。由已证有限运算封闭性，Fⱼ∈ℳ。它们两两不交，前 n 项并与 Aⱼ 前 n 项并相同，全部并为 A。"
+      },
+      {
+        "type": "math",
+        "text": "F_1=A_1,\\qquad F_j=A_j\\setminus\\bigcup_{k=1}^{j-1}A_k,\\qquad A=\\bigsqcup_{j=1}^{\\infty}F_j."
+      },
+      {
+        "type": "heading",
+        "text": "证明：有限分割恒等式"
+      },
+      {
+        "type": "statement",
+        "text": "对任意测试集 E 及有限个两两不交的可测 Fⱼ，有 π*(E∩⨆ⱼ₌₁ⁿFⱼ)=Σⱼ₌₁ⁿπ*(E∩Fⱼ)。"
+      },
+      {
+        "type": "text",
+        "text": "n=1 显然。归纳时，用可测 Fₙ₊₁ 分割 E∩⨆ⱼ₌₁ⁿ⁺¹Fⱼ：落在 Fₙ₊₁ 的部分是 E∩Fₙ₊₁，余下部分是前 n 项的并与 E 的交。再用归纳假设即得 n+1 的恒等式。"
+      },
+      {
+        "type": "heading",
+        "text": "证明：可数并的可测性"
+      },
+      {
+        "type": "text",
+        "text": "固定任意 E，有限并 Uₙ=⨆ⱼ₌₁ⁿFⱼ 可测，且 E∖A⊂E∖Uₙ。利用可测性、单调性及刚证恒等式，得到对每个 n 都有："
+      },
+      {
+        "type": "math",
+        "text": "\\pi^*(E)=\\pi^*(E\\cap U_n)+\\pi^*(E\\setminus U_n)\\ge\\sum_{j=1}^{n}\\pi^*(E\\cap F_j)+\\pi^*(E\\setminus A)."
+      },
+      {
+        "type": "text",
+        "text": "让 n→∞，再由次可加性 π*(E∩A)≤Σⱼπ*(E∩Fⱼ)，得到："
+      },
+      {
+        "type": "math",
+        "text": "\\pi^*(E)\\ge\\sum_{j=1}^{\\infty}\\pi^*(E\\cap F_j)+\\pi^*(E\\setminus A)\\ge\\pi^*(E\\cap A)+\\pi^*(E\\setminus A)."
+      },
+      {
+        "type": "text",
+        "text": "故 A 可测。至此 ℳ 是 σ-代数；既然包含 𝒜，按生成 σ-代数的最小性，它包含 σ(𝒜)。全程未假定外测度从下连续，避免循环论证。"
+      }
+    ]
+  },
+  {
+    "id": "agrees-original",
+    "lecture": 4,
+    "title": "外测度在原代数上等于原函数",
+    "term": "Agreement with the original function",
+    "source": {
+      "file": "lec4字幕版.srt",
+      "start": "01:00:51",
+      "end": "01:09:30"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "对所有 A∈𝒜，有 π*(A)=ν(A)。"
+      },
+      {
+        "type": "heading",
+        "text": "一个方向"
+      },
+      {
+        "type": "text",
+        "text": "用 A、∅、∅、… 覆盖 A，得到 π*(A)≤ν(A)。"
+      },
+      {
+        "type": "heading",
+        "text": "反向不等式"
+      },
+      {
+        "type": "text",
+        "text": "取任意代数覆盖 Eⱼ。令 F₁=E₁，Fⱼ=Eⱼ∖⋃ₖ<ⱼEₖ。Fⱼ 仍属于代数，两两不交，并与 Eⱼ 的并相同，且 Fⱼ⊂Eⱼ。于是 A=⨆ⱼ(A∩Fⱼ)。"
+      },
+      {
+        "type": "math",
+        "text": "\\nu(A)=\\sum_{j=1}^{\\infty}\\nu(A\\cap F_j)\\le\\sum_{j=1}^{\\infty}\\nu(E_j)."
+      },
+      {
+        "type": "text",
+        "text": "等式使用原 ν 的可数可加性：A 与每个 A∩Fⱼ 均在代数内，符合它的适用条件。不等式使用单调性。这对每个覆盖成立，所以再对右边取下确界得 ν(A)≤π*(A)。结合两边即为等式。"
+      },
+      {
+        "type": "text",
+        "text": "这一处是证明中真正使用原函数可数可加性的关键：仅有有限可加时，覆盖下确界可能无法保留原来的值。"
+      }
+    ]
+  },
+  {
+    "id": "restriction-measure",
+    "lecture": 4,
+    "title": "外测度限制到可测集合后成为测度",
+    "term": "Restriction to measurable sets",
+    "source": {
+      "file": "lec4字幕版.srt",
+      "start": "01:09:30",
+      "end": "01:14:40"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "π* 限制到 ℳ 上可数可加，因此是原 ν 的测度延拓。"
+      },
+      {
+        "type": "heading",
+        "text": "证明"
+      },
+      {
+        "type": "text",
+        "text": "设 Aⱼ∈ℳ 两两不交，A=⨆ⱼAⱼ。可数次可加性先给 π*(A)≤Σⱼπ*(Aⱼ)。对于反向不等式，有限并包含于 A，由单调性和前面归纳得到的有限分割恒等式（取测试集 Ω），有："
+      },
+      {
+        "type": "math",
+        "text": "\\pi^*(A)\\ge\\pi^*\\!\\left(\\bigsqcup_{j=1}^{n}A_j\\right)=\\sum_{j=1}^{n}\\pi^*(A_j)\\quad(n\\ge1)."
+      },
+      {
+        "type": "text",
+        "text": "令 n→∞，得到反向“≥”，所以等号成立。ℳ 是 σ-代数，空集取零已证，故 π*|ℳ 是测度。又 π* 在 𝒜 上等于 ν，因此确实是延拓。"
+      },
+      {
+        "type": "math",
+        "text": "\\pi^*|_{\\mathcal A}=\\nu,\\qquad \\pi^*|_{\\mathcal M}\\text{ is a measure},\\qquad\\sigma(\\mathcal A)\\subset\\mathcal M."
+      },
+      {
+        "type": "text",
+        "text": "把它进一步限制到 σ(𝒜)，就得到定理所需的延拓存在性。下一步讨论这个较小的 σ-代数上的唯一性。"
+      }
+    ]
+  },
+  {
+    "id": "sigma-finite",
+    "lecture": 4,
+    "title": "唯一性需要的σ-有限条件",
+    "term": "σ-finiteness",
+    "source": {
+      "file": "lec4字幕版.srt",
+      "start": "01:14:40",
+      "end": "01:20:04"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "测度 μ 下的 Ω 称为 σ-有限，若存在可数个有限测度的可测集合覆盖 Ω；等价地，可以选 Eₙ↑Ω 且每个 μ(Eₙ)<∞。"
+      },
+      {
+        "type": "math",
+        "text": "E_n\\uparrow\\Omega,\\qquad \\mu(E_n)<\\infty\\quad(n\\ge1)."
+      },
+      {
+        "type": "supplement",
+        "text": "补充说明：从可数覆盖 Hₙ 出发，取 Eₙ=⋃ₖ₌₁ⁿHₖ，得到递增覆盖。将有限并分成不交部分，再由可加性和单调性可得 μ(Eₙ)≤Σₖ₌₁ⁿμ(Hₖ)<∞。σ-有限允许 μ(Ω)=+∞。"
+      },
+      {
+        "type": "statement",
+        "text": "本讲的唯一性条件更具体：覆盖的 Eₙ 必须属于原代数 𝒜，且 ν(Eₙ)<∞。如果两个测度在 𝒜 上相等，它们在这些 Eₙ 上有相同的有限值。"
+      },
+      {
+        "type": "text",
+        "text": "一般定义的 σ-有限只要求覆盖来自测度定义域；这里还要求来自原代数。不能把两者混同。课程明确只证明 σ(𝒜) 上的唯一性，没有声称所有可能更大定义域上的延拓都由这一论证唯一确定。"
+      }
+    ]
+  },
+  {
+    "id": "monotone-class",
+    "lecture": 4,
+    "title": "单调类与单调类定理",
+    "term": "Monotone class theorem",
+    "source": {
+      "file": "lec4字幕版.srt",
+      "start": "01:20:04",
+      "end": "01:27:17"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "集合族 𝒢⊂𝒫(Ω) 称为单调类（monotone class），若它对递增序列的并及递减序列的交封闭。"
+      },
+      {
+        "type": "math",
+        "text": "A_j\\in\\mathcal G,\\ A_j\\uparrow A\\Rightarrow A\\in\\mathcal G;\\qquad B_j\\in\\mathcal G,\\ B_j\\downarrow B\\Rightarrow B\\in\\mathcal G."
+      },
+      {
+        "type": "text",
+        "text": "单调类只处理单调序列，不直接要求补集或任意可数并封闭。任意 σ-代数都是单调类，但反向一般不成立。"
+      },
+      {
+        "type": "statement",
+        "text": "任意非空单调类族的交仍是单调类；因此任意集合族 𝒞 有一个包含它的最小单调类，记为 𝒢(𝒞)。"
+      },
+      {
+        "type": "supplement",
+        "text": "补充说明：若单调序列的每一项属于所有参与取交的单调类，其单调极限也属于每个类，故属于交。对所有包含 𝒞 的单调类取交即可构造最小类；𝒫(Ω) 是一个候选，保证非空。"
+      },
+      {
+        "type": "statement",
+        "text": "单调类定理：若 𝒜 是代数，由 𝒜 生成的最小单调类等于 σ(𝒜)。因此任何包含 𝒜 的单调类都包含 σ(𝒜)。"
+      },
+      {
+        "type": "math",
+        "text": "\\mathcal G(\\mathcal A)=\\sigma(\\mathcal A)\\qquad(\\mathcal A\\text{ is an algebra})."
+      },
+      {
+        "type": "note",
+        "text": "老师在 01:26 左右明确把此定理的证明留到下一讲。本页只陈述定理并在下一节使用，不把未提供的第五讲证明加入本网站。"
+      }
+    ]
+  },
+  {
+    "id": "uniqueness",
+    "lecture": 4,
+    "title": "在有限覆盖块上证明唯一性",
+    "term": "Uniqueness on σ(A)",
+    "source": {
+      "file": "lec4字幕版.srt",
+      "start": "01:27:17",
+      "end": "01:41:21"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "设 μ₁、μ₂ 是 σ(𝒜) 上的测度，在 𝒜 上相等。若存在 Eₙ∈𝒜、Eₙ↑Ω，且 μ₁(Eₙ)=μ₂(Eₙ)<∞，则 μ₁=μ₂ 于整个 σ(𝒜)。"
+      },
+      {
+        "type": "heading",
+        "text": "证明：固定一个有限覆盖块"
+      },
+      {
+        "type": "text",
+        "text": "固定 n，考虑两测度在与 Eₙ 相交后相等的集合族 ℬₙ。"
+      },
+      {
+        "type": "math",
+        "text": "\\mathcal B_n:=\\{A\\in\\sigma(\\mathcal A):\\mu_1(A\\cap E_n)=\\mu_2(A\\cap E_n)\\}."
+      },
+      {
+        "type": "text",
+        "text": "若 A∈𝒜，则 A∩Eₙ∈𝒜，两测度在这里相等，故 𝒜⊂ℬₙ。"
+      },
+      {
+        "type": "heading",
+        "text": "证明：ℬₙ 是单调类"
+      },
+      {
+        "type": "text",
+        "text": "若 Aⱼ∈ℬₙ 且 Aⱼ↑A，则 Aⱼ∩Eₙ↑A∩Eₙ。两测度可数可加，因此从下连续；对两边相等的数值取极限，得到 A∈ℬₙ。"
+      },
+      {
+        "type": "math",
+        "text": "\\mu_1(A\\cap E_n)=\\lim_{j\\to\\infty}\\mu_1(A_j\\cap E_n)=\\lim_{j\\to\\infty}\\mu_2(A_j\\cap E_n)=\\mu_2(A\\cap E_n)."
+      },
+      {
+        "type": "text",
+        "text": "若 Bⱼ∈ℬₙ 且 Bⱼ↓B，同样有 Bⱼ∩Eₙ↓B∩Eₙ。这次使用从上连续性；每一项的测度不超过有限的 μᵢ(Eₙ)，所以有限条件已满足。取极限后两侧相等，得到 B∈ℬₙ。"
+      },
+      {
+        "type": "note",
+        "text": "字幕 01:35—01:36 把递减序列对应的连续性说成 from below；按序列方向与有限条件，这里应是从上连续（from above）。"
+      },
+      {
+        "type": "heading",
+        "text": "证明：单调类定理与去掉局部限制"
+      },
+      {
+        "type": "text",
+        "text": "ℬₙ 是包含 𝒜 的单调类，故由单调类定理包含 σ(𝒜)。按定义它本来就包含于 σ(𝒜)，于是相等。对任意 A∈σ(𝒜)，现在对所有 n 都有 μ₁(A∩Eₙ)=μ₂(A∩Eₙ)。"
+      },
+      {
+        "type": "math",
+        "text": "A\\cap E_n\\uparrow A\\quad\\Longrightarrow\\quad \\mu_1(A)=\\lim_{n\\to\\infty}\\mu_1(A\\cap E_n)=\\lim_{n\\to\\infty}\\mu_2(A\\cap E_n)=\\mu_2(A)."
+      },
+      {
+        "type": "text",
+        "text": "最后使用从下连续性，不要求 A 本身有限测度。因此唯一性涵盖取值 +∞ 的集合。σ-有限覆盖的作用是在证明 ℬₙ 对递减极限封闭时提供有限测度块。"
+      }
+    ]
+  },
+  {
+    "id": "extension-remarks",
+    "lecture": 4,
+    "title": "延拓定理的结论与课程边界",
+    "term": "Carathéodory theorem: final remarks",
+    "source": {
+      "file": "lec4字幕版.srt",
+      "start": "01:41:21",
+      "end": "01:44:59"
+    },
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Carathéodory 延拓定理完成了从代数上的非负可数可加函数到生成 σ-代数上的测度的延拓；原代数上的 σ-有限覆盖保证该延拓唯一。"
+      },
+      {
+        "type": "text",
+        "text": "存在性构造实际给出 ℳ 上的测度。ℳ 由 π* 的分割判据确定，而 π* 来自原 ν，因此 ℳ 依赖 ν。它可能严格大于 σ(𝒜)，不能把二者自动写成相等。"
+      },
+      {
+        "type": "math",
+        "text": "\\mathcal A\\subset\\sigma(\\mathcal A)\\subset\\mathcal M,\\qquad \\pi^*|_{\\mathcal A}=\\nu."
+      },
+      {
+        "type": "text",
+        "text": "没有 σ-有限条件时，课程不保证延拓唯一；老师把相关反例放在练习中，但本地四份字幕并未给出反例，故这里不增加额外题目。"
+      },
+      {
+        "type": "text",
+        "text": "将第三讲和第四讲连接起来，就获得“半代数 → 生成代数 → 生成 σ-代数”的延拓路线。后续课程将把它用于实数区间的长度，并进一步讨论更大的可测集合族。当前四讲到此结束，尚未具体构造 Lebesgue 测度，也未证明单调类定理。"
+      },
+      {
+        "type": "note",
+        "text": "字幕把 Carathéodory 误识别为 Cartesian Doris、卡拉泰奥多里不等式等；这里统一为 Carathéodory 延拓定理。"
+      }
+    ]
+  }
+]
