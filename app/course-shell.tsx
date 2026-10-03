@@ -5,7 +5,7 @@ import LectureReader from './reader';
 import MeasureReader from './measure-reader';
 import type { MeasureSection } from './measure-reader';
 import type { ComponentProps } from 'react';
-import './courses.css';
+
 
 type Props = {
   algebra: ComponentProps<typeof LectureReader>['sections'];
