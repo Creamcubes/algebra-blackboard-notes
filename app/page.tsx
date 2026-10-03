@@ -1,3 +1,4 @@
-import LectureReader from './reader';
+import CourseShell from './course-shell';
 import lecture from './lecture.json';
-export default function Home() { return <LectureReader sections={lecture} />; }
+import measure from './measure.json';
+export default function Home() { return <CourseShell algebra={lecture} measure={measure} />; }
