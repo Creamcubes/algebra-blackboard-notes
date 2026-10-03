@@ -27,7 +27,7 @@ export default function CourseShell({ algebra, measure }: Props) {
           <button type="button" aria-pressed={course === 'algebra'} onClick={() => selectCourse('algebra')}>高等代数</button>
           <button type="button" aria-pressed={course === 'measure'} onClick={() => selectCourse('measure')}>测度论</button>
         </div>
-        <span className="course-caption">{course === 'algebra' ? '英文讲稿与板书' : '中文讲义 · 英文术语'}</span>
+        <span className="course-caption">{course === 'algebra' ? '英文讲稿与板书' : '中文讲义 · 英文讲稿'}</span>
       </nav>
       {course === 'algebra'
         ? <LectureReader sections={algebra} />
