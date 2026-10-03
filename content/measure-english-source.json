@@ -1,0 +1,2308 @@
+[
+  {
+    "id": "length",
+    "title": "Length and measure",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We begin with the length of an interval. Its length is the right endpoint minus the left endpoint. Can we assign a length to more general sets, such as the rational or irrational numbers in the unit interval? First, let us state the properties we want. Then we will see why we cannot assign such a length to every subset of the real line.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "statement",
+        "text": "Our goal is to find a nonnegative set function lambda that extends interval length to more general sets. We allow its value to be positive infinity.",
+        "sourceBlock": 1
+      },
+      {
+        "type": "math",
+        "sourceBlock": 2
+      },
+      {
+        "type": "text",
+        "text": "Let me write the proposed function on the board. Lambda maps the power set of R into the extended nonnegative real numbers. For a less than b, lambda of the interval open at a and closed at b equals b minus a."
+      },
+      {
+        "type": "cue",
+        "text": "板书：先写 λ 的定义域和值域，再写区间长度。λ 读 lambda；𝒫(ℝ) 读 the power set of R；(a,b] 读 the interval open at a and closed at b。"
+      },
+      {
+        "type": "text",
+        "text": "Here, R denotes the real line, and P of R denotes its power set: the collection of all subsets of R. The input of lambda is a set. Its output is a nonnegative number or positive infinity. Infinite values allow us to discuss unbounded intervals. We also want the length to be independent of whether the endpoints are included.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "note",
+        "text": "本节中的函数只是希望构造的对象，尚未证明它存在。有理数与无理数的测度在这里是动机问题，四讲字幕尚未完成 Lebesgue 测度的具体应用。",
+        "sourceBlock": 4
+      }
+    ]
+  },
+  {
+    "id": "requirements",
+    "title": "Translation invariance; σ-additivity",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "We ask for four properties: lambda is defined on every subset of R; it agrees with interval length; it is translation invariant; and it is countably additive on pairwise disjoint sets.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "We denote the translate of A by A plus x. It is the set of all y plus x with y in A. Translation invariance means lambda of A plus x equals lambda of A."
+      },
+      {
+        "type": "cue",
+        "text": "板书：写 A+x 的集合定义，说明 x 固定，y 遍历 A。"
+      },
+      {
+        "type": "text",
+        "text": "A translation changes the position of a set, but not its length. In A plus x, x is fixed and y runs through A. Translation invariance says that the translated set has the same measure as A.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "If A sub j and A sub k have empty intersection whenever j is different from k, then the measure of their disjoint union equals the sum, from j equals one to infinity, of lambda of A sub j."
+      },
+      {
+        "type": "cue",
+        "text": "板书：先写两两不交条件，再写等式。∅ 读 the empty set；⨆ 读 disjoint union；σ-additivity 读 sigma-additivity。"
+      },
+      {
+        "type": "text",
+        "text": "The union symbol with a square base denotes a disjoint union. Pairwise disjoint means that any two sets with different indices have empty intersection. Countable additivity applies to a countable sequence, not just a finite family. The series on the right has nonnegative terms, so its value is well defined and may be infinite.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "statement",
+        "text": "Assuming the axiom of choice, no set function satisfies all four properties.",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "Let us prove this by contradiction. Suppose that such a function exists. We will choose a set whose rational translates force a contradiction. The axiom of choice allows us to select one representative from each equivalence class.",
+        "sourceBlock": 6
+      }
+    ]
+  },
+  {
+    "id": "representatives",
+    "title": "Equivalence relation; representative",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Define x to be equivalent to y if and only if x minus y is rational. This is an equivalence relation on R. The equivalence class of x is x plus Q.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Here, Q denotes the rational numbers. We write x tilde y when x minus y belongs to Q. Square brackets around x denote its equivalence class, which is x plus Q."
+      },
+      {
+        "type": "cue",
+        "text": "板书：解释 ∼ 读 is equivalent to；[x] 读 the equivalence class of x；ℚ 读 Q 或 the rational numbers。"
+      },
+      {
+        "type": "supplement",
+        "text": "Supplementary explanation. Zero is rational, so every x is equivalent to itself. The negative of a rational number is rational, so the relation is symmetric. The sum of two rational numbers is rational, so the relation is transitive. These are the three properties of an equivalence relation.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "text",
+        "text": "Each class is countable because it is a translate of Q, the set of rational numbers. There are uncountably many classes. Otherwise, R would be a countable union of countable sets, hence countable. To keep the notation clear, we refer to the collection simply as all equivalence classes.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "statement",
+        "text": "By the axiom of choice, choose exactly one representative in the open unit interval from each equivalence class. Let capital Omega be the set of these representatives.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "math",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "Omega is a subset of the open unit interval. For each real x, the intersection of Omega with the class of x has exactly one element. The number sign denotes the number of elements."
+      },
+      {
+        "type": "cue",
+        "text": "板书：Ω 读 capital Omega，本讲是代表元集合；# 表示元素个数。强调每个类恰好选一个。"
+      },
+      {
+        "type": "supplement",
+        "text": "Supplementary explanation. Every class x plus Q meets the open unit interval. Since the rational numbers are dense, choose a rational q strictly between minus x and one minus x. Then x plus q lies strictly between zero and one. This is why all representatives can be chosen in the same bounded interval.",
+        "sourceBlock": 6
+      },
+      {
+        "type": "note",
+        "text": "字幕在 00:07:40 把 rational 识别为 irrational；依照关系定义应为“有理数”。本讲 Ω 是代表元集合；从第二讲开始，Ω 改为一般全集，两处含义要区分。",
+        "sourceBlock": 7
+      }
+    ]
+  },
+  {
+    "id": "rational-translates",
+    "title": "Disjoint rational translates",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "If p and q are distinct rational numbers, then Omega plus p and Omega plus q are disjoint.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Proof",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Suppose x belongs to both translates. Then x equals alpha plus p and also beta plus q, for some alpha and beta in Omega. Subtracting gives alpha minus beta equals q minus p, which is rational. Thus alpha and beta belong to the same equivalence class. Omega contains only one representative of that class, so alpha equals beta. It follows that p equals q. This proves the claim.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "Let me write the chain of implications. Equality of the two representations gives a rational difference. A rational difference puts alpha and beta in the same class. The choice of representatives gives alpha equals beta, and then p equals q."
+      },
+      {
+        "type": "cue",
+        "text": "板书：α 读 alpha，β 读 beta。沿箭头解释每一步，不省略“同一个等价类只选一个代表元”。"
+      },
+      {
+        "type": "text",
+        "text": "Now use only rational translations strictly between minus one and one. Let U be the disjoint union of these translates. The index set is countable, so countable additivity will apply.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "math",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "We define U as the disjoint union of Omega plus q, over rational q strictly between minus one and one. U is contained in the interval from minus one to two."
+      },
+      {
+        "type": "cue",
+        "text": "板书：先写 U，再写有界包含关系。下标 q∈ℚ∩(−1,1) 表示对这些有理数取并。"
+      },
+      {
+        "type": "text",
+        "text": "Every element of Omega lies between zero and one. Adding a number between minus one and one produces a number between minus one and two. Thus U is contained in that bounded interval. This will give a finite upper bound for its measure.",
+        "sourceBlock": 6
+      }
+    ]
+  },
+  {
+    "id": "monotonicity",
+    "title": "Empty set; monotonicity",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Under our assumptions, the empty set has measure zero. Also, if E is contained in F, then lambda of E is at most lambda of F.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Proof: the empty set",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Write the interval from minus one to one as the disjoint union of itself and countably many empty sets. Apply countable additivity. The interval has length two. All extra terms on the right are nonnegative, so each must be zero.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "The equation is two equals two plus the sum of the measures of the empty sets. Since two is finite, lambda of the empty set must be zero."
+      },
+      {
+        "type": "cue",
+        "text": "板书：强调左侧是有限数 2，不能用 ∞=∞+c 消去无穷。"
+      },
+      {
+        "type": "heading",
+        "text": "Proof: monotonicity",
+        "sourceBlock": 4
+      },
+      {
+        "type": "text",
+        "text": "Since E is contained in F, split F into E and F minus E. Both pieces are in the domain because the domain contains all subsets. Countable additivity implies finite additivity by adding empty sets to a finite decomposition.",
+        "sourceBlock": 5
+      },
+      {
+        "type": "math",
+        "sourceBlock": 6
+      },
+      {
+        "type": "text",
+        "text": "Lambda of F equals lambda of E plus lambda of F minus E. The second term is nonnegative, so this is at least lambda of E. Here, F minus E means set difference."
+      },
+      {
+        "type": "cue",
+        "text": "板书：F∖E 读 F minus E 或 the set difference of F and E；不写 ∞−∞。"
+      },
+      {
+        "type": "text",
+        "text": "Only nonnegativity is needed here. We never subtract infinity from infinity. In particular, since U is contained in the interval from minus one to two, lambda of U is at most three.",
+        "sourceBlock": 7
+      }
+    ]
+  },
+  {
+    "id": "contradiction",
+    "title": "A non-measurable set",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "The assumptions force U to have measure zero and at the same time to have measure at least one. This is a contradiction.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Proof: the measure must be zero",
+        "sourceBlock": 1
+      },
+      {
+        "type": "math",
+        "sourceBlock": 2
+      },
+      {
+        "type": "text",
+        "text": "Lambda of U is the sum of the measures of its rational translates. Every summand equals lambda of Omega, while the total is at most three."
+      },
+      {
+        "type": "cue",
+        "text": "板书：分别标注可数可加、平移不变、单调性。无限个相同非负项总和有限，推出每项为零。"
+      },
+      {
+        "type": "text",
+        "text": "The first equality uses countable additivity on disjoint translates. The second uses translation invariance. An infinite sum of the same nonnegative number can be finite only if that number is zero. Therefore lambda of Omega is zero, and lambda of U is zero.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "heading",
+        "text": "Proof: the translates cover the unit interval",
+        "sourceBlock": 4
+      },
+      {
+        "type": "text",
+        "text": "Take any x in the open unit interval. Let alpha in Omega be the representative of its class. Put q equal to x minus alpha. This number is rational and lies strictly between minus one and one. Hence x equals alpha plus q and belongs to U. Thus the open unit interval is contained in U.",
+        "sourceBlock": 5
+      },
+      {
+        "type": "math",
+        "sourceBlock": 6
+      },
+      {
+        "type": "text",
+        "text": "On the other hand, monotonicity gives one equals lambda of the open unit interval, which is at most lambda of U, which is zero."
+      },
+      {
+        "type": "cue",
+        "text": "板书：写 1≤0，明确矛盾。q 统一取 x−α，保证 x=α+q。"
+      },
+      {
+        "type": "text",
+        "text": "We have reached a contradiction because one is positive. The proposed lambda cannot exist. The key ingredients were the choice of representatives, countably many rational translations, translation invariance, countable additivity, and the finite positive length of an interval.",
+        "sourceBlock": 7
+      },
+      {
+        "type": "note",
+        "text": "字幕在 00:26—00:27 的口述中混用了 α−x 与 x−α 的符号。这里统一取 q=x−α，使 x=α+q 正确成立；两种差都是有理数，取值范围也相同。",
+        "sourceBlock": 8
+      }
+    ]
+  },
+  {
+    "id": "restricted-domain",
+    "title": "Measurable and non-measurable sets",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Interval length, translation invariance, and countable additivity all agree with our idea of length. We keep these properties and restrict the domain: the measure will be defined on a suitable collection of sets.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "statement",
+        "text": "Our next goal is to start with the length of intervals and extend it to larger collections of sets. A set outside the chosen measurable domain is called non-measurable for that measure.",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "This explains why choosing a domain is part of measure theory. Next, we introduce semi-algebras, algebras, and sigma-algebras. Each specifies which set operations stay inside the collection. We are not claiming that there is one largest domain that works for every possible measure.",
+        "sourceBlock": 2
+      }
+    ]
+  },
+  {
+    "id": "semialgebra",
+    "title": "Semi-algebra",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "From now on, capital Omega denotes the underlying set. P of Omega is its power set. A collection S consists of subsets of Omega. Thus, saying that A belongs to S is different from saying that A is contained in Omega. A complement always means the complement relative to Omega.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "statement",
+        "text": "Definition. A collection S is a semi-algebra if it contains Omega, is closed under finite intersections, and the complement of every member is a finite disjoint union of members of S.",
+        "sourceBlock": 1
+      },
+      {
+        "type": "math",
+        "sourceBlock": 2
+      },
+      {
+        "type": "text",
+        "text": "Let me write the three conditions. Omega belongs to script S. If A and B belong to script S, then their intersection does too. Finally, A superscript c is a finite disjoint union of sets E sub j in script S."
+      },
+      {
+        "type": "cue",
+        "text": "板书：𝒮 读 script S；Aᶜ 读 A complement。区分 A∈𝒮 与 A⊂Ω；补集分解不要求 Aᶜ 自身属于半代数。"
+      },
+      {
+        "type": "text",
+        "text": "Closure under intersections of two sets gives closure under all finite intersections by repetition. The complement of a member need not itself belong to S. We only require a finite disjoint decomposition into members of S.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "supplement",
+        "text": "Supplementary explanation. Apply the complement condition to Omega. With the convention used in this course, the decomposition has a positive finite number of terms. Their union is empty, so every term is empty. Thus the empty set belongs to S. Our definition requires Omega to belong to S; this distinguishes it from a semiring that need not contain the whole space.",
+        "sourceBlock": 4
+      }
+    ]
+  },
+  {
+    "id": "interval-examples",
+    "title": "Intervals and rectangles",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Example. On R, take the empty set, R itself, all half-open intervals open on the left and closed on the right, and the corresponding unbounded intervals. This collection is a semi-algebra.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "The collection includes the empty set and R, bounded intervals of the form a to b with the right endpoint included, and the two types of unbounded intervals shown here."
+      },
+      {
+        "type": "cue",
+        "text": "板书：依次列出 ∅、ℝ、有界半开区间和两类半无限区间。无穷端点不取闭括号。"
+      },
+      {
+        "type": "heading",
+        "text": "Verification",
+        "sourceBlock": 2
+      },
+      {
+        "type": "text",
+        "text": "The whole space is included. The intersection of two such intervals is either empty or an interval of the same type. This also holds when an interval is unbounded. The complements have the following disjoint decompositions, and every piece belongs to S.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "math",
+        "sourceBlock": 4
+      },
+      {
+        "type": "text",
+        "text": "The complement of the interval open at a and closed at b is the disjoint union of the left ray ending at a and the right ray starting after b. The next two lines give the complements of the rays. Finally, the empty set and R are complements of each other."
+      },
+      {
+        "type": "cue",
+        "text": "板书：指向每一行说明端点归属；例如 b 属于原区间，所以补集右半轴不含 b。"
+      },
+      {
+        "type": "text",
+        "text": "In R squared, use Cartesian products of two intervals, which are rectangles. In R to the d, use products of d intervals. We include empty sets, unbounded intervals, and the full coordinate line, so that the collection contains the whole space and allows complement decompositions.",
+        "sourceBlock": 5
+      },
+      {
+        "type": "math",
+        "sourceBlock": 6
+      },
+      {
+        "type": "text",
+        "text": "The intersection of I one times I two with J one times J two equals the product of the two coordinate intersections. Here, times denotes a Cartesian product."
+      },
+      {
+        "type": "cue",
+        "text": "板书：I₁、I₂ 可读 I one、I two；× 在这里读 Cartesian product，不是数的乘法。"
+      },
+      {
+        "type": "supplement",
+        "text": "Supplementary explanation. The complement of I one times I two is the disjoint union of I one complement times R and I one times I two complement. Decompose each one-dimensional complement into finitely many disjoint intervals. The resulting products are rectangles of the allowed type. In higher dimensions, split one coordinate at a time. This completes the verification left to the audience in the lecture.",
+        "sourceBlock": 7
+      }
+    ]
+  },
+  {
+    "id": "algebra",
+    "title": "Algebra of sets",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition. A collection A of subsets of Omega is an algebra if it contains Omega and is closed under finite intersections and complements.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "If A and B belong to script A, their intersection belongs to script A. If A belongs to script A, then A complement does too. Script A denotes the collection; ordinary A denotes one of its members."
+      },
+      {
+        "type": "cue",
+        "text": "板书：区分花体 𝒜（集合族）与普通 A（一个集合）。"
+      },
+      {
+        "type": "text",
+        "text": "Compared with a semi-algebra, an algebra requires the complement itself to stay in the collection. Every algebra is therefore a semi-algebra: use a complement decomposition with just one term.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "supplement",
+        "text": "Supplementary explanation. The empty set is the complement of Omega, so it belongs to the algebra. De Morgan’s law gives closure under finite unions. Intersecting with a complement gives closure under set differences. We will use these operations to split sets.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "math",
+        "sourceBlock": 4
+      },
+      {
+        "type": "text",
+        "text": "A union B is the complement of A complement intersect B complement. Also, A minus B equals A intersect B complement. Both sets therefore belong to the algebra."
+      },
+      {
+        "type": "cue",
+        "text": "板书：第一式用 De Morgan’s law，第二式是差集定义。"
+      }
+    ]
+  },
+  {
+    "id": "sigma-algebra",
+    "title": "σ-algebra",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition. A collection F of subsets of Omega is a sigma-algebra if it contains Omega and is closed under countable intersections and complements.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "If each A sub j belongs to script F, then their intersection from j equals one to infinity belongs to script F. The complement of every member also belongs to script F."
+      },
+      {
+        "type": "cue",
+        "text": "板书：ℱ 读 script F；σ-algebra 读 sigma-algebra。强调 countable。"
+      },
+      {
+        "type": "text",
+        "text": "By De Morgan’s law, this is equivalent to closure under countable unions and complements. To obtain a finite intersection from a countable one, fill the remaining terms with Omega.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3,
+        "text": "\\bigcup_{j=1}^{\\infty}A_j=\\left(\\bigcap_{j=1}^{\\infty}A_j^c\\right)^c,\\qquad \\sigma\\text{-algebra}\\Rightarrow\\text{algebra}\\Rightarrow\\text{semi-algebra}."
+      },
+      {
+        "type": "text",
+        "text": "The union of a sequence equals the complement of the intersection of its complements. Thus every sigma-algebra is an algebra, and every algebra is a semi-algebra."
+      },
+      {
+        "type": "cue",
+        "text": "板书：写可数 De Morgan 公式，再写三类集合族之间的蕴含关系。"
+      },
+      {
+        "type": "text",
+        "text": "The sigma-algebra condition is stronger than the algebra condition because it allows countably infinite operations. This matches countable additivity. It does not require closure under arbitrary uncountable unions.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "note",
+        "text": "00:12:31—00:13:39 的字幕里多次出现 semi-algebra，但这里讲的是 σ-algebra；根据可数交条件统一更正。",
+        "sourceBlock": 5
+      }
+    ]
+  },
+  {
+    "id": "intersections",
+    "title": "Intersection of classes",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Proposition. The intersection of any nonempty family of algebras on the same underlying set is an algebra. The intersection of any nonempty family of sigma-algebras is a sigma-algebra. The indexing set need not be countable.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Let script A be the intersection of script A sub alpha, with alpha ranging over the index set I."
+      },
+      {
+        "type": "cue",
+        "text": "板书：α 读 alpha；先区分集合族之间的交与集合之间的交。"
+      },
+      {
+        "type": "heading",
+        "text": "Proof",
+        "sourceBlock": 2
+      },
+      {
+        "type": "text",
+        "text": "Every algebra in the family contains Omega, so their intersection contains Omega. If A and B belong to the intersection, they belong to each algebra in the family. Their intersection therefore belongs to each algebra, hence to the overall intersection. The same argument applies to the complement of A. This verifies all three algebra conditions.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "For sigma-algebras, replace the finite intersection by a countable intersection. If every A sub j belongs to the overall intersection, then for each fixed alpha, all these sets belong to the sigma-algebra indexed by alpha. Their countable intersection belongs to that sigma-algebra. Since alpha was arbitrary, it belongs to the overall intersection. The arguments for Omega and complements are unchanged.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "text",
+        "text": "There are two levels of intersections here. The outer intersection is between collections of sets. The inner intersection is between subsets of Omega. The outer index set may be uncountable; that does not change the required countable closure within each collection.",
+        "sourceBlock": 5
+      }
+    ]
+  },
+  {
+    "id": "generated",
+    "title": "Generated algebra; generated σ-algebra",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition and proposition. For any collection C of subsets of Omega, there is a smallest algebra containing C and a smallest sigma-algebra containing C. We denote them by A of C and F of C. The latter is also denoted by sigma of C.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "We define A of C by intersecting all algebras B that contain C. Similarly, sigma of C is the intersection of all sigma-algebras B containing C."
+      },
+      {
+        "type": "cue",
+        "text": "板书：𝒜(𝒞) 读 the algebra generated by C；σ(𝒞) 读 the sigma-algebra generated by C。强调 smallest 指包含关系。"
+      },
+      {
+        "type": "heading",
+        "text": "Existence and minimality",
+        "sourceBlock": 2
+      },
+      {
+        "type": "text",
+        "text": "The power set of Omega is both an algebra and a sigma-algebra and contains C. Thus the family over which we take the intersection is nonempty. By the previous proposition, the intersection has the required closure properties. It contains C because every collection in the intersection contains C. It is contained in any algebra containing C, because that algebra is one of the collections being intersected. This proves minimality. The sigma-algebra case is the same.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "Generated means that we begin with C and include all sets required by the closure conditions. No closure property is assumed of C itself.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "text",
+        "text": "When C is a semi-algebra, every member of its generated algebra has a finite disjoint decomposition. We prove this next. However, we must not assume that every member of the generated sigma-algebra is a single countable union of members of the semi-algebra. The extension argument will not rely on such a representation.",
+        "sourceBlock": 5
+      }
+    ]
+  },
+  {
+    "id": "finite-decomposition",
+    "title": "Finite disjoint decomposition",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Theorem. If S is a semi-algebra, then the algebra generated by S consists exactly of finite disjoint unions of members of S.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "We denote by script B the collection of finite disjoint unions of sets E sub j in script S. We claim that script B equals the algebra generated by script S."
+      },
+      {
+        "type": "cue",
+        "text": "板书：先定义候选族 ℬ，再证明两个包含方向。"
+      },
+      {
+        "type": "heading",
+        "text": "Proof: one inclusion and the whole space",
+        "sourceBlock": 2
+      },
+      {
+        "type": "text",
+        "text": "Let B be the collection of these finite disjoint unions. The algebra generated by S is closed under finite unions, so it contains B. For the reverse inclusion, it is enough to show that B is an algebra containing S. A member of S is a union with one term, so S is contained in B. In particular, Omega belongs to B.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "heading",
+        "text": "Proof: closure under intersections",
+        "sourceBlock": 4
+      },
+      {
+        "type": "math",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "Write A as a disjoint union of E sub j, and B as a disjoint union of F sub k. Their intersection is the disjoint union of all E sub j intersect F sub k, over the finite pairs of indices."
+      },
+      {
+        "type": "cue",
+        "text": "板书：j 从 1 到 n，k 从 1 到 m；解释为什么交集族仍两两不交。"
+      },
+      {
+        "type": "text",
+        "text": "Each intersection of E sub j and F sub k belongs to S by the semi-algebra condition. These intersections are pairwise disjoint. If the j indices differ, the pieces lie in disjoint E sets. If the k indices differ, they lie in disjoint F sets. Thus the intersection belongs to B. It remains to check complements.",
+        "sourceBlock": 6
+      }
+    ]
+  },
+  {
+    "id": "complement-decomposition",
+    "title": "Complement decomposition",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "The collection B is closed under complements. Therefore it is an algebra, and the finite disjoint representation theorem follows.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Proof",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Write A as a finite disjoint union of sets E sub i. Since S is a semi-algebra, write each E sub i complement as a finite disjoint union of sets F sub i k in S. Let l sub i be the number of pieces for the i-th complement. Apply De Morgan’s law, then distribute the finite intersections over the finite unions.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "A complement is the intersection of all E sub i complements. Replace each complement by its finite disjoint decomposition. On distributing, choose one F set from each row and intersect the chosen sets. Take the disjoint union over all such choices."
+      },
+      {
+        "type": "cue",
+        "text": "板书：lᵢ 读 l sub i；Fᵢₖᵢ 读 F sub i, k sub i。先解释“每行选一个”，再写多重并，避免把多个下标连读。"
+      },
+      {
+        "type": "text",
+        "text": "Every resulting intersection belongs to S. Two different tuples of indices differ at some position i. At that position the corresponding F sets are disjoint, so the two resulting intersections are disjoint. There are only finitely many terms. Hence A complement belongs to B.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "text",
+        "text": "We have proved that B contains Omega and is closed under intersections and complements. It is an algebra containing S. Minimality gives one inclusion, and the previous argument gives the other. Thus B equals the algebra generated by S. This representation will provide the formula for our extension.",
+        "sourceBlock": 5
+      }
+    ]
+  },
+  {
+    "id": "additivity",
+    "title": "Additive set function",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition. Let C contain the empty set, and let mu map C into the extended nonnegative real numbers. We call mu additive if mu of the empty set is zero and the following holds: whenever finitely many pairwise disjoint sets in C have a union E that also belongs to C, mu of E is the sum of their mu values.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Suppose E is the disjoint union of E one through E n, and all these sets, including E, belong to C. Then mu of E equals the sum from j equals one to n of mu of E sub j."
+      },
+      {
+        "type": "cue",
+        "text": "板书：μ 读 mu。先写 E∈𝒞，不能只列出各 Eⱼ∈𝒞。"
+      },
+      {
+        "type": "text",
+        "text": "Keep the condition that E also belongs to C. A general collection need not be closed under finite unions. If E is outside the domain, mu of E is not defined. Algebras are natural domains, but this definition also applies to semi-algebras.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "statement",
+        "text": "Proposition. If the finite decomposition identity holds and some set A in C has finite mu value, then mu of the empty set is automatically zero.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "heading",
+        "text": "Proof",
+        "sourceBlock": 4
+      },
+      {
+        "type": "math",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "Write A as the disjoint union of A and the empty set. Additivity gives mu of A equals mu of A plus mu of the empty set. Cancel the finite value mu of A."
+      },
+      {
+        "type": "cue",
+        "text": "板书：在消去 μ(A) 前标记 μ(A)<∞。"
+      },
+      {
+        "type": "text",
+        "text": "The last step uses the finiteness of mu of A. If all values are infinite, we cannot cancel infinity from the equality. That is why we include the zero value at the empty set explicitly in the definition.",
+        "sourceBlock": 6
+      }
+    ]
+  },
+  {
+    "id": "difference",
+    "title": "Monotonicity; set difference",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Proposition. Suppose mu is additive, E is contained in F, and E, F, and F minus E all belong to the domain. Then mu of E is at most mu of F. If mu of E is finite, the measure of F minus E equals mu of F minus mu of E.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Split F into E and F minus E. The measure of F equals the sum of the measures of these two pieces."
+      },
+      {
+        "type": "cue",
+        "text": "板书：先画出分解再写等式；只有 μ(E) 有限时才移项。"
+      },
+      {
+        "type": "heading",
+        "text": "Proof",
+        "sourceBlock": 2
+      },
+      {
+        "type": "text",
+        "text": "The two pieces are disjoint, so additivity gives the equality. If mu of E is infinite, nonnegativity forces mu of F to be infinite as well. If mu of E is finite, we may subtract it to obtain the difference formula. Infinity minus a finite number is still infinity. In both cases monotonicity follows.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "On an algebra, the set difference is always in the domain. On a general collection, we must check it separately. Later, in the proof of continuity from above, we will also need a finite measure set before using subtraction.",
+        "sourceBlock": 4
+      }
+    ]
+  },
+  {
+    "id": "discrete",
+    "title": "Discrete measure; indicator function",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Example. Let x sub j be points of Omega and let p sub j be finite nonnegative real weights. Define mu of A by adding the weights of the points that belong to A. This set function is additive.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Mu of A is the sum of p sub j times one sub A of x sub j. Equivalently, sum p sub j over those indices j for which x sub j belongs to A. On the right I write the definition of the indicator."
+      },
+      {
+        "type": "cue",
+        "text": "板书：1_A(x) 读 the indicator of A at x；pⱼ 读 p sub j。重复点的权重仍全部计入。"
+      },
+      {
+        "type": "text",
+        "text": "The symbol one sub A denotes the indicator function. It is one on A and zero outside A. A point contributes its weight exactly when it belongs to A. The points need not be distinct: repeated points contribute all of their assigned weights.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "supplement",
+        "text": "Supplementary explanation. For pairwise disjoint sets A one through A n, any point belongs to at most one of them. Therefore the indicator of their disjoint union is the sum of their indicators. Multiply by p sub j and sum over j. Interchanging a finite sum and a nonnegative series gives additivity. Every term for the empty set is zero. This completes the verification left to the audience.",
+        "sourceBlock": 3
+      }
+    ]
+  },
+  {
+    "id": "countable-additivity",
+    "title": "σ-additivity",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition. Let C contain the empty set, and let mu be a nonnegative, possibly infinite-valued function on C. It is countably additive if mu of the empty set is zero and every countable disjoint family in C whose union E belongs to C satisfies the countable sum identity.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "If E is the disjoint union of A sub j for j from one to infinity, and E as well as each A sub j belongs to C, then mu of E is the sum of mu of A sub j."
+      },
+      {
+        "type": "cue",
+        "text": "板书：保留并集 E 也在定义域内的条件；σ-additive 读 sigma-additive。"
+      },
+      {
+        "type": "text",
+        "text": "The series is the limit of its nonnegative partial sums. It may equal positive infinity, and there is no cancellation between positive and negative terms. Adding empty sets to a finite family shows that countable additivity implies finite additivity.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "text",
+        "text": "We may discuss countable additivity on a semi-algebra or an algebra. In that case the equality is required only when the union remains in the domain. Closure of a collection under countable unions and countable additivity of a function are different requirements.",
+        "sourceBlock": 3
+      }
+    ]
+  },
+  {
+    "id": "counterexample",
+    "title": "An additive but not σ-additive function",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Let Omega be the open unit interval. Consider the empty set and intervals open at a and closed at b, with zero at most a, a less than b, and b less than one. Give the empty set value zero and define the interval values as follows.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "The value is positive infinity when a is zero, and b minus a when a is positive. The empty set has value zero."
+      },
+      {
+        "type": "cue",
+        "text": "板书：先写分段定义，强调左端点是否为零决定赋值。"
+      },
+      {
+        "type": "statement",
+        "text": "This set function is finitely additive on the stated collection but is not countably additive.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "heading",
+        "text": "Why finite additivity holds",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "Suppose an interval is split into finitely many disjoint intervals of the same type. If its left endpoint is positive, every piece has its usual length, and the lengths add up correctly. If its left endpoint is zero, at least one piece must also start at zero. Otherwise, the finitely many positive left endpoints would have a positive minimum, leaving points near zero uncovered. Thus one term on the right is infinite, in agreement with the left side.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "heading",
+        "text": "Why countable additivity fails",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "Take a strictly decreasing sequence of positive numbers x sub j tending to zero, with x one equal to one half. The intervals open at x sub j plus one and closed at x sub j are pairwise disjoint. Their union is the interval open at zero and closed at one half. Every small interval has a positive left endpoint, so its mu value is its length.",
+        "sourceBlock": 6
+      },
+      {
+        "type": "math",
+        "sourceBlock": 7
+      },
+      {
+        "type": "text",
+        "text": "The union is the interval from zero to one half, with only the right endpoint included. The sum of the lengths telescopes: the first n terms add to x one minus x sub n plus one. As n tends to infinity, this tends to one half."
+      },
+      {
+        "type": "cue",
+        "text": "板书：xⱼ₊₁ 读 x sub j plus one；先写有限部分和，再取极限，避免直接把无穷项消去。"
+      },
+      {
+        "type": "text",
+        "text": "But the mu value of the full interval is infinite. Thus the countable sum identity fails. A finite decomposition needs a piece starting at zero, whereas a countable decomposition can have positive endpoints that only approach zero.",
+        "sourceBlock": 8
+      }
+    ]
+  },
+  {
+    "id": "continuity",
+    "title": "Continuity from below / above",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition. We write E sub n increases to E if the sets are increasing and their union is E. A set function mu is continuous from below at E if every such sequence in its domain satisfies mu of E sub n tending to mu of E.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "The upward arrow means that E sub n is contained in E sub n plus one, and the union of all E sub n is E. Continuity from below says that their measures converge to the measure of E."
+      },
+      {
+        "type": "cue",
+        "text": "板书：Eₙ↑E 读 E sub n increases to E；先说明集合极限，再写数值极限。"
+      },
+      {
+        "type": "statement",
+        "text": "Definition. We write E sub n decreases to E if the sets are decreasing and their intersection is E. We say mu is continuous from above at E if, for every such sequence in its domain with at least one term of finite measure, mu of E sub n tends to mu of E.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "The downward arrow means that each set contains the next, and their intersection is E. If mu of E sub n zero is finite for some index n zero, the measures converge to mu of E."
+      },
+      {
+        "type": "cue",
+        "text": "板书：n₀ 读 n zero，Eₙ₀ 读 E sub n zero；圈出有限性条件，不能省略。"
+      },
+      {
+        "type": "text",
+        "text": "Both the sequence terms and the limit set must belong to the domain. The arrows describe inclusion and set union or intersection; they are not numerical limits of points. For an additive function, monotonicity makes the corresponding measure values increasing or decreasing. The finite measure condition is part of our definition of continuity from above.",
+        "sourceBlock": 4
+      }
+    ]
+  },
+  {
+    "id": "finite-upper",
+    "title": "The finiteness condition",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "The finite measure condition in continuity from above cannot be removed.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "text",
+        "text": "Consider the unbounded intervals starting after n. They form a decreasing sequence, and no real number belongs to every one of them. Their intersection is therefore empty. If we use length, every interval in this sequence has infinite measure.",
+        "sourceBlock": 1
+      },
+      {
+        "type": "math",
+        "sourceBlock": 2
+      },
+      {
+        "type": "text",
+        "text": "E sub n is the interval from n to positive infinity. These sets decrease to the empty set, but every length is infinite, while the empty set has length zero."
+      },
+      {
+        "type": "cue",
+        "text": "板书：写递减集合与恒为无穷的数值序列，区分二者。端点开闭不影响本例。"
+      },
+      {
+        "type": "text",
+        "text": "The measures cannot tend to zero. This does not contradict continuity from above as defined, because the finite measure condition fails. If some term of a decreasing sequence has finite measure, monotonicity makes all later terms finite as well. Only then can we safely use the difference formula.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "note",
+        "text": "字幕没有显示半无限区间在 n 处的端点开闭板书；这里选用 (n,+∞)，换成 [n,+∞) 对本例结论没有影响。",
+        "sourceBlock": 4
+      }
+    ]
+  },
+  {
+    "id": "continuity-lemma",
+    "title": "Continuity criterion",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Lemma. Let mu be a nonnegative finitely additive function on an algebra A. First, countable additivity implies continuity from below and continuity from above at every member of A. Second, continuity from below at every member implies countable additivity. Third, if mu of Omega is finite, continuity from above at the empty set implies countable additivity.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "text",
+        "text": "Continuity from above always includes the finite term condition. In the third part, finiteness means that mu of the whole space is finite, as used in the lecture proof. Then every set in the domain has finite measure.",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Let us prove these claims in order. Each proof uses the algebra property: differences and finite unions must stay in the domain. Before countable additivity has been proved, we must not apply an additive equality directly to an infinite union.",
+        "sourceBlock": 2
+      }
+    ]
+  },
+  {
+    "id": "below-proof",
+    "title": "Disjoint increments",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Under the assumptions of the lemma, countable additivity implies continuity from below.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Proof",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Take E sub n increasing to E. Split the sequence into its new pieces: F one equals E one, and F sub n equals E sub n minus E sub n minus one for n at least two. All pieces belong to the algebra and are pairwise disjoint. The first n pieces form E sub n, and all pieces together form E.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "E sub n is the disjoint union of F one through F n. E is the disjoint union of all F sub k."
+      },
+      {
+        "type": "cue",
+        "text": "板书：先定义新增部分 Fₙ，写有限并与可数并两个等式。"
+      },
+      {
+        "type": "text",
+        "text": "Use countable additivity for the full union and finite additivity for the partial unions.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "math",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "Mu of E equals the infinite sum of mu of F sub k. This is the limit of the first n terms, which equals the limit of mu of E sub n."
+      },
+      {
+        "type": "cue",
+        "text": "板书：等式三步分别用可数可加、非负级数定义、有限可加；允许极限为 +∞。"
+      },
+      {
+        "type": "text",
+        "text": "A nonnegative series is defined by the limit of its partial sums. Hence this remains valid when mu of E is infinite. Since E was arbitrary, continuity from below holds at every set in the domain.",
+        "sourceBlock": 6
+      }
+    ]
+  },
+  {
+    "id": "above-proof",
+    "title": "Taking differences inside a finite set",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Countable additivity also implies continuity from above, with the finite term condition.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Proof",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Take E sub n decreasing to E. Choose an index n zero for which mu of E sub n zero is finite. Within this fixed set, let G sub k be E sub n zero minus E sub n zero plus k. These sets belong to the algebra and increase to E sub n zero minus E. By continuity from below, their measures converge to the measure of that difference.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "On the first line, use the difference formula inside E sub n zero. On the second line, apply continuity from below to the differences. On the third line, use the difference formula again. The same finite constant appears throughout."
+      },
+      {
+        "type": "cue",
+        "text": "板书：Eₙ₀₊ₖ 读 E sub n zero plus k。逐行标出“差集公式—从下连续—差集公式”，最后消去有限常数。"
+      },
+      {
+        "type": "text",
+        "text": "The limit set E and all later terms are subsets of the finite measure set E sub n zero. Thus every subtraction is legitimate. Cancel the fixed finite constant to obtain convergence of the tail measures to mu of E. Removing finitely many initial terms does not change a limit, so the full sequence also converges.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "text",
+        "text": "We take differences within E sub n zero rather than within Omega, because Omega may have infinite measure. The finite set prevents an undefined subtraction of infinity from infinity.",
+        "sourceBlock": 5
+      }
+    ]
+  },
+  {
+    "id": "below-converse",
+    "title": "Partial unions",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Finite additivity together with continuity from below implies countable additivity.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Proof",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Let E be the disjoint union of sets E sub k, with E and all E sub k in the algebra. Let F sub n be the union of the first n sets. These finite unions belong to the algebra and increase to E. Finite additivity gives mu of F sub n as the sum of the first n measures.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "By continuity from below, mu of E is the limit of mu of F sub n. Replace each finite union measure by its finite sum. The limit of these partial sums is the required infinite sum."
+      },
+      {
+        "type": "cue",
+        "text": "板书：先说明 Fₙ↑E，再取极限。这里不能提前对无限并使用可数可加。"
+      },
+      {
+        "type": "text",
+        "text": "Even without continuity, inclusion of each partial union in E gives that the infinite sum is at most mu of E. Continuity provides the missing equality: the measures of the partial unions converge to mu of E.",
+        "sourceBlock": 4
+      }
+    ]
+  },
+  {
+    "id": "empty-converse",
+    "title": "Continuity at the empty set",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "If mu is finitely additive, mu of Omega is finite, and mu is continuous from above at the empty set, then mu is countably additive.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Proof",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Let E be a countable disjoint union of sets E sub k, with E and every term in the algebra. Define F sub n as the tail union beginning at n. We cannot claim it belongs to the algebra merely because it is a countable union. Instead, use the following finite difference representation.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "F sub n equals E minus the union of E one through E sub n minus one. This is a finite difference in the algebra. The tails decrease to the empty set."
+      },
+      {
+        "type": "cue",
+        "text": "板书：当 n=1 时前面的并为空集。不要用“代数对可数并封闭”解释 Fₙ∈𝒜。"
+      },
+      {
+        "type": "text",
+        "text": "Because the sets E sub k are disjoint, a point belongs to at most one of them. It cannot remain in every tail, so the tails decrease to the empty set. Also, mu of F one is at most the finite value mu of Omega. Continuity from above at the empty set therefore makes mu of F sub n tend to zero.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "math",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "Split E into its first n pieces and the remaining tail F sub n plus one. Additivity gives the finite sum plus the tail measure. The tail measure tends to zero, leaving the infinite sum."
+      },
+      {
+        "type": "cue",
+        "text": "板书：Fₙ₊₁ 读 F sub n plus one；强调先写有限分解，后取极限。"
+      },
+      {
+        "type": "text",
+        "text": "The identity first follows from finite additivity. Then let n tend to infinity. Finiteness ensures that continuity from above applies to the tail sequence.",
+        "sourceBlock": 6
+      }
+    ]
+  },
+  {
+    "id": "infinite-counterexample",
+    "title": "Why finiteness matters",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Return to the interval function from Lecture Two. An interval starting at zero has infinite value; an interval with positive left endpoint has its usual length. Extend this function to finite disjoint unions by summing the interval values.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "statement",
+        "text": "This function is not countably additive, but it satisfies continuity from above at the empty set with the finite term condition. Thus the finiteness assumption in the preceding criterion cannot simply be omitted.",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Consider a sequence of finite unions of half-open intervals decreasing to the empty set. If the leftmost interval in every term starts at zero, every measure value is infinite. Such a sequence does not satisfy the finite term condition, so the continuity requirement does not apply to it.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "text",
+        "text": "If some term has finite measure, all of its nonempty component intervals have positive left endpoints. Every later set is contained in that term and is measured by ordinary length. These lengths tend to zero. The lecture postpones the detailed proof of this fact until the construction of length measure; we retain that qualification.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "note",
+        "text": "本讲没有给出上述长度连续性的完整证明，讲义保留老师的待证标记，不用未提供的后续内容补成“本讲已证”。字幕写 Ω=(0,1) 且 b<1；因此有限区间并族未包含整个 Ω。若要把该例严格用于“代数上的判别法”，可把右端点 1 处相应区间改为 (a,1) 并纳入 Ω；这是端点补全，不改变 (0,1/2] 的反例。",
+        "sourceBlock": 4
+      }
+    ]
+  },
+  {
+    "id": "extension-statement",
+    "title": "Extension from a semi-algebra",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Theorem. Let S be a semi-algebra, and let mu be a nonnegative finitely additive function on S, allowing infinite values. There is a unique finitely additive function nu on the algebra generated by S that agrees with mu on S.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Write A as a finite disjoint union of sets E sub j in S. Define nu of A to be the sum from j equals one to n of mu of E sub j."
+      },
+      {
+        "type": "cue",
+        "text": "板书：μ 读 mu，ν 读 nu；明确 μ 在半代数上，ν 在生成代数上。先写候选定义，再验证不依赖分解。"
+      },
+      {
+        "type": "text",
+        "text": "We proved in Lecture Two that every member of the generated algebra has such a representation. If nu is additive and extends mu, this formula is forced. But a set may have several decompositions. We must first show that they give the same value; that is, the formula is well defined.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "text",
+        "text": "Here, mu denotes the original function and nu denotes the extension. We distinguish them by their domains. We will check well-definedness, additivity, agreement with the original function, and uniqueness.",
+        "sourceBlock": 3
+      }
+    ]
+  },
+  {
+    "id": "well-defined",
+    "title": "Common refinement",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "The proposed value of nu does not depend on the finite disjoint decomposition of A.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Proof",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Suppose A has two decompositions, one into E one through E n and one into F one through F m, all in the semi-algebra. Refine both decompositions using the intersections of E sub j with F sub k. Every intersection belongs to S. Each row and each column gives a disjoint decomposition.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "Each E sub j is the disjoint union of its intersections with all F sub k. Likewise, each F sub k is the disjoint union of its intersections with all E sub j."
+      },
+      {
+        "type": "cue",
+        "text": "板书：可画一个 j×k 的交叉细分表；每行还原 Eⱼ，每列还原 Fₖ。"
+      },
+      {
+        "type": "text",
+        "text": "Each set being decomposed, E sub j or F sub k, itself belongs to the semi-algebra. Therefore finite additivity of the original mu applies to both decompositions.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "math",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "Start with the sum of mu of E sub j. Replace each term by the sum over its intersections with F sub k. Interchange the two finite sums, then combine each column to recover mu of F sub k."
+      },
+      {
+        "type": "cue",
+        "text": "板书：逐个等号解释“按行拆开—交换次序—按列合并”。不使用减法。"
+      },
+      {
+        "type": "text",
+        "text": "We may interchange finite sums of nonnegative terms, even if a term is infinite. No subtraction is used. The two decompositions give the same value, so nu is well defined.",
+        "sourceBlock": 6
+      }
+    ]
+  },
+  {
+    "id": "extension-properties",
+    "title": "Additivity and uniqueness",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "The function nu is finitely additive, agrees with mu on S, and is the unique function with these two properties.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Additivity",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Take disjoint A and B in the generated algebra. Decompose A into sets E sub j and B into sets F sub k. Because A and B are disjoint, the combined list is still a disjoint family of semi-algebra sets. The definition of nu gives the following equality.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "Nu of the disjoint union of A and B is the sum of the mu values of both lists of pieces. The first list gives nu of A and the second gives nu of B."
+      },
+      {
+        "type": "cue",
+        "text": "板书：把两组互不相交的分解直接拼接，再分别识别为 ν(A)、ν(B)。"
+      },
+      {
+        "type": "text",
+        "text": "Repeat the two-set argument to obtain finite additivity. For the empty set, use a one-term decomposition: nu of the empty set equals mu of the empty set, hence zero.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "heading",
+        "text": "Agreement with the original function",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "If A belongs to S, use the one-term decomposition consisting of A itself. The formula then gives nu of A equals mu of A.",
+        "sourceBlock": 6
+      },
+      {
+        "type": "heading",
+        "text": "Uniqueness",
+        "sourceBlock": 7
+      },
+      {
+        "type": "text",
+        "text": "Suppose nu one and nu two are additive extensions agreeing with mu on S. For any finite disjoint decomposition of A into semi-algebra sets, additivity forces both values to be the sum of the original mu values. Thus the extensions agree throughout the generated algebra.",
+        "sourceBlock": 8
+      },
+      {
+        "type": "math",
+        "sourceBlock": 9
+      },
+      {
+        "type": "text",
+        "text": "Nu one of A equals the sum of nu one of E sub j. On these pieces it equals mu, which also equals nu two. Summing again gives nu two of A."
+      },
+      {
+        "type": "cue",
+        "text": "板书：ν₁ 读 nu one，ν₂ 读 nu two；每一步说明有限可加或延拓性质。"
+      }
+    ]
+  },
+  {
+    "id": "preserve-sigma",
+    "title": "Preserving σ-additivity",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "If mu is countably additive on S, then its extension nu is countably additive on the algebra generated by S.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Proof",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Let A be the disjoint union of A sub k, with all these sets in the generated algebra. Decompose A into finitely many sets E sub j. For each k, decompose A sub k into finitely many sets E sub k l, with l from one to m sub k. All E sets belong to S.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "For a fixed j, E sub j is the disjoint union of E sub j intersect E sub k l, over every k and over the finite list of l indices for that k."
+      },
+      {
+        "type": "cue",
+        "text": "板书：Eₖₗ 读 E sub k l；mₖ 读 m sub k。外层 k 可数，内层 l 有限，总共仍可数。"
+      },
+      {
+        "type": "text",
+        "text": "The right side is a countable disjoint family of intersections in S. Its union is E sub j, which also belongs to S. Thus countable additivity of the original mu applies.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "math",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "Nu of A is the finite sum of mu of E sub j. Replace each term by the countable sum over its intersection pieces."
+      },
+      {
+        "type": "cue",
+        "text": "板书：第一步用 ν 的定义，第二步用 μ 的可数可加；并集 Eⱼ 在半代数内。"
+      },
+      {
+        "type": "text",
+        "text": "For each fixed k and l, the set E sub k l is contained in A. It is therefore the finite disjoint union of its intersections with E one through E n. Finite additivity says that summing these intersection values over j gives mu of E sub k l. Rearrange the nonnegative sums and combine these pieces.",
+        "sourceBlock": 6
+      },
+      {
+        "type": "math",
+        "sourceBlock": 7
+      },
+      {
+        "type": "text",
+        "text": "Move the finite sum over j to the inside. It combines the intersections into E sub k l. The finite sum over l then gives nu of A sub k. The remaining sum over k is the required countable sum."
+      },
+      {
+        "type": "cue",
+        "text": "板书：解释求和顺序 j,k,l 变为 k,l,j；非负项允许重排，再逐层合并。"
+      },
+      {
+        "type": "text",
+        "text": "This completes the first extension step. We still require the full union A to belong to the algebra. The theorem does not assert that the algebra is closed under arbitrary countable unions.",
+        "sourceBlock": 8
+      }
+    ]
+  },
+  {
+    "id": "caratheodory-route",
+    "title": "Carathéodory extension theorem",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Carathéodory extension theorem. Let A be an algebra, and let nu be a nonnegative countably additive function on A with value zero at the empty set. Then nu has a measure extension to sigma of A. If Omega has a countable cover by sets in A with finite nu values, the extension on sigma of A is unique.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "text",
+        "text": "A measure is a nonnegative countably additive set function on a sigma-algebra, with value zero at the empty set. Our original nu is defined only on an algebra. Its countable additivity applies when the union remains in that algebra.",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "We proceed in four steps. First, construct an outer measure on all subsets. Second, select the sets that split every test set correctly. Third, prove that these measurable sets form a sigma-algebra containing A, and that the outer measure becomes a measure there and agrees with nu. Finally, use a monotone class argument to prove uniqueness on sigma of A under the sigma-finite condition.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "The extension starts on the semi-algebra S, passes to the algebra generated by S, then to the sigma-algebra generated by S. This sigma-algebra is contained in the measurable collection M that we will construct."
+      },
+      {
+        "type": "cue",
+        "text": "板书：Carathéodory 可读 ka-ra-theh-OD-or-ee；σ-finite 读 sigma-finite。按包含链说明两步延拓，不预先把 σ(𝒜) 与 ℳ 写成相等。"
+      },
+      {
+        "type": "supplement",
+        "text": "Supplementary explanation. The sigma-algebra generated by S equals the one generated by the algebra of S. Any sigma-algebra containing S is also an algebra, so it contains the algebra generated by S. The reverse inclusion follows because S is contained in that algebra.",
+        "sourceBlock": 4
+      }
+    ]
+  },
+  {
+    "id": "outer-definition",
+    "title": "Covering; infimum; outer measure",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition. For any subset A of Omega, define pi star of A as the infimum of the sums of nu values over all countable covers of A by sets in the original algebra.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Pi star of A is the infimum of the sum, from i equals one to infinity, of nu of E sub i. The sets E sub i must belong to the algebra, and their union must contain A."
+      },
+      {
+        "type": "cue",
+        "text": "板书：π* 读 pi star；inf 读 infimum；先写约束，再解释“覆盖费用的下确界”，不说 minimum。"
+      },
+      {
+        "type": "text",
+        "text": "A cover only has to contain A in its union. Its members need not be disjoint, and the union need not equal A. The cover consisting of Omega followed by empty sets is always available, so the family of covers is nonempty. The infimum may be infinite, and a cover attaining it need not exist.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "statement",
+        "text": "Definition. An outer measure is a nonnegative set function on all subsets that is zero at the empty set, monotone, and countably subadditive.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "math",
+        "sourceBlock": 4
+      },
+      {
+        "type": "text",
+        "text": "An outer measure is zero at the empty set. Inclusion implies an inequality of values. If E is contained in the union of E sub i, then pi star of E is at most the sum of pi star of E sub i."
+      },
+      {
+        "type": "cue",
+        "text": "板书：对比 countable subadditivity 与 countable additivity；次可加只给 ≤。"
+      },
+      {
+        "type": "text",
+        "text": "Subadditivity requires an inequality, not equality on disjoint sets. Thus an outer measure can be defined on every subset without contradicting Lecture One. We consistently use pi star for this construction.",
+        "sourceBlock": 5
+      }
+    ]
+  },
+  {
+    "id": "outer-basic",
+    "title": "Zero and monotonicity",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "The covering construction gives pi star of the empty set equal to zero and is monotone.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Proof: the empty set",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Cover the empty set using only empty sets. The cost is zero, so its outer measure is at most zero. Every covering cost is nonnegative, so the infimum is nonnegative. The two inequalities give zero.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "heading",
+        "text": "Proof: monotonicity",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "If E is contained in F, every cover of F is also a cover of E. Thus E has at least as many available covers. Taking an infimum over a larger family can only make the value smaller or equal.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "math",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "The family of covers of F is contained in the family of covers of E. Consequently, pi star of E is at most pi star of F."
+      },
+      {
+        "type": "cue",
+        "text": "板书：注意覆盖族包含关系与下确界不等号方向；E 更小，可选覆盖更多。"
+      },
+      {
+        "type": "text",
+        "text": "Neither E nor F has to belong to the original algebra, because pi star is defined on all subsets. However, the sets used in their covers must belong to the original algebra.",
+        "sourceBlock": 6
+      }
+    ]
+  },
+  {
+    "id": "outer-subadditive",
+    "title": "An ε-approximation of coverings",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "If E is contained in the countable union of E sub i, then pi star of E is at most the sum of pi star of E sub i.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Proof",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "If the sum on the right is infinite, the inequality is immediate. Otherwise, every pi star of E sub i is finite. Fix a positive epsilon. By the definition of infimum, choose for each E sub i a cover by algebra sets H sub i k whose cost is at most pi star of E sub i plus epsilon divided by two to the i.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "For each fixed i, the sets H sub i k cover E sub i. Their total nu value is at most pi star of E sub i plus epsilon over two to the i."
+      },
+      {
+        "type": "cue",
+        "text": "板书：ε 读 epsilon；Hᵢₖ 读 H sub i k；ε/2ⁱ 读 epsilon over two to the i。"
+      },
+      {
+        "type": "text",
+        "text": "There are only countably many pairs of positive integer indices. Taken together, all H sub i k cover the union of the E sets and therefore cover E. Apply the definition of pi star and the estimates for their costs.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "math",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "Pi star of E is at most the sum of all these covering costs. Bound each row by its infimum plus its error. The errors sum to epsilon, so the total is at most the sum of pi star of E sub i plus epsilon."
+      },
+      {
+        "type": "cue",
+        "text": "板书：先写可数的双重覆盖，再合并误差；Σᵢ₌₁∞2⁻ⁱ=1。"
+      },
+      {
+        "type": "text",
+        "text": "This holds for every positive epsilon. Let epsilon decrease to zero to obtain the result. The choice of epsilon divided by two to the i ensures that the infinitely many approximation errors have a total at most epsilon.",
+        "sourceBlock": 6
+      }
+    ]
+  },
+  {
+    "id": "measurability",
+    "title": "Carathéodory measurability",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition. A subset A of Omega is pi-star measurable if every subset E of Omega satisfies pi star of E equals pi star of E intersect A plus pi star of E intersect A complement. Let M be the collection of all such A.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Script M consists of all sets A such that, for every subset E of Omega, splitting E into E intersect A and E minus A preserves the outer measure sum."
+      },
+      {
+        "type": "cue",
+        "text": "板书：ℳ 读 script M；强调 for every E，而不是只检查可测的 E。"
+      },
+      {
+        "type": "text",
+        "text": "A is the set whose measurability we are checking. E is an arbitrary test set. E need not be measurable and need not belong to the original algebra. Correct splitting means that the two pieces have outer measures adding exactly to that of E.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "The two pieces form E as a disjoint union. Subadditivity therefore gives pi star of E at most the sum of the outer measures of the pieces."
+      },
+      {
+        "type": "cue",
+        "text": "板书：这里只用次可加性，尚不能由“不交”写等号。"
+      },
+      {
+        "type": "text",
+        "text": "The less-than-or-equal direction holds for every A by subadditivity. Thus, to prove measurability, we only need the reverse inequality. We cannot justify equality merely by disjointness: outer measure is not yet known to be additive on such pieces.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "text",
+        "text": "We will prove that every original algebra set belongs to M, that M is a sigma-algebra, and that restricting pi star to M gives a measure.",
+        "sourceBlock": 5
+      }
+    ]
+  },
+  {
+    "id": "algebra-measurable",
+    "title": "Splitting a covering",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Proposition. Every set in the original algebra is pi-star measurable. In symbols, A is contained in M.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Proof",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Fix a set A in the algebra and an arbitrary test set E. If pi star of E is infinite, the required reverse inequality is automatic; together with subadditivity it gives equality. If it is finite, fix a positive epsilon and choose an algebra cover E sub i whose cost is at most pi star of E plus epsilon.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "text",
+        "text": "The algebra is closed under intersections and complements. Therefore E sub i intersect A and E sub i intersect A complement belong to it. These two families cover the corresponding parts of E. Each E sub i is split into two disjoint pieces, so finite additivity of nu applies.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "math",
+        "sourceBlock": 4
+      },
+      {
+        "type": "text",
+        "text": "The outer measures of the two parts are at most their respective covering costs. Add the costs and use finite additivity on each E sub i. The resulting total is at most pi star of E plus epsilon."
+      },
+      {
+        "type": "cue",
+        "text": "板书：两类覆盖分别覆盖 E∩A、E∩Aᶜ；把每个 Eᵢ 的两部分用 ν 有限可加合并。"
+      },
+      {
+        "type": "text",
+        "text": "Let epsilon decrease to zero. This proves the reverse inequality and hence measurability of A. This step uses only finite additivity of nu. Countable additivity will be used later to show that pi star preserves the original values on the algebra.",
+        "sourceBlock": 5
+      }
+    ]
+  },
+  {
+    "id": "measurable-algebra",
+    "title": "Finite unions of measurable sets",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Proposition. M contains Omega and is closed under complements and finite unions. Therefore M is an algebra.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "The whole space and complements",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Omega is measurable because its split of E is E itself and the empty set. The criterion becomes pi star of E equals pi star of E plus zero. The measurability criterion is symmetric in A and A complement, so measurability of one gives measurability of the other.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "heading",
+        "text": "Finite unions",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "Let A and B be measurable and fix any test set E. First split E by A. Then split E minus A by B.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "math",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "The two successive measurable splits give three terms: E intersect A; E minus A, intersected with B; and E outside A union B."
+      },
+      {
+        "type": "cue",
+        "text": "板书：先用 A 分割，再对剩余部分用 B 分割；第三项是 E∖(A∪B)。"
+      },
+      {
+        "type": "text",
+        "text": "The first two pieces form E intersect A union B. By subadditivity, their outer measures sum to at least the outer measure of that union.",
+        "sourceBlock": 6
+      },
+      {
+        "type": "math",
+        "sourceBlock": 7
+      },
+      {
+        "type": "text",
+        "text": "The outer measure of E intersect the union of A and B is at most the sum of the first two terms."
+      },
+      {
+        "type": "cue",
+        "text": "板书：口述 E intersect the union of A and B，避免误解括号；再代回上一式。"
+      },
+      {
+        "type": "text",
+        "text": "Substitution gives pi star of E at least pi star of E intersect A union B plus pi star of E minus A union B. This is the reverse inequality required for measurability of A union B. Hence M is closed under finite unions. Together with complements, De Morgan’s law gives finite intersections and set differences.",
+        "sourceBlock": 8
+      }
+    ]
+  },
+  {
+    "id": "measurable-sigma",
+    "title": "Disjointification; σ-algebra",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Proposition. M is closed under countable unions. It is therefore a sigma-algebra containing the original algebra A, and it contains sigma of A.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Proof: make the sets disjoint",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Take measurable sets A sub j and let A be their union. Set F one equal to A one. For j greater than one, remove the preceding A sets from A sub j to obtain F sub j. Finite unions and differences preserve measurability, so all F sets are measurable. They are pairwise disjoint and have the same partial unions and full union as the A sets.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "F one is A one. For each later index j, F sub j is A sub j minus the union of all earlier A sets. The full union A is now the disjoint union of the F sets."
+      },
+      {
+        "type": "cue",
+        "text": "板书：这一步称 disjointification；直接说 make the sets disjoint 即可。"
+      },
+      {
+        "type": "heading",
+        "text": "Proof: a finite splitting identity",
+        "sourceBlock": 4
+      },
+      {
+        "type": "statement",
+        "text": "For every test set E and every finite disjoint family of measurable sets F sub j, the outer measure of E intersect their union equals the sum of the outer measures of E intersect each F sub j.",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "For one set the identity is immediate. For the induction step, split E intersect the union of the first n plus one sets by the measurable set F sub n plus one. One piece is E intersect F sub n plus one. The other is E intersect the union of the first n sets. Apply the induction hypothesis to this second piece.",
+        "sourceBlock": 6
+      },
+      {
+        "type": "heading",
+        "text": "Proof: measurability of the countable union",
+        "sourceBlock": 7
+      },
+      {
+        "type": "text",
+        "text": "Fix E. The finite union U sub n of F one through F n is measurable. Also, E minus A is contained in E minus U sub n. Use the measurability of U sub n, monotonicity, and the finite splitting identity.",
+        "sourceBlock": 8
+      },
+      {
+        "type": "math",
+        "sourceBlock": 9
+      },
+      {
+        "type": "text",
+        "text": "Split E by U sub n. The first term is the sum of the first n intersection measures. The second is at least pi star of E minus A by monotonicity."
+      },
+      {
+        "type": "cue",
+        "text": "板书：Uₙ 读 U sub n；E∖A⊂E∖Uₙ 决定第二项不等式方向。"
+      },
+      {
+        "type": "text",
+        "text": "Let n tend to infinity. Subadditivity also bounds pi star of E intersect A by the sum of pi star of E intersect F sub j. Combine these inequalities.",
+        "sourceBlock": 10
+      },
+      {
+        "type": "math",
+        "sourceBlock": 11
+      },
+      {
+        "type": "text",
+        "text": "Taking the limit gives the infinite sum plus pi star of E minus A. Subadditivity bounds this from below by pi star of E intersect A plus pi star of E minus A. This is exactly the reverse measurable-splitting inequality."
+      },
+      {
+        "type": "cue",
+        "text": "板书：先取非负部分和极限，再用次可加性；没有使用“外测度从下连续”。"
+      },
+      {
+        "type": "text",
+        "text": "This proves that A is measurable. Thus M is a sigma-algebra. Since it contains the original algebra, minimality implies it contains sigma of A. Notice that we did not assume continuity from below for outer measure; doing so would make the proof circular.",
+        "sourceBlock": 12
+      }
+    ]
+  },
+  {
+    "id": "agrees-original",
+    "title": "Agreement with the original function",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Proposition. For every A in the original algebra, pi star of A equals nu of A.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "One inequality",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Cover A by A itself followed by empty sets. The cost is nu of A, so pi star of A is at most nu of A.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "heading",
+        "text": "The reverse inequality",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "Take any algebra cover E sub j of A. Make it disjoint: retain E one and remove all earlier sets from each later E sub j. Denote the resulting sets by F sub j. They are disjoint algebra sets, have the same union as the cover, and satisfy F sub j contained in E sub j. Therefore A is the disjoint union of A intersect F sub j.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "math",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "Nu of A equals the sum of nu of A intersect F sub j. Since each such piece is contained in E sub j, this is at most the sum of nu of E sub j."
+      },
+      {
+        "type": "cue",
+        "text": "板书：强调原 ν 可数可加的条件满足：A 和所有 A∩Fⱼ 均在原代数。然后对任意覆盖取 infimum。"
+      },
+      {
+        "type": "text",
+        "text": "The equality uses countable additivity of the original nu: the union A and every piece A intersect F sub j belong to the algebra. The inequality uses monotonicity. This holds for every cover, so take the infimum of the right side. We obtain nu of A at most pi star of A. Combining both directions gives equality.",
+        "sourceBlock": 6
+      },
+      {
+        "type": "text",
+        "text": "This is the essential step where countable additivity of the original function is used. Finite additivity alone does not guarantee that taking the covering infimum preserves the original values.",
+        "sourceBlock": 7
+      }
+    ]
+  },
+  {
+    "id": "restriction-measure",
+    "title": "Restriction to measurable sets",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "The restriction of pi star to M is countably additive. It is therefore a measure extending nu.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Proof",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Take pairwise disjoint measurable sets A sub j and let A be their union. Countable subadditivity gives pi star of A at most the sum of their outer measures. For the other direction, every finite partial union is contained in A. Apply monotonicity and the finite splitting identity with test set Omega.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "Pi star of A is at least the outer measure of the union of the first n sets. By finite splitting, this equals the sum of their outer measures. This holds for every positive integer n."
+      },
+      {
+        "type": "cue",
+        "text": "板书：先固定 n 得到部分和下界，再让 n 趋于无穷。"
+      },
+      {
+        "type": "text",
+        "text": "Let n tend to infinity to obtain the reverse inequality. Thus equality holds. M is a sigma-algebra and the empty set has value zero, so the restriction is a measure. Since pi star agrees with nu on the original algebra, it is an extension of nu.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "math",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "Pi star restricted to the original algebra equals nu. Pi star restricted to M is a measure, and sigma of A is contained in M."
+      },
+      {
+        "type": "cue",
+        "text": "板书：竖线带下标表示 restriction，π*|ℳ 读 pi star restricted to M。"
+      },
+      {
+        "type": "text",
+        "text": "Restrict further to sigma of A to obtain the extension required by the theorem. Next, we discuss uniqueness on this smaller sigma-algebra.",
+        "sourceBlock": 6
+      }
+    ]
+  },
+  {
+    "id": "sigma-finite",
+    "title": "σ-finiteness",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition. A measure space is sigma-finite if Omega has a countable cover by measurable sets of finite measure. Equivalently, there is an increasing sequence of finite measure sets whose union is Omega.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Choose E sub n increasing to Omega, with mu of E sub n finite for every n."
+      },
+      {
+        "type": "cue",
+        "text": "板书：σ-finite 读 sigma-finite；用于延拓唯一性时另写 Eₙ∈𝒜，不能只要求在较大的可测域内。"
+      },
+      {
+        "type": "supplement",
+        "text": "Supplementary explanation. Starting from a cover H sub n, let E sub n be the union of the first n cover sets. These unions increase to Omega. Splitting a finite union into disjoint pieces and using additivity and monotonicity gives its measure at most the sum of the individual measures. That sum is finite. Sigma-finiteness still allows the whole space to have infinite measure.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "statement",
+        "text": "The uniqueness condition here is more specific: the covering sets must belong to the original algebra A and have finite nu values. Two extensions agreeing on A then have the same finite values on these covering sets.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "The general definition only requires the cover to come from the domain of the measure. Here we require it to come from the original algebra. These are different conditions. The argument proves uniqueness on sigma of A; it does not assert uniqueness on every possible larger domain.",
+        "sourceBlock": 4
+      }
+    ]
+  },
+  {
+    "id": "monotone-class",
+    "title": "Monotone class theorem",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Definition. A collection G of subsets of Omega is a monotone class if it is closed under unions of increasing sequences and intersections of decreasing sequences.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "math",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "If A sub j belongs to G and increases to A, then A belongs to G. Similarly, if B sub j belongs to G and decreases to B, then B belongs to G."
+      },
+      {
+        "type": "cue",
+        "text": "板书：𝒢 读 script G；只对单调序列要求封闭。"
+      },
+      {
+        "type": "text",
+        "text": "A monotone class only requires closure for monotone sequences. It does not directly require complements or arbitrary countable unions. Every sigma-algebra is a monotone class, but the converse is not true in general.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "statement",
+        "text": "Proposition. The intersection of any nonempty family of monotone classes is a monotone class. Consequently, every collection C is contained in a smallest monotone class, denoted by G of C.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "supplement",
+        "text": "Supplementary explanation. If every term of a monotone sequence belongs to every class in the family, its monotone limit belongs to every class, hence to their intersection. To construct the smallest class containing C, intersect all monotone classes containing C. The power set of Omega is one candidate, so this family is nonempty.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "statement",
+        "text": "Monotone class theorem. If A is an algebra, the smallest monotone class containing A equals sigma of A. Therefore every monotone class containing A also contains sigma of A.",
+        "sourceBlock": 5
+      },
+      {
+        "type": "math",
+        "sourceBlock": 6
+      },
+      {
+        "type": "text",
+        "text": "The monotone class generated by the algebra A is exactly the sigma-algebra generated by A. The assumption that A is an algebra is essential to this statement."
+      },
+      {
+        "type": "cue",
+        "text": "板书：定理完整陈述后注明“本课只陈述，证明在后续讲次”，不要把交封闭的小证明当成本定理证明。"
+      },
+      {
+        "type": "note",
+        "text": "老师在 01:26 左右明确把此定理的证明留到下一讲。本页只陈述定理并在下一节使用，不把未提供的第五讲证明加入本网站。",
+        "sourceBlock": 7
+      }
+    ]
+  },
+  {
+    "id": "uniqueness",
+    "title": "Uniqueness on σ(A)",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Uniqueness theorem. Suppose mu one and mu two are measures on sigma of A and agree on the algebra A. Suppose there are sets E sub n in A increasing to Omega, with their common measure finite for every n. Then the measures agree on all of sigma of A.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "heading",
+        "text": "Proof: fix a finite measure covering set",
+        "sourceBlock": 1
+      },
+      {
+        "type": "text",
+        "text": "Fix n. Consider the collection B sub n of measurable sets on which the two measures agree after intersection with E sub n.",
+        "sourceBlock": 2
+      },
+      {
+        "type": "math",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "B sub n is the collection of A in sigma of script A for which mu one of A intersect E sub n equals mu two of A intersect E sub n."
+      },
+      {
+        "type": "cue",
+        "text": "板书：区分 ℬₙ（集合族）和 Eₙ（固定有限块）；n 固定，后面 j 才是单调序列下标。"
+      },
+      {
+        "type": "text",
+        "text": "If A belongs to the original algebra, then A intersect E sub n also belongs to it. The two measures agree there, so the original algebra is contained in B sub n.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "heading",
+        "text": "Proof: B sub n is a monotone class",
+        "sourceBlock": 5
+      },
+      {
+        "type": "text",
+        "text": "Take sets A sub j in B sub n increasing to A. Their intersections with E sub n increase to A intersect E sub n. Measures are continuous from below. Passing to the limits of the equal values shows that A belongs to B sub n.",
+        "sourceBlock": 6
+      },
+      {
+        "type": "math",
+        "sourceBlock": 7
+      },
+      {
+        "type": "text",
+        "text": "Continuity from below identifies the first measure with the limit of the first sequence of values. Term by term, these equal the second sequence. Its limit is the second measure of A intersect E sub n."
+      },
+      {
+        "type": "cue",
+        "text": "板书：第一个和最后一个等号用从下连续，中间等号用 Aⱼ∈ℬₙ。"
+      },
+      {
+        "type": "text",
+        "text": "Now take sets B sub j in B sub n decreasing to B. Their intersections with E sub n decrease to B intersect E sub n. Use continuity from above. Each measure is bounded by the finite measure of E sub n, so the finite term condition holds. Passing to the limit again gives equality, and B belongs to B sub n.",
+        "sourceBlock": 8
+      },
+      {
+        "type": "note",
+        "text": "字幕 01:35—01:36 把递减序列对应的连续性说成 from below；按序列方向与有限条件，这里应是从上连续（from above）。",
+        "sourceBlock": 9
+      },
+      {
+        "type": "heading",
+        "text": "Proof: apply the monotone class theorem and remove the restriction",
+        "sourceBlock": 10
+      },
+      {
+        "type": "text",
+        "text": "B sub n is a monotone class containing the algebra. It therefore contains sigma of A. By its definition it is already a subcollection of sigma of A, so they are equal. Thus for every measurable A, the two measures of A intersect E sub n agree for every n.",
+        "sourceBlock": 11
+      },
+      {
+        "type": "math",
+        "sourceBlock": 12
+      },
+      {
+        "type": "text",
+        "text": "As n tends to infinity, A intersect E sub n increases to A. Apply continuity from below to both measures and use their equality on every finite covering piece. This gives mu one of A equals mu two of A."
+      },
+      {
+        "type": "cue",
+        "text": "板书：最后改变的是 n，不再固定 n；此处从下连续允许 μᵢ(A)=+∞。"
+      },
+      {
+        "type": "text",
+        "text": "The last step uses continuity from below and does not require A to have finite measure. Thus uniqueness includes sets of infinite measure. The finite covering sets were needed when proving closure of B sub n under decreasing limits.",
+        "sourceBlock": 13
+      }
+    ]
+  },
+  {
+    "id": "extension-remarks",
+    "title": "Carathéodory theorem: final remarks",
+    "blocks": [
+      {
+        "type": "statement",
+        "text": "Carathéodory’s theorem extends a nonnegative countably additive function on an algebra to a measure on the generated sigma-algebra. A sigma-finite cover from the original algebra guarantees uniqueness there.",
+        "sourceBlock": 0
+      },
+      {
+        "type": "text",
+        "text": "The existence construction actually gives a measure on M. This collection is defined by the splitting criterion for pi star, which is constructed from the original nu. Thus M depends on nu. It may be strictly larger than sigma of A; we must not automatically identify the two.",
+        "sourceBlock": 1
+      },
+      {
+        "type": "math",
+        "sourceBlock": 2
+      },
+      {
+        "type": "text",
+        "text": "The original algebra is contained in its generated sigma-algebra, which is contained in M. On the original algebra, pi star still agrees with nu."
+      },
+      {
+        "type": "cue",
+        "text": "板书：指向包含链，分别说明延拓存在的较大域 ℳ 与唯一性结论的域 σ(𝒜)。"
+      },
+      {
+        "type": "text",
+        "text": "Without the sigma-finite condition, the course does not guarantee uniqueness. The lecturer refers to a counterexample in the exercises, but the four supplied transcripts do not give it, so we do not add an extra example here.",
+        "sourceBlock": 3
+      },
+      {
+        "type": "text",
+        "text": "Together, Lectures Three and Four give the route from a semi-algebra to its generated algebra and then to its generated sigma-algebra. Later lectures will apply this to interval length and discuss larger measurable collections. The present four lectures end here. They have not yet constructed Lebesgue measure explicitly or proved the monotone class theorem.",
+        "sourceBlock": 4
+      },
+      {
+        "type": "note",
+        "text": "字幕把 Carathéodory 误识别为 Cartesian Doris、卡拉泰奥多里不等式等；这里统一为 Carathéodory 延拓定理。",
+        "sourceBlock": 5
+      }
+    ]
+  }
+]
