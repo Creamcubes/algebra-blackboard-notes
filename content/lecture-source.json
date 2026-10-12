@@ -2072,6 +2072,10 @@
         "text": "We now study general linear systems. The numbers of equations and unknowns need not be equal."
       },
       {
+        "type": "text",
+        "text": "First, we define solutions and equivalence of linear systems."
+      },
+      {
         "type": "statement",
         "text": "Definitions. A solution of a linear system is an ordered list of values that satisfies every equation. The solution set contains all solutions. Two systems are equivalent if they have the same solution set."
       },
@@ -2085,6 +2089,10 @@
         "text": "Here, s is the number of equations and n is the number of unknowns. A solution is a list of n values, in the order of the unknowns. The coefficient a sub i j belongs to equation i and unknown j. All coefficients, constants, and solution entries are taken in P."
       },
       {
+        "type": "text",
+        "text": "Next, we introduce the three elementary transformations of a linear system."
+      },
+      {
         "type": "statement",
         "text": "Definition 1. Elementary transformations of a linear system are: multiply an equation by a nonzero number; add a multiple of one equation to another; exchange two equations."
       },
@@ -2095,6 +2103,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "To prove that an elementary transformation preserves solutions, we must prove both inclusions of solution sets. First check that every old solution satisfies the transformed equations. Then use the inverse transformation to recover every old equation from the new system."
       },
       {
         "type": "text",
@@ -2117,6 +2129,10 @@
       {
         "type": "text",
         "text": "Conversely, subtract k times the unchanged second equation to recover the original first equation. Thus the two systems have the same solutions. Multiplication by a nonzero number is reversed by division by that number. Exchanging equations is reversed by exchanging them again. These operations also preserve all solutions."
+      },
+      {
+        "type": "text",
+        "text": "We now introduce the augmented matrix, which records both the coefficients and the right-hand sides."
       },
       {
         "type": "statement",
@@ -2163,6 +2179,10 @@
       },
       {
         "type": "text",
+        "text": "We must distinguish a contradiction from a consistent system. In the consistent case, the number of leading entries determines how many unknowns are fixed by back substitution and how many can be chosen freely. We will explain both the unique-solution and the infinitely-many-solutions cases."
+      },
+      {
+        "type": "text",
         "text": "Apply the row reduction from Chapter Two. Each row operation preserves solutions. We can relabel the unknowns so the leading unknowns are x sub one through x sub r. Remove equations that say zero equals zero. If there is no contradiction, the remaining system has this form."
       },
       {
@@ -2187,6 +2207,10 @@
         "type": "math",
         "text": "",
         "latex": "c_{ii}x_i+\\cdots+c_{ir}x_r=d_i-c_{i,r+1}x_{r+1}-\\cdots-c_{in}x_n\\quad(i=1,\\ldots,r)"
+      },
+      {
+        "type": "text",
+        "text": "Next, we define free unknowns and the general solution."
       },
       {
         "type": "statement",
@@ -2215,6 +2239,10 @@
       },
       {
         "type": "text",
+        "text": "Assume the system is homogeneous and the number of equations is less than the number of unknowns. We must find a solution with at least one nonzero entry. In echelon form, there cannot be more leading entries than equations, so at least one unknown is free. We will assign one free unknown a nonzero value."
+      },
+      {
+        "type": "text",
         "text": "A homogeneous system always has the zero solution. After elimination, the number r of leading entries cannot exceed s. Thus r is less than n, so at least one unknown is free. Give one free unknown the value one. The resulting solution is nonzero."
       },
       {
@@ -2236,6 +2264,10 @@
         "text": "Next, we introduce vectors to describe relations among equations."
       },
       {
+        "type": "text",
+        "text": "We now introduce vectors and their components."
+      },
+      {
         "type": "statement",
         "text": "Definition 2. An n-dimensional vector over P is an ordered list of n numbers in P. These numbers are its components."
       },
@@ -2249,6 +2281,10 @@
         "text": "We denote a vector by a Greek letter, such as alpha. We read its components as a sub one, a sub two, through a sub n. Their order matters."
       },
       {
+        "type": "text",
+        "text": "Next, we define equality of vectors."
+      },
+      {
         "type": "statement",
         "text": "Definition 3. Two vectors are equal if all corresponding components are equal."
       },
@@ -2256,6 +2292,10 @@
         "type": "math",
         "text": "",
         "latex": "\\alpha=(a_1,\\ldots,a_n),\\quad\\beta=(b_1,\\ldots,b_n),\\qquad\\alpha=\\beta\\ \\Longleftrightarrow\\ a_i=b_i\\quad(i=1,\\ldots,n)"
+      },
+      {
+        "type": "text",
+        "text": "We now define vector addition."
       },
       {
         "type": "statement",
@@ -2267,6 +2307,10 @@
         "latex": "\\alpha+\\beta=(a_1+b_1,\\ldots,a_n+b_n)"
       },
       {
+        "type": "text",
+        "text": "Next, we introduce the zero vector and the negative of a vector."
+      },
+      {
         "type": "statement",
         "text": "Definition 5. The zero vector has every component zero. The negative of a vector has the negative of each component."
       },
@@ -2276,6 +2320,10 @@
         "latex": "0=(0,\\ldots,0),\\qquad-\\alpha=(-a_1,\\ldots,-a_n)"
       },
       {
+        "type": "text",
+        "text": "We use this negative vector to define subtraction."
+      },
+      {
         "type": "statement",
         "text": "Definition 6. Vector subtraction means addition of the negative vector."
       },
@@ -2283,6 +2331,10 @@
         "type": "math",
         "text": "",
         "latex": "\\alpha-\\beta=\\alpha+(-\\beta)=(a_1-b_1,\\ldots,a_n-b_n)"
+      },
+      {
+        "type": "text",
+        "text": "Finally, we define multiplication of a vector by a scalar."
       },
       {
         "type": "statement",
@@ -2310,6 +2362,10 @@
     "chapter": 3,
     "source": "§2 · pp.77–78",
     "blocks": [
+      {
+        "type": "text",
+        "text": "All vectors in these identities have the same number of components, and all scalars belong to P. To prove a vector equality, we must show equality in each component. We can then use the corresponding addition and multiplication laws in the number field."
+      },
       {
         "type": "statement",
         "text": "Vector laws. Addition is commutative and associative, zero is an additive identity, and every vector has an additive inverse. Scalar multiplication satisfies the two distributive laws, associativity of scalar factors, and multiplication by one."
@@ -2358,6 +2414,10 @@
         "text": "The first three formulas follow directly from their components. For the last, choose a nonzero component of alpha. Multiplying it by nonzero k gives a nonzero component of k alpha."
       },
       {
+        "type": "text",
+        "text": "We now name the set equipped with these operations: the n-dimensional vector space over P."
+      },
+      {
         "type": "statement",
         "text": "Definition 8. The n-dimensional vector space over P consists of all n-component vectors over P, together with the addition and scalar multiplication just defined."
       },
@@ -2384,8 +2444,12 @@
     "source": "§3 · pp.78–79",
     "blocks": [
       {
+        "type": "text",
+        "text": "First, we introduce linear combinations. We begin with one vector and a given system of vectors, all with the same number of components over the same number field P."
+      },
+      {
         "type": "statement",
-        "text": "Definition 9. A vector is a linear combination of a given system of vectors if it is a sum of scalar multiples of those vectors."
+        "text": "Definition 9. Let beta sub one through beta sub s be vectors over P. If there are scalars k sub one through k sub s in P such that alpha equals their linear combination, then alpha is called a linear combination of beta sub one through beta sub s. We also say that alpha can be expressed linearly in this system."
       },
       {
         "type": "math",
@@ -2395,6 +2459,28 @@
       {
         "type": "text",
         "text": "We also say alpha can be expressed linearly in beta sub one through beta sub s. The numbers k sub one through k sub s are the coefficients."
+      },
+      {
+        "type": "heading",
+        "text": "Textbook example: expressing one vector"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_1=(2,-1,3,1),\\quad\\alpha_2=(4,-2,5,4),\\quad\\alpha_3=(2,-1,4,-1)."
+      },
+      {
+        "type": "text",
+        "text": "The book returns to the vectors coming from the earlier system of equations. Multiply alpha sub one by three and subtract alpha sub two. Compare the four components."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "3\\alpha_1-\\alpha_2=(6-4,-3+2,9-5,3-4)=(2,-1,4,-1)=\\alpha_3."
+      },
+      {
+        "type": "text",
+        "text": "Thus alpha sub three is a linear combination of alpha sub one and alpha sub two, with coefficients three and minus one."
       },
       {
         "type": "statement",
@@ -2410,20 +2496,82 @@
         "text": "We read epsilon sub i as the unit vector with one in position i. The equality follows by comparing components. The zero vector is a linear combination of any nonempty system: take every coefficient zero."
       },
       {
-        "type": "statement",
-        "text": "Definition 10. One system of vectors can be expressed linearly in another if each of its vectors can be so expressed. Two systems are equivalent if each can be expressed linearly in the other."
+        "type": "text",
+        "text": "Next, we introduce linear expression for a whole system and then equivalence of two systems. We must check every vector in the first system, not just one of them."
       },
       {
         "type": "statement",
-        "text": "Result. Linear expression is transitive. Equivalence of vector systems is reflexive, symmetric, and transitive."
+        "text": "Definition 10. Let alpha sub one through alpha sub t and beta sub one through beta sub s be two systems of vectors over P with the same number of components. If, for each i from one through t, the vector alpha sub i can be expressed as a linear combination of beta sub one through beta sub s, then we say that the system alpha sub one through alpha sub t can be expressed linearly in the system beta sub one through beta sub s. The two systems are called equivalent if each can be expressed linearly in the other."
       },
       {
-        "type": "heading",
-        "text": "Proof"
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_i=k_{i1}\\beta_1+\\cdots+k_{is}\\beta_s,\\qquad i=1,\\ldots,t,\\quad k_{ij}\\in P."
       },
       {
         "type": "text",
-        "text": "Suppose each alpha is expressed in the betas, and each beta in the gammas. Substitute the second set of formulas into the first and collect the coefficients of each gamma."
+        "text": "For each fixed i, we need one such expression. The coefficients may change with i. To prove equivalence, we also need an expression for every beta vector in terms of the alpha vectors. The two systems need not have the same number of vectors."
+      },
+      {
+        "type": "heading",
+        "text": "Textbook example: two equivalent systems"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_1=(1,1,1),\\quad\\alpha_2=(1,2,0),\\qquad\\beta_1=(1,0,2),\\quad\\beta_2=(0,1,-1)."
+      },
+      {
+        "type": "text",
+        "text": "First, express each alpha vector in the beta system. Adding beta sub one and beta sub two gives alpha sub one. Adding beta sub one and twice beta sub two gives alpha sub two."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_1=\\beta_1+\\beta_2,\\qquad\\alpha_2=\\beta_1+2\\beta_2."
+      },
+      {
+        "type": "text",
+        "text": "This proves one direction. For the reverse direction, subtract the first equality from the second to obtain beta sub two. Then subtract beta sub two from alpha sub one to obtain beta sub one."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\beta_1=2\\alpha_1-\\alpha_2,\\qquad\\beta_2=\\alpha_2-\\alpha_1."
+      },
+      {
+        "type": "text",
+        "text": "We have now expressed every vector of either system in the other system. Therefore the two systems are equivalent."
+      },
+      {
+        "type": "statement",
+        "text": "Transitivity of linear expression. If the alpha system can be expressed linearly in the beta system, and the beta system can be expressed linearly in the gamma system, then the alpha system can be expressed linearly in the gamma system."
+      },
+      {
+        "type": "heading",
+        "text": "Proof of transitivity of linear expression"
+      },
+      {
+        "type": "text",
+        "text": "Assume that the first system has t vectors, the second has s vectors, and the third has p vectors. Our first assumption gives coefficients k sub i j for each alpha vector. Our second assumption gives coefficients ell sub j m for each beta vector. All these coefficients belong to P."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_i=\\sum_{j=1}^{s}k_{ij}\\beta_j\\quad(1\\le i\\le t),\\qquad\\beta_j=\\sum_{m=1}^{p}\\ell_{jm}\\gamma_m\\quad(1\\le j\\le s)."
+      },
+      {
+        "type": "text",
+        "text": "Our goal is to express each alpha sub i using only gamma sub one through gamma sub p. Fix i. In its expression, replace every beta sub j by the expression supplied by the second assumption."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_i=\\sum_{j=1}^{s}k_{ij}\\left(\\sum_{m=1}^{p}\\ell_{jm}\\gamma_m\\right)=\\sum_{j=1}^{s}\\sum_{m=1}^{p}k_{ij}\\ell_{jm}\\gamma_m."
+      },
+      {
+        "type": "text",
+        "text": "Now collect all terms multiplying the same gamma sub m. These are finite sums, so we may change their order. The coefficient of gamma sub m is the sum, over j, of k sub i j times ell sub j m."
       },
       {
         "type": "math",
@@ -2432,11 +2580,60 @@
       },
       {
         "type": "text",
-        "text": "This proves transitivity of linear expression. Every system expresses itself by using coefficients one and zero. This gives reflexivity. Symmetry is part of the definition of equivalence. Applying transitivity in both directions proves transitivity of equivalence."
+        "text": "Each new coefficient is a sum of products of elements of P, so it is also in P. We have obtained the required expression for alpha sub i. Since i was arbitrary, it holds for every alpha vector. This proves transitivity."
+      },
+      {
+        "type": "statement",
+        "text": "Reflexivity. Every system of vectors is equivalent to itself."
+      },
+      {
+        "type": "heading",
+        "text": "Proof of reflexivity"
+      },
+      {
+        "type": "text",
+        "text": "To express a given vector of the system, give that vector coefficient one and give every other vector coefficient zero. This works for each vector in the system."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_i=0\\alpha_1+\\cdots+0\\alpha_{i-1}+1\\alpha_i+0\\alpha_{i+1}+\\cdots+0\\alpha_t\\quad(1\\le i\\le t)."
+      },
+      {
+        "type": "text",
+        "text": "Thus the system can be expressed linearly in itself. The two directions required by equivalence are the same in this case."
+      },
+      {
+        "type": "statement",
+        "text": "Symmetry. If the alpha system is equivalent to the beta system, then the beta system is equivalent to the alpha system."
+      },
+      {
+        "type": "heading",
+        "text": "Proof of symmetry"
+      },
+      {
+        "type": "text",
+        "text": "Assume the alpha and beta systems are equivalent. By Definition Ten, every alpha vector is a linear combination of the beta vectors, and every beta vector is a linear combination of the alpha vectors. Reading these same two conditions in the opposite order gives precisely the definition of equivalence of the beta system to the alpha system."
+      },
+      {
+        "type": "statement",
+        "text": "Transitivity of equivalence. If the alpha system is equivalent to the beta system and the beta system is equivalent to the gamma system, then the alpha system is equivalent to the gamma system."
+      },
+      {
+        "type": "heading",
+        "text": "Proof of transitivity of equivalence"
+      },
+      {
+        "type": "text",
+        "text": "Assume both stated equivalences. For the first direction, the alpha system is expressible in the beta system and the beta system in the gamma system. The transitivity just proved expresses the alpha system in the gamma system. For the reverse direction, the gamma system is expressible in the beta system and the beta system in the alpha system. Applying the same result again expresses the gamma system in the alpha system. Both directions hold, which proves equivalence."
       },
       {
         "type": "cue",
         "text": "equivalent 等价；reflexive 自反；symmetric 对称；transitive 传递。这里“向量组等价”不等于向量逐个相等。"
+      },
+      {
+        "type": "cue",
+        "text": "先分别写出两条已知的线性表出，再说明目标；“线性表出的传递性”先证明一次，“等价的传递性”须把这个结论正反各用一次。教材例子的双向系数在此展开，便于口述核对。"
       }
     ]
   },
@@ -2448,6 +2645,10 @@
     "source": "§3 · pp.79–80",
     "blocks": [
       {
+        "type": "text",
+        "text": "Next, we introduce the definition of linear dependence. We ask whether one vector in a system can already be expressed using the other vectors."
+      },
+      {
         "type": "statement",
         "text": "Definition 11. A system of at least two vectors is linearly dependent if one vector is a linear combination of the others."
       },
@@ -2455,6 +2656,31 @@
         "type": "math",
         "text": "",
         "latex": "\\alpha_s=k_1\\alpha_1+\\cdots+k_{s-1}\\alpha_{s-1}\\quad\\text{after relabelling if needed}"
+      },
+      {
+        "type": "text",
+        "text": "The dependent vector need not originally be the last one. We place it last only to simplify the notation. The other coefficients may be zero."
+      },
+      {
+        "type": "heading",
+        "text": "Textbook examples of linear dependence"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_1=(2,-1,3,1),\\quad\\alpha_2=(4,-2,5,4),\\quad\\alpha_3=(2,-1,4,-1),\\qquad\\alpha_3=3\\alpha_1-\\alpha_2."
+      },
+      {
+        "type": "text",
+        "text": "The three vectors from the preceding example form a dependent system because alpha sub three is expressed by the other two. Also, a system of at least two vectors containing the zero vector is dependent: express that zero vector using coefficient zero on every other vector. For two vectors, dependence means that at least one is a scalar multiple of the other."
+      },
+      {
+        "type": "text",
+        "text": "For geometric vectors in three-dimensional real space, the book interprets dependence using lines and planes through the origin. Two vectors are dependent exactly when both lie on such a line. Three are dependent exactly when they lie in such a plane. If two of the three are independent, they determine the plane and the third is a combination of them. If no two are independent, the system is already dependent. Zero vectors are included in these statements."
+      },
+      {
+        "type": "text",
+        "text": "We now give an equivalent definition using a homogeneous vector equation. This version also applies to a system containing just one vector."
       },
       {
         "type": "statement",
@@ -2475,12 +2701,24 @@
       },
       {
         "type": "text",
+        "text": "There are two implications to prove. First assume the original definition: one of the vectors is a linear combination of the others. We must construct a zero combination whose coefficients are not all zero."
+      },
+      {
+        "type": "text",
         "text": "If one vector is expressed in the others, move it to the left. Its coefficient is minus one, so the coefficients are not all zero."
       },
       {
         "type": "math",
         "text": "",
         "latex": "\\alpha_s=\\sum_{i=1}^{s-1}k_i\\alpha_i\\quad\\Longrightarrow\\quad\\sum_{i=1}^{s-1}k_i\\alpha_i-\\alpha_s=0"
+      },
+      {
+        "type": "text",
+        "text": "The coefficient list is k sub one through k sub s minus one, followed by minus one. Whatever the other coefficients are, the last coefficient is nonzero. This proves the first implication."
+      },
+      {
+        "type": "text",
+        "text": "For the reverse implication, assume a zero combination with coefficients not all zero. We must isolate one vector as a combination of the remaining vectors. At least one coefficient is nonzero; after relabelling, call it k sub s."
       },
       {
         "type": "text",
@@ -2494,6 +2732,10 @@
       {
         "type": "text",
         "text": "Thus one vector is a linear combination of the others. The definitions agree."
+      },
+      {
+        "type": "text",
+        "text": "Finally, we introduce linear independence, which excludes all such nontrivial zero combinations."
       },
       {
         "type": "statement",
@@ -2511,6 +2753,10 @@
       {
         "type": "cue",
         "text": "linearly dependent 线性相关；linearly independent 线性无关。不要把“向量和等于零”直接当作相关，必须检查系数不全为零。"
+      },
+      {
+        "type": "cue",
+        "text": "“a nonzero solution”指系数向量不为零，即至少一个系数非零；不是每个系数都非零，也不是要求原来的向量非零。"
       }
     ]
   },
@@ -2533,6 +2779,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "For the first result, assume a subsystem is dependent. Our target is a nontrivial zero combination of the full system. Keep the known coefficients on that subsystem and assign coefficient zero to every added vector. At least one of the original coefficients remains nonzero."
       },
       {
         "type": "text",
@@ -2608,8 +2858,12 @@
     "source": "§3 · p.82",
     "blocks": [
       {
+        "type": "text",
+        "text": "We now compare the numbers of vectors in two systems. Let the alpha system contain r vectors and the beta system contain s vectors, all over the same number field and with the same number of components."
+      },
+      {
         "type": "statement",
-        "text": "Theorem 2. If r vectors can be expressed linearly in s vectors and r is greater than s, then the r vectors are linearly dependent."
+        "text": "Theorem 2. Assume the following two conditions: first, every vector alpha sub one through alpha sub r can be expressed linearly in beta sub one through beta sub s; second, r is greater than s. Then the system alpha sub one through alpha sub r is linearly dependent."
       },
       {
         "type": "math",
@@ -2618,7 +2872,7 @@
       },
       {
         "type": "text",
-        "text": "The coefficient t sub j i multiplies beta sub j in the expression for alpha sub i. We will find a nonzero relation among the alphas."
+        "text": "The first condition gives the displayed expressions. The second compares the number r of alpha vectors with the number s of beta vectors. The scalars t sub j i are fixed coefficients in these expressions: the first index identifies the beta vector, and the second identifies the alpha vector. We do not assume that the beta vectors are independent."
       },
       {
         "type": "heading",
@@ -2626,7 +2880,25 @@
       },
       {
         "type": "text",
-        "text": "Form a linear combination with unknown coefficients x sub one through x sub r. Substitute the expressions and collect each beta."
+        "text": "Let us first state exactly what we must prove. By the definition of linear dependence, we need scalars k sub one through k sub r, not all zero, whose linear combination of the alpha vectors is zero. In other words, the following homogeneous vector equation must have a nonzero solution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k_1\\alpha_1+k_2\\alpha_2+\\cdots+k_r\\alpha_r=0,\\qquad(k_1,k_2,\\ldots,k_r)\\ne(0,0,\\ldots,0)."
+      },
+      {
+        "type": "text",
+        "text": "Here a nonzero solution means at least one k is nonzero. To find these scalars, temporarily write the unknown coefficients as x sub one through x sub r. We will call a chosen solution k sub one through k sub r. Substitute the known expression for each alpha vector into their linear combination."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}x_1\\alpha_1+\\cdots+x_r\\alpha_r&=x_1(t_{11}\\beta_1+\\cdots+t_{s1}\\beta_s)+\\cdots+x_r(t_{1r}\\beta_1+\\cdots+t_{sr}\\beta_s)\\\\&=(t_{11}x_1+\\cdots+t_{1r}x_r)\\beta_1+\\cdots+(t_{s1}x_1+\\cdots+t_{sr}x_r)\\beta_s.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "For each beta sub j, collect its contributions from all r alpha vectors. This gives the coefficient t sub j one times x sub one, through t sub j r times x sub r. In summation notation, the same calculation is"
       },
       {
         "type": "math",
@@ -2635,7 +2907,7 @@
       },
       {
         "type": "text",
-        "text": "It is enough to make every coefficient in parentheses zero. These conditions form s homogeneous equations in r unknowns."
+        "text": "To make this vector zero, it is sufficient to make every displayed coefficient of beta equal to zero. We use this as a sufficient condition; without independence of the beta vectors, it is not necessarily a necessary condition. We therefore solve the following scalar homogeneous system."
       },
       {
         "type": "math",
@@ -2644,7 +2916,29 @@
       },
       {
         "type": "text",
-        "text": "Since r is greater than s, Theorem One gives a nonzero solution. For that choice of coefficients, the combination of the alphas is zero. Thus they are dependent."
+        "text": "There is one equation for each beta vector, so there are s equations. The unknowns are x sub one through x sub r, so there are r unknowns. The second hypothesis says r is greater than s. Theorem One therefore guarantees a solution with these r entries not all zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(x_1,\\ldots,x_r)=(k_1,\\ldots,k_r)\\ne(0,\\ldots,0),\\qquad\\sum_{i=1}^{r}t_{ji}k_i=0\\quad(j=1,\\ldots,s)."
+      },
+      {
+        "type": "text",
+        "text": "Now use this particular solution as the coefficients of the alpha vectors. Each coefficient of beta in the collected expression vanishes."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{i=1}^{r}k_i\\alpha_i=\\sum_{j=1}^{s}\\left(\\sum_{i=1}^{r}t_{ji}k_i\\right)\\beta_j=\\sum_{j=1}^{s}0\\beta_j=0."
+      },
+      {
+        "type": "text",
+        "text": "We have produced a zero combination of the alpha vectors with coefficients not all zero. This is exactly the proof target, so the alpha system is linearly dependent."
+      },
+      {
+        "type": "cue",
+        "text": "证明顺序：两条假设 → 目标k₁α₁+⋯+kᵣαᵣ=0且系数不全为零 → 设未知数xᵢ → 代入αᵢ的表达式 → 按βⱼ合并 → s个方程、r个未知数 → 取非零解代回。此处沿教材用r记α向量个数。"
       },
       {
         "type": "statement",
@@ -2661,7 +2955,7 @@
       },
       {
         "type": "text",
-        "text": "If r were greater than s, the theorem would make them dependent, a contradiction."
+        "text": "Assume the alpha system is independent and expressible in the beta system. We want to prove r is at most s. Suppose instead that r is greater than s. Both hypotheses of Theorem Two would then hold, so the alpha system would be dependent. This contradicts the assumption and proves the inequality."
       },
       {
         "type": "statement",
@@ -2678,7 +2972,7 @@
       },
       {
         "type": "text",
-        "text": "Every n-component vector is a combination of the n unit vectors. Apply the theorem."
+        "text": "Take any n plus one vectors with n components. Every one is a linear combination of the n unit vectors. Thus the first condition of Theorem Two holds with the given vectors as the alpha system and the unit vectors as the beta system. The second condition holds because n plus one is greater than n. The given system is therefore dependent."
       },
       {
         "type": "statement",
@@ -2695,7 +2989,7 @@
       },
       {
         "type": "text",
-        "text": "Apply Corollary One in each direction. The two inequalities give equality."
+        "text": "Let the two independent systems contain r and s vectors. Equivalence gives linear expression in both directions. Expressing the first in the second and applying Corollary One gives r at most s. Expressing the second in the first gives s at most r. These two inequalities force r equals s."
       }
     ]
   },
@@ -2706,6 +3000,10 @@
     "chapter": 3,
     "source": "§3 · pp.83–84",
     "blocks": [
+      {
+        "type": "text",
+        "text": "We now introduce a maximal linearly independent subsystem."
+      },
       {
         "type": "statement",
         "text": "Definition 13. A maximal linearly independent subsystem is an independent subsystem that becomes dependent whenever any other vector from the original system is added."
@@ -2721,6 +3019,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Assume a maximal independent subsystem has been selected. We must express every vector of the original system in this subsystem. Its own members already have such expressions. For any other vector, maximality gives a dependence after it is added. The key is to show that the coefficient of the added vector cannot be zero."
       },
       {
         "type": "text",
@@ -2755,6 +3057,10 @@
       {
         "type": "text",
         "text": "Each is equivalent to the full system, so any two are equivalent to each other. They are independent. Corollary Three of Theorem Two gives equal numbers of vectors."
+      },
+      {
+        "type": "text",
+        "text": "The preceding theorem lets us define rank without depending on which maximal independent subsystem we choose."
       },
       {
         "type": "statement",
@@ -2803,6 +3109,10 @@
         "text": "Proof"
       },
       {
+        "type": "text",
+        "text": "Fix a solution of the original system. Our first goal is to show that it satisfies an arbitrary linear combination of the equations. For equivalent augmented row systems, we must then apply this observation in both directions to get equality of solution sets."
+      },
+      {
         "type": "math",
         "text": "",
         "latex": "\\sum_{j=1}^n a_{ij}c_j=d_i\\quad(i=1,\\ldots,s)\\quad\\Longrightarrow\\quad\\sum_{j=1}^n b_jc_j=\\sum_{i=1}^s\\ell_i\\sum_{j=1}^n a_{ij}c_j=\\sum_{i=1}^s\\ell_i d_i=d"
@@ -2821,6 +3131,10 @@
     "source": "§4 · pp.84–86",
     "blocks": [
       {
+        "type": "text",
+        "text": "We first introduce row rank and column rank."
+      },
+      {
         "type": "statement",
         "text": "Definition 15. The row rank of a matrix is the rank of its row vectors. Its column rank is the rank of its column vectors."
       },
@@ -2834,6 +3148,10 @@
         "text": "Each row has n components. Each column has s components. These give two vector systems."
       },
       {
+        "type": "text",
+        "text": "Next, we define minors of a rectangular matrix."
+      },
+      {
         "type": "statement",
         "text": "Definition 16. A minor of order k of a rectangular matrix is a determinant formed by selecting k rows and k columns, in their original order."
       },
@@ -2845,6 +3163,10 @@
       {
         "type": "text",
         "text": "Min of s and n means the smaller of the two numbers. A minor is square even when the original matrix is rectangular."
+      },
+      {
+        "type": "text",
+        "text": "We now define matrix rank using its nonzero minors."
       },
       {
         "type": "statement",
@@ -2866,6 +3188,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "We need to justify why vanishing minors of one order force vanishing at larger orders. Start with a minor of the next order and expand along one row. Every cofactor is a minor of the preceding order, so the assumption applies to each term. Repeat this argument for each larger order."
       },
       {
         "type": "text",
@@ -2903,6 +3229,10 @@
       },
       {
         "type": "text",
+        "text": "Let r be the largest order of a nonzero minor. To prove that the column rank is r, we need two facts: the columns selected by such a minor are independent, and every other column is their linear combination. We first prove independence, then construct the coefficients of those combinations. Finally we apply the same argument to the transpose for the row rank."
+      },
+      {
+        "type": "text",
         "text": "Reorder the columns so that a nonzero minor of order r lies in the first r columns. This does not change the column vectors as a system, or the largest order of a nonzero minor. Suppose the selected rows are i sub one through i sub r."
       },
       {
@@ -2926,6 +3256,10 @@
       {
         "type": "heading",
         "text": "Proof: all other columns are combinations"
+      },
+      {
+        "type": "text",
+        "text": "Independence is now established. We must still prove that the same r columns express every remaining column, using coefficients that work in every row. Solving on the selected rows determines candidate coefficients; the vanishing larger minors will show that those candidates work on the other rows too."
       },
       {
         "type": "text",
@@ -2996,6 +3330,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "An elementary operation has an inverse of the same kind. We will use this reversibility to show that the affected vector systems express each other. Then their ranks agree. The equality of matrix rank, row rank, and column rank transfers the conclusion to all three ranks."
       },
       {
         "type": "text",
@@ -3075,6 +3413,10 @@
       },
       {
         "type": "text",
+        "text": "For Theorem Five, the unknowns are coefficients of a linear combination of the columns of the coefficient matrix. A nonzero solution is therefore exactly a nontrivial dependence among those columns. This lets us connect the solution condition with the determinant condition in both directions."
+      },
+      {
+        "type": "text",
         "text": "A nonzero solution is a dependence relation among the columns of A. By the preceding corollary, the columns are dependent exactly when the determinant is zero. This proves both directions."
       },
       {
@@ -3140,6 +3482,10 @@
       },
       {
         "type": "text",
+        "text": "Write the constant column as beta. A solution exists precisely when beta is a linear combination of the coefficient columns. We must show that adjoining beta preserves rank exactly in this case. We will prove the two implications separately."
+      },
+      {
+        "type": "text",
         "text": "If a solution exists, beta is a combination of the columns of A. Adding beta therefore gives an equivalent column system. Equivalent systems have the same rank. Thus A and A bar have the same rank."
       },
       {
@@ -3199,6 +3545,10 @@
       },
       {
         "type": "text",
+        "text": "Assume the system is consistent and its coefficient rank is r. We select a nonzero minor of order r. Our goal is to solve the corresponding r unknowns in terms of the remaining n minus r unknowns and then explain why the unused equations add no further restriction."
+      },
+      {
+        "type": "text",
         "text": "Move the last n minus r unknowns to the right in the remaining equations."
       },
       {
@@ -3247,6 +3597,10 @@
       },
       {
         "type": "text",
+        "text": "For the addition property, assume both vectors satisfy every equation with right side zero. We must show that their sum also satisfies each equation. Check one arbitrary row and distribute its coefficients over the sum; the two resulting row values are both zero."
+      },
+      {
+        "type": "text",
         "text": "Substitute the componentwise sum into each equation. Distribute and use the two original solution equalities."
       },
       {
@@ -3285,6 +3639,10 @@
     "source": "§6 · pp.95–97",
     "blocks": [
       {
+        "type": "text",
+        "text": "We now define a fundamental system of solutions. It must satisfy both an independence condition and a condition that it expresses every solution."
+      },
+      {
         "type": "statement",
         "text": "Definition 18. A fundamental system of solutions of a homogeneous system is a linearly independent system of solutions in which every solution can be expressed as a linear combination."
       },
@@ -3309,6 +3667,10 @@
       {
         "type": "heading",
         "text": "Proof: construction"
+      },
+      {
+        "type": "text",
+        "text": "Assume the coefficient rank is r and nonzero solutions exist. There are n minus r free unknowns. We must construct n minus r solution vectors, prove that they are independent, and prove that every solution is a linear combination of them. Assigning the free coordinates unit-vector values provides the construction."
       },
       {
         "type": "text",
@@ -3405,6 +3767,10 @@
     "source": "§6 · pp.97–98",
     "blocks": [
       {
+        "type": "text",
+        "text": "First, we define the homogeneous system associated with a nonhomogeneous system."
+      },
+      {
         "type": "statement",
         "text": "Definition. The associated homogeneous system is obtained by replacing all constant terms of a linear system by zero."
       },
@@ -3424,6 +3790,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "For the first property, start with two solutions of the same nonhomogeneous system. The target is a solution of the associated homogeneous system. Subtract their equations row by row: the equal constant terms cancel, leaving right side zero."
       },
       {
         "type": "math",
@@ -3534,6 +3904,10 @@
       },
       {
         "type": "text",
+        "text": "This is an equivalence, so we need two implications. From a nonconstant common factor we will construct the two multipliers with the required degree bounds. Conversely, from such multipliers we will rule out coprimality by using divisibility and those same degree bounds."
+      },
+      {
+        "type": "text",
         "text": "Suppose d is a nonconstant common factor. Write f as d times f one, and g as d times g one. Set u equal to g one and v equal to f one. Their degrees satisfy the required bounds, and their products agree."
       },
       {
@@ -3577,6 +3951,10 @@
     "source": "§7* · pp.100–101",
     "blocks": [
       {
+        "type": "text",
+        "text": "We now define the resultant, using the coefficient matrix obtained from the polynomial identity."
+      },
+      {
         "type": "statement",
         "text": "Definition. The resultant R of f and g is the determinant of the following coefficient array: m shifted rows of coefficients of f, followed by n shifted rows of coefficients of g. Its order is m plus n."
       },
@@ -3605,6 +3983,10 @@
       {
         "type": "heading",
         "text": "Proof: the linear system behind the determinant"
+      },
+      {
+        "type": "text",
+        "text": "The determinant condition means the associated square homogeneous coefficient system has a nonzero solution. We must connect those coefficients to polynomials u and v satisfying u f equals v g. We also need to keep the exceptional case where both leading displayed coefficients vanish, because the displayed degree bounds may then exceed the actual degrees."
       },
       {
         "type": "text",
@@ -3687,6 +4069,10 @@
       },
       {
         "type": "text",
+        "text": "For the forward direction, fix a common solution and substitute its y coordinate. The resulting polynomials in x have a common root, which forces their resultant to vanish. For the converse, first inspect the two leading coefficients at the chosen y value; this is where the exceptional case in Theorem Ten enters."
+      },
+      {
+        "type": "text",
         "text": "Fix y equal to y zero. Evaluation commutes with the additions and multiplications in a determinant, so the evaluated resultant is the resultant of the two specialized polynomials in x. If they have common root x zero, then x minus x zero is a common factor. Theorem Ten makes the resultant zero."
       },
       {
@@ -3714,6 +4100,10 @@
     "chapter": 4,
     "source": "§1 · pp.109–110",
     "blocks": [
+      {
+        "type": "text",
+        "text": "We begin matrix operations by fixing their objects and the meaning of equality. Before comparing entries, check that both matrices have the same numbers of rows and columns. Only then can the phrase corresponding entries be used."
+      },
       {
         "type": "text",
         "text": "We now begin the chapter on matrices. First, let us state the notation and the rule for equality."
@@ -3767,6 +4157,10 @@
         "text": "First, let us define matrix addition."
       },
       {
+        "type": "text",
+        "text": "We first define addition for matrices of the same size."
+      },
+      {
         "type": "statement",
         "text": "Definition 1. The sum of two matrices of the same size is obtained by adding corresponding entries."
       },
@@ -3791,6 +4185,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Assume the matrices have the same size. To prove either addition law, compare an arbitrary entry on its two sides. The entries are scalars in P, so their sums satisfy commutativity and associativity. Equality at every position gives equality of the matrices."
       },
       {
         "type": "text",
@@ -3851,6 +4249,10 @@
       },
       {
         "type": "text",
+        "text": "Assume A and B have the same size. Each row of A plus B is the sum of one row of A and one row of B. We will express all these rows using a maximal independent subsystem of each original row system, giving at most the sum of the two ranks as a bound."
+      },
+      {
+        "type": "text",
         "text": "Let alpha sub i and beta sub i be row i of A and B. Row i of A plus B is their sum."
       },
       {
@@ -3883,6 +4285,10 @@
       {
         "type": "text",
         "text": "Next, let us define matrix multiplication."
+      },
+      {
+        "type": "text",
+        "text": "We now define matrix multiplication. The number of columns of the first factor must equal the number of rows of the second."
       },
       {
         "type": "statement",
@@ -3938,6 +4344,10 @@
       },
       {
         "type": "text",
+        "text": "Assume the sizes of A, B, and C allow both products. We must show that AB times C and A times BC have the same entry in every row and column. Expand one entry using the product definition twice, then reorder the finite scalar sums."
+      },
+      {
+        "type": "text",
         "text": "Following the textbook, denote AB by V and BC by W. Write their entries first."
       },
       {
@@ -3980,6 +4390,10 @@
     "chapter": 4,
     "source": "§2 · p.114",
     "blocks": [
+      {
+        "type": "text",
+        "text": "We now examine which familiar scalar rules fail for matrices. In each example, check that the products exist and calculate both sides. A single example where the proposed rule fails is enough to show that it is not a general matrix law."
+      },
       {
         "type": "text",
         "text": "The associative law holds, but we must keep the order of the factors."
@@ -4033,6 +4447,10 @@
         "text": "We now introduce the identity matrix."
       },
       {
+        "type": "text",
+        "text": "We now introduce the identity matrix."
+      },
+      {
         "type": "statement",
         "text": "Definition 3. The identity matrix Eₙ has ones on the main diagonal and zeros elsewhere."
       },
@@ -4057,6 +4475,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "To justify the identity and distributive laws, keep the matrix sizes compatible at every step. Compare an arbitrary entry on each side. The identity matrix selects a single entry, while distributivity follows by splitting a scalar sum inside the entry formula."
       },
       {
         "type": "text",
@@ -4121,6 +4543,10 @@
       },
       {
         "type": "text",
+        "text": "All factors here are copies of the same square matrix. Associativity lets us regroup them without changing their order. Count the number of factors to justify the product and power laws; no commutation of different matrices is being assumed."
+      },
+      {
+        "type": "text",
         "text": "In the first product, there are k copies of A followed by l copies. By associativity, we can remove the brackets. There are k plus l copies in total. In the second product, there are l groups, each containing k copies of A. There are k l copies in total. Associativity gives the second identity."
       },
       {
@@ -4139,6 +4565,10 @@
       {
         "type": "text",
         "text": "We next define multiplication by a scalar. Here a scalar means a number in P."
+      },
+      {
+        "type": "text",
+        "text": "We first define scalar multiplication of a matrix."
       },
       {
         "type": "statement",
@@ -4166,6 +4596,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The scalars lie in P and all matrix sums and products have compatible sizes. For the stated laws, compare corresponding entries and move only scalar factors through the finite sums. This reduces each identity to a law in P."
       },
       {
         "type": "text",
@@ -4212,6 +4646,10 @@
         "text": "Next, we define the transpose of a matrix."
       },
       {
+        "type": "text",
+        "text": "We now define the transpose of a matrix."
+      },
+      {
         "type": "statement",
         "text": "Definition 5. The transpose Aᵀ is obtained by interchanging the rows and columns of A. An s by n matrix becomes an n by s matrix."
       },
@@ -4236,6 +4674,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "For the product identity, suppose A is s by n and B is n by m. Both the transpose of AB and B transpose times A transpose have size m by s. We must compare their i j entries, taking care that transposition interchanges the entry indices and reverses the factor order."
       },
       {
         "type": "text",
@@ -4291,6 +4733,10 @@
       },
       {
         "type": "text",
+        "text": "Assume A and B are square matrices of the same order n. Our goal is the determinant identity. We will match the entry formula for AB with the determinant multiplication rule already proved in Chapter Two. This checks the hypotheses and the exact matrix to which that earlier rule applies."
+      },
+      {
+        "type": "text",
         "text": "The entry in row i and column j of A B is the sum from k equals one to n of a sub i k times b sub k j. The multiplication rule proved in Chapter Two, Section Eight, applies to exactly this determinant. It gives the stated equality."
       },
       {
@@ -4338,6 +4784,10 @@
         "text": "We next introduce two terms for square matrices."
       },
       {
+        "type": "text",
+        "text": "We first introduce the terms singular and nonsingular for square matrices."
+      },
+      {
         "type": "statement",
         "text": "Definition 6. A square matrix A is nonsingular if its determinant is nonzero. It is singular if its determinant is zero."
       },
@@ -4362,6 +4812,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Assume A and B are square matrices of the same order. Their product is singular precisely when its determinant is zero. The determinant product formula turns this into a product of two scalars, which is zero exactly when at least one factor is zero."
       },
       {
         "type": "text",
@@ -4400,6 +4854,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "We need two inequalities. First express each column of AB in the columns of A to bound its column rank. Then express each row of AB in the rows of B to obtain the other bound. Use equality of row and column rank to state both as inequalities of matrix ranks."
       },
       {
         "type": "math",
@@ -4490,6 +4948,10 @@
         "text": "We now study matrix inverses. Throughout this section, A is a square matrix of order n, and E is the identity matrix of order n."
       },
       {
+        "type": "text",
+        "text": "We now define invertibility of a square matrix. Both product identities are part of the definition."
+      },
+      {
         "type": "statement",
         "text": "Definition 7. A matrix A is invertible if there is a matrix B of the same order such that AB = BA = E."
       },
@@ -4516,6 +4978,10 @@
         "text": "Proof"
       },
       {
+        "type": "text",
+        "text": "For uniqueness, assume B and C both satisfy the two inverse identities for the same square matrix A. Our goal is B equals C. Insert the identity AC next to B, and use associativity and BA equals E to reach C."
+      },
+      {
         "type": "math",
         "text": "",
         "latex": "B_1=B_1E=B_1(AB_2)=(B_1A)B_2=EB_2=B_2."
@@ -4523,6 +4989,10 @@
       {
         "type": "text",
         "text": "Start with B sub one. Replace E by A B sub two. Use associativity to group B sub one with A. Their product is E. We are left with B sub two. This proves uniqueness."
+      },
+      {
+        "type": "text",
+        "text": "Having proved uniqueness, we can name this matrix the inverse and introduce its notation."
       },
       {
         "type": "statement",
@@ -4555,6 +5025,10 @@
         "text": "Next, we define the adjugate matrix. This will give us a formula for the inverse."
       },
       {
+        "type": "text",
+        "text": "We now introduce the adjugate matrix. Its construction uses the cofactors, with their indices transposed."
+      },
+      {
         "type": "statement",
         "text": "Definition 9. The adjugate of A is the transpose of the matrix of its cofactors. It is denoted by A*."
       },
@@ -4584,6 +5058,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "To prove the displayed matrix identities, compare their diagonal and off-diagonal entries. A diagonal entry is a cofactor expansion of the determinant of A. An off-diagonal entry is the corresponding expansion with a repeated row or column, so it is zero."
       },
       {
         "type": "text",
@@ -4643,6 +5121,10 @@
       },
       {
         "type": "text",
+        "text": "We must prove both directions. First assume the determinant is nonzero. Divide the adjugate by this scalar and verify the two inverse identities to prove sufficiency. Then assume an inverse exists. Taking determinants of an inverse identity shows that the determinant of A cannot vanish, proving necessity."
+      },
+      {
+        "type": "text",
         "text": "First, suppose d is nonzero. From the adjugate identity, we get both of the required products."
       },
       {
@@ -4688,6 +5170,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Assume A and B are square of the same order and AB equals E. We cannot cancel A before proving it invertible. Instead, take determinants to show that both determinants are nonzero, apply the invertibility criterion, and only then multiply by the inverse."
       },
       {
         "type": "text",
@@ -4751,6 +5237,10 @@
       },
       {
         "type": "text",
+        "text": "The assumptions give two-sided inverses for A and B. To establish a proposed inverse formula, multiply the proposed matrix by the original matrix in both orders and obtain E. For a product, keep the order of the factors exactly as written."
+      },
+      {
+        "type": "text",
         "text": "The determinants of A transpose and A B are nonzero, by the determinant rules. So both are invertible. To identify the first inverse, transpose both equalities in A A inverse equals A inverse A equals E."
       },
       {
@@ -4806,6 +5296,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Assume A is nonsingular. We must prove existence and uniqueness separately. First substitute A inverse B into AX equals B to obtain a solution. Then start with an arbitrary solution and multiply on the left by A inverse; this forces every solution to be that same vector."
       },
       {
         "type": "text",
@@ -4871,6 +5365,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The product-rank inequality first gives that multiplying A cannot increase its rank. To obtain the reverse inequality, recover A by multiplying the new product by the inverse of P or Q. The two inequalities together give equality."
       },
       {
         "type": "text",
@@ -4941,6 +5439,10 @@
       },
       {
         "type": "text",
+        "text": "The column widths of the first block matrix must match the row heights of the second. For each output block, the usual entry formula splits its summation index into those shared ranges. This produces the block row-by-column formula, with the order of every product preserved."
+      },
+      {
+        "type": "text",
         "text": "In the ordinary multiplication formula, each entry of A B is a sum over all columns of A. Split this sum into the l consecutive groups specified by the partition. Group k is exactly the corresponding entry of the block product A sub p k times B sub k q. Adding all groups gives the displayed formula. This holds for every entry of every block."
       },
       {
@@ -4985,6 +5487,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Assume both diagonal blocks are invertible and C has the stated size. The target is to verify that the proposed block matrix is a two-sided inverse. Multiply in both orders: the diagonal blocks become identities, and the off-diagonal terms must cancel."
       },
       {
         "type": "text",
@@ -5091,6 +5597,10 @@
       },
       {
         "type": "text",
+        "text": "The zero off-diagonal blocks make each diagonal block act separately. To justify the inverse formula, assume every diagonal block is invertible and check both products with the matrix of their inverses. Each diagonal product is an identity and every other block remains zero."
+      },
+      {
+        "type": "text",
         "text": "Addition follows by adding corresponding entries. For multiplication, a diagonal block has only one possibly nonzero term, A sub i times B sub i. Every off-diagonal block is zero. Finally, multiply A by the proposed inverse in either order. Every diagonal block becomes the identity of order n sub i, and every off-diagonal block remains zero. The result is the identity matrix of order n sub one plus n sub two, and so on, plus n sub ell. This proves the inverse formula."
       },
       {
@@ -5109,6 +5619,10 @@
       {
         "type": "text",
         "text": "We now connect elementary operations with matrix multiplication. First, let us define an elementary matrix."
+      },
+      {
+        "type": "text",
+        "text": "We now define elementary matrices by applying one elementary operation to an identity matrix."
       },
       {
         "type": "statement",
@@ -5185,6 +5699,10 @@
       },
       {
         "type": "text",
+        "text": "We must identify the effect of multiplication for each of the three elementary matrices. On the left, compare rows of the product with rows of A. On the right, compare columns instead. The order of the elementary matrix is fixed by the side on which it acts."
+      },
+      {
+        "type": "text",
         "text": "Following the textbook, let A sub one through A sub s denote the rows of A. Let B be any s by s matrix. Block multiplication gives the following expression."
       },
       {
@@ -5246,11 +5764,19 @@
       },
       {
         "type": "text",
+        "text": "For each elementary matrix, we need another elementary matrix whose product with it is E in both orders. Construct it by undoing the original operation. The scaling operation requires a nonzero scalar so that its reciprocal exists."
+      },
+      {
+        "type": "text",
         "text": "Exchange the same two rows again to undo an exchange. Multiply by one over c to undo multiplication by c. Add negative k times row j to row i to undo addition of k times row j. In each case, applying the two operations to E restores E. By the lemma, the corresponding matrix products, in either order, equal E. These are therefore the inverse matrices."
       },
       {
         "type": "text",
         "text": "Read c to the minus one as “one over c.” This is defined because c is nonzero. Next, we define matrix equivalence."
+      },
+      {
+        "type": "text",
+        "text": "We now define equivalence of matrices through sequences of elementary operations."
       },
       {
         "type": "statement",
@@ -5263,19 +5789,39 @@
       },
       {
         "type": "statement",
-        "text": "Matrix equivalence is reflexive, symmetric, and transitive."
+        "text": "Reflexivity means every matrix is equivalent to itself. Symmetry means that if A is equivalent to B, then B is equivalent to A. Transitivity means that if A is equivalent to B and B is equivalent to C, then A is equivalent to C."
       },
       {
         "type": "heading",
         "text": "Proof"
       },
       {
+        "type": "heading",
+        "text": "Reflexivity"
+      },
+      {
         "type": "text",
-        "text": "A is equivalent to itself by doing nothing. This is reflexivity. Every operation can be undone, so a sequence from A to B can be reversed to go from B to A. This is symmetry. A sequence from A to B followed by a sequence from B to C gives a sequence from A to C. This is transitivity."
+        "text": "Start with any matrix A. A sequence with no operations already leaves A unchanged, so A is equivalent to itself. If a nonempty sequence is desired, an operation followed by its inverse also returns A."
+      },
+      {
+        "type": "heading",
+        "text": "Symmetry"
+      },
+      {
+        "type": "text",
+        "text": "Assume a finite sequence takes A to B. To take B back to A, undo the last operation first, then undo the preceding operations in reverse order. Each inverse operation is elementary, as proved above. This constructs a valid sequence from B to A."
+      },
+      {
+        "type": "heading",
+        "text": "Transitivity"
+      },
+      {
+        "type": "text",
+        "text": "Assume one finite sequence takes A to B and a second takes B to C. Apply the first sequence and then the second. The combined sequence is still finite and consists of elementary operations, and it takes A to C. This is precisely the definition of their equivalence."
       },
       {
         "type": "cue",
-        "text": "等价允许行和列两类初等变换；不要把它说成只允许行变换。三个英文术语各解释一句即可。"
+        "text": "等价允许行和列两类初等变换。自反性说明返回自身的操作；对称性须倒序撤销操作；传递性须连接两段有限操作。"
       }
     ]
   },
@@ -5306,6 +5852,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Let r be the rank of A. We must construct elementary operations giving an identity block and zeros elsewhere. At each step, move a nonzero entry to the upper left of the remaining block, clear its column and row, and scale it to one. Finally, rank invariance will identify the number of ones as r."
       },
       {
         "type": "text",
@@ -5374,6 +5924,10 @@
       },
       {
         "type": "text",
+        "text": "First assume A is a product of elementary matrices. Since each factor is invertible, the product is invertible. For the reverse direction, assume A is invertible and use the standard-form theorem to reduce it to E. Translate those operations into matrix factors and solve for A using their inverses."
+      },
+      {
+        "type": "text",
         "text": "First, every elementary matrix is invertible. A product of invertible matrices is invertible, so the displayed product is invertible. Conversely, let A be invertible of order n. Its rank is n. By Theorem Five, its standard form is E. The lemma expresses the operations taking A to E as multiplication by elementary matrices on the left and right."
       },
       {
@@ -5426,6 +5980,10 @@
       },
       {
         "type": "text",
+        "text": "First assume equivalence by elementary operations and collect the left factors into one invertible matrix and the right factors into another. Conversely, assume the stated factorization and express its invertible factors as products of elementary matrices. This recovers a sequence of allowed operations."
+      },
+      {
+        "type": "text",
         "text": "Suppose A and B are equivalent. Since operations can be reversed, we can obtain A from B. By the lemma, each row operation is left multiplication by an elementary matrix, and each column operation is right multiplication by an elementary matrix. Group all left factors into P and all right factors into Q. Associativity allows this grouping, and both products are invertible. Hence A equals P B Q."
       },
       {
@@ -5461,6 +6019,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Assume A is invertible. By the preceding theorem, write A as a product of elementary matrices. Our target is a sequence using row operations alone. We will remove the factors one at a time by left multiplication with their inverses; each such multiplication is a row operation."
       },
       {
         "type": "text",
@@ -5524,6 +6086,10 @@
       },
       {
         "type": "text",
+        "text": "Assume a sequence of row operations changes A into E. Let P be the product of their elementary matrices in the order in which they act. Then PA equals E, so P is A inverse. Applying the very same operations to E produces PE, which is P itself."
+      },
+      {
+        "type": "text",
         "text": "Let P sub one through P sub m be the elementary matrices for the row operations, in the order in which we perform them. Then their product, with the last operation on the left, takes A to E."
       },
       {
@@ -5574,6 +6140,10 @@
     "chapter": 4,
     "source": "§7 · pp.129–130",
     "blocks": [
+      {
+        "type": "text",
+        "text": "Each block operation must be checked with its multiplication side and its block sizes. For addition of one block row to another, choose the multiplier so the two rows have equal heights after multiplication. The block matrix representing the operation then gives the desired new row by the usual product rule."
+      },
       {
         "type": "text",
         "text": "We now combine block multiplication with elementary operations. Let A and B form the first block row, and C and D the second. The two block rows have m and n rows, respectively."
@@ -5656,6 +6226,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Assume A is invertible. We want to clear the lower left block C while preserving the information in the matrix. Multiplying the first block row on the left by minus C A inverse produces minus C in that position; adding it to the second block row cancels C."
       },
       {
         "type": "text",
@@ -5746,6 +6320,10 @@
       },
       {
         "type": "text",
+        "text": "The hypotheses say that the whole matrix T sub one and its block D are invertible. They do not initially give invertibility of A minus B D inverse C. We must first derive that fact by block elimination, and only then use its inverse in the final formula."
+      },
+      {
+        "type": "text",
         "text": "First, eliminate the upper right block. Subtract B D inverse times the second block row from the first."
       },
       {
@@ -5804,6 +6382,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "We will compute the determinant of one block matrix in two ways. Each calculation uses block elimination followed by a triangular determinant. Comparing the two scalar results yields the determinant product formula."
       },
       {
         "type": "text",
@@ -5890,6 +6472,10 @@
       },
       {
         "type": "text",
+        "text": "The assumption is that every leading principal minor is nonzero. We use induction on the order. Apply the induction hypothesis to the upper left block, then choose the last block row of the multiplier to clear the remaining lower left entries. We must also keep the multiplier lower triangular."
+      },
+      {
+        "type": "text",
         "text": "For n equals one, choose B equal to the one by one identity matrix. Now assume the statement holds for order n minus one. Partition A as follows."
       },
       {
@@ -5946,6 +6532,10 @@
         "text": "We now begin quadratic forms. We will write them using matrices, then remove the mixed terms by a change of variables."
       },
       {
+        "type": "text",
+        "text": "We now introduce quadratic forms: polynomials whose terms all have total degree two, together with the zero polynomial."
+      },
+      {
         "type": "statement",
         "text": "Definition. A quadratic form in n variables over a number field P is a homogeneous polynomial of degree two with coefficients in P. The zero polynomial is included."
       },
@@ -5985,6 +6575,10 @@
         "text": "Next, we define the changes of variables that we will use."
       },
       {
+        "type": "text",
+        "text": "Next, we define linear substitutions and the condition that makes such a substitution nondegenerate."
+      },
+      {
         "type": "statement",
         "text": "Definition 1. A linear substitution expresses x one through x n as linear combinations of y one through y n, with coefficients in P. It is nondegenerate if its coefficient determinant is nonzero."
       },
@@ -6017,6 +6611,10 @@
       },
       {
         "type": "text",
+        "text": "For the first property, substitute linear expressions into each degree-two term. Every resulting term still has total degree two, or the terms cancel to give the zero form. For reversibility, the coefficient matrix must be invertible, so the new variables can be expressed in the old ones."
+      },
+      {
+        "type": "text",
         "text": "Each old variable is a linear combination of the new variables. Each product of two old variables becomes a sum of products of two new variables. So the result is still a quadratic form, possibly zero. If C is invertible, multiplication by C inverse gives the displayed reverse substitution."
       },
       {
@@ -6035,6 +6633,10 @@
       {
         "type": "text",
         "text": "Now let us write a quadratic form using a matrix."
+      },
+      {
+        "type": "text",
+        "text": "We now introduce symmetric matrices and use them to record the coefficients of quadratic forms."
       },
       {
         "type": "statement",
@@ -6061,6 +6663,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "We must check both existence and uniqueness of a symmetric coefficient matrix. A diagonal entry contributes once to its square term. An off-diagonal entry contributes twice because the matrix is symmetric. Matching the polynomial coefficients therefore determines every entry."
       },
       {
         "type": "math",
@@ -6116,6 +6722,10 @@
         "text": "Proof"
       },
       {
+        "type": "text",
+        "text": "Assume f has symmetric matrix A and substitute X equals C Y. Our goal is to identify the symmetric matrix in the new variables. First rewrite the expression as Y transpose times a matrix times Y; then check that this middle matrix is symmetric."
+      },
+      {
         "type": "math",
         "text": "",
         "latex": "X^{\\mathsf T}AX=(CY)^{\\mathsf T}A(CY)=Y^{\\mathsf T}C^{\\mathsf T}ACY=Y^{\\mathsf T}(C^{\\mathsf T}AC)Y."
@@ -6134,6 +6744,10 @@
         "text": "The uniqueness of the symmetric matrix now gives B equals C transpose A C."
       },
       {
+        "type": "text",
+        "text": "The substitution formula suggests a relation between matrices. We now define this relation, called congruence."
+      },
+      {
         "type": "statement",
         "text": "Definition 2. Two n by n matrices A and B over P are congruent if there is an invertible n by n matrix C over P such that B equals C transpose A C. This change is called a congruence transformation."
       },
@@ -6148,7 +6762,7 @@
       },
       {
         "type": "statement",
-        "text": "Property. Congruence is reflexive, symmetric, and transitive."
+        "text": "Property. Every matrix is congruent to itself. If A is congruent to B, then B is congruent to A. If A is congruent to A sub one and A sub one is congruent to A sub two, then A is congruent to A sub two. These are reflexivity, symmetry, and transitivity of congruence."
       },
       {
         "type": "heading",
@@ -6165,7 +6779,7 @@
       },
       {
         "type": "text",
-        "text": "Second, we can reverse a congruence. Multiply by the inverse matrices on the two sides."
+        "text": "For symmetry, assume B equals C transpose A C with C invertible. Our target is an invertible matrix expressing A as a congruence of B. Multiply on the left by the transpose of C inverse and on the right by C inverse. This isolates A, and C inverse is itself invertible."
       },
       {
         "type": "math",
@@ -6174,7 +6788,7 @@
       },
       {
         "type": "text",
-        "text": "Third, two successive congruences give one congruence. The two substitution matrices are multiplied in the following order."
+        "text": "For transitivity, assume A sub one equals C sub one transpose A C sub one, and A sub two equals C sub two transpose A sub one C sub two, with both substitution matrices invertible. Substitute the first equality into the second. The transpose product law combines the two left factors, giving a single congruence with substitution matrix C sub one C sub two."
       },
       {
         "type": "math",
@@ -6218,6 +6832,10 @@
       {
         "type": "heading",
         "text": "Proof: induction and Case 1"
+      },
+      {
+        "type": "text",
+        "text": "We use induction on the number of variables. The target is a substitution that is invertible and leaves only square terms. When a square coefficient is nonzero, complete that square and reduce the remaining form to one fewer variable. We must check invertibility of the substitution as well as the algebraic identity."
       },
       {
         "type": "text",
@@ -6305,6 +6923,10 @@
       },
       {
         "type": "text",
+        "text": "We continue the same induction, now assuming that every square coefficient is zero. If a mixed coefficient is nonzero, the first substitution must create a nonzero square coefficient so that the preceding case applies. If every coefficient is zero, the form is already standard."
+      },
+      {
+        "type": "text",
         "text": "Suppose all diagonal coefficients are zero, but some entry in the first row is nonzero. By exchanging variables other than the first, we may assume a sub one two is nonzero."
       },
       {
@@ -6379,12 +7001,20 @@
       },
       {
         "type": "text",
+        "text": "Let A be symmetric and consider its quadratic form. Apply the standard-form theorem to obtain a nondegenerate substitution. The substitution formula says that the new matrix is C transpose A C, and a sum of square terms has a diagonal matrix. This proves the matrix statement."
+      },
+      {
+        "type": "text",
         "text": "Start with the quadratic form X transpose A X. Theorem One gives a nondegenerate substitution X equals C Y that removes all mixed terms. The matrix of the resulting form is diagonal. It is also C transpose A C by the substitution formula. This proves the theorem."
       },
       {
         "type": "math",
         "text": "",
         "latex": "Y^{\\mathsf T}\\begin{pmatrix}d_1&0&\\cdots&0\\\\0&d_2&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&d_n\\end{pmatrix}Y=d_1y_1^2+d_2y_2^2+\\cdots+d_ny_n^2."
+      },
+      {
+        "type": "text",
+        "text": "We now give a name to the sum-of-squares expression obtained by a nondegenerate substitution: a standard form."
       },
       {
         "type": "statement",
@@ -6435,6 +7065,10 @@
       },
       {
         "type": "text",
+        "text": "Assume the first diagonal entry is nonzero. We will choose an invertible triangular substitution matrix that clears the first row and column outside that entry. The remaining block must be symmetric so that the same procedure can continue on a smaller matrix."
+      },
+      {
+        "type": "text",
         "text": "C sub one has determinant one. We multiply on the left by its transpose and on the right by C sub one. The first multiplication clears the bottom left block. The second clears the top right block."
       },
       {
@@ -6478,6 +7112,10 @@
     "chapter": 5,
     "source": "§2 · pp.146–147",
     "blocks": [
+      {
+        "type": "text",
+        "text": "If the first diagonal entry is zero, we cannot divide by it. First look for a nonzero diagonal entry elsewhere and move it to the first position by simultaneous row and column exchanges. If none exists but the matrix is nonzero, use a nonzero off-diagonal entry to create a square coefficient."
+      },
       {
         "type": "text",
         "text": "We finish the matrix construction by handling the cases where the first diagonal entry is zero."
@@ -6570,6 +7208,10 @@
         "text": "We have proved that every quadratic form has a standard form. We now ask which parts of that form are uniquely determined."
       },
       {
+        "type": "text",
+        "text": "We now define the rank of a quadratic form through its symmetric matrix."
+      },
+      {
         "type": "statement",
         "text": "Definition. The rank of a quadratic form is the rank of its symmetric matrix."
       },
@@ -6594,6 +7236,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Assume the substitution matrix C is invertible. Both C and its transpose preserve rank under multiplication. Apply that fact to the new matrix C transpose A C. For a diagonal matrix, the rank is exactly the number of its nonzero diagonal entries."
       },
       {
         "type": "text",
@@ -6635,6 +7281,10 @@
         "text": "First consider a quadratic form over the complex numbers."
       },
       {
+        "type": "text",
+        "text": "We first introduce the canonical form over the complex numbers."
+      },
+      {
         "type": "statement",
         "text": "Definition. The canonical form of a complex quadratic form of rank r is the sum of r squares, each with coefficient one, followed by n minus r zero coefficients."
       },
@@ -6650,6 +7300,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Start with a complex standard form. Each nonzero coefficient has a nonzero square root in the complex field. Rescale the corresponding variable to make that coefficient one. The number of such coefficients is the rank, so rank invariance proves uniqueness of the displayed canonical form."
       },
       {
         "type": "text",
@@ -6717,6 +7371,10 @@
         "text": "Now consider the real case. We can rescale a nonzero coefficient to one or minus one, according to its sign."
       },
       {
+        "type": "text",
+        "text": "We now introduce the real canonical form, keeping track of positive and negative square terms separately."
+      },
+      {
         "type": "statement",
         "text": "Definition. A canonical form of a real quadratic form is a sum of p positive squares and r minus p negative squares, with all remaining coefficients zero. Here r is the rank."
       },
@@ -6736,6 +7394,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Start with a real standard form. A real rescaling can change a nonzero coefficient to one or minus one according to its sign. It cannot change a negative square coefficient to positive. We therefore normalize the absolute values and then arrange positive, negative, and zero terms in order."
       },
       {
         "type": "text",
@@ -6802,6 +7464,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The remaining issue is uniqueness of the number of positive squares; existence and invariance of rank have already been established. Compare two canonical expressions for the same form. If one has more positive squares, we will choose one set of corresponding variable values that makes the two expressions have incompatible signs."
       },
       {
         "type": "text",
@@ -6907,6 +7573,10 @@
         "text": "The law of inertia lets us give names to the numbers that remain fixed."
       },
       {
+        "type": "text",
+        "text": "The law of inertia lets us define three quantities: the positive index, the negative index, and the signature."
+      },
+      {
         "type": "statement",
         "text": "Definition 3. For a real quadratic form of rank r, the number p of positive squares in its canonical form is its positive index of inertia. The number r minus p of negative squares is its negative index of inertia. Their difference, two p minus r, is its signature."
       },
@@ -6931,6 +7601,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "In a real standard form, rescaling a variable by a nonzero real number multiplies its square coefficient by a positive number. Thus normalization preserves each nonzero sign. The law of inertia makes the resulting positive and negative counts independent of the chosen substitution."
       },
       {
         "type": "text",
@@ -6985,7 +7659,15 @@
       },
       {
         "type": "text",
+        "text": "Apply the canonical-form results to the quadratic form with matrix A. Over the complex numbers, rank determines the number of ones. Over the real numbers, rank and the positive index determine the counts of ones and minus ones. In each case the substitution matrix is invertible, so the matrix relation is a congruence."
+      },
+      {
+        "type": "text",
         "text": "Associate A with the quadratic form X transpose A X. In the complex case, apply Theorem Three. In the real case, apply Theorem Four. Under X equals C Y, the new matrix is C transpose A C. The square coefficients in the canonical form give exactly the displayed diagonal entries. Their uniqueness follows from the uniqueness of the canonical form."
+      },
+      {
+        "type": "text",
+        "text": "We transfer the inertia terminology from quadratic forms to real symmetric matrices."
       },
       {
         "type": "statement",
@@ -7014,6 +7696,10 @@
         "text": "We now study positive definite quadratic forms. We will first define positivity, then give tests using inertia and determinants."
       },
       {
+        "type": "text",
+        "text": "We now introduce positive definiteness for a real quadratic form. The defining requirement concerns every nonzero real vector."
+      },
+      {
         "type": "statement",
         "text": "Definition 4. A real quadratic form is positive definite if its value is positive at every nonzero real vector."
       },
@@ -7038,6 +7724,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "For a diagonal real form, we must prove both directions of the criterion. First assume all diagonal coefficients are positive. At a nonzero vector, at least one square term is positive and all others are nonnegative. Conversely, if the form is positive definite, taking one coordinate equal to one and the others zero will test the sign of each coefficient."
       },
       {
         "type": "text",
@@ -7076,6 +7766,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The substitution matrix is real and invertible. The important point is that it sends every nonzero vector to a nonzero vector. Once this is proved, positivity transfers through the equality of the old and new form values. The inverse substitution will give the reverse implication."
       },
       {
         "type": "text",
@@ -7131,12 +7825,20 @@
       },
       {
         "type": "text",
+        "text": "To prove the equivalence, reduce the real form by a nondegenerate substitution. Positive definiteness survives this substitution. We can therefore test the diagonal form: every coefficient must be positive, which is exactly the condition that the positive index equals n."
+      },
+      {
+        "type": "text",
         "text": "Reduce f to a standard form by a nondegenerate real substitution. Positivity is preserved. The diagonal form is positive definite exactly when every coefficient is positive. This means there are n positive square terms, so the positive index of inertia is n."
       },
       {
         "type": "math",
         "text": "",
         "latex": "f=d_1y_1^2+\\cdots+d_ny_n^2,\\qquad d_1>0,\\ldots,d_n>0;\\qquad\\text{canonical form: }y_1^2+\\cdots+y_n^2."
+      },
+      {
+        "type": "text",
+        "text": "Next, we define a positive definite matrix through its quadratic form."
       },
       {
         "type": "statement",
@@ -7195,6 +7897,10 @@
         "text": "We now give a test directly in terms of the entries of A."
       },
       {
+        "type": "text",
+        "text": "We first define leading principal minors, using the first i rows and the first i columns together."
+      },
+      {
         "type": "statement",
         "text": "Definition 6. The leading principal minor of order i is the determinant of the submatrix in the first i rows and first i columns."
       },
@@ -7219,6 +7925,10 @@
       {
         "type": "heading",
         "text": "Proof: necessity"
+      },
+      {
+        "type": "text",
+        "text": "For necessity, assume the entire form is positive definite. Fix k and restrict to vectors whose last n minus k coordinates are zero. We must show that this restricted form is positive definite, so that the determinant result for positive definite matrices applies to its matrix."
       },
       {
         "type": "text",
@@ -7271,6 +7981,10 @@
       {
         "type": "heading",
         "text": "Proof: sufficiency"
+      },
+      {
+        "type": "text",
+        "text": "For sufficiency, our assumption is that every leading principal minor is positive, and our target is positivity at every nonzero vector. The induction hypothesis gives a positive definite upper left block. We will reduce that block to the identity, clear the last off-diagonal blocks, and use the full determinant to control the last scalar."
       },
       {
         "type": "text",
@@ -7364,7 +8078,7 @@
     "blocks": [
       {
         "type": "text",
-        "text": "There are four related definitions for real quadratic forms."
+        "text": "Next, we define negative definiteness, the two semidefinite conditions, and indefiniteness."
       },
       {
         "type": "statement",
@@ -7391,6 +8105,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "To characterize negative definiteness, apply the positive definite criterion to minus f. Its matrix is minus A. In a minor of order i, each of the i rows acquires a factor minus one, so the determinant acquires the factor minus one to the power i."
       },
       {
         "type": "text",
@@ -7437,6 +8155,10 @@
       {
         "type": "heading",
         "text": "Supplementary proof: conditions 1 through 4"
+      },
+      {
+        "type": "text",
+        "text": "We first connect conditions one, two, and three by the real canonical form. We then construct a factorization for condition four using square roots of nonnegative diagonal entries, and check directly that such a factorization implies condition one. This will complete the equivalence of the first four conditions."
       },
       {
         "type": "text",
@@ -7488,11 +8210,19 @@
       },
       {
         "type": "text",
+        "text": "For this direction, assume f is positive semidefinite and choose any principal submatrix. Our target is a nonnegative determinant for that submatrix. Restrict f to the corresponding coordinates, then apply its canonical form and the determinant formula for congruence."
+      },
+      {
+        "type": "text",
         "text": "Restrict a positive semidefinite form to any selected coordinates, setting the other coordinates to zero. The resulting form is still positive semidefinite. Its symmetric matrix is the corresponding principal submatrix. Its canonical diagonal entries are ones and zeros. Its determinant is therefore nonnegative, since a congruence changes a determinant by a nonzero square. Thus every principal minor is nonnegative."
       },
       {
         "type": "heading",
         "text": "Supplementary proof: condition 5 implies condition 1"
+      },
+      {
+        "type": "text",
+        "text": "Now assume every principal minor is nonnegative. We must prove that the quadratic form is nonnegative at every real vector. In the induction step, we need a smaller symmetric matrix that retains the same principal-minor condition; the block elimination below constructs exactly that matrix."
       },
       {
         "type": "text",
@@ -7565,6 +8295,10 @@
         "text": "We now begin linear spaces. We first introduce the set and mapping notation used in this chapter."
       },
       {
+        "type": "text",
+        "text": "We first introduce sets, elements, the empty set, equality of sets, and subsets."
+      },
+      {
         "type": "statement",
         "text": "Definitions. A set is a collection of objects, called its elements. The empty set has no elements. Two sets are equal if they have exactly the same elements. A set M is a subset of N if every element of M belongs to N."
       },
@@ -7601,6 +8335,10 @@
       },
       {
         "type": "text",
+        "text": "Each claim is a statement about membership. For an inclusion, start with an arbitrary element of the smaller set and show it belongs to the larger set. For equality, prove this implication in both directions. The empty set has no element that could violate an inclusion."
+      },
+      {
+        "type": "text",
         "text": "Every element of M belongs to M, giving the first property. The empty set has no element that could fail to belong to M, giving the second. Finally, the two inclusions say that M and N have exactly the same elements, which is the definition of equality."
       },
       {
@@ -7618,7 +8356,7 @@
     "blocks": [
       {
         "type": "text",
-        "text": "Next, we define two operations on sets."
+        "text": "We now define intersection and union by stating exactly which elements they contain."
       },
       {
         "type": "statement",
@@ -7648,6 +8386,10 @@
       },
       {
         "type": "text",
+        "text": "To prove each inclusion, take an arbitrary element of its left-hand set. The definition of intersection supplies two membership conditions, while the definition of union requires only one. We will use these conditions to establish membership on the right."
+      },
+      {
+        "type": "text",
         "text": "An element of the intersection belongs to both M and N, so the first two inclusions follow. Every element of M belongs to at least one of the two sets, so it belongs to the union. The same argument applies to N."
       },
       {
@@ -7665,7 +8407,7 @@
     "blocks": [
       {
         "type": "text",
-        "text": "We now define mappings."
+        "text": "We first define a mapping and the terms image and preimage."
       },
       {
         "type": "statement",
@@ -7681,6 +8423,10 @@
         "text": "We read sigma from M to M prime, and sigma of a equals a prime. A prime is the name of an element here, not a derivative. Each input has exactly one output. Different inputs may still have the same output."
       },
       {
+        "type": "text",
+        "text": "Next, we define when two mappings are equal."
+      },
+      {
         "type": "statement",
         "text": "Definition. Two mappings with the same source and target sets are equal if they have the same value at every element of the source set."
       },
@@ -7688,6 +8434,10 @@
         "type": "math",
         "text": "",
         "latex": "\\sigma,\\tau:M\\longrightarrow M',\\qquad \\sigma=\\tau\\ \\Longleftrightarrow\\ \\sigma(a)=\\tau(a)\\text{ for every }a\\in M."
+      },
+      {
+        "type": "text",
+        "text": "We now introduce the identity mapping on a set."
       },
       {
         "type": "statement",
@@ -7701,6 +8451,10 @@
       {
         "type": "text",
         "text": "The subscript tells us which set is used. This is a mapping, although its notation uses the number one."
+      },
+      {
+        "type": "text",
+        "text": "The words each and exactly one are essential. No source element may be left without an image, and one source element cannot be assigned two different images. In contrast, the definition does not require every target element to be reached, and it does not forbid two source elements from sharing an image."
       },
       {
         "type": "cue",
@@ -7718,6 +8472,10 @@
       {
         "type": "text",
         "text": "Mappings can be applied one after another. The book calls this their product."
+      },
+      {
+        "type": "text",
+        "text": "We now define the product, or composition, of two mappings with matching source and target sets."
       },
       {
         "type": "statement",
@@ -7749,6 +8507,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Equality of mappings requires the same source and target and equal values at every input. The stated domains make the compositions meaningful. We therefore fix an arbitrary input a and evaluate both sides of each identity at that same a."
       },
       {
         "type": "text",
@@ -7790,6 +8552,10 @@
         "text": "We now describe whether a mapping reaches every target and whether different inputs stay distinct."
       },
       {
+        "type": "text",
+        "text": "We first define the image set, then introduce surjectivity, injectivity, and bijectivity."
+      },
+      {
         "type": "statement",
         "text": "Definitions. The image set sigma of M consists of all outputs of sigma. The mapping is surjective if this image set equals the target set. It is injective if different inputs have different outputs. It is bijective if it is both injective and surjective."
       },
@@ -7822,6 +8588,10 @@
       },
       {
         "type": "text",
+        "text": "For finite sets, first assume there is a bijection: injectivity prevents repeated targets and surjectivity leaves none unused. For the converse, assume equal finite counts and construct a pairing. We must check that the pairing is both injective and surjective."
+      },
+      {
+        "type": "text",
         "text": "A bijection pairs each source element with one different target element and reaches every target. Thus the counts are equal. Conversely, if the finite counts agree, list the elements of both sets and match entries in the same position."
       },
       {
@@ -7848,7 +8618,7 @@
     "blocks": [
       {
         "type": "text",
-        "text": "A bijection can be reversed."
+        "text": "We now define the inverse of a bijective mapping."
       },
       {
         "type": "statement",
@@ -7875,6 +8645,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Assume sigma is a bijection, so every target element has exactly one preimage. We must check the inverse identities and then both defining conditions for the inverse to be a bijection. Use the original mapping to recover an input whenever two inverse values agree."
       },
       {
         "type": "text",
@@ -7922,6 +8696,10 @@
       {
         "type": "text",
         "text": "We now define a linear space. The objects may be tuples, matrices, polynomials, or functions. What matters is how addition and scalar multiplication behave."
+      },
+      {
+        "type": "text",
+        "text": "We now state the full definition of a linear space over a number field P."
       },
       {
         "type": "statement",
@@ -7982,6 +8760,10 @@
         "text": "We read P to the n, P to the m by n, P of x, and P of x sub n. In the last space, the degree is strictly less than n, and the zero polynomial is included. The field P is itself a linear space over P."
       },
       {
+        "type": "text",
+        "text": "For P to the n and the matrix space, addition and scalar multiplication act entry by entry, so the eight rules follow from the field laws. For polynomials, they act on coefficients. Adding two polynomials of degree less than n cannot create a higher-degree term, and multiplying by a scalar also preserves this bound. The zero polynomial is included so that closure and the zero-vector axiom hold."
+      },
+      {
         "type": "cue",
         "text": "α、β、γ读“alpha, beta, gamma”；k(lα)读“k times l times alpha”，需指明先做括号内数乘。八条公理须完整板书。P[x]的方括号表示多项式空间，不是代入函数值；deg读“degree”。"
       }
@@ -8005,6 +8787,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "To prove uniqueness of the zero vector, assume there are two candidates. We must prove that they are the same element. Evaluate their sum using each candidate as the additive identity; the two evaluations give the required equality."
       },
       {
         "type": "text",
@@ -8044,6 +8830,10 @@
       {
         "type": "text",
         "text": "This proves uniqueness. We denote the additive inverse of alpha by minus alpha."
+      },
+      {
+        "type": "text",
+        "text": "With the additive inverse now uniquely determined, we can define vector subtraction."
       },
       {
         "type": "statement",
@@ -8087,6 +8877,10 @@
       {
         "type": "heading",
         "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "These are consequences of the axioms, so we must derive them without assuming ordinary cancellation in advance. We first prove the scalar-zero identity by distributivity, using addition of an additive inverse to cancel. We can then identify minus one times a vector as its unique additive inverse."
       },
       {
         "type": "text",
