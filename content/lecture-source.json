@@ -3905,13 +3905,56 @@
     "source": "§6 · p.95",
     "blocks": [
       {
-        "type": "statement",
-        "text": "Property 1. The sum of two solutions of a homogeneous linear system is another solution."
+        "type": "text",
+        "text": "We have found a condition for a linear system to have a solution. Next, we study the structure of its solutions."
+      },
+      {
+        "type": "text",
+        "text": "Let us first consider the simpler case of a homogeneous linear system."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\sum_{j=1}^n a_{ij}k_j=0,\\quad\\sum_{j=1}^n a_{ij}\\ell_j=0\\quad(i=1,\\ldots,s)"
+        "latex": "\\begin{cases}a_{11}x_1+a_{12}x_2+\\cdots+a_{1n}x_n=0,\\\\a_{21}x_1+a_{22}x_2+\\cdots+a_{2n}x_n=0,\\\\\\qquad\\vdots\\\\a_{s1}x_1+a_{s2}x_2+\\cdots+a_{sn}x_n=0.\\end{cases}\\tag{1}"
+      },
+      {
+        "type": "text",
+        "text": "There are s equations in n unknowns. All coefficients belong to the number field P, and every right-hand side is zero. A solution is an ordered list of n values that satisfies every equation."
+      },
+      {
+        "type": "cue",
+        "text": "板书：完整写出齐次方程组（1）。后面本节的 system (1) 均指它。aᵢⱼ 读 a sub i j；x₁ through xₙ 读 x sub one through x sub n。"
+      },
+      {
+        "type": "text",
+        "text": "The set of its solutions has two important properties."
+      },
+      {
+        "type": "heading",
+        "text": "Property 1: addition"
+      },
+      {
+        "type": "statement",
+        "text": "Assumption. The two vectors written below are solutions of system (1)."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(k_1,\\ldots,k_n),\\qquad(\\ell_1,\\ldots,\\ell_n)"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^{n}a_{ij}k_j=0,\\qquad\\sum_{j=1}^{n}a_{ij}\\ell_j=0\\qquad(i=1,\\ldots,s)"
+      },
+      {
+        "type": "statement",
+        "text": "Conclusion. The sum of these two solution vectors is also a solution of system (1)."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(k_1,\\ldots,k_n)+(\\ell_1,\\ldots,\\ell_n)=(k_1+\\ell_1,\\ldots,k_n+\\ell_n)\\tag{2}"
       },
       {
         "type": "heading",
@@ -3919,20 +3962,41 @@
       },
       {
         "type": "text",
-        "text": "For the addition property, assume both vectors satisfy every equation with right side zero. We must show that their sum also satisfies each equation. Check one arbitrary row and distribute its coefficients over the sum; the two resulting row values are both zero."
-      },
-      {
-        "type": "text",
-        "text": "Substitute the componentwise sum into each equation. Distribute and use the two original solution equalities."
+        "text": "We must check that this sum satisfies every equation. For each row, substitute the sum and distribute the coefficients."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\sum_{j=1}^n a_{ij}(k_j+\\ell_j)=\\sum_{j=1}^n a_{ij}k_j+\\sum_{j=1}^n a_{ij}\\ell_j=0+0=0"
+        "latex": "\\sum_{j=1}^{n}a_{ij}(k_j+\\ell_j)=\\sum_{j=1}^{n}a_{ij}k_j+\\sum_{j=1}^{n}a_{ij}\\ell_j=0+0=0\\qquad(i=1,\\ldots,s)"
+      },
+      {
+        "type": "text",
+        "text": "Thus the sum is a solution."
+      },
+      {
+        "type": "cue",
+        "text": "指向两组原解的等式，再指代入式。ℓ 读 lowercase ell，避免与数字 one 混淆。求和读 the sum from j equals one to n of a sub i j times k sub j。"
+      },
+      {
+        "type": "heading",
+        "text": "Property 2: scalar multiplication"
       },
       {
         "type": "statement",
-        "text": "Property 2. Any scalar multiple of a solution of a homogeneous system is another solution."
+        "text": "Assumptions. 1. The vector with components k sub one through k sub n is a solution of system (1)."
+      },
+      {
+        "type": "statement",
+        "text": "2. The scalar c is any element of P."
+      },
+      {
+        "type": "statement",
+        "text": "Conclusion. Multiplying this solution vector by c gives another solution of system (1)."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "c(k_1,\\ldots,k_n)=(ck_1,\\ldots,ck_n),\\qquad c\\in P"
       },
       {
         "type": "heading",
@@ -3940,16 +4004,33 @@
       },
       {
         "type": "text",
-        "text": "Substitute c times the solution into each equation and take c outside the sum."
+        "text": "Substitute this scalar multiple into each equation. Take c outside the sum and use the fact that the original vector is a solution."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\sum_{j=1}^n a_{ij}(c k_j)=c\\sum_{j=1}^n a_{ij}k_j=c\\cdot0=0"
+        "latex": "\\sum_{j=1}^{n}a_{ij}(ck_j)=c\\sum_{j=1}^{n}a_{ij}k_j=c\\cdot0=0\\qquad(i=1,\\ldots,s)"
       },
       {
         "type": "text",
-        "text": "Applying these two properties repeatedly shows that every linear combination of homogeneous solutions is a solution."
+        "text": "Thus every scalar multiple is a solution."
+      },
+      {
+        "type": "cue",
+        "text": "c 可以是零，也可以是任意非零数。c kⱼ 读 c times k sub j；不要把相乘读成下标。"
+      },
+      {
+        "type": "statement",
+        "text": "Consequence. Every linear combination of solutions of a homogeneous linear system is again a solution of that system."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\eta_1,\\ldots,\\eta_t\\text{ solve (1)},\\quad k_1,\\ldots,k_t\\in P\\quad\\Longrightarrow\\quad k_1\\eta_1+\\cdots+k_t\\eta_t\\text{ solves (1).}"
+      },
+      {
+        "type": "text",
+        "text": "This follows by applying the two properties repeatedly. We now ask whether all solutions can be expressed using finitely many solution vectors."
       }
     ]
   },
@@ -3962,114 +4043,293 @@
     "blocks": [
       {
         "type": "text",
-        "text": "We now define a fundamental system of solutions. It must satisfy both an independence condition and a condition that it expresses every solution."
+        "text": "We now define a fundamental system of solutions. It gives all solutions without keeping unnecessary vectors."
       },
       {
         "type": "statement",
-        "text": "Definition 18. A fundamental system of solutions of a homogeneous system is a linearly independent system of solutions in which every solution can be expressed as a linear combination."
+        "text": "Definition 18. Let eta sub one through eta sub t be a system of solutions of the homogeneous system (1). If the following two conditions hold:"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\eta_1,\\ldots,\\eta_t\\text{ independent solutions},\\qquad\\eta=k_1\\eta_1+\\cdots+k_t\\eta_t\\text{ for every solution }\\eta"
-      },
-      {
-        "type": "text",
-        "text": "We read eta sub one through eta sub t. Each eta is itself a complete solution vector. Both independence and the ability to express every solution are required."
+        "latex": "\\eta_1,\\ldots,\\eta_t\\text{ are solutions of (1)},\\qquad \\eta_j\\in P^n"
       },
       {
         "type": "statement",
-        "text": "Theorem 8. If a homogeneous system in n unknowns has nonzero solutions and coefficient rank r, it has a fundamental system of solutions containing exactly n minus r vectors."
+        "text": "1. The solution vectors eta sub one through eta sub t are linearly independent;"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "t=n-r\\qquad(r<n)"
+        "latex": "k_1\\eta_1+\\cdots+k_t\\eta_t=0,\\quad k_1,\\ldots,k_t\\in P\\quad\\Longrightarrow\\quad k_1=\\cdots=k_t=0;"
       },
       {
-        "type": "heading",
-        "text": "Proof: construction"
-      },
-      {
-        "type": "text",
-        "text": "Assume the coefficient rank is r and nonzero solutions exist. There are n minus r free unknowns. We must construct n minus r solution vectors, prove that they are independent, and prove that every solution is a linear combination of them. Assigning the free coordinates unit-vector values provides the construction."
-      },
-      {
-        "type": "text",
-        "text": "Choose and reorder a nonzero minor of order r as in the preceding section. The homogeneous system is equivalent to these r equations."
+        "type": "statement",
+        "text": "2. Every solution of system (1) is a linear combination of these vectors;"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{cases}a_{11}x_1+\\cdots+a_{1r}x_r=-a_{1,r+1}x_{r+1}-\\cdots-a_{1n}x_n,\\\\\\vdots\\\\a_{r1}x_1+\\cdots+a_{rr}x_r=-a_{r,r+1}x_{r+1}-\\cdots-a_{rn}x_n.\\end{cases}"
+        "latex": "\\text{for every solution }\\eta,\\ \\text{there exist }k_1,\\ldots,k_t\\in P\\text{ such that }\\eta=k_1\\eta_1+\\cdots+k_t\\eta_t;"
       },
       {
-        "type": "text",
-        "text": "Every choice of the free unknowns gives exactly one solution. Choose their values to be the unit vectors, one at a time. This gives the following n minus r solutions."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\begin{aligned}\\eta_1&=(c_{11},\\ldots,c_{1r},1,0,\\ldots,0),\\\\\\eta_2&=(c_{21},\\ldots,c_{2r},0,1,\\ldots,0),\\\\&\\ \\vdots\\\\\\eta_{n-r}&=(c_{n-r,1},\\ldots,c_{n-r,r},0,0,\\ldots,1).\\end{aligned}"
-      },
-      {
-        "type": "text",
-        "text": "The first r components are determined by the equations. The last n minus r components are the chosen free values."
-      },
-      {
-        "type": "heading",
-        "text": "Proof: independence"
-      },
-      {
-        "type": "text",
-        "text": "Suppose a linear combination of these solutions is zero. Compare only the last n minus r components."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "k_1\\eta_1+\\cdots+k_{n-r}\\eta_{n-r}=0\\quad\\Longrightarrow\\quad(k_1,\\ldots,k_{n-r})=(0,\\ldots,0)"
-      },
-      {
-        "type": "text",
-        "text": "Every coefficient is zero. Hence these solutions are independent."
-      },
-      {
-        "type": "heading",
-        "text": "Proof: expressing every solution"
-      },
-      {
-        "type": "text",
-        "text": "Take any solution eta with components c sub one through c sub n. Use its free components as coefficients in the following combination."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\eta=(c_1,\\ldots,c_r,c_{r+1},\\ldots,c_n),\\qquad\\zeta=c_{r+1}\\eta_1+\\cdots+c_n\\eta_{n-r}"
-      },
-      {
-        "type": "text",
-        "text": "Zeta is also a solution, by the two homogeneous-solution properties. Eta and zeta have exactly the same free components. These determine a solution uniquely, so eta equals zeta."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\eta=c_{r+1}\\eta_1+\\cdots+c_n\\eta_{n-r}"
-      },
-      {
-        "type": "heading",
-        "text": "Proof: the number is fixed"
-      },
-      {
-        "type": "text",
-        "text": "Any other fundamental system is independent and expresses all the same solutions. The two fundamental systems are therefore equivalent. By the comparison corollary, they contain the same number of vectors, namely n minus r. If r is zero, all vectors are solutions and the n unit vectors give the construction directly."
+        "type": "statement",
+        "text": "then eta sub one through eta sub t is called a fundamental system of solutions of system (1)."
       },
       {
         "type": "cue",
-        "text": "η eta；ζ zeta。原书只在有非零解时讨论基础解系；r=n时只有零解，无需引入空基础解系。这里无需提前使用维数定理。"
+        "text": "按 If → 1、2 → then 的结构板书。η 读 eta；ηⱼ 是一个完整的 n 分量解向量，不是一个未知量。独立性中的零是零向量。"
+      },
+      {
+        "type": "text",
+        "text": "The second condition gives all solutions. The first prevents redundant vectors: if the vectors were dependent, one could be expressed using the others and removed."
+      },
+      {
+        "type": "text",
+        "text": "We now prove that a fundamental system exists when the system has a nonzero solution."
+      },
+      {
+        "type": "heading",
+        "text": "Theorem 8"
       },
       {
         "type": "statement",
-        "text": "Consequence. Any independent system of vectors equivalent to a fundamental system of solutions is also a fundamental system of solutions."
+        "text": "Consider a homogeneous linear system in n unknowns, with coefficient matrix A."
+      },
+      {
+        "type": "heading",
+        "text": "Assumptions"
+      },
+      {
+        "type": "statement",
+        "text": "1. The system has a nonzero solution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\text{There is a solution }\\eta=(c_1,\\ldots,c_n)\\ne(0,\\ldots,0)."
+      },
+      {
+        "type": "statement",
+        "text": "2. The rank of its coefficient matrix A is r."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\operatorname{rank}(A)=r"
+      },
+      {
+        "type": "heading",
+        "text": "Conclusions"
+      },
+      {
+        "type": "statement",
+        "text": "1. The system has a fundamental system of solutions."
+      },
+      {
+        "type": "statement",
+        "text": "2. Every fundamental system of solutions contains exactly n minus r solution vectors."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "0\\le r<n,\\qquad t=n-r"
+      },
+      {
+        "type": "cue",
+        "text": "nonzero solution：解向量的分量不全为零。n−r 是基础解系中向量的个数，不是说整个方程组只有 n−r 个解。"
+      },
+      {
+        "type": "heading",
+        "text": "Proof: goals"
+      },
+      {
+        "type": "text",
+        "text": "We will construct n minus r solutions. Then we will check the two conditions in Definition Eighteen: independence and expression of every solution. Finally, we will prove that any other fundamental system has the same number of vectors."
+      },
+      {
+        "type": "text",
+        "text": "The coefficient rank cannot be n. Otherwise, the homogeneous system would have only the zero solution. So r is less than n."
+      },
+      {
+        "type": "heading",
+        "text": "Step 1: construct the solution vectors"
+      },
+      {
+        "type": "text",
+        "text": "First suppose r is positive. As in the preceding section, reorder the equations and unknowns so that a nonzero minor of order r lies in the upper-left corner."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1r}\\\\a_{21}&a_{22}&\\cdots&a_{2r}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{r1}&a_{r2}&\\cdots&a_{rr}\\end{vmatrix}\\ne0"
+      },
+      {
+        "type": "text",
+        "text": "The first r equations have exactly the same solutions as the full system. Move the terms involving the last n minus r unknowns to the right."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}a_{11}x_1+\\cdots+a_{1r}x_r=-a_{1,r+1}x_{r+1}-\\cdots-a_{1n}x_n,\\\\a_{21}x_1+\\cdots+a_{2r}x_r=-a_{2,r+1}x_{r+1}-\\cdots-a_{2n}x_n,\\\\\\qquad\\vdots\\\\a_{r1}x_1+\\cdots+a_{rr}x_r=-a_{r,r+1}x_{r+1}-\\cdots-a_{rn}x_n.\\end{cases}\\tag{3}"
+      },
+      {
+        "type": "text",
+        "text": "The last n minus r unknowns are free. Once their values are chosen, Cramer’s rule uniquely determines the first r unknowns. In particular, two solutions with the same free components must be equal."
+      },
+      {
+        "type": "cue",
+        "text": "板书：式（3）沿用§5的删去冗余方程和移项结果。强调“自由分量相同 → 完整解相同”，后面表示任意解时要用。"
+      },
+      {
+        "type": "text",
+        "text": "Choose the free components to be the following n minus r lists, one at a time."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(x_{r+1},x_{r+2},\\ldots,x_n)=(1,0,\\ldots,0),\\ (0,1,\\ldots,0),\\ \\ldots,\\ (0,0,\\ldots,1).\\tag{4}"
+      },
+      {
+        "type": "text",
+        "text": "Each choice gives exactly one solution. Denote these solutions by eta sub one through eta sub n minus r."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\\eta_1&=(c_{11},\\ldots,c_{1r},1,0,\\ldots,0),\\\\\\eta_2&=(c_{21},\\ldots,c_{2r},0,1,\\ldots,0),\\\\&\\ \\vdots\\\\\\eta_{n-r}&=(c_{n-r,1},\\ldots,c_{n-r,r},0,0,\\ldots,1).\\end{aligned}\\tag{5}"
+      },
+      {
+        "type": "text",
+        "text": "In each vector, the first r components are determined by the equations. The remaining components are the free values we chose."
+      },
+      {
+        "type": "cue",
+        "text": "指向前 r 个分量，再指向末尾的单位向量。cᵢⱼ 的第一个下标标记第几个解，第二个下标标记分量；cₙ₋ᵣ,₁ 读 c sub n minus r comma one。"
+      },
+      {
+        "type": "text",
+        "text": "If r is zero, every coefficient is zero and every vector in P to the n is a solution. In that case, choose the n unit vectors directly. There are no determined components, and the same checks below still apply."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "r=0:\\qquad\\eta_1=(1,0,\\ldots,0),\\quad\\eta_2=(0,1,\\ldots,0),\\quad\\ldots,\\quad\\eta_n=(0,0,\\ldots,1)."
+      },
+      {
+        "type": "heading",
+        "text": "Step 2: verify independence"
+      },
+      {
+        "type": "text",
+        "text": "Suppose a linear combination of the chosen solutions is the zero vector. We must show that every coefficient is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k_1\\eta_1+k_2\\eta_2+\\cdots+k_{n-r}\\eta_{n-r}=0"
+      },
+      {
+        "type": "text",
+        "text": "Compare the last n minus r components. They are exactly the coefficients of the combination."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(\\underbrace{*,\\ldots,*}_{r\\text{ components}},k_1,k_2,\\ldots,k_{n-r})=(0,\\ldots,0)\\quad\\Longrightarrow\\quad k_1=k_2=\\cdots=k_{n-r}=0."
+      },
+      {
+        "type": "cue",
+        "text": "星号只表示暂时不需要计算的前 r 个分量，不是乘法；r=0 时没有这些分量。指最后 n−r 个位置逐一比较。"
+      },
+      {
+        "type": "text",
+        "text": "Thus the vectors are linearly independent. This verifies the first condition in the definition."
+      },
+      {
+        "type": "heading",
+        "text": "Step 3: express every solution"
+      },
+      {
+        "type": "text",
+        "text": "Let eta be any solution. Write out its components."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\eta=(c_1,\\ldots,c_r,c_{r+1},c_{r+2},\\ldots,c_n).\\tag{6}"
+      },
+      {
+        "type": "text",
+        "text": "Use its free components as coefficients to form the following linear combination. Denote this new vector by zeta."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\zeta=c_{r+1}\\eta_1+c_{r+2}\\eta_2+\\cdots+c_n\\eta_{n-r}.\\tag{7}"
+      },
+      {
+        "type": "cue",
+        "text": "ζ 读 zeta。读法：zeta equals c sub r plus one times eta sub one, plus c sub r plus two times eta sub two, and so on, plus c sub n times eta sub n minus r。"
+      },
+      {
+        "type": "text",
+        "text": "Zeta is a solution by the two properties of homogeneous solutions. Its last n minus r components are the same as those of eta. The free components determine the full solution uniquely, so eta and zeta are equal."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\eta=\\zeta=c_{r+1}\\eta_1+c_{r+2}\\eta_2+\\cdots+c_n\\eta_{n-r}.\\tag{8}"
+      },
+      {
+        "type": "text",
+        "text": "This verifies the second condition. The chosen vectors form a fundamental system, so the first conclusion is proved."
+      },
+      {
+        "type": "heading",
+        "text": "Step 4: prove that the number is fixed"
+      },
+      {
+        "type": "text",
+        "text": "Let xi sub one through xi sub t be any other fundamental system. Each xi is a solution, so it is a linear combination of the eta vectors. Each eta is also a solution, so it is a linear combination of the xi vectors."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(\\eta_1,\\ldots,\\eta_{n-r})\\ \\sim\\ (\\xi_1,\\ldots,\\xi_t)"
+      },
+      {
+        "type": "text",
+        "text": "Thus the two vector systems are equivalent, and both are linearly independent. By the comparison result for independent vector systems, they contain the same number of vectors."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "t=n-r"
+      },
+      {
+        "type": "text",
+        "text": "This proves the second conclusion and completes the proof."
+      },
+      {
+        "type": "cue",
+        "text": "ξ 读 xi；这里 ∼ 表示两个向量组等价，即可以互相线性表示。用前面向量组的比较结论，不提前使用维数定理。r=n 时只有零解，沿教材不引入空基础解系。"
+      },
+      {
+        "type": "heading",
+        "text": "Consequence"
+      },
+      {
+        "type": "statement",
+        "text": "Assumptions. 1. A vector system is equivalent to a fundamental system of solutions of (1)."
+      },
+      {
+        "type": "statement",
+        "text": "2. The new vector system is linearly independent."
+      },
+      {
+        "type": "statement",
+        "text": "Conclusion. The new vector system is also a fundamental system of solutions of (1)."
       },
       {
         "type": "heading",
@@ -4077,7 +4337,7 @@
       },
       {
         "type": "text",
-        "text": "Its vectors are combinations of homogeneous solutions, hence are solutions. Every solution is a combination of the old fundamental system, and therefore of the new system by transitivity. Independence is assumed, so both defining conditions hold."
+        "text": "Every new vector is a linear combination of homogeneous solutions, so it is itself a solution. Every solution is a combination of the old system, and therefore of the new one. Together with the assumed independence, these facts give the definition."
       }
     ]
   },
@@ -4090,109 +4350,260 @@
     "blocks": [
       {
         "type": "text",
-        "text": "First, we define the homogeneous system associated with a nonhomogeneous system."
-      },
-      {
-        "type": "statement",
-        "text": "Definition. The associated homogeneous system is obtained by replacing all constant terms of a linear system by zero."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\sum_{j=1}^n a_{ij}x_j=b_i\\quad\\longrightarrow\\quad\\sum_{j=1}^n a_{ij}x_j=0\\qquad(i=1,\\ldots,s)"
-      },
-      {
-        "type": "text",
-        "text": "This is the system called the derived system in the textbook. We will use the phrase associated homogeneous system."
-      },
-      {
-        "type": "statement",
-        "text": "Property 1. The difference of two solutions of the original system is a solution of the associated homogeneous system."
+        "text": "We now return to a general linear system. We will relate its solutions to those of a homogeneous system."
       },
       {
         "type": "heading",
-        "text": "Proof"
-      },
-      {
-        "type": "text",
-        "text": "For the first property, start with two solutions of the same nonhomogeneous system. The target is a solution of the associated homogeneous system. Subtract their equations row by row: the equal constant terms cancel, leaving right side zero."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\sum_{j=1}^n a_{ij}(k_j-\\ell_j)=\\sum_{j=1}^n a_{ij}k_j-\\sum_{j=1}^n a_{ij}\\ell_j=b_i-b_i=0"
-      },
-      {
-        "type": "text",
-        "text": "Subtract the equation satisfied by the second solution from the equation satisfied by the first. The constants cancel."
+        "text": "Definition: the associated homogeneous system"
       },
       {
         "type": "statement",
-        "text": "Property 2. Adding a homogeneous solution to a solution of the original system gives another solution of the original system."
-      },
-      {
-        "type": "heading",
-        "text": "Proof"
+        "text": "Given a linear system over P, keep all its coefficients and replace every constant term by zero. The resulting system is called its associated homogeneous system, or derived system."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\sum_{j=1}^n a_{ij}(k_j+\\ell_j)=b_i+0=b_i"
-      },
-      {
-        "type": "text",
-        "text": "The original solution contributes b sub i. The homogeneous solution contributes zero. Their sum still satisfies each equation."
-      },
-      {
-        "type": "statement",
-        "text": "Theorem 9. Fix one particular solution gamma zero of a consistent system. Every solution is gamma zero plus a solution eta of its associated homogeneous system, and every such sum is a solution."
+        "latex": "\\begin{cases}a_{11}x_1+a_{12}x_2+\\cdots+a_{1n}x_n=b_1,\\\\a_{21}x_1+a_{22}x_2+\\cdots+a_{2n}x_n=b_2,\\\\\\qquad\\vdots\\\\a_{s1}x_1+a_{s2}x_2+\\cdots+a_{sn}x_n=b_s.\\end{cases}\\tag{9}"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\gamma=\\gamma_0+\\eta"
+        "latex": "\\begin{cases}a_{11}x_1+a_{12}x_2+\\cdots+a_{1n}x_n=0,\\\\a_{21}x_1+a_{22}x_2+\\cdots+a_{2n}x_n=0,\\\\\\qquad\\vdots\\\\a_{s1}x_1+a_{s2}x_2+\\cdots+a_{sn}x_n=0.\\end{cases}\\tag{1}"
       },
       {
         "type": "text",
-        "text": "Gamma sub zero is one fixed solution. Eta ranges over all homogeneous solutions. The subscript zero labels the chosen particular solution; it does not say that the solution vector is zero."
-      },
-      {
-        "type": "heading",
-        "text": "Proof"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\gamma=\\gamma_0+(\\gamma-\\gamma_0)"
-      },
-      {
-        "type": "text",
-        "text": "By Property One, the difference in parentheses is a homogeneous solution. This gives the required form for every solution. Conversely, Property Two proves that every sum of this form is a solution."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\gamma=\\gamma_0+k_1\\eta_1+\\cdots+k_{n-r}\\eta_{n-r},\\qquad k_1,\\ldots,k_{n-r}\\in P"
-      },
-      {
-        "type": "text",
-        "text": "If the homogeneous system has nonzero solutions, express eta using a fundamental system. This gives the displayed general solution. If it has only the zero solution, gamma zero is the only solution."
-      },
-      {
-        "type": "statement",
-        "text": "Corollary. A consistent system has a unique solution if and only if its associated homogeneous system has only the zero solution."
-      },
-      {
-        "type": "heading",
-        "text": "Proof"
-      },
-      {
-        "type": "text",
-        "text": "If two distinct solutions existed, their difference would be a nonzero homogeneous solution. Conversely, a nonzero homogeneous solution could be added to the particular solution to give a different solution. These two observations prove the equivalence."
+        "text": "System (9) is the original system. System (1) is its associated homogeneous system. They have the same coefficient matrix. Only the constant terms change."
       },
       {
         "type": "cue",
-        "text": "particular solution 特解；general solution 一般解。读法：gamma equals gamma sub zero plus k sub one times eta sub one, and so on, plus k sub n minus r times eta sub n minus r。"
+        "text": "板书：先写原方程组（9），再指右端全部换成零得到（1）。associated homogeneous system 对应教材“导出组”；后面不要混淆两个系统的解。"
+      },
+      {
+        "type": "text",
+        "text": "There are two useful relations between their solutions."
+      },
+      {
+        "type": "heading",
+        "text": "Property 1: subtract two original solutions"
+      },
+      {
+        "type": "statement",
+        "text": "Assumption. Two vectors are solutions of the same original system (9)."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\gamma_1=(k_1,\\ldots,k_n),\\quad\\gamma_2=(\\ell_1,\\ldots,\\ell_n),\\qquad\\sum_{j=1}^{n}a_{ij}k_j=\\sum_{j=1}^{n}a_{ij}\\ell_j=b_i\\quad(i=1,\\ldots,s)"
+      },
+      {
+        "type": "statement",
+        "text": "Conclusion. Their difference is a solution of the associated homogeneous system (1)."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\gamma_1-\\gamma_2=(k_1-\\ell_1,\\ldots,k_n-\\ell_n)\\text{ solves (1).}"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Subtract the two solution equalities in each row. The constant terms cancel."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^{n}a_{ij}(k_j-\\ell_j)=\\sum_{j=1}^{n}a_{ij}k_j-\\sum_{j=1}^{n}a_{ij}\\ell_j=b_i-b_i=0\\qquad(i=1,\\ldots,s)"
+      },
+      {
+        "type": "text",
+        "text": "So the difference satisfies every equation of the homogeneous system."
+      },
+      {
+        "type": "heading",
+        "text": "Property 2: add a homogeneous solution"
+      },
+      {
+        "type": "statement",
+        "text": "Assumptions. 1. The vector gamma is a solution of the original system (9)."
+      },
+      {
+        "type": "statement",
+        "text": "2. The vector eta is a solution of its associated homogeneous system (1)."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\gamma=(k_1,\\ldots,k_n),\\quad\\eta=(\\ell_1,\\ldots,\\ell_n),\\qquad\\sum_{j=1}^{n}a_{ij}k_j=b_i,\\quad\\sum_{j=1}^{n}a_{ij}\\ell_j=0\\quad(i=1,\\ldots,s)"
+      },
+      {
+        "type": "statement",
+        "text": "Conclusion. The sum gamma plus eta is a solution of the original system (9)."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\gamma+\\eta=(k_1+\\ell_1,\\ldots,k_n+\\ell_n)\\text{ solves (9).}"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Substitute the sum into each row. The original solution contributes the constant term, and the homogeneous solution contributes zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=1}^{n}a_{ij}(k_j+\\ell_j)=\\sum_{j=1}^{n}a_{ij}k_j+\\sum_{j=1}^{n}a_{ij}\\ell_j=b_i+0=b_i\\qquad(i=1,\\ldots,s)"
+      },
+      {
+        "type": "text",
+        "text": "Thus the sum is an original solution."
+      },
+      {
+        "type": "cue",
+        "text": "γ 读 gamma；η 读 eta。性质1是“原解减原解 → 齐次解”；性质2是“原解加齐次解 → 原解”。"
+      },
+      {
+        "type": "text",
+        "text": "These two properties give Theorem Nine."
+      },
+      {
+        "type": "heading",
+        "text": "Theorem 9"
+      },
+      {
+        "type": "heading",
+        "text": "Assumptions"
+      },
+      {
+        "type": "statement",
+        "text": "1. The original linear system (9) is consistent."
+      },
+      {
+        "type": "statement",
+        "text": "2. Gamma sub zero is one fixed particular solution of (9), and (1) is its associated homogeneous system."
+      },
+      {
+        "type": "heading",
+        "text": "Conclusions"
+      },
+      {
+        "type": "statement",
+        "text": "1. Every solution gamma of (9) can be written as gamma sub zero plus a solution eta of (1)."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\gamma=\\gamma_0+\\eta,\\qquad\\eta\\text{ solves (1)}.\\tag{10}"
+      },
+      {
+        "type": "statement",
+        "text": "2. Every such sum is a solution of (9). Thus, as eta ranges over all solutions of (1), the formula gives all solutions of (9)."
+      },
+      {
+        "type": "cue",
+        "text": "γ₀ 读 gamma sub zero；particular solution 特解。下标零只标记选定的特解，并不表示它是零向量。"
+      },
+      {
+        "type": "heading",
+        "text": "Proof of conclusion 1"
+      },
+      {
+        "type": "text",
+        "text": "Let gamma be any solution of (9). Subtract the fixed solution gamma sub zero. By Property One, the difference is a homogeneous solution. Call it eta."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\eta=\\gamma-\\gamma_0,\\qquad\\gamma=\\gamma_0+(\\gamma-\\gamma_0)=\\gamma_0+\\eta"
+      },
+      {
+        "type": "heading",
+        "text": "Proof of conclusion 2"
+      },
+      {
+        "type": "text",
+        "text": "Conversely, take any solution eta of (1). By Property Two, adding it to gamma sub zero gives a solution of (9). The two directions prove the theorem."
+      },
+      {
+        "type": "heading",
+        "text": "General solution using a fundamental system"
+      },
+      {
+        "type": "statement",
+        "text": "Assumptions. 1. Gamma sub zero is a particular solution of (9)."
+      },
+      {
+        "type": "statement",
+        "text": "2. The coefficient matrix has rank r less than n, and eta sub one through eta sub n minus r form a fundamental system of (1)."
+      },
+      {
+        "type": "statement",
+        "text": "Conclusion. All solutions of (9), and only those solutions, are given by the following formula, with arbitrary coefficients in P."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\gamma=\\gamma_0+k_1\\eta_1+k_2\\eta_2+\\cdots+k_{n-r}\\eta_{n-r},\\qquad k_1,\\ldots,k_{n-r}\\in P"
+      },
+      {
+        "type": "text",
+        "text": "By the definition of a fundamental system, the linear combination gives every homogeneous solution. Substitute it for eta in Theorem Nine."
+      },
+      {
+        "type": "cue",
+        "text": "读法：gamma equals gamma sub zero, plus k sub one times eta sub one, plus k sub two times eta sub two, and so on, plus k sub n minus r times eta sub n minus r。若 r=0，齐次部分可用 n 个单位向量；若 r=n，只剩特解，不引入空基础解系。"
+      },
+      {
+        "type": "heading",
+        "text": "Corollary: uniqueness"
+      },
+      {
+        "type": "statement",
+        "text": "Assumption. The original system (9) has at least one solution."
+      },
+      {
+        "type": "statement",
+        "text": "Conclusion. The solution of (9) is unique if and only if its associated homogeneous system (1) has only the zero solution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\text{(9) has a unique solution}\\quad\\Longleftrightarrow\\quad\\text{(1) has only the zero solution.}"
+      },
+      {
+        "type": "heading",
+        "text": "Proof: sufficiency"
+      },
+      {
+        "type": "text",
+        "text": "Suppose (1) has only the zero solution. If (9) had two different solutions, Property One would make their difference a nonzero solution of (1), a contradiction. Since (9) has a solution, that solution is unique."
+      },
+      {
+        "type": "heading",
+        "text": "Proof: necessity"
+      },
+      {
+        "type": "text",
+        "text": "Suppose (9) has a unique solution, gamma sub zero. If (1) had a nonzero solution eta, Property Two would give a different solution of (9)."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\eta\\ne0,\\quad\\eta\\text{ solves (1)}\\quad\\Longrightarrow\\quad\\gamma_0+\\eta\\text{ solves (9)},\\qquad\\gamma_0+\\eta\\ne\\gamma_0"
+      },
+      {
+        "type": "text",
+        "text": "This contradicts uniqueness. Therefore (1) has only the zero solution."
+      },
+      {
+        "type": "cue",
+        "text": "推论的“原方程组有解”不能省略。证明顺序沿教材：先充分性，再必要性。"
       }
     ]
   },
@@ -4205,20 +4616,63 @@
     "blocks": [
       {
         "type": "text",
-        "text": "In the final section, we apply linear systems to polynomial equations. First, we need a lemma about common factors."
+        "text": "In the final section, we use linear systems to study two polynomial equations in two unknowns. First, we need a lemma about common factors."
+      },
+      {
+        "type": "heading",
+        "text": "Lemma: assumptions"
       },
       {
         "type": "statement",
-        "text": "Lemma. Let f and g be nonzero polynomials written with positive degree bounds n and m, with their leading displayed coefficients not both zero. They have a nonconstant common factor if and only if there are nonzero polynomials u and v of degrees less than m and n, respectively, such that u f equals v g."
+        "text": "1. The polynomials f and g are nonzero polynomials over the number field P, written with positive degree bounds n and m."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "f(x)=a_0x^n+\\cdots+a_n,\\quad g(x)=b_0x^m+\\cdots+b_m,\\quad (a_0,b_0)\\ne(0,0),\\qquad u(x)f(x)=v(x)g(x),\\quad\\deg u<m,\\ \\deg v<n"
+        "latex": "f(x)=a_0x^n+a_1x^{n-1}+\\cdots+a_n,\\qquad g(x)=b_0x^m+b_1x^{m-1}+\\cdots+b_m,\\qquad n,m>0"
       },
       {
-        "type": "text",
-        "text": "We read deg u less than m as: the degree of u is less than m. The degree bounds refer to the displayed forms; one leading coefficient may be zero. P bracket x means the polynomials in x with coefficients in P."
+        "type": "statement",
+        "text": "2. The leading displayed coefficients a sub zero and b sub zero are not both zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f,g\\in P[x],\\qquad f\\ne0,\\quad g\\ne0,\\quad(a_0,b_0)\\ne(0,0)"
+      },
+      {
+        "type": "cue",
+        "text": "P[x] 读 P bracket x，表示 P 上的多项式。n、m 是写出的最高次数上界，未必都是实际次数；a₀、b₀ 至少一个非零。nonzero polynomial 指不恒等于零。"
+      },
+      {
+        "type": "heading",
+        "text": "Lemma: conclusion"
+      },
+      {
+        "type": "statement",
+        "text": "The polynomials f and g have a nonconstant common factor if and only if there exist nonzero polynomials u and v over P satisfying both of the following conditions:"
+      },
+      {
+        "type": "statement",
+        "text": "1. The degree of u is less than m, and the degree of v is less than n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "u,v\\in P[x],\\quad u\\ne0,\\quad v\\ne0,\\qquad\\deg u<m,\\quad\\deg v<n"
+      },
+      {
+        "type": "statement",
+        "text": "2. The polynomial identity u times f equals v times g holds."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "u(x)f(x)=v(x)g(x)"
+      },
+      {
+        "type": "cue",
+        "text": "deg u < m 读 the degree of u is less than m。identity 表示多项式恒等式，不是只在某一个 x 值处相等。"
       },
       {
         "type": "heading",
@@ -4226,16 +4680,30 @@
       },
       {
         "type": "text",
-        "text": "This is an equivalence, so we need two implications. From a nonconstant common factor we will construct the two multipliers with the required degree bounds. Conversely, from such multipliers we will rule out coprimality by using divisibility and those same degree bounds."
-      },
-      {
-        "type": "text",
-        "text": "Suppose d is a nonconstant common factor. Write f as d times f one, and g as d times g one. Set u equal to g one and v equal to f one. Their degrees satisfy the required bounds, and their products agree."
+        "text": "Suppose f and g have a nonconstant common factor d. We must construct u and v with the required degrees and identity. Divide both polynomials by d."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "f=df_1,\\quad g=dg_1,\\qquad u=g_1,\\quad v=f_1,\\qquad uf=df_1g_1=vg"
+        "latex": "f=df_1,\\qquad g=dg_1,\\qquad\\deg d\\ge1"
+      },
+      {
+        "type": "text",
+        "text": "Since f and g are nonzero, so are the two quotients. Their degrees are strictly below the displayed bounds."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\deg f_1=\\deg f-\\deg d<n,\\qquad\\deg g_1=\\deg g-\\deg d<m"
+      },
+      {
+        "type": "text",
+        "text": "Set u equal to g sub one and v equal to f sub one. Then the required identity holds."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "u=g_1,\\qquad v=f_1,\\qquad uf=g_1df_1=f_1dg_1=vg"
       },
       {
         "type": "heading",
@@ -4243,25 +4711,69 @@
       },
       {
         "type": "text",
-        "text": "Suppose the identity holds. Exchange f and g if needed so that a sub zero is nonzero and f has degree n. Let d be the greatest common divisor of f and v. Divide out this common divisor."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "d=\\gcd(f,v),\\quad f=df_1,\\quad v=dv_1,\\quad\\gcd(f_1,v_1)=1,\\qquad uf_1=v_1g"
+        "text": "Conversely, suppose such nonzero u and v exist. We must find a nonconstant common factor of f and g."
       },
       {
         "type": "text",
-        "text": "Since d divides v and the degree of v is less than n, f one has positive degree. The last identity shows f one divides v one times g. Since f one and v one are relatively prime, the polynomial divisibility result from Chapter One gives that f one divides g. It also divides f. Thus it is a nonconstant common factor."
+        "text": "Since the leading displayed coefficients are not both zero, we may exchange f and g if needed and assume a sub zero is nonzero. Thus f has degree n."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\deg d\\le\\deg v<n,\\quad\\deg f_1>0,\\qquad f_1\\mid v_1g,\\quad\\gcd(f_1,v_1)=1\\quad\\Longrightarrow\\quad f_1\\mid g"
+        "latex": "a_0\\ne0,\\qquad\\deg f=n,\\qquad uf=vg"
       },
       {
         "type": "cue",
-        "text": "gcd 读 greatest common divisor；f₁∣g 读 f sub one divides g。这里竖线表示整除，不是行列式。原书使用第一章“互素因子整除乘积”的结论。"
+        "text": "若交换 f、g，连同 n、m 以及 u、v 一起交换；交换后仍是同一个恒等式条件。"
+      },
+      {
+        "type": "text",
+        "text": "Let d be the greatest common divisor of f and v. Write both as d times their quotients."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "d=\\gcd(f,v),\\qquad f=df_1,\\qquad v=dv_1,\\qquad\\gcd(f_1,v_1)=1"
+      },
+      {
+        "type": "text",
+        "text": "Substitute into the identity and cancel the nonzero polynomial d."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "duf_1=dv_1g\\quad\\Longrightarrow\\quad uf_1=v_1g"
+      },
+      {
+        "type": "text",
+        "text": "Because d divides v, its degree is less than n. Since f has degree n, the quotient f sub one has positive degree."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\deg d\\le\\deg v<n,\\qquad\\deg f_1=n-\\deg d>0"
+      },
+      {
+        "type": "text",
+        "text": "The identity shows that f sub one divides v sub one times g. The two quotients are relatively prime, so the divisibility result from Chapter One implies that f sub one divides g."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f_1\\mid v_1g,\\qquad\\gcd(f_1,v_1)=1\\quad\\Longrightarrow\\quad f_1\\mid g"
+      },
+      {
+        "type": "text",
+        "text": "It also divides f. Therefore f sub one is a nonconstant common factor of f and g, as required."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f_1\\mid f,\\qquad f_1\\mid g,\\qquad\\deg f_1>0"
+      },
+      {
+        "type": "cue",
+        "text": "gcd 读 greatest common divisor；f₁∣g 读 f sub one divides g；此处竖线是整除。两个商互素和“互素因子整除乘积”的结论均来自第一章。"
       }
     ]
   },
@@ -4274,75 +4786,253 @@
     "blocks": [
       {
         "type": "text",
-        "text": "We now define the resultant, using the coefficient matrix obtained from the polynomial identity."
+        "text": "We now turn the polynomial identity into a homogeneous linear system. Its unknowns will be the coefficients of u and v."
       },
       {
-        "type": "statement",
-        "text": "Definition. The resultant R of f and g is the determinant of the following coefficient array: m shifted rows of coefficients of f, followed by n shifted rows of coefficients of g. Its order is m plus n."
+        "type": "heading",
+        "text": "From a polynomial identity to linear equations"
+      },
+      {
+        "type": "text",
+        "text": "Use the same displayed forms of f and g as in the lemma. Write u and v with the required degree bounds."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "R(f,g)=\\begin{vmatrix}a_0&a_1&\\cdots&a_n&0&\\cdots&0\\\\0&a_0&a_1&\\cdots&a_n&\\cdots&0\\\\\\vdots&&\\ddots&&&\\ddots&\\vdots\\\\0&\\cdots&0&a_0&a_1&\\cdots&a_n\\\\b_0&b_1&\\cdots&b_m&0&\\cdots&0\\\\0&b_0&b_1&\\cdots&b_m&\\cdots&0\\\\\\vdots&&\\ddots&&&\\ddots&\\vdots\\\\0&\\cdots&0&b_0&b_1&\\cdots&b_m\\end{vmatrix}"
+        "latex": "\\begin{aligned}f(x)&=a_0x^n+a_1x^{n-1}+\\cdots+a_n,\\\\g(x)&=b_0x^m+b_1x^{m-1}+\\cdots+b_m,\\\\u(x)&=u_0x^{m-1}+u_1x^{m-2}+\\cdots+u_{m-1},\\\\v(x)&=v_0x^{n-1}+v_1x^{n-2}+\\cdots+v_{n-1}.\\end{aligned}"
       },
       {
         "type": "text",
-        "text": "We read R of f comma g, or the resultant of f and g. Each row shifts one place to the right. All positions outside the displayed coefficient list are zero. The top group has m rows, and the bottom group has n rows."
+        "text": "The identity u times f equals v times g holds exactly when all corresponding coefficients are equal. Compare powers of x from m plus n minus one down to zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}a_0u_0=b_0v_0,\\\\a_1u_0+a_0u_1=b_1v_0+b_0v_1,\\\\a_2u_0+a_1u_1+a_0u_2=b_2v_0+b_1v_1+b_0v_2,\\\\\\qquad\\vdots\\\\a_nu_{m-2}+a_{n-1}u_{m-1}=b_mv_{n-2}+b_{m-1}v_{n-1},\\\\a_nu_{m-1}=b_mv_{n-1}.\\end{cases}"
       },
       {
         "type": "cue",
-        "text": "resultant 结式；m+n 是总阶数，上面示意式的省略号表示按该尺寸继续移位。f的系数每行n+1个，g的系数每行m+1个。"
+        "text": "板书：这是按最高次到常数项展开的首尾示意；n 或 m 较小时，越界系数取零，重合的行只算一次。u₀ 读 u sub zero；a₁u₀ 读 a sub one times u sub zero。"
+      },
+      {
+        "type": "text",
+        "text": "For small values of n or m, some of the displayed rows coincide. The precise rule is one equation for each of the following m plus n coefficient positions. Coefficients outside their stated ranges are taken to be zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{\\substack{p+q=\\ell\\\\0\\le p\\le n\\\\0\\le q<m}}a_pu_q=\\sum_{\\substack{p+q=\\ell\\\\0\\le p\\le m\\\\0\\le q<n}}b_pv_q,\\qquad\\ell=0,1,\\ldots,m+n-1"
+      },
+      {
+        "type": "text",
+        "text": "Move the right-hand sides to the left. We obtain m plus n homogeneous equations in the m plus n unknown coefficients listed below."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "u_0,u_1,\\ldots,u_{m-1},\\ v_0,v_1,\\ldots,v_{n-1}"
+      },
+      {
+        "type": "text",
+        "text": "Let C denote their coefficient matrix, in this order of unknowns. The system has a nonzero solution if and only if the determinant of C is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\text{a nonzero coefficient solution exists}\\quad\\Longleftrightarrow\\quad\\det C=0"
+      },
+      {
+        "type": "text",
+        "text": "Transpose C, then change the signs of its last n rows. The resulting determinant is called the resultant."
+      },
+      {
+        "type": "heading",
+        "text": "Definition: the resultant"
       },
       {
         "type": "statement",
-        "text": "Theorem 10. For positive degree bounds n and m, the resultant is zero if and only if f and g have a nonconstant common factor, or their leading displayed coefficients a zero and b zero are both zero. The polynomials themselves are allowed to be zero."
+        "text": "Given two polynomials f and g over P in the displayed forms above, with positive degree bounds n and m, construct an array as follows. The polynomials are allowed to be zero."
+      },
+      {
+        "type": "statement",
+        "text": "1. Its first m rows are the coefficient list of f, shifted one position to the right in each successive row."
+      },
+      {
+        "type": "statement",
+        "text": "2. Its last n rows are the coefficient list of g, shifted in the same way. All unused positions are zero."
+      },
+      {
+        "type": "statement",
+        "text": "The determinant of this array of order m plus n is called the resultant of f and g, denoted by R of f comma g."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "R(f,g)=0\\quad\\Longleftrightarrow\\quad\\bigl(f,g\\text{ have a nonconstant common factor}\\bigr)\\ \\text{or}\\ (a_0=b_0=0)"
+        "latex": "R(f,g)=\\begin{vmatrix}a_0&a_1&a_2&\\cdots&a_n&0&\\cdots&0\\\\0&a_0&a_1&\\cdots&a_{n-1}&a_n&\\cdots&0\\\\\\vdots&&\\ddots&\\ddots&&&\\ddots&\\vdots\\\\0&\\cdots&0&a_0&a_1&a_2&\\cdots&a_n\\\\b_0&b_1&b_2&\\cdots&b_m&0&\\cdots&0\\\\0&b_0&b_1&\\cdots&b_{m-1}&b_m&\\cdots&0\\\\\\vdots&&\\ddots&\\ddots&&&\\ddots&\\vdots\\\\0&\\cdots&0&b_0&b_1&b_2&\\cdots&b_m\\end{vmatrix}"
+      },
+      {
+        "type": "cue",
+        "text": "这是移位阵的示意排布：上面共 m 行，每行放 n+1 个 f 的系数；下面共 n 行，每行放 m+1 个 g 的系数；每行总共 m+n 个位置。省略号按实际 n、m 展开，不把示意图的可见行数当作阶数。"
+      },
+      {
+        "type": "text",
+        "text": "We read R of f comma g, or the resultant of f and g. Transposition preserves a determinant, and each row sign change multiplies it by minus one. Therefore the two determinants vanish together."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R(f,g)=(-1)^n\\det C,\\qquad R(f,g)=0\\quad\\Longleftrightarrow\\quad\\det C=0"
+      },
+      {
+        "type": "text",
+        "text": "We can now state the exact criterion, including the case where displayed leading coefficients vanish."
       },
       {
         "type": "heading",
-        "text": "Proof: the linear system behind the determinant"
+        "text": "Theorem 10: assumptions"
       },
       {
-        "type": "text",
-        "text": "The determinant condition means the associated square homogeneous coefficient system has a nonzero solution. We must connect those coefficients to polynomials u and v satisfying u f equals v g. We also need to keep the exceptional case where both leading displayed coefficients vanish, because the displayed degree bounds may then exceed the actual degrees."
+        "type": "statement",
+        "text": "1. The polynomials f and g belong to P bracket x and are written in the displayed forms. Either or both polynomials may be zero."
       },
       {
-        "type": "text",
-        "text": "Write u and v with the degree bounds from the lemma. Equating coefficients in u f equals v g gives m plus n homogeneous equations in m plus n unknown coefficients."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "u=u_0x^{m-1}+\\cdots+u_{m-1},\\qquad v=v_0x^{n-1}+\\cdots+v_{n-1}"
+        "type": "statement",
+        "text": "2. The displayed degree bounds n and m are positive. The leading displayed coefficients are a sub zero and b sub zero."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{cases}a_0u_0=b_0v_0,\\\\a_1u_0+a_0u_1=b_1v_0+b_0v_1,\\\\\\vdots\\\\\\displaystyle\\sum_{p+q=\\ell}a_pu_q=\\displaystyle\\sum_{p+q=\\ell}b_pv_q\\quad(\\ell=0,\\ldots,m+n-1),\\\\\\vdots\\\\a_nu_{m-1}=b_mv_{n-1}.\\end{cases}"
-      },
-      {
-        "type": "text",
-        "text": "In the sum, include only indices within the coefficient ranges. If a displayed coefficient such as u sub one is outside its range, it is absent. The coefficient matrix transposed, with its last n rows multiplied by minus one, is exactly the resultant array. Therefore, its determinant is zero exactly when the resultant is zero. By the homogeneous square-system theorem, this is equivalent to a nonzero solution for the coefficients of u and v."
+        "latex": "f=a_0x^n+\\cdots+a_n,\\quad g=b_0x^m+\\cdots+b_m,\\qquad n,m>0"
       },
       {
         "type": "heading",
-        "text": "Proof: both directions"
+        "text": "Theorem 10: conclusion"
+      },
+      {
+        "type": "statement",
+        "text": "The resultant R of f and g is zero if and only if at least one of the following alternatives holds:"
+      },
+      {
+        "type": "statement",
+        "text": "Either f and g have a nonconstant common factor in P bracket x,"
+      },
+      {
+        "type": "statement",
+        "text": "or both leading displayed coefficients a sub zero and b sub zero are zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R(f,g)=0\\quad\\Longleftrightarrow\\quad\\bigl(f,g\\text{ have a nonconstant common factor}\\bigr)\\ \\text{or}\\ \\bigl(a_0=b_0=0\\bigr)"
+      },
+      {
+        "type": "cue",
+        "text": "这里是“或”，不是同时满足两项；两种情形也可能同时出现。“最高显示系数”可为零，不能直接当作实际最高次项系数。"
+      },
+      {
+        "type": "heading",
+        "text": "Proof: from either alternative to a zero resultant"
       },
       {
         "type": "text",
-        "text": "If both leading coefficients are zero, the first column of the resultant is zero. If either polynomial is zero, an entire group of rows is zero. In either case the resultant is zero. If both polynomials are nonzero and share a nonconstant factor, the lemma supplies nonzero u and v. Their coefficients give a nonzero solution of the homogeneous system, so the resultant is zero."
+        "text": "First, if both leading displayed coefficients are zero, the first column of the resultant array is zero. So the resultant is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_0=b_0=0\\quad\\Longrightarrow\\quad R(f,g)=0"
       },
       {
         "type": "text",
-        "text": "Conversely, suppose the resultant is zero. If both leading coefficients are zero, the second condition already holds. If one polynomial is zero and the other has positive degree, the other is a nonconstant common divisor. If the other is a nonzero constant, both leading displayed coefficients are zero. If both are zero, any polynomial of positive degree divides them."
+        "text": "Now suppose the polynomials have a nonconstant common factor. If one polynomial is zero, its whole group of rows is zero, and the resultant is zero."
       },
       {
         "type": "text",
-        "text": "It remains to consider two nonzero polynomials with leading coefficients not both zero. The homogeneous system has a nonzero solution, so u and v are not both zero and satisfy u f equals v g. Since f and g are nonzero, this identity forces u and v both to be nonzero. Apply the lemma to obtain a nonconstant common factor. This completes the proof."
+        "text": "If both polynomials are nonzero and the leading displayed coefficients are not both zero, the lemma gives nonzero u and v with the required degree bounds and with u times f equal to v times g. Their coefficients give a nonzero solution of the homogeneous system. Hence its determinant, and therefore the resultant, is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "uf=vg,\\quad u,v\\ne0,\\quad\\deg u<m,\\quad\\deg v<n\\quad\\Longrightarrow\\quad\\det C=0\\quad\\Longrightarrow\\quad R(f,g)=0"
+      },
+      {
+        "type": "heading",
+        "text": "Proof: from a zero resultant to either alternative"
+      },
+      {
+        "type": "text",
+        "text": "Conversely, suppose the resultant is zero. We must prove that at least one of the stated alternatives holds."
+      },
+      {
+        "type": "heading",
+        "text": "Case 1: both leading displayed coefficients vanish"
+      },
+      {
+        "type": "text",
+        "text": "If a sub zero and b sub zero are both zero, the second alternative already holds."
+      },
+      {
+        "type": "heading",
+        "text": "Case 2: at least one polynomial is zero"
+      },
+      {
+        "type": "text",
+        "text": "If both polynomials are zero, any polynomial of positive degree divides both. If exactly one is zero and the other has positive degree, the other polynomial is itself a nonconstant common factor."
+      },
+      {
+        "type": "text",
+        "text": "If exactly one is zero and the other is a nonzero constant, both leading displayed coefficients are zero, because n and m are positive. Thus one of the alternatives holds in every zero-polynomial case."
+      },
+      {
+        "type": "heading",
+        "text": "Case 3: neither polynomial is zero"
+      },
+      {
+        "type": "text",
+        "text": "It remains to consider nonzero f and g with leading displayed coefficients not both zero. The zero resultant gives a nonzero solution of the homogeneous coefficient system."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R(f,g)=0\\quad\\Longrightarrow\\quad\\det C=0\\quad\\Longrightarrow\\quad(u_0,\\ldots,u_{m-1},v_0,\\ldots,v_{n-1})\\ne(0,\\ldots,0)"
+      },
+      {
+        "type": "text",
+        "text": "Use these coefficients to form u and v. They satisfy u times f equals v times g and are not both zero. Since f and g are nonzero, if either u or v were zero, the identity would force the other to be zero as well. Thus both are nonzero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "uf=vg,\\qquad u\\ne0,\\quad v\\ne0,\\quad\\deg u<m,\\quad\\deg v<n"
+      },
+      {
+        "type": "text",
+        "text": "All assumptions of the lemma now hold. It gives a nonconstant common factor of f and g. This completes the proof."
+      },
+      {
+        "type": "heading",
+        "text": "Consequence over the complex numbers"
+      },
+      {
+        "type": "statement",
+        "text": "Under the assumptions of Theorem 10, with P equal to the complex field, the resultant is zero if and only if the polynomials have a common complex root or both leading displayed coefficients vanish."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "P=\\mathbb C:\\qquad R(f,g)=0\\quad\\Longleftrightarrow\\quad\\bigl(\\exists x_0\\in\\mathbb C:\\ f(x_0)=g(x_0)=0\\bigr)\\ \\text{or}\\ \\bigl(a_0=b_0=0\\bigr)"
+      },
+      {
+        "type": "heading",
+        "text": "Justification"
+      },
+      {
+        "type": "text",
+        "text": "A common root gives the common factor x minus that root. Conversely, a nonconstant common factor over the complex numbers has a root, and that root belongs to both polynomials."
+      },
+      {
+        "type": "cue",
+        "text": "common root 公共根；nonconstant common factor 非常数公因式。复数域中的根的结论是下一知识点的依据。"
       }
     ]
   },
@@ -4355,63 +5045,248 @@
     "blocks": [
       {
         "type": "text",
-        "text": "Finally, use the resultant to eliminate one variable from two polynomial equations over the complex numbers."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\begin{cases}f(x,y)=0,\\\\g(x,y)=0,\\end{cases}\\qquad\\begin{aligned}f(x,y)&=a_0(y)x^n+a_1(y)x^{n-1}+\\cdots+a_n(y),\\\\g(x,y)&=b_0(y)x^m+b_1(y)x^{m-1}+\\cdots+b_m(y).\\end{aligned}"
-      },
-      {
-        "type": "text",
-        "text": "Regard both as polynomials in x. Their coefficients are polynomials in y. Form the same resultant array from these coefficients. We denote its determinant by R sub x of f comma g. The subscript tells us that x is being eliminated. The result is a polynomial in y."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "R_x(f,g)\\in\\mathbb C[y]"
-      },
-      {
-        "type": "statement",
-        "text": "Theorem 11. If x zero, y zero solves both equations, then y zero is a root of the resultant in y. Conversely, if y zero is a root of the resultant, either both leading coefficients vanish at y zero, or there exists an x zero giving a common solution."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "f(x_0,y_0)=g(x_0,y_0)=0\\ \\Longrightarrow\\ R_x(f,g)(y_0)=0"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "R_x(f,g)(y_0)=0\\ \\Longrightarrow\\ \\begin{cases}a_0(y_0)=b_0(y_0)=0,\\quad\\text{or}\\\\\\text{there exists }x_0\\in\\mathbb C\\text{ with }f(x_0,y_0)=g(x_0,y_0)=0.\\end{cases}"
+        "text": "We now use the resultant to eliminate one variable from two polynomial equations over the complex numbers."
       },
       {
         "type": "heading",
-        "text": "Proof"
-      },
-      {
-        "type": "text",
-        "text": "For the forward direction, fix a common solution and substitute its y coordinate. The resulting polynomials in x have a common root, which forces their resultant to vanish. For the converse, first inspect the two leading coefficients at the chosen y value; this is where the exceptional case in Theorem Ten enters."
-      },
-      {
-        "type": "text",
-        "text": "Fix y equal to y zero. Evaluation commutes with the additions and multiplications in a determinant, so the evaluated resultant is the resultant of the two specialized polynomials in x. If they have common root x zero, then x minus x zero is a common factor. Theorem Ten makes the resultant zero."
-      },
-      {
-        "type": "text",
-        "text": "Conversely, if the resultant is zero, Theorem Ten gives either both leading coefficients zero or a nonconstant common factor. Over the complex numbers, a nonconstant polynomial has a root. A root of that common factor gives the required x zero. This proves the theorem."
+        "text": "Set-up"
       },
       {
         "type": "statement",
-        "text": "Elimination procedure. When the resultant is not the zero polynomial, find its roots, substitute each into both original equations, and retain their common solutions. If the resultant is identically zero, the finite-root procedure does not apply."
+        "text": "1. The polynomials f and g are polynomials in x and y with complex coefficients. We seek all pairs of complex numbers that satisfy both equations."
       },
       {
-        "type": "text",
-        "text": "A resultant root is a candidate, not automatically a solution of the original pair. Substitution checks both equations, including cases where leading coefficients vanish."
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}f(x,y)=0,\\\\g(x,y)=0.\\end{cases}\\tag{8}"
+      },
+      {
+        "type": "statement",
+        "text": "2. Regard f and g as polynomials in x, with coefficients that are polynomials in y. Use positive displayed degree bounds n and m."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}f(x,y)&=a_0(y)x^n+a_1(y)x^{n-1}+\\cdots+a_n(y),\\\\g(x,y)&=b_0(y)x^m+b_1(y)x^{m-1}+\\cdots+b_m(y),\\end{aligned}\\qquad n,m>0"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_i(y),b_j(y)\\in\\mathbb C[y]\\qquad(0\\le i\\le n,\\ 0\\le j\\le m)"
       },
       {
         "type": "cue",
-        "text": "bivariate 二元；eliminate x 消去x；identically zero 恒等于零。ℂ[y] 读 polynomials in y over the complex numbers。星号节同样纳入正文，章后习题不纳入。"
+        "text": "bivariate 二元；ℂ[y] 读 polynomials in y over the complex numbers。固定 y 后得到的是关于 x 的一元多项式，实际次数可能降低，也可能变为零多项式。"
+      },
+      {
+        "type": "heading",
+        "text": "The resultant that eliminates x"
+      },
+      {
+        "type": "statement",
+        "text": "Form the resultant array using these coefficient polynomials in y. Its determinant, denoted by R sub x of f comma g, is a polynomial in y."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R_x(f,g)=\\begin{vmatrix}a_0(y)&a_1(y)&a_2(y)&\\cdots&a_n(y)&0&\\cdots&0\\\\0&a_0(y)&a_1(y)&\\cdots&a_{n-1}(y)&a_n(y)&\\cdots&0\\\\\\vdots&&\\ddots&\\ddots&&&\\ddots&\\vdots\\\\0&\\cdots&0&a_0(y)&a_1(y)&a_2(y)&\\cdots&a_n(y)\\\\b_0(y)&b_1(y)&b_2(y)&\\cdots&b_m(y)&0&\\cdots&0\\\\0&b_0(y)&b_1(y)&\\cdots&b_{m-1}(y)&b_m(y)&\\cdots&0\\\\\\vdots&&\\ddots&\\ddots&&&\\ddots&\\vdots\\\\0&\\cdots&0&b_0(y)&b_1(y)&b_2(y)&\\cdots&b_m(y)\\end{vmatrix}\\in\\mathbb C[y]"
+      },
+      {
+        "type": "text",
+        "text": "The top group has m rows, and the bottom group has n rows. The subscript x tells us which variable is eliminated. The resulting polynomial involves only y."
+      },
+      {
+        "type": "cue",
+        "text": "板书：结式阵仍为 m+n 阶，省略号按实际尺寸延伸。Rₓ(f,g) 读 R sub x of f comma g；Rₓ(f,g)(y₀) 读 the resultant evaluated at y sub zero。"
+      },
+      {
+        "type": "text",
+        "text": "Theorem Eleven gives both the necessary condition and the precise converse."
+      },
+      {
+        "type": "heading",
+        "text": "Theorem 11: from a solution to a resultant root"
+      },
+      {
+        "type": "statement",
+        "text": "Assumption. The pair (x sub zero, y sub zero) is a complex solution of both equations in (8)."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "x_0,y_0\\in\\mathbb C,\\qquad f(x_0,y_0)=g(x_0,y_0)=0"
+      },
+      {
+        "type": "statement",
+        "text": "Conclusion. The number y sub zero is a root of R sub x of f comma g."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R_x(f,g)(y_0)=0"
+      },
+      {
+        "type": "heading",
+        "text": "Theorem 11: converse"
+      },
+      {
+        "type": "statement",
+        "text": "Assumption. The complex number y sub zero is a root of R sub x of f comma g."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "y_0\\in\\mathbb C,\\qquad R_x(f,g)(y_0)=0"
+      },
+      {
+        "type": "statement",
+        "text": "Conclusion. At least one of the following alternatives holds:"
+      },
+      {
+        "type": "statement",
+        "text": "Either both leading displayed coefficients vanish at y sub zero,"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_0(y_0)=b_0(y_0)=0,"
+      },
+      {
+        "type": "statement",
+        "text": "or there exists a complex number x sub zero such that the pair (x sub zero, y sub zero) solves both original equations."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\exists x_0\\in\\mathbb C:\\qquad f(x_0,y_0)=g(x_0,y_0)=0"
+      },
+      {
+        "type": "cue",
+        "text": "两个结论用 either ... or ... 连接，不能读成同时成立。结式的根只是候选 y 值；最高显示系数同时为零时，未必存在对应的 x。"
+      },
+      {
+        "type": "heading",
+        "text": "Proof: fix y and compare resultants"
+      },
+      {
+        "type": "text",
+        "text": "Fix y equal to y sub zero. Substitution commutes with addition and multiplication in a determinant. Thus evaluating the resultant at this y value gives the resultant of the two resulting polynomials in x."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R_x(f,g)(y_0)=R\\bigl(f(x,y_0),g(x,y_0)\\bigr)"
+      },
+      {
+        "type": "cue",
+        "text": "右边仍使用原来的显示次数上界 n、m 构造结式；不能因代入后次数降低，就擅自换成较小的结式阵。"
+      },
+      {
+        "type": "heading",
+        "text": "Proof: forward direction"
+      },
+      {
+        "type": "text",
+        "text": "Suppose the pair is a common solution. Then x minus x sub zero divides both polynomials obtained by fixing y. By Theorem Ten, their resultant is zero. The displayed identity proves the first conclusion."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f(x_0,y_0)=g(x_0,y_0)=0\\quad\\Longrightarrow\\quad(x-x_0)\\mid f(x,y_0),\\ (x-x_0)\\mid g(x,y_0)\\quad\\Longrightarrow\\quad R_x(f,g)(y_0)=0"
+      },
+      {
+        "type": "heading",
+        "text": "Proof: converse"
+      },
+      {
+        "type": "text",
+        "text": "Suppose y sub zero is a root of the resultant. Apply Theorem Ten to the two polynomials obtained by fixing y. Either both leading displayed coefficients are zero, or the polynomials have a nonconstant common factor."
+      },
+      {
+        "type": "text",
+        "text": "The first possibility is exactly the first alternative. In the second possibility, a nonconstant polynomial over the complex numbers has a complex root. Let x sub zero be such a root. Since the factor divides both polynomials, this value solves both original equations."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "d(x)\\mid f(x,y_0),\\quad d(x)\\mid g(x,y_0),\\quad\\deg d>0,\\quad d(x_0)=0\\quad\\Longrightarrow\\quad f(x_0,y_0)=g(x_0,y_0)=0"
+      },
+      {
+        "type": "text",
+        "text": "This gives the second alternative and proves the theorem."
+      },
+      {
+        "type": "heading",
+        "text": "Elimination procedure"
+      },
+      {
+        "type": "statement",
+        "text": "Assumption. The resultant R sub x of f comma g is not the zero polynomial."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R_x(f,g)\\not\\equiv0"
+      },
+      {
+        "type": "statement",
+        "text": "Step 1. Find all complex roots of the resultant, regarded as a polynomial in y. These are the only possible y coordinates of solutions."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R_x(f,g)(y)=0\\quad\\Longrightarrow\\quad y=y_1,\\ldots,y_q"
+      },
+      {
+        "type": "statement",
+        "text": "Step 2. Substitute each candidate y value into both original equations and find all their common roots in x."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\text{For each }j=1,\\ldots,q,\\qquad\\begin{cases}f(x,y_j)=0,\\\\g(x,y_j)=0.\\end{cases}"
+      },
+      {
+        "type": "statement",
+        "text": "Step 3. Keep precisely the pairs that satisfy both original equations. Together, they are all solutions of the original system."
+      },
+      {
+        "type": "text",
+        "text": "The forward direction ensures that no solution is missed. Substitution rejects candidates that do not give a common solution, including possible cases where both leading displayed coefficients vanish."
+      },
+      {
+        "type": "heading",
+        "text": "Special cases"
+      },
+      {
+        "type": "statement",
+        "text": "If the resultant is a nonzero constant, it has no roots, so the original system has no solutions."
+      },
+      {
+        "type": "statement",
+        "text": "For a candidate y value, if both resulting polynomials in x are zero, every complex x is allowed. If just one is zero, use all roots of the other. A nonzero constant equation gives no solution."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f(x,y_j)\\equiv g(x,y_j)\\equiv0\\quad\\Longrightarrow\\quad\\{(x,y_j):x\\in\\mathbb C\\}\\text{ consists of solutions.}"
+      },
+      {
+        "type": "statement",
+        "text": "If the resultant is identically zero, the finite list of candidate y values in Step 1 is unavailable. This procedure does not by itself determine all solutions."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R_x(f,g)\\equiv0\\quad\\Longrightarrow\\quad\\text{every }y\\in\\mathbb C\\text{ passes the resultant condition.}"
+      },
+      {
+        "type": "text",
+        "text": "In that case we must examine the original polynomials further, for example by factoring them or trying to eliminate the other variable. The original equations must still be satisfied."
+      },
+      {
+        "type": "cue",
+        "text": "eliminate x 消去 x；identically zero 恒等于零。结式非零只保证候选 y 值有限，并不排除某个候选值对应所有 x。"
       }
     ]
   },
