@@ -3456,49 +3456,252 @@
     "blocks": [
       {
         "type": "text",
-        "text": "We now give a criterion for any number of equations and unknowns."
-      },
-      {
-        "type": "statement",
-        "text": "Theorem 7. A linear system has a solution if and only if its coefficient matrix and augmented matrix have the same rank."
+        "text": "Let us consider a linear system of s equations in n unknowns."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "A=\\begin{pmatrix}a_{11}&\\cdots&a_{1n}\\\\\\vdots&&\\vdots\\\\a_{s1}&\\cdots&a_{sn}\\end{pmatrix},\\quad\\overline A=\\begin{pmatrix}a_{11}&\\cdots&a_{1n}&b_1\\\\\\vdots&&\\vdots&\\vdots\\\\a_{s1}&\\cdots&a_{sn}&b_s\\end{pmatrix},\\qquad\\operatorname{rank}(A)=\\operatorname{rank}(\\overline A)"
+        "latex": "\\begin{cases}a_{11}x_1+a_{12}x_2+\\cdots+a_{1n}x_n=b_1,\\\\a_{21}x_1+a_{22}x_2+\\cdots+a_{2n}x_n=b_2,\\\\\\qquad\\vdots\\\\a_{s1}x_1+a_{s2}x_2+\\cdots+a_{sn}x_n=b_s.\\end{cases}\\tag{1}"
+      },
+      {
+        "type": "cue",
+        "text": "板书：完整写出方程组（1）。s equations in n unknowns：s 个方程、n 个未知量；a₁₁ 读 a sub one one。"
       },
       {
         "type": "text",
-        "text": "A bar is the augmented matrix. A system with a solution is called consistent. Write the columns of A as alpha sub one through alpha sub n, and the constant column as beta."
+        "text": "Here, x one through x n are the unknowns. The coefficients and the constant terms belong to the number field P."
+      },
+      {
+        "type": "text",
+        "text": "We can rewrite this system as a vector equation."
+      },
+      {
+        "type": "text",
+        "text": "Let alpha sub j denote the column of coefficients of x sub j, and let beta denote the column of constant terms."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\alpha_j=\\begin{pmatrix}a_{1j}\\\\\\vdots\\\\a_{sj}\\end{pmatrix},\\quad\\beta=\\begin{pmatrix}b_1\\\\\\vdots\\\\b_s\\end{pmatrix},\\qquad x_1\\alpha_1+\\cdots+x_n\\alpha_n=\\beta"
+        "latex": "\\alpha_1=\\begin{pmatrix}a_{11}\\\\a_{21}\\\\\\vdots\\\\a_{s1}\\end{pmatrix},\\quad\\alpha_2=\\begin{pmatrix}a_{12}\\\\a_{22}\\\\\\vdots\\\\a_{s2}\\end{pmatrix},\\quad\\ldots,\\quad\\alpha_n=\\begin{pmatrix}a_{1n}\\\\a_{2n}\\\\\\vdots\\\\a_{sn}\\end{pmatrix},\\qquad\\beta=\\begin{pmatrix}b_1\\\\b_2\\\\\\vdots\\\\b_s\\end{pmatrix}"
+      },
+      {
+        "type": "cue",
+        "text": "板书：按竖列写各向量，指向相应未知量的系数列。αⱼ 读 alpha sub j；xⱼ 读 x sub j；β 读 beta。"
+      },
+      {
+        "type": "text",
+        "text": "Each of these vectors has s components. The vectors alpha one through alpha n are the columns of the coefficient matrix."
+      },
+      {
+        "type": "text",
+        "text": "Now system (1) becomes"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "x_1\\alpha_1+x_2\\alpha_2+\\cdots+x_n\\alpha_n=\\beta.\\tag{2}"
+      },
+      {
+        "type": "cue",
+        "text": "读法：x sub one times alpha sub one, plus x sub two times alpha sub two, and so on, plus x sub n times alpha sub n, equals beta。"
+      },
+      {
+        "type": "text",
+        "text": "Comparing the components gives exactly the equations in system (1). So solving system (1) is the same as finding coefficients x one through x n that make this vector equation hold."
+      },
+      {
+        "type": "text",
+        "text": "By the definition of a linear combination, we obtain the following equivalence."
+      },
+      {
+        "type": "statement",
+        "text": "System (1) has a solution if and only if beta is a linear combination of alpha one through alpha n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\text{System (1) has a solution}\\quad\\Longleftrightarrow\\quad\\beta\\text{ is a linear combination of }\\alpha_1,\\ldots,\\alpha_n."
+      },
+      {
+        "type": "text",
+        "text": "How can we express this condition in terms of rank?"
+      },
+      {
+        "type": "text",
+        "text": "Let A denote the coefficient matrix, and let A bar denote the augmented matrix."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=(\\alpha_1,\\ldots,\\alpha_n),\\qquad\\overline A=(\\alpha_1,\\ldots,\\alpha_n,\\beta)"
+      },
+      {
+        "type": "text",
+        "text": "Here, the vectors inside the parentheses are the columns of the matrices. The augmented matrix is obtained by adding beta as the last column."
+      },
+      {
+        "type": "text",
+        "text": "This leads to Theorem Seven."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 7. A linear system has a solution if and only if its coefficient matrix and its augmented matrix have the same rank."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\operatorname{rank}(A)=\\operatorname{rank}(\\overline A)"
+      },
+      {
+        "type": "cue",
+        "text": "读法：the rank of A equals the rank of A bar。consistent 表示有解，不表示唯一解。"
+      },
+      {
+        "type": "text",
+        "text": "Now, let us prove the theorem. We need to prove both directions."
       },
       {
         "type": "heading",
         "text": "Proof: necessity"
       },
       {
-        "type": "text",
-        "text": "Write the constant column as beta. A solution exists precisely when beta is a linear combination of the coefficient columns. We must show that adjoining beta preserves rank exactly in this case. We will prove the two implications separately."
+        "type": "cue",
+        "text": "necessity：必要性；从有解出发，证明两秩相等。"
       },
       {
         "type": "text",
-        "text": "If a solution exists, beta is a combination of the columns of A. Adding beta therefore gives an equivalent column system. Equivalent systems have the same rank. Thus A and A bar have the same rank."
+        "text": "First, suppose that system (1) has a solution. We need to show that A and A bar have the same rank."
+      },
+      {
+        "type": "text",
+        "text": "By the vector form of the system, beta is a linear combination of alpha one through alpha n."
+      },
+      {
+        "type": "text",
+        "text": "Compare the following two vector systems:"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{gathered}\\alpha_1,\\ldots,\\alpha_n;\\\\\\alpha_1,\\ldots,\\alpha_n,\\beta.\\end{gathered}"
+      },
+      {
+        "type": "text",
+        "text": "Every vector in the second system is a linear combination of the first system: this is true for beta by our assumption, and for each alpha sub j because it already belongs to the first system."
+      },
+      {
+        "type": "text",
+        "text": "Conversely, every vector in the first system belongs to the second system, so it is also a linear combination of that system."
+      },
+      {
+        "type": "text",
+        "text": "Therefore, the two vector systems are equivalent. Equivalent vector systems have the same rank."
+      },
+      {
+        "type": "text",
+        "text": "These are the column systems of A and A bar. Since the rank of a matrix equals the rank of its column system, we obtain"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\operatorname{rank}(A)=\\operatorname{rank}(\\overline A)"
+      },
+      {
+        "type": "text",
+        "text": "This proves necessity."
       },
       {
         "type": "heading",
         "text": "Proof: sufficiency"
       },
       {
+        "type": "cue",
+        "text": "sufficiency：充分性；从两秩相等出发，证明有解。"
+      },
+      {
         "type": "text",
-        "text": "Suppose both ranks equal r. Choose r independent columns of A. They are also columns of A bar. Since its rank is r, these columns form a maximal independent subsystem there too. Therefore, beta is their linear combination. It is also a combination of all columns of A, so the system has a solution. If r is zero, all entries of A bar are zero and every list of values is a solution."
+        "text": "Conversely, suppose that A and A bar have the same rank. Denote their common rank by r."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\operatorname{rank}(A)=\\operatorname{rank}(\\overline A)=r"
+      },
+      {
+        "type": "text",
+        "text": "We need to show that system (1) has a solution. By the vector form, it is enough to show that beta is a linear combination of the columns of A."
+      },
+      {
+        "type": "text",
+        "text": "First, if r equals zero, every entry of A bar is zero. In this case, setting all the unknowns equal to zero gives a solution."
+      },
+      {
+        "type": "text",
+        "text": "Now suppose that r is greater than zero."
+      },
+      {
+        "type": "text",
+        "text": "Choose a maximal linearly independent subsystem of the columns of A. It contains r vectors. After relabeling the columns, we may write it as"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_1,\\ldots,\\alpha_r"
       },
       {
         "type": "cue",
-        "text": "necessity 必要性；sufficiency 充分性。rank of A bar 读增广矩阵的秩。consistent 表示有解，不表示唯一解。"
+        "text": "这里只是重新编号；若同时改写方程组，未知量也随对应列一起重新编号。"
+      },
+      {
+        "type": "text",
+        "text": "These vectors also belong to the column system of A bar, and they are still linearly independent."
+      },
+      {
+        "type": "text",
+        "text": "The column system of A bar has rank r. Therefore, it cannot contain r plus one linearly independent vectors."
+      },
+      {
+        "type": "text",
+        "text": "So the r vectors we have chosen also form a maximal linearly independent subsystem of"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_1,\\ldots,\\alpha_n,\\beta"
+      },
+      {
+        "type": "text",
+        "text": "Every vector in this larger system is a linear combination of that maximal linearly independent subsystem. In particular, there exist scalars c one through c r such that"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\beta=c_1\\alpha_1+\\cdots+c_r\\alpha_r"
+      },
+      {
+        "type": "text",
+        "text": "Since these vectors are columns of A, this also expresses beta as a linear combination of all the columns of A: we simply assign coefficient zero to every remaining column."
+      },
+      {
+        "type": "text",
+        "text": "Thus, taking"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "x_j=\\begin{cases}c_j,&1\\le j\\le r,\\\\0,&r<j\\le n,\\end{cases}"
+      },
+      {
+        "type": "cue",
+        "text": "板书：给前 r 个未知量取对应系数，其余取零。cⱼ 读 c sub j；分段条件读 for j from one through r / for j greater than r and at most n。"
+      },
+      {
+        "type": "text",
+        "text": "makes equation (2) hold. Therefore, system (1) has a solution."
+      },
+      {
+        "type": "text",
+        "text": "This proves sufficiency and completes the proof."
       },
       {
         "type": "statement",
@@ -3527,17 +3730,12 @@
     "source": "§5 · p.94",
     "blocks": [
       {
-        "type": "statement",
-        "text": "Result. For a consistent system of rank r in n unknowns, a nonzero minor of order r selects r equations and r unknowns. The remaining n minus r unknowns can be chosen freely. The system has a unique solution exactly when r equals n."
-      },
-      {
         "type": "text",
-        "text": "Reorder equations and relabel unknowns so the nonzero minor is in the upper-left corner. The first r augmented rows form a maximal independent subsystem. All other equations are their combinations, so they may be removed without changing solutions."
+        "text": "We can also use Cramer’s rule to solve a general linear system. Let us see how."
       },
       {
-        "type": "math",
-        "text": "",
-        "latex": "D=\\begin{vmatrix}a_{11}&\\cdots&a_{1r}\\\\\\vdots&&\\vdots\\\\a_{r1}&\\cdots&a_{rr}\\end{vmatrix}\\ne0"
+        "type": "statement",
+        "text": "For a consistent linear system of rank r in n unknowns, a nonzero minor of order r allows us to choose n minus r free unknowns. Once their values are fixed, the remaining r unknowns are uniquely determined."
       },
       {
         "type": "heading",
@@ -3545,33 +3743,157 @@
       },
       {
         "type": "text",
-        "text": "Assume the system is consistent and its coefficient rank is r. We select a nonzero minor of order r. Our goal is to solve the corresponding r unknowns in terms of the remaining n minus r unknowns and then explain why the unused equations add no further restriction."
-      },
-      {
-        "type": "text",
-        "text": "Move the last n minus r unknowns to the right in the remaining equations."
+        "text": "Suppose that system (1) has a solution, and that"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{cases}a_{11}x_1+\\cdots+a_{1r}x_r=b_1-a_{1,r+1}x_{r+1}-\\cdots-a_{1n}x_n,\\\\\\vdots\\\\a_{r1}x_1+\\cdots+a_{rr}x_r=b_r-a_{r,r+1}x_{r+1}-\\cdots-a_{rn}x_n.\\end{cases}"
+        "latex": "\\operatorname{rank}(A)=\\operatorname{rank}(\\overline A)=r"
       },
       {
         "type": "text",
-        "text": "For each choice of the last unknowns, Cramer’s rule gives a unique choice of the first r. The resulting expressions are linear in the free unknowns, with constant terms."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\begin{cases}x_1=d'_1+c'_{1,r+1}x_{r+1}+\\cdots+c'_{1n}x_n,\\\\\\vdots\\\\x_r=d'_r+c'_{r,r+1}x_{r+1}+\\cdots+c'_{rn}x_n.\\end{cases}"
+        "text": "For now, assume that r is greater than zero. Choose a nonzero minor D of order r in A."
       },
       {
         "type": "text",
-        "text": "The primed letters denote the fixed coefficients obtained by solving. If r equals n, there are no free unknowns and the solution is unique. If r is less than n, varying a free unknown gives different solutions. If r is zero, consistency makes every equation zero equals zero, so all n unknowns are free."
+        "text": "By reordering the equations and the unknowns, we may assume that D lies in the upper-left corner of A. In other words, it is formed from the first r rows and the first r columns."
       },
       {
         "type": "cue",
-        "text": "prime 不是求导；这里只标记求解后得到的新系数。任意选取自由未知量后，其余未知量唯一确定，是下一节基础解系证明的关键。"
+        "text": "板书：写出左上角非零子式；D 读 capital D；r 阶子式读 a minor of order r。"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=\\begin{vmatrix}a_{11}&a_{12}&\\cdots&a_{1r}\\\\a_{21}&a_{22}&\\cdots&a_{2r}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{r1}&a_{r2}&\\cdots&a_{rr}\\end{vmatrix}\\ne0"
+      },
+      {
+        "type": "text",
+        "text": "Since D is nonzero, its rows are linearly independent. Therefore, the first r rows of A bar are also linearly independent: any linear relation between these augmented rows would give the same relation between their first r components."
+      },
+      {
+        "type": "text",
+        "text": "The rank of A bar is r, so these rows form a maximal linearly independent subsystem of its row system."
+      },
+      {
+        "type": "text",
+        "text": "Thus, every remaining row of A bar is a linear combination of the first r rows."
+      },
+      {
+        "type": "text",
+        "text": "Here, we are using the augmented rows, so the same linear combinations give both the coefficients and the constant terms. Therefore, every remaining equation is a linear combination of the first r equations."
+      },
+      {
+        "type": "text",
+        "text": "Any solution of the first r equations satisfies all the remaining equations. Conversely, any solution of the original system certainly satisfies its first r equations."
+      },
+      {
+        "type": "text",
+        "text": "So system (1) has exactly the same solutions as the following system."
+      },
+      {
+        "type": "cue",
+        "text": "板书：式（4）只保留前 r 个方程，仍保留 n 个未知量。"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}a_{11}x_1+\\cdots+a_{1r}x_r+\\cdots+a_{1n}x_n=b_1,\\\\a_{21}x_1+\\cdots+a_{2r}x_r+\\cdots+a_{2n}x_n=b_2,\\\\\\qquad\\vdots\\\\a_{r1}x_1+\\cdots+a_{rr}x_r+\\cdots+a_{rn}x_n=b_r.\\end{cases}\\tag{4}"
+      },
+      {
+        "type": "text",
+        "text": "We now consider two cases."
+      },
+      {
+        "type": "text",
+        "text": "If r equals n, system (4) has n equations in n unknowns, and its coefficient determinant is D, which is nonzero. By Cramer’s rule, it has a unique solution. Therefore, the original system also has a unique solution."
+      },
+      {
+        "type": "text",
+        "text": "Now suppose that r is less than n."
+      },
+      {
+        "type": "text",
+        "text": "In each equation, keep the terms involving x one through x r on the left. Move the terms involving x sub r plus one through x n to the right."
+      },
+      {
+        "type": "cue",
+        "text": "板书：移项得到式（5），改变项的位置，未删除未知量。"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}a_{11}x_1+\\cdots+a_{1r}x_r=b_1-a_{1,r+1}x_{r+1}-\\cdots-a_{1n}x_n,\\\\a_{21}x_1+\\cdots+a_{2r}x_r=b_2-a_{2,r+1}x_{r+1}-\\cdots-a_{2n}x_n,\\\\\\qquad\\vdots\\\\a_{r1}x_1+\\cdots+a_{rr}x_r=b_r-a_{r,r+1}x_{r+1}-\\cdots-a_{rn}x_n.\\end{cases}\\tag{5}"
+      },
+      {
+        "type": "cue",
+        "text": "xᵣ₊₁ 读 x sub r plus one。第一行右边读：b sub one, minus a sub one comma r plus one times x sub r plus one, and so on, minus a sub one n times x sub n。"
+      },
+      {
+        "type": "text",
+        "text": "Choose any values in P for x sub r plus one through x n."
+      },
+      {
+        "type": "text",
+        "text": "Once these values are fixed, the right-hand sides of (5) are fixed numbers. We can then regard (5) as a system of r equations in the r unknowns x one through x r."
+      },
+      {
+        "type": "text",
+        "text": "Its coefficient determinant is still D, which is nonzero. By Cramer’s rule, these first r unknowns are uniquely determined."
+      },
+      {
+        "type": "text",
+        "text": "So every choice of the last n minus r unknowns gives exactly one solution of the original system."
+      },
+      {
+        "type": "text",
+        "text": "We call x sub r plus one through x n a set of free unknowns."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "x_{r+1},\\ldots,x_n\\in P\\quad\\text{are free unknowns.}"
+      },
+      {
+        "type": "text",
+        "text": "Applying Cramer’s rule to (5), we obtain expressions of the following form."
+      },
+      {
+        "type": "cue",
+        "text": "板书：式（6）表示前 r 个未知量如何由自由未知量确定。"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}x_1=d'_1+c'_{1,r+1}x_{r+1}+\\cdots+c'_{1n}x_n,\\\\x_2=d'_2+c'_{2,r+1}x_{r+1}+\\cdots+c'_{2n}x_n,\\\\\\qquad\\vdots\\\\x_r=d'_r+c'_{r,r+1}x_{r+1}+\\cdots+c'_{rn}x_n.\\end{cases}\\tag{6}"
+      },
+      {
+        "type": "text",
+        "text": "The primed letters denote fixed coefficients obtained by solving the equations. They do not depend on the chosen values of the free unknowns."
+      },
+      {
+        "type": "cue",
+        "text": "d′₁ 读 d prime sub one；c′₁,ᵣ₊₁ 读 c prime sub one comma r plus one。prime 只作记号，不是求导。"
+      },
+      {
+        "type": "text",
+        "text": "Why do these expressions have this form?"
+      },
+      {
+        "type": "text",
+        "text": "In Cramer’s rule, each numerator is a determinant with one column replaced by the right-hand side of (5). That column is a fixed column plus a linear combination of columns with coefficients x sub r plus one through x n."
+      },
+      {
+        "type": "text",
+        "text": "By linearity of the determinant in that column, each numerator has a constant term and terms linear in the free unknowns. Dividing by the fixed nonzero determinant D gives (6)."
+      },
+      {
+        "type": "text",
+        "text": "As the free unknowns range over P, formula (6) gives all solutions of system (1). This is the general solution."
+      },
+      {
+        "type": "text",
+        "text": "Finally, if r equals zero, consistency implies that every entry of A bar is zero. Every equation is then zero equals zero, and all n unknowns can be chosen freely."
       }
     ]
   },
