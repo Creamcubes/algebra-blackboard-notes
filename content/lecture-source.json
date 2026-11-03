@@ -10141,5 +10141,675 @@
         "text": "k⁻¹读“k inverse”或“one over k”；它是数域中的倒数。每次消去都是两边加同一个向量的负元素，不提前使用待证结论。k0=0是教材留给读者的一步，这里已补全。"
       }
     ]
+  },
+  {
+    "id": "abstract-linear-combinations",
+    "title": "Linear combinations and equivalent systems",
+    "zh": "定义2—3：线性组合、线性表出与等价",
+    "chapter": 6,
+    "source": "§3 · p.166",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We continue with dimension, bases, and coordinates. First, we extend linear combinations from tuples to vectors in a general linear space."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 2. Let V be a linear space over a number field P. Let alpha one through alpha r be vectors in V, where r is at least one. For scalars k one through k r in P, their weighted sum is called a linear combination of these vectors. A vector equal to such a sum is said to be linearly expressible by them."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha=k_1\\alpha_1+k_2\\alpha_2+\\cdots+k_r\\alpha_r,\\qquad \\alpha_i\\in V,\\quad k_i\\in P."
+      },
+      {
+        "type": "text",
+        "text": "On the right, each k sub i is a scalar and each alpha sub i is a vector. We read the sum as k sub one times alpha sub one, plus k sub two times alpha sub two, and so on, plus k sub r times alpha sub r. Closure under addition and scalar multiplication ensures that the result belongs to V."
+      },
+      {
+        "type": "text",
+        "text": "Next, we define linear expressibility and equivalence for two systems of vectors."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 3. A vector system is linearly expressible by another system if every vector in the first is a linear combination of vectors in the second. Two systems are equivalent if each is linearly expressible by the other."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}&\\alpha_1,\\alpha_2,\\ldots,\\alpha_r;\\\\&\\beta_1,\\beta_2,\\ldots,\\beta_s.\\end{aligned}"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_i=a_{i1}\\beta_1+a_{i2}\\beta_2+\\cdots+a_{is}\\beta_s,\\qquad i=1,\\ldots,r,\\quad a_{ij}\\in P."
+      },
+      {
+        "type": "text",
+        "text": "This formula expresses the first system by the second. The first subscript on a labels the vector being expressed. The second labels the beta vector used in the sum. For equivalence, we also need expressions for all the beta vectors in terms of the alpha vectors."
+      },
+      {
+        "type": "cue",
+        "text": "板书：两组向量分行写。aᵢⱼ读 a sub i j；先说明两个下标的作用。equivalent systems 指互相线性表出，不要求两组向量个数相同。"
+      }
+    ]
+  },
+  {
+    "id": "abstract-linear-dependence",
+    "title": "Linear dependence in a linear space",
+    "zh": "定义4与性质1：线性相关的判别",
+    "chapter": 6,
+    "source": "§3 · p.166",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now define linear dependence and linear independence in V."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 4. Vectors alpha one through alpha r, with r at least one, are linearly dependent over P if there are scalars in P, not all zero, whose linear combination of these vectors is the zero vector. They are linearly independent if they are not linearly dependent; equivalently, a zero linear combination forces every coefficient to be zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k_1\\alpha_1+\\cdots+k_r\\alpha_r=0,\\qquad k_1,\\ldots,k_r\\in P."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\text{independent}\\quad\\Longleftrightarrow\\quad\\bigl(k_1\\alpha_1+\\cdots+k_r\\alpha_r=0\\ \\Longrightarrow\\ k_1=\\cdots=k_r=0\\bigr)."
+      },
+      {
+        "type": "text",
+        "text": "Not all zero means that at least one coefficient is nonzero. It does not mean that every coefficient is nonzero. The zero on the right is the zero vector in V."
+      },
+      {
+        "type": "statement",
+        "text": "Property 1. A single vector is linearly dependent if and only if it is zero. A system of at least two vectors is linearly dependent if and only if one of its vectors is a linear combination of the others."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "For a single vector alpha, dependence gives k alpha equals zero with k nonzero. Multiplying by k inverse gives alpha equals zero. Conversely, if alpha is zero, coefficient one gives a relation with a nonzero coefficient."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k\\alpha=0,\\ k\\ne0\\ \\Longrightarrow\\ \\alpha=k^{-1}(k\\alpha)=0;\\qquad 1\\cdot0=0."
+      },
+      {
+        "type": "text",
+        "text": "Now let r be at least two. Assume dependence. We must express one vector using the others. Choose a nonzero coefficient k sub j in a zero relation. Move all other terms to the right and divide by k sub j."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_j=-\\sum_{\\substack{1\\le i\\le r\\\\i\\ne j}}\\frac{k_i}{k_j}\\alpha_i."
+      },
+      {
+        "type": "text",
+        "text": "Conversely, suppose alpha sub j is a linear combination of the remaining vectors. Move that expression to the left. The coefficient of alpha sub j is one, so the coefficients are not all zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_j=\\sum_{i\\ne j}c_i\\alpha_i\\quad\\Longrightarrow\\quad\\alpha_j-\\sum_{i\\ne j}c_i\\alpha_i=0."
+      },
+      {
+        "type": "cue",
+        "text": "Σ读 the sum over i from one to r, excluding j；kᵢ/kⱼ读 k sub i divided by k sub j。这里是在抽象空间内重用第三章的论证，不能把向量默认为数行。"
+      }
+    ]
+  },
+  {
+    "id": "abstract-comparison-lemma",
+    "title": "Comparing the sizes of vector systems",
+    "zh": "性质2：无关组与表出组的个数比较",
+    "chapter": 6,
+    "source": "§3 · p.166",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "The next property lets us compare the number of vectors in two systems."
+      },
+      {
+        "type": "statement",
+        "text": "Property 2. If r linearly independent vectors can be linearly expressed by s vectors, then r is at most s. Consequently, two equivalent linearly independent systems have the same number of vectors."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_1,\\ldots,\\alpha_r\\ \\text{independent},\\qquad\\alpha_i=\\sum_{j=1}^{s}a_{ij}\\beta_j\\quad\\Longrightarrow\\quad r\\le s."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Assume the alpha vectors are independent and have the displayed expressions. We must prove r is at most s. Suppose instead that r is greater than s. We will construct a zero linear combination of the alpha vectors with coefficients not all zero."
+      },
+      {
+        "type": "text",
+        "text": "Introduce unknown scalars x one through x r. After substitution and collection of the beta terms, we obtain"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\\sum_{i=1}^{r}x_i\\alpha_i&=\\sum_{i=1}^{r}x_i\\left(\\sum_{j=1}^{s}a_{ij}\\beta_j\\right)\\\\&=\\sum_{j=1}^{s}\\left(\\sum_{i=1}^{r}a_{ij}x_i\\right)\\beta_j.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "Make every coefficient of a beta vector zero. This gives s homogeneous equations in r unknowns."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}a_{11}x_1+a_{21}x_2+\\cdots+a_{r1}x_r=0,\\\\a_{12}x_1+a_{22}x_2+\\cdots+a_{r2}x_r=0,\\\\\\qquad\\vdots\\\\a_{1s}x_1+a_{2s}x_2+\\cdots+a_{rs}x_r=0.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "Since r is greater than s, the result on homogeneous systems from Chapter Three gives a solution in P whose entries are not all zero. For that solution, the collected expression is the zero vector. This contradicts independence of the alpha vectors. Therefore r is at most s."
+      },
+      {
+        "type": "text",
+        "text": "For the consequence, assume both systems are independent and equivalent. Expressing the alpha vectors by the beta vectors gives r at most s. Expressing the beta vectors by the alpha vectors gives s at most r. Thus r equals s."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "r\\le s,\\qquad s\\le r\\quad\\Longrightarrow\\quad r=s."
+      },
+      {
+        "type": "cue",
+        "text": "双重求和先说代入，再说按βⱼ合并系数。aᵢⱼ的第一个下标随未知数xᵢ变化；每一条方程固定第二个下标j。没有假定β组无关，只需让其每个系数都为零。"
+      }
+    ]
+  },
+  {
+    "id": "abstract-unique-expression",
+    "title": "Existence and uniqueness of an expression",
+    "zh": "性质3：添加向量后的唯一线性表出",
+    "chapter": 6,
+    "source": "§3 · pp.166–167",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We next need a property that gives both existence and uniqueness of coefficients."
+      },
+      {
+        "type": "statement",
+        "text": "Property 3. Suppose alpha one through alpha r are linearly independent, but the system obtained by adding beta is linearly dependent. Then beta is a linear combination of the alpha vectors, and its coefficients are unique."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_1,\\ldots,\\alpha_r\\ \\text{independent},\\qquad \\alpha_1,\\ldots,\\alpha_r,\\beta\\ \\text{dependent}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "We must first find an expression for beta and then prove that two such expressions have the same coefficients. Dependence of the enlarged system gives"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "k_1\\alpha_1+\\cdots+k_r\\alpha_r+k\\beta=0,\\qquad (k_1,\\ldots,k_r,k)\\ne(0,\\ldots,0,0)."
+      },
+      {
+        "type": "text",
+        "text": "The coefficient k of beta cannot be zero. If it were zero, independence of the alpha vectors would force all the other coefficients to be zero as well. Therefore we can divide by k."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\beta=-\\frac{k_1}{k}\\alpha_1-\\cdots-\\frac{k_r}{k}\\alpha_r."
+      },
+      {
+        "type": "text",
+        "text": "For uniqueness, suppose we have two expressions. Subtract them."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\\beta&=a_1\\alpha_1+\\cdots+a_r\\alpha_r=b_1\\alpha_1+\\cdots+b_r\\alpha_r,\\\\0&=(a_1-b_1)\\alpha_1+\\cdots+(a_r-b_r)\\alpha_r.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "Independence forces each difference to be zero. Thus a sub i equals b sub i for every i, proving uniqueness."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_i-b_i=0,\\qquad a_i=b_i\\quad(i=1,\\ldots,r)."
+      },
+      {
+        "type": "cue",
+        "text": "先分别说清存在性与唯一性的目标。β读 beta；不要把“添加β后相关”省略，它是存在性证明的条件。"
+      }
+    ]
+  },
+  {
+    "id": "linear-space-dimension",
+    "title": "Finite and infinite dimension",
+    "zh": "定义5：维数与无限维空间",
+    "chapter": 6,
+    "source": "§3 · p.167",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now define the dimension of a linear space by the largest possible size of a linearly independent system."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 5. A linear space V is n-dimensional if it contains n linearly independent vectors but contains no larger linearly independent system. It is infinite-dimensional if it contains arbitrarily large finite linearly independent systems."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\dim V=n:\\qquad \\begin{cases}\\text{there exist }n\\text{ linearly independent vectors in }V,\\\\\\text{every }n+1\\text{ vectors in }V\\text{ are linearly dependent}.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "We write dim V equals n and read it as the dimension of V is n. A dependent subsystem makes any larger system dependent, since we can extend its zero relation by zero coefficients. Thus the second condition rules out all larger independent systems."
+      },
+      {
+        "type": "text",
+        "text": "The space P to the n has dimension n by the results of Chapter Three. In contrast, the space of all real polynomials is infinite-dimensional. Let us verify the example in the book."
+      },
+      {
+        "type": "statement",
+        "text": "Example. The real linear space of all polynomials with real coefficients is infinite-dimensional."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "1,x,x^2,\\ldots,x^{n-1}\\in\\mathbb R[x]\\qquad(n\\ge1)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "For any positive integer n, take these n polynomials. To check independence, suppose their linear combination is the zero polynomial."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "c_0+c_1x+\\cdots+c_{n-1}x^{n-1}=0\\quad\\Longrightarrow\\quad c_0=c_1=\\cdots=c_{n-1}=0."
+      },
+      {
+        "type": "text",
+        "text": "Equality with the zero polynomial means that every coefficient is zero. These n polynomials are therefore independent. Since n can be arbitrarily large, this space is infinite-dimensional."
+      },
+      {
+        "type": "cue",
+        "text": "dim读 dimension；n-dimensional读 n dimensional。此处的等式是多项式恒等式，不是只在某个x值处为零。无限维指无关组的大小没有有限上界，不是指空间元素的数量无限。"
+      }
+    ]
+  },
+  {
+    "id": "linear-space-basis-coordinates",
+    "title": "Bases and coordinates",
+    "zh": "定义6：基、坐标与唯一性",
+    "chapter": 6,
+    "source": "§3 · p.167",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, we define a basis and the coordinates of a vector. For the following definition, let V have finite dimension n, with n at least one."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 6. In an n-dimensional linear space V over P, any n linearly independent vectors epsilon one through epsilon n form a basis of V. Every vector alpha has a unique expression as their linear combination. The ordered list of coefficients is called the coordinates of alpha with respect to this basis."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\varepsilon_1,\\varepsilon_2,\\ldots,\\varepsilon_n;\\qquad \\alpha=a_1\\varepsilon_1+a_2\\varepsilon_2+\\cdots+a_n\\varepsilon_n,\\quad a_i\\in P."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\text{coordinates of }\\alpha\\text{ in this basis:}\\qquad(a_1,a_2,\\ldots,a_n)."
+      },
+      {
+        "type": "text",
+        "text": "We read epsilon sub one through epsilon sub n. We keep this order fixed: the first coordinate multiplies the first basis vector, and so on. Let us justify why these coordinates always exist and are unique."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Take any vector alpha in V. The n basis vectors are independent, but the n plus one vectors obtained by adding alpha must be dependent, by the definition of dimension."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\varepsilon_1,\\ldots,\\varepsilon_n\\ \\text{independent},\\qquad\\varepsilon_1,\\ldots,\\varepsilon_n,\\alpha\\ \\text{dependent}."
+      },
+      {
+        "type": "text",
+        "text": "Property Three now applies. It gives an expression for alpha in terms of the basis vectors, and says that its coefficients are unique. This proves the claim used in the definition."
+      },
+      {
+        "type": "text",
+        "text": "The vector and its coordinates are different objects. The vector belongs to V and may be a polynomial, a matrix, or another kind of object. Its coordinates are an ordered list of scalars in P. Changing the basis can change that list."
+      },
+      {
+        "type": "cue",
+        "text": "ε读 epsilon；basis为单数，bases为复数。坐标按教材写成(a₁,…,aₙ)，暂不提前引入下一节的坐标列矩阵。"
+      }
+    ]
+  },
+  {
+    "id": "basis-criterion-theorem",
+    "title": "A criterion for a basis",
+    "zh": "定理1：由无关性与表出确定维数和基",
+    "chapter": 6,
+    "source": "§3 · p.167",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "The definition of a basis starts with a known dimension. The next theorem lets us find the dimension and a basis at the same time."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 1. If a linear space V contains n linearly independent vectors alpha one through alpha n, and every vector in V is a linear combination of them, then V has dimension n and these vectors form a basis of V."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{gathered}\\alpha_1,\\ldots,\\alpha_n\\ \\text{linearly independent},\\\\\\text{every }\\beta\\in V\\text{ is a linear combination of }\\alpha_1,\\ldots,\\alpha_n\\\\\\Longrightarrow\\quad \\dim V=n,\\quad \\alpha_1,\\ldots,\\alpha_n\\text{ form a basis of }V.\\end{gathered}"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The given independent system shows that V has at least n independent vectors. To prove its dimension is exactly n, we must show that any n plus one vectors are dependent."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\beta_1,\\beta_2,\\ldots,\\beta_{n+1}\\in V."
+      },
+      {
+        "type": "text",
+        "text": "Choose these vectors arbitrarily. By the hypothesis, they are all linearly expressible by the n alpha vectors. If the beta vectors were independent, Property Two would give"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "n+1\\le n,"
+      },
+      {
+        "type": "text",
+        "text": "which is impossible. Therefore every n plus one vectors are dependent. The definition of dimension gives dimension n. The n independent alpha vectors then form a basis by Definition Six."
+      },
+      {
+        "type": "cue",
+        "text": "先板书两条假设：无关、表出整个空间。证明维数的上界时必须取任意n+1个向量，不能只验证某一组。"
+      }
+    ]
+  },
+  {
+    "id": "polynomial-bases-coordinates",
+    "title": "Polynomial bases and their coordinates",
+    "zh": "例1：幂基、平移幂基与泰勒系数",
+    "chapter": 6,
+    "source": "§3 · pp.167–168",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now apply the definitions to the polynomial example in the text."
+      },
+      {
+        "type": "statement",
+        "text": "Example 1. The space P of x sub n, consisting of polynomials of degree less than n together with zero, has dimension n. The polynomials one, x, through x to the n minus one form a basis, and a polynomial's coordinates in this basis are its coefficients."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "P[x]_n=\\{a_0+a_1x+\\cdots+a_{n-1}x^{n-1}\\mid a_0,\\ldots,a_{n-1}\\in P\\}."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "1,x,\\ldots,x^{n-1};\\qquad f(x)=a_0+a_1x+\\cdots+a_{n-1}x^{n-1}\\ \\longleftrightarrow\\ (a_0,a_1,\\ldots,a_{n-1})."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The zero-polynomial argument just used proves independence of these n polynomials. The displayed general form shows that they express every member of P of x sub n. Theorem One gives dimension n and the stated basis. Its expansion coefficients are precisely the coordinates."
+      },
+      {
+        "type": "text",
+        "text": "The book then chooses another basis. Fix a scalar a in P."
+      },
+      {
+        "type": "statement",
+        "text": "Example 1, continued. For a fixed scalar a in P, one, x minus a, through x minus a to the n minus one also form a basis. The coordinates of f in this basis are its Taylor coefficients at a."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\varepsilon'_1=1,\\quad\\varepsilon'_2=x-a,\\quad\\ldots,\\quad\\varepsilon'_n=(x-a)^{n-1}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "To check independence, assume a linear combination of these polynomials is zero. If some coefficient were nonzero, let m be its largest index, starting the index at zero. The coefficient of x to the m in the sum would be c sub m, since all the other terms have smaller degree. This contradicts equality with the zero polynomial."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{j=0}^{n-1}c_j(x-a)^j=0\\quad\\Longrightarrow\\quad c_0=\\cdots=c_{n-1}=0."
+      },
+      {
+        "type": "text",
+        "text": "These are n independent vectors in the n-dimensional space, so they form a basis. The polynomial Taylor formula writes the corresponding expansion explicitly."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f(x)=f(a)+f'(a)(x-a)+\\cdots+\\frac{f^{(n-1)}(a)}{(n-1)!}(x-a)^{n-1}."
+      },
+      {
+        "type": "text",
+        "text": "Here f prime at a is the first derivative evaluated at a. The superscript in parentheses denotes the order of a derivative. The exclamation mark means factorial. This is an exact identity for a polynomial of degree less than n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\text{coordinates:}\\qquad\\left(f(a),f'(a),\\ldots,\\frac{f^{(n-1)}(a)}{(n-1)!}\\right)."
+      },
+      {
+        "type": "text",
+        "text": "Thus the same polynomial has different coordinate lists in the two bases. In the first basis we use its ordinary coefficients. In the second we use the displayed derivative values divided by factorials."
+      },
+      {
+        "type": "cue",
+        "text": "ε′₁读 epsilon sub one prime；f⁽ⁿ⁻¹⁾(a)读 the n minus first derivative of f at a；(n−1)!读 n minus one factorial。基向量上的prime是另一组基的标记，f上的prime表示导数。注意P[x]ₙ的最高次数是n−1。"
+      }
+    ]
+  },
+  {
+    "id": "tuple-bases-coordinates",
+    "title": "Two bases of P to the n",
+    "zh": "例2：标准基与逐次差分坐标",
+    "chapter": 6,
+    "source": "§3 · p.168",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "The next example shows the role of the basis even when the vectors themselves are tuples."
+      },
+      {
+        "type": "statement",
+        "text": "Example 2. The standard unit vectors form a basis of P to the n. In that basis, the coordinates of a tuple are its own entries."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\\varepsilon_1&=(1,0,\\ldots,0),\\\\\\varepsilon_2&=(0,1,\\ldots,0),\\\\&\\ \\vdots\\\\\\varepsilon_n&=(0,0,\\ldots,1).\\end{aligned}"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "A zero linear combination of these vectors has entries equal to its coefficients. Hence all coefficients must be zero, proving independence. Also, every tuple has the following expression."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha=(a_1,a_2,\\ldots,a_n)=a_1\\varepsilon_1+a_2\\varepsilon_2+\\cdots+a_n\\varepsilon_n."
+      },
+      {
+        "type": "text",
+        "text": "This proves that they form a basis and gives the coordinates a one through a n. Now consider the second basis from the text."
+      },
+      {
+        "type": "statement",
+        "text": "Example 2, continued. The n vectors whose j-th member has zeros before position j and ones from position j onward form another basis of P to the n. The coordinates of a tuple in this basis are its first entry followed by successive differences."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\\varepsilon'_1&=(1,1,\\ldots,1),\\\\\\varepsilon'_2&=(0,1,\\ldots,1),\\\\&\\ \\vdots\\\\\\varepsilon'_n&=(0,0,\\ldots,1).\\end{aligned}"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "First check independence. A linear combination with coefficients c one through c n has successive entries c one, c one plus c two, and so on. If the combination is zero, we obtain"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "c_1=0,\\quad c_1+c_2=0,\\quad\\ldots,\\quad c_1+c_2+\\cdots+c_n=0."
+      },
+      {
+        "type": "text",
+        "text": "The first equation gives c one equals zero. The second then gives c two equals zero. Continuing in order gives every coefficient zero. Thus these n vectors are independent and form a basis."
+      },
+      {
+        "type": "text",
+        "text": "For alpha with entries a one through a n, write"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha=a_1\\varepsilon'_1+(a_2-a_1)\\varepsilon'_2+\\cdots+(a_n-a_{n-1})\\varepsilon'_n."
+      },
+      {
+        "type": "text",
+        "text": "To verify the formula, look at position j. Exactly the first j basis vectors contribute. Their coefficients add to a sub j, because consecutive terms cancel."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_1+(a_2-a_1)+\\cdots+(a_j-a_{j-1})=a_j\\qquad(2\\le j\\le n)."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\text{coordinates in the second basis:}\\qquad(a_1,a_2-a_1,\\ldots,a_n-a_{n-1})."
+      },
+      {
+        "type": "cue",
+        "text": "先竖写两组基，保持每组内部顺序。aⱼ−aⱼ₋₁读 a sub j minus a sub j minus one，指下标区分第二个minus；可说 the difference between consecutive entries。当n=1时两组基都是(1)，坐标只有a₁。"
+      }
+    ]
+  },
+  {
+    "id": "dimension-depends-on-field",
+    "title": "Dimension depends on the scalar field",
+    "zh": "例3：复数域上的一维与实数域上的二维",
+    "chapter": 6,
+    "source": "§3 · p.168",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Finally, the third example explains why we must specify the scalar field."
+      },
+      {
+        "type": "statement",
+        "text": "Example 3. The complex numbers form a one-dimensional linear space over the complex field, with basis one. They form a two-dimensional linear space over the real field, with basis one and i."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\dim_{\\mathbb C}\\mathbb C=1,\\quad\\text{basis }1;\\qquad\\dim_{\\mathbb R}\\mathbb C=2,\\quad\\text{basis }1,i."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "First use complex scalars. Every complex number z is z times one. The single vector one is nonzero, so it is independent. By Theorem One, it is a basis and the dimension is one."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "z=z\\cdot1,\\qquad z\\in\\mathbb C."
+      },
+      {
+        "type": "text",
+        "text": "Now use real scalars. Every complex number has the form a plus b i with a and b real. Thus one and i express all complex numbers using real coefficients."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "z=a\\cdot1+b\\cdot i,\\qquad a,b\\in\\mathbb R."
+      },
+      {
+        "type": "text",
+        "text": "For independence, suppose a times one plus b times i is zero with real a and b. Equality of real and imaginary parts gives a equals zero and b equals zero. Theorem One therefore gives dimension two and basis one, i."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a+bi=0,\\quad a,b\\in\\mathbb R\\quad\\Longrightarrow\\quad a=b=0."
+      },
+      {
+        "type": "text",
+        "text": "The underlying set is the same, but the allowed scalars are different. Over the complex field, one and i are dependent: use coefficients i and minus one."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "i\\cdot1+(-1)\\cdot i=0."
+      },
+      {
+        "type": "text",
+        "text": "This relation is allowed over the complex field. It is not a relation with real coefficients, since i is not real."
+      },
+      {
+        "type": "cue",
+        "text": "ℂ读 the complex numbers，ℝ读 the real numbers；dim下标说明标量域。这里i读 i，表示虚数单位。下一节从教材第170页“基变换与坐标变换”开始。"
+      }
+    ]
   }
 ]
