@@ -6612,6 +6612,10 @@
         "text": "Block multiplication follows the usual row-by-column rule, provided the column partition of A matches the row partition of B."
       },
       {
+        "type": "text",
+        "text": "Let A have s rows and n columns, and let B have n rows and m columns. We use the following partitions. The column widths of A equal the corresponding row heights of B."
+      },
+      {
         "type": "math",
         "text": "",
         "latex": "A=\\begin{pmatrix}A_{11}&\\cdots&A_{1l}\\\\\\vdots&&\\vdots\\\\A_{t1}&\\cdots&A_{tl}\\end{pmatrix},\\qquad B=\\begin{pmatrix}B_{11}&\\cdots&B_{1r}\\\\\\vdots&&\\vdots\\\\B_{l1}&\\cdots&B_{lr}\\end{pmatrix}."
@@ -6619,28 +6623,151 @@
       {
         "type": "math",
         "text": "",
-        "latex": "A_{pk}:s_p\\times n_k,\\qquad B_{kq}:n_k\\times m_q,\\qquad C=AB=\\begin{pmatrix}C_{11}&\\cdots&C_{1r}\\\\\\vdots&&\\vdots\\\\C_{t1}&\\cdots&C_{tr}\\end{pmatrix}."
+        "latex": "s_1+\\cdots+s_t=s,\\qquad n_1+\\cdots+n_l=n,\\qquad m_1+\\cdots+m_r=m."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "C_{pq}=A_{p1}B_{1q}+A_{p2}B_{2q}+\\cdots+A_{pl}B_{lq}=\\sum_{k=1}^{l}A_{pk}B_{kq}."
+        "latex": "A_{pk}:s_p\\times n_k,\\qquad B_{kq}:n_k\\times m_q,\\qquad C=AB=\\begin{pmatrix}C_{11}&\\cdots&C_{1r}\\\\\\vdots&&\\vdots\\\\C_{t1}&\\cdots&C_{tr}\\end{pmatrix}."
       },
       {
         "type": "text",
-        "text": "Capital A sub p k is a whole block, of size s sub p by n sub k. It is not a single entry. The matching block B sub k q has n sub k rows. Thus each product has size s sub p by m sub q. Read the formula as “C sub p q equals the sum from k equals one to ell of A sub p k times B sub k q.”"
+        "text": "Here, A sub p k is a block of size s sub p by n sub k. B sub k q has size n sub k by m sub q. The output block C sub p q has size s sub p by m sub q."
+      },
+      {
+        "type": "cue",
+        "text": "大写下标表示整块。l 读 ell；sₚ、nₖ、m_q 分别是块行高度、共同分段宽度和块列宽度。先指出 A 的列分法与 B 的行分法逐段一致。"
       },
       {
         "type": "heading",
         "text": "Proof"
       },
       {
-        "type": "text",
-        "text": "The column widths of the first block matrix must match the row heights of the second. For each output block, the usual entry formula splits its summation index into those shared ranges. This produces the block row-by-column formula, with the order of every product preserved."
+        "type": "heading",
+        "text": "1. Select the corresponding block row and block column"
       },
       {
         "type": "text",
-        "text": "In the ordinary multiplication formula, each entry of A B is a sum over all columns of A. Split this sum into the l consecutive groups specified by the partition. Group k is exactly the corresponding entry of the block product A sub p k times B sub k q. Adding all groups gives the displayed formula. This holds for every entry of every block."
+        "text": "We want to find the block C sub p q. Recall the ordinary multiplication formula. Here, i and j are row and column numbers in the full matrices."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "c_{ij}=\\sum_{h=1}^{n}a_{ih}b_{hj}."
+      },
+      {
+        "type": "text",
+        "text": "Each entry uses only row i of A and column j of B. Therefore, to find all entries of C sub p q, we need only the p-th block row of A and the q-th block column of B. We denote these two rectangular matrices by R sub p and S sub q."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R_p=\\begin{pmatrix}A_{p1}&A_{p2}&\\cdots&A_{pl}\\end{pmatrix},\\qquad S_q=\\begin{pmatrix}B_{1q}\\\\B_{2q}\\\\\\vdots\\\\B_{lq}\\end{pmatrix}."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "R_p:s_p\\times n,\\qquad S_q:n\\times m_q,\\qquad C_{pq}=R_pS_q."
+      },
+      {
+        "type": "text",
+        "text": "The selected block row keeps all n columns of A. The selected block column keeps all n rows of B. Thus each entry of R sub p times S sub q uses exactly the same sum as the corresponding entry of C sub p q. This proves the last equality directly from ordinary matrix multiplication."
+      },
+      {
+        "type": "cue",
+        "text": "指向 Cₚq：取 A 中对应的整组行、B 中对应的整组列。Cₚq = RₚS_q 来自逐元素的普通乘法公式，此处尚未使用待证的分块乘法公式。p-th / q-th block row / column：第 p / q 个块行／块列。"
+      },
+      {
+        "type": "heading",
+        "text": "2. Prove the formula for two parts"
+      },
+      {
+        "type": "text",
+        "text": "For a moment, consider any s-by-n matrix A and n-by-m matrix B with just two matching parts. We use A one, A two, B one, and B two for these parts."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=\\begin{pmatrix}A_1&A_2\\end{pmatrix},\\qquad B=\\begin{pmatrix}B_1\\\\B_2\\end{pmatrix},\\qquad n_1+n_2=n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A_1:s\\times n_1,\\quad A_2:s\\times n_2,\\qquad B_1:n_1\\times m,\\quad B_2:n_2\\times m."
+      },
+      {
+        "type": "text",
+        "text": "We want to prove that A B equals A one B one plus A two B two. To prove that two matrices are equal, we compare the entries in the same position. Split the ordinary sum after its first n one terms."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}(AB)_{ij}&=\\sum_{h=1}^{n}a_{ih}b_{hj}\\\\&=\\sum_{h=1}^{n_1}a_{ih}b_{hj}+\\sum_{h=n_1+1}^{n}a_{ih}b_{hj}\\\\&=(A_1B_1)_{ij}+(A_2B_2)_{ij}.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "The first sum is entry i j of A one B one. The second sum is entry i j of A two B two. In the second product, local index u corresponds to original index n one plus u."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(A_2B_2)_{ij}=\\sum_{u=1}^{n_2}a_{i,n_1+u}b_{n_1+u,j}=\\sum_{h=n_1+1}^{n}a_{ih}b_{hj}."
+      },
+      {
+        "type": "text",
+        "text": "This holds for every row i and every column j. Hence the two matrices are equal."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\boxed{AB=A_1B_1+A_2B_2.}"
+      },
+      {
+        "type": "cue",
+        "text": "这里临时用 A、B 表示一般的两段情形，A₁、A₂ 不是原来分块中的单个元素。(AB)ᵢⱼ 读 the i j entry of A B；求和读 the sum from h equals one to n。第二段的局部下标从 1 重新开始，因此补写 h = n₁ + u 的对应关系。"
+      },
+      {
+        "type": "heading",
+        "text": "3. Extend the formula to any number of parts"
+      },
+      {
+        "type": "text",
+        "text": "We now extend the result by induction. The case of one part is immediate, and we have proved the case of two parts. Suppose the formula holds for d minus one matching parts, where d is at least three. For d parts, group the last d minus one parts together."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}AB&=\\begin{pmatrix}A_1&\\begin{matrix}A_2&\\cdots&A_d\\end{matrix}\\end{pmatrix}\\begin{pmatrix}B_1\\\\\\begin{matrix}B_2\\\\\\vdots\\\\B_d\\end{matrix}\\end{pmatrix}\\\\&=A_1B_1+\\begin{pmatrix}A_2&\\cdots&A_d\\end{pmatrix}\\begin{pmatrix}B_2\\\\\\vdots\\\\B_d\\end{pmatrix}\\\\&=A_1B_1+A_2B_2+\\cdots+A_dB_d.\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "The second line uses the two-part formula. The last line uses the induction hypothesis for the remaining d minus one parts. Therefore the formula holds for every positive number of parts."
+      },
+      {
+        "type": "cue",
+        "text": "在 A₁ 后画分割线，将其余块暂时合为一大块；B 同步分割。d 读 dee。先用两段公式，再用归纳假设，不能仅以“两段已证”代替任意段的论证。"
+      },
+      {
+        "type": "heading",
+        "text": "4. Apply the result to the selected block row and block column"
+      },
+      {
+        "type": "text",
+        "text": "Return to the original partitions. We already know that C sub p q equals R sub p times S sub q. These two matrices have l matching parts. Apply the formula just proved."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}C_{pq}&=R_pS_q\\\\&=\\begin{pmatrix}A_{p1}&A_{p2}&\\cdots&A_{pl}\\end{pmatrix}\\begin{pmatrix}B_{1q}\\\\B_{2q}\\\\\\vdots\\\\B_{lq}\\end{pmatrix}\\\\&=A_{p1}B_{1q}+A_{p2}B_{2q}+\\cdots+A_{pl}B_{lq}.\\end{aligned}"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\boxed{C_{pq}=\\sum_{k=1}^{l}A_{pk}B_{kq}},\\qquad p=1,\\ldots,t,\\quad q=1,\\ldots,r."
+      },
+      {
+        "type": "text",
+        "text": "Each product has size s sub p by m sub q, so we can add them. Read the formula as: C sub p q equals the sum from k equals one to ell of A sub p k times B sub k q. Since p and q were arbitrary, the formula holds for every block. This completes the proof."
       },
       {
         "type": "text",
