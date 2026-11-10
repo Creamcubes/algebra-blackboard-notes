@@ -6605,82 +6605,38 @@
     "blocks": [
       {
         "type": "text",
-        "text": "We now turn to block matrices. We divide a matrix into smaller rectangular matrices by cutting between rows and between columns. These smaller matrices are called blocks."
+        "text": "Let’s pick up where we left off last time. Consider the product A B. We’ll split it into two terms. Then we’ll use the same rule to find an inverse."
+      },
+      {
+        "type": "text",
+        "text": "Cut A between columns h and h plus one. Call the left block A one and the right block A two. Now cut B just below row h. Call the top block B one and the bottom block B two."
       },
       {
         "type": "statement",
-        "text": "Block multiplication follows the usual row-by-column rule, provided the column partition of A matches the row partition of B."
+        "text": "If each column block of A has as many columns as the corresponding row block of B has rows, then AB is the sum of the two matching block products."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "A=\\begin{pmatrix}A_{11}&\\cdots&A_{1l}\\\\\\vdots&&\\vdots\\\\A_{t1}&\\cdots&A_{tl}\\end{pmatrix},\\qquad B=\\begin{pmatrix}B_{11}&\\cdots&B_{1r}\\\\\\vdots&&\\vdots\\\\B_{l1}&\\cdots&B_{lr}\\end{pmatrix}."
+        "latex": "A=(a_{it})_{n\\times m},\\qquad B=(b_{tj})_{m\\times p},\\qquad 1\\le h<m."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "A_{pk}:s_p\\times n_k,\\qquad B_{kq}:n_k\\times m_q,\\qquad C=AB=\\begin{pmatrix}C_{11}&\\cdots&C_{1r}\\\\\\vdots&&\\vdots\\\\C_{t1}&\\cdots&C_{tr}\\end{pmatrix}."
+        "latex": "\\begin{array}{c|cc}&1&2\\\\\\hline\\text{blocks of }A&n\\times h&n\\times(m-h)\\\\\\text{blocks of }B&h\\times p&(m-h)\\times p\\end{array}"
       },
       {
         "type": "text",
-        "text": "Here, A sub p k has size s sub p by n sub k, and B sub k q has size n sub k by m sub q. By the ordinary multiplication formula, C sub p q depends only on the p-th block row of A and the q-th block column of B."
-      },
-      {
-        "type": "text",
-        "text": "First, consider two matching parts."
+        "text": "The first pair has inner dimension h. The second has inner dimension m minus h. Both products have n rows and p columns, so we can add them."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "A=\\begin{pmatrix}A_1&A_2\\end{pmatrix},\\qquad B=\\begin{pmatrix}B_1\\\\B_2\\end{pmatrix}."
-      },
-      {
-        "type": "text",
-        "text": "Split the sum in each entry at the block boundary. The two parts give A one B one and A two B two. Hence"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "AB=A_1B_1+A_2B_2."
-      },
-      {
-        "type": "text",
-        "text": "Repeating this split gives the formula for any number of parts. Apply it to the p-th block row of A and the q-th block column of B:"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\boxed{C_{pq}=A_{p1}B_{1q}+\\cdots+A_{pl}B_{lq}=\\sum_{k=1}^{l}A_{pk}B_{kq}.}"
+        "latex": "AB=\\begin{pmatrix}A_1&A_2\\end{pmatrix}\\begin{pmatrix}B_1\\\\B_2\\end{pmatrix}=A_1B_1+A_2B_2."
       },
       {
         "type": "cue",
-        "text": "A₁、B₁读 A one、B one；Cₚq读 C sub p q；l读 ell。只需说明普通乘法的求和按分块拆开。A 的列分法须与 B 的行分法一致，块乘积的先后次序不变。"
-      }
-    ]
-  },
-  {
-    "id": "block-triangular-inverse",
-    "title": "Inverse of a block triangular matrix",
-    "zh": "分块三角矩阵的求逆推导",
-    "chapter": 4,
-    "source": "§5 · pp.123–124",
-    "blocks": [
-      {
-        "type": "text",
-        "text": "Next, we use block multiplication to find an inverse. This is the block inverse formula derived in the textbook."
-      },
-      {
-        "type": "statement",
-        "text": "If A and B are invertible square matrices of orders k and r, and C is r by k, then the following block triangular matrix D is invertible, with the displayed inverse."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "D=\\begin{pmatrix}A&O\\\\C&B\\end{pmatrix},\\qquad D^{-1}=\\begin{pmatrix}A^{-1}&O\\\\-B^{-1}CA^{-1}&B^{-1}\\end{pmatrix}."
-      },
-      {
-        "type": "text",
-        "text": "The upper right O is the k by r zero matrix. Read the lower left block of the inverse as “minus B inverse times C times A inverse.”"
+        "text": "先横写 A 的两块，再在右边竖写 B 的两块。指着两对相配的块读 “A one times B one, plus A two times B two”。"
       },
       {
         "type": "heading",
@@ -6688,56 +6644,203 @@
       },
       {
         "type": "text",
-        "text": "Assume both diagonal blocks are invertible and C has the stated size. The target is to verify that the proposed block matrix is a two-sided inverse. Multiply in both orders: the diagonal blocks become identities, and the off-diagonal terms must cancel."
-      },
-      {
-        "type": "text",
-        "text": "First, the block triangular determinant formula gives the determinant of D. Since both diagonal blocks are invertible, this determinant is nonzero."
+        "text": "Fix row i and column j. To get this entry of A B, multiply across row i of A and down column j of B. Let t run over their shared index."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "|D|=|A|\\,|B|\\ne0."
+        "latex": "(AB)_{ij}=\\sum_{t=1}^{m}a_{it}b_{tj},\\qquad 1\\le i\\le n,\\quad 1\\le j\\le p."
       },
       {
         "type": "text",
-        "text": "Therefore D has an inverse. Write its four unknown blocks as X sub one one, X sub one two, X sub two one, and X sub two two. Multiply D by this inverse."
+        "text": "Split the sum after term h. The first sum uses the left block of A and the top block of B. The second uses the right block of A and the bottom block of B."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{pmatrix}A&O\\\\C&B\\end{pmatrix}\\begin{pmatrix}X_{11}&X_{12}\\\\X_{21}&X_{22}\\end{pmatrix}=\\begin{pmatrix}E_k&O\\\\O&E_r\\end{pmatrix}."
+        "latex": "\\begin{aligned}(AB)_{ij}&=\\underbrace{\\sum_{t=1}^{h}a_{it}b_{tj}}_{(A_1B_1)_{ij}}+\\underbrace{\\sum_{t=h+1}^{m}a_{it}b_{tj}}_{(A_2B_2)_{ij}}\\\\&=(A_1B_1+A_2B_2)_{ij}.\\end{aligned}"
       },
       {
         "type": "text",
-        "text": "Compare the four blocks on both sides. We get four matrix equations."
+        "text": "This holds for every i and j. The two matrices are equal."
+      },
+      {
+        "type": "cue",
+        "text": "指 (AB)ᵢⱼ 读 “the entry in row i and column j of A B”。第二段求和读 “the sum from t equals h plus one to m of a sub i t times b sub t j”。"
+      },
+      {
+        "type": "heading",
+        "text": "The rows of AB"
+      },
+      {
+        "type": "text",
+        "text": "We used this idea earlier in the proof about the rank of a product. Let A have n rows and m columns. Let B sub j denote row j of B. Write B one through B sub m down the board. Each of these m blocks is one whole row."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{cases}AX_{11}=E_k,\\\\AX_{12}=O,\\\\CX_{11}+BX_{21}=O,\\\\CX_{12}+BX_{22}=E_r.\\end{cases}"
+        "latex": "A=(a_{ij})_{n\\times m},\\qquad B=\\begin{pmatrix}B_1\\\\B_2\\\\\\vdots\\\\B_m\\end{pmatrix},\\qquad B_j=\\operatorname{row}_j(B)\\quad(1\\le j\\le m)."
+      },
+      {
+        "type": "statement",
+        "text": "Each row of AB is a linear combination of the rows of B. Its coefficients are the entries in the corresponding row of A."
       },
       {
         "type": "text",
-        "text": "The first two equations give X sub one one equals A inverse, and X sub one two equals zero. Substitute the zero block into the fourth equation. It gives X sub two two equals B inverse."
+        "text": "Start with row one of A. Multiply B one by a sub one one, then B two by a sub one two. Keep going and add the terms. That gives the first row of A B. Use row two of A for the next row. In the last row the coefficients come from row n."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "X_{11}=A^{-1},\\qquad X_{12}=O,\\qquad X_{22}=B^{-1}."
+        "latex": "AB=\\begin{pmatrix}a_{11}B_1+a_{12}B_2+\\cdots+a_{1m}B_m\\\\a_{21}B_1+a_{22}B_2+\\cdots+a_{2m}B_m\\\\\\vdots\\\\a_{n1}B_1+a_{n2}B_2+\\cdots+a_{nm}B_m\\end{pmatrix}."
+      },
+      {
+        "type": "cue",
+        "text": "先画矩阵两侧的圆括号，再从上到下填各行。首行末项读 “and so on, plus a sub one m times B sub m”。每一行的结果仍是行向量。"
+      },
+      {
+        "type": "heading",
+        "text": "The general block rule"
+      },
+      {
+        "type": "statement",
+        "text": "When the column partition of A matches the row partition of B, multiply each block row of A by each block column of B. Keep the factor from A on the left in every product."
       },
       {
         "type": "text",
-        "text": "Finally, use the third equation. Move C X sub one one to the other side, substitute A inverse, and multiply on the left by B inverse."
+        "text": "Call the product C. To get its block in row p and column q, take block row p of A and block column q of B. Split the entry sum at each of the block boundaries, as we did above."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "BX_{21}=-CX_{11}=-CA^{-1},\\qquad X_{21}=-B^{-1}CA^{-1}."
+        "latex": "\\begin{aligned}A&=(A_{pk})_{t\\times\\ell}, & A_{pk}&:s_p\\times n_k,\\\\B&=(B_{kq})_{\\ell\\times r}, & B_{kq}&:n_k\\times m_q,\\\\ C&=(C_{pq})_{t\\times r}, & C_{pq}&:s_p\\times m_q.\\end{aligned}"
       },
       {
         "type": "text",
-        "text": "These are exactly the four blocks in the stated formula. The order of the three factors in the lower left block must be kept."
+        "text": "The arrays on the left count blocks. On the right, the width of A sub p k and the height of B sub k q are both n sub k. That is the matching dimension for term k."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "C=AB,\\qquad C_{pq}=A_{p1}B_{1q}+\\cdots+A_{p\\ell}B_{\\ell q}=\\sum_{k=1}^{\\ell}A_{pk}B_{kq}."
+      },
+      {
+        "type": "text",
+        "text": "Here ell counts the matching blocks. We use the usual row-by-column rule and keep the factors in their original order."
+      },
+      {
+        "type": "cue",
+        "text": "指 Cₚq 读 “C sub p q”。ℓ 读 “ell”。沿 A 的块行从左向右指，再沿 B 的块列从上向下指。"
+      }
+    ]
+  },
+  {
+    "id": "block-triangular-inverse",
+    "title": "Inverse of a block lower triangular matrix",
+    "zh": "分块下三角矩阵的逆",
+    "chapter": 4,
+    "source": "§5 · pp.123–124",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Let’s use the block rule to find an inverse. Write A in the upper left corner and B in the lower right. Put C below A. Put a zero block above B. We call D a block lower triangular matrix."
+      },
+      {
+        "type": "statement",
+        "text": "Let D be block lower triangular with invertible diagonal blocks A of order k and B of order r. Then D is invertible. Its inverse is block lower triangular with diagonal blocks A inverse and B inverse and lower left block minus B inverse times C times A inverse."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D=\\begin{pmatrix}A&0\\\\C&B\\end{pmatrix},\\qquad\\begin{array}{ll} A:k\\times k,&0:k\\times r,\\\\ C:r\\times k,&B:r\\times r.\\end{array}"
+      },
+      {
+        "type": "text",
+        "text": "The top block row has k rows. The bottom one has r. So C is r by k, and the zero block is k by r."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "First we show that D has an inverse. The block triangular determinant formula gives the product of the two diagonal determinants. Both are nonzero because A and B are invertible."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\det D=\\det A\\,\\det B\\ne0\\quad\\Longrightarrow\\quad D\\text{ is invertible}."
+      },
+      {
+        "type": "text",
+        "text": "Now use the same cuts for D inverse. Write X sub one one and X sub one two across the top. Write X sub two one and X sub two two below them."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "D^{-1}=\\begin{pmatrix}X_{11}&X_{12}\\\\X_{21}&X_{22}\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Multiply D by D inverse. In the top row the zero block drops out. In the bottom row both C and B contribute. On the right we need the identity of order k plus r."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}DD^{-1}&=\\begin{pmatrix}A&0\\\\C&B\\end{pmatrix}\\begin{pmatrix}X_{11}&X_{12}\\\\X_{21}&X_{22}\\end{pmatrix}\\\\[3pt]&=\\begin{pmatrix}AX_{11}&AX_{12}\\\\CX_{11}+BX_{21}&CX_{12}+BX_{22}\\end{pmatrix}\\\\[3pt]&=\\begin{pmatrix}I_k&0\\\\0&I_r\\end{pmatrix}=I_{k+r}.\\end{aligned}"
+      },
+      {
+        "type": "cue",
+        "text": "右端先写 Iₖ、Iᵣ，再补零块。Iₖ 读 “the identity matrix of order k”。教材写 Eₖ、Eᵣ，这里用 I 表示单位矩阵。"
+      },
+      {
+        "type": "text",
+        "text": "Compare the blocks in order. The top row gives the first two equations. The bottom row gives the other two."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}AX_{11}=I_k,\\\\AX_{12}=0,\\\\CX_{11}+BX_{21}=0,\\\\CX_{12}+BX_{22}=I_r.\\end{cases}"
+      },
+      {
+        "type": "text",
+        "text": "Multiply the first two equations on the left by A inverse. This gives the two blocks in the top row."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "X_{11}=A^{-1}I_k=A^{-1},\\qquad X_{12}=A^{-1}0=0."
+      },
+      {
+        "type": "text",
+        "text": "In the fourth equation, put zero in place of X sub one two. We get B times X sub two two equals the identity. Multiply on the left by B inverse."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "CX_{12}+BX_{22}=I_r\\quad\\Longrightarrow\\quad BX_{22}=I_r\\quad\\Longrightarrow\\quad X_{22}=B^{-1}."
+      },
+      {
+        "type": "text",
+        "text": "For the lower left block, go back to the third equation. Move C times X sub one one to the right. Substitute A inverse for X sub one one. Now multiply both sides on the left by B inverse."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}BX_{21}&=-CX_{11}=-CA^{-1},\\\\ B^{-1}B X_{21}&=-B^{-1}CA^{-1},\\\\ X_{21}&=-B^{-1}CA^{-1}.\\end{aligned}"
+      },
+      {
+        "type": "cue",
+        "text": "在等号两边的左端各补写 B⁻¹，再指左边 B⁻¹B。右边按顺序读 “minus B inverse times C times A inverse”。"
+      },
+      {
+        "type": "text",
+        "text": "Put the four blocks back in place. The upper right block is zero again. The lower left block is the product we just found."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\boxed{D^{-1}=\\begin{pmatrix}A^{-1}&0\\\\-B^{-1}CA^{-1}&B^{-1}\\end{pmatrix}}"
       }
     ]
   },
