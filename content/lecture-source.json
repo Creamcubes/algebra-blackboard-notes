@@ -6612,10 +6612,6 @@
         "text": "Cut A between columns h and h plus one. Call the left block A one and the right block A two. Now cut B just below row h. Call the top block B one and the bottom block B two."
       },
       {
-        "type": "statement",
-        "text": "If each column block of A has as many columns as the corresponding row block of B has rows, then AB is the sum of the two matching block products."
-      },
-      {
         "type": "math",
         "text": "",
         "latex": "A=(a_{it})_{n\\times m},\\qquad B=(b_{tj})_{m\\times p},\\qquad 1\\le h<m."
@@ -6624,10 +6620,6 @@
         "type": "math",
         "text": "",
         "latex": "\\begin{array}{c|cc}&1&2\\\\\\hline\\text{blocks of }A&n\\times h&n\\times(m-h)\\\\\\text{blocks of }B&h\\times p&(m-h)\\times p\\end{array}"
-      },
-      {
-        "type": "text",
-        "text": "The first pair has inner dimension h. The second has inner dimension m minus h. Both products have n rows and p columns, so we can add them."
       },
       {
         "type": "math",
@@ -6652,10 +6644,6 @@
         "latex": "(AB)_{ij}=\\sum_{t=1}^{m}a_{it}b_{tj},\\qquad 1\\le i\\le n,\\quad 1\\le j\\le p."
       },
       {
-        "type": "text",
-        "text": "Split the sum after term h. The first sum uses the left block of A and the top block of B. The second uses the right block of A and the bottom block of B."
-      },
-      {
         "type": "math",
         "text": "",
         "latex": "\\begin{aligned}(AB)_{ij}&=\\underbrace{\\sum_{t=1}^{h}a_{it}b_{tj}}_{(A_1B_1)_{ij}}+\\underbrace{\\sum_{t=h+1}^{m}a_{it}b_{tj}}_{(A_2B_2)_{ij}}\\\\&=(A_1B_1+A_2B_2)_{ij}.\\end{aligned}"
@@ -6674,7 +6662,7 @@
       },
       {
         "type": "text",
-        "text": "We used this idea earlier in the proof about the rank of a product. Let A have n rows and m columns. Let B sub j denote row j of B. Write B one through B sub m down the board. Each of these m blocks is one whole row."
+        "text": "We used this idea earlier in the proof about the rank of a product. Let A have n rows and m columns. Let B sub j denote row j of B."
       },
       {
         "type": "math",
@@ -6684,10 +6672,6 @@
       {
         "type": "statement",
         "text": "Each row of AB is a linear combination of the rows of B. Its coefficients are the entries in the corresponding row of A."
-      },
-      {
-        "type": "text",
-        "text": "Start with row one of A. Multiply B one by a sub one one, then B two by a sub one two. Keep going and add the terms. That gives the first row of A B. Use row two of A for the next row. In the last row the coefficients come from row n."
       },
       {
         "type": "math",
@@ -6703,21 +6687,23 @@
         "text": "The general block rule"
       },
       {
-        "type": "statement",
-        "text": "When the column partition of A matches the row partition of B, multiply each block row of A by each block column of B. Keep the factor from A on the left in every product."
-      },
-      {
-        "type": "text",
-        "text": "Call the product C. To get its block in row p and column q, take block row p of A and block column q of B. Split the entry sum at each of the block boundaries, as we did above."
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{array}{rc}&\\begin{matrix}\\kern1em\\mathclap{n_{1}}\\kern1em&\\kern1em\\mathclap{n_{2}}\\kern1em&\\kern1em\\mathclap{\\cdots}\\kern1em&\\kern1em\\mathclap{n_{\\ell}}\\kern1em\\end{matrix}\\\\[-2pt]A=\\;\\begin{matrix}s_{1}\\\\s_{2}\\\\\\vdots\\\\s_{t}\\end{matrix}&\\begin{pmatrix}\\kern1em\\mathclap{A_{11}}\\kern1em&\\kern1em\\mathclap{A_{12}}\\kern1em&\\kern1em\\mathclap{\\cdots}\\kern1em&\\kern1em\\mathclap{A_{1\\ell}}\\kern1em\\\\\\kern1em\\mathclap{A_{21}}\\kern1em&\\kern1em\\mathclap{A_{22}}\\kern1em&\\kern1em\\mathclap{\\cdots}\\kern1em&\\kern1em\\mathclap{A_{2\\ell}}\\kern1em\\\\\\kern1em\\mathclap{\\vdots}\\kern1em&\\kern1em\\mathclap{\\vdots}\\kern1em&\\kern1em\\mathclap{\\ddots}\\kern1em&\\kern1em\\mathclap{\\vdots}\\kern1em\\\\\\kern1em\\mathclap{A_{t1}}\\kern1em&\\kern1em\\mathclap{A_{t2}}\\kern1em&\\kern1em\\mathclap{\\cdots}\\kern1em&\\kern1em\\mathclap{A_{t\\ell}}\\kern1em\\end{pmatrix}\\end{array}"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{aligned}A&=(A_{pk})_{t\\times\\ell}, & A_{pk}&:s_p\\times n_k,\\\\B&=(B_{kq})_{\\ell\\times r}, & B_{kq}&:n_k\\times m_q,\\\\ C&=(C_{pq})_{t\\times r}, & C_{pq}&:s_p\\times m_q.\\end{aligned}"
+        "latex": "\\begin{array}{rc}&\\begin{matrix}\\kern1em\\mathclap{m_{1}}\\kern1em&\\kern1em\\mathclap{m_{2}}\\kern1em&\\kern1em\\mathclap{\\cdots}\\kern1em&\\kern1em\\mathclap{m_{r}}\\kern1em\\end{matrix}\\\\[-2pt]B=\\;\\begin{matrix}n_{1}\\\\n_{2}\\\\\\vdots\\\\n_{\\ell}\\end{matrix}&\\begin{pmatrix}\\kern1em\\mathclap{B_{11}}\\kern1em&\\kern1em\\mathclap{B_{12}}\\kern1em&\\kern1em\\mathclap{\\cdots}\\kern1em&\\kern1em\\mathclap{B_{1r}}\\kern1em\\\\\\kern1em\\mathclap{B_{21}}\\kern1em&\\kern1em\\mathclap{B_{22}}\\kern1em&\\kern1em\\mathclap{\\cdots}\\kern1em&\\kern1em\\mathclap{B_{2r}}\\kern1em\\\\\\kern1em\\mathclap{\\vdots}\\kern1em&\\kern1em\\mathclap{\\vdots}\\kern1em&\\kern1em\\mathclap{\\ddots}\\kern1em&\\kern1em\\mathclap{\\vdots}\\kern1em\\\\\\kern1em\\mathclap{B_{\\ell1}}\\kern1em&\\kern1em\\mathclap{B_{\\ell2}}\\kern1em&\\kern1em\\mathclap{\\cdots}\\kern1em&\\kern1em\\mathclap{B_{\\ell r}}\\kern1em\\end{pmatrix}\\end{array}"
       },
       {
-        "type": "text",
-        "text": "The arrays on the left count blocks. On the right, the width of A sub p k and the height of B sub k q are both n sub k. That is the matching dimension for term k."
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{array}{rc}&\\begin{matrix}\\kern1em\\mathclap{m_{1}}\\kern1em&\\kern1em\\mathclap{m_{2}}\\kern1em&\\kern1em\\mathclap{\\cdots}\\kern1em&\\kern1em\\mathclap{m_{r}}\\kern1em\\end{matrix}\\\\[-2pt]C=AB=\\;\\begin{matrix}s_{1}\\\\s_{2}\\\\\\vdots\\\\s_{t}\\end{matrix}&\\begin{pmatrix}\\kern1em\\mathclap{C_{11}}\\kern1em&\\kern1em\\mathclap{C_{12}}\\kern1em&\\kern1em\\mathclap{\\cdots}\\kern1em&\\kern1em\\mathclap{C_{1r}}\\kern1em\\\\\\kern1em\\mathclap{C_{21}}\\kern1em&\\kern1em\\mathclap{C_{22}}\\kern1em&\\kern1em\\mathclap{\\cdots}\\kern1em&\\kern1em\\mathclap{C_{2r}}\\kern1em\\\\\\kern1em\\mathclap{\\vdots}\\kern1em&\\kern1em\\mathclap{\\vdots}\\kern1em&\\kern1em\\mathclap{\\ddots}\\kern1em&\\kern1em\\mathclap{\\vdots}\\kern1em\\\\\\kern1em\\mathclap{C_{t1}}\\kern1em&\\kern1em\\mathclap{C_{t2}}\\kern1em&\\kern1em\\mathclap{\\cdots}\\kern1em&\\kern1em\\mathclap{C_{tr}}\\kern1em\\end{pmatrix}\\end{array}"
+      },
+      {
+        "type": "cue",
+        "text": "先写矩阵，再在上方标各块列的宽度，在左侧标各块行的高度。指 A 上方和 B 左侧相同的 n₁,…,nℓ。"
       },
       {
         "type": "math",
@@ -6743,11 +6729,7 @@
     "blocks": [
       {
         "type": "text",
-        "text": "Let’s use the block rule to find an inverse. Write A in the upper left corner and B in the lower right. Put C below A. Put a zero block above B. We call D a block lower triangular matrix."
-      },
-      {
-        "type": "statement",
-        "text": "Let D be block lower triangular with invertible diagonal blocks A of order k and B of order r. Then D is invertible. Its inverse is block lower triangular with diagonal blocks A inverse and B inverse and lower left block minus B inverse times C times A inverse."
+        "text": "Let’s consider the square matrix D. Its diagonal blocks are A and B. Put C in the lower left corner and a zero block in the upper right. This is a block lower triangular matrix."
       },
       {
         "type": "math",
@@ -6756,15 +6738,7 @@
       },
       {
         "type": "text",
-        "text": "The top block row has k rows. The bottom one has r. So C is r by k, and the zero block is k by r."
-      },
-      {
-        "type": "heading",
-        "text": "Proof"
-      },
-      {
-        "type": "text",
-        "text": "First we show that D has an inverse. The block triangular determinant formula gives the product of the two diagonal determinants. Both are nonzero because A and B are invertible."
+        "text": "Suppose A and B are invertible. The determinant of D is the product of their determinants, so it is nonzero."
       },
       {
         "type": "math",
@@ -6773,7 +6747,7 @@
       },
       {
         "type": "text",
-        "text": "Now use the same cuts for D inverse. Write X sub one one and X sub one two across the top. Write X sub two one and X sub two two below them."
+        "text": "So D is invertible. Let’s find its inverse. Use the same partition and call the four unknown blocks X sub one one, X sub one two, X sub two one, and X sub two two."
       },
       {
         "type": "math",
@@ -6845,72 +6819,6 @@
     ]
   },
   {
-    "id": "block-diagonal-matrices",
-    "title": "Diagonal and block diagonal matrices",
-    "zh": "对角矩阵、准对角矩阵及运算",
-    "chapter": 4,
-    "source": "§5 · pp.124–125",
-    "blocks": [
-      {
-        "type": "text",
-        "text": "We finish with diagonal and block diagonal matrices."
-      },
-      {
-        "type": "statement",
-        "text": "A diagonal matrix has zero entries outside the main diagonal. A block diagonal matrix has square blocks on the main diagonal and zero blocks elsewhere."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\begin{pmatrix}a_1&0&\\cdots&0\\\\0&a_2&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&a_l\\end{pmatrix},\\qquad A=\\begin{pmatrix}A_1&O&\\cdots&O\\\\O&A_2&\\cdots&O\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\O&O&\\cdots&A_l\\end{pmatrix}."
-      },
-      {
-        "type": "text",
-        "text": "Each small a sub i is a number. Each capital A sub i is a square matrix of order n sub i. The orders of different diagonal blocks may differ. A diagonal matrix is the special case in which every block has order one."
-      },
-      {
-        "type": "statement",
-        "text": "Two block diagonal matrices with matching block sizes can be added and multiplied block by block. If each diagonal block is invertible, the inverse is obtained by inverting each diagonal block."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "B=\\begin{pmatrix}B_1&O&\\cdots&O\\\\O&B_2&\\cdots&O\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\O&O&\\cdots&B_l\\end{pmatrix},\\qquad A_i,B_i\\text{ both }n_i\\times n_i."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "A+B=\\begin{pmatrix}A_1+B_1&O&\\cdots&O\\\\O&A_2+B_2&\\cdots&O\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\O&O&\\cdots&A_l+B_l\\end{pmatrix}."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "AB=\\begin{pmatrix}A_1B_1&O&\\cdots&O\\\\O&A_2B_2&\\cdots&O\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\O&O&\\cdots&A_lB_l\\end{pmatrix}."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "A^{-1}=\\begin{pmatrix}A_1^{-1}&O&\\cdots&O\\\\O&A_2^{-1}&\\cdots&O\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\O&O&\\cdots&A_l^{-1}\\end{pmatrix}\\qquad\\text{if all }A_i\\text{ are invertible}."
-      },
-      {
-        "type": "heading",
-        "text": "Proof"
-      },
-      {
-        "type": "text",
-        "text": "The zero off-diagonal blocks make each diagonal block act separately. To justify the inverse formula, assume every diagonal block is invertible and check both products with the matrix of their inverses. Each diagonal product is an identity and every other block remains zero."
-      },
-      {
-        "type": "text",
-        "text": "Addition follows by adding corresponding entries. For multiplication, a diagonal block has only one possibly nonzero term, A sub i times B sub i. Every off-diagonal block is zero. Finally, multiply A by the proposed inverse in either order. Every diagonal block becomes the identity of order n sub i, and every off-diagonal block remains zero. The result is the identity matrix of order n sub one plus n sub two, and so on, plus n sub ell. This proves the inverse formula."
-      },
-      {
-        "type": "cue",
-        "text": "原书的“准对角矩阵”通常读作“block diagonal matrix”。指着对角上的各块说明尺寸；不要把准对角矩阵说成只有数值对角元非零。"
-      }
-    ]
-  },
-  {
     "id": "elementary-matrix-types",
     "title": "The three types of elementary matrices",
     "zh": "定义10：三类初等矩阵",
@@ -6972,6 +6880,15 @@
       {
         "type": "cue",
         "text": "先在板书写E，再只改动相应位置；标出第i、j行列。P(i,j(k))中的k在(i,j)位置。记号P是矩阵名称，不是此处的数域名称。"
+      },
+      {
+        "type": "statement",
+        "text": "Every elementary matrix is invertible, and its inverse is also elementary."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "P(i,j)^{-1}=P(i,j),\\qquad P(i(c))^{-1}=P(i(c^{-1})),\\qquad P(i,j(k))^{-1}=P(i,j(-k))."
       }
     ]
   },
@@ -7051,38 +6968,13 @@
       {
         "type": "text",
         "text": "This proves the row statement in all three cases. Now let’s use sequences of elementary operations to define equivalence."
-      },
-      {
-        "type": "cue",
-        "text": "试讲在此转到下一页的 Definition 11。以下保留列变换的原有说明，供查阅。"
-      },
-      {
-        "type": "heading",
-        "text": "Reference: column operations"
-      },
-      {
-        "type": "text",
-        "text": "These are exactly the three row operations. For columns, let C sub one through C sub n be the columns of A. In A Q, column j is the linear combination of these columns with coefficients from column j of Q. This gives the corresponding column operations."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "AP(i,j):\\ C_i\\leftrightarrow C_j,\\qquad AP(i(c)):\\ C_i\\longmapsto cC_i,\\qquad AP(i,j(k)):\\ C_j\\longmapsto C_j+kC_i."
-      },
-      {
-        "type": "text",
-        "text": "Notice the last formula. On the left, P of i, j of k changes row i. On the right, it changes column j. The position of k in the elementary matrix explains this difference. This proves the lemma."
-      },
-      {
-        "type": "cue",
-        "text": "行向量的竖排板书沿用原书，明确标出被替换的行。最后列变换公式最容易说反：右乘P(i,j(k))把第i列的k倍加到第j列。"
       }
     ]
   },
   {
     "id": "elementary-inverses-equivalence",
-    "title": "Inverses and matrix equivalence",
-    "zh": "初等矩阵的逆与定义11：矩阵等价",
+    "title": "Matrix equivalence",
+    "zh": "定义11：矩阵等价",
     "chapter": 4,
     "source": "§6 · p.127",
     "blocks": [
@@ -7109,80 +7001,7 @@
       },
       {
         "type": "cue",
-        "text": "A ∼ B 读 “A is equivalent to B”。试讲在此转到定理五。以下原有材料可单独查阅。"
-      },
-      {
-        "type": "heading",
-        "text": "Reference: inverses of elementary matrices"
-      },
-      {
-        "type": "text",
-        "text": "Each elementary operation can be undone. This gives the inverses of the three elementary matrices."
-      },
-      {
-        "type": "statement",
-        "text": "Every elementary matrix is invertible, and its inverse is also elementary."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "P(i,j)^{-1}=P(i,j),\\qquad P(i(c))^{-1}=P(i(c^{-1})),\\qquad P(i,j(k))^{-1}=P(i,j(-k))."
-      },
-      {
-        "type": "heading",
-        "text": "Proof"
-      },
-      {
-        "type": "text",
-        "text": "For each elementary matrix, we need another elementary matrix whose product with it is E in both orders. Construct it by undoing the original operation. The scaling operation requires a nonzero scalar so that its reciprocal exists."
-      },
-      {
-        "type": "text",
-        "text": "Exchange the same two rows again to undo an exchange. Multiply by one over c to undo multiplication by c. Add negative k times row j to row i to undo addition of k times row j. In each case, applying the two operations to E restores E. By the lemma, the corresponding matrix products, in either order, equal E. These are therefore the inverse matrices."
-      },
-      {
-        "type": "cue",
-        "text": "c⁻¹ 读 “one over c”。"
-      },
-      {
-        "type": "heading",
-        "text": "Reference: properties of equivalence"
-      },
-      {
-        "type": "statement",
-        "text": "Reflexivity means every matrix is equivalent to itself. Symmetry means that if A is equivalent to B, then B is equivalent to A. Transitivity means that if A is equivalent to B and B is equivalent to C, then A is equivalent to C."
-      },
-      {
-        "type": "heading",
-        "text": "Proof"
-      },
-      {
-        "type": "heading",
-        "text": "Reflexivity"
-      },
-      {
-        "type": "text",
-        "text": "Start with any matrix A. A sequence with no operations already leaves A unchanged, so A is equivalent to itself. If a nonempty sequence is desired, an operation followed by its inverse also returns A."
-      },
-      {
-        "type": "heading",
-        "text": "Symmetry"
-      },
-      {
-        "type": "text",
-        "text": "Assume a finite sequence takes A to B. To take B back to A, undo the last operation first, then undo the preceding operations in reverse order. Each inverse operation is elementary, as proved above. This constructs a valid sequence from B to A."
-      },
-      {
-        "type": "heading",
-        "text": "Transitivity"
-      },
-      {
-        "type": "text",
-        "text": "Assume one finite sequence takes A to B and a second takes B to C. Apply the first sequence and then the second. The combined sequence is still finite and consists of elementary operations, and it takes A to C. This is precisely the definition of their equivalence."
-      },
-      {
-        "type": "cue",
-        "text": "等价允许行和列两类初等变换。自反性说明返回自身的操作；对称性须倒序撤销操作；传递性须连接两段有限操作。"
+        "text": "A ∼ B 读 “A is equivalent to B”。"
       }
     ]
   },
@@ -7577,15 +7396,29 @@
     "blocks": [
       {
         "type": "text",
-        "text": "Each block operation must be checked with its multiplication side and its block sizes. For addition of one block row to another, choose the multiplier so the two rows have equal heights after multiplication. The block matrix representing the operation then gives the desired new row by the usual product rule."
+        "text": "We have seen how elementary operations act on rows and columns. Now let’s do the same with whole block rows and block columns. Start by splitting the identity matrix into two diagonal blocks."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "E_{m+n}=\\begin{pmatrix}E_m&O\\\\O&E_n\\end{pmatrix}."
       },
       {
         "type": "text",
-        "text": "We now combine block multiplication with elementary operations. Let A and B form the first block row, and C and D the second. The two block rows have m and n rows, respectively."
+        "text": "Here E sub m and E sub n are identity matrices. We can swap the block rows, multiply one by a matrix P, or add P times one to the other. These operations give the following five matrices. For scaling, take P to be invertible."
       },
       {
-        "type": "statement",
-        "text": "Compatible block matrices can exchange block rows, multiply a block row on the left by a matrix, or add a matrix multiple of one block row to another. Each operation is represented by block multiplication."
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{gathered}\\begin{pmatrix}O&E_n\\\\E_m&O\\end{pmatrix},\\qquad \\begin{pmatrix}P&O\\\\O&E_n\\end{pmatrix},\\qquad \\begin{pmatrix}E_m&O\\\\O&P\\end{pmatrix},\\\\[4pt]\\begin{pmatrix}E_m&P\\\\O&E_n\\end{pmatrix},\\qquad \\begin{pmatrix}E_m&O\\\\P&E_n\\end{pmatrix}.\\end{gathered}"
+      },
+      {
+        "type": "text",
+        "text": "Let’s see what each one does. Write A and B in the top block row, and C and D in the bottom one. These block rows have m and n rows. Multiply on the left."
+      },
+      {
+        "type": "text",
+        "text": "The first matrix swaps the two block rows."
       },
       {
         "type": "math",
@@ -7594,47 +7427,52 @@
       },
       {
         "type": "text",
-        "text": "This matrix exchanges the two block rows. Its first block row has n rows and selects the original second block row. Its second block row has m rows and selects the original first block row. Thus m and n need not be equal."
+        "text": "The second multiplies the top block row by P on the left."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{pmatrix}P&O\\\\O&E_n\\end{pmatrix}\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix}=\\begin{pmatrix}PA&PB\\\\C&D\\end{pmatrix},\\qquad P:m\\times m."
+        "latex": "\\begin{pmatrix}P&O\\\\O&E_n\\end{pmatrix}\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix}=\\begin{pmatrix}PA&PB\\\\C&D\\end{pmatrix},\\quad P:m\\times m."
       },
       {
         "type": "text",
-        "text": "This multiplies the first block row on the left by P. To make the operation reversible, P must be invertible. The identity itself holds for any P of the stated size."
+        "text": "The third multiplies the bottom block row by P on the left."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{pmatrix}E_m&O\\\\P&E_n\\end{pmatrix}\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix}=\\begin{pmatrix}A&B\\\\C+PA&D+PB\\end{pmatrix},\\qquad P:n\\times m."
-      },
-      {
-        "type": "heading",
-        "text": "Verification"
+        "latex": "\\begin{pmatrix}E_m&O\\\\O&P\\end{pmatrix}\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix}=\\begin{pmatrix}A&B\\\\PC&PD\\end{pmatrix},\\quad P:n\\times n."
       },
       {
         "type": "text",
-        "text": "Apply the block row-by-column rule to each product. In the last formula, the lower left block is P A plus C. The lower right block is P B plus D. This adds P times the first block row to the second block row. The inverse operation uses negative P."
+        "text": "The fourth adds P times the bottom block row to the top one."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{pmatrix}E_m&O\\\\-P&E_n\\end{pmatrix}\\begin{pmatrix}E_m&O\\\\P&E_n\\end{pmatrix}=\\begin{pmatrix}E_m&O\\\\O&E_n\\end{pmatrix}."
+        "latex": "\\begin{pmatrix}E_m&P\\\\O&E_n\\end{pmatrix}\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix}=\\begin{pmatrix}A+PC&B+PD\\\\C&D\\end{pmatrix},\\quad P:m\\times n."
       },
       {
         "type": "text",
-        "text": "Right multiplication gives the corresponding operations on block columns. Keep the multiplier on the right of each block. For example, if the two block columns have m and n columns, then the following formula holds."
+        "text": "The fifth adds P times the top block row to the bottom one."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix}\\begin{pmatrix}E_m&P\\\\O&E_n\\end{pmatrix}=\\begin{pmatrix}A&AP+B\\\\C&CP+D\\end{pmatrix},\\qquad P:m\\times n."
+        "latex": "\\begin{pmatrix}E_m&O\\\\P&E_n\\end{pmatrix}\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix}=\\begin{pmatrix}A&B\\\\C+PA&D+PB\\end{pmatrix},\\quad P:n\\times m."
+      },
+      {
+        "type": "text",
+        "text": "Right multiplication acts on the block columns. For example, take block columns of widths m and n. Add the first block column times P to the second."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix}\\begin{pmatrix}E_m&P\\\\O&E_n\\end{pmatrix}=\\begin{pmatrix}A&AP+B\\\\C&CP+D\\end{pmatrix},\\quad P:m\\times n."
       },
       {
         "type": "cue",
-        "text": "每条公式中的P尺寸按该条公式确定。block row读“块行”；左乘产生PA，右乘产生AP，不能互换。块行交换矩阵上下两块的行数可能不同。"
+        "text": "左乘时指块行，右乘时指块列。每式各自取相容尺寸的 P。"
       }
     ]
   },
