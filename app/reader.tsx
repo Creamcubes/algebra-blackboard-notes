@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ArrowLeft, ArrowRight, BookOpen, PanelLeft, NotebookPen } from 'lucide-react';
 import { Sidebar, SidebarProvider, SidebarHeader, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuItem, SidebarMenuButton, useSidebar } from '@/components/ui/sidebar';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
@@ -15,7 +15,24 @@ function Navigation({ sections, current, select }: { sections: Section[]; curren
 function MenuButton(){const {toggleSidebar}=useSidebar();return <Button variant="ghost" size="icon" onClick={toggleSidebar} aria-label="展开或收起目录"><PanelLeft size={20}/></Button>}
 export default function LectureReader({ sections }: { sections: Section[] }) {
  const [current,setCurrent]=useState(0); const [mode,setMode]=useState('script'); const [notes,setNotes]=useState(true);
- const section=sections[current]; const select=(i:number)=>{setCurrent(i);window.scrollTo({top:0,behavior:'instant'});};
+ useEffect(() => {
+  function readSection() {
+   const id = new URLSearchParams(window.location.search).get('section');
+   const index = sections.findIndex(item => item.id === id);
+   setCurrent(index < 0 ? 0 : index);
+  }
+  readSection();
+  window.addEventListener('popstate', readSection);
+  return () => window.removeEventListener('popstate', readSection);
+ }, [sections]);
+ const section=sections[current];
+ function select(i: number) {
+  const url = new URL(window.location.href);
+  url.searchParams.set('section', sections[i].id);
+  window.history.replaceState(window.history.state, '', url);
+  setCurrent(i);
+  window.scrollTo({top:0,behavior:'instant'});
+ }
  const blocks=section.blocks; const boardBlocks=blocks.filter(b=>b.type==='math'||b.type==='statement'||b.type==='heading'||(notes&&b.type==='cue'));
  function renderBlock(b:Block,i:number){
   if(b.type==='math')return <div key={i} className="equation" tabIndex={0} aria-label="数学公式，可横向滚动" dangerouslySetInnerHTML={{__html:b.html||''}}/>;
