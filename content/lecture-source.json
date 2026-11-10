@@ -6988,7 +6988,7 @@
       },
       {
         "type": "statement",
-        "text": "Lemma. For an s by n matrix A, one elementary row operation is left multiplication by the corresponding elementary matrix of order s. One elementary column operation is right multiplication by the corresponding elementary matrix of order n."
+        "text": "Lemma. Let A be an s by n matrix. Performing an elementary row operation on A is the same as multiplying A on the left by the corresponding elementary matrix of order s. Performing an elementary column operation on A is the same as multiplying A on the right by the corresponding elementary matrix of order n."
       },
       {
         "type": "math",
