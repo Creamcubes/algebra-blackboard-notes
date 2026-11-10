@@ -6644,7 +6644,7 @@
       },
       {
         "type": "text",
-        "text": "Fix row i and column j. To get this entry of A B, multiply across row i of A and down column j of B. Let t run over their shared index."
+        "text": "By the definition of matrix multiplication, we can get the equation below."
       },
       {
         "type": "math",
