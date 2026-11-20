@@ -9402,164 +9402,194 @@
     "blocks": [
       {
         "type": "text",
-        "text": "We begin with Theorem Eight. It gives five equivalent tests for positive semidefiniteness."
+        "text": "Let us state Theorem Eight, then prove the implications shown below."
       },
       {
         "type": "statement",
-        "text": "Theorem 8. Let f equal X transpose A X, where A is a real symmetric matrix of order n. The following five conditions are equivalent."
+        "text": "Theorem 8. For a real symmetric matrix A of order n, the following five conditions are equivalent."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A\\in\\mathbb R^{n\\times n},\\quad A^{\\mathsf T}=A,\\quad f(X)=X^{\\mathsf T}AX,\\quad r=\\operatorname{rank}A."
       },
       {
         "type": "statement",
-        "text": "1. The form f is positive semidefinite. 2. Its positive index of inertia p equals its rank r. 3. There is a real invertible matrix T such that T transpose A T is diagonal with nonnegative entries. 4. There is a real matrix C such that A equals C transpose C. 5. Every principal minor of A is nonnegative."
+        "text": "(1) The quadratic form is positive semidefinite."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{gathered}A\\in\\mathbb R^{n\\times n},\\quad A^{\\mathsf T}=A,\\quad f(X)=X^{\\mathsf T}AX,\\\\p=\\text{positive index of inertia},\\quad r=\\operatorname{rank}A.\\end{gathered}"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\begin{aligned}(1)\\quad &f(X)\\ge0\\quad(\\forall X\\in\\mathbb R^n).\\\\(2)\\quad &p=r.\\\\(3)\\quad &T^{\\mathsf T}AT=\\operatorname{diag}(d_1,\\ldots,d_n),\\\\&T\\in\\mathbb R^{n\\times n},\\quad\\det T\\ne0,\\quad d_i\\ge0.\\\\(4)\\quad &A=C^{\\mathsf T}C,\\quad C\\in\\mathbb R^{n\\times n}.\\\\(5)\\quad &\\det A[I,I]\\ge0\\\\&\\text{for every nonempty }I\\subseteq\\{1,\\ldots,n\\}.\\end{aligned}"
-      },
-      {
-        "type": "text",
-        "text": "A principal submatrix uses the same selected row indices and column indices. We denote it by A bracket I comma I. Its determinant is a principal minor. The selected indices may have gaps. In condition three, T must be invertible. In condition four, C may be singular."
-      },
-      {
-        "type": "cue",
-        "text": "A[I,I]读“the principal submatrix of A on the index set I”。I读“capital I”。p读“the positive index of inertia”，r读“the rank”。T表示合同变换，C表示平方分解中的矩阵。"
-      },
-      {
-        "type": "heading",
-        "text": "Supplementary proof of Theorem 8"
+        "latex": "f(X)=X^{\\mathsf T}AX\\ge0\\qquad\\text{for every }X\\in\\mathbb R^n."
       },
       {
         "type": "statement",
-        "text": "The textbook leaves this proof as an exercise. The following is a supplementary proof for the lecture."
-      },
-      {
-        "type": "heading",
-        "text": "Conditions 1 and 2"
-      },
-      {
-        "type": "text",
-        "text": "Use the real canonical form. Let q denote the negative index of inertia. An invertible real substitution takes f to p positive squares and q negative squares. Its rank is p plus q."
+        "text": "(2) The positive index of inertia equals the rank."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{gathered}X=UY,\\quad U\\in\\mathbb R^{n\\times n},\\quad\\det U\\ne0,\\\\q=\\text{negative index of inertia},\\qquad r=p+q,\\\\f(UY)=\\sum_{i=1}^{p}y_i^2-\\sum_{i=p+1}^{p+q}y_i^2.\\end{gathered}"
+        "latex": "p=r,\\qquad p=\\text{positive index of inertia}."
       },
       {
-        "type": "text",
-        "text": "If q is positive, set y sub p plus one equal to one and all other coordinates equal to zero. The value is minus one. The vector X equals U Y is a valid real vector, so f cannot be positive semidefinite."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "q>0:\\quad y_{p+1}=1,\\quad y_i=0\\ (i\\ne p+1)\\quad\\Longrightarrow\\quad f(UY)=-1<0."
-      },
-      {
-        "type": "text",
-        "text": "If q is zero, the canonical form is a sum of squares. For every X, the inverse substitution gives Y equals U inverse X. Hence f is nonnegative at every X. Therefore condition one is equivalent to q equals zero, which is equivalent to p equals r."
+        "type": "statement",
+        "text": "(3) An invertible real substitution gives a nonnegative diagonal form."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{gathered}q=0,\\quad Y=U^{-1}X\\quad\\Longrightarrow\\quad f(X)=\\sum_{i=1}^{p}y_i^2\\ge0,\\\\(1)\\ \\Longleftrightarrow\\ q=0\\ \\Longleftrightarrow\\ p=r\\ \\Longleftrightarrow\\ (2).\\end{gathered}"
+        "latex": "\\begin{gathered}T^{\\mathsf T}AT=D=\\begin{pmatrix}d_1&0&\\cdots&0\\\\0&d_2&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&d_n\\end{pmatrix},\\\\T\\in\\mathbb R^{n\\times n},\\quad\\det T\\ne0,\\quad d_1,\\ldots,d_n\\ge0.\\end{gathered}"
+      },
+      {
+        "type": "statement",
+        "text": "(4) A factors as C transpose C over the real numbers."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=C^{\\mathsf T}C,\\qquad C\\in\\mathbb R^{n\\times n}\\quad\\text{(possibly singular)}."
+      },
+      {
+        "type": "statement",
+        "text": "(5) Every principal minor is nonnegative."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\det A[I,I]\\ge0\\qquad\\bigl(\\varnothing\\ne I\\subseteq\\{1,\\ldots,n\\}\\bigr)."
+      },
+      {
+        "type": "text",
+        "text": "A bracket I comma I selects the same rows and columns, indexed by capital I. Its determinant is a principal minor. T is invertible, while C may be singular."
       },
       {
         "type": "cue",
-        "text": "指出可逆替换保证任意X都对应一个Y。p=0时平方和为空，取值为0。"
+        "text": "I读“capital I”，A[I,I]读“the principal submatrix of A on I”。(1)⇒(2)读“condition one implies condition two”；⇔读“is equivalent to”。"
       },
       {
         "type": "heading",
-        "text": "Conditions 1 and 3"
+        "text": "Proof route"
       },
       {
-        "type": "text",
-        "text": "Assume condition one. The canonical form just used has only positive squares and zero terms. Take its substitution matrix as T. This gives condition three, with diagonal entries equal to one or zero."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "(1)\\quad\\Longrightarrow\\quad T^{\\mathsf T}AT=\\operatorname{diag}(\\underbrace{1,\\ldots,1}_{p},\\underbrace{0,\\ldots,0}_{n-p})\\quad\\Longrightarrow\\quad(3)."
-      },
-      {
-        "type": "text",
-        "text": "Conversely, assume condition three. Take any real X and set Y equal to T inverse X. Substituting X equals T Y gives a sum of nonnegative multiples of squares."
+        "type": "statement",
+        "text": "Supplementary proof. The textbook leaves the proof as an exercise."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{aligned}X&=TY,\\quad Y=T^{-1}X,\\\\f(X)&=Y^{\\mathsf T}(T^{\\mathsf T}AT)Y=\\sum_{i=1}^{n}d_i y_i^2\\ge0.\\end{aligned}"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "(3)\\ \\Longrightarrow\\ (1)."
+        "latex": "\\begin{aligned}&(1)\\Longleftrightarrow(2),\\qquad(1)\\Longleftrightarrow(3),\\\\&(3)\\Longrightarrow(4)\\Longrightarrow(1),\\qquad(1)\\Longleftrightarrow(5).\\end{aligned}"
       },
       {
         "type": "heading",
-        "text": "Condition 3 implies condition 4"
+        "text": "Canonical form for (1) ⇔ (2)"
       },
       {
         "type": "text",
-        "text": "Assume condition three. Denote its diagonal matrix by D. Let S be diagonal with the nonnegative square roots of the entries of D. Then S transpose S equals D."
+        "text": "Use a real invertible substitution X equals U Y. Here I sub s denotes the identity matrix of order s. There are p positive squares and r minus p negative squares."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{gathered}T^{\\mathsf T}AT=D=\\operatorname{diag}(d_1,\\ldots,d_n),\\quad d_i\\ge0,\\\\S=\\operatorname{diag}(\\sqrt{d_1},\\ldots,\\sqrt{d_n}),\\qquad S^{\\mathsf T}S=D.\\end{gathered}"
-      },
-      {
-        "type": "text",
-        "text": "Multiply on the left by the transpose of T inverse and on the right by T inverse. Replace D by S transpose S. The transpose of a product reverses the order of its factors."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\begin{aligned}A&=(T^{-1})^{\\mathsf T}DT^{-1}\\\\&=(T^{-1})^{\\mathsf T}S^{\\mathsf T}ST^{-1}\\\\&=(ST^{-1})^{\\mathsf T}(ST^{-1}).\\end{aligned}"
-      },
-      {
-        "type": "text",
-        "text": "Choose C equal to S T inverse. This is a real matrix and gives condition four."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "C=ST^{-1}\\in\\mathbb R^{n\\times n},\\qquad A=C^{\\mathsf T}C."
+        "latex": "\\begin{gathered}X=UY,\\quad U\\in\\mathbb R^{n\\times n},\\quad\\det U\\ne0,\\\\U^{\\mathsf T}AU=\\begin{pmatrix}I_p&0&0\\\\0&-I_{r-p}&0\\\\0&0&0_{n-r}\\end{pmatrix},\\\\f(UY)=\\sum_{i=1}^{p}y_i^2-\\sum_{i=p+1}^{r}y_i^2.\\end{gathered}"
       },
       {
         "type": "cue",
-        "text": "S中的根号读“the nonnegative square root”。(T⁻¹)ᵀ读“the transpose of T inverse”。指向等式最后一行，说明C如何被构造出来。"
+        "text": "Iₛ为s阶单位矩阵，0ₙ₋ᵣ为相应阶零矩阵；大小为0的块省略，空的平方和为0。此处I带阶数下标，后面的集合I由花括号定义。"
       },
       {
         "type": "heading",
-        "text": "Condition 4 implies condition 1"
+        "text": "(1) ⇒ (2)"
       },
       {
         "type": "text",
-        "text": "Assume A equals C transpose C. For any real X, denote the entries of C X by u one through u n. The value of f is their sum of squares."
+        "text": "Assume f is nonnegative everywhere. If p is less than r, choose the coordinate vector shown here. Its value is minus one, a contradiction."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{gathered}CX=(u_1,\\ldots,u_n)^{\\mathsf T},\\\\f(X)=X^{\\mathsf T}C^{\\mathsf T}CX=(CX)^{\\mathsf T}(CX)=\\sum_{i=1}^{n}u_i^2\\ge0.\\end{gathered}"
+        "latex": "\\begin{gathered}p<r,\\quad Y=e_{p+1},\\quad y_{p+1}=1,\\quad y_i=0\\ (i\\ne p+1),\\\\X=Ue_{p+1}\\quad\\Longrightarrow\\quad f(X)=-1<0.\\\\\\therefore\\quad p=r.\\end{gathered}"
+      },
+      {
+        "type": "heading",
+        "text": "(2) ⇒ (1)"
       },
       {
         "type": "text",
-        "text": "This proves condition one. The argument also works for a rectangular real C with n columns, using one square for each row of C. Our construction above already provides a square C."
+        "text": "Assume p equals r. For any real X, set Y equal to U inverse X. Only positive squares remain."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "(1)\\Longleftrightarrow(2),\\qquad(1)\\Longleftrightarrow(3)\\Longrightarrow(4)\\Longrightarrow(1)."
+        "latex": "p=r,\\quad Y=U^{-1}X\\quad\\Longrightarrow\\quad f(X)=\\sum_{i=1}^{r}y_i^2\\ge0."
+      },
+      {
+        "type": "heading",
+        "text": "(1) ⇒ (3)"
       },
       {
         "type": "text",
-        "text": "The first four conditions are now equivalent. We next connect them to all principal minors."
+        "text": "By the direction just proved, p equals r. The same canonical form gives the required T."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "T=U,\\qquad T^{\\mathsf T}AT=\\begin{pmatrix}I_r&0\\\\0&0_{n-r}\\end{pmatrix}=\\operatorname{diag}(\\underbrace{1,\\ldots,1}_{r},\\underbrace{0,\\ldots,0}_{n-r})."
+      },
+      {
+        "type": "heading",
+        "text": "(3) ⇒ (1)"
+      },
+      {
+        "type": "text",
+        "text": "Assume condition three. For any X, use Y equals T inverse X and substitute."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}X&=TY,\\qquad T^{\\mathsf T}AT=D,\\\\f(X)&=Y^{\\mathsf T}DY=d_1y_1^2+\\cdots+d_ny_n^2\\ge0.\\end{aligned}"
+      },
+      {
+        "type": "heading",
+        "text": "(3) ⇒ (4)"
+      },
+      {
+        "type": "text",
+        "text": "Take nonnegative square roots of the entries of D. Write them on the diagonal of S."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "S=\\begin{pmatrix}\\sqrt{d_1}&0&\\cdots&0\\\\0&\\sqrt{d_2}&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&\\sqrt{d_n}\\end{pmatrix},\\qquad S^{\\mathsf T}S=D."
+      },
+      {
+        "type": "text",
+        "text": "Solve for A, then group the factors. Choose C as shown."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}A&=(T^{-1})^{\\mathsf T}DT^{-1}\\\\&=(T^{-1})^{\\mathsf T}S^{\\mathsf T}ST^{-1}\\\\&=(ST^{-1})^{\\mathsf T}(ST^{-1})=C^{\\mathsf T}C,\\\\C&=ST^{-1}.\\end{aligned}"
+      },
+      {
+        "type": "cue",
+        "text": "(T⁻¹)ᵀ读“the transpose of T inverse”。利用乘积转置逆序，把前两个因子合为(ST⁻¹)ᵀ。"
+      },
+      {
+        "type": "heading",
+        "text": "(4) ⇒ (1)"
+      },
+      {
+        "type": "text",
+        "text": "Assume A equals C transpose C. Let u one through u n be the entries of C X. Then f is a sum of real squares."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{gathered}CX=\\begin{pmatrix}u_1\\\\\\vdots\\\\u_n\\end{pmatrix},\\\\f(X)=X^{\\mathsf T}C^{\\mathsf T}CX=(CX)^{\\mathsf T}(CX)=\\sum_{i=1}^{n}u_i^2\\ge0.\\end{gathered}"
+      },
+      {
+        "type": "text",
+        "text": "The first four conditions are equivalent. On the next page, we prove one implies five and five implies one."
       }
     ]
   },
@@ -9571,16 +9601,12 @@
     "source": "§4 · p.156 · 补充证明",
     "blocks": [
       {
-        "type": "text",
-        "text": "We continue the supplementary proof of Theorem Eight. We will prove both directions involving condition five."
-      },
-      {
         "type": "heading",
-        "text": "Supplementary proof of conditions 1 and 5"
+        "text": "Supplementary proof of (1) ⇔ (5)"
       },
       {
         "type": "statement",
-        "text": "Assume A is real symmetric of order n. Then f(X) = X transpose A X is positive semidefinite if and only if every principal minor of A is nonnegative. The textbook leaves the proof as an exercise."
+        "text": "For real symmetric A, positive semidefiniteness is equivalent to nonnegative principal minors."
       },
       {
         "type": "math",
@@ -9588,56 +9614,55 @@
         "latex": "\\begin{gathered}A\\in\\mathbb R^{n\\times n},\\quad A^{\\mathsf T}=A,\\quad f(X)=X^{\\mathsf T}AX,\\\\(1)\\quad f(X)\\ge0\\quad(\\forall X\\in\\mathbb R^n),\\\\(5)\\quad\\det A[I,I]\\ge0\\quad(\\varnothing\\ne I\\subseteq\\{1,\\ldots,n\\}).\\end{gathered}"
       },
       {
+        "type": "text",
+        "text": "We continue the supplementary proof from the previous page. The first four conditions are already equivalent."
+      },
+      {
         "type": "heading",
-        "text": "Condition 1 implies condition 5"
+        "text": "(1) ⇒ (5)"
       },
       {
         "type": "text",
-        "text": "Assume f is positive semidefinite. Choose any nonempty index set I, listed in increasing order. Let M be the principal submatrix selected by I. We must prove that its determinant is nonnegative."
+        "text": "Assume f is positive semidefinite. Choose any principal submatrix M. We must show its determinant is nonnegative."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "I=\\{i_1<\\cdots<i_k\\}\\subseteq\\{1,\\ldots,n\\},\\qquad M=A[I,I]=(a_{ij})_{i,j\\in I}."
+        "latex": "I=\\{i_1<\\cdots<i_k\\}\\subseteq\\{1,\\ldots,n\\},\\quad k\\ge1,\\qquad M=A[I,I]."
       },
       {
         "type": "text",
-        "text": "Given any real vector V of length k, put its entries into the coordinates indexed by I. Set all other coordinates of X equal to zero. The value of f is then V transpose M V. It is nonnegative by condition one, so M defines a positive semidefinite form."
+        "text": "Place the coordinates of V in the selected positions of X, and put zeros elsewhere. This makes M positive semidefinite."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{gathered}V=(v_1,\\ldots,v_k)^{\\mathsf T},\\qquad x_{i_\\ell}=v_\\ell\\ (1\\le\\ell\\le k),\\quad x_j=0\\ (j\\notin I),\\\\V^{\\mathsf T}MV=X^{\\mathsf T}AX\\ge0\\quad(\\forall V\\in\\mathbb R^k).\\end{gathered}"
+        "latex": "\\begin{gathered}V=\\begin{pmatrix}v_1\\\\\\vdots\\\\v_k\\end{pmatrix}\\in\\mathbb R^k,\\qquad x_j=\\begin{cases}v_\\ell,&j=i_\\ell,\\\\0,&j\\notin I,\\end{cases}\\\\V^{\\mathsf T}MV=X^{\\mathsf T}AX\\ge0\\quad(\\forall V\\in\\mathbb R^k).\\end{gathered}"
       },
       {
         "type": "text",
-        "text": "By the equivalence of conditions one and three, choose a real invertible T that makes M diagonal with nonnegative entries. Take determinants on both sides. The factor given by T is a strictly positive square."
+        "text": "Apply (1) implies (3) to M. Taking determinants gives the desired inequality."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{gathered}T^{\\mathsf T}MT=\\operatorname{diag}(d_1,\\ldots,d_k),\\quad\\det T\\ne0,\\quad d_j\\ge0,\\\\(\\det T)^2\\det M=\\prod_{j=1}^{k}d_j\\ge0,\\\\\\det M=\\frac{\\prod_{j=1}^{k}d_j}{(\\det T)^2}\\ge0.\\end{gathered}"
+        "latex": "\\begin{gathered}T^{\\mathsf T}MT=\\begin{pmatrix}d_1&&0\\\\&\\ddots&\\\\0&&d_k\\end{pmatrix},\\quad\\det T\\ne0,\\quad d_j\\ge0,\\\\(\\det T)^2\\det M=\\prod_{j=1}^{k}d_j,\\\\\\det M=\\frac{\\prod_{j=1}^{k}d_j}{(\\det T)^2}\\ge0.\\end{gathered}"
       },
       {
         "type": "text",
-        "text": "The set I was arbitrary. Thus every principal minor of A is nonnegative."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "I\\text{ arbitrary}\\quad\\Longrightarrow\\quad(1)\\Longrightarrow(5)."
+        "text": "Since I was arbitrary, condition five follows."
       },
       {
         "type": "cue",
-        "text": "先写X中被选中的坐标，其余置零。此处T是针对M选出的k阶可逆矩阵。det M为主子式，M本身为主子矩阵。"
+        "text": "M为主子矩阵，det M为主子式；此处T是针对M选取的k阶可逆矩阵。"
       },
       {
         "type": "heading",
-        "text": "Condition 5 implies condition 1"
+        "text": "(5) ⇒ (1)"
       },
       {
         "type": "text",
-        "text": "Assume all principal minors of A are nonnegative. Our goal is to prove f is nonnegative at every real vector. We use induction on the order n."
+        "text": "Assume every principal minor of A is nonnegative. We prove f is nonnegative by induction on n."
       },
       {
         "type": "heading",
@@ -9650,107 +9675,90 @@
       },
       {
         "type": "statement",
-        "text": "Induction hypothesis. For every real symmetric matrix of order n minus one, nonnegative principal minors imply a positive semidefinite quadratic form."
+        "text": "Induction hypothesis. The result holds for every real symmetric matrix of order n minus one."
       },
       {
         "type": "text",
-        "text": "Now take n at least two and assume the induction hypothesis. Each diagonal entry of A is a principal minor of order one, so every diagonal entry is nonnegative."
+        "text": "Now let n be at least two. The principal minors of order one give the following inequalities."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "n\\ge2,\\qquad a_{ii}=\\det A[\\{i\\},\\{i\\}]\\ge0\\quad(1\\le i\\le n)."
+        "latex": "a_{ii}=\\det A[\\{i\\},\\{i\\}]\\ge0\\qquad(1\\le i\\le n)."
       },
       {
         "type": "heading",
-        "text": "Case 1. Every diagonal entry is zero"
+        "text": "All diagonal entries are zero"
       },
       {
         "type": "text",
-        "text": "Choose distinct indices i and j. The corresponding principal minor of order two is minus the square of a sub i j. It must be nonnegative. Hence that entry is zero."
+        "text": "For any distinct i and j, the principal minor of order two forces the corresponding entry to be zero."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{gathered}a_{ii}=0\\quad(1\\le i\\le n),\\\\\\det A[\\{i,j\\},\\{i,j\\}]=\\begin{vmatrix}0&a_{ij}\\\\a_{ij}&0\\end{vmatrix}=-a_{ij}^2\\ge0\\\\\\Longrightarrow\\quad a_{ij}=0\\quad(i\\ne j).\\end{gathered}"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "A=0\\quad\\Longrightarrow\\quad f(X)=0\\ge0."
-      },
-      {
-        "type": "text",
-        "text": "All entries are zero. This proves the result in the first case."
+        "latex": "\\begin{gathered}a_{11}=\\cdots=a_{nn}=0,\\\\\\begin{vmatrix}0&a_{ij}\\\\a_{ij}&0\\end{vmatrix}=-a_{ij}^2\\ge0\\quad\\Longrightarrow\\quad a_{ij}=0\\quad(i\\ne j),\\\\A=0\\quad\\Longrightarrow\\quad f(X)=0\\ge0.\\end{gathered}"
       },
       {
         "type": "heading",
-        "text": "Case 2. Some diagonal entry is positive"
+        "text": "A positive diagonal entry and completing the square"
       },
       {
         "type": "text",
-        "text": "Exchange the corresponding variable with the first variable. This exchanges the same rows and columns of A. It only relabels the principal submatrices. Within each determinant, the row and column permutations have the same sign, so their signs cancel. Thus every principal minor remains nonnegative. We may therefore assume a sub one one is positive."
+        "text": "Otherwise, exchange the same rows and columns to place a positive diagonal entry first. This relabels the principal submatrices and preserves their determinants."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{gathered}a_{jj}>0\\quad\\xrightarrow{\\ x_1\\leftrightarrow x_j\\ }\\quad a_{11}>0,\\\\\\text{simultaneous row and column permutation:}\\quad\\det M\\mapsto(\\operatorname{sgn}\\sigma)^2\\det M=\\det M.\\end{gathered}"
+        "latex": "a_{jj}>0\\quad\\xrightarrow{\\ x_1\\leftrightarrow x_j\\ }\\quad a_{11}>0,\\qquad\\det M\\mapsto(\\operatorname{sgn}\\sigma)^2\\det M=\\det M."
       },
       {
         "type": "text",
-        "text": "Write A in blocks. Let alpha be the column below its first diagonal entry. Let B contain rows and columns two through n. Write Z for the last n minus one coordinates of X."
+        "text": "Let alpha be the first column below a one one. Let B be the remaining principal block, and Z the remaining coordinates."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{gathered}A=\\begin{pmatrix}a_{11}&\\alpha^{\\mathsf T}\\\\\\alpha&B\\end{pmatrix},\\qquad a_{11}>0,\\\\\\alpha=\\begin{pmatrix}a_{21}\\\\\\vdots\\\\a_{n1}\\end{pmatrix},\\quad B=(a_{ij})_{i,j=2}^{n},\\\\X=\\begin{pmatrix}x_1\\\\Z\\end{pmatrix},\\qquad Z=(x_2,\\ldots,x_n)^{\\mathsf T}.\\end{gathered}"
+        "latex": "\\begin{gathered}A=\\begin{pmatrix}a_{11}&\\alpha^{\\mathsf T}\\\\\\alpha&B\\end{pmatrix},\\quad\\alpha=\\begin{pmatrix}a_{21}\\\\\\vdots\\\\a_{n1}\\end{pmatrix},\\quad B=(a_{ij})_{i,j=2}^{n},\\\\X=\\begin{pmatrix}x_1\\\\Z\\end{pmatrix},\\qquad Z=(x_2,\\ldots,x_n)^{\\mathsf T}.\\end{gathered}"
       },
       {
         "type": "text",
-        "text": "Expand the form and complete the square in x one. The product alpha transpose Z is a scalar. Its square is Z transpose alpha alpha transpose Z. Subtracting that extra term gives a smaller matrix, which we denote by H."
+        "text": "Complete the square in x one. Denote the remaining symmetric matrix by H."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{aligned}f(X)&=a_{11}x_1^2+2x_1\\alpha^{\\mathsf T}Z+Z^{\\mathsf T}BZ,\\\\(\\alpha^{\\mathsf T}Z)^2&=Z^{\\mathsf T}\\alpha\\alpha^{\\mathsf T}Z,\\\\H&=B-\\frac{\\alpha\\alpha^{\\mathsf T}}{a_{11}},\\\\f(X)&=a_{11}\\left(x_1+\\frac{\\alpha^{\\mathsf T}Z}{a_{11}}\\right)^2+Z^{\\mathsf T}HZ.\\end{aligned}"
+        "latex": "\\begin{aligned}f(X)&=a_{11}x_1^2+2x_1\\alpha^{\\mathsf T}Z+Z^{\\mathsf T}BZ\\\\&=a_{11}\\left(x_1+\\frac{\\alpha^{\\mathsf T}Z}{a_{11}}\\right)^2+Z^{\\mathsf T}HZ,\\\\H&=B-\\frac{\\alpha\\alpha^{\\mathsf T}}{a_{11}},\\qquad H^{\\mathsf T}=H.\\end{aligned}"
       },
       {
         "type": "statement",
-        "text": "To apply induction to H, we must prove that every principal minor of H is nonnegative."
+        "text": "To use induction, we must show that every principal minor of H is nonnegative."
       },
       {
         "type": "cue",
-        "text": "α读“alpha”。先配方得到H，再写出归纳所需目标。不要直接从A的主子式非负跳到H半正定。"
+        "text": "α读“alpha”。αᵀZ是一个数，其平方为ZᵀααᵀZ；这正是配方时补入又减去的项。"
       },
       {
         "type": "heading",
-        "text": "Choose an arbitrary principal submatrix of H"
-      },
-      {
-        "type": "text",
-        "text": "We keep the original row and column labels two through n for B and H. The entry of H with labels i and j is a sub i j minus a sub i one times a sub one j divided by a sub one one. Symmetry gives a sub one j equals a sub j one."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\begin{gathered}H=(h_{ij})_{i,j=2}^{n},\\qquad H^{\\mathsf T}=H,\\\\h_{ij}=a_{ij}-\\frac{a_{i1}a_{1j}}{a_{11}}=a_{ij}-\\frac{a_{i1}a_{j1}}{a_{11}}\\quad(2\\le i,j\\le n).\\end{gathered}"
-      },
-      {
-        "type": "text",
-        "text": "Let capital I denote any nonempty set of labels from two through n. List its elements in increasing order as i sub one through i sub k. Capital I denotes the whole set. Each i sub ell denotes one selected index. Select these same rows and columns of H, and call the resulting matrix H sub I."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\begin{gathered}\\varnothing\\ne I=\\{i_1<\\cdots<i_k\\}\\subseteq\\{2,\\ldots,n\\},\\qquad 1\\le k\\le n-1,\\\\H_I=(h_{ij})_{i,j\\in I}=\\begin{pmatrix}h_{i_1i_1}&\\cdots&h_{i_1i_k}\\\\\\vdots&\\ddots&\\vdots\\\\h_{i_ki_1}&\\cdots&h_{i_ki_k}\\end{pmatrix}.\\end{gathered}"
+        "text": "Choose a principal submatrix of H"
       },
       {
         "type": "statement",
-        "text": "H sub I is a principal submatrix of order k. Its determinant is the principal minor we must show is nonnegative."
+        "text": "B and H keep the original row and column labels 2 through n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "H=(h_{ij})_{i,j=2}^{n},\\qquad h_{ij}=a_{ij}-\\frac{a_{i1}a_{1j}}{a_{11}}=a_{ij}-\\frac{a_{i1}a_{j1}}{a_{11}}."
       },
       {
         "type": "text",
-        "text": "For example, if n is at least four and I contains two and four, take rows two and four and columns two and four."
+        "text": "Capital I is any nonempty set of selected labels, listed in increasing order. Select these same rows and columns of H."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{gathered}\\varnothing\\ne I=\\{i_1<\\cdots<i_k\\}\\subseteq\\{2,\\ldots,n\\},\\quad 1\\le k\\le n-1,\\\\H_I=(h_{ij})_{i,j\\in I}=\\begin{pmatrix}h_{i_1,i_1}&\\cdots&h_{i_1,i_k}\\\\\\vdots&\\ddots&\\vdots\\\\h_{i_k,i_1}&\\cdots&h_{i_k,i_k}\\end{pmatrix},\\\\\\text{principal submatrix: }H_I,\\qquad\\text{principal minor: }\\det H_I.\\end{gathered}"
       },
       {
         "type": "math",
@@ -9759,29 +9767,29 @@
       },
       {
         "type": "cue",
-        "text": "I读“capital I”，不是数字1；H_I读“H sub I”。i_ℓ读“i sub ell”。强调H仍沿用2,…,n这些原标签，因此I={2,4}取得的条目正是h₂₂、h₂₄、h₄₂、h₄₄。"
+        "text": "I读“capital I”，不是数字1；H_I读“H sub I”；i_ℓ读“i sub ell”。{2,4}只说明怎样选取行列，下面仍证明任意I的情形。"
       },
       {
         "type": "heading",
-        "text": "Add row and column 1 from A"
+        "text": "Include row and column 1 to form M"
       },
       {
         "type": "text",
-        "text": "Return to an arbitrary set I. In A, select the rows and columns whose labels are one together with the elements of I. Call this principal submatrix M. Define alpha sub I and B sub I by selecting the corresponding entries of alpha and B."
+        "text": "In A, select the indices one together with I. The resulting M is a principal submatrix, so its determinant is nonnegative."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{gathered}\\alpha_I=\\begin{pmatrix}a_{i_1,1}\\\\\\vdots\\\\a_{i_k,1}\\end{pmatrix},\\qquad B_I=(a_{ij})_{i,j\\in I},\\\\M=A[\\{1\\}\\cup I,\\{1\\}\\cup I]=\\begin{pmatrix}a_{11}&\\alpha_I^{\\mathsf T}\\\\\\alpha_I&B_I\\end{pmatrix}.\\end{gathered}"
+        "latex": "\\begin{gathered}\\alpha_I=\\begin{pmatrix}a_{i_1,1}\\\\\\vdots\\\\a_{i_k,1}\\end{pmatrix},\\quad B_I=(a_{ij})_{i,j\\in I},\\\\M=A[\\{1\\}\\cup I,\\{1\\}\\cup I]=\\begin{pmatrix}a_{11}&\\alpha_I^{\\mathsf T}\\\\\\alpha_I&B_I\\end{pmatrix},\\quad\\det M\\ge0.\\end{gathered}"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "M=\\begin{pmatrix}a_{11}&a_{1,i_1}&\\cdots&a_{1,i_k}\\\\a_{i_1,1}&a_{i_1,i_1}&\\cdots&a_{i_1,i_k}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\a_{i_k,1}&a_{i_k,i_1}&\\cdots&a_{i_k,i_k}\\end{pmatrix},\\qquad\\det M\\ge0."
+        "latex": "M=\\begin{pmatrix}a_{11}&a_{1,i_1}&\\cdots&a_{1,i_k}\\\\a_{i_1,1}&a_{i_1,i_1}&\\cdots&a_{i_1,i_k}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\a_{i_k,1}&a_{i_k,i_1}&\\cdots&a_{i_k,i_k}\\end{pmatrix}."
       },
       {
         "type": "text",
-        "text": "The last inequality follows from condition five because M is a principal submatrix of A. We add the first row and column because the entries of H sub I involve the original first row and column. Subtracting suitable multiples of the first row will produce exactly these correction terms."
+        "text": "The first row and column provide the entries needed to produce H sub I by row subtraction."
       },
       {
         "type": "math",
@@ -9790,73 +9798,47 @@
       },
       {
         "type": "cue",
-        "text": "a_{i_ℓ,1}读“a in row i sub ell, column one”。α_I读“alpha sub I”。{1}∪I读“one together with the indices in I”。指向M的第一行、第一列，说明它们将提供被减去的乘积。"
+        "text": "α_I读“alpha sub I”。a_{i_ℓ,1}读“a in row i sub ell, column one”。指出新增的第一行、第一列怎样提供被减去的乘积。"
       },
       {
         "type": "heading",
-        "text": "Perform the row operations inside M"
+        "text": "Subtract multiples of the first row"
       },
       {
         "type": "text",
-        "text": "Let R one denote the first row of M. For each ell from one through k, row ell plus one of M comes from row i sub ell of A. Subtract a sub i ell comma one divided by a sub one one times R one from that row. Keep R one fixed throughout."
+        "text": "Inside M, keep R one fixed. Row ell plus one comes from original row i sub ell. Apply the following operation for each ell."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{aligned}R_2&\\longleftarrow R_2-\\frac{a_{i_1,1}}{a_{11}}R_1,\\\\R_3&\\longleftarrow R_3-\\frac{a_{i_2,1}}{a_{11}}R_1,\\\\&\\ \\vdots\\\\R_{k+1}&\\longleftarrow R_{k+1}-\\frac{a_{i_k,1}}{a_{11}}R_1.\\end{aligned}"
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "R_{\\ell+1}\\longleftarrow R_{\\ell+1}-\\frac{a_{i_\\ell,1}}{a_{11}}R_1\\quad(\\ell=1,\\ldots,k),\\qquad R_1\\text{ fixed}."
-      },
-      {
-        "type": "cue",
-        "text": "逐行写通式；k=1时只有R₂这一步，k=2时只有前两步。R₁是M的第一行，R_{ℓ+1}是M内部的行号，它在A中的原标签是i_ℓ。"
+        "latex": "\\begin{gathered}R_{\\ell+1}\\longleftarrow R_{\\ell+1}-\\frac{a_{i_\\ell,1}}{a_{11}}R_1\\qquad(\\ell=1,\\ldots,k),\\\\R_1\\text{ fixed},\\qquad\\text{row }\\ell+1\\text{ of }M\\ \\leftrightarrow\\ \\text{row }i_\\ell\\text{ of }A.\\end{gathered}"
       },
       {
         "type": "text",
-        "text": "First look at the first column in row ell plus one. The subtraction makes its entry zero."
+        "text": "The first column becomes zero below a one one. Each entry in the lower right block becomes the matching entry of H."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "a_{i_\\ell,1}-\\frac{a_{i_\\ell,1}}{a_{11}}a_{11}=0\\qquad(1\\le\\ell\\le k)."
-      },
-      {
-        "type": "text",
-        "text": "Now look at column t plus one of M, for any t from one through k. It comes from column i sub t of A. The entry in row ell plus one becomes h sub i ell comma i t, by the definition of H."
+        "latex": "\\begin{aligned}\\text{first column:}\\quad&a_{i_\\ell,1}-\\frac{a_{i_\\ell,1}}{a_{11}}a_{11}=0,\\\\\\text{column }t+1:\\quad&a_{i_\\ell,i_t}-\\frac{a_{i_\\ell,1}}{a_{11}}a_{1,i_t}=h_{i_\\ell,i_t},\\\\&1\\le\\ell,t\\le k.\\end{aligned}"
       },
       {
         "type": "math",
         "text": "",
-        "latex": "a_{i_\\ell,i_t}-\\frac{a_{i_\\ell,1}}{a_{11}}a_{1,i_t}=h_{i_\\ell,i_t}\\qquad(1\\le\\ell,t\\le k)."
-      },
-      {
-        "type": "text",
-        "text": "Thus all entries below a sub one one in the first column are zero. The entire lower right block is H sub I. Denote the resulting matrix by M prime."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "\\begin{aligned}M'&=\\begin{pmatrix}a_{11}&a_{1,i_1}&\\cdots&a_{1,i_k}\\\\0&h_{i_1,i_1}&\\cdots&h_{i_1,i_k}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&h_{i_k,i_1}&\\cdots&h_{i_k,i_k}\\end{pmatrix}\\\\&=\\begin{pmatrix}a_{11}&\\alpha_I^{\\mathsf T}\\\\0&H_I\\end{pmatrix}.\\end{aligned}"
+        "latex": "M\\ \\longrightarrow\\ M'=\\begin{pmatrix}a_{11}&a_{1,i_1}&\\cdots&a_{1,i_k}\\\\0&h_{i_1,i_1}&\\cdots&h_{i_1,i_k}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&h_{i_k,i_1}&\\cdots&h_{i_k,i_k}\\end{pmatrix}=\\begin{pmatrix}a_{11}&\\alpha_I^{\\mathsf T}\\\\0&H_I\\end{pmatrix}."
       },
       {
         "type": "heading",
-        "text": "Expand the determinant along the first column"
+        "text": "Expand along the first column"
       },
       {
         "type": "text",
-        "text": "Adding a multiple of one row to another preserves the determinant. Hence M and M prime have the same determinant. Expand the determinant of M prime along its first column. Only the top entry contributes. Deleting its row and column leaves H sub I, and its cofactor sign is plus one."
+        "text": "Row addition preserves the determinant. In the first-column expansion of M prime, only a one one contributes. Its minor is the determinant of H sub I."
       },
       {
         "type": "math",
         "text": "",
         "latex": "\\begin{aligned}\\det M&=\\det M'\\\\&=a_{11}(-1)^{1+1}\\det H_I\\\\&=a_{11}\\det H_I.\\end{aligned}"
-      },
-      {
-        "type": "text",
-        "text": "We know the determinant of M is nonnegative and a sub one one is strictly positive. Divide by a sub one one to obtain a nonnegative determinant for H sub I."
       },
       {
         "type": "math",
@@ -9865,60 +9847,45 @@
       },
       {
         "type": "cue",
-        "text": "指向M′第一列，按第一列展开；余子式为det H_I，代数余子式符号为(−1)¹⁺¹=1。这里必须除以严格正的a₁₁。"
+        "text": "沿M′第一列展开，代数余子式的符号为(−1)¹⁺¹=1；再除以严格正的a₁₁。"
       },
       {
         "type": "heading",
-        "text": "Apply induction and return to f"
+        "text": "Apply induction to H"
       },
       {
         "type": "text",
-        "text": "The set I was arbitrary. Its size can be any number from one through n minus one. Therefore every principal minor of H, of every order, is nonnegative. H is real symmetric of order n minus one. The induction hypothesis now applies."
+        "text": "I was arbitrary, so all principal minors of H are nonnegative. H is real symmetric of order n minus one. Apply the induction hypothesis, then return to the completed square."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\begin{gathered}\\det H_I\\ge0\\quad(\\varnothing\\ne I\\subseteq\\{2,\\ldots,n\\}),\\\\H\\in\\mathbb R^{(n-1)\\times(n-1)},\\quad H^{\\mathsf T}=H,\\\\\\text{induction hypothesis}\\quad\\Longrightarrow\\quad Z^{\\mathsf T}HZ\\ge0\\quad(\\forall Z\\in\\mathbb R^{n-1}).\\end{gathered}"
+        "latex": "\\begin{gathered}\\det H_I\\ge0\\quad(\\varnothing\\ne I\\subseteq\\{2,\\ldots,n\\}),\\\\H\\in\\mathbb R^{(n-1)\\times(n-1)},\\quad H^{\\mathsf T}=H,\\\\\\text{induction}\\quad\\Longrightarrow\\quad Z^{\\mathsf T}HZ\\ge0\\quad(\\forall Z\\in\\mathbb R^{n-1}),\\\\f(X)=\\underbrace{a_{11}\\left(x_1+\\frac{\\alpha^{\\mathsf T}Z}{a_{11}}\\right)^2}_{\\ge0}+\\underbrace{Z^{\\mathsf T}HZ}_{\\ge0}\\ge0.\\end{gathered}"
       },
       {
         "type": "text",
-        "text": "Return to the completed square. The first term is a positive coefficient times a square. The second term is nonnegative by induction. Their sum is nonnegative for every X."
+        "text": "This proves (5) implies (1), and completes all five equivalences."
       },
       {
-        "type": "math",
-        "text": "",
-        "latex": "f(X)=\\underbrace{a_{11}\\left(x_1+\\frac{\\alpha^{\\mathsf T}Z}{a_{11}}\\right)^2}_{\\ge0}+\\underbrace{Z^{\\mathsf T}HZ}_{\\ge0}\\ge0\\qquad(\\forall X\\in\\mathbb R^n)."
-      },
-      {
-        "type": "text",
-        "text": "This proves condition five implies condition one. Together with the previous implications, it completes the supplementary proof of Theorem Eight."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "(1)\\Longleftrightarrow(2),\\qquad(1)\\Longleftrightarrow(3)\\Longrightarrow(4)\\Longrightarrow(1),\\qquad(1)\\Longleftrightarrow(5)."
+        "type": "heading",
+        "text": "Why leading principal minors are insufficient"
       },
       {
         "type": "statement",
-        "text": "Warning. Nonnegative leading principal minors alone do not imply positive semidefiniteness."
+        "text": "Nonnegative leading principal minors alone do not imply positive semidefiniteness."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "f(x_1,x_2)=-x_2^2,\\qquad A=\\begin{pmatrix}0&0\\\\0&-1\\end{pmatrix},\\qquad H_1=0,\\quad H_2=0."
+        "latex": "\\begin{gathered}A=\\begin{pmatrix}0&0\\\\0&-1\\end{pmatrix},\\qquad f(x_1,x_2)=-x_2^2,\\\\H_1=0,\\quad H_2=0,\\qquad f(0,1)=-1<0,\\\\\\det A[\\{2\\},\\{2\\}]=-1<0.\\end{gathered}"
       },
       {
         "type": "text",
-        "text": "Both leading principal minors are zero, but f at zero comma one equals minus one. The other principal minor of order one is minus one. This is why condition five requires all principal minors."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "f(0,1)=-1<0,\\qquad\\det A[\\{2\\},\\{2\\}]=-1<0."
+        "text": "Both leading principal minors are zero. The other principal minor of order one is negative, so condition five fails."
       },
       {
         "type": "cue",
-        "text": "最后反例来自正文。顺序主子式H₁、H₂是两个数，与证明中临时记作H的矩阵区分开。指出必须检查所有主子式。"
+        "text": "反例来自正文。这里H₁、H₂表示顺序主子式；前面暂记作H的是归纳中的矩阵。"
       }
     ]
   },
