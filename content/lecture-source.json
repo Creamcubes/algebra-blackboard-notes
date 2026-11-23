@@ -11220,5 +11220,1602 @@
         "text": "ℂ读 the complex numbers，ℝ读 the real numbers；dim下标说明标量域。这里i读 i，表示虚数单位。下一节从教材第170页“基变换与坐标变换”开始。"
       }
     ]
+  },
+  {
+    "id": "transition-matrix",
+    "title": "The transition matrix",
+    "zh": "过渡矩阵：列的含义与可逆性",
+    "chapter": 6,
+    "source": "§4 · pp.170–171",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now study how coordinates change when we change the basis. Let epsilon one through epsilon n and epsilon one prime through epsilon n prime be two bases of the same n-dimensional space V over P. First express each new basis vector in the old basis."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. The transition matrix from the basis epsilon one through epsilon n to the basis epsilon one prime through epsilon n prime is the matrix whose j-th column consists of the coordinates of epsilon j prime in the first basis."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}\\varepsilon'_1=a_{11}\\varepsilon_1+a_{21}\\varepsilon_2+\\cdots+a_{n1}\\varepsilon_n,\\\\\\varepsilon'_2=a_{12}\\varepsilon_1+a_{22}\\varepsilon_2+\\cdots+a_{n2}\\varepsilon_n,\\\\\\hspace{25mm}\\vdots\\\\\\varepsilon'_n=a_{1n}\\varepsilon_1+a_{2n}\\varepsilon_2+\\cdots+a_{nn}\\varepsilon_n.\\end{cases}"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A=\\begin{pmatrix}a_{11}&a_{12}&\\cdots&a_{1n}\\\\a_{21}&a_{22}&\\cdots&a_{2n}\\\\\\vdots&\\vdots&&\\vdots\\\\a_{n1}&a_{n2}&\\cdots&a_{nn}\\end{pmatrix},\\qquad (\\varepsilon'_1,\\ldots,\\varepsilon'_n)=(\\varepsilon_1,\\ldots,\\varepsilon_n)A."
+      },
+      {
+        "type": "text",
+        "text": "In a sub i j, the first index gives the old basis vector and the second gives the new basis vector. We read epsilon j prime equals the sum, from i equals one to n, of a sub i j times epsilon i."
+      },
+      {
+        "type": "statement",
+        "text": "Property. The transition matrix between two bases is invertible."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "We know that both lists are bases. To prove invertibility, it is enough to show that A times a column C equals zero only when C is zero. Let the entries of C be c one through c n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "AC=0\\ \\Longrightarrow\\ \\sum_{j=1}^{n}c_j\\varepsilon'_j=\\sum_{i=1}^{n}\\left(\\sum_{j=1}^{n}a_{ij}c_j\\right)\\varepsilon_i=0."
+      },
+      {
+        "type": "text",
+        "text": "The inner sums are the entries of A C, so they vanish. Independence of the primed basis now gives c one through c n all equal to zero. Thus A is invertible."
+      },
+      {
+        "type": "cue",
+        "text": "先逐列写出新基在旧基下的坐标，再写矩阵。ε读 epsilon；ε′读 epsilon prime。这里的基行是形式记号，其元素是向量，不是数。可逆性的验算是教材要求读者直接验证的一步。"
+      }
+    ]
+  },
+  {
+    "id": "basis-row-calculation",
+    "title": "Calculation with a row of vectors",
+    "zh": "基行形式记号的三条运算规则",
+    "chapter": 6,
+    "source": "§4 · pp.170–171",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Before using the matrix notation, let us explain what it means. A row of vectors times a scalar column means a linear combination."
+      },
+      {
+        "type": "statement",
+        "text": "Convention. A row of vectors multiplied by a scalar matrix denotes the row of linear combinations formed from the columns of that matrix."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\xi=(\\varepsilon_1,\\ldots,\\varepsilon_n)\\begin{pmatrix}x_1\\\\\\vdots\\\\x_n\\end{pmatrix}=x_1\\varepsilon_1+\\cdots+x_n\\varepsilon_n."
+      },
+      {
+        "type": "text",
+        "text": "Let A and B be n by n matrices over P. Let alpha one through alpha n and beta one through beta n be vectors in V. The following three rules justify the formal calculation."
+      },
+      {
+        "type": "statement",
+        "text": "Rules. Multiplication of a vector row by scalar matrices is associative. It distributes over addition of scalar matrices and over addition of vector rows."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\big((\\alpha_1,\\ldots,\\alpha_n)A\\big)B=(\\alpha_1,\\ldots,\\alpha_n)(AB),"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(\\alpha_1,\\ldots,\\alpha_n)A+(\\alpha_1,\\ldots,\\alpha_n)B=(\\alpha_1,\\ldots,\\alpha_n)(A+B),"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(\\alpha_1,\\ldots,\\alpha_n)A+(\\beta_1,\\ldots,\\beta_n)A=(\\alpha_1+\\beta_1,\\ldots,\\alpha_n+\\beta_n)A."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "We check the j-th vector on each side. For the first rule, distribute the scalar products and collect the coefficient of each alpha i."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{k=1}^{n}b_{kj}\\left(\\sum_{i=1}^{n}a_{ik}\\alpha_i\\right)=\\sum_{i=1}^{n}\\left(\\sum_{k=1}^{n}a_{ik}b_{kj}\\right)\\alpha_i."
+      },
+      {
+        "type": "text",
+        "text": "The coefficient in parentheses is the i j entry of A B. For the second rule, add the coefficients of the same alpha i. For the third, distribute each coefficient over alpha i plus beta i."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_i a_{ij}\\alpha_i+\\sum_i b_{ij}\\alpha_i=\\sum_i(a_{ij}+b_{ij})\\alpha_i,\\qquad \\sum_i a_{ij}\\alpha_i+\\sum_i a_{ij}\\beta_i=\\sum_i a_{ij}(\\alpha_i+\\beta_i)."
+      },
+      {
+        "type": "text",
+        "text": "Thus each component agrees, which proves all three rules."
+      },
+      {
+        "type": "cue",
+        "text": "教材将这三条验算留给读者，这里补足。双重求和读“the sum over k of ...”，接着说明收集每个 alpha i 的系数；不必反复读完整长式。"
+      }
+    ]
+  },
+  {
+    "id": "coordinate-change-formula",
+    "title": "The coordinate transformation formula",
+    "zh": "坐标变换公式：X = AX′",
+    "chapter": 6,
+    "source": "§4 · p.171",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Let xi be a fixed vector. Its coordinates change with the basis, although the vector itself does not change."
+      },
+      {
+        "type": "statement",
+        "text": "Coordinate transformation formula. If A is the transition matrix from the old basis to the new basis, and X and X prime are the coordinate columns of the same vector in these bases, respectively, then X equals A X prime, and X prime equals A inverse X."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "X=\\begin{pmatrix}x_1\\\\\\vdots\\\\x_n\\end{pmatrix},\\quad X'=\\begin{pmatrix}x'_1\\\\\\vdots\\\\x'_n\\end{pmatrix},\\qquad X=AX',\\qquad X'=A^{-1}X."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "We are given the two coordinate expressions of xi. We must compare their coefficients in one and the same basis. Substitute the expression of the primed basis into the second expression."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\\xi&=(\\varepsilon_1,\\ldots,\\varepsilon_n)X\\\\&=(\\varepsilon'_1,\\ldots,\\varepsilon'_n)X'\\\\&=\\big((\\varepsilon_1,\\ldots,\\varepsilon_n)A\\big)X'\\\\&=(\\varepsilon_1,\\ldots,\\varepsilon_n)(AX').\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "Coordinates in the old basis are unique, so the columns X and A X prime are equal. Multiplying on the left by A inverse gives the second formula."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "x_i=a_{i1}x'_1+a_{i2}x'_2+\\cdots+a_{in}x'_n,\\qquad i=1,\\ldots,n."
+      },
+      {
+        "type": "cue",
+        "text": "ξ读 xi。先标明 X 是旧坐标、X′是新坐标，再写公式。A的列是新基的旧坐标，所以旧坐标等于A乘新坐标；不要写反方向。"
+      }
+    ]
+  },
+  {
+    "id": "coordinate-change-example",
+    "title": "A triangular transition matrix",
+    "zh": "正文例：阶梯形基与差分坐标",
+    "chapter": 6,
+    "source": "§4 · pp.171–172",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Let us return to the two bases of P to the n from the previous section. The old basis is the standard basis. The j-th new vector has zeros before position j and ones from position j to n."
+      },
+      {
+        "type": "statement",
+        "text": "Example. For the staircase basis of P to the n, the transition matrix has ones on and below the diagonal. The new coordinates are the first old coordinate followed by successive differences of old coordinates."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\varepsilon'_j=\\varepsilon_j+\\varepsilon_{j+1}+\\cdots+\\varepsilon_n,\\qquad A=\\begin{pmatrix}1&0&\\cdots&0\\\\1&1&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\1&1&\\cdots&1\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "This matrix is triangular with diagonal entries one, so it is invertible. The equation X equals A X prime says that each old coordinate is a partial sum of the new coordinates."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "x_1=x'_1,\\quad x_2=x'_1+x'_2,\\quad\\ldots,\\quad x_n=x'_1+x'_2+\\cdots+x'_n."
+      },
+      {
+        "type": "text",
+        "text": "Subtract each equation from the next one. This gives the inverse matrix and the new coordinates."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A^{-1}=\\begin{pmatrix}1&0&0&\\cdots&0\\\\-1&1&0&\\cdots&0\\\\0&-1&1&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\ddots&\\vdots\\\\0&0&\\cdots&-1&1\\end{pmatrix},\\qquad x'_1=x_1,\\quad x'_i=x_i-x_{i-1}\\ (2\\le i\\le n)."
+      },
+      {
+        "type": "text",
+        "text": "Multiplying by this inverse takes successive differences. Multiplying by A takes partial sums, so the two operations undo each other. This also verifies the inverse directly."
+      },
+      {
+        "type": "cue",
+        "text": "指向下三角全1矩阵说“ones on and below the diagonal”。x′ᵢ读 x i prime；xᵢ₋₁读 x sub i minus one。"
+      }
+    ]
+  },
+  {
+    "id": "subspace-definition-test",
+    "title": "Subspaces and the closure test",
+    "zh": "定义7与定理2：子空间的判别",
+    "chapter": 6,
+    "source": "§5 · pp.172–173",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, we define a subspace. We keep the same scalar field and the same two operations as in the original space."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 7. A nonempty subset W of a linear space V over P is a linear subspace of V if W, with the addition and scalar multiplication inherited from V, is itself a linear space over P."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\varnothing\\ne W\\subseteq V."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 2. A nonempty subset W of V is a subspace if it is closed under addition and scalar multiplication."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha,\\beta\\in W\\Longrightarrow\\alpha+\\beta\\in W,\\qquad k\\in P,\\ \\alpha\\in W\\Longrightarrow k\\alpha\\in W."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Assume W is nonempty and satisfies the two closure conditions. We must verify the eight linear-space axioms in W. The six identities involving addition and scalar multiplication already hold in V, so they hold for vectors of W. We still need a zero vector and additive inverses inside W."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha\\in W\\Longrightarrow 0\\alpha=0\\in W,\\qquad \\beta\\in W\\Longrightarrow(-1)\\beta=-\\beta\\in W."
+      },
+      {
+        "type": "text",
+        "text": "Nonemptiness lets us choose alpha for the first step. Scalar closure puts the zero vector and every additive inverse in W. Thus all eight axioms hold. Conversely, every subspace is closed under its two operations by definition."
+      },
+      {
+        "type": "statement",
+        "text": "Dimension bound. Every subspace W of a finite-dimensional space V has dimension at most the dimension of V."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\dim W\\le\\dim V."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "An independent list in W is also an independent list in V, because the operations and scalars are unchanged. Its length cannot exceed the dimension of V. This proves the bound."
+      },
+      {
+        "type": "cue",
+        "text": "W ⊆ V读“W is a subset of V”；dim W读“the dimension of W”。非空条件不能省略：空集虽满足封闭条件的形式，却不是线性空间。"
+      }
+    ]
+  },
+  {
+    "id": "subspace-examples",
+    "title": "Examples of subspaces",
+    "zh": "正文例1—5：零空间、多项式与解空间",
+    "chapter": 6,
+    "source": "§5 · p.173",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Let us apply the closure test to the examples in the textbook."
+      },
+      {
+        "type": "statement",
+        "text": "Examples 1 and 2. The set containing only the zero vector and the whole space V are subspaces of V. They are called the trivial subspaces; all other subspaces are nontrivial."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\{0\\}\\subseteq V,\\qquad 0+0=0,\\quad k0=0,\\qquad \\dim\\{0\\}=0."
+      },
+      {
+        "type": "text",
+        "text": "The zero subset is closed by the displayed identities. V is closed by the linear-space definition. The zero space has the empty basis: it contains no independent nonempty list, and the empty linear combination gives zero."
+      },
+      {
+        "type": "statement",
+        "text": "Examples 3 and 4. The real polynomial functions form a subspace of the space of all real-valued functions on the real line. Also, P of x sub n is a subspace of P of x."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\mathbb R[x]\\subseteq\\{f:\\mathbb R\\to\\mathbb R\\},\\qquad P[x]_n=\\{0\\}\\cup\\{f\\in P[x]:\\deg f<n\\}\\subseteq P[x]."
+      },
+      {
+        "type": "text",
+        "text": "All operations are pointwise for functions and the usual operations for polynomials. The zero polynomial belongs to each set. Sums and scalar multiples of polynomials are polynomials. For the bounded-degree space, no term of degree n or higher can appear under either operation."
+      },
+      {
+        "type": "statement",
+        "text": "Example 5. The solutions of a homogeneous linear system in n unknowns form a subspace of P to the n, called its solution space. A fundamental system of solutions is a basis of this subspace. If the coefficient matrix has rank r, the dimension is n minus r."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{cases}a_{11}x_1+\\cdots+a_{1n}x_n=0,\\\\\\hspace{20mm}\\vdots\\\\a_{m1}x_1+\\cdots+a_{mn}x_n=0,\\end{cases}\\qquad W=\\{X\\in P^n:AX=0\\}."
+      },
+      {
+        "type": "text",
+        "text": "The zero column is a solution. To check closure, let X and Y be solutions and let k belong to P."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "A(X+Y)=AX+AY=0,\\qquad A(kX)=kAX=0."
+      },
+      {
+        "type": "text",
+        "text": "Thus W is a subspace. By the theorem on homogeneous systems, a fundamental system is independent, spans all solutions, and has n minus r vectors. Hence it is a basis of W and gives the dimension."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\dim W=n-\\operatorname{rank}A=n-r."
+      },
+      {
+        "type": "cue",
+        "text": "这里沿用第三章基础解系定理，不另换证明。P[x]ₙ包括零多项式且次数严格小于n；不是次数恰为n的多项式集合。"
+      }
+    ]
+  },
+  {
+    "id": "generated-subspace",
+    "title": "The subspace generated by vectors",
+    "zh": "生成子空间及最小性",
+    "chapter": 6,
+    "source": "§5 · p.173",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now form a subspace from any finite list of vectors alpha one through alpha r."
+      },
+      {
+        "type": "statement",
+        "text": "Definition. The subspace generated by alpha one through alpha r is the set of all their linear combinations, with coefficients in P. We denote it by L of alpha one through alpha r."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "L(\\alpha_1,\\ldots,\\alpha_r)=\\{k_1\\alpha_1+\\cdots+k_r\\alpha_r:k_1,\\ldots,k_r\\in P\\}."
+      },
+      {
+        "type": "statement",
+        "text": "Property. This set is a subspace. It is contained in every subspace that contains all the generating vectors."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Set all coefficients to zero to get the zero vector. For closure, write two vectors using coefficients k i and l i, and let c be any scalar."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{i=1}^{r}k_i\\alpha_i+\\sum_{i=1}^{r}l_i\\alpha_i=\\sum_{i=1}^{r}(k_i+l_i)\\alpha_i,\\qquad c\\sum_{i=1}^{r}k_i\\alpha_i=\\sum_{i=1}^{r}(ck_i)\\alpha_i."
+      },
+      {
+        "type": "text",
+        "text": "Both results have the required form, so the closure test applies. If a subspace U contains every alpha i, scalar closure puts every k i alpha i in U, and repeated addition puts their sum in U. Therefore L is contained in U."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_1,\\ldots,\\alpha_r\\in U\\ \\Longrightarrow\\ L(\\alpha_1,\\ldots,\\alpha_r)\\subseteq U."
+      },
+      {
+        "type": "statement",
+        "text": "Property. Every subspace W of a finite-dimensional space is generated by any basis of W."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_1,\\ldots,\\alpha_r\\text{ a basis of }W\\quad\\Longrightarrow\\quad W=L(\\alpha_1,\\ldots,\\alpha_r)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Each vector of W is a linear combination of the basis, giving one inclusion. Every such combination belongs to W because W is a subspace, giving the reverse inclusion. For the zero space, the empty generating list generates just zero."
+      },
+      {
+        "type": "cue",
+        "text": "L(α₁,…,αᵣ)读“L of alpha one through alpha r”，也可说“the subspace generated by alpha one through alpha r”。"
+      }
+    ]
+  },
+  {
+    "id": "span-equality-dimension",
+    "title": "Equal spans and the dimension of a span",
+    "zh": "定理3：等价向量组与生成空间的维数",
+    "chapter": 6,
+    "source": "§5 · pp.173–174",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "The next theorem links generated subspaces to the earlier notions of equivalent lists and rank."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 3, part 1. Two finite lists of vectors generate the same subspace if and only if the two lists are equivalent, meaning that each list can be expressed linearly by the other."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "L(\\alpha_1,\\ldots,\\alpha_r)=L(\\beta_1,\\ldots,\\beta_s)\\quad\\Longleftrightarrow\\quad(\\alpha_1,\\ldots,\\alpha_r)\\text{ and }(\\beta_1,\\ldots,\\beta_s)\\text{ are equivalent}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Suppose the two generated subspaces are equal. Each alpha i lies in the span of the beta vectors, so it is a linear combination of them. Each beta j lies in the span of the alpha vectors, giving the reverse expressions. Thus the lists are equivalent."
+      },
+      {
+        "type": "text",
+        "text": "Conversely, suppose the lists are equivalent. Substitute the beta expressions for the alpha vectors in any linear combination of the alpha vectors. The result is a linear combination of the beta vectors. This gives one inclusion. Substituting in the reverse direction gives the other inclusion, so the subspaces are equal."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 3, part 2. The dimension of a generated subspace equals the rank of its generating list."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\dim L(\\alpha_1,\\ldots,\\alpha_r)=\\operatorname{rank}(\\alpha_1,\\ldots,\\alpha_r)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Let the rank be s. If s is zero, every generator is zero and the span has dimension zero. Otherwise choose a maximal independent sublist. Relabel it as alpha one through alpha s. This sublist is equivalent to the whole list, so part 1 gives equal spans."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "L(\\alpha_1,\\ldots,\\alpha_r)=L(\\alpha_1,\\ldots,\\alpha_s)."
+      },
+      {
+        "type": "text",
+        "text": "The shorter list is independent and spans this space. By Theorem 1 it is a basis, so the dimension is s."
+      },
+      {
+        "type": "cue",
+        "text": "先说明 maximal independent sublist 是极大线性无关组；rank 是其向量数。两边包含分别说明，不能把“等价”误解为逐个向量相等。"
+      }
+    ]
+  },
+  {
+    "id": "basis-extension",
+    "title": "Extending a basis of a subspace",
+    "zh": "定理4：子空间的基扩充为全空间的基",
+    "chapter": 6,
+    "source": "§5 · p.174",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "A basis of a subspace can be kept as the first part of a basis of the whole space."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 4. Let W be an m-dimensional subspace of an n-dimensional space V over P. Every basis alpha one through alpha m of W can be extended by n minus m vectors of V to a basis of V."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(\\alpha_1,\\ldots,\\alpha_m)\\quad\\longrightarrow\\quad(\\alpha_1,\\ldots,\\alpha_m,\\alpha_{m+1},\\ldots,\\alpha_n)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "We are given a basis of W and must add vectors without changing the given ones. Follow the textbook and use induction on the dimension difference n minus m. If the difference is zero, the given n independent vectors already form a basis of V."
+      },
+      {
+        "type": "text",
+        "text": "Assume the result holds when the dimension difference is k. Consider a difference of k plus one. Since m is less than n, the current independent list cannot span V: otherwise Theorem 1 would make the dimension of V equal to m. Choose alpha m plus one outside its span."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_{m+1}\\notin L(\\alpha_1,\\ldots,\\alpha_m)."
+      },
+      {
+        "type": "text",
+        "text": "The enlarged list is independent. Indeed, in a zero linear combination a nonzero coefficient of the added vector would express it by the old list. That coefficient must therefore be zero, and independence of the old list makes all the remaining coefficients zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\dim L(\\alpha_1,\\ldots,\\alpha_m,\\alpha_{m+1})=m+1,\\qquad n-(m+1)=k."
+      },
+      {
+        "type": "text",
+        "text": "Apply the induction hypothesis to this new subspace and its displayed basis. It extends to a basis of V, and it still contains all the original basis vectors. The induction is complete."
+      },
+      {
+        "type": "cue",
+        "text": "n−m读“n minus m”；αₘ₊₁读“alpha sub m plus one”。按教材对维数差归纳，不把“可以一直添加”当作完整证明。"
+      }
+    ]
+  },
+  {
+    "id": "subspace-intersection",
+    "title": "Intersections of subspaces",
+    "zh": "定理5：子空间的交及运算律",
+    "chapter": 6,
+    "source": "§6 · p.174",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We now introduce two operations on subspaces: intersection and sum. We begin with intersection."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 5. If V one and V two are subspaces of V, their intersection is also a subspace of V."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "V_1\\cap V_2=\\{\\alpha:\\alpha\\in V_1\\text{ and }\\alpha\\in V_2\\}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "We must prove nonemptiness and closure. Both subspaces contain zero, so their intersection contains zero. If alpha and beta belong to the intersection, both belong to each of the two subspaces."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "0\\in V_1\\cap V_2,\\qquad\\alpha+\\beta\\in V_1\\text{ and }\\alpha+\\beta\\in V_2,\\qquad k\\alpha\\in V_1\\text{ and }k\\alpha\\in V_2."
+      },
+      {
+        "type": "text",
+        "text": "Thus the sum and every scalar multiple belong to the intersection. The closure test proves the theorem."
+      },
+      {
+        "type": "statement",
+        "text": "Intersection laws. Intersection of subspaces is commutative and associative. The intersection of finitely many subspaces is a subspace."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "V_1\\cap V_2=V_2\\cap V_1,\\qquad(V_1\\cap V_2)\\cap V_3=V_1\\cap(V_2\\cap V_3),\\qquad\\bigcap_{i=1}^{s}V_i=V_1\\cap\\cdots\\cap V_s."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Commutativity says that the order of the two subspaces does not change their intersection: membership means belonging to both. Associativity says that the grouping of three intersections does not change the set: either grouping means belonging to all three. Repeated application of Theorem 5 proves the finite-intersection assertion."
+      },
+      {
+        "type": "cue",
+        "text": "∩读“intersection”；大交号读“the intersection of V i, from i equals one to s”。交集必须同时满足各子空间条件。"
+      }
+    ]
+  },
+  {
+    "id": "subspace-sum",
+    "title": "Sums of subspaces",
+    "zh": "定义8与定理6：子空间的和",
+    "chapter": 6,
+    "source": "§6 · p.175",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Next, we define the sum of two subspaces. We select one vector from each subspace and add them."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 8. The sum of subspaces V one and V two is the set of all vectors alpha one plus alpha two, where alpha one belongs to V one and alpha two belongs to V two."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "V_1+V_2=\\{\\alpha_1+\\alpha_2:\\alpha_1\\in V_1,\\ \\alpha_2\\in V_2\\}."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 6. The sum of two subspaces of V is a subspace of V."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The sum contains zero plus zero, so it is nonempty. To prove closure, take alpha and beta in the sum and write their decompositions."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha=\\alpha_1+\\alpha_2,\\quad\\beta=\\beta_1+\\beta_2,\\qquad\\alpha_i,\\beta_i\\in V_i\\ (i=1,2)."
+      },
+      {
+        "type": "text",
+        "text": "Regroup the terms according to their subspaces. Each grouped term stays in its own subspace."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha+\\beta=(\\alpha_1+\\beta_1)+(\\alpha_2+\\beta_2)\\in V_1+V_2,\\qquad k\\alpha=k\\alpha_1+k\\alpha_2\\in V_1+V_2."
+      },
+      {
+        "type": "text",
+        "text": "The closure test now proves the theorem."
+      },
+      {
+        "type": "statement",
+        "text": "Sum laws. The sum of subspaces is commutative and associative. The sum of finitely many subspaces consists of all sums with one vector from each subspace, and is itself a subspace."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "V_1+V_2=V_2+V_1,\\qquad(V_1+V_2)+V_3=V_1+(V_2+V_3),"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{i=1}^{s}V_i=V_1+\\cdots+V_s=\\{\\alpha_1+\\cdots+\\alpha_s:\\alpha_i\\in V_i\\}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "For commutativity, interchange the two summands of each vector. For associativity, both sides contain exactly the vectors alpha one plus alpha two plus alpha three with alpha i in V i; vector addition allows either grouping. Repeating Theorem 6 gives the subspace result for any finite number of terms."
+      },
+      {
+        "type": "cue",
+        "text": "V₁+V₂读“V one plus V two”，这里是子空间的和；大求和号读“the sum of V i, from i equals one to s”。目前分解不保证唯一。"
+      }
+    ]
+  },
+  {
+    "id": "intersection-sum-containment",
+    "title": "Containment, intersection, and sum",
+    "zh": "交与和的包含关系及三条件等价",
+    "chapter": 6,
+    "source": "§6 · p.175",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "The following properties explain how intersection and sum behave under containment."
+      },
+      {
+        "type": "statement",
+        "text": "Property 1. A subspace contained in both V one and V two is contained in their intersection. A subspace containing both V one and V two contains their sum."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "W\\subseteq V_1,\\ W\\subseteq V_2\\Longrightarrow W\\subseteq V_1\\cap V_2,\\qquad W\\supseteq V_1,\\ W\\supseteq V_2\\Longrightarrow W\\supseteq V_1+V_2."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "In the first assertion, each vector of W belongs to both subspaces, hence to the intersection. In the second assertion, each summand of alpha one plus alpha two belongs to W. Since W is closed under addition, their sum belongs to W."
+      },
+      {
+        "type": "statement",
+        "text": "Property 2. For two subspaces, the following conditions are equivalent: V one is contained in V two; their intersection equals V one; their sum equals V two."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "V_1\\subseteq V_2\\quad\\Longleftrightarrow\\quad V_1\\cap V_2=V_1\\quad\\Longleftrightarrow\\quad V_1+V_2=V_2."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Assume V one is contained in V two. A vector of V one already belongs to both, so the intersection is V one. Every sum of a vector of V one and a vector of V two belongs to V two. Conversely, every vector of V two is zero plus itself, so the sum equals V two."
+      },
+      {
+        "type": "text",
+        "text": "If the intersection equals V one, every vector of V one belongs to V two. If the sum equals V two, every vector alpha of V one belongs to V two because alpha equals alpha plus zero. Thus each of the last two conditions gives the first."
+      },
+      {
+        "type": "cue",
+        "text": "教材将这两条性质的证明留给读者，这里补全。⊇读“contains”；⊆读“is contained in”。"
+      }
+    ]
+  },
+  {
+    "id": "intersection-sum-examples",
+    "title": "Examples of intersections and sums",
+    "zh": "正文例：几何空间、解空间与生成空间",
+    "chapter": 6,
+    "source": "§6 · pp.175–176",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Let us check the three examples in the textbook."
+      },
+      {
+        "type": "statement",
+        "text": "Example 1. In three-dimensional geometric space, a line through the origin and the plane through the origin perpendicular to that line have intersection zero and sum equal to the whole space."
+      },
+      {
+        "type": "text",
+        "text": "Choose a unit vector u along the line. For any vector v, its component along the line is v dot u times u. Subtract this component to obtain a vector perpendicular to u, hence in the plane."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "v=(v\\mathbin{\\cdot}u)u+\\big(v-(v\\mathbin{\\cdot}u)u\\big),\\qquad u\\mathbin{\\cdot}\\big(v-(v\\mathbin{\\cdot}u)u\\big)=0."
+      },
+      {
+        "type": "text",
+        "text": "Thus every vector is in the sum. A vector in both the line and the plane is a scalar multiple c u perpendicular to u, which forces c to be zero. Hence the intersection contains only zero."
+      },
+      {
+        "type": "statement",
+        "text": "Example 2. The intersection of the solution spaces of two homogeneous systems is the solution space of the combined system."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "V_1=\\{X:AX=0\\},\\quad V_2=\\{X:BX=0\\},\\qquad V_1\\cap V_2=\\left\\{X:\\begin{pmatrix}A\\\\B\\end{pmatrix}X=0\\right\\}."
+      },
+      {
+        "type": "text",
+        "text": "Here A and B have the same number of columns because the unknowns are the same. Membership in the intersection means satisfying every equation of both systems. Stacking the equations gives exactly the displayed system."
+      },
+      {
+        "type": "statement",
+        "text": "Example 3. The sum of two generated subspaces is generated by the combined lists of generators."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "L(\\alpha_1,\\ldots,\\alpha_r)+L(\\beta_1,\\ldots,\\beta_s)=L(\\alpha_1,\\ldots,\\alpha_r,\\beta_1,\\ldots,\\beta_s)."
+      },
+      {
+        "type": "text",
+        "text": "A vector on the left is a linear combination of the alpha vectors plus a linear combination of the beta vectors, so it belongs to the right. Conversely, split any combination on the right into its alpha terms and beta terms. These two parts belong to the two subspaces on the left."
+      },
+      {
+        "type": "cue",
+        "text": "几何例只使用解析几何的垂直分解；u是单位方向向量，点号读“dot”。第二例的上下拼接矩阵表示把两组方程一起列出。"
+      }
+    ]
+  },
+  {
+    "id": "dimension-formula",
+    "title": "The dimension formula",
+    "zh": "定理7：维数公式的完整证明",
+    "chapter": 6,
+    "source": "§6 · pp.176–177",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "The intersection measures how much is counted twice when we add the dimensions of two subspaces."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 7. For finite-dimensional subspaces V one and V two of a linear space V, the sum of their dimensions equals the dimension of their sum plus the dimension of their intersection."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\dim V_1+\\dim V_2=\\dim(V_1+V_2)+\\dim(V_1\\cap V_2)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Let n one and n two be the dimensions of V one and V two, and let m be the dimension of their intersection. Choose a basis alpha one through alpha m of the intersection. By Theorem 4, extend it separately to bases of V one and V two."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{array}{ll}V_1\\cap V_2:&\\alpha_1,\\ldots,\\alpha_m,\\\\V_1:&\\alpha_1,\\ldots,\\alpha_m,\\beta_1,\\ldots,\\beta_{n_1-m},\\\\V_2:&\\alpha_1,\\ldots,\\alpha_m,\\gamma_1,\\ldots,\\gamma_{n_2-m}.\\end{array}"
+      },
+      {
+        "type": "text",
+        "text": "If m is zero, the common basis is empty and the alpha terms below are absent. We must prove that the combined list, using the alpha vectors only once, is a basis of the sum."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_1,\\ldots,\\alpha_m,\\beta_1,\\ldots,\\beta_{n_1-m},\\gamma_1,\\ldots,\\gamma_{n_2-m}."
+      },
+      {
+        "type": "text",
+        "text": "It spans the sum by the preceding example: combine the generators of V one and V two, and remove the repeated alpha vectors. To prove independence, assume a linear combination of the combined list is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{i=1}^{m}k_i\\alpha_i+\\sum_{j=1}^{n_1-m}p_j\\beta_j+\\sum_{j=1}^{n_2-m}q_j\\gamma_j=0."
+      },
+      {
+        "type": "text",
+        "text": "Move the gamma terms to the right and denote the resulting vector by alpha, without a subscript."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha=\\sum_{i=1}^{m}k_i\\alpha_i+\\sum_{j=1}^{n_1-m}p_j\\beta_j=-\\sum_{j=1}^{n_2-m}q_j\\gamma_j."
+      },
+      {
+        "type": "text",
+        "text": "The left expression belongs to V one. The right expression belongs to V two. Therefore alpha belongs to their intersection and has an expression using only the common basis."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha=\\sum_{i=1}^{m}l_i\\alpha_i,\\qquad \\sum_{i=1}^{m}l_i\\alpha_i+\\sum_{j=1}^{n_2-m}q_j\\gamma_j=0."
+      },
+      {
+        "type": "text",
+        "text": "The alpha and gamma vectors form a basis of V two. Their independence makes all l i and q j zero. Hence alpha is zero. Returning to its first expression gives"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{i=1}^{m}k_i\\alpha_i+\\sum_{j=1}^{n_1-m}p_j\\beta_j=0."
+      },
+      {
+        "type": "text",
+        "text": "The alpha and beta vectors form a basis of V one, so all k i and p j are zero. Thus every coefficient in the original relation is zero. The combined list is independent and therefore a basis of the sum."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\dim(V_1+V_2)=m+(n_1-m)+(n_2-m)=n_1+n_2-m."
+      },
+      {
+        "type": "text",
+        "text": "Rearranging gives the dimension formula."
+      },
+      {
+        "type": "cue",
+        "text": "保留教材的共同基α、补充向量β和γ。n₁−m读“n one minus m”；单独的α是临时构造的交集向量，不是某个αᵢ。先证生成，再证无关，最后数基向量。"
+      }
+    ]
+  },
+  {
+    "id": "dimension-intersection-corollary",
+    "title": "When two subspaces must meet",
+    "zh": "维数公式推论：必有非零公共向量",
+    "chapter": 6,
+    "source": "§6 · p.177",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "The dimension formula gives a useful test for the existence of a nonzero common vector."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary. If V one and V two are subspaces of an n-dimensional space V and the sum of their dimensions is greater than n, then they have a nonzero vector in common."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\dim V_1+\\dim V_2>n\\quad\\Longrightarrow\\quad V_1\\cap V_2\\ne\\{0\\}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "We must show that the intersection has positive dimension. Since the sum is a subspace of V, its dimension is at most n. Substitute this bound in the dimension formula."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\dim(V_1\\cap V_2)=\\dim V_1+\\dim V_2-\\dim(V_1+V_2)\\ge\\dim V_1+\\dim V_2-n>0."
+      },
+      {
+        "type": "text",
+        "text": "A positive-dimensional space contains a nonzero basis vector. That vector belongs to both subspaces."
+      },
+      {
+        "type": "statement",
+        "text": "Example. Two distinct planes through the origin in three-dimensional geometric space have a line as their intersection."
+      },
+      {
+        "type": "text",
+        "text": "Each plane has dimension two. Their sum is the whole three-dimensional space: take a basis of the first plane and a vector of the second plane outside the first; these three vectors are independent. The dimension formula then gives"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\dim(V_1\\cap V_2)=2+2-3=1."
+      },
+      {
+        "type": "cue",
+        "text": "“nonzero vector in common”指非零公共向量。不同平面的假设用于保证它们的和是三维，不能省略。"
+      }
+    ]
+  },
+  {
+    "id": "direct-sum-definition",
+    "title": "Direct sums and the zero decomposition",
+    "zh": "定义9与定理8：直和及零分解判别",
+    "chapter": 6,
+    "source": "§7 · pp.177–178",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "In a sum of subspaces, one vector may have more than one decomposition. We now give a name to the case where every decomposition is unique."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 9. The sum of subspaces V one and V two is a direct sum if every vector in their sum has exactly one expression as alpha one plus alpha two with alpha i in V i. We denote the direct sum by V one direct sum V two."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "V_1\\oplus V_2,\\qquad\\alpha=\\alpha_1+\\alpha_2,\\quad\\alpha_1\\in V_1,\\ \\alpha_2\\in V_2."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 8. The sum of V one and V two is direct if and only if a sum alpha one plus alpha two can equal zero, with alpha i in V i, only when both vectors are zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_1+\\alpha_2=0,\\quad\\alpha_i\\in V_i\\ (i=1,2)\\quad\\Longrightarrow\\quad\\alpha_1=\\alpha_2=0."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Necessity follows by applying uniqueness to zero: zero plus zero is already one decomposition. For sufficiency, assume that only the trivial decomposition gives zero. We must prove that any two decompositions of an arbitrary vector agree term by term."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha=\\alpha_1+\\alpha_2=\\beta_1+\\beta_2,\\qquad\\alpha_i,\\beta_i\\in V_i."
+      },
+      {
+        "type": "text",
+        "text": "Subtract the two equalities. Each difference remains in its corresponding subspace."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "(\\alpha_1-\\beta_1)+(\\alpha_2-\\beta_2)=0,\\qquad\\alpha_i-\\beta_i\\in V_i."
+      },
+      {
+        "type": "text",
+        "text": "The assumed condition forces both differences to be zero. Thus alpha one equals beta one and alpha two equals beta two. The decomposition is unique, so the sum is direct."
+      },
+      {
+        "type": "cue",
+        "text": "⊕读“direct sum”。唯一的是按指定子空间分配的两个分量。定理将所有向量的分解唯一性归结为零向量的分解唯一性。"
+      }
+    ]
+  },
+  {
+    "id": "direct-sum-intersection",
+    "title": "The intersection criterion",
+    "zh": "直和的交集判别及几何例",
+    "chapter": 6,
+    "source": "§7 · p.178",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "For two subspaces, we can express the zero-decomposition test using their intersection."
+      },
+      {
+        "type": "statement",
+        "text": "Corollary. The sum of two subspaces is direct if and only if their intersection consists only of the zero vector."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "V_1+V_2=V_1\\oplus V_2\\quad\\Longleftrightarrow\\quad V_1\\cap V_2=\\{0\\}."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "First assume the intersection is zero. To use Theorem 8, suppose alpha one plus alpha two is zero with each vector in its own subspace. Then"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha_1=-\\alpha_2\\in V_1\\cap V_2=\\{0\\}."
+      },
+      {
+        "type": "text",
+        "text": "Thus alpha one is zero and alpha two is zero. The sum is direct. Conversely, assume the sum is direct and choose any alpha in the intersection. The zero vector has the decomposition"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "0=\\alpha+(-\\alpha),\\qquad\\alpha\\in V_1,\\quad-\\alpha\\in V_2."
+      },
+      {
+        "type": "text",
+        "text": "By Theorem 8, alpha must be zero. Since zero always belongs to the intersection, the intersection is exactly the zero subspace."
+      },
+      {
+        "type": "statement",
+        "text": "Example. The perpendicular line and plane from Section 6 give a direct-sum decomposition of three-dimensional geometric space."
+      },
+      {
+        "type": "text",
+        "text": "Their intersection was shown to be zero and their sum to be the whole space. The corollary therefore gives the direct sum, and every vector has a unique line component and plane component."
+      },
+      {
+        "type": "cue",
+        "text": "“the zero subspace”是{0}，不是空集。此交集判别只针对两个子空间；多个子空间的判别见后文定理11。"
+      }
+    ]
+  },
+  {
+    "id": "direct-sum-dimension-complement",
+    "title": "Dimensions and complementary subspaces",
+    "zh": "定理9—10：维数判别与补空间",
+    "chapter": 6,
+    "source": "§7 · p.178",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "For finite-dimensional subspaces, directness can also be read from their dimensions."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 9. Let W be the sum of two finite-dimensional subspaces V one and V two. This sum is direct if and only if the dimension of W equals the sum of the dimensions of V one and V two."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "W=V_1+V_2,\\qquad W=V_1\\oplus V_2\\quad\\Longleftrightarrow\\quad\\dim W=\\dim V_1+\\dim V_2."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The dimension formula gives the displayed equality below. The sum is direct exactly when the intersection is zero, which is exactly when its dimension is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\dim W+\\dim(V_1\\cap V_2)=\\dim V_1+\\dim V_2."
+      },
+      {
+        "type": "text",
+        "text": "Removing the zero intersection term proves one direction; subtracting the assumed dimension equality proves the other."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 10. For every subspace U of a finite-dimensional linear space V, there exists a subspace W such that V is the direct sum of U and W."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "V=U\\oplus W."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Take a basis alpha one through alpha m of U and extend it to a basis alpha one through alpha n of V. Define W to be generated by the added basis vectors."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "U=L(\\alpha_1,\\ldots,\\alpha_m),\\qquad W=L(\\alpha_{m+1},\\ldots,\\alpha_n)."
+      },
+      {
+        "type": "text",
+        "text": "Every vector of V splits into its first m basis terms and its remaining terms, so V equals U plus W. To check directness, a vector in the intersection has both an expression using the first group and an expression using the second group."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{i=1}^{m}c_i\\alpha_i=\\sum_{j=m+1}^{n}d_j\\alpha_j\\quad\\Longrightarrow\\quad\\sum_{i=1}^{m}c_i\\alpha_i-\\sum_{j=m+1}^{n}d_j\\alpha_j=0."
+      },
+      {
+        "type": "text",
+        "text": "Independence of the full basis forces all coefficients to vanish, so the intersection is zero. This proves the direct-sum decomposition. The argument includes U equal to zero or to V by using an empty group of basis vectors."
+      },
+      {
+        "type": "cue",
+        "text": "W称为U的一个补空间，读“a complementary subspace”。定理只保证存在，不保证W唯一。教材只写构造，此处补足和等于V及交为零的验证。"
+      }
+    ]
+  },
+  {
+    "id": "multiple-direct-sums",
+    "title": "Direct sums of several subspaces",
+    "zh": "定义10与定理11：多个子空间的直和",
+    "chapter": 6,
+    "source": "§7 · pp.178–179",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We next extend the definition from two subspaces to finitely many subspaces."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 10. The sum of V one through V s is a direct sum if each vector of the sum has exactly one decomposition as alpha one plus and so on plus alpha s, with alpha i in V i."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "W=V_1\\oplus\\cdots\\oplus V_s,\\qquad\\alpha=\\alpha_1+\\cdots+\\alpha_s,\\quad\\alpha_i\\in V_i."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 11. For finite-dimensional subspaces V one through V s and their sum W, the following four conditions are equivalent: the sum is direct; the zero decomposition is unique; each V i has zero intersection with the sum of all the other subspaces; the dimension of W equals the sum of their dimensions."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}(1)\\quad&W=\\bigoplus_{i=1}^{s}V_i;\\\\(2)\\quad&\\alpha_1+\\cdots+\\alpha_s=0,\\ \\alpha_i\\in V_i\\ \\Longrightarrow\\ \\alpha_1=\\cdots=\\alpha_s=0;\\\\(3)\\quad&V_i\\cap\\left(\\sum_{j\\ne i}V_j\\right)=\\{0\\}\\quad(i=1,\\ldots,s);\\\\(4)\\quad&\\dim W=\\sum_{i=1}^{s}\\dim V_i.\\end{aligned}"
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "As in the two-subspace case, condition one gives condition two by considering zero. Conversely, subtract two decompositions of any vector. The differences belong to the respective subspaces and sum to zero. Condition two makes every difference zero, proving condition one."
+      },
+      {
+        "type": "text",
+        "text": "Assume condition two. Take alpha in the intersection in condition three. Write alpha as a sum of vectors beta j from the other subspaces. Then"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha-\\sum_{j\\ne i}\\beta_j=0,\\qquad\\alpha\\in V_i,\\quad-\\beta_j\\in V_j."
+      },
+      {
+        "type": "text",
+        "text": "Condition two makes alpha zero, proving condition three. Conversely, in a zero decomposition, each alpha i equals the negative sum of the other components. It lies in the intersection in condition three, so it is zero. This proves condition two."
+      },
+      {
+        "type": "text",
+        "text": "To connect with dimension, choose a basis for each V i and concatenate all these bases. This combined list spans W. Under condition two, any zero linear combination can be grouped into one vector from each V i. Each grouped vector must be zero, and independence of each individual basis then makes all coefficients zero. Thus the combined list is a basis of W."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\dim W=\\dim V_1+\\cdots+\\dim V_s."
+      },
+      {
+        "type": "text",
+        "text": "Conversely, condition four says that the spanning list just constructed has exactly dimension W vectors. It must be independent: if it were dependent, a maximal independent sublist would have fewer vectors but would still span W, contradicting its dimension. Now express each component of a zero decomposition in its own basis. Independence of the combined list forces every coefficient to be zero, so each component is zero. This proves condition two and completes all equivalences."
+      },
+      {
+        "type": "cue",
+        "text": "教材省略重复证明，这里补全。大⊕读“the direct sum of V i, from i equals one to s”。Σⱼ≠ᵢVⱼ读“the sum of all V j with j not equal to i”。条件3是与其余空间的和相交为零，不能只检查两两交为零。"
+      }
+    ]
+  },
+  {
+    "id": "coordinate-isomorphism",
+    "title": "Coordinates preserve the operations",
+    "zh": "坐标对应与定义11：线性空间同构",
+    "chapter": 6,
+    "source": "§8 · p.179",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Finally, we study isomorphisms of linear spaces. A fixed basis turns each vector into a unique coordinate tuple. We first check how this correspondence treats the two operations."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha=a_1\\varepsilon_1+\\cdots+a_n\\varepsilon_n,\\qquad\\beta=b_1\\varepsilon_1+\\cdots+b_n\\varepsilon_n."
+      },
+      {
+        "type": "text",
+        "text": "Add the two expansions and collect the coefficient of each basis vector. For scalar multiplication, distribute k over the expansion."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\alpha+\\beta=(a_1+b_1)\\varepsilon_1+\\cdots+(a_n+b_n)\\varepsilon_n,\\qquad k\\alpha=ka_1\\varepsilon_1+\\cdots+ka_n\\varepsilon_n."
+      },
+      {
+        "type": "text",
+        "text": "So adding vectors adds their coordinate tuples, and multiplying a vector by a scalar multiplies every coordinate by that scalar. We now define this kind of correspondence in general."
+      },
+      {
+        "type": "statement",
+        "text": "Definition 11. Two linear spaces V and V prime over the same number field P are isomorphic if there is a bijection sigma from V to V prime that preserves addition and scalar multiplication. Such a mapping is called an isomorphism."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma:V\\to V'\\text{ bijective},\\qquad\\sigma(\\alpha+\\beta)=\\sigma(\\alpha)+\\sigma(\\beta),\\qquad\\sigma(k\\alpha)=k\\sigma(\\alpha)\\quad(\\alpha,\\beta\\in V,\\ k\\in P)."
+      },
+      {
+        "type": "statement",
+        "text": "Coordinate isomorphism. Every n-dimensional linear space over P is isomorphic to P to the n through the coordinate correspondence for any fixed basis."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma(a_1\\varepsilon_1+\\cdots+a_n\\varepsilon_n)=(a_1,\\ldots,a_n)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Uniqueness of basis coordinates makes sigma well defined. If two vectors have the same coordinates, their basis expansions are identical, so sigma is injective. Every tuple gives a vector by the displayed linear combination, so sigma is surjective. The expansions above show that sigma preserves addition and scalar multiplication. Thus it is an isomorphism."
+      },
+      {
+        "type": "cue",
+        "text": "isomorphism读作同构映射；isomorphic表示同构。这里坐标写作n元组，与§4用于矩阵计算的坐标列含有相同数据。必须固定同一数域P。"
+      }
+    ]
+  },
+  {
+    "id": "isomorphism-basic-properties",
+    "title": "Zero, combinations, and independence",
+    "zh": "同构性质1—3：零、线性组合与无关性",
+    "chapter": 6,
+    "source": "§8 · pp.179–180",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Let sigma be an isomorphism from V to V prime. We now prove its basic properties."
+      },
+      {
+        "type": "statement",
+        "text": "Property 1. An isomorphism sends the zero vector to the zero vector and sends an additive inverse to the additive inverse of the image."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma(0)=0,\\qquad\\sigma(-\\alpha)=-\\sigma(\\alpha)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Use preservation of scalar multiplication with scalars zero and minus one. Since V is nonempty, we may choose any alpha for the first equality."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma(0)=\\sigma(0\\alpha)=0\\sigma(\\alpha)=0,\\qquad\\sigma(-\\alpha)=\\sigma((-1)\\alpha)=(-1)\\sigma(\\alpha)=-\\sigma(\\alpha)."
+      },
+      {
+        "type": "statement",
+        "text": "Property 2. An isomorphism preserves every finite linear combination with coefficients in P."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma(k_1\\alpha_1+\\cdots+k_r\\alpha_r)=k_1\\sigma(\\alpha_1)+\\cdots+k_r\\sigma(\\alpha_r)."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Repeatedly apply preservation of addition to separate the terms. Then apply preservation of scalar multiplication to each term. These steps give the displayed equality."
+      },
+      {
+        "type": "statement",
+        "text": "Property 3. A finite list of vectors is linearly dependent if and only if its image list under an isomorphism is linearly dependent. Therefore independence is preserved in both directions."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "If the original list is dependent, take a zero relation whose coefficients are not all zero. Applying sigma and Properties 1 and 2 gives a zero relation among the images with exactly those coefficients."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sum_{i=1}^{r}k_i\\alpha_i=0\\quad\\Longrightarrow\\quad\\sum_{i=1}^{r}k_i\\sigma(\\alpha_i)=0."
+      },
+      {
+        "type": "text",
+        "text": "Conversely, suppose the images satisfy a zero relation with coefficients not all zero. Property 2 rewrites it as"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma\\left(\\sum_{i=1}^{r}k_i\\alpha_i\\right)=0=\\sigma(0)."
+      },
+      {
+        "type": "text",
+        "text": "Injectivity gives that the original linear combination is zero. The same coefficients are still not all zero, so the original list is dependent. Negating both dependence statements gives the equivalence for independence."
+      },
+      {
+        "type": "statement",
+        "text": "Consequence. Isomorphic finite-dimensional spaces have the same dimension."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "An independent basis of V maps to an independent list in V prime, so the dimension of V prime is at least that of V. Conversely, choose a basis of V prime and take its preimages using surjectivity. Property 3 makes these preimages independent, giving the reverse dimension bound. Hence the dimensions are equal."
+      },
+      {
+        "type": "cue",
+        "text": "非零关系指系数不全为零，不能说每个系数都非零。反向证明必须用单射性，不能只写“反过来也成立”。"
+      }
+    ]
+  },
+  {
+    "id": "isomorphism-subspaces",
+    "title": "Images of subspaces",
+    "zh": "同构性质4：子空间的像与维数",
+    "chapter": 6,
+    "source": "§8 · p.180",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Isomorphisms also preserve subspaces and their dimensions."
+      },
+      {
+        "type": "statement",
+        "text": "Property 4. If V one is a subspace of V and sigma is an isomorphism from V to V prime, then the image sigma of V one is a subspace of V prime. The restriction of sigma gives an isomorphism from V one onto this image; in particular, finite-dimensional V one and its image have the same dimension."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma(V_1)=\\{\\sigma(\\alpha):\\alpha\\in V_1\\}\\subseteq V',\\qquad\\dim\\sigma(V_1)=\\dim V_1."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The image contains zero because V one contains zero and sigma sends zero to zero. Take two image vectors sigma alpha and sigma beta with alpha and beta in V one. Preservation of the operations gives"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma(\\alpha)+\\sigma(\\beta)=\\sigma(\\alpha+\\beta)\\in\\sigma(V_1),\\qquad k\\sigma(\\alpha)=\\sigma(k\\alpha)\\in\\sigma(V_1)."
+      },
+      {
+        "type": "text",
+        "text": "Both arguments on the right belong to V one, so the image is closed and is a subspace. The same mapping, restricted to V one, is injective because sigma is injective. It is onto its image by the definition of the image set. It still preserves the two operations. Therefore it is an isomorphism, and the preceding dimension result applies."
+      },
+      {
+        "type": "cue",
+        "text": "σ(V₁)读“the image of V one under sigma”。restriction读“restriction”，这里只把定义域缩小到V₁，映射规则不变。"
+      }
+    ]
+  },
+  {
+    "id": "isomorphism-inverse-composition",
+    "title": "Inverse and composite isomorphisms",
+    "zh": "同构性质5：逆映射与复合映射",
+    "chapter": 6,
+    "source": "§8 · p.180",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "We next check that taking inverses and composing mappings preserve isomorphisms."
+      },
+      {
+        "type": "statement",
+        "text": "Property 5. The inverse of an isomorphism is an isomorphism. The composition of two isomorphisms over the same field is an isomorphism."
+      },
+      {
+        "type": "heading",
+        "text": "Proof: the inverse"
+      },
+      {
+        "type": "text",
+        "text": "Let sigma map V isomorphically onto V prime. Its inverse is a bijection. It remains to prove that the inverse preserves the two operations. Take alpha prime and beta prime in V prime and k in P. Compare the images under sigma."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\\sigma\\big(\\sigma^{-1}(\\alpha'+\\beta')\\big)&=\\alpha'+\\beta'\\\\&=\\sigma(\\sigma^{-1}(\\alpha'))+\\sigma(\\sigma^{-1}(\\beta'))\\\\&=\\sigma\\big(\\sigma^{-1}(\\alpha')+\\sigma^{-1}(\\beta')\\big).\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "Apply sigma inverse to both sides. This gives preservation of addition. For scalar multiplication, the same comparison is"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma\\big(\\sigma^{-1}(k\\alpha')\\big)=k\\alpha'=k\\sigma(\\sigma^{-1}(\\alpha'))=\\sigma\\big(k\\sigma^{-1}(\\alpha')\\big)."
+      },
+      {
+        "type": "text",
+        "text": "Applying sigma inverse again gives preservation of scalar multiplication."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma^{-1}(\\alpha'+\\beta')=\\sigma^{-1}(\\alpha')+\\sigma^{-1}(\\beta'),\\qquad\\sigma^{-1}(k\\alpha')=k\\sigma^{-1}(\\alpha')."
+      },
+      {
+        "type": "heading",
+        "text": "Proof: the composition"
+      },
+      {
+        "type": "text",
+        "text": "Let tau map V prime isomorphically onto V double prime. The composite tau sigma is a bijection because both mappings are bijections. Applying their operation-preserving properties in order gives"
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\\tau\\sigma(\\alpha+\\beta)&=\\tau\\big(\\sigma(\\alpha)+\\sigma(\\beta)\\big)=\\tau\\sigma(\\alpha)+\\tau\\sigma(\\beta),\\\\\\tau\\sigma(k\\alpha)&=\\tau\\big(k\\sigma(\\alpha)\\big)=k\\tau\\sigma(\\alpha).\\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "Thus the composite is an isomorphism."
+      },
+      {
+        "type": "cue",
+        "text": "τσ读“tau composed with sigma”，先作用sigma再作用tau。σ⁻¹读“sigma inverse”；α′读“alpha prime”；V″读“V double prime”。"
+      }
+    ]
+  },
+  {
+    "id": "isomorphism-classification",
+    "title": "Isomorphism and dimension",
+    "zh": "同构关系与定理12：有限维空间的分类",
+    "chapter": 6,
+    "source": "§8 · pp.180–181",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "The preceding results show that isomorphism is an equivalence relation among linear spaces over a fixed field."
+      },
+      {
+        "type": "statement",
+        "text": "Reflexivity. Every linear space is isomorphic to itself."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "The identity mapping is a bijection. It leaves each vector unchanged, so it preserves both operations."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "1_V(\\alpha+\\beta)=\\alpha+\\beta=1_V(\\alpha)+1_V(\\beta),\\qquad1_V(k\\alpha)=k\\alpha=k1_V(\\alpha)."
+      },
+      {
+        "type": "statement",
+        "text": "Symmetry. If V is isomorphic to V prime, then V prime is isomorphic to V."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Choose an isomorphism from V to V prime. Its inverse maps V prime onto V and is an isomorphism by Property 5. This proves symmetry."
+      },
+      {
+        "type": "statement",
+        "text": "Transitivity. If V is isomorphic to V prime and V prime is isomorphic to V double prime, then V is isomorphic to V double prime."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Choose the two isomorphisms and compose them in order. Property 5 makes the composite an isomorphism from V onto V double prime. This proves transitivity."
+      },
+      {
+        "type": "text",
+        "text": "We can now state the final theorem of this chapter."
+      },
+      {
+        "type": "statement",
+        "text": "Theorem 12. Two finite-dimensional linear spaces over the same number field P are isomorphic if and only if they have the same dimension."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "V\\cong V'\\quad\\Longleftrightarrow\\quad\\dim_P V=\\dim_P V'."
+      },
+      {
+        "type": "heading",
+        "text": "Proof"
+      },
+      {
+        "type": "text",
+        "text": "Necessity follows from preservation of linear independence and the dimension argument already proved. For sufficiency, suppose both dimensions are n. Fix a basis in each space. The two coordinate correspondences give isomorphisms sigma from V to P to the n and tau from V prime to P to the n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma:V\\to P^n,\\qquad\\tau:V'\\to P^n,\\qquad\\tau^{-1}\\sigma:V\\to V'."
+      },
+      {
+        "type": "text",
+        "text": "By Property 5, tau inverse composed with sigma is an isomorphism. Explicitly, it sends the vector with coefficients a one through a n in the first basis to the vector with those same coefficients in the second basis."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_1\\varepsilon_1+\\cdots+a_n\\varepsilon_n\\ \\longmapsto\\ a_1\\varepsilon'_1+\\cdots+a_n\\varepsilon'_n."
+      },
+      {
+        "type": "text",
+        "text": "If n is zero, both spaces contain only zero and the unique mapping between them is an isomorphism. Hence the theorem also covers that case. Thus, over a fixed field, dimension determines a finite-dimensional linear space up to isomorphism."
+      },
+      {
+        "type": "cue",
+        "text": "≅读“is isomorphic to”；dim下标P强调标量域。这里的“同构”保留加法和数乘结构，并不要求两个空间的元素是同一种对象。教材正文到第181页习题前结束。"
+      }
+    ]
   }
 ]
