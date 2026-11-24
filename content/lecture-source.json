@@ -10349,29 +10349,142 @@
       },
       {
         "type": "text",
-        "text": "A linear space is also called a vector space. We will use the following familiar spaces later. Their operations are the usual addition and scalar multiplication."
+        "text": "A linear space is also called a vector space. Geometric vectors form a linear space over the real numbers. The n-tuples with entries in P form a linear space over P under entrywise operations. We denote this space by P to the n."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "P^n=\\{(a_1,\\ldots,a_n)\\mid a_i\\in P\\},\\qquad P^{m\\times n}=\\{m\\times n\\text{ matrices over }P\\}."
-      },
-      {
-        "type": "math",
-        "text": "",
-        "latex": "P[x]=\\{\\text{polynomials in }x\\text{ over }P\\},\\qquad P[x]_n=\\{0\\}\\cup\\{f(x)\\in P[x]\\mid\\deg f<n\\}."
-      },
-      {
-        "type": "text",
-        "text": "We read P to the n, P to the m by n, P of x, and P of x sub n. In the last space, the degree is strictly less than n, and the zero polynomial is included. The field P is itself a linear space over P."
-      },
-      {
-        "type": "text",
-        "text": "For P to the n and the matrix space, addition and scalar multiplication act entry by entry, so the eight rules follow from the field laws. For polynomials, they act on coefficients. Adding two polynomials of degree less than n cannot create a higher-degree term, and multiplying by a scalar also preserves this bound. The zero polynomial is included so that closure and the zero-vector axiom hold."
+        "latex": "P^n=\\{(a_1,\\ldots,a_n)\\mid a_1,\\ldots,a_n\\in P\\}."
       },
       {
         "type": "cue",
-        "text": "α、β、γ读“alpha, beta, gamma”；k(lα)读“k times l times alpha”，需指明先做括号内数乘。八条公理须完整板书。P[x]的方括号表示多项式空间，不是代入函数值；deg读“degree”。"
+        "text": "α、β、γ读 “alpha, beta, gamma”；k(lα) 可读 “k times l alpha”，指明先做括号内的数乘。Pⁿ 读 “P to the n”。"
+      }
+    ]
+  },
+  {
+    "id": "linear-space-definition-examples",
+    "title": "Examples 4–7: Linear spaces",
+    "zh": "定义1后的例4–7：多项式、矩阵、函数与数域",
+    "chapter": 6,
+    "source": "§2 · p.165",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "Let us apply Definition One to the next four examples. In each case, identify the vectors, the scalars, and the two operations."
+      },
+      {
+        "type": "heading",
+        "text": "Example 4. Polynomial spaces"
+      },
+      {
+        "type": "statement",
+        "text": "The polynomials in one variable with coefficients in P form a linear space over P, denoted by P of x. The zero polynomial together with the polynomials of degree less than n also forms a linear space over P, denoted by P of x sub n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\n      P[x]&=\\{\\text{polynomials in }x\\text{ with coefficients in }P\\},\\\\\n      P[x]_n&=\\{a_0+a_1x+\\cdots+a_{n-1}x^{n-1}\\mid a_j\\in P\\}.\n    \\end{aligned}"
+      },
+      {
+        "type": "text",
+        "text": "Use ordinary polynomial addition and scalar multiplication. We can pad the two coefficient lists with zeros to the same length. Then both operations act coefficient by coefficient."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f=\\sum_{j=0}^m a_jx^j,\\quad g=\\sum_{j=0}^m b_jx^j\n      \\quad\\Longrightarrow\\quad f+g=\\sum_{j=0}^m(a_j+b_j)x^j,\\qquad kf=\\sum_{j=0}^mka_jx^j."
+      },
+      {
+        "type": "text",
+        "text": "The field laws give all eight rules for the coefficients. The zero vector is the zero polynomial, and the additive inverse of f is minus f. If the coefficients of every power from x to the n onward are zero in both inputs, the two operations keep them zero. This proves the degree bound and closure for P of x sub n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "0_V=0\\text{ (the zero polynomial)},\\qquad f+(-f)=0,\\qquad\n      f,g\\in P[x]_n,\\ k\\in P\\ \\Longrightarrow\\ f+g,kf\\in P[x]_n."
+      },
+      {
+        "type": "cue",
+        "text": "P[x] 读 “P of x”，P[x]ₙ 读 “P of x sub n”。板书时点出最高次幂是 n−1，系数全取零就得到零多项式。"
+      },
+      {
+        "type": "heading",
+        "text": "Example 5. Matrices of a fixed size"
+      },
+      {
+        "type": "statement",
+        "text": "The m-by-n matrices with entries in P form a linear space over P under ordinary matrix addition and scalar multiplication. We denote this space by P to the m by n."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{gathered}\n      A=(a_{ij}),\\quad B=(b_{ij})\\in P^{m\\times n},\\quad k\\in P,\\\\\n      A+B=(a_{ij}+b_{ij}),\\qquad kA=(ka_{ij}).\n    \\end{gathered}"
+      },
+      {
+        "type": "text",
+        "text": "Each result has the same size and entries in P. The zero matrix and the entrywise negative give the zero vector and additive inverse. To check any rule, compare the entries in the same position and use the corresponding law in P. For example, here is rule eight."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "[k(A+B)]_{ij}=k(a_{ij}+b_{ij})=ka_{ij}+kb_{ij}=[kA+kB]_{ij}."
+      },
+      {
+        "type": "cue",
+        "text": "m-by-n matrices 读 “m by n matrices”。[A]ᵢⱼ 表示 A 的第 i 行、第 j 列元素。"
+      },
+      {
+        "type": "heading",
+        "text": "Example 6. Real functions"
+      },
+      {
+        "type": "statement",
+        "text": "All real-valued functions on the real line form a linear space over the real numbers under pointwise addition and scalar multiplication."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f,g:\\mathbb R\\to\\mathbb R,\\quad k\\in\\mathbb R,\\qquad\n      (f+g)(x)=f(x)+g(x),\\quad (kf)(x)=k f(x)."
+      },
+      {
+        "type": "text",
+        "text": "Both operations give real-valued functions on the same domain. The zero function is zero at every point, and the additive inverse of f has value minus f of x. Check the rules at each input x using the real-number laws. For example, rule five holds at every x, so one times f equals f as a function."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "0_V(x)=0,\\qquad (-f)(x)=-f(x),\\qquad (1f)(x)=1\\cdot f(x)=f(x)\\quad(x\\in\\mathbb R)."
+      },
+      {
+        "type": "cue",
+        "text": "pointwise 读 “pointwise”，表示对每个 x 分别计算。两个函数在所有输入上的值相同，就得到函数相等。"
+      },
+      {
+        "type": "heading",
+        "text": "Example 7. A field as a space over itself"
+      },
+      {
+        "type": "statement",
+        "text": "A number field P forms a linear space over itself with its own addition and multiplication."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "V=P,\\qquad a,b,k\\in P,\\qquad\n      a+_V b=a+b,\\qquad k\\cdot_V a=ka."
+      },
+      {
+        "type": "text",
+        "text": "Here the vectors and the scalars both come from P. Vector addition is field addition, and scalar multiplication is field multiplication. Closure, the zero element, the additive inverse, and the other rules all follow from the field laws. The field identity gives rule five."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "0_V=0_P,\\qquad 1_P\\cdot_V a=1_Pa=a."
+      },
+      {
+        "type": "cue",
+        "text": "下标 V 用来标出空间里的运算。a 是被数乘的向量，k 是标量，两者都属于 P。"
       }
     ]
   },
@@ -10967,6 +11080,10 @@
         "text": "which is impossible. Therefore every n plus one vectors are dependent. The definition of dimension gives dimension n. The n independent alpha vectors then form a basis by Definition Six."
       },
       {
+        "type": "text",
+        "text": "We will now use Theorem One to check bases. In each example, look for two things: linear independence and an expression for every vector."
+      },
+      {
         "type": "cue",
         "text": "先板书两条假设：无关、表出整个空间。证明维数的上界时必须取任意n+1个向量，不能只验证某一组。"
       }
@@ -10974,14 +11091,14 @@
   },
   {
     "id": "polynomial-bases-coordinates",
-    "title": "Polynomial bases and their coordinates",
+    "title": "Example 1: Polynomial bases and coordinates",
     "zh": "例1：幂基、平移幂基与泰勒系数",
     "chapter": 6,
     "source": "§3 · pp.167–168",
     "blocks": [
       {
         "type": "text",
-        "text": "We now apply the definitions to the polynomial example in the text."
+        "text": "Return to the polynomial space from Example Four in Section Two. Let us find its dimension and compare coordinates in two bases."
       },
       {
         "type": "statement",
@@ -11003,7 +11120,21 @@
       },
       {
         "type": "text",
-        "text": "The zero-polynomial argument just used proves independence of these n polynomials. The displayed general form shows that they express every member of P of x sub n. Theorem One gives dimension n and the stated basis. Its expansion coefficients are precisely the coordinates."
+        "text": "First check independence. If a linear combination of these powers is the zero polynomial, each coefficient is zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "c_0+c_1x+\\cdots+c_{n-1}x^{n-1}=0\n    \\quad\\Longrightarrow\\quad c_0=c_1=\\cdots=c_{n-1}=0."
+      },
+      {
+        "type": "text",
+        "text": "The general form of f above shows that these powers also express every polynomial in the space. Thus Theorem One gives dimension n, and the expansion coefficients are its coordinates."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\dim_P P[x]_n=n,\\qquad [f]_{(1,x,\\ldots,x^{n-1})}=(a_0,a_1,\\ldots,a_{n-1})."
       },
       {
         "type": "text",
@@ -11043,6 +11174,15 @@
       {
         "type": "text",
         "text": "Here f prime at a is the first derivative evaluated at a. The superscript in parentheses denotes the order of a derivative. The exclamation mark means factorial. This is an exact identity for a polynomial of degree less than n."
+      },
+      {
+        "type": "text",
+        "text": "To see where the coefficients come from, call the coefficient of the j-th power c sub j. Differentiate j times and evaluate at a. Only the j-th power contributes, and its contribution is j factorial times c sub j. For j equal to zero, simply evaluate f at a."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f(x)=\\sum_{m=0}^{n-1}c_m(x-a)^m\n    \\quad\\Longrightarrow\\quad f^{(j)}(a)=j!\\,c_j,\\qquad\n    c_j=\\frac{f^{(j)}(a)}{j!}\\quad(0\\le j<n)."
       },
       {
         "type": "math",
@@ -11153,7 +11293,7 @@
   },
   {
     "id": "dimension-depends-on-field",
-    "title": "Dimension depends on the scalar field",
+    "title": "Example 3: The same space over different fields",
     "zh": "例3：复数域上的一维与实数域上的二维",
     "chapter": 6,
     "source": "§3 · p.168",
@@ -11176,13 +11316,21 @@
         "text": "Proof"
       },
       {
+        "type": "heading",
+        "text": "Over the complex numbers"
+      },
+      {
         "type": "text",
-        "text": "First use complex scalars. Every complex number z is z times one. The single vector one is nonzero, so it is independent. By Theorem One, it is a basis and the dimension is one."
+        "text": "Every complex number z is z times one. The coefficient z is allowed because our scalars are complex. If a complex scalar c times one is zero, then c is zero. Theorem One gives a one-dimensional space with basis one."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "z=z\\cdot1,\\qquad z\\in\\mathbb C."
+        "latex": "z=z\\cdot1,\\quad z\\in\\mathbb C,\\qquad\n    c\\cdot1=0,\\ c\\in\\mathbb C\\ \\Longrightarrow\\ c=0."
+      },
+      {
+        "type": "heading",
+        "text": "Over the real numbers"
       },
       {
         "type": "text",
@@ -11204,6 +11352,15 @@
       },
       {
         "type": "text",
+        "text": "For z equal to a plus b i, its coordinate is z in the complex basis. Its coordinates are a and b in the real basis."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "[z]_{(1)}=(z)\\ \\text{over }\\mathbb C,\\qquad\n    [a+bi]_{(1,i)}=(a,b)\\ \\text{over }\\mathbb R."
+      },
+      {
+        "type": "text",
         "text": "The underlying set is the same, but the allowed scalars are different. Over the complex field, one and i are dependent: use coefficients i and minus one."
       },
       {
@@ -11213,7 +11370,7 @@
       },
       {
         "type": "text",
-        "text": "This relation is allowed over the complex field. It is not a relation with real coefficients, since i is not real."
+        "text": "This relation uses the complex coefficient i. Over the real numbers, the coefficients must be real, so the independence test above gives a different result."
       },
       {
         "type": "cue",
