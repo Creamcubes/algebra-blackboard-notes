@@ -10043,7 +10043,121 @@
       },
       {
         "type": "text",
-        "text": "We now introduce the identity mapping on a set."
+        "text": "The words each and exactly one are essential. No source element may be left without an image, and one source element cannot be assigned two different images. In contrast, the definition does not require every target element to be reached, and it does not forbid two source elements from sharing an image."
+      },
+      {
+        "type": "text",
+        "text": "Let us look at seven examples. For each one, identify the source, the target, and the rule that assigns an output."
+      },
+      {
+        "type": "cue",
+        "text": "σ读“sigma”，τ读“tau”，M′读“M prime”，a′读“a prime”。image：像；preimage：原像。一个输出可以有多个原像，也可以没有原像。"
+      }
+    ]
+  },
+  {
+    "id": "mapping-examples",
+    "title": "Examples 1–7: Mappings",
+    "zh": "映射的例1–7：整数、矩阵、多项式、集合与函数",
+    "chapter": 6,
+    "source": "§1 · p.162",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "Example 1. Integers to even integers"
+      },
+      {
+        "type": "statement",
+        "text": "Doubling defines a mapping from all integers to all even integers."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma:\\mathbb Z\\longrightarrow 2\\mathbb Z,\\qquad\n      2\\mathbb Z=\\{2n\\mid n\\in\\mathbb Z\\},\\qquad \\sigma(n)=2n."
+      },
+      {
+        "type": "text",
+        "text": "For every integer n, two n is one well-defined even integer."
+      },
+      {
+        "type": "heading",
+        "text": "Example 2. Taking the determinant"
+      },
+      {
+        "type": "statement",
+        "text": "Let M be the set of all square matrices of order n over P. Taking the determinant defines a mapping from M to P."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "M=P^{n\\times n},\\qquad\n      \\sigma_1:M\\longrightarrow P,\\qquad \\sigma_1(A)=|A|=\\det A."
+      },
+      {
+        "type": "text",
+        "text": "Each matrix A has one determinant, and that determinant belongs to P."
+      },
+      {
+        "type": "heading",
+        "text": "Example 3. Forming a scalar matrix"
+      },
+      {
+        "type": "statement",
+        "text": "Let E be the identity matrix of order n. Multiplying E by a scalar defines a mapping from P to the same set M of square matrices."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma_2:P\\longrightarrow M,\\qquad \\sigma_2(a)=aE\n      =\\begin{pmatrix}a&0&\\cdots&0\\\\0&a&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&0&\\cdots&a\\end{pmatrix}."
+      },
+      {
+        "type": "text",
+        "text": "Every scalar a gives a single matrix with a on the diagonal and zeros elsewhere. The target of Example Two is the source of Example Three. We will use that match when we compose mappings."
+      },
+      {
+        "type": "cue",
+        "text": "σ₁ 和 σ₂ 可读 “sigma sub one” 和 “sigma sub two”。|A| 读 “the determinant of A”；aE 读 “a times E”。"
+      },
+      {
+        "type": "heading",
+        "text": "Example 4. Differentiating a polynomial"
+      },
+      {
+        "type": "statement",
+        "text": "Differentiation gives a mapping from the set of polynomials over P to itself."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\sigma:P[x]\\longrightarrow P[x],\\qquad\n      \\sigma(f(x))=f'(x),\\qquad\n      f(x)=\\sum_{j=0}^{m}a_jx^j\\ \\Longrightarrow\\\n      f'(x)=\\sum_{j=1}^{m}ja_jx^{j-1}."
+      },
+      {
+        "type": "text",
+        "text": "Every polynomial has a derivative, and the derivative is again a polynomial over P. For a constant polynomial, the derivative is zero."
+      },
+      {
+        "type": "cue",
+        "text": "f′(x) 读 “f prime of x”。这里的 prime 表示求导，M′ 中的 prime 是集合名称的一部分。"
+      },
+      {
+        "type": "heading",
+        "text": "Example 5. A constant mapping"
+      },
+      {
+        "type": "statement",
+        "text": "Let M and M prime be nonempty sets. Fix an element a zero in M prime and send every element of M to it."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "a_0\\in M',\\qquad \\sigma:M\\longrightarrow M',\\qquad\n      \\sigma(a)=a_0\\quad(a\\in M)."
+      },
+      {
+        "type": "text",
+        "text": "Each input has exactly one output. All inputs share that output."
+      },
+      {
+        "type": "heading",
+        "text": "Example 6. The identity mapping"
       },
       {
         "type": "statement",
@@ -10059,12 +10173,25 @@
         "text": "The subscript tells us which set is used. This is a mapping, although its notation uses the number one."
       },
       {
+        "type": "heading",
+        "text": "Example 7. Real functions"
+      },
+      {
+        "type": "statement",
+        "text": "A real-valued function defined on all real numbers is a mapping from the real numbers to themselves."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "f:\\mathbb R\\longrightarrow\\mathbb R,\\qquad x\\longmapsto f(x)."
+      },
+      {
         "type": "text",
-        "text": "The words each and exactly one are essential. No source element may be left without an image, and one source element cannot be assigned two different images. In contrast, the definition does not require every target element to be reached, and it does not forbid two source elements from sharing an image."
+        "text": "Each real input x has a single real value f of x. This is a familiar instance of a mapping."
       },
       {
         "type": "cue",
-        "text": "σ读“sigma”，τ读“tau”，M′读“M prime”，a′读“a prime”。image：像；preimage：原像。一个输出可以有多个原像，也可以没有原像。"
+        "text": "ℤ 读 “the integers”，ℝ 读 “the real numbers”。x ↦ f(x) 读 “x maps to f of x”。"
       }
     ]
   },
@@ -10095,6 +10222,23 @@
       {
         "type": "text",
         "text": "We read tau sigma of a equals tau of sigma of a. The mapping on the right is applied first. This product is composition, not multiplication of two output values."
+      },
+      {
+        "type": "heading",
+        "text": "Back to Examples 2 and 3"
+      },
+      {
+        "type": "text",
+        "text": "Start with a matrix A. Example Two sends it to its determinant. Example Three sends that scalar to the scalar matrix with this value on the diagonal. Therefore their composition maps the set M to itself."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "M\\xrightarrow{\\ \\sigma_1\\ }P\\xrightarrow{\\ \\sigma_2\\ }M,\\qquad\n    (\\sigma_2\\sigma_1)(A)=\\sigma_2(|A|)=|A|E."
+      },
+      {
+        "type": "text",
+        "text": "Now recall the identity mapping from Example Six. Applying the appropriate identity before or after a mapping leaves its values unchanged."
       },
       {
         "type": "statement",
@@ -10185,6 +10329,87 @@
         "latex": "\\sigma(a_1)=\\sigma(a_2)\\quad\\Longrightarrow\\quad a_1=a_2."
       },
       {
+        "type": "heading",
+        "text": "Back to Example 1: A bijection"
+      },
+      {
+        "type": "text",
+        "text": "For surjectivity, take any even integer b. It has the form two n for an integer n, so sigma of n equals b. For injectivity, if two outputs two m and two n agree, then m equals n. Therefore this mapping is a bijection."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\n    b\\in2\\mathbb Z&\\ \\Longrightarrow\\ b=2n=\\sigma(n)\\quad(n\\in\\mathbb Z),\\\\\n    \\sigma(m)=\\sigma(n)&\\ \\Longrightarrow\\ 2m=2n\\ \\Longrightarrow\\ m=n.\n  \\end{aligned}"
+      },
+      {
+        "type": "heading",
+        "text": "Example 2: The determinant mapping"
+      },
+      {
+        "type": "text",
+        "text": "Every scalar a occurs as the determinant of a diagonal matrix with diagonal entries a, one, through one. If n is at least two, the zero matrix and the diagonal matrix with first entry one and all other entries zero are different matrices with determinant zero."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{aligned}\n    \\sigma_1(\\operatorname{diag}(a,1,\\ldots,1))&=a \\quad(a\\in P),\\\\\n    \\det 0_{n\\times n}&=\\det\\operatorname{diag}(1,0,\\ldots,0)=0\\quad(n\\ge2).\n  \\end{aligned}"
+      },
+      {
+        "type": "statement",
+        "text": "Example 2 is surjective. For n at least two it is not injective."
+      },
+      {
+        "type": "heading",
+        "text": "Example 3: Scalar matrices"
+      },
+      {
+        "type": "text",
+        "text": "If a E equals b E, the first diagonal entries give a equals b. When n is at least two, a matrix with diagonal entries one, zero, through zero is in M, and it cannot equal a E for any a."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "aE=bE\\ \\Longrightarrow\\ a=b,\\qquad\n    \\operatorname{diag}(1,0,\\ldots,0)\\notin\\{aE\\mid a\\in P\\}\\quad(n\\ge2)."
+      },
+      {
+        "type": "statement",
+        "text": "Example 3 is injective. For n at least two it is not surjective."
+      },
+      {
+        "type": "cue",
+        "text": "n=1 时，辨认一阶矩阵 (a) 和标量 a 后，例 2 和例 3 都是双射。"
+      },
+      {
+        "type": "heading",
+        "text": "Example 4: Differentiation"
+      },
+      {
+        "type": "text",
+        "text": "Given any target polynomial g, divide the coefficient of x to the j by j plus one and increase its power by one. This gives a polynomial whose derivative is g. The constants zero and one have the same derivative, so different inputs can give the same output."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "\\begin{gathered}\n    g(x)=\\sum_{j=0}^{m}b_jx^j,\\qquad f(x)=\\sum_{j=0}^{m}\\frac{b_j}{j+1}x^{j+1}\n      \\ \\Longrightarrow\\ \\sigma(f)=g,\\\\\n    \\sigma(0)=\\sigma(1)=0.\n  \\end{gathered}"
+      },
+      {
+        "type": "statement",
+        "text": "Example 4 is surjective and is not injective."
+      },
+      {
+        "type": "heading",
+        "text": "Example 6: The identity mapping"
+      },
+      {
+        "type": "text",
+        "text": "Each target a has itself as a preimage, and equal outputs give equal inputs. The identity mapping is a bijection."
+      },
+      {
+        "type": "math",
+        "text": "",
+        "latex": "1_M(a)=a\\quad(a\\in M),\\qquad 1_M(a)=1_M(b)\\ \\Longrightarrow\\ a=b."
+      },
+      {
         "type": "statement",
         "text": "Property. Two finite sets admit a bijection if and only if they have the same number of elements."
       },
@@ -10202,12 +10427,12 @@
       },
       {
         "type": "text",
-        "text": "For infinite sets, a set may admit a bijection with a proper subset. The book gives the integers and the even integers: send n to two n. Different integers give different outputs, and every even integer occurs."
+        "text": "Example One also shows what can happen with an infinite set. The even integers are a proper subset of the integers, and doubling still gives a bijection between the two sets."
       },
       {
         "type": "math",
         "text": "",
-        "latex": "\\sigma(n)=2n\\qquad(n\\text{ an integer})."
+        "latex": "2\\mathbb Z\\subsetneq\\mathbb Z,\\qquad \\sigma:\\mathbb Z\\longrightarrow 2\\mathbb Z,\\quad\\sigma(n)=2n."
       },
       {
         "type": "cue",
